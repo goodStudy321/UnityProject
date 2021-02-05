@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c93a36d284ba68b42af57a5250876a44, type: 3}
   m_Name: PreprocessCmdView
   m_EditorClassIdentifier: 
-  targetGroup: 0
+  targetGroup: 7
   comSymbols:
   - GAME_GUIDE
   - GAME_DEBUG
@@ -22,5 +22,5 @@ MonoBehaviour:
   - HELLO_SCRIPT_KEY
   - HELLO_LOG_DISABLE
   - HELLO_UITIP_DISABLE
-  inputUseSymbol: 
+  inputUseSymbol: HELLO_WORLD
   inputComSymbol: 
