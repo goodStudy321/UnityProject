@@ -1,0 +1,35 @@
+﻿--******************************************************************************
+-- Copyright(C) Phantom CO,.LTD. All rights reserved
+-- Created by Loong's tool. Please do not edit it.
+-- proto:Z_装备套装属性表.xml, excel:Z 装备套装属性表.xls, sheet:Sheet1
+--******************************************************************************
+EquipSuit={}
+local We=EquipSuit
+We["1"]={id=1, name="5阶诛仙装备", num1=2, att1={{id=2, val=774}, {id=4, val=561}, {id=18, val=200}}, num2=4, att2={{id=1, val=20640}, {id=3, val=688}, {id=21, val=400}}, num3=6, att3={{id=2, val=645}, {id=1, val=12900}, {id=18, val=200}, {id=21, val=400}}}
+We["2"]={id=2, name="5阶诛神装备", num1=2, att1={{id=2, val=1943}, {id=4, val=1295}, {id=18, val=250}}, num2=4, att2={{id=1, val=51806}, {id=3, val=1727}, {id=21, val=500}}, num3=6, att3={{id=2, val=1619}, {id=1, val=32379}, {id=18, val=250}, {id=21, val=500}}}
+We["3"]={id=3, name="6阶诛仙装备", num1=2, att1={{id=2, val=1022}, {id=4, val=681}, {id=18, val=200}}, num2=4, att2={{id=1, val=27245}, {id=3, val=908}, {id=21, val=400}}, num3=6, att3={{id=2, val=851}, {id=1, val=17028}, {id=18, val=200}, {id=21, val=400}}}
+We["4"]={id=4, name="6阶诛神装备", num1=2, att1={{id=2, val=2564}, {id=4, val=1710}, {id=18, val=250}}, num2=4, att2={{id=1, val=68384}, {id=3, val=2279}, {id=21, val=500}}, num3=6, att3={{id=2, val=2137}, {id=1, val=42740}, {id=18, val=250}, {id=21, val=500}}}
+We["5"]={id=5, name="7阶诛仙装备", num1=2, att1={{id=2, val=1349}, {id=4, val=899}, {id=18, val=200}}, num2=4, att2={{id=1, val=35963}, {id=3, val=1199}, {id=21, val=400}}, num3=6, att3={{id=2, val=1124}, {id=1, val=22476}, {id=18, val=200}, {id=21, val=400}}}
+We["6"]={id=6, name="7阶诛神装备", num1=2, att1={{id=2, val=3385}, {id=4, val=2257}, {id=18, val=250}}, num2=4, att2={{id=1, val=90266}, {id=3, val=3009}, {id=21, val=500}}, num3=6, att3={{id=2, val=2821}, {id=1, val=56417}, {id=18, val=250}, {id=21, val=500}}}
+We["7"]={id=7, name="8阶诛仙装备", num1=2, att1={{id=2, val=1780}, {id=4, val=1187}, {id=18, val=200}}, num2=4, att2={{id=1, val=47471}, {id=3, val=1582}, {id=21, val=400}}, num3=6, att3={{id=2, val=1483}, {id=1, val=29669}, {id=18, val=200}, {id=21, val=400}}}
+We["8"]={id=8, name="8阶诛神装备", num1=2, att1={{id=2, val=4468}, {id=4, val=2979}, {id=18, val=250}}, num2=4, att2={{id=1, val=119152}, {id=3, val=3972}, {id=21, val=500}}, num3=6, att3={{id=2, val=3724}, {id=1, val=74470}, {id=18, val=250}, {id=21, val=500}}}
+We["9"]={id=9, name="9阶诛仙装备", num1=2, att1={{id=2, val=2350}, {id=4, val=1567}, {id=18, val=200}}, num2=4, att2={{id=1, val=62662}, {id=3, val=2089}, {id=21, val=400}}, num3=6, att3={{id=2, val=1958}, {id=1, val=39163}, {id=18, val=200}, {id=21, val=400}}}
+We["10"]={id=10, name="9阶诛神装备", num1=2, att1={{id=2, val=5898}, {id=4, val=3932}, {id=18, val=250}}, num2=4, att2={{id=1, val=157280}, {id=3, val=5243}, {id=21, val=500}}, num3=6, att3={{id=2, val=4915}, {id=1, val=98300}, {id=18, val=250}, {id=21, val=500}}}
+We["11"]={id=11, name="10阶诛仙装备", num1=2, att1={{id=2, val=3102}, {id=4, val=2068}, {id=18, val=200}}, num2=4, att2={{id=1, val=82712}, {id=3, val=2757}, {id=21, val=400}}, num3=6, att3={{id=2, val=2585}, {id=1, val=51695}, {id=18, val=200}, {id=21, val=400}}}
+We["12"]={id=12, name="10阶诛神装备", num1=2, att1={{id=2, val=7785}, {id=4, val=5190}, {id=18, val=250}}, num2=4, att2={{id=1, val=207610}, {id=3, val=6920}, {id=21, val=500}}, num3=6, att3={{id=2, val=6488}, {id=1, val=129756}, {id=18, val=250}, {id=21, val=500}}}
+We["13"]={id=13, name="11阶诛仙装备", num1=2, att1={{id=2, val=4049}, {id=4, val=2730}, {id=18, val=200}}, num2=4, att2={{id=1, val=109181}, {id=3, val=3639}, {id=21, val=400}}, num3=6, att3={{id=2, val=3412}, {id=1, val=68238}, {id=18, val=200}, {id=21, val=400}}}
+We["14"]={id=14, name="11阶诸神装备", num1=2, att1={{id=2, val=10277}, {id=4, val=6851}, {id=18, val=250}}, num2=4, att2={{id=1, val=274044}, {id=3, val=9135}, {id=21, val=500}}, num3=6, att3={{id=2, val=8564}, {id=1, val=171278}, {id=18, val=250}, {id=21, val=500}}}
+We["101"]={id=101, name="5阶诛仙首饰", num1=1, att1={{id=18, val=150}}, num2=2, att2={{id=2, val=700}, {id=4, val=300}, {id=21, val=300}}, num3=4, att3={{id=1, val=28000}, {id=3, val=600}, {id=20, val=300}, {id=18, val=150}}}
+We["102"]={id=102, name="5阶诛神首饰", num1=1, att1={{id=18, val=200}}, num2=2, att2={{id=2, val=1867}, {id=4, val=800}, {id=21, val=400}}, num3=4, att3={{id=1, val=74666}, {id=3, val=1600}, {id=20, val=400}, {id=18, val=200}}}
+We["103"]={id=103, name="6阶诛仙首饰", num1=1, att1={{id=18, val=150}}, num2=2, att2={{id=2, val=700}, {id=4, val=300}, {id=21, val=300}}, num3=4, att3={{id=1, val=28000}, {id=3, val=600}, {id=20, val=300}, {id=18, val=150}}}
+We["104"]={id=104, name="6阶诛神首饰", num1=1, att1={{id=18, val=200}}, num2=2, att2={{id=2, val=1867}, {id=4, val=800}, {id=21, val=400}}, num3=4, att3={{id=1, val=74666}, {id=3, val=1600}, {id=20, val=400}, {id=18, val=200}}}
+We["105"]={id=105, name="7阶诛仙首饰", num1=1, att1={{id=18, val=150}}, num2=2, att2={{id=2, val=700}, {id=4, val=300}, {id=21, val=300}}, num3=4, att3={{id=1, val=28000}, {id=3, val=600}, {id=20, val=300}, {id=18, val=150}}}
+We["106"]={id=106, name="7阶诛神首饰", num1=1, att1={{id=18, val=200}}, num2=2, att2={{id=2, val=1867}, {id=4, val=800}, {id=21, val=400}}, num3=4, att3={{id=1, val=74666}, {id=3, val=1600}, {id=20, val=400}, {id=18, val=200}}}
+We["107"]={id=107, name="8阶诛仙首饰", num1=1, att1={{id=18, val=150}}, num2=2, att2={{id=2, val=700}, {id=4, val=300}, {id=21, val=300}}, num3=4, att3={{id=1, val=28000}, {id=3, val=600}, {id=20, val=300}, {id=18, val=150}}}
+We["108"]={id=108, name="8阶诛神首饰", num1=1, att1={{id=18, val=200}}, num2=2, att2={{id=2, val=1867}, {id=4, val=800}, {id=21, val=400}}, num3=4, att3={{id=1, val=74666}, {id=3, val=1600}, {id=20, val=400}, {id=18, val=200}}}
+We["109"]={id=109, name="9阶诛仙首饰", num1=1, att1={{id=18, val=150}}, num2=2, att2={{id=2, val=700}, {id=4, val=300}, {id=21, val=300}}, num3=4, att3={{id=1, val=28000}, {id=3, val=600}, {id=20, val=300}, {id=18, val=150}}}
+We["110"]={id=110, name="9阶诛神首饰", num1=1, att1={{id=18, val=200}}, num2=2, att2={{id=2, val=1867}, {id=4, val=800}, {id=21, val=400}}, num3=4, att3={{id=1, val=74666}, {id=3, val=1600}, {id=20, val=400}, {id=18, val=200}}}
+We["111"]={id=111, name="10阶诛仙首饰", num1=1, att1={{id=18, val=150}}, num2=2, att2={{id=2, val=700}, {id=4, val=300}, {id=21, val=300}}, num3=4, att3={{id=1, val=28000}, {id=3, val=600}, {id=20, val=300}, {id=18, val=150}}}
+We["112"]={id=112, name="10阶诛神首饰", num1=1, att1={{id=18, val=200}}, num2=2, att2={{id=2, val=1867}, {id=4, val=800}, {id=21, val=400}}, num3=4, att3={{id=1, val=74666}, {id=3, val=1600}, {id=20, val=400}, {id=18, val=200}}}
+We["113"]={id=113, name="11阶诛仙首饰", num1=1, att1={{id=18, val=150}}, num2=2, att2={{id=2, val=700}, {id=4, val=300}, {id=21, val=300}}, num3=4, att3={{id=1, val=28000}, {id=3, val=600}, {id=20, val=300}, {id=18, val=150}}}
+We["114"]={id=114, name="11阶诛神首饰", num1=1, att1={{id=18, val=200}}, num2=2, att2={{id=2, val=1867}, {id=4, val=800}, {id=21, val=400}}, num3=4, att3={{id=1, val=74666}, {id=3, val=1600}, {id=20, val=400}, {id=18, val=200}}}

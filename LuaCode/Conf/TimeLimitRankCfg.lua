@@ -1,0 +1,25 @@
+﻿--******************************************************************************
+-- Copyright(C) Phantom CO,.LTD. All rights reserved
+-- Created by Loong's tool. Please do not edit it.
+-- proto:K_开服冲榜_翅膀_法宝_图鉴_冲榜奖励.xml, excel:K 开服冲榜_翅膀_法宝_图鉴_冲榜奖励.xls, sheet:Sheet1
+--******************************************************************************
+TimeLimitRankCfg={}
+local We=TimeLimitRankCfg
+We[1]={id=1, type=10014, rank={1, 1}, cond=1, condVal=60, rankAward={{I=3051200, B=1, N=2}, {I=30336, B=3, N=2}, {I=30333, B=7, N=1}, {I=220050, B=1, N=1}}, sysName={"寻宝", "BOSS巢穴", "商城"}, iconName={"icon_xunbao", "icon_boss", "icon_shangcheng1"}, mark={10, 9, 6}}
+We[2]={id=2, type=10014, rank={2, 3}, cond=1, condVal=60, rankAward={{I=3051200, B=1, N=2}, {I=30336, B=2, N=2}, {I=30333, B=5, N=1}, {I=220050, B=1, N=1}}, sysName={"寻宝", "BOSS巢穴", "商城"}, iconName={"icon_xunbao", "icon_boss", "icon_shangcheng1"}, mark={10, 9, 6}}
+We[3]={id=3, type=10014, rank={4, 10}, cond=1, condVal=60, rankAward={{I=30336, B=2, N=2}, {I=30334, B=1, N=1}, {I=30335, B=1, N=1}, {I=30333, B=3, N=1}}, sysName={"寻宝", "BOSS巢穴", "商城"}, iconName={"icon_xunbao", "icon_boss", "icon_shangcheng1"}, mark={10, 9, 6}}
+We[4]={id=4, type=10014, rank={11, 30}, cond=1, condVal=60, rankAward={{I=30336, B=1, N=2}, {I=30334, B=1, N=1}, {I=30335, B=1, N=1}, {I=30333, B=3, N=1}}, sysName={"寻宝", "BOSS巢穴", "商城"}, iconName={"icon_xunbao", "icon_boss", "icon_shangcheng1"}, mark={10, 9, 6}}
+We[5]={id=5, type=10014, rank={31, 60}, cond=1, condVal=60, rankAward={{I=30334, B=1, N=1}, {I=30333, B=3, N=1}, {I=30332, B=5, N=1}, {I=30331, B=7, N=1}}, sysName={"寻宝", "BOSS巢穴", "商城"}, iconName={"icon_xunbao", "icon_boss", "icon_shangcheng1"}, mark={10, 9, 6}}
+We[6]={id=6, type=10014, rank={61, 100}, cond=1, condVal=60, rankAward={{I=30335, B=1, N=1}, {I=30333, B=2, N=1}, {I=30332, B=3, N=1}, {I=30331, B=5, N=1}}, sysName={"寻宝", "BOSS巢穴", "商城"}, iconName={"icon_xunbao", "icon_boss", "icon_shangcheng1"}, mark={10, 9, 6}}
+We[7]={id=7, type=10013, rank={1, 1}, cond=1, condVal=60, rankAward={{I=3020300, B=1, N=2}, {I=30326, B=3, N=2}, {I=30323, B=7, N=1}, {I=220051, B=1, N=1}}, sysName={"寻宝", "BOSS巢穴", "商城"}, iconName={"icon_xunbao", "icon_boss", "icon_shangcheng1"}, mark={10, 9, 6}}
+We[8]={id=8, type=10013, rank={2, 3}, cond=1, condVal=60, rankAward={{I=3020300, B=1, N=2}, {I=30326, B=2, N=2}, {I=30323, B=5, N=1}, {I=220051, B=1, N=1}}, sysName={"寻宝", "BOSS巢穴", "商城"}, iconName={"icon_xunbao", "icon_boss", "icon_shangcheng1"}, mark={10, 9, 6}}
+We[9]={id=9, type=10013, rank={4, 10}, cond=1, condVal=60, rankAward={{I=30326, B=2, N=2}, {I=30324, B=1, N=1}, {I=30325, B=1, N=1}, {I=30323, B=3, N=1}}, sysName={"寻宝", "BOSS巢穴", "商城"}, iconName={"icon_xunbao", "icon_boss", "icon_shangcheng1"}, mark={10, 9, 6}}
+We[10]={id=10, type=10013, rank={11, 30}, cond=1, condVal=60, rankAward={{I=30326, B=1, N=2}, {I=30324, B=1, N=1}, {I=30325, B=1, N=1}, {I=30323, B=3, N=1}}, sysName={"寻宝", "BOSS巢穴", "商城"}, iconName={"icon_xunbao", "icon_boss", "icon_shangcheng1"}, mark={10, 9, 6}}
+We[11]={id=11, type=10013, rank={31, 60}, cond=1, condVal=60, rankAward={{I=30324, B=1, N=1}, {I=30323, B=3, N=1}, {I=30322, B=5, N=1}, {I=30321, B=7, N=1}}, sysName={"寻宝", "BOSS巢穴", "商城"}, iconName={"icon_xunbao", "icon_boss", "icon_shangcheng1"}, mark={10, 9, 6}}
+We[12]={id=12, type=10013, rank={61, 100}, cond=1, condVal=60, rankAward={{I=30325, B=1, N=1}, {I=30323, B=2, N=1}, {I=30322, B=3, N=1}, {I=30321, B=5, N=1}}, sysName={"寻宝", "BOSS巢穴", "商城"}, iconName={"icon_xunbao", "icon_boss", "icon_shangcheng1"}, mark={10, 9, 6}}
+We[13]={id=13, type=10012, rank={1, 1}, cond=1, condVal=60, rankAward={{I=3090100, B=1, N=2}, {I=1037, B=1, N=2}, {I=1036, B=1, N=2}, {I=220052, B=1, N=1}}, sysName={"寻宝", "BOSS巢穴", "商城"}, iconName={"icon_xunbao", "icon_boss", "icon_shangcheng1"}, mark={10, 9, 6}}
+We[14]={id=14, type=10012, rank={2, 3}, cond=1, condVal=60, rankAward={{I=3090100, B=1, N=2}, {I=1036, B=1, N=2}, {I=1035, B=1, N=2}, {I=220052, B=1, N=1}}, sysName={"寻宝", "BOSS巢穴", "商城"}, iconName={"icon_xunbao", "icon_boss", "icon_shangcheng1"}, mark={10, 9, 6}}
+We[15]={id=15, type=10012, rank={4, 10}, cond=1, condVal=60, rankAward={{I=1035, B=1, N=2}, {I=1034, B=1, N=2}, {I=1204, B=5, N=2}, {I=1203, B=3, N=2}}, sysName={"寻宝", "BOSS巢穴", "商城"}, iconName={"icon_xunbao", "icon_boss", "icon_shangcheng1"}, mark={10, 9, 6}}
+We[16]={id=16, type=10012, rank={11, 30}, cond=1, condVal=60, rankAward={{I=1035, B=1, N=2}, {I=1034, B=1, N=2}, {I=1204, B=3, N=2}, {I=1203, B=2, N=2}}, sysName={"寻宝", "BOSS巢穴", "商城"}, iconName={"icon_xunbao", "icon_boss", "icon_shangcheng1"}, mark={10, 9, 6}}
+We[17]={id=17, type=10012, rank={31, 60}, cond=1, condVal=60, rankAward={{I=1034, B=1, N=2}, {I=1033, B=1, N=1}, {I=1203, B=3, N=2}, {I=1202, B=2, N=1}}, sysName={"寻宝", "BOSS巢穴", "商城"}, iconName={"icon_xunbao", "icon_boss", "icon_shangcheng1"}, mark={10, 9, 6}}
+We[18]={id=18, type=10012, rank={61, 100}, cond=1, condVal=60, rankAward={{I=1033, B=1, N=1}, {I=1032, B=1, N=1}, {I=1203, B=2, N=2}, {I=1202, B=1, N=1}}, sysName={"寻宝", "BOSS巢穴", "商城"}, iconName={"icon_xunbao", "icon_boss", "icon_shangcheng1"}, mark={10, 9, 6}}

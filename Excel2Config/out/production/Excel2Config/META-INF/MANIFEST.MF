@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Class-Path: libs/dom4j-1.6.1.jar libs/poi-3.10-FINAL-20140208.jar libs
+ /poi-ooxml-3.10-FINAL.jar libs/poi-ooxml-schemas-3.10-FINAL.jar libs/
+ xmlbeans-2.4.0.jar
+Main-Class: Excel2Erl.Excel2Erl
+

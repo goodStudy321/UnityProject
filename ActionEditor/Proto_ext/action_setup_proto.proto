@@ -1,0 +1,18 @@
+option optimize_for = LITE_RUNTIME;
+
+package ProtoBuf;
+
+import "action_editor_proto.proto";
+
+message UnitActionInfo
+{
+	required int32				ID					=	1; //	角色ID
+	repeated ActionGroupData	ActionGroupList		=	2; //	动作组列表
+	optional string				Desc				=	3; //	描述
+}
+
+message ActionSetupInfo
+{
+	repeated UnitActionInfo		Units	=	1;	//	角色列表
+	repeated CameraGroup		Cameras =	2;	//	摄像机组
+}

@@ -1,0 +1,529 @@
+option optimize_for = LITE_RUNTIME;
+
+package ProtoBuf;
+
+message ActionGroupData
+{
+	required int32			GroupNum						=	1;	//	动作组编号
+	required int32			RoleID							=	2;	//	角色ID
+	optional AISettingData	AISetting						=	3;	//	AI设置
+	optional string			StartupAction					=	4;	//	起始动作(城镇)
+	optional int32			BoundingWidth					=	5;	//
+	optional int32			BoundingHeight					=	6;	//
+	optional int32			BoundingLength					=	7;	//
+	optional string			DownDeath						=	8;	//	倒地死亡
+	optional string			StandDeath						=	9;	//	站立死亡
+	optional int32			RelativeEndureEffectAlpha		=	10;	//	a
+	optional int32			RelativeEndureEffectRed			=	11;	//	r
+	optional int32			RelativeEndureEffectGreen		=	12;	//	g
+	optional int32			RelativeEndureEffectBlue		=	13;	//	b
+	optional int32			RelativeEndureEffectOverTime	=	14;	//	过度时间
+	optional Vector3Data	LashModifier					=	15;	//	冲击减免
+	optional string			HitScript						=	16;	//	击中脚本
+	optional int32			DefaultActionLevel				=	17;	//	默认动作等级
+	optional string			StartupActionInstance			=	19;	//	起始动作(副本)
+	optional int32			ReflectUnit						=	20;	//	映射单位ID
+	optional int32			ReflectGroupID					=	21;	//	映射动作组ID
+	optional bool			CheckDeath						=	22;	//	侦测死亡
+	optional int32			AttackedGravtity				=	23;	//	受击行为时的重力参数		
+	optional int32			Gravtity						=	24;	//	重力加速度		
+	optional string			StandStandHit					=	25;	//	站立受击
+	optional string			StandKnockBack					=	26;	//	击退		
+	optional string			StandDiagUp						=	27;	//	浮空		
+	optional string			StandAirHit						=	28;	//	浮空追击		
+	optional string			StandKnockOut					=	29;	//	击飞		
+	optional string			AirStandHit						=	30;	//	空中受击
+	optional string			AirKnockBack					=	31;	//	击退		
+	optional string			AirDiagUp						=	32;	//	浮空		
+	optional string			AirAirHit						=	33;	//	浮空追击		
+	optional string			AirKnockOut						=	34;	//	击飞	
+	optional int32			MaterialType					=	35;	//	材质定义	
+	optional string			FloorStandHit					=	36;	//	倒地受击
+	optional string			FloorKnockBack					=	37;	//	倒地击退		
+	optional string			FloorDiagUp						=	38;	//	倒地浮空		
+	optional string			FloorAirHit						=	39;	//	倒地浮空追击		
+	optional string			FloorKnockOut					=	40;	//	倒地击飞	
+	
+	optional int32			XZAttenuation					=	41 [default = 3000];	//	XY平面移动衰减	
+	optional string			GroupName						=	42;	//	动作组名字
+
+	optional string			ParryAction						=	43;	//	格挡动作
+	optional float			StraightModify					=	44;	//	格挡动作
+		
+	optional int32			Scale							=	45[default = 100];	//	总缩放
+
+	repeated ActionData	ActionDataList		=	51;	//	动作列表
+	optional float		EngleHurtRate		=	52[default = 1];			//正向时候受伤比率
+}
+
+message ActionData
+{
+	required string AnimID					=	1	[default = "N0000"];	//	加载的动作名称
+	required int32	AnimTime				=	2	[default = 500];		//	动画时间
+	required string	DefaultLinkActionID		=	3	[default = "N0000"];	//	缺省
+	optional int32	MoveSpeed				=	4	[default = 0];			//	移动速度
+	optional int32	PoseTime				=	5	[default = 0];			//	Pose时间
+	optional int32	BlendTime				=	6	[default = 0];			//	混合时间
+	optional string	Name					=	7;							//	动作名称
+
+	optional bool	IgnoreGravity			=	11	[default = false];		//	忽略重力
+	optional bool	CanMove					=	12	[default = false];		//	可移动
+	optional bool	CanRotate				=	13	[default = true];		//	可转身
+	optional bool	CanBehit				=	14	[default = true];		//	可受击
+	optional bool	CanHurt					=	15	[default = false];		//	无伤害
+	optional bool	FaceToTarget			=	16	[default = false];		//	朝向目标
+	optional bool	ResetVelocity			=	17	[default = true];		//	重置速度
+	optional bool	IgnoreCollider			=	18	[default = false];		//	忽略碰撞
+	optional bool	MoveChange				=	19	[default = false];		//	移动变换动作
+	optional bool	UpdateSkeleton			=	20	[default = false];		//	
+
+	optional bool	UseCommonBound			=	21	[default = false];		//	碰/受一体
+	optional int32	BoundingLengthRadio		=	22	[default = 100];		//	包围盒长度比例
+	optional int32	BoundingWidthRadio		=	23	[default = 100];		//	包围盒宽度比例
+	optional int32	BoundingHeightRadio		=	24	[default = 100];		//	包围盒高度比例
+	optional int32	BoundingOffsetX			=	25	[default = 0];			//	X轴偏移
+	optional int32	BoundingOffsetY			=	26	[default = 0];			//	Y轴偏移
+	optional int32	BoundingOffsetZ			=	27	[default = 0];			//	Z轴偏移
+
+	optional int32	CollisionLengthRadio	=	32	[default = 100];		//	碰撞框长度比例
+	optional int32	CollisionWidthRadio		=	33	[default = 100];		//	碰撞框宽度比例
+	optional int32	CollisionHeightRadio	=	34	[default = 100];		//	碰撞框高度比例
+	optional int32	CollisionOffsetX		=	35	[default = 0];			//	X轴偏移
+	optional int32	CollisionOffsetY		=	36	[default = 0];			//	Y轴偏移
+	optional int32	CollisionOffsetZ		=	37	[default = 0];			//	Z轴偏移
+
+	optional int32	ActionStatus			=	41;	//	动作状态
+	optional int32	HeightStatus			=	42;	//	高度状态
+	optional int32	FragmentStatus			=	43;	//	片段状态
+	optional int32	ActionLevel				=	44;	//	动作等级
+	optional int32  RotateOnHit				=	45; //	受击后转向
+
+	repeated AnimSlotData			AnimSlotList	=	51;	//	动作列表
+	repeated ActionInterruptData	InterruptList	=	52;	//	中断列表
+	repeated AttackDefData			AttackDefList	=	53;	//	攻击定义列表
+	repeated ActionEventData		EventList		=	54;	//	事件列表
+	
+	optional bool	FaceTargetEveryFrame			=	55	[default = false];		//	忽略重力
+	optional float	RotateSpeed						=	56	[default = 0];			//转向速度
+	optional bool	HeatInEngle						=	57	[default = false];
+	optional float  MinHitEngle						=	58	[default = 0];			//受击角度
+	optional float  MaxHitEngle						=	59	[default = 0];			//受击角度
+	
+}
+
+message ActionEventData
+{
+	optional EventData	EventDetailData	=	1;
+	optional int32		TriggerTime		=	2;
+}
+
+message AnimSlotData
+{
+	required string Animation	=	1;					//	动画
+	required int32	Start		=	2 [default = 0];	//	起始
+	required int32	End			=	3 [default = 100];	//	结束
+	optional int32	Weight		=	4;					//	权重
+	optional int32	Dir			=	5;					//	方向 （0,1,2,3）
+	optional bool	UseDir		=	6;					//	使用方向
+	optional int32	Rot			=	7;					//	方向 （0,1,2,3）
+	optional bool	UseRot		=	8;					//	使用方向
+}
+
+message ActionInterruptData
+{
+	optional string	InterruptName		=	1;	//	中断名称
+	required string	ActionID			=	2;	//	中断编号
+	required int32	ConnectMode			=	3;	//	替换方式
+	optional int32	ConnectTime			=	4;	//	替换时间
+	optional bool	InputEnable			=	5;	//	按键启用
+	optional int32	EnableBeginTime		=	6;	//	启用开始时间
+	optional int32	EnableEndTime		=	7;	//	启用结束时间
+	optional int32	CheckSkillID		=	8;	//	检测技能ID
+	required bool	CheckAllCondition	=	9;	//	是否满足所有条件
+	optional bool	ConditionInterrupte =	10;	//	条件中断
+	optional int32	SkillID				=	11;	//	呼叫技能
+
+	optional InputData	CheckInput1		=	21;	//	检测按键1
+	optional InputData	CheckInput2		=	22;	//	检测按键2
+	optional bool	AndCondition		=	23;	//	按键1和按键2是否同时达成条件
+	optional bool		NoInput			=	24;	//	任何条件
+
+	optional bool	TouchGround			=	41;	//	接触地面
+	optional bool	Fall				=	42;	//	下落
+	optional bool	ReachHighest		=	43;	//	到达最高点
+	optional bool	DetectVariable		=	44;	//	检测变量
+	optional VariableData	Variable	=	45;	//	变量数据
+	optional int32	CheckBuffID			=	46;	//	检测buffID	
+
+	optional bool	IsCheckInput1		=	47;
+	optional bool	IsCheckInput2		=   48;
+	
+	optional bool 	IsSceneCheck		= 	49;
+	optional int32	MinTargetDistance	=	50;
+	optional int32	MaxTargetDistance	=	51;
+	optional int32 	MinTargetAngle		=	52;
+	optional int32 	MaxTargetAngle		=	53;
+	
+	optional bool	Hurted				=	54;
+	optional int32 	HurtType			=	55;
+	optional bool	RemoteOnly			=	56;
+}
+
+// 按键数据
+message InputData
+{
+	required int32	InputKey			=	1;	//	按键
+	required int32	InputType			=	2;	//	按键状态
+}
+
+// 变量数据
+message VariableData
+{
+	required int32	Variable		=	1;	//	监控变量索引
+	required int32	CompareType		=	2;	//	比较条件
+	required int32	CompareValue	=	3;	//	比较数值
+}
+
+message AttackDefData
+{
+	optional HitResultData		GroundHit				=	1;	//	倒地受击数据
+	optional HitResultData		HighAirHit				=	2;	//	高空受击数据
+
+	optional string				AttackdefName			=	4;	//	名字
+	optional int32				HeightStatusHitMask		=	5;	//	有效击中高度
+	optional int32				AttackLevel				=	6;	//	攻击等级
+	optional int32				AttackerTime			=	7;	//	攻击者冲击时间
+	optional Vector3Data		AttackerLash			=	8;	//	攻击者的冲击速度
+	optional int32				AttackerStraightTime	=	9;	//	攻击者的硬直时间
+	optional string				Script					=	10;	//	击中脚本
+	optional int32				HitResult				=	11;	//	击中结果
+	optional int32				HitDamage				=	12;	//	击中伤害
+	optional int32				IsRemoteAttacks			=	13;	//	是否远程攻击
+	optional int32				AttackeeTime			=	14;	//	受击者冲击时间
+	optional Vector3Data		AttackeeLash			=	15;	//	受击者的冲击速度
+	optional int32				AttackeeStraightTime	=	16;	//	受击者的硬直时间
+	optional int32				Race					=	17; //	阵营
+	optional int32				FllowReleaser			=	18;	//	攻击框跟随释放者移动
+	optional int32				OwnerActionChange		=	19;	//	释放者动作改变
+	optional int32				Duration				=	20;	//	持续时间
+	optional int32				TriggerTime				=	21;	//	触发时间
+	optional int32				Delay					=	22;	//	延迟时间
+	optional int32				HitCount				=	23;	//	攻击检测次数（攻击定义持续时间内的攻击次数）
+	optional int32				CoolDownTime			=	24;	//	对目标的攻击CD(对击中目标的攻击间隔CD)
+	optional int32				MaxCountOuteDate		=	25;	//	达到最大穿透次数后消失
+	optional int32				AllMaxHitCount			=	26;	//	全部最大穿透次数
+	optional int32				SingleMaxHitCount  		=	27;	//	单个单位最大伤害次数
+	optional int32				FramType				=	28;	//	技能击中框的类型
+	optional Vector3Data		FrameSize				=	29;	//	技能击中框(长方体分别对应:宽,高,长; 圆柱体前2个参数分别为半径和高度，第三个无效;圆环为内半径,外半径,高度)
+	optional Vector3Data		FrameFinalFactor		=	30;	//	最终的技能框相对于初始技能框架的缩放比例:圆柱为半径，高度;圆环为内半径,外半径,高度
+	
+	repeated PathNode			PathList				=	41;	//	路径
+	optional int32				PathInterpolation		=	42;	//	路径插值
+
+	optional string				VariableTypeName		=	43; //	检测变量的类型
+	optional int32				VariableValue			=	44;	//	检测变量需达到的值
+
+	optional int32				StartSkillLevel			=	45;	//	技能起时等级
+	optional int32				EndSkillLevel			=	46;	//	结束技能等级
+	optional int32				AttachUnitKeepLocal		=	47;	//	
+	optional bool				IsCapture				=	48;	//	
+	optional int32				RotateSpeed				=	49;	//	
+	optional bool				AttachUnitRotate		=	50;	//	
+
+	optional string				SelfEffect				=	51;	//	本体特效
+	optional int32				SeflEffectNT			=	52;	//	本体特效NT
+	optional Vector3Data		SelfEffectOffset		=	53;	//	本体特效偏移
+	optional int32				EffectTriggerTime		=	54;	//	本体特效起效时间
+	optional int32				SelfEffectScale			=	55;	//	本体特效缩放
+
+	optional string				SelfSound				=	56;	//	本体音效
+	optional int32				SoundTriggerTime		=	57;	//	本体音效起效时间
+
+	optional string				HitedEffect				=	61;	//	击中特效
+	optional int32				HitedEffectScale		=	62;	//	击中特效缩放
+	optional string				HitedSound				=	63;	//	击中音效
+	optional int32				WeaponType				=	64;	//	攻击定义的材质
+	optional Vector3Data		HitedEffectOffset		=	65;	//	站立击中特效偏移
+	optional Vector3Data		LowAirHitedEffectOffset	=	66;	//	低空击中特效偏移
+	optional int32				BaseGround				=	67;	//	是否相对地面
+
+	repeated EventData			AttackEventList			=	68;	//	事件列表
+
+	//optional bool				IsBullet				=	69;	//	是否子弹类型
+	optional int32				BulletSpeed				=	70;	//	飞行速度
+	optional int32				AccelerationSpeed		=	71;	//	加速度
+	//optional int32 			    FlyingRadius			=   72; //  飞行半径
+	//optional int32				CurveType				=	73;	//  曲线类型
+	optional Vector3Data		EmitterPos				=	74;	//	发射位置
+	optional int32				AttachUnitSpeedY		=	75;	//	
+	optional int32				AttachUnitSpeedCenter	=	76;	//	
+	
+	repeated AttackVariable		AttackVars				=	77; // 
+	optional float				MaxSpeed				=   78; //最大速度
+	optional bool 				IsTrackTarget			=   79;	//是否追踪目标
+	optional int32 				AttackDefType			= 	80;	//攻击类型
+	repeated Vector3Data		BezierMidPath			= 	81;	//贝塞尔中间点
+	optional float 				HitHeightPersent		=	82; //击中点高度百分比
+}
+
+message PathNode
+{
+	optional int32			Ratio	=	1;	//	百分比
+	optional Vector3Data	Pos		=	2;	//	位置
+}
+
+message HitResultData
+{
+	optional bool				Enabled					=	1;	//	是否启用
+	optional Vector3Data		AttackeeLash			=	2;	//	受击者冲击速度
+	optional int32				AttackeeTime			=	3;	//	受击者冲击时间
+	optional int32				AttackeeStraightTime	=	4;	//	受击者的硬直时间
+}
+
+message Vector3Data
+{
+	required float	Vector3Data_X		=	1;
+	required float	Vector3Data_Y		=	2;
+	required float	Vector3Data_Z		=	3;
+}
+
+message AttackVariable
+{
+	required int32	VarType				=	1;
+	required int32  VarValue			=	2;
+}
+
+message EventData
+{
+	optional int32		EventType		=	1;
+
+	// EventPlayEffect
+	optional string		EffectName		=	2;
+	optional int32		BindMode		=	3;
+	optional int32		SkillId			=	4;
+	optional int32		StartLevel		=	5;
+	optional int32		EndLevel		=	6;
+	optional float		OffsetX			=	7;
+	optional float		OffsetY			=	8;
+	optional float		OffsetZ			=	9;
+	optional int32		RotateX			=	10;
+	optional int32		RotateY			=	11;
+	optional int32		RotateZ			=	12;
+	optional float		ScaleTime		=	13;
+	optional float		Scale			=	14;
+	optional int32		StopMode		=	15;
+
+	// EventPlaySound
+	optional bool		CheckMatril		=	21;
+	optional string		SoundName		=	22;
+
+	// EventStatusOn & EventStatusOff
+	optional string		StatusName		=	23;
+
+	// EventSetVelocity & EventSetVelocity_X & EventSetVelocity_Y & EventSetVelocity_Z
+	optional int32		VelocityX		=	24;
+	optional int32		VelocityY		=	25;
+	optional int32		VelocityZ		=	26;
+
+	// EventSetDirection
+	optional int32		Angle			=	27;
+	optional bool		Local			=	28;
+
+	// EventSetGravity
+	optional int32		Gravity			=	29;
+
+	// EventExeScript
+	optional string		ScriptCmd		=	30;
+
+	optional int32		UnitID			=	31;
+	optional bool		ComboAddParent	=	32;
+	optional string		ActionId		=	33;
+	optional bool		FollowParent	=	34;
+	//optional int32		SkillId			=	35;
+	//optional int32		Angle			=	36;
+
+	optional bool		RandomRange		=	37;
+	optional int32		RandomMinWidth	=	38;
+	optional int32		RandomMaxWidth	=	39;
+	optional int32		RandomMinDepth	=	40;
+	optional int32		RandomMaxDepth	=	41;
+	optional int32		PosX			=	42;
+	optional int32		PosY			=	43;
+	optional int32		PosZ			=	44;
+
+
+	// EventRemoveSelf
+	//optional bool		RemoveSelf		=	45;
+
+	// EventSetColor
+	optional int32		ColorRed		=	46;
+	optional int32		ColorGreen		=	47;
+	optional int32		ColorBlue		=	48;
+	optional int32		ColorAlpha		=	49;
+	optional int32		ColorTime		=	50;
+
+	// EventPickup
+	//optional bool		UsePick			=	51;
+	
+	// EventCameraEffect
+	optional int32		CameraID		=	52;	
+
+	// EventListTargets
+	optional int32		Left			=	53;
+	optional int32		Right			=	54;
+	optional int32		Back			=	55;
+	optional int32		Front			=	56;
+	optional int32		Bottom			=	57;
+	optional int32		Top				=	58;
+	optional int32		ListType		=	59;
+	optional int32		FanRadius		=	60;
+	optional int32		FanAngle		=	61;
+	
+	// EventFaceTargets
+	optional int32		FaceType		=	62;
+
+	// EventChat
+	repeated EventCharData	CharDataList	=	63;
+
+	// EventSetMaterial
+	optional int32		MaterialTime	=	64;
+	optional string		MaterialPostfix	=	65;
+
+	// AttackEventAddUnit
+	optional int32		FollowTarget	=	66;
+
+	// CameraShake
+	optional float		LeftTime		=	67;
+	optional float		Frequence		=	68;
+	optional float		Amplitude		=	69;
+
+	// SetOutlineSkin
+	optional float		OutlineWidth	=	70;
+	optional float		Emission		=	71;
+
+	optional int32		Level			=	77;
+	optional int32		Quality			=	78;
+	optional int32		StarLevel		=	79;
+	
+	// EventNewListTarget
+	optional int32 		ListRadius			=   80;
+	optional int32		ListAngle			=   81;
+	optional Vector3Data OffsetPoint	=   82;
+	
+	optional string 	CameraShakeEffect  =	83;
+
+	optional float 	DirectSpeed			   =	84;
+
+	optional string		EventSkin		   =	85;
+	optional bool		Show			   =	86;
+	optional int32		ScaleModel		   =	87;
+	
+	optional int32		MaxChildren		   =	88;
+	optional string		DeleteAction	   = 	89;
+	
+	optional Vector3Data MinRushVelocity   =	90;
+	optional Vector3Data MaxRushVelocity   =	91;
+	
+	optional bool		 AntiCamp		   =	92;
+}
+
+
+message EventCharData
+{
+	optional int32	CahrID			=	1;
+	optional int32	Probability		=	2;
+
+}
+
+message AIGroupData
+{
+	optional string			Name			=	1;
+	repeated AIStatusData	AIStatusList	=	2;
+}
+
+message AIStatusData
+{
+	optional string				Name				=	1;
+	optional int32				TargetType			=	2;
+	repeated AIStatusSwitchData	AIStatusSwitchList	=	3;
+	repeated AIActionCDData		AIActionCDList		=	4;
+	optional Vector3Data		Location			=	5;
+	repeated AIListData			AIList				=	6;
+}
+
+message AIStatusSwitchData
+{
+	optional int32		TargetType				=	1;	
+	optional int32		Condition				=	2;	
+	optional int32		SwitchStatusID			=	3;
+	optional bool		TargetExist				=	4;
+	optional string		ConditionActionID		=	5;
+	optional int32		ConditionActionCount	=	6;
+	optional int32		ConditionBaseId			=	7;
+	optional int32		ConditionVaribleName	=	8;
+	optional int32		ConditionVaribleCompare	=	9;
+	optional int32		ConditionVaribleValue	=	10;
+	optional int32		ConditionTime			=	11;
+	optional int32		CheckDistanceMin		=	12;
+	optional int32		CheckDistanceMax		=	13;
+	optional int32		CheckDistance			=	14;
+	optional int32		ConditionSkill			=	15;
+	optional int32		SelfTime				=	16;
+	optional bool		ActionSwitchNow			=	17;
+	optional int32 		EventCheck				=	18;
+}
+
+message AIActionCDData
+{
+	optional string		Action	=	1;
+	optional int32		CD		=	2;
+}
+
+message AISlotData
+{
+	optional int32		SwitchGroupID		=	1;
+	optional int32		Count				=	2;
+	optional int32		Ratio				=	3;
+	optional int32		SkillID				=	4;
+	optional int32		RefreshTargetList	=	5;
+	optional string		SwitchActionID		=	6;
+}
+
+message AIListData
+{
+	optional int32		Distance	=	1;
+	repeated AISlotData	AISlots		=	2;
+}
+
+message AISettingData
+{
+	optional AIGroupData	EasyGroup		=	1;
+	optional AIGroupData	HardGroup		=	2;
+	optional AIGroupData	NightmareGroup	=	3;
+}
+
+message CameraGroup
+{
+	required int32  ID						=	1;	//	摄像机ID
+	optional string Name					=	2;	//	摄像机名字
+	optional int32  Attenuation				=	3;	//	衰减距离
+	optional int32  Priority				=	4;	//	优先级
+	optional bool   FirstLevel				=	5;	//	是否一级摄像机
+	optional bool   ResetParam				=	6;	//	是否重置摄像机
+
+	repeated CameraSlot	CameraSlotList		=	10;	//	摄像机控制槽
+}
+
+message CameraSlot
+{
+	optional string			Name					=	1;	//	摄像机控制槽名字
+	optional int32			DelayTime				=	2;	//	延迟时间
+	optional float			FOV						=	3;	//	视角
+	optional int32			Time					=	4;	//	控制时间
+	optional Vector3Data	Offset					=	5;	//	调整位移
+	optional Vector3Data	Rotate					=	6;	//	调整旋转
+	optional bool			AdjustMove				=	7;	//	是否调整位移
+	optional bool			AdjustRotate			=	8;	//	是否调整旋转
+	optional bool			NoCameraCache			=	9;  //	关闭摄像机位置缓冲
+	optional Vector3Data	LocalUnitOffset			=	10;	//	相对角色移动
+}

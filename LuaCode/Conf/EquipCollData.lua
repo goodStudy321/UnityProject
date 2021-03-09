@@ -1,0 +1,14 @@
+﻿--******************************************************************************
+-- Copyright(C) Phantom CO,.LTD. All rights reserved
+-- Created by Loong's tool. Please do not edit it.
+-- proto:Z_装备收集.xml, excel:Z 装备收集.xlsx, sheet:Sheet1
+--******************************************************************************
+EquipCollData={}
+local We=EquipCollData
+We["1"]={id=1, rank="5", star="2", qua="4", idList={3021, 3022, 3023, 3024, 3025, 3026, 3027, 3028, 3029, 3030}, numList={2, 4, 6, 8}, att1={{id=4, value=190}, {id=3, value=190}}, att2={{id=5, value=190}, {id=6, value=190}}, att3={{id=2, value=190}, {id=1, value=4000}}, att4={{id=20, value=100}, {id=21, value=100}}, skillList={id=10, value=15001001}}
+We["2"]={id=2, rank="6", star="2", qua="4", idList={3031, 3032, 3033, 3034, 3035, 3036, 3037, 3038, 3039, 3040}, numList={2, 4, 6, 8}, att1={{id=4, value=230}, {id=3, value=230}}, att2={{id=5, value=230}, {id=6, value=230}}, att3={{id=2, value=230}, {id=1, value=8000}}, att4={{id=20, value=100}, {id=21, value=100}}, skillList={id=10, value=15002001}}
+We["3"]={id=3, rank="7", star="2", qua="4", idList={3041, 3042, 3043, 3044, 3045, 3046, 3047, 3048, 3049, 3050}, numList={2, 4, 6, 8}, att1={{id=4, value=280}, {id=3, value=280}}, att2={{id=5, value=280}, {id=6, value=280}}, att3={{id=2, value=280}, {id=1, value=14000}}, att4={{id=20, value=100}, {id=21, value=100}}, skillList={id=10, value=15003001}}
+We["4"]={id=4, rank="8", star="2", qua="4", idList={3051, 3052, 3053, 3054, 3055, 3056, 3057, 3058, 3059, 3060}, numList={2, 4, 6, 8}, att1={{id=4, value=330}, {id=3, value=330}}, att2={{id=5, value=330}, {id=6, value=330}}, att3={{id=2, value=330}, {id=1, value=21000}}, att4={{id=20, value=100}, {id=21, value=100}}, skillList={id=10, value=15004001}}
+We["5"]={id=5, rank="9", star="2", qua="4", idList={3061, 3062, 3063, 3064, 3065, 3066, 3067, 3068, 3069, 3070}, numList={2, 4, 6, 8}, att1={{id=4, value=400}, {id=3, value=400}}, att2={{id=5, value=400}, {id=6, value=400}}, att3={{id=2, value=400}, {id=1, value=29000}}, att4={{id=20, value=100}, {id=21, value=100}}, skillList={id=10, value=15005001}}
+We["6"]={id=6, rank="10", star="2", qua="4", idList={3071, 3072, 3073, 3074, 3075, 3076, 3077, 3078, 3079, 3080}, numList={2, 4, 6, 8}, att1={{id=4, value=480}, {id=3, value=480}}, att2={{id=5, value=480}, {id=6, value=480}}, att3={{id=2, value=480}, {id=1, value=38000}}, att4={{id=20, value=100}, {id=21, value=100}}, skillList={id=10, value=15006001}}
+We["7"]={id=7, rank="11", star="2", qua="4", idList={3081, 3082, 3083, 3084, 3085, 3086, 3087, 3088, 3089, 3090}, numList={2, 4, 6, 8}, att1={{id=4, value=580}, {id=3, value=580}}, att2={{id=5, value=580}, {id=6, value=580}}, att3={{id=2, value=580}, {id=1, value=50000}}, att4={{id=20, value=100}, {id=21, value=100}}, skillList={id=10, value=15007001}}

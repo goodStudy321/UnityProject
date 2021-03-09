@@ -1,0 +1,52 @@
+﻿--Phantom
+--Not Edit
+SkillLv={}
+local We=SkillLv
+We["1001001"]={id=1001001, baseid=1001, level=1, name="普攻-蜀山剑法", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=100}
+We["1002001"]={id=1002001, baseid=1002, level=1, name="御剑术-剑魂", type=1, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=5000}
+We["1003001"]={id=1003001, baseid=1003, level=1, name="御剑术-剑舞", type=1, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=8000}
+We["1004001"]={id=1004001, baseid=1004, level=1, name="剑噬", type=1, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=12000}
+We["2001001"]={id=2001001, baseid=2001, level=1, name="魔族喽啰普攻", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=4000}
+We["2002001"]={id=2002001, baseid=2002, level=1, name="魅魔普攻", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=4000}
+We["2003001"]={id=2003001, baseid=2003, level=1, name="蜘蛛精普攻", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=3000}
+We["2004001"]={id=2004001, baseid=2004, level=1, name="宝箱怪普攻", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=3000}
+We["2005001"]={id=2005001, baseid=2005, level=1, name="九阴怪普攻", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=3000}
+We["2006001"]={id=2006001, baseid=2006, level=1, name="铁甲蝙蝠普攻", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=3000}
+We["2007001"]={id=2007001, baseid=2007, level=1, name="飞蛇普攻", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=3000}
+We["2008001"]={id=2008001, baseid=2008, level=1, name="石狮精普攻", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=4000}
+We["2009001"]={id=2009001, baseid=2009, level=1, name="石狮精技能", type=1, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=4000}
+We["2010001"]={id=2010001, baseid=2010, level=1, name="赤蟒精普攻", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=3000}
+We["2011001"]={id=2011001, baseid=2011, level=1, name="亡灵将军普攻", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=3000}
+We["2012001"]={id=2012001, baseid=2012, level=1, name="冥妖普攻", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=3000}
+We["2013001"]={id=2013001, baseid=2013, level=1, name="悍狼普攻", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=3000}
+We["2014001"]={id=2014001, baseid=2014, level=1, name="巨灵守卫普攻", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=3000}
+We["2015001"]={id=2015001, baseid=2015, level=1, name="诡诈者普攻", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=4000}
+We["2016001"]={id=2016001, baseid=2016, level=1, name="魔剑客普攻", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=4000}
+We["2017001"]={id=2017001, baseid=2017, level=1, name="魔剑客技能1", type=1, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=4000}
+We["2018001"]={id=2018001, baseid=2018, level=1, name="火蝠妖普攻", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=4000}
+We["3001001"]={id=3001001, baseid=3001, level=1, name="震击", type=1, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=100}
+We["3001002"]={id=3001002, baseid=3001, level=2, name="震击", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=0}
+We["3001003"]={id=3001003, baseid=3001, level=3, name="震击", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=0}
+We["3002001"]={id=3002001, baseid=3002, level=1, name="横扫", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=0}
+We["3002002"]={id=3002002, baseid=3002, level=2, name="横扫", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=0}
+We["3002003"]={id=3002003, baseid=3002, level=3, name="横扫", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=0}
+We["3003001"]={id=3003001, baseid=3003, level=1, name="力战", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=0}
+We["3004001"]={id=3004001, baseid=3004, level=1, name="灵力护盾", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=0}
+We["3004002"]={id=3004002, baseid=3004, level=2, name="灵力护盾", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=0}
+We["3004003"]={id=3004003, baseid=3004, level=3, name="灵力护盾", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=0}
+We["3005001"]={id=3005001, baseid=3005, level=1, name="天罡正法", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=0}
+We["3005002"]={id=3005002, baseid=3005, level=2, name="天罡正法", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=0}
+We["3005003"]={id=3005003, baseid=3005, level=3, name="天罡正法", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=0}
+We["3006001"]={id=3006001, baseid=3006, level=1, name="逆灵反击", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=0}
+We["3006002"]={id=3006002, baseid=3006, level=2, name="逆灵反击", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=0}
+We["3006003"]={id=3006003, baseid=3006, level=3, name="逆灵反击", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=0}
+We["3007001"]={id=3007001, baseid=3007, level=1, name="恶念", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=0}
+We["3007002"]={id=3007002, baseid=3007, level=2, name="恶念", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=0}
+We["3007003"]={id=3007003, baseid=3007, level=3, name="恶念", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=0}
+We["3008001"]={id=3008001, baseid=3008, level=1, name="摧枯拉朽", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=0}
+We["3008002"]={id=3008002, baseid=3008, level=2, name="摧枯拉朽", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=0}
+We["3009001"]={id=3009001, baseid=3009, level=1, name="命运守护", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=0}
+We["4001001"]={id=4001001, baseid=4001, level=1, name="坐骑普攻", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=500}
+We["5001001"]={id=5001001, baseid=5001, level=1, name="法宝普攻", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=500}
+We["6001001"]={id=6001001, baseid=4001, level=1, name="翅膀普攻", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=500}
+We["7001001"]={id=7001001, baseid=7001, level=1, name="召唤体1普攻", type=0, targetType=0, user=0, requireLv=0, skillNeed="", skillCd=500}
