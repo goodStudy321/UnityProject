@@ -1,0 +1,6 @@
+import "p_equip.proto";
+// 玩家装备信息
+message m_equip_info_toc {
+repeated  p_equip  equip_list=1; //装备列表
+}
+

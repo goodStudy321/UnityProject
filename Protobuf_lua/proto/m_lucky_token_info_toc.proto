@@ -1,0 +1,7 @@
+// 幸运上上签上线推送
+message m_lucky_token_info_toc {
+optional  int32  level=1[default=0]; //抽奖等级
+optional  int32  remain_num=2[default=0]; //剩余签数
+optional  int32  big_reward=3[default=0]; //大奖的序号
+}
+

@@ -1,0 +1,4 @@
+// 1v1匹配成功返回
+message m_solo_match_ready_toc {
+}
+

@@ -1,0 +1,6 @@
+import "p_act.proto";
+// 活动状态更新推送
+message m_act_update_toc {
+optional  p_act  act=1; //id:活动ID val:状态 1：开启 2：关闭
+}
+

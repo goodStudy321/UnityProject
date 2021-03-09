@@ -1,0 +1,5 @@
+// 世界boss求助返回
+message m_world_boss_seek_help_toc {
+optional  int32  err_code=1[default=0]; //错误码
+}
+

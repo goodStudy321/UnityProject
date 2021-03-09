@@ -1,0 +1,126 @@
+{include file='public/head'}
+<div class="x-body" style=" overflow-y:auto; overflow-x:auto; width:auto; height:auto;">
+  <fieldset class="layui-elem-field">
+    <legend>
+      玩家在线数据
+    </legend>
+    <div class="layui-field-box">
+      <blockquote class="layui-elem-quote">
+        <div class="layui-inline">
+          <label class="layui-form-label">时间：</label>
+          <div class="layui-input-inline">
+            <input class="layui-input" id="time" autocomplete="off" type="text">
+          </div>
+          <div class="layui-input-inline">
+            <button class="layui-btn layui-btn-sm" id="button1" onclick="ajax()">查询</button>
+          </div>
+        </div>
+      </blockquote>
+    </div>
+    <div class="layui-field-box">
+      <div id="container" style="height:auto;"></div>
+    </div>
+  </fieldset>
+</div>
+<div class="x-body" style=" overflow-y:auto; overflow-x:auto; width:auto; height:auto;">
+  <fieldset class="layui-elem-field">
+    <legend>
+      峰值列表
+    </legend>
+    <div class="layui-field-box">
+      <table id="table" lay-filter="test"></table>
+    </div>
+  </fieldset>
+</div>
+<script src="/vendor/highcharts/highcharts.js"></script>
+<script type="text/html" id="time">{{getLocalTime(d.time)}}</script>
+<script type="text/html" id="avg">{{(d.max_online+d.min_online)/2}}</script>
+<script>
+  function getLocalTime(time) {
+    var d = new Date(time * 1000);
+    var year = d.getFullYear(), month = d.getMonth()+1,date = d.getDate(),
+    hour = d.getHours(),minute = d.getMinutes(),second = d.getSeconds();
+    return year+'-'+month+'-'+date;
+  }
+  layui.use('table');
+  //layui时间函数
+  layui.use('laydate', function() {
+    var laydate = layui.laydate;
+    //常规用法
+    laydate.render({
+      elem: '#time'
+      ,max:0
+    ,range:true
+    });
+  });
+  //表格
+  layui.use('table', function(){
+    var table = layui.table;
+    //第一个实例
+    var tableIns = table.render({
+      elem: '#table'
+      ,url: 'peak_table' //数据接口
+      ,page: true //开启分页
+      ,cols: [[ //表头
+      {field: 'time', title: '日期', sort: true, fixed: 'left',templet: '#time'}
+      ,{field: 'max_online', title: '最高在线（PCU）',sort: true}
+      ,{field: 'min_online', title: '最低在线', sort: true}
+      ,{field: 'avg', title: '平均在线（ACU）', sort: true, templet: '#avg'}
+      ]]
+    });
+    $("#button1").click(function(){
+      var time = $("#time").val();
+      tableIns.reload({
+        where: { //设定异步数据接口的额外参数，任意设
+          time: time
+        }
+        ,page: {
+      curr: 1 //重新从第 1 页开始
+        }
+      });
+    });
+  });
+  ajax();
+  function ajax(){
+    var time = $("#time").val();
+    //ajax刷新
+    $.ajax({
+      url: "peak_data",
+      type: 'GET',     // 请求类型，常用的有 GET 和 POST
+      data: {
+        time: time
+      },
+      success: function(data) { // 接口调用成功回调函数
+        data  = JSON.parse(data);
+        //console.log(data.val);//打印
+        var chart = Highcharts.chart('container', {
+          chart: {
+            type: 'line'                          //指定图表的类型，默认是折线图（line）
+          },
+          title: {
+            text: '峰值曲线'
+          },
+          yAxis: {
+            title: {
+              text: '单位：人'
+            }
+          },
+          xAxis: {
+            categories: data.name   // x 轴分类
+          },
+          series: [{
+            name: '峰值曲线cpu',
+            data: data.val.a1
+          },{
+            name: '平均在线acu',
+            data: data.val.a2
+          },{
+            name: '最低在线',
+            data: data.val.a3
+          }]
+        });
+      }
+    });
+  }
+</script>
+{include file='public/foot'}

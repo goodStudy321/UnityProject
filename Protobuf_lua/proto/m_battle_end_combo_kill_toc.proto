@@ -1,0 +1,7 @@
+// 战场终结连杀信息
+message m_battle_end_combo_kill_toc {
+optional  string  kill_role_name=1; //杀人者
+optional  string  killed_role_name=2; //被杀者名字
+optional  int32  kill_num=3[default=0]; //被杀者的击杀数量
+}
+

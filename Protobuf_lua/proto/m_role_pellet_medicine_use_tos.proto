@@ -1,0 +1,6 @@
+// 丹药系统丹药使用
+message m_role_pellet_medicine_use_tos {
+optional  int32  type_id=1[default=0]; //item表id
+optional  int32  num=2[default=0]; //num
+}
+

@@ -1,0 +1,26 @@
+message PetDetailInfo [key=id, source="C 宠物配置表.xls", sheet="Sheet1"]				
+{
+	struct array [separator = ',']
+	{
+		uint32 value;
+	};
+
+	struct tlist [separator = ',']
+	{
+		uint32 skill_id;
+	};
+
+
+	uint32 id						[option = "宠物ID"];
+	uint8 type						[option = "宠物类型"];
+	uint8 step						[option = "宠物等阶"];
+	string name 					[option = "宠物名称"];
+	array condition 				[option = "解锁条件"];
+	uint32 cost_essence_soul 		[option = "进阶消耗精华"];
+	uint32 att					    		[option = "攻击"]; 
+	uint32 arm								[option = "破甲"]; 
+	uint32 hp 								[option = "生命"];
+	uint32 def							[option = "防御"]; 
+	tlist skills						[option = "拥有的技能列表"];
+	tlist open_list						[option = "宠物开启技能"];
+};

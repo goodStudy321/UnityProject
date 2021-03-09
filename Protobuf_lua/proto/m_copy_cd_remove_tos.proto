@@ -1,0 +1,5 @@
+// 副本倒计时清除
+message m_copy_cd_remove_tos {
+optional  int32  copy_id=1[default=0]; //副本ID
+}
+

@@ -1,0 +1,7 @@
+// 后台新仙品丹炉  凡品   提交材料
+message m_role_bg_alchemy_submit_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  schedule=2[default=0]; //材料进度
+optional  int32  times=3[default=0]; //可抽取次数
+}
+

@@ -1,0 +1,9 @@
+// 邀请某人加入道庭
+message m_family_invite_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int64  invite_role_id=2[default=0]; //邀请者role_id
+optional  string  invite_role_name=3; //邀请者姓名
+optional  int64  invite_family_id=4[default=0]; //邀请帮会id
+optional  string  invite_family_name=5; //邀请帮会
+}
+

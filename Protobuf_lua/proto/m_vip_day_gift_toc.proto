@@ -1,0 +1,5 @@
+// 获取VIP日礼包返回
+message m_vip_day_gift_toc {
+optional  int32  err_code=1[default=0]; //错误码
+}
+

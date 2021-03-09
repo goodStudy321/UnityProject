@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="TopTreasCfg" Key="id" ExportType="Arr" Src="Z 装备巅峰寻宝表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "顺序ID" />
+  <P Name="iconId" Type="number" ColName= "道具ID" />
+  <P Name="bind" Type="number" ColName="是否绑定" />
+  <P Name="lv" Type="number" IsList="true" Lsp="," ColName= "人物等级" />
+  <P Name="type" Type="number" ColName="展示类型" />
+  <P Name="isRare" Type="number" ColName="是否概率控制" />
+  <P Name="modelPath" Type="string" ColName="模型ID" />
+  <P Name="scale" Type="number" ColName="贴图缩放" />
+</Proto>

@@ -1,0 +1,6 @@
+import "p_kv.proto";
+// 猎杀boss
+message m_role_act_hunt_boss_info_toc {
+repeated  p_kv  hunt_boss_reward_list=1; //id:栏目 val:状态
+}
+

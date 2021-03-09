@@ -1,0 +1,6 @@
+import "p_kv.proto";
+// 首充豪礼信息返回
+message m_act_first_deposit_toc {
+repeated  p_kv  reward_list=1; //奖励列表 id 档位 val 1:不能领 2:可领 3:已领
+}
+

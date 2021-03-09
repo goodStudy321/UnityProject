@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="tFindBack" Key="id" ExportType="Arr" Src="Z 资源找回.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "id" />
+  <P Name="name" Type="string" ColName= "名称" />
+  <P Name="copyID" Type="number" ColName= "副本ID" />
+  <P Name="exp" Type="number" ColName= "等级经验倍率" />
+   <P Name="IsTimes" Type="number" ColName= "次数找回" />
+  <P Name="cell" Type="Item" IsList="true" Lsp=";" ColName= "奖励" />
+  <P Name="silver" Type="number" ColName= "单次银两" />
+  <P Name="gold" Type="number" ColName= "单次绑元" />
+  <P Name="goldExt" Type="number" IsList="true" Lsp="," ColName= "额外次数单次绑元" />
+  <P Name="say" Type="string" ColName= "说明" />
+</Proto>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ImmSoulCompCfg" Key="id" ExportType="Dic" Src="X 仙魂合成表.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "仙魂ID" />
+  <P Name="name" Type="string" ColName="名称" />
+  <P Name="needLv" Type="number" ColName= "合成所需等级" />
+  <P Name="needCount" Type="number" ColName="消耗仙魂石数量" />
+  <P Name="compNeed1" Type="number" ColName="合成消耗1" />
+  <P Name="compNeed2" Type="number" ColName="合成消耗2" />
+  <P Name="compType" Type="number" ColName="合成分类" />
+  <P Name="sortId" Type="number" ColName="排序" />
+</Proto>

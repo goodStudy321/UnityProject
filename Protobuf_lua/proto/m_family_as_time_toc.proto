@@ -1,0 +1,5 @@
+// 下一题自动刷新时间
+message m_family_as_time_toc {
+optional  int32  time=1[default=0]; //时间戳
+}
+

@@ -1,0 +1,9 @@
+// 喜结良缘
+message m_marry_propose_succ_toc {
+optional  int64  couple_id=1[default=0]; //情侣id
+optional  string  couple_name=2; //情侣名字
+optional  int32  type=3[default=0]; //提亲类型
+optional  int32  feast_times=4[default=0]; //婚礼次数
+optional  int32  marry_time=5[default=0]; //结婚时间
+}
+

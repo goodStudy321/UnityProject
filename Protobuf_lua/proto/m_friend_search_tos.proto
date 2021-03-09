@@ -1,0 +1,5 @@
+// 查找好友
+message m_friend_search_tos {
+optional  string  role_name=1; 
+}
+

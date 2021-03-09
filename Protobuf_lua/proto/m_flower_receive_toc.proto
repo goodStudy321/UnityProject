@@ -1,0 +1,9 @@
+// 收到鲜花
+message m_flower_receive_toc {
+optional  bool  is_anonymous=1[default=true]; //是否匿名
+optional  int64  from_role_id=2[default=0]; 
+optional  string  from_role_name=3; 
+optional  int32  type_id=4[default=0]; //送花的类型
+optional  int32  num=5[default=0]; //赠送数量
+}
+

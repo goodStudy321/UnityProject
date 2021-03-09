@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="EvrBoxCfg" Key="id" ExportType="Arr" Src="M 每日宝箱.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="day" Type="number" ColName="天数" />
+  <P Name="times" Type="number" ColName="宝箱显示顺序" />
+  <P Name="rewTab" Type="List_V4" Opt="true" IsList="true" Lsp=";" ColName="奖励配置" />
+  <P Name="type" Type="number" ColName="标签类型" />
+  <P Name="icon" Type="string" ColName="宝箱图片" />
+  <P Name="num" Type="number" ColName="套序号" />
+</Proto>

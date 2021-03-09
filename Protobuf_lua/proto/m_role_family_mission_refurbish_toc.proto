@@ -1,0 +1,6 @@
+// 返回道庭任务极品和元宝刷新
+message m_role_family_mission_refurbish_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  type=2[default=0]; //0:元宝刷新,1:极品刷新
+}
+

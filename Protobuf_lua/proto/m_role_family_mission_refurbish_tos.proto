@@ -1,0 +1,5 @@
+// 道庭任务极品和元宝刷新
+message m_role_family_mission_refurbish_tos {
+optional  int32  type=1[default=0]; //0:元宝刷新,1:极品刷新
+}
+

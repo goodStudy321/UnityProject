@@ -1,0 +1,11 @@
+import "p_chat_role.proto";
+// 聊天历史坐标P结构
+message p_pos_history {
+optional  int32  channel_type=1[default=0]; //0系统消息 1世界频道 2家族 3队伍 4私聊
+optional  int64  channel_id=2[default=0]; //私聊频道用到
+optional  p_chat_role  role_info=3; //发送者的role_info
+optional  int32  map_id=4[default=0]; //地图位置
+optional  string  pos=5; //位置
+optional  int32  time=6[default=0]; //时间戳
+}
+

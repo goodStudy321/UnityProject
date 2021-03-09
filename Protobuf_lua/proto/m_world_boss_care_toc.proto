@@ -1,0 +1,7 @@
+// 关注取消关注返回
+message m_world_boss_care_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  boss_type_id=2[default=0]; //世界bossTypeID
+optional  int32  type=3[default=0]; //1关注，0取消
+}
+

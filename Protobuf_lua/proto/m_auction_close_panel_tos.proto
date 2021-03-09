@@ -1,0 +1,4 @@
+// 关闭面板
+message m_auction_close_panel_tos {
+}
+

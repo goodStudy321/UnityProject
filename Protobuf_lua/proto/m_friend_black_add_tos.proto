@@ -1,0 +1,5 @@
+// 加入黑名单
+message m_friend_black_add_tos {
+optional  int64  black_id=1[default=0]; //加入黑名单的ID
+}
+

@@ -1,0 +1,7 @@
+import "p_rune.proto";
+// 符文镶嵌数据更新
+message m_rune_load_update_toc {
+optional  p_rune  update_rune=1; //新增镶嵌符文
+repeated  int32  del_runes=2; //删除镶嵌符文
+}
+

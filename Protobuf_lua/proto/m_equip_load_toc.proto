@@ -1,0 +1,6 @@
+import "p_equip.proto";
+// 装备信息
+message m_equip_load_toc {
+optional  p_equip  equip=1; 
+}
+

@@ -1,0 +1,9 @@
+// 幸运上上签 N抽返回
+message m_lucky_token_pray_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  level=2[default=0]; //抽奖等级
+optional  int32  remain_num=3[default=0]; //剩余签数
+optional  int32  big_reward=4[default=0]; //大奖的序号
+repeated  int32  reward_index_list=5; //获取的奖励序号
+}
+

@@ -1,0 +1,6 @@
+// 请求世界boss信息
+message m_world_boss_info_tos {
+optional  int32  type=1[default=0]; //类型
+optional  int32  floor=2[default=0]; //层数
+}
+

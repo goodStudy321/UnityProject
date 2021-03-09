@@ -1,0 +1,10 @@
+import "p_bg_act.proto";
+import "p_item_i.proto";
+// 活跃转盘
+message m_bg_task_turntable_toc {
+optional  p_bg_act  info=1; //活动信息
+repeated  p_item_i  reward=2; //奖励
+optional  int32  times=3[default=0]; //可转次数
+repeated  p_item_i  got_reward=4; //得到的奖励
+}
+

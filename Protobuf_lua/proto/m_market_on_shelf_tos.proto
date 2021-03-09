@@ -1,0 +1,9 @@
+// 上架商品
+message m_market_on_shelf_tos {
+optional  int32  id=1[default=0]; //背包ID
+optional  int32  num=2[default=0]; //数量
+optional  int32  total_price=3[default=0]; //总价
+optional  int32  unit_price=4[default=0]; //单价
+optional  string  password=5; //密码 无则- 空
+}
+

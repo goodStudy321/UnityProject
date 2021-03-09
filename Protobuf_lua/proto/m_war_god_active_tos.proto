@@ -1,0 +1,5 @@
+// 战神套装激活
+message m_war_god_active_tos {
+optional  int32  war_god_id=1[default=0]; //战神套装ID
+}
+

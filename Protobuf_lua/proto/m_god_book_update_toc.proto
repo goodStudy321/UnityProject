@@ -1,0 +1,6 @@
+import "p_kvl.proto";
+// 天书信息更新
+message m_god_book_update_toc {
+repeated  p_kvl  doing=1; //id:天书ID list:已经完成的参数
+}
+

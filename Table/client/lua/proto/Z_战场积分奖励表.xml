@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="BatScore" ExportType="Arr" Key="score" Src="Z 战场积分奖励表.xls" Sheet="Sheet1">
+  <P Name="score" Type="number" ColName= "积分" />
+  <P Name="exp" Type="number" ColName= "经验奖励" />
+  <P Name="expIcon" Type="number" ColName= "经验图标" />
+  <P Name="drops" Type="K_V" IsList="true" Lsp=";" ColName= "道具奖励" />
+</Proto>

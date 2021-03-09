@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="login"
+        android:text="登录" />
+
+    <Button
+        android:id="@+id/upload_user_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/login"
+        android:onClick="uploadUserData"
+        android:text="角色信息上报" />
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/upload_user_data"
+        android:onClick="logout"
+        android:text="退出登录" />
+
+    <Button
+        android:id="@+id/buy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login"
+        android:onClick="buy"
+        android:text="支付" />
+
+    <Button
+        android:layout_toRightOf="@id/buy"
+        android:layout_below="@id/login"
+        android:id="@+id/exit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="exit"
+        android:text="退出游戏" />
+    <Button
+        android:onClick="buyItem"
+        android:text="道具消费统计"
+        android:layout_toRightOf="@id/exit"
+        android:layout_below="@+id/login"
+        android:id="@+id/buy_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

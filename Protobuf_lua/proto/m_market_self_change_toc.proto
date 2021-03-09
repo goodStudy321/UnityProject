@@ -1,0 +1,6 @@
+import "p_kv.proto";
+// 自身市场信息改变
+message m_market_self_change_toc {
+repeated  p_kv  change=1; //id 1-解禁时间改变 2 - 上架物品被拍 3-求购物品被应售  value 时间 or ID
+}
+

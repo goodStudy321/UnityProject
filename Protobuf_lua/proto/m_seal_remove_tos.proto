@@ -1,0 +1,6 @@
+// 装备镶嵌
+message m_seal_remove_tos {
+optional  int32  equip_id=1[default=0]; //装备ID
+optional  int32  seal_index=2[default=0]; //纹印的部位
+}
+

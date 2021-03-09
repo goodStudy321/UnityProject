@@ -1,0 +1,5 @@
+// 天机系统物品分解
+message m_role_nature_goods_refine_tos {
+repeated  int32  rune_ids=1; //分解的物品id列表
+}
+

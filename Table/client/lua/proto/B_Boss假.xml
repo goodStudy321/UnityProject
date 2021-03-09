@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="BossCheater" Key="id" ExportType="Dic" Src="B Boss假.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "id" />
+  <P Name="HP" Type="number" ColName= "生命" />
+  <P Name="HIT" Type="number" ColName= "命中" />
+  <P Name="AGL" Type="number" ColName= "闪避" />
+  <P Name="ATK" Type="number" ColName= "攻击" />
+  <P Name="DEF" Type="number" ColName= "防御" />
+  <P Name="BRK" Type="number" ColName= "破甲" />
+  <P Name="FightVal" Type="number" ColName= "战力" />
+</Proto>

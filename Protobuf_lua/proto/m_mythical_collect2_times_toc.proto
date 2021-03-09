@@ -1,0 +1,5 @@
+// 神兽岛凤血水晶次数更新推送
+message m_mythical_collect2_times_toc {
+optional  int32  collect2_times=1[default=0]; //凤血次数更新
+}
+

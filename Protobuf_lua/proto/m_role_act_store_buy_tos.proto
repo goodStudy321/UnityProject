@@ -1,0 +1,5 @@
+// 配置材料掉落类商店  购买
+message m_role_act_store_buy_tos {
+optional  int32  id=1[default=0]; //ID
+}
+

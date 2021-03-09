@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MountCfg" Key="id" ExportType="Arr" Src="Z 坐骑基础表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="st" Type="number" ColName= "等阶" />
+  <P Name="name" Type="string" ColName="名称" />
+  <P Name="mod" Type="number" ColName="模型ID" />
+  <P Name="uMod" Type="number" ColName="UI模型ID" />
+  <P Name="icon" Type="string"  ColName="图标" />
+  <P Name="type" Type="number" ColName="类型" />
+  <P Name="oSkiID" Opt="true" Type="number" ColName= "开放技能ID" />
+</Proto>

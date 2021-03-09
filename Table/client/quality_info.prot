@@ -1,0 +1,12 @@
+message QualityInfo [key=id, source="Z 质量资源配置.xls", sheet="Sheet1"]
+{
+	struct matList [separator = '|']
+	{
+		string mat_name;
+	};
+	
+	uint32 id						[option = "场景ID"];
+	string name						[option = "场景名称"];
+	matList h_mat_info				[option = "高质量材质"];
+	matList l_mat_info				[option = "低质量材质"];
+};

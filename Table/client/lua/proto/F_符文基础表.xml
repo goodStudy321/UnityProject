@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="RuneCfg" Key="id" ExportType="Dic" Src="F 符文基础表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName="符文ID" />
+  <P Name="name" Type="string" ColName="符文名称" />
+  <P Name="ty" Type="number" IsList="true" Lsp="," ColName="类型" />
+  <P Name="qt" Type="number" ColName="符文品质" />
+  <P Name="towerId" Type="number" ColName="爬塔ID" />
+  <P Name="icon" Type="string" ColName="ICON" />
+  <P Name="st" Type="number" ColName="可镶嵌孔位" />
+  <P Name="des" Type="string" option="true" ColName="描述" />
+</Proto>

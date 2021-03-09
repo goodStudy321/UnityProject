@@ -1,0 +1,7 @@
+import "p_demon_boss_room.proto";
+// 魔域boss信息推送
+message m_demon_boss_info_toc {
+optional  int32  level=1[default=0]; //等级
+repeated  p_demon_boss_room  rooms=2; //房间结构
+}
+

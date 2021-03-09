@@ -1,0 +1,5 @@
+// 请求领取在线奖励
+message m_act_online_get_reward_tos {
+optional  int32  minute=1[default=0]; //分钟
+}
+

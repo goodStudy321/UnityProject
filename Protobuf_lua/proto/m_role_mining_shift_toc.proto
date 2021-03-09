@@ -1,0 +1,5 @@
+// 挖矿移动返回
+message m_role_mining_shift_toc {
+optional  int32  err_code=1[default=0]; 
+}
+

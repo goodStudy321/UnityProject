@@ -1,0 +1,6 @@
+// 为对方种树返回
+message m_marry_tree_buy_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  couple_tree_end_time=2[default=0]; //仙侣姻缘树结束时间
+}
+

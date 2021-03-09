@@ -1,0 +1,8 @@
+// 绝版壕礼推送
+message m_trench_ceremony_toc {
+optional  int64  role_id=1[default=0]; //RoleID
+optional  string  name=2; //名字
+optional  int32  accrecharge=3[default=0]; //累计充值数
+optional  int32  status=4[default=0]; //按钮状态: 1 立即领取 2 已领取 3 已结束
+}
+

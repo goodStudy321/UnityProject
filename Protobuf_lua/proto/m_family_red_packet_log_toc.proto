@@ -1,0 +1,6 @@
+import "p_red_packet_log.proto";
+// 道庭红包日志更新
+message m_family_red_packet_log_toc {
+repeated  p_red_packet_log  log=1; //红包日志
+}
+

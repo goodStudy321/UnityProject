@@ -1,0 +1,5 @@
+// 宝座幻化升级
+message m_throne_surface_upgarde_tos {
+optional  int32  surface_id=1[default=0]; //宝座幻化观表id
+}
+

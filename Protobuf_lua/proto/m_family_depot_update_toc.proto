@@ -1,0 +1,7 @@
+import "p_goods.proto";
+// 道庭仓库
+message m_family_depot_update_toc {
+repeated  p_goods  update_goods=1; //新增道具更新
+repeated  int64  del_goods=2; //删除道具
+}
+

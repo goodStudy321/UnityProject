@@ -1,0 +1,6 @@
+// 增加宾客上限返回(双方都返回)
+message m_marry_add_guest_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  extra_guest_num=2[default=0]; //额外增加的宾客 默认是20人
+}
+

@@ -1,0 +1,6 @@
+import "p_kv.proto";
+// 掉落信息
+message m_copy_immortal_drop_toc {
+repeated  p_kv  drop_list=1; //id：掉落ID val：数量
+}
+

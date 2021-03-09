@@ -1,0 +1,5 @@
+// 获得的荣誉点
+message m_team_copy_honor_toc {
+optional  int32  honor=1[default=0]; //获得的荣誉点
+}
+

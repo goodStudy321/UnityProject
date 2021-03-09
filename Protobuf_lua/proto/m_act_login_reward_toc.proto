@@ -1,0 +1,7 @@
+// 回归豪礼奖励领取
+message m_act_login_reward_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  return_reward_status=2[default=0]; //回归玩家领取状态
+optional  int32  today_reward_status=3[default=0]; //今日登录领取状态
+}
+

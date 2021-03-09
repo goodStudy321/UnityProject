@@ -1,0 +1,9 @@
+import "p_kv.proto";
+// 问卷调查返回
+message m_survey_info_toc {
+optional  int32  err_code=1[default=0]; 
+optional  string  questions=2; //样式 不同题目:|| 题目与答案: __, 答案: ++ 
+repeated  p_kv  rewards=3; //id:道具ID num:奖励列表
+optional  int32  survey_id=4[default=0]; 
+}
+

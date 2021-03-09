@@ -1,0 +1,7 @@
+// 放回鉴宝信息
+message mod_role_act_it_info_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  id=2[default=0]; //珍稀道具表id
+optional  int32  luck=3[default=0]; //幸运值
+}
+

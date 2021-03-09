@@ -1,0 +1,8 @@
+// 猎杀BOSS之个人排行榜的p_结构
+message p_hb_personal_rank {
+optional  int32  rank=1[default=0]; //排行
+optional  string  name=2; //角色名称
+optional  string  family_name=3; //角色所属的道庭名称
+optional  int32  personal_score=4[default=0]; //个人猎杀boss积分
+}
+

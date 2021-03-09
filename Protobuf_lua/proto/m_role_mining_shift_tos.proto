@@ -1,0 +1,6 @@
+// 挖矿移动
+message m_role_mining_shift_tos {
+optional  int32  new_x=1[default=0]; //移动到的x
+optional  int32  new_y=2[default=0]; //移动到的y
+}
+

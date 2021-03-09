@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="WildMapTemp" Key="id" IgnoreKey="true" ExportType="Dic" Src="Y 野外地图.xls" Sheet="刷新列表">
+  <P Name="id" Type="number" ColName= "刷新序列" />
+  <P Name="mID" Type="number" Opt="true" ColName="怪物ID" />
+  <P Name="cID" Type="number" Opt="true" ColName="采集物ID" />
+  <P Name="lbPos" Type="Vector2" ColName="左下角点" />
+  <P Name="rtPos" Type="Vector2" ColName="右上角点" />
+  <P Name="minLvl" Type="number" ColName="最小等级" />
+  <P Name="maxLvl" Type="number" ColName="最大等级" />
+  <P Name="mQt" Type="number" ColName="怪物品质" />
+  <P Name="def" Type="number" ColName="推荐防御" />
+  <P Name="hgMsg" Type="string" ColName="挂机描述" />
+  <P Name="showInMap" Type="number" ColName="是否在小地图显示" />
+</Proto>

@@ -1,0 +1,6 @@
+import "p_chapter.proto";
+// 章节更新推送
+message m_chapter_update_toc {
+optional  p_chapter  chapter=1; 
+}
+

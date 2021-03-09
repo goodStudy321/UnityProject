@@ -1,0 +1,6 @@
+// 领取俸禄
+message m_family_battle_salary_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  bool  salary=2[default=true]; 
+}
+

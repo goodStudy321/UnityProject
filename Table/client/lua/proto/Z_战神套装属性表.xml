@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="AresCfg" ExportType="Arr" Key="id" Src="Z 战神套装属性表.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "战神套装ID" />
+  <P Name="level" Type="number" ColName= "阶数" />
+  <P Name="attr" Type="K_V" ColName= "属性参数" />
+  <P Name="per" Type="number" ColName= "基础属性加成" />
+</Proto>

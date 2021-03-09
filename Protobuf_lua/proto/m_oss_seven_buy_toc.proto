@@ -1,0 +1,7 @@
+import "p_kv.proto";
+// oss- 开服第二阶段活动  七天投资   激活
+message m_oss_seven_buy_toc {
+optional  int32  err_code=1[default=0]; //错误码
+repeated  p_kv  update_list=2; 
+}
+

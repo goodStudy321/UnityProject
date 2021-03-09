@@ -1,0 +1,8 @@
+import "p_chat_history.proto";
+import "p_pos_history.proto";
+// 聊天历史记录
+message m_world_chat_history_toc {
+repeated  p_chat_history  chat_list=1; //聊天历史记录列表
+repeated  p_pos_history  pos_list=2; //坐标历史记录列表
+}
+

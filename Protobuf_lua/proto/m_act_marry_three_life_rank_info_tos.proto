@@ -1,0 +1,4 @@
+// 请求三生三世活动排行榜信息
+message m_act_marry_three_life_rank_info_tos {
+}
+

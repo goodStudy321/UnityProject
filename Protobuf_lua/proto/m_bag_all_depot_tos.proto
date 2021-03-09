@@ -1,0 +1,5 @@
+// 提取某个仓库所有物品
+message m_bag_all_depot_tos {
+optional  int32  bag_id=1[default=0]; //仓库的id
+}
+

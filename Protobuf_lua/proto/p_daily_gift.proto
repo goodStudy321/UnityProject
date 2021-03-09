@@ -1,0 +1,11 @@
+import "p_kv.proto";
+// 特惠充值，活跃礼包p机构
+message p_daily_gift {
+optional  int32  id=1[default=0]; //ID
+optional  bool  is_reward=2[default=true]; //是否领取
+optional  int32  need_active=3[default=0]; //需要多少活跃度
+repeated  p_kv  goods_list=4; //奖励配置
+optional  int32  old_price=5[default=0]; //原价
+optional  string  package_name=6; //礼包名称
+}
+

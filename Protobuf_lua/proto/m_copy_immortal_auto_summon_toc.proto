@@ -1,0 +1,6 @@
+// 设置自动召唤返回
+message m_copy_immortal_auto_summon_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  bool  is_auto_summon=2[default=true]; //true:自动召唤
+}
+

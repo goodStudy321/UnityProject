@@ -1,0 +1,4 @@
+// 请求世界boss信息
+message m_world_boss_log_tos {
+}
+

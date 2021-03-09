@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="TimeLimitBuyCfg" Key="id" ExportType="Arr" Src="K 开服冲榜_翅膀_法宝_图鉴_抢购.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="type" Type="number" ColName="活动类型" />
+  <P Name="goldType" Type="number" ColName= "货币类型" />
+  <P Name="discount" Type="number" ColName= "折扣" />
+  <P Name="oPrice" Type="number" ColName= "原价" />
+  <P Name="cPrice" Type="number" ColName= "现价" />
+  <P Name="buyCount" Type="number" ColName= "购买次数" />
+  <P Name="rankAward" Type="I_B_N" IsList="true" Lsp=";" ColName= "奖励" />
+</Proto>

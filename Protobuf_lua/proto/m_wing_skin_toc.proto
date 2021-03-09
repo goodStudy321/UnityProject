@@ -1,0 +1,6 @@
+import "p_kv.proto";
+// 翅膀ID变化
+message m_wing_skin_toc {
+optional  p_kv  skin=1; //翅膀的皮肤-进度
+}
+

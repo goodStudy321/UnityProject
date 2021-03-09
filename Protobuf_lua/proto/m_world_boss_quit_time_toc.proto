@@ -1,0 +1,5 @@
+// 部分世界boss地图有时间限制
+message m_world_boss_quit_time_toc {
+optional  int32  quit_time=1[default=0]; //退出的时间
+}
+

@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PrayNumCfg" Key="num" ExportType="Dic" Src="Q 祈福次数表.xls" Sheet="Sheet1">
+  <P Name="num" Type="number" ColName= "银两祈福次数" />
+  <P Name="expNum" Type="number" ColName= "经验祈福消耗元宝数量" />
+</Proto>

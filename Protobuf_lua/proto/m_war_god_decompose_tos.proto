@@ -1,0 +1,5 @@
+// 战神碎片分解
+message m_war_god_decompose_tos {
+repeated  int32  piece_ids=1; //碎片ID
+}
+

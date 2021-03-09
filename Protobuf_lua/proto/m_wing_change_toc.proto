@@ -1,0 +1,6 @@
+// 翅膀幻化
+message m_wing_change_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  cur_id=2[default=0]; //翅膀新信息
+}
+

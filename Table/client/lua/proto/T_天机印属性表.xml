@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SMSProTemp" Key="id" ExportType="Dic" Src="T 天机印属性表.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "道具ID" />
+  <P Name="name" Type="string" ColName= "名称" />
+  <P Name="condition" Type="number" Opt="true" IsList="true" Lsp="," ColName= "关联套装" />
+  <P Name="limitId" Type="number" ColName= "最高套装ID" />
+  <P Name="index" Type="number" ColName= "部位" />
+  <P Name="quality" Type="number" ColName= "品质" />
+  <P Name="star" Type="number" ColName= "星级" />
+  <P Name="limit" Type="number" ColName= "强化次数" />
+  <P Name="skills" Type="number" Opt="true" IsList="true" Lsp="," ColName= "技能1" />
+  <P Name="skillEff" Type="K_V" Opt="true" Lsp="," ColName= "技能2" />
+  <P Name="hp" Type="number" Opt="true" ColName= "生命" />
+  <P Name="atk" Type="number" Opt="true" ColName= "攻击" />
+  <P Name="def" Type="number" Opt="true" ColName= "防御" />
+  <P Name="arm" Type="number" Opt="true" ColName= "破甲" />
+  <P Name="metal" Type="number" Opt="true" ColName= "金" />
+  <P Name="wood" Type="number" Opt="true" ColName= "木" />
+  <P Name="water" Type="number" Opt="true" ColName= "水" />
+  <P Name="fire" Type="number" Opt="true" ColName= "火" />
+  <P Name="soil" Type="number" Opt="true" ColName= "土" />
+</Proto>

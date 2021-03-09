@@ -1,0 +1,8 @@
+import "p_kdv.proto";
+// 7天目标信息上线推送
+message m_day_target_info_toc {
+repeated  p_kdv  conditions=1; //条件列表
+repeated  int32  reward_list=2; //已经领取的id列表
+repeated  int32  progress_reward_list=3; //已经领取的进度奖励
+}
+

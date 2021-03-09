@@ -1,0 +1,9 @@
+import "p_kv.proto";
+import "p_ks.proto";
+// 修改道庭设置
+message m_family_config_toc {
+optional  int32  err_code=1[default=0]; 
+repeated  p_kv  kv_list=2; //key - int32 1:是否可以直接进入 2:申请等级 3:申请战力
+repeated  p_ks  ks_list=3; //key - string 101:公告 102:道庭名字
+}
+

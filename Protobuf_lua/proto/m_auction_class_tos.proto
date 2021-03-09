@@ -1,0 +1,5 @@
+// 请求商品分类信息
+message m_auction_class_tos {
+optional  int32  class=1[default=0]; //一级分类
+}
+

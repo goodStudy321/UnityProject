@@ -1,0 +1,16 @@
+import "p_dkv.proto";
+import "p_ks.proto";
+// 排行榜的p_结构
+message p_rank {
+optional  int32  rank=1[default=0]; //排行
+optional  int64  role_id=2[default=0]; //role_id
+optional  string  role_name=3; //角色名字
+optional  int32  role_level=4[default=0]; //等级
+optional  int32  vip_level=5[default=0]; //VIP等级
+optional  int32  category=6[default=0]; //职业
+optional  int32  confine=7[default=0]; //境界
+optional  int32  relive_level=8[default=0]; //转生等级
+repeated  p_dkv  kv_list=9; //key - int64
+repeated  p_ks  ks_list=10; //key - string
+}
+

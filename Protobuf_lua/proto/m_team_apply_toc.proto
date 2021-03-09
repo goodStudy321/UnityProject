@@ -1,0 +1,7 @@
+import "p_team_invite.proto";
+// 申请加入队伍返回
+message m_team_apply_toc {
+optional  int32  err_code=1[default=0]; 
+optional  p_team_invite  apply_role=2; //申请者的信息
+}
+

@@ -1,0 +1,9 @@
+import "p_money_tree_log.proto";
+//  
+message m_money_tree_i_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int64  money=2[default=0]; //银币
+optional  int32  rate=3[default=0]; //倍率
+optional  p_money_tree_log  log=4; //个人日志
+}
+

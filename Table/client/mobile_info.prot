@@ -1,0 +1,7 @@
+message MobileInfo [key=id, source="J 机型配置表.xls", sheet="Sheet1"]
+{
+	uint32 id						[option = "索引ID"];
+	string motype					[option = "机型"];
+	uint32 ram						[option = "物理内存（M）"];
+	uint32 quility					[option = "配置"];
+};

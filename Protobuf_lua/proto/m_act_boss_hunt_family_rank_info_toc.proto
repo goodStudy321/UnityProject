@@ -1,0 +1,7 @@
+import "p_hb_family_rank.proto";
+// 返回猎杀boss道庭排行榜信息
+message m_act_boss_hunt_family_rank_info_toc {
+repeated  p_hb_family_rank  ranks=1; //猎杀BOSS之道庭排行榜
+optional  p_hb_family_rank  family_rank=2; //玩家道庭的猎杀BOSS排行信息
+}
+

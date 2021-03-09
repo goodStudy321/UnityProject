@@ -1,0 +1,8 @@
+message EquipId [key=dropid, source="Z 装备id对应表.xls", sheet="Sheet1"]
+{
+	uint32 dropid       [option = "掉落id"];
+	uint32 id0		    [option = "0星装备"];
+	uint32 id1		    [option = "1星装备"];
+	uint32 id2		    [option = "2星装备"];
+	uint32 id3		    [option = "3星装备"];
+};

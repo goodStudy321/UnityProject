@@ -1,0 +1,6 @@
+// 结束时弹出的图标选择
+message m_marry_copy_icon_toc {
+repeated  int32  item_list=1; //图标列表
+optional  int32  end_time=2[default=0]; //选择结束时间
+}
+

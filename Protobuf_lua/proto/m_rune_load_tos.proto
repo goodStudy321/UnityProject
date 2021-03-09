@@ -1,0 +1,6 @@
+// 符文镶嵌
+message m_rune_load_tos {
+optional  int32  rune_id=1[default=0]; //兑换id
+optional  int32  index=2[default=0]; //镶嵌部位
+}
+

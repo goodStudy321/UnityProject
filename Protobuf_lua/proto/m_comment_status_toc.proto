@@ -1,0 +1,5 @@
+// 引导好评状态 上线设置时返回
+message m_comment_status_toc {
+optional  int32  status=1[default=0]; //0不能领取 1可以领取 2已经领取
+}
+

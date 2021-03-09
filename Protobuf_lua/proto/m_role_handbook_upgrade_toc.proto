@@ -1,0 +1,6 @@
+// 图鉴升级
+message m_role_handbook_upgrade_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  card_id=2[default=0]; //升级后的卡片id
+}
+

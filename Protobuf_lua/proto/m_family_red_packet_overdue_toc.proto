@@ -1,0 +1,6 @@
+// 道庭红包过期返回
+message m_family_red_packet_overdue_toc {
+optional  int32  type=1[default=0]; //红包类型 1-道庭已发2-自我未发红包
+repeated  int32  packet_id=2; //红包金额
+}
+

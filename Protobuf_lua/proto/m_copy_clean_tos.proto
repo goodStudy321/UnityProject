@@ -1,0 +1,7 @@
+// 扫荡副本
+message m_copy_clean_tos {
+optional  int32  map_id=1[default=0]; //副本ID
+optional  int32  num=2[default=0]; //扫荡次数
+optional  int32  boss_num=3[default=0]; //幽魂林boss数量
+}
+

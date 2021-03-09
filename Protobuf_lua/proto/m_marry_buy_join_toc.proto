@@ -1,0 +1,7 @@
+import "p_dks.proto";
+// 购买成为宾客(三方返回)
+message m_marry_buy_join_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  p_dks  guest=2; //宾客信息
+}
+

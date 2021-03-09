@@ -1,0 +1,7 @@
+import "p_rune.proto";
+// 符文升级
+message m_rune_level_up_toc {
+optional  int32  err_code=1[default=0]; 
+optional  p_rune  rune=2; //更新的符文数据
+}
+

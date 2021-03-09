@@ -1,0 +1,6 @@
+// 出售求购商品
+message m_market_sell_demand_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  id=2[default=0]; //ID
+}
+

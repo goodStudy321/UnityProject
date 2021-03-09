@@ -1,0 +1,6 @@
+// 成就领取返回
+message m_achievement_reward_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  achievement_id=2[default=0]; //领取成就ID
+}
+

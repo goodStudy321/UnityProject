@@ -1,0 +1,6 @@
+import "p_kv.proto";
+// oss- 开服第二阶段活动  七天抢购   上线 推送
+message m_oss_panic_buy_toc {
+repeated  p_kv  list=1; //奖励状态 val: 已购买数量
+}
+

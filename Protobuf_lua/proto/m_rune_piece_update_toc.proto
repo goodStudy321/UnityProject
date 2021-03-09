@@ -1,0 +1,5 @@
+// 符文碎片更新
+message m_rune_piece_update_toc {
+optional  int32  piece=1[default=0]; //符文碎片
+}
+

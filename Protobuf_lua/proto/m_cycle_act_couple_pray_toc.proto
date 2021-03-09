@@ -1,0 +1,9 @@
+import "p_goods.proto";
+// 月下情缘 奖励抽取返回
+message m_cycle_act_couple_pray_toc {
+optional  int32  err_code=1[default=0]; //错误码
+repeated  int32  reward_type_list=2; //抽取获得奖励的类型
+optional  int32  pray_score=3[default=0]; //告别单身积分
+repeated  p_goods  goods_list=4; //道具
+}
+

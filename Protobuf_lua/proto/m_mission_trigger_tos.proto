@@ -1,0 +1,6 @@
+// 触发任务
+message m_mission_trigger_tos {
+optional  int32  type=1[default=0]; //什么类型的任务
+optional  int32  val=2[default=0]; //val值
+}
+

@@ -1,0 +1,7 @@
+import "p_kv.proto";
+// 集字奖励返回
+message m_act_clword_toc {
+optional  int32  err_code=1[default=0]; 
+repeated  p_kv  reward=2; //p_kv.id - 奖励ID,   p_kv.val - 剩余数量
+}
+

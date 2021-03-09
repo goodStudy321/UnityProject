@@ -1,0 +1,6 @@
+// 已激法图鉴卡片和图鉴
+message p_handbook_data {
+repeated  int32  card_id=1; //已激活的卡片id
+repeated  int32  card_group_id=2; //已激活的卡片组阶段id(卡组配置表卡组id)
+}
+

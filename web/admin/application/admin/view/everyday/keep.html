@@ -1,0 +1,219 @@
+{include file='public/head'}
+<style>
+  .layui-table-body {
+    display: block;
+  }
+</style>
+
+<div class="layui-field-box">
+  <div class="layui-tab layui-tab-brief" lay-filter="division">
+    <ul class="layui-tab-title">
+      <li data-type="1" class="layui-this">活跃留存</li>
+      <li data-type="2">新增账号留存</li>
+      <li data-type="3">新增设备留存</li>
+    </ul>
+    <br>
+
+    <div class="layui-tab-content">
+      <div class="layui-tab-item layui-show">
+        <blockquote class="layui-elem-quote">
+          <div class="layui-inline" style="display: inline-block;" id="data">
+            总注册：{$create}
+          </div>
+          <form class="layui-form" onsubmit="return false" style="display: none;" id="form">
+            <div class="layui-inline">
+              <label class="layui-form-label">时间：</label>
+              <div class="layui-input-inline">
+                <input class="layui-input" id="time" type="text" name="time" autocomplete="off">
+              </div>
+            </div>
+            <div class="layui-inline">
+              <div class="layui-input-inline">
+                <button class="layui-btn layui-btn-sm" type="submit" lay-submit lay-filter="search">查询</button>
+                <button onclick="javascript:location.reload()" class="layui-btn layui-btn-sm">刷新</button>
+              </div>
+            </div>
+          </form>
+        </blockquote>
+        <table id="table" lay-filter="test"></table>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $(function(){
+    layui.use(['element', 'laydate', 'form'], function(){
+      var element = layui.element;
+      var form    = layui.form;
+      var laydate = layui.laydate;
+      var tableIns1 = tableIns2 = tableIns3 = '';
+      var nowType = '';
+
+      laydate.render({
+        elem: '#time'
+        ,range: true
+      });
+
+      // 活跃留存
+      var onTable1 = function(type){
+        layui.use('table', function(){
+          var table = layui.table;
+          tableIns1 = table.render({
+            elem: '#table'
+            ,url: 'keep_data' //数据接口
+            ,page: true //开启分页
+            ,cols:[[ //标题栏
+            {field: 'day', title: '开服天数'}
+            ,{field: 'equip', title: '设备留存'}
+            ,{field: 'account', title: '账号留存'}
+            ,{field: 'role', title: '角色留存'}
+            ]]
+          });
+        });
+      }
+      // 新增留存
+      var onTable2 = function(type){
+        layui.use('table',function(){
+          var table = layui.table;
+          tableIns2 = table.render({
+            elem: '#table'
+            ,url: 'keep_table_data' //数据接口
+            ,page: true //开启分页
+            ,cellMinWidth:90
+            ,cols:[[ //标题栏
+            {field:'time' , align: 'center'       , title: '注册日期' , width:110}
+            , {field: 'add' , title: '当日注册账号' , width:110}
+            , {field: 'a1'  , title: '2日登录'}
+            , {field: 'a2'  , title: '3日登录'}
+            , {field: 'a3'  , title: '4日登录'}
+            , {field: 'a4'  , title: '5日登录'}
+            , {field: 'a5'  , title: '6日登录'}
+            , {field: 'a6'  , title: '7日登录'}
+            , {field: 'a7'  , title: '8日登录'}
+            , {field: 'a8'  , title: '9日登录'}
+            , {field: 'a9'  , title: '10日登录'}
+            , {field: 'a10' , title: '11日登录'}
+            , {field: 'a11' , title: '12日登录'}
+            , {field: 'a12' , title: '13日登录'}
+            , {field: 'a13' , title: '14日登录'}
+            , {field: 'a14' , title: '15日登录'}
+            , {field: 'a15' , title: '16日登录'}
+            , {field: 'a16' , title: '17日登录'}
+            , {field: 'a17' , title: '18日登录'}
+            , {field: 'a18' , title: '19日登录'}
+            , {field: 'a19' , title: '20日登录'}
+            , {field: 'a20' , title: '21日登录'}
+            , {field: 'a21' , title: '22日登录'}
+            , {field: 'a22' , title: '23日登录'}
+            , {field: 'a23' , title: '24日登录'}
+            , {field: 'a24' , title: '25日登录'}
+            , {field: 'a25' , title: '26日登录'}
+            , {field: 'a26' , title: '27日登录'}
+            , {field: 'a27' , title: '28日登录'}
+            , {field: 'a28' , title: '29日登录'}
+            , {field: 'a29' , title: '30日登录'}
+            ]]
+          });
+        })
+      }
+      // 新增设备留存
+      var onTable3 = function(type){
+        layui.use('table',function(){
+          var table = layui.table;
+          tableIns3 = table.render({
+            elem: '#table'
+            ,url: 'keep_new_imei' //数据接口
+            ,page: true //开启分页
+            ,cellMinWidth:90
+            ,cols:[[ //标题栏
+            {field:'date' , align: 'center'       , title: '注册日期' , width:110}
+            , {field: 'num' , title: '当日注册设备' , width:110}
+            , {field: 'b1'  , title: '2日登录'}
+            , {field: 'b2'  , title: '3日登录'}
+            , {field: 'b3'  , title: '4日登录'}
+            , {field: 'b4'  , title: '5日登录'}
+            , {field: 'b5'  , title: '6日登录'}
+            , {field: 'b6'  , title: '7日登录'}
+            , {field: 'b7'  , title: '8日登录'}
+            , {field: 'b8'  , title: '9日登录'}
+            , {field: 'b9'  , title: '10日登录'}
+            , {field: 'b10' , title: '11日登录'}
+            , {field: 'b11' , title: '12日登录'}
+            , {field: 'b12' , title: '13日登录'}
+            , {field: 'b13' , title: '14日登录'}
+            , {field: 'b14' , title: '15日登录'}
+            , {field: 'b15' , title: '16日登录'}
+            , {field: 'b16' , title: '17日登录'}
+            , {field: 'b17' , title: '18日登录'}
+            , {field: 'b18' , title: '19日登录'}
+            , {field: 'b19' , title: '20日登录'}
+            , {field: 'b20' , title: '21日登录'}
+            , {field: 'b21' , title: '22日登录'}
+            , {field: 'b22' , title: '23日登录'}
+            , {field: 'b23' , title: '24日登录'}
+            , {field: 'b24' , title: '25日登录'}
+            , {field: 'b25' , title: '26日登录'}
+            , {field: 'b26' , title: '27日登录'}
+            , {field: 'b27' , title: '28日登录'}
+            , {field: 'b28' , title: '29日登录'}
+            , {field: 'b29' , title: '30日登录'}
+            ]]
+          });
+        })
+      }
+
+      //初始化
+      nowType = 1;
+      onTable1(1);
+
+      //监听切换
+      element.on('tab(division)', function(data){
+        var type = $(this).data('type');
+        $('#data').attr('style', 'display:none');
+        $('#form').attr('style', 'display:none');
+        nowType = type;
+
+        if(type == 1){
+          $('#data').attr('style', 'display:inline-block');
+          onTable1(1);
+          return ;
+        }
+        if(type == 2){
+          $('#form').attr('style', 'display:inline-block');
+          onTable2(2);
+          return ;
+        }
+        if(type == 3){
+          $('#form').attr('style', 'display:inline-block');
+          onTable3(3);
+          return ;
+        }
+      })
+
+      form.on('submit(search)', function(data){
+        var data = {};
+        $.each($('form').serializeArray(), function(){
+          data[this.name] = this.value;
+        })
+        data.type = nowType;
+        if(nowType == 1){
+          var tableIns = tableIns1;
+        }else if(nowType == 2){
+          var tableIns = tableIns2;
+        }else if(nowType == 3){
+          var tableIns = tableIns3;
+        }
+
+        tableIns.reload({
+          where: data
+          ,page: {
+            curr: 1 //重新从第 1 页开始
+          }
+        });
+      })
+
+    })
+  })
+
+</script>
+  {include file='public/foot'}

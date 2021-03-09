@@ -1,0 +1,5 @@
+// 宠物皮肤激活
+message m_mount_surface_active_tos {
+optional  int32  base_id=1[default=0]; //基础ID
+}
+

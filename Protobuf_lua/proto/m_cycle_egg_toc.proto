@@ -1,0 +1,13 @@
+import "p_egg.proto";
+import "p_kv.proto";
+import "p_kvs.proto";
+// 周期砸蛋活动上线
+message m_cycle_egg_toc {
+repeated  p_egg  eggs=1; //蛋列表
+optional  bool  can_refresh=2[default=true]; //能否刷新
+optional  int32  open_times=3[default=0]; //砸蛋次数
+repeated  p_kv  list=4; //累计奖励列表  id - 表ID val - 1-不能领 2-可领 3-已领 
+repeated  p_kvs  a_log=5; // 普通 id - 蛋类型   text - 玩家名  val - 道具ID
+repeated  p_kvs  b_log=6; // 稀有 id - 蛋类型   text - 玩家名  val - 道具ID
+}
+

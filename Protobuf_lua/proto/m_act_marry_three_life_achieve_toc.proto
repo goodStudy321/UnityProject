@@ -1,0 +1,5 @@
+// 提亲活动达成返回
+message m_act_marry_three_life_achieve_toc {
+optional  int32  err_code=1[default=0]; //错误码
+}
+

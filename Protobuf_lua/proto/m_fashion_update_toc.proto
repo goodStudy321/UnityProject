@@ -1,0 +1,6 @@
+import "p_fashion_time.proto";
+// 时装更新
+message m_fashion_update_toc {
+optional  p_fashion_time  fashion=1; //时装更新
+}
+

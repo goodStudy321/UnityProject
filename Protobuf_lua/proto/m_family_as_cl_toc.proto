@@ -1,0 +1,5 @@
+// 食用
+message m_family_as_cl_toc {
+optional  int32  collection=1[default=0]; //1-已食用，0-未食用
+}
+

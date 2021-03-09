@@ -1,0 +1,226 @@
+{
+	"local_1":{
+		"server_id": 1,
+		"server_ip": "127.0.0.1",
+		"server_name": "本地1服",
+		"is_debug": true,
+		"gateway_port": 55555,
+		"hb_check_closed": true,
+        "es_url": "http://192.168.2.250:9200",
+		"junhai_log_open": false
+	},
+	
+	"windows_local_1":{
+		"agent_code": "windows",
+		"server_id": 1,
+		"server_ip": "192.168.2.250",
+		"server_name": "windows私服",
+		"is_debug": true,
+		"gateway_port": 55555,
+		"db_host": "192.168.2.250",
+		"admin_host": "192.168.2.250",
+		"central_host": "192.168.2.250",
+        "log_dir":"./logs/",
+        "background_log_open": false,
+		"hb_check_closed": true,
+        "es_url": "http://192.168.2.250:9200",
+		"junhai_log_open": false
+	},
+
+    "windows_wai_local_1":{
+      "agent_code": "windows",
+      "server_id": 1,
+      "server_ip": "192.168.2.250",
+      "server_name": "windows私服",
+      "is_debug": true,
+      "gateway_port": 55555,
+      "db_host": "118.89.165.224",
+      "admin_host": "118.89.165.224",
+      "central_host": "118.89.165.224",
+      "log_dir":"./logs/",
+      "background_log_open": false,
+      "hb_check_closed": true,
+      "es_url": "http://192.168.2.250:9200",
+      "junhai_log_open": false
+    },
+	
+	"local_2":{
+		"server_id": 2,
+		"server_ip": "127.0.0.1",
+		"server_name": "本地2服",
+		"gateway_port": 56555,
+		"web_port": 30002,
+		"is_debug": true,
+		"background_log_open": false,
+		"hb_check_closed": true,
+        "es_url": "http://192.168.2.250:9200",
+		"junhai_log_open": false
+	},
+	
+	"local_96":{
+		"server_id": 96,
+		"server_ip": "127.0.0.1",
+		"server_name": "活动1服",
+		"gateway_port": 40096,
+		"web_port": 30096,
+		"is_debug": true,
+		"background_log_open": false,
+		"hb_check_closed": true,
+        "es_url": "http://192.168.2.250:9200",
+		"junhai_log_open": false
+	},
+	
+	"local_97":{
+		"server_id": 97,
+		"server_ip": "127.0.0.1",
+		"server_name": "活动2服",
+		"gateway_port": 40097,
+		"web_port": 30097,
+		"is_debug": true,
+		"background_log_open": false,
+		"hb_check_closed": true,
+        "es_url": "http://192.168.2.250:9200",
+		"junhai_log_open": false
+	},
+
+    "robot_1":{
+        "agent_id": 1,
+        "agent_code": "robot",
+        "server_id": 901,
+        "server_name": "机器人1服",
+        "gateway_port": 40901,
+        "is_debug": true,
+        "web_port": 30901,
+        "background_log_open": false,
+        "hb_check_closed": true,
+        "junhai_log_open":false
+    },
+
+    "robot_2":{
+      "agent_id": 1,
+      "agent_code": "robot",
+      "server_id": 902,
+      "server_name": "机器人2服",
+      "gateway_port": 40902,
+      "is_debug": true,
+      "web_port": 30902,
+      "background_log_open": false,
+      "hb_check_closed": true,
+      "junhai_log_open":false
+    },
+
+    "robot_3":{
+      "agent_id": 1,
+      "agent_code": "robot",
+      "server_id": 903,
+      "server_name": "机器人3服",
+      "gateway_port": 40903,
+      "is_debug": true,
+      "web_port": 30903,
+      "background_log_open": false,
+      "hb_check_closed": true,
+      "junhai_log_open":false
+    },
+
+    "robot_4":{
+      "agent_id": 1,
+      "agent_code": "robot",
+      "is_debug": true,
+      "server_id": 904,
+      "server_name": "机器人4服",
+      "gateway_port": 40904,
+      "web_port": 30904,
+      "background_log_open": false,
+      "hb_check_closed": true,
+      "junhai_log_open":false
+    },
+
+    "local_cross_90001":{
+      "agent_id": 1,
+      "agent_code": "cross",
+      "is_debug": true,
+      "log_level": 4,
+      "server_id": 90001,
+      "web_port": 39001,
+      "background_log_open": false,
+      "junhai_log_open":false
+    },
+
+    "local_cross_90002":{
+      "agent_id": 1,
+      "agent_code": "cross",
+      "is_debug": true,
+      "log_level": 4,
+      "server_id": 90002,
+      "web_port": 39002,
+      "background_log_open": false,
+      "junhai_log_open":false
+    },
+
+    "local_center_99999":{
+        "agent_id": 1,
+        "agent_code": "center",
+        "is_debug": true,
+        "log_level": 4,
+        "server_id": 99999,
+        "web_port": 39999,
+        "background_log_open": false,
+        "junhai_log_open":false
+    },
+
+    "wai_local_center_99999":{
+      "agent_id": 1,
+      "agent_code": "center",
+      "is_debug": true,
+      "server_id": 99999,
+      "web_port": 39999,
+      "server_ip": "game-local.dt.phantom-u3d001.com",
+      "server_ip_public": "game-local.dt.phantom-u3d001.com",
+      "background_log_open": false,
+      "junhai_log_open":false
+    },
+
+    "center_99999":{
+        "agent_id": 1,
+        "agent_code": "center",
+        "is_debug": true,
+        "server_id": 99999,
+        "server_ip": "game-s1.dt.phantom-u3d001.com",
+        "server_ip_public": "game-s1.dt.phantom-u3d001.com",
+        "background_log_open": false,
+        "junhai_log_open":false
+    },
+
+    "default": {
+		"game_code": "ranger",
+		"agent_code": "local",
+		"agent_id": 1,
+		"server_id": 1,
+		"server_name": "本地服",
+		"server_ip": "127.0.0.1",
+        "server_ip_public": "127.0.0.1",
+        "server_start_time": "2018-11-22 10:00:00",
+		"gateway_port": 40001,           
+		"web_port": 30001,                  
+		"log_level": 3,
+        "log_dir": "/data/logs/server/",
+		"is_debug": false,                  
+		"background_log_open": true,
+		"center_id": 99999,
+		"center_ip": "127.0.0.1",
+		"db_host": "127.0.0.1",
+		"db_port": 3306,
+		"admin_host": "127.0.0.1",
+		"admin_port": 3306,
+		"web_url": "http://192.168.2.250:82",
+        "es_url": "http://192.168.2.250:9200",
+        "is_overseas": 0,
+		"merge_server_id": 0,
+		"merge_list": "",
+		"hb_check_closed": false,
+		"item_ban_list": "",
+		"junhai_log_open": true,
+		"gateway_sandbox": false,
+		"cookie_extend": "Best!"
+	}
+}

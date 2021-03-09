@@ -1,0 +1,6 @@
+// 仙侣互赠
+message m_marry_fairy_tos {
+repeated  int32  goods_list=1; //选中的道具 道具id列表
+optional  string  text=2; //内容
+}
+

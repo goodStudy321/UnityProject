@@ -1,0 +1,5 @@
+// 首饰（戒指，手镯）进阶
+message m_equip_jewelry_step_tos {
+optional  int32  equip_id=1[default=0]; //要合成装备ID
+}
+

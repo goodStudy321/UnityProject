@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="TreasureBaseCfg" Key="id" ExportType="Dic" Src="C 藏宝图基础表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "事件ID" />
+  <P Name="des" Type="string" ColName="备注" />
+  <P Name="bossInfo" Type="List_V4" IsList="true" Lsp="|" ColName="boss挑战抽取ID" />
+  <P Name="teamInfo" Type="List_V4" IsList="true" Lsp="|" ColName="组队挑战抽取ID" />
+  <P Name="sceneId" Type="number" ColName="场景ID" />
+  <P Name="pos" Type="Vector2" Opt="true" IsList="true" Lsp=";" ColName= "boss挑战坐标" />
+</Proto>

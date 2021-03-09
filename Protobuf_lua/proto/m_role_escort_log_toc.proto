@@ -1,0 +1,6 @@
+import "p_escort_log.proto";
+// 护送日志更新
+message m_role_escort_log_toc {
+optional  p_escort_log  log_list=1; //护送日志
+}
+

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MountChangeCfg" Key="id"  ExportType="Arr" Src="Z 坐骑幻化基础表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName="ID" />
+  <P Name="name" Type="string" ColName="名称" />
+  <P Name="mod" Type="number"  ColName="模型" />
+  <P Name="uMod" Type="number"  ColName="UI模型" />
+  <P Name="parentPot" Type="number" ColName="挂载点" />
+  <P Name="icon" Type="string"  ColName="图标" />
+  <P Name="idle" Type="string"  ColName="人物乘骑待机" />
+  <P Name="run" Type="string"  ColName="人物乘骑移动" />
+</Proto>

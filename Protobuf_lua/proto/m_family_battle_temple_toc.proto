@@ -1,0 +1,6 @@
+import "p_temple_statue.proto";
+// 神殿信息
+message m_family_battle_temple_toc {
+repeated  p_temple_statue  list=1; //神殿信息
+}
+

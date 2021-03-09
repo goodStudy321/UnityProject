@@ -1,0 +1,6 @@
+// 请求类别总数
+message m_market_class_num_tos {
+optional  int32  class=1[default=0]; //一级列表
+optional  int32  type=2[default=0]; //拍卖行类型 1-销售拍卖行 2-求购拍卖行
+}
+

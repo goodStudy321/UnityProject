@@ -1,0 +1,113 @@
+{include file='public/head'}
+<div class="layui-field-box">
+  <blockquote class="layui-elem-quote">
+    <form class="layui-form" onsubmit="return false">
+      
+      <div class="layui-inline">
+        <label class="layui-form-label">频道：</label>
+        <div class="layui-input-inline">
+          <select id="chat_type" style="height: 28px;">
+            <option value="all" selected>全部</option>
+            <option value="1">世界频道</option>
+            <option value="2">家族频道</option>
+            <option value="3">队伍频道</option>
+            <option value="4">私人频道</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="layui-inline">
+        <label class="layui-form-label">创建时间：</label>
+        <div class="layui-input-inline">
+          <input type="text" id="create" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      
+      <div class="layui-inline">
+        <label class="layui-form-label">角色名：</label>
+        <div class="layui-input-inline">
+          <input type="text" id="role_name" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+
+      <div class="layui-inline">
+        <label class="layui-form-label">角色id：</label>
+        <div class="layui-input-inline">
+          <input type="text" id="role_id" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      
+      
+      <div class="layui-inline">
+        &nbsp; &nbsp;
+        <div class="layui-input-inline" id="button">
+          <button class="layui-btn layui-btn-sm">查询</button>
+        </div>
+        <button onclick="javascript:location.reload()" class="layui-btn layui-btn-sm">刷新</button>
+      </div>
+    </form>
+  </blockquote>
+  <table id="table" lay-filter="test"></table>
+</div>
+{include file='public/foot'}
+
+
+<script>
+  layui.use(['laydate','form'], function(){
+    var laydate = layui.laydate;
+    var form = layui.form;
+    //执行一个laydate实例
+    laydate.render({
+      elem: '#create' //指定元素
+      ,max:0
+    ,range:true
+    });
+  });
+  //表格
+  layui.use('table', function(){
+    var table = layui.table;
+    //第一个实例
+    var tableIns = table.render({
+      elem: '#table'
+      ,url: 'chat_data' //数据接口
+      ,page: true //开启分页
+      ,cols: [[ //表头
+      {field: 'num', title: '序号', width:160}
+      ,{field: 'msg', title: '聊天信息'}
+      ]]
+    });
+    $("#button").click(function(){
+      var chat_type = $("#chat_type").val();
+      var role_id   = $("#role_id").val();
+      var role_name = $("#role_name").val();
+      var create    = $("#create").val();
+      tableIns.reload({
+        where: { //设定异步数据接口的额外参数，任意设
+          find:1
+        ,role_id: role_id
+        ,role_name: role_name
+        ,chat_type: chat_type
+        ,create: create
+        }
+        ,page: {
+      curr: 1 //重新从第 1 页开始
+        }
+      });
+    });
+  });
+
+  // 鼠标移动事件
+  $(document).on('mouseenter', '#rolename', function(){
+    var rolename = $(this).data('rolename');
+    var roleid = $(this).data('roleid');
+    tip_index = layer.tips(
+      "<p>玩家："+rolename+"</p><p><a href='#'>搜索他(她)</a></p><p><a href='#'>查看玩家信息</a></p>", 
+      $(this),{
+      tips: [2, '#3595CC'],
+      time: 0,
+    });
+  }).on('mouseleave', '#132', function(){
+    setTimeout(function(){layer.close(tip_index);}, 5000);
+    
+  });
+</script>

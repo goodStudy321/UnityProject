@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!-- 退出确认页面 -->
+
+
+    <LinearLayout
+        android:id="@+id/jh_quit_layout_gift"
+        style="@style/jh_quit_layout_row"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="10dp"
+        android:clickable="true"
+        android:weightSum="4">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/jh_quit_layout_gift_img" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center|start"
+            android:text="@string/jh_quit_layout_gift_text"
+            android:textAlignment="textStart"
+            android:textSize="22sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/jh_quit_layout_activity"
+        style="@style/jh_quit_layout_row"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/jh_quit_layout_gift"
+        android:layout_marginBottom="15dp"
+        android:clickable="true"
+        android:weightSum="4">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/jh_quit_layout_activity_img" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center|start"
+            android:text="@string/jh_quit_layout_activity_text"
+            android:textAlignment="textStart"
+            android:textSize="22sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/jh_quit_layout_activity"
+        android:layout_marginTop="12dp"
+        android:weightSum="2">
+
+        <Button
+            android:layout_marginBottom="10dp"
+            android:textSize="18sp"
+            android:id="@+id/jh_quit_btn_continue"
+            style="@style/jh_quit_btn_continue"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:text="@string/jh_quit_btn_continue" />
+
+        <Button
+            android:layout_marginBottom="10dp"
+            android:textSize="18sp"
+            android:id="@+id/jh_quit_btn_quit"
+            style="@style/jh_quit_btn_quit"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:text="@string/jh_quit_btn_quit" />
+    </LinearLayout>
+</RelativeLayout>

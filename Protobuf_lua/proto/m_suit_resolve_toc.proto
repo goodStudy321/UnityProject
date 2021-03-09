@@ -1,0 +1,6 @@
+// 分解返回
+message m_suit_resolve_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  place_id=2[default=0]; //部位id
+}
+

@@ -1,0 +1,6 @@
+import "p_kv.proto";
+// 神兵ID变化
+message m_god_weapon_skin_toc {
+optional  p_kv  skin=1; //神兵的皮肤-进度
+}
+

@@ -1,0 +1,5 @@
+// 经验副本是否通关
+message m_copy_first_past_toc {
+optional  int32  copy_type=1[default=0]; //副本首次通关类型
+}
+

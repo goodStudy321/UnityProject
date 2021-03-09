@@ -1,0 +1,5 @@
+// 黑市鉴宝，次数推送
+message m_role_act_choose_count_toc {
+optional  int32  count=1[default=0]; //鉴宝次数
+}
+

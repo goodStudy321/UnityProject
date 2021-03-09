@@ -1,0 +1,6 @@
+// 领取天机勾玉返回
+message m_copy_nat_intensify_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  nat_intensify=2[default=0]; //天机勾玉可以领取的数量
+}
+

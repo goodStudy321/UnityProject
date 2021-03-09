@@ -1,0 +1,5 @@
+// 道庭兽粮改变
+message m_family_boss_grain_update_toc {
+optional  int32  boss_grain=1[default=0]; //道庭兽粮改变
+}
+

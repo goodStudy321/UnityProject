@@ -1,0 +1,8 @@
+import "p_dks.proto";
+// 同意or拒绝申请(双方都返回)
+message m_marry_reply_guest_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  op_type=2[default=0]; //0拒绝 1同意
+repeated  p_dks  roles=3; 
+}
+

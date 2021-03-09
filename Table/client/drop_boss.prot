@@ -1,0 +1,25 @@
+message DropBoss [key=id, source="D 掉落Boss表.xls", sheet="Sheet1"]
+{
+	uint32 id				[option = "BossID"];
+	uint32 specialDrop 			[option = "特殊掉落"];
+	uint32 drop1		[option = "掉落组1"];
+	uint32 drop2		[option = "掉落组2"];
+	uint32 drop3		[option = "掉落组3"];
+	uint32 drop4		[option = "掉落组4"];
+	uint32 drop5		[option = "掉落组5"];
+	uint32 drop6		[option = "掉落组6"];
+	uint32 drop7		[option = "掉落组7"];
+	uint32 drop8		[option = "掉落组8"];
+	uint32 drop9		[option = "掉落组9"];
+	uint32 drop10		[option = "掉落组10"];
+	uint32 drop11		[option = "掉落组11"];
+	uint32 drop12		[option = "掉落组12"];
+	uint32 drop13		[option = "掉落组13"];
+	uint32 drop14		[option = "掉落组14"];
+	uint32 drop15		[option = "掉落组15"];
+	uint32 drop16		[option = "掉落组16"];
+	uint32 drop17		[option = "掉落组17"];
+	uint32 drop18		[option = "掉落组18"];
+	uint32 drop19		[option = "掉落组19"];
+	uint32 drop20		[option = "掉落组20"];
+};

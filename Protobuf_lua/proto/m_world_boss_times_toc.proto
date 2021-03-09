@@ -1,0 +1,7 @@
+// 世界boss挑战次数更新
+message m_world_boss_times_toc {
+optional  int32  times=1[default=0]; //挑战次数
+optional  int32  resume_times=2[default=0]; //当天恢复次数
+optional  int32  resume_time=3[default=0]; //恢复时间
+}
+

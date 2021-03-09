@@ -1,0 +1,5 @@
+// 选择游客模式
+message m_role_addict_choose_tos {
+optional  bool  is_choose=1[default=true]; //是否选择游客模式
+}
+

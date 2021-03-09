@@ -1,0 +1,58 @@
+{include file='public/head'}
+<div class="layui-field-box">
+  <button class="layui-btn layui-btn-sm"  onclick="x_admin_show('添加渠道','channelAdd.html',500,400)">添加渠道</button>
+  <button class="layui-btn layui-btn-sm " onclick="javascript:location.href='/admin/channel/index'"></i>返回</button>
+  <button onclick="javascript:location.reload()" class="layui-btn layui-btn-sm">刷新</button>
+  <br>
+  <br>
+  <fieldset class="layui-elem-field">
+    <legend> 渠道列表 </legend>
+    <div class="layui-field-box">
+      <table id="table" lay-filter="test" width="50%"></table>
+    </div>
+  </fieldset>
+</div>
+{include file='public/foot'}
+
+<script>
+  //表格
+  layui.use('table', function(){
+    var table = layui.table;
+    //第一个实例
+    var tableIns = table.render({
+      elem: '#table'
+      ,url: 'channelData' //数据接口
+      // ,width:800
+      ,page: true //开启分页
+      ,cols: [[ //标题栏
+      {align: 'center',field:'id', title: '记录ID'}
+      ,{align: 'center',field:'channel_id', title: '渠道ID'}
+      ,{align: 'center',field:'name', title: '渠道'}
+      ,{align: 'center',field:'add_time', title: '创建时间', width:143}
+      ,{align: 'center',field:'action', title: '操作', width:243}
+      ]]
+    });
+    $("#submit").click(function(){
+      var data = {};
+      $.each($('form').serializeArray(), function(){
+        data[this.name] = this.value;
+      })
+      tableIns.reload({
+        where: data   //设定异步数据接口的额外参数，任意设
+        ,page: {
+          curr: 1 //重新从第 1 页开始
+        }
+      });
+    });
+  });
+  function del(id){
+    if(!confirm('确定删除吗？'))
+      return;
+    $.post('/admin/channel/channelDel', {id:id}, function(data){
+      if(data.status.code == 10200){
+        window.location.reload();
+        return;
+      }
+    }, 'json')
+  }
+</script>

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MailTmpCfg" Key="id" ExportType="Dic" Src="Y 邮件模板配置.xls" Sheet="Sheet1" IgnoreKey="true">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="t" Type="string" ColName="标题" IsList="true" Lsp="|"/>
+  <P Name="c" Type="string" ColName= "内容" IsList="true" Lsp="|"/>
+</Proto>

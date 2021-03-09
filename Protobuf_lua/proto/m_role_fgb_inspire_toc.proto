@@ -1,0 +1,7 @@
+// 鼓舞
+message m_role_fgb_inspire_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  inspire=2[default=0]; //个人鼓舞次数
+optional  int32  all_inspire=3[default=0]; //道庭鼓舞次数
+}
+

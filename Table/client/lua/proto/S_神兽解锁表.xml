@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SBOpenCfg" Key="num" Src="S 神兽解锁表.xlsx" Sheet="Sheet1">
+  <P Name="num" Type="number" ColName= "神兽解锁数量" />
+  <P Name="level" Type="number" ColName="解锁角色等级" />
+  <P Name="vip" Type="number" Opt="true" ColName="解锁VIP等级" />
+  <P Name="item" Type="K_V" Opt="true" ColName="消耗道具" />
+</Proto>

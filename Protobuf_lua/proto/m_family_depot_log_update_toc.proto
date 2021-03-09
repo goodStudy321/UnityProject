@@ -1,0 +1,6 @@
+import "p_family_depot_log.proto";
+// 新增日志
+message m_family_depot_log_update_toc {
+repeated  p_family_depot_log  depot_log=1; //新增日志
+}
+

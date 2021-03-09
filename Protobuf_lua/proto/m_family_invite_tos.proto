@@ -1,0 +1,5 @@
+// 邀请某人加入道庭
+message m_family_invite_tos {
+optional  int64  role_id=1[default=0]; //被邀请者的id
+}
+

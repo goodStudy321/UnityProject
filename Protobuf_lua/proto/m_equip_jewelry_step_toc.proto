@@ -1,0 +1,7 @@
+import "p_equip.proto";
+// 首饰（戒指，手镯）进阶的返回
+message m_equip_jewelry_step_toc {
+optional  int32  err_code=1[default=0]; 
+optional  p_equip  equip=2; 
+}
+

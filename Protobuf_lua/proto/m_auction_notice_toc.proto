@@ -1,0 +1,5 @@
+// 关注商品上架推送
+message m_auction_notice_toc {
+optional  int32  type_id=1[default=0]; //道具类型ID
+}
+

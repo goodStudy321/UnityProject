@@ -1,0 +1,6 @@
+// 出售求购商品
+message m_market_sell_demand_tos {
+optional  int32  id=1[default=0]; //自我背包ID
+optional  int32  demand_id=2[default=0]; //对应求购物品ID
+}
+

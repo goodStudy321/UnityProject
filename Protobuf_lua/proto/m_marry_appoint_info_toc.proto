@@ -1,0 +1,6 @@
+// 获取预约场次返回
+message m_marry_appoint_info_toc {
+optional  int32  err_code=1[default=0]; //错误码
+repeated  int32  hour_list=2; //已经被预约的场次
+}
+

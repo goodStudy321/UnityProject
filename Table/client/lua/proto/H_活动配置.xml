@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ActiveInfo" Key="id" ExportType="Dic" Src="H 活动配置.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "活动ID" />
+  <P Name="name" Type="string" ColName= "活动名称" />
+  <P Name="needLv" Type="number" ColName= "参与最小等级" />
+  <P Name="begDay" Type="number" IsList="true" Lsp="," ColName= "星期" />
+  <P Name="begTime" Type="K_V" IsList="true" Lsp=";" ColName= "开启时间" />
+  <P Name="lastTime" Type="number" ColName= "持续时间" />
+  <P Name="desc" Type="string" ColName= "活动说明" />
+  <P Name="rewards" Type="number" IsList="true" Lsp=";" ColName= "活动奖励" />
+  <P Name="sceneId" Type="number" ColName= "活动场景ID" />
+</Proto>

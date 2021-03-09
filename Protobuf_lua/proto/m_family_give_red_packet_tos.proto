@@ -1,0 +1,8 @@
+// 道庭发红包
+message m_family_give_red_packet_tos {
+optional  int32  type=1[default=0]; //系统红包 - 1 V6自我创建红包 - 0   使用道具- 2
+optional  int32  amount=2[default=0]; //红包金额 ,type为2时 - 道具类型ID
+optional  string  content=3; //内容描述
+optional  int32  piece=4[default=0]; //红包份数
+}
+

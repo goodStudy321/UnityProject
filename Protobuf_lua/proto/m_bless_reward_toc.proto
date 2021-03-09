@@ -1,0 +1,12 @@
+import "p_goods.proto";
+// 祈福
+message m_bless_reward_toc {
+optional  int32  err_code=1[default=0]; //错误码
+repeated  p_goods  reward=2; //装备奖励
+repeated  p_goods  pet_goods=3; //宠物已吞噬装备
+optional  int32  copper=4[default=0]; //金币奖励
+optional  int64  exp=5[default=0]; //获得经验
+optional  int32  today_times=6[default=0]; //今日次数
+optional  int32  all_times=7[default=0]; //总次数
+}
+

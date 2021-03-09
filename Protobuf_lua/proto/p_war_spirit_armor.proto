@@ -1,0 +1,7 @@
+import "p_kv.proto";
+// 战灵灵器
+message p_war_spirit_armor {
+optional  int32  type_id=1[default=0]; //装备类型id
+repeated  p_kv  excellent_list=2; //id:key val:值
+}
+

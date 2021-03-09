@@ -1,0 +1,6 @@
+// 获取太虚通天塔排行返回
+message m_universe_admire_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  admire_times=2[default=0]; //膜拜次数
+}
+

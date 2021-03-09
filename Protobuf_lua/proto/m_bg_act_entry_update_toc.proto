@@ -1,0 +1,9 @@
+import "p_bg_act_entry.proto";
+// 活动信息变更推送
+message m_bg_act_entry_update_toc {
+optional  int32  id=1[default=0]; //活动id
+repeated  int32  del_list=2; //删除
+repeated  p_bg_act_entry  add_list=3; //增加条目
+repeated  p_bg_act_entry  update_list=4; //更新活动条目
+}
+

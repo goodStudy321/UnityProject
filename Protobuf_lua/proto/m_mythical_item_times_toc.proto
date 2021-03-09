@@ -1,0 +1,6 @@
+import "p_kv.proto";
+// 神兽岛凤血水晶次数更新推送
+message m_mythical_item_times_toc {
+optional  p_kv  item_times=1; //神兽岛宝箱开启次数更新 id:使用效果类型 val:已经使用的次数
+}
+

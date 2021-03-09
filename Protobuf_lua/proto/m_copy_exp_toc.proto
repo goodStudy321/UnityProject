@@ -1,0 +1,5 @@
+// 经验副本经验更新
+message m_copy_exp_toc {
+optional  int64  exp=1[default=0]; //获得的经验
+}
+

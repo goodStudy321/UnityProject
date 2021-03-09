@@ -1,0 +1,10 @@
+// 文字聊天
+message m_chat_text_tos {
+optional  int32  channel_type=1[default=0]; //0系统消息 1世界频道 2家族 3队伍 4私聊 5组队 6区域
+optional  int64  channel_id=2[default=0]; //私聊频道用到
+optional  int32  voice_sec=3[default=0]; //0表示语音
+optional  string  msg=4; //信息
+repeated  int32  goods_id_list=5; //道具
+optional  string  voice_url=6; //语音url
+}
+

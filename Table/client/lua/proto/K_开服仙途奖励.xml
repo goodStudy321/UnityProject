@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="JourneysAwardCfg" Key="id" ExportType="Dic" Src="K 开服仙途奖励.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "仙力值" />
+  <P Name="award" Type="K_V" IsList="true" Lsp=";" ColName= "奖励" />
+</Proto>

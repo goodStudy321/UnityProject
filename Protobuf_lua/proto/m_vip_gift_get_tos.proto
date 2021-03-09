@@ -1,0 +1,5 @@
+// 获取VIP等级礼物
+message m_vip_gift_get_tos {
+optional  int32  level=1[default=0]; //要领取的VIP等级
+}
+

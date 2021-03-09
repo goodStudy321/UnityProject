@@ -1,0 +1,7 @@
+import "p_hb_personal_rank.proto";
+// 返回猎杀boss个人排行榜信息
+message m_act_boss_hunt_personal_rank_info_toc {
+repeated  p_hb_personal_rank  ranks=1; //猎杀BOSS之个人排行榜
+optional  p_hb_personal_rank  personal_rank=2; //个人的猎杀BOSS排行信息
+}
+

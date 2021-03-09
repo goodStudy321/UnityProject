@@ -1,0 +1,5 @@
+// 装备铸魂养成升级
+message m_equip_forge_soul_cultivate_tos {
+optional  int32  equip_id=1[default=0]; //要开启的装备ID
+}
+

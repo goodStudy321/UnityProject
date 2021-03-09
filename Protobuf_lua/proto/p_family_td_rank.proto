@@ -1,0 +1,8 @@
+// 守卫道庭的伤害排行
+message p_family_td_rank {
+optional  int32  rank=1[default=0]; //排行
+optional  int64  role_id=2[default=0]; //角色id
+optional  string  role_name=3; //玩家名
+optional  int32  damage=4[default=0]; //伤害值
+}
+

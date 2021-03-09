@@ -1,0 +1,30 @@
+message CopyInfo [key=base_id, source="F 副本.xls", sheet="Sheet1"]
+{	
+	struct item [separator = ',']
+	{
+		int32 id;	// X
+		int32 num;
+	};	
+	
+	struct item_list [separator = ';']
+	{
+		item item;
+	};
+
+
+	uint32 base_id					[option = "副本地图ID"];
+	string name					    [option = "副本名称"];
+	uint8 copy_type					    [option = "副本类型"];
+	string three_name					[option = "流程树"];
+	string des						[option = "副本描述"];
+	string icon 					[option = "副本图标"];
+	uint8 complete_type				[option = "完成副本类型"];
+	uint8 enter_num					[option = "每日副本进入次数"];
+	uint8 end_downcount				[option	= "结束倒计时"];
+	uint8 is_mount					[option = "是否可使用坐骑"];
+	uint8 is_pk						[option = "是否可PK"];
+	uint8 enter_level				[option = "进入等级"];
+	uint8 player_num_limit			[option = "人数限制"];
+	string value					    [option = "预计收益"];
+	item_list show_Items 					[option = "副本奖励展示"];
+};

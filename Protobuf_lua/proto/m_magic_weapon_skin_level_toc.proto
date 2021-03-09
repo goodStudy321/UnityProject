@@ -1,0 +1,7 @@
+import "p_kv.proto";
+// 法宝皮肤升级返回
+message m_magic_weapon_skin_level_toc {
+optional  int32  err_code=1[default=0]; 
+optional  p_kv  skin=2; //法宝的皮肤-进度
+}
+

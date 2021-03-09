@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SpiritEquipCfg" Key="equipId" ExportType="Dic" Src="L 灵饰装备表.xlsx" Sheet="Sheet1">
+  <P Name="equipId" Type="number" ColName= "装备ID" />
+  <P Name="equipName" Type="string" ColName= "装备名称" />
+  <P Name="equipPart" Type="number" ColName= "部位" />
+  <P Name="equipQ" Type="number" ColName= "品质" />
+  <P Name="step" Type="number" ColName= "阶级" />
+  <P Name="st" Type="number" ColName= "星级" />
+  <P Name="sLimit" Type="number" ColName= "强化上限" />
+  <P Name="consume" Type="Value" IsList="true" Lsp=","  ColName="升阶消耗" />
+  <P Name="getExp" Type="number" ColName="分解经验" />
+  <P Name="hp" Type="number" ColName= "生命" />
+  <P Name="atk" Type="number" ColName="攻击" />
+  <P Name="def" Type="number" ColName="防御" />
+  <P Name="arm" Type="number" ColName= "破甲" />
+  <P Name="bluePropN" Type="number" ColName= "蓝色属性数量" />
+  <P Name="bluePropG" Type="number" ColName= "蓝色属性组ID" />
+  <P Name="purplePropN" Type="number" ColName= "紫色属性数量" />
+  <P Name="purplePropG" Type="number" ColName= "紫色属性组ID" />
+  <P Name="purplePropAdvN" Type="number" ColName= "高级紫色属性数量" />
+  <P Name="purplePropAdvG" Type="number" ColName= "高级紫色属性组ID" />
+  <P Name="suitGId" Type="number" Opt="true" IsList="true" Lsp="," ColName= "套装组ID" />
+  <P Name="maxSLimit" Type="number" ColName= "强化最大上限" />
+</Proto>

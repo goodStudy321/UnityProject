@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="GoodbByeSingleCfg" Key="id" ExportType="Arr" Src="G 告别单身配置表.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "序号" />
+  <P Name="giftList" Type="NNS" IsList="true" Lsp=";" ColName="奖励" />
+  <P Name="type" Type="number" ColName= "类型" />
+  <P Name="configNum" Type="number" ColName= "套序号" />
+</Proto>

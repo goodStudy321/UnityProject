@@ -1,0 +1,96 @@
+message CameraInfo [key=id, source="X 相机配置表.xls", sheet="Sheet1"]
+{
+
+	struct vector3 [separator = '|']
+	{
+		int32 x;	// X
+		int32 y;	// Y
+		int32 z;	// Z
+	};
+	struct color [separator = ',']
+	{
+		int32 x;	// X
+		int32 y;	// Y
+		int32 z;	// Z
+	};
+
+	struct fastMobileBloom [separator = '|']
+	{
+		uint8 enabled;
+		double threshold;
+		double intensity;
+		double blur_size;
+		uint8 blur_iterations;
+	}
+
+	struct amplifyColorEffect [separator = '|']
+	{
+		uint8 enabled;
+		double blend_amount;
+		string lut_texture;
+		string lut_blend_texture;
+	}
+
+	struct dynamicFog [separator = '|']
+	{
+		uint8 enabled;
+		uint8 effect_type;
+		double alpha;
+		double noise_strength;
+		double distance;
+		double distance_fall_off;
+		double max_distance;
+		double max_distance_fall_off;
+		double height;
+		double height_fall_off;
+		double baseline_height;
+		double clip_under_baseline;
+		uint8 turbulence;
+		double speed;
+		color color;
+		color color_II;
+	}
+
+	struct amplifyBloomEffect[separator = ',']
+	{
+		uint8 technique;
+		uint8 sourceDownscale;
+		uint8 precision;
+		double range;
+		double intensity; 
+		double threshold;
+        uint8 debug;
+        uint8 showWarnings; 
+        uint8 mipCount;
+        uint8 upscaleBlurRadius;
+        uint8 featuresSourceID;
+	}
+	
+	struct v3s [separator = ';']
+	{
+		vector3 v3;	// X
+	};
+	
+	uint16 id						    [option = "ID"];
+	uint8 focus 						[option = "锁定"];
+	uint16 fov						[option = "视角"]; 
+	v3s start                          [option = "初始位置"];
+	v3s euler                          [option = "角度"];
+	int16 heightMax						[option = "最大高度"];
+	int16 heightMin						[option = "最小高度"];
+	uint8 hSlerp						[option = "水平移动插值"]; //0-255有效
+	uint8 ehSlerp						[option = "水平移动离开插值"]; //0-255有效
+	uint8 xzFactor						[option = "水平移动离开滑行距离系数"]; //0-255有效
+	uint8 vSlerp						[option = "高度移动插值"]; //0-255有效
+	uint8 evSlerp						[option = "高度移动离开插值"]; //0-255有效
+	uint8 vBound						[option = "高度操作回弹距离"]; //0-255有效
+	fastMobileBloom fast_mobile_bloom_info		[option = "镜头泛光"];
+	amplifyColorEffect amplify_color_effect_info		[option = "颜色查找表"];
+	dynamicFog dynamic_fog_info						[option = "手机雾"];
+	amplifyBloomEffect amplify_bloom_effect_info			[option = "放大的光晕效果"];
+	string sky_box_material									[option = "天空盒"];
+	string scene_mod_name							[option = "场景名"];
+	uint16 near						    [option = "近裁切"];
+	uint16 far						    [option = "远裁切"];
+	uint8 type 							[option = "摄像机特殊类型"];
+};

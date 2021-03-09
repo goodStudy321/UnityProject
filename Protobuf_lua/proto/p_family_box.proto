@@ -1,0 +1,8 @@
+// 道庭宝箱
+message p_family_box {
+optional  int32  id=1[default=0]; //保箱种类ID
+optional  int32  end_time=2[default=0]; //结束时间
+optional  int32  type=3[default=0]; //来源
+optional  int32  param=4[default=0]; //参数
+}
+

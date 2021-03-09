@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="OnlineAwardCfg" Key="id" ExportType="Dic" Src="Z 在线奖励.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "在线时长" />
+  <P Name="award" Type="K_V" IsList="true" Lsp=";" ColName= "奖励" />
+</Proto>

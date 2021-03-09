@@ -1,0 +1,7 @@
+import "p_family_mission.proto";
+// 返回道庭任务信息
+message m_role_family_asm_info_toc {
+optional  bool  renovate=1[default=true]; //极品是否可以刷新
+repeated  p_family_mission  family_mission=2; //任务列表
+}
+

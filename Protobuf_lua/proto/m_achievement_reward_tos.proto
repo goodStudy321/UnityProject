@@ -1,0 +1,5 @@
+// 成就领取
+message m_achievement_reward_tos {
+optional  int32  achievement_id=1[default=0]; //领取成就ID
+}
+

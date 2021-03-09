@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SkyBookTypeTemp" Key="type" ExportType="Dic" Src="T 天书类型.xls" Sheet="Sheet1">
+  <P Name="type" Type="number" ColName= "类型" />
+  <P Name="skill" Type="number" Opt="true" ColName= "完成奖励技能" />
+  <P Name="pic" Type="string" Opt="true" ColName= "图片" />
+  <P Name="name" Type="string" Opt="true" ColName= "名字" />
+  <P Name="open" Type="number" Opt="true" ColName= "开启条件" />
+  <P Name="value" Type="number" Opt="true" ColName= "条件参数" />
+</Proto>

@@ -1,0 +1,5 @@
+// 领取奖励
+message m_marry_tree_reward_tos {
+optional  int32  type=1[default=0]; //1 领取种树立得 2 每日奖励
+}
+

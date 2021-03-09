@@ -1,0 +1,5 @@
+// 玩家充值信息
+message m_role_pay_succ_toc {
+optional  int32  product_id=1[default=0]; //商品ID
+}
+

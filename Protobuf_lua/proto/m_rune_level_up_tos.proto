@@ -1,0 +1,5 @@
+// 符文升级（只能对镶嵌中的符文进行升级）
+message m_rune_level_up_tos {
+optional  int32  rune_id=1[default=0]; //要升级的符文ID
+}
+

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DemonPartakeCfg" Key="Id" Src="M 魔域Boss参与奖励.xlsx" Sheet="Sheet1">
+  <P Name="Id" Type="number" ColName= "奖励档次" />
+  <P Name="HpPer" Type="number" ColName= "boss血量" />
+  <P Name="Rewards" Type="K_V" ColName= "奖励" />
+</Proto>

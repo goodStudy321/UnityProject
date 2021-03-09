@@ -1,0 +1,85 @@
+{include file='public/head'}
+<body>
+  <style type="text/css" media="screen">
+    header {
+      color: black;
+    }
+  </style>
+  <div class="x-body" >
+    <form class="layui-form" id='mainForm' method="post" action="announcementsend">
+      <div class="layui-form-item">
+        <label class="layui-form-label">公告内容</label>
+        <div class="layui-input-block">
+          <textarea maxlength="50000" name="text" style="height: 210px;" lay-verify="required" placeholder="请输入内容" class="layui-textarea">{$data.text}</textarea>
+        </div>
+      </div>
+      <input name="edit" value="{$data.id}" type="hidden">
+      <div class="layui-form-item">
+        <label class="layui-form-label">渠道名</label>
+        <div class="layui-input-block">
+          <select id="online" name="channel" style="height: 28px;">
+            <option value="{$data.channel_id}-{$data.channel_name}">{$data.channel_name}</option>
+          </select>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <button style="margin-left: 20%" class="layui-btn layui-btn-sm" lay-submit="" lay-filter="toSubmit">提交</button>
+          <button id="reset" type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+<script type="text/javascript">
+  var form = layui.form;
+  var layer = layui.layer;
+  //自定义验证规则
+  form.verify({
+    username: function(value){
+      if(value.length < 5){
+        return '用户名至少得5个字符啊';
+      }
+    }
+  });
+  //监听提交
+  form.on('submit(demo1)', function(data){
+    layer.alert(JSON.stringify(data.field), {
+      title: '最终的提交信息'
+    })
+    return false;
+  });
+  $(document).ready(function(){
+    var options = {
+      type:'post',           //post提交
+      //url:'http://ask.tongzhuo100.com/server/****.php?='+Math.random(),   //url
+      dataType:"json",        //json格式
+      data:{},    //如果需要提交附加参数，视情况添加
+      clearForm: false,        //成功提交后，清除所有表单元素的值
+      resetForm: false,        //成功提交后，重置所有表单元素的值
+      cache:false,
+      async:false,          //同步返回
+      success:function(data){
+        console.log(data);
+        if(data.code==0){
+          layer.msg(data.msg);
+        }else{
+          layer.msg(data.msg,{icon:1,time:500},function(){
+            $("#reset").click();
+            x_admin_close();
+            parent.location.reload();
+          });
+        }
+        //服务器端返回处理逻辑
+      },
+      error:function(XmlHttpRequest,textStatus,errorThrown){
+        layer.msg('操作失败:服务器处理失败');
+      }
+    };
+    // bind form using 'ajaxForm'
+    $('#mainForm').ajaxForm(options).submit(function(data){
+      //无逻辑
+    });
+  });
+</script>
+{include file='public/foot'}

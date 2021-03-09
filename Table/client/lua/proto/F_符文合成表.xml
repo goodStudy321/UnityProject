@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="RuneComCfg" Key="id" ExportType="Arr" Src="F 符文合成表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName="符文ID" />
+  <P Name="con" Type="number" ColName="消耗货币数量" />
+  <P Name="cid1" Type="number" ColName="合成消耗1" />
+  <P Name="cid2" Type="number" ColName="合成消耗2" />
+</Proto>

@@ -1,0 +1,7 @@
+// 护送奖励
+message m_role_escort_reward_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  type=2[default=0]; //护送类型重置
+optional  int32  reward=3[default=0]; //是否可领  1-是  0-否
+}
+

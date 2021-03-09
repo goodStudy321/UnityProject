@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ItemCreate" Key="id" ExportType="Dic" Src="D 道具生成表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="w1" Type="string" ColName="职业1" />
+  <P Name="w2" Type="string" ColName="职业2" />
+</Proto>

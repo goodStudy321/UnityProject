@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="CopyTemp" Key="id" ExportType="Dic" Src="F 副本.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "副本地图ID" />
+  <P Name="name" Type="string" ColName= "副本名称" />
+  <P Name="three" Type="string" Opt="true"  ColName= "流程树" />
+  <P Name="type" Type="number" ColName= "副本类型" />
+  <P Name="diff" Type="number" ColName= "副本难度" />
+  <P Name="pre" Type="number" Opt="true" ColName= "前置副本" />
+  <P Name="des" Type="string" Opt="true" ColName="副本描述" />
+  <P Name="icon" Type="string" Opt="true" ColName="副本图标" />
+  <P Name="pic" Type="string" Opt="true" ColName="背景图" />
+  <P Name="eType" Type="number" ColName="完成副本类型" />
+  <P Name="sType" Type="number" ColName="星级类型" />
+  <P Name="sParam" Type="number" Opt="true" IsList="true" Lsp="," ColName= "星级参数" />
+  <P Name="countDown" Type="number" ColName="副本存在时间" />
+  <P Name="num" Type="number" ColName="每日副本进入次数" />
+  <P Name="cd" Type="number" Opt="true" ColName="副本CD" />
+  <P Name="costSV" Type="number" IsList="true" Lsp="," Opt="true" ColName="副本CD清除消耗" />
+  <P Name="inputCost" Type="Value2" Opt="true" ColName="副本消耗道具" />
+  <P Name="sTime" Type="number" ColName= "副本开始倒计时" />
+  <P Name="time" Type="number" ColName= "结束倒计时" />
+  <P Name="wait" Type="number" ColName= "跳结算间隔时间"/>
+  <!--<P Name="mount" Type="number" ColName= "是否可使用坐骑" />-->
+  <!--<P Name="pk" Type="number" ColName= "是否可PK" />-->
+  <P Name="buy" Type="number" ColName= "可购买次数" />
+  <P Name="bCost" Type="number" Opt="true" IsList="true" Lsp="," ColName= "购买单价" />
+  <P Name="lv" Type="number" ColName= "进入等级" />
+  <P Name="isTeam" Type="number" ColName= "是否可组队" />
+  <P Name="playNum" Type="number" ColName= "人数限制" />
+  <P Name="sor0" Type="K_V" Opt="true" IsList="true" Lsp=";" ColName= "基础奖励" />
+  <P Name="sor1" Type="K_V" Opt="true" IsList="true" Lsp=";" ColName= "1星奖励" />
+  <P Name="sor2" Type="K_V" Opt="true" IsList="true" Lsp=";" ColName= "2星奖励" />
+  <P Name="sor3" Type="K_V" Opt="true" IsList="true" Lsp=";" ColName= "3星奖励" />
+  <P Name="sItems" Type="K_V" Opt="true" IsList="true" Lsp=";" ColName= "副本奖励展示" />
+  <P Name="income" Type="string" Opt="true" ColName= "预计收益" />
+  <P Name="sCost" Type="K_V" Opt="true" IsList="true" Lsp=";" ColName= "扫荡消耗道具" />
+  <P Name="sweepCond" Type="K_V" Opt="true" IsList="true" Lsp=";" ColName= "扫荡条件" />
+  <P Name="sweep" Type="number" ColName= "是否可扫荡" />
+  <P Name="needAtt" Type="number" Opt="true" ColName= "推荐战力" />
+  <P Name="eParam" Type="number" Opt="true" IsList="true" Lsp = "," ColName= "完成副本参数" />
+  <P Name="preTime" Type="number" Opt="true" ColName= "自动进入副本倒计时" />
+  <P Name="findRED" Type="Item" IsList="true" Lsp=";" ColName= "资源找回奖励" />
+  <P Name="endTree" Type="string"  Opt="true" ColName= "结束流程树" />
+  <P Name="startTree" Type="string"  Opt="true" ColName= "开始流程树" />
+    <P Name="curLayer" Type="number"  Opt="true" ColName= "对应层数" />
+  <P Name="needstate" Type="number"  Opt="true" ColName= "境界条件" />
+  <P Name="needFive" Type="K_V" Opt="true" IsList="true" Lsp=";" ColName= "属性条件" />
+    <P Name="lockRwd" Type="K_V" Opt="true" IsList="true" Lsp=";" ColName= "解锁奖励" />
+</Proto>

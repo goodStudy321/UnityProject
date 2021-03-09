@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SMSStrengthTemp" Key="id" ExportType="Dic" Src="T 天机印强化表.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "强化ID" />
+  <P Name="index" Type="number" ColName= "部位" />
+  <P Name="lv" Type="number" ColName= "强化等级" />
+  <P Name="next_id" Type="number" Opt="true" ColName= "下一级ID" />
+  <P Name="cost_id" Type="number" ColName= "消耗道具" />
+  <P Name="cost_num" Type="number" Opt="true" ColName= "数量" />
+  <P Name="hp" Type="number" Opt="true" ColName= "生命" />
+  <P Name="atk" Type="number" Opt="true" ColName= "攻击" />
+  <P Name="def" Type="number" Opt="true" ColName= "防御" />
+  <P Name="arm" Type="number" Opt="true" ColName= "破甲" />
+  <P Name="metal" Type="number" Opt="true" ColName= "金" />
+  <P Name="wood" Type="number" Opt="true" ColName= "木" />
+  <P Name="water" Type="number" Opt="true" ColName= "水" />
+  <P Name="fire" Type="number" Opt="true" ColName= "火" />
+  <P Name="soil" Type="number" Opt="true" ColName= "土" />
+</Proto>

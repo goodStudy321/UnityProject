@@ -1,0 +1,5 @@
+// 仙魂新增孔位
+message m_role_immortal_soul_pos_toc {
+repeated  int32  pos=1; //孔位
+}
+

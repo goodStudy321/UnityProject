@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="tInnateBase" Key="baseId" ExportType="Dic" Src="T 天赋基础.xls" Sheet="Sheet1">
+  <P Name="baseId" Type="string" ColName= "基础技能" />
+  <P Name="grp" Type="number" ColName= "技能组归属" />
+  <P Name="max" Type="number" ColName= "最大等级" />
+  <P Name="line" Type="number" Opt="true" IsList="true" Lsp = "," ColName= "关联" />
+</Proto>

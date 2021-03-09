@@ -1,0 +1,6 @@
+// 下架商品
+message m_market_down_shelf_tos {
+optional  int32  id=1[default=0]; //商品ID
+optional  int32  market_type=2[default=0]; //市场类型1-销售市场 2-求购市场
+}
+

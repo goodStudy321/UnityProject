@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DTProgressCfg" Key="id"  ExportType="Arr" Src="K 开服目标进度奖励.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName="id" />
+  <P Name="reward" Type="K_V"  ColName="奖励" />
+  <P Name="mMod" Type="string" Opt="true" ColName="男模型ID" />
+  <P Name="wMod" Type="string" Opt="true" ColName="女模型ID" />
+  <P Name="icon" Type="string" Opt="true" ColName="图片" />
+  <P Name="pos" Type="Vector3" Opt="true" ColName="模型坐标" />
+  <P Name="euler" Type="Vector3" Opt="true" ColName="模型旋转" />
+</Proto>

@@ -1,0 +1,9 @@
+// 充值请求订单返回
+message m_role_pay_order_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int64  order_id=2[default=0]; //订单号
+optional  int32  product_id=3[default=0]; //商品ID
+optional  string  notify_url=4; //回调地址
+optional  string  pf_args=5; //额外参数，部分平台需要这个东西
+}
+

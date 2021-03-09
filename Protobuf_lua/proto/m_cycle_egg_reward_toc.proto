@@ -1,0 +1,6 @@
+// 周期砸蛋活动  领取累计奖励 
+message m_cycle_egg_reward_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  id=2[default=0]; //领取奖励对应配置ID
+}
+

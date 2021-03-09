@@ -1,0 +1,6 @@
+import "p_kvt.proto";
+// 战场积分，占领数量
+message m_family_battle_score_toc {
+repeated  p_kvt  list=1; //id - 阵 , val - 积分 type -  数量 
+}
+

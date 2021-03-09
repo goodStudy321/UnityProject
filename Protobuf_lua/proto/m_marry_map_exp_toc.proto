@@ -1,0 +1,5 @@
+// 获得经验返回
+message m_marry_map_exp_toc {
+optional  int64  exp=1[default=0]; //获得经验
+}
+

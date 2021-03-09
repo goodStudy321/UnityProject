@@ -1,0 +1,6 @@
+import "p_family_as_rank.proto";
+// 发送道庭答题排行榜
+message m_family_as_rank_toc {
+repeated  p_family_as_rank  rank_list=1; //前三信息
+}
+

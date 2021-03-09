@@ -1,0 +1,6 @@
+// 图标选择返回
+message m_marry_copy_select_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  item=2[default=0]; //选择的图标
+}
+

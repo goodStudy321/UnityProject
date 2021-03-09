@@ -1,0 +1,7 @@
+import "p_kv.proto";
+// 分类信息返回
+message m_auction_class_toc {
+optional  int32  err_code=1[default=0]; //错误码
+repeated  p_kv  class_list=2; //id:分类 val:数量
+}
+

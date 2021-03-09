@@ -1,0 +1,8 @@
+import "p_goods.proto";
+// 公告
+message m_common_notice_toc {
+optional  int32  id=1[default=0]; //公告ID
+repeated  string  text_string=2; //信件内容中的字符串
+repeated  p_goods  goods_list=3; //部分物品需要用p_goods来显示
+}
+

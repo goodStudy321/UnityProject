@@ -1,0 +1,55 @@
+##-----------------------------------------------------------------
+## @author QingliangCn
+## @create_time 2012.4.13
+## 
+## 更新server端到外服，注意（不包括www目录）
+##-----------------------------------------------------------------
+#!/bin/bash
+
+# bash update_server local_1 113.107.188.197 4399_0
+
+if [ $# -lt 2 ]; then
+	echo "使用语法: bash update_server 本地代理名_serverid A机IP 代理名_serverid [B机IP 代理名_serverid [C机IP 代理名_serverid]]"
+	echo "示例 更新mc服 update_server 113.107.188.199 mc_0 "
+	exit
+fi
+
+SHELL_DIR=`cd $(dirname $0)/../..; pwd`
+GAME_CODE=`escript $SHELL_DIR/script/tool/escript_tool.es $SHELL_DIR get_common_config game_code`
+
+
+
+mkdir -p /data/${GAME_CODE}/release
+
+Date=`date "+%Y-%m-%d-%H%M%S"`
+##-----------------------------------------------------------------
+## 打包server文件，除setting之外的文件都打包
+##-----------------------------------------------------------------
+LOCAL_AGENT_SERVER=$1
+shift
+cd /data/${GAME_CODE}_${LOCAL_AGENT_SERVER}/server
+SERVER_TAR="${GAME_CODE}.server."${Date}".tar.gz"
+tar --exclude-vcs -zcf $SERVER_TAR ebin config/start_config.json script mgectl user_default.beam server_version.txt
+mv $SERVER_TAR /data/${GAME_CODE}/release
+##-----------------------------------------------------------------
+## 拷贝文件到外服
+##-----------------------------------------------------------------
+while [ $# -ne 0 ] ; do
+	IP=$1
+	AGENT_SID=$2
+	shift
+	shift
+    ## 建立server文件夹
+	ssh $IP "mkdir -p /data/${GAME_CODE}_${AGENT_SID}/server/"
+    ## 拷贝文件过去
+	scp -P 22 /data/${GAME_CODE}/release/$SERVER_TAR $IP:/data/${GAME_CODE}_$AGENT_SID/
+    ## 备份配置，加压配置
+    CMD="cd /data/${GAME_CODE}_${AGENT_SID}/server;
+    rm -rf ebin;
+    rm -rf config;
+    tar xfz ../${SERVER_TAR};
+    cd /data/${GAME_CODE}_${AGENT_SID};
+    rm -f ${SERVER_TAR}"
+    ssh $IP $CMD
+    rm -f /data/${GAME_CODE}/release/$SERVER_TAR
+done

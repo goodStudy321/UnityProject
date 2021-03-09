@@ -1,0 +1,5 @@
+// 护送
+message m_role_escort_tos {
+optional  int32  type=1[default=0]; //1-提升品质 2-最高品质 3-开始护送
+}
+

@@ -1,0 +1,5 @@
+// 打开信件
+message m_letter_open_tos {
+optional  int32  letter_id=1[default=0]; //要打开的信件id
+}
+

@@ -1,0 +1,5 @@
+// 月下情缘兑换
+message m_cycle_act_couple_pray_exchange_tos {
+optional  int32  pray_score=1[default=0]; //兑换的积分类型
+}
+

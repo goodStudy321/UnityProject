@@ -1,0 +1,14 @@
+import "p_kv.proto";
+// 特惠礼包p机构
+message p_discount_pay {
+optional  int32  id=1[default=0]; //ID
+optional  int32  buy_num=2[default=0]; //已经购买的次数
+optional  int32  end_time=3[default=0]; //限购时间
+optional  int32  product_id=4[default=0]; //商品ID
+repeated  p_kv  goods_list=5; //奖励配置
+optional  int32  old_price=6[default=0]; //原价
+optional  int32  now_price=7[default=0]; //现价
+optional  int32  limit_num=8[default=0]; //限购次数
+optional  string  package_name=9; //礼包名称
+}
+

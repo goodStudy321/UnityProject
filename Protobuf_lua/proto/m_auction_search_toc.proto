@@ -1,0 +1,6 @@
+import "p_auction_goods.proto";
+// 具体商品信息返回
+message m_auction_search_toc {
+repeated  p_auction_goods  auction_goods=1; //商品列表
+}
+

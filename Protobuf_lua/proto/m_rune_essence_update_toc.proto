@@ -1,0 +1,5 @@
+// 符文精粹更新
+message m_rune_essence_update_toc {
+optional  int32  essence=1[default=0]; //符文精粹
+}
+

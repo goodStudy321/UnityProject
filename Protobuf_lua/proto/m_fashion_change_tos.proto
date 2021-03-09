@@ -1,0 +1,6 @@
+// 更改时装
+message m_fashion_change_tos {
+optional  int32  type=1[default=0]; //操作类型 1穿 2脱
+optional  int32  cur_id=2[default=0]; //时装id
+}
+

@@ -1,0 +1,5 @@
+// 激活码返回
+message m_activation_code_toc {
+optional  int32  err_code=1[default=0]; 
+}
+

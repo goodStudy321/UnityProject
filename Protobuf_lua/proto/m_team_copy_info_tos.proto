@@ -1,0 +1,5 @@
+// 获取某个分类的队伍信息
+message m_team_copy_info_tos {
+optional  int32  copy_id=1[default=0]; //目标分类
+}
+

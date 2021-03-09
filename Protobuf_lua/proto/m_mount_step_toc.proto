@@ -1,0 +1,7 @@
+// 坐骑进阶系统消息推送
+message m_mount_step_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  mount_id=2[default=0]; //最新mountID
+optional  int32  exp=3[default=0]; //最新exp
+}
+

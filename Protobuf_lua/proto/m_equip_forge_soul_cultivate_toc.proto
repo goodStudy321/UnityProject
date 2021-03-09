@@ -1,0 +1,7 @@
+// 装备铸魂养成升级返回
+message m_equip_forge_soul_cultivate_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  equip_id=2[default=0]; //要开启的装备ID
+optional  int32  forge_soul_cultivate=3[default=0]; //铸魂养成 等级
+}
+

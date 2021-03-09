@@ -1,0 +1,13 @@
+// 获取仙侣信息返回
+message m_marry_couple_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int64  role_id=2[default=0]; //role_id
+optional  string  role_name=3; //名字
+optional  int32  level=4[default=0]; //等级
+optional  int32  vip_level=5[default=0]; //VIP等级
+optional  int32  sex=6[default=0]; //性别
+optional  int32  category=7[default=0]; //职业
+repeated  int32  skin_list=8; //外观列表
+repeated  int32  ornament_list=9; //装饰列表
+}
+

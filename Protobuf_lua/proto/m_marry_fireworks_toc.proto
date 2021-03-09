@@ -1,0 +1,5 @@
+// 祝福信息更新
+message m_marry_fireworks_toc {
+optional  int32  type_id=1[default=0]; //烟火ID
+}
+

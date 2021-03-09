@@ -1,0 +1,7 @@
+// 下架商品
+message m_market_down_shelf_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  grid_type=2[default=0]; //市场类型1-销售市场 2-求购市场
+optional  int32  grid_id=3[default=0]; //上架销售市场物品
+}
+

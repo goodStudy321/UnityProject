@@ -1,0 +1,7 @@
+// 分类查询
+message m_auction_detail_tos {
+optional  int32  class=1[default=0]; //全部的话，发大类ID， 其余的发子类ID
+optional  int64  quality=2[default=0]; //品质
+optional  int32  step=3[default=0]; //品阶
+}
+

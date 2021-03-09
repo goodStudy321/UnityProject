@@ -1,0 +1,7 @@
+import "p_kv.proto";
+// 五行秘境信息
+message p_five_element_cd {
+optional  int32  copy_id=1[default=0]; //副本类型
+repeated  p_kv  cd_list=2; //id:BossTypeID val:可以进入的时间
+}
+

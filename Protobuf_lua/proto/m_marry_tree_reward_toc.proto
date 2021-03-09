@@ -1,0 +1,8 @@
+// 领取奖励
+message m_marry_tree_reward_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  type=2[default=0]; //1 领取种树立得 2 每日奖励
+optional  bool  tree_active_reward=3[default=true]; //激活奖励是否可以领取 true:可以领取 false:不能领取
+optional  int32  tree_daily_time=4[default=0]; //上次领取姻缘树日常的时间
+}
+

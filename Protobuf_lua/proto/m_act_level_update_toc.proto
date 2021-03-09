@@ -1,0 +1,6 @@
+import "p_kv.proto";
+// 限制领取数量更新
+message m_act_level_update_toc {
+optional  p_kv  act_level=1; //id = 等级, val = 已经领取的数量
+}
+

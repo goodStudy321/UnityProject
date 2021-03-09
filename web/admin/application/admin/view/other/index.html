@@ -1,0 +1,61 @@
+{include file='public/head'}
+<div class="layui-field-box">
+
+  <div class="layui-collapse" lay-accordion lay-filter="open">
+    {volist name="list" id="vo"}
+    <div class="layui-colla-item">
+      <h2 class="layui-colla-title" data-url="{$vo.url}">{$vo.name}</h2>
+      <div class="layui-colla-content">loading...</div>
+    </div>
+    {/volist}
+
+  </div>
+
+</div>
+{include file='public/foot'}
+
+<script>
+  element.init();
+  var loading = null;
+
+  //监听折叠
+  element.on('collapse(open)', function(data){
+    var url = $(this).data('url');
+    var content = $(this).next();
+
+    if(data.show != true)
+      return;
+
+    if(loading)
+      loading.abort();
+
+    loading = $.get(url, {}, function(html){
+      if(html != '')
+        content.html(html);
+      else
+        content.html('<font color=red>出错了，请重试</font>');
+    }, 'text')
+  });
+
+  //$(function(){
+  //  var form = layui.form;
+  //  var layer = layui.layer;
+
+  //  //监听指定开关
+  //  form.on('switch(register)', function(data){
+  //    var is_open = this.checked ? 1 : 0;
+  //    layer.confirm('你确定这样做吗？', function(index){
+  //      doing('/admin/switchs/register', {type:2, is_open:is_open}, this);
+  //      layer.close(index);
+  //      return;
+  //    });
+  //    this.checked = is_open == 1 ? false : true;
+  //  });
+
+  //  var doing = function(url, data, obj){
+  //    $.post(url, data,  function(msg){
+  //      window.location.reload();
+  //    }, 'json')
+  //  }
+  //})
+</script>

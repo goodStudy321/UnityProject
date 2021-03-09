@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="VIPLv" ExportType="Arr" Key="lv" Src="V VIP等级表.xls" Sheet="Sheet1">
+  <P Name="lv" Type="number" ColName= "vip等级" />
+  <P Name="exp" Type="number" ColName= "所需经验值" />
+  <P Name="arg1" Type="number" Opt="true" ColName="称号" />
+  <P Name="arg2" Type="string" Opt="true" ColName= "装备可镶嵌宝石" />
+  <P Name="sealVip" Type="number" Opt="true" ColName= "装备可镶嵌纹印" />
+  <P Name="arg4" Type="string" Opt="true" ColName= "签到奖励倍数" />
+  <P Name="arg5" Type="NeedItem" Opt="true" IsList="true" Lsp=";" ColName="属性加成" />
+  <P Name="arg6" Type="number" Opt="true" ColName= "青竹院" />
+  <P Name="arg7" Type="number" Opt="true" ColName= "百湾角" />
+  <P Name="arg8" Type="number" Opt="true" ColName= "失落谷" />
+  <P Name="arg9" Type="number" Opt="true" ColName= "幽魂林" />
+  <P Name="arg10" Type="number" Opt="true" ColName= "幽冥地界进入次数" />
+  <P Name="arg12" Type="number" Opt="true" ColName= "镇魂塔" />
+  <P Name="arg15" Type="number" Opt="true" ColName= "个人boss进入次数" />
+  <P Name="arg17" Type="string" Opt="true" ColName= "杀怪经验加成" />
+  <P Name="arg18" Type="string" Opt="true" ColName= "伙伴经验吞噬加成" />
+  <P Name="arg19" Type="string" Opt="true" ColName= "小飞鞋" />
+  <P Name="arg20" Type="string" Opt="true" ColName= "专属商品" />
+  <P Name="arg22" Type="string" Opt="true" ColName= "拍卖行税率" />
+  <P Name="arg25" Type="string" Opt="true" ColName= "送VIP投资" />
+  <P Name="arg26" Type="string" Opt="true" ColName= "祈福增加次数" />
+  <P Name="arg27" Type="string" Opt="true" ColName= "资源找回" />
+  <P Name="giftList" Type="NeedItem" Opt="true" IsList="true" Lsp=";" ColName= "VIP礼包" />
+  <P Name="weekList" Type="NeedItem" Opt="true" IsList="true" Lsp=";" ColName= "VIP日礼包" />
+  <P Name="fPrice" Type="string" Opt="true" ColName="原价" />
+  <P Name="Price" Type="string" Opt="true" ColName="现价" />
+  <P Name="vipShow" Type="number" Opt="true" IsList="true" Lsp="," ColName="可见VIP等级" />
+  <P Name="BossDes" Type="string" Opt="true" ColName="个人Boss描述" />
+  <P Name="BossFree" Type="number" ColName= "个人boss首次免费" />
+  <P Name="BossHalf" Type="number" ColName= "个人boss消耗减半" />
+  <P Name="RemBoss" Type="number" ColName= "远古神迹" />
+  <P Name="tieBuy" Type="number" ColName= "世界BOSS购买次数" />
+  <P Name="caveInto" Type="number" ColName= "洞天福地挑战次数" />
+  <P Name="maxBoxNum" Type="number" ColName= "道庭仓库宝箱数量" />
+  <P Name="speedCount" Type="number" ColName= "道庭任务加速次数" />
+  <P Name="skipDroiyan" Type="number" ColName= "决斗场跳过功能" />
+  <P Name="bossMerge" Type="number" ColName= "世界BOSS合并次数" />
+  <P Name="ExpCopyMerge" Type="number" ColName= "经验副本合并次数" />
+  <P Name="vipTag" Type="string" Opt="true" IsList="true" Lsp="," ColName= "VIP礼包标签" />
+  <P Name="moneyTree" Type="number" ColName= "摇钱树次数" />
+    <P Name="FiveBuyTimes" Type="number" ColName= "五行幻境幻力购买" />
+</Proto>

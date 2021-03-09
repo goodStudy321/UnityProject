@@ -1,0 +1,7 @@
+// 角色守护过期
+message m_role_guard_overtime_toc {
+optional  int32  type=1[default=0]; //1-小精灵 2-大精灵
+optional  bool  remind=2[default=true]; //是否提醒
+optional  bool  overtime=3[default=true]; //是否脱下
+}
+

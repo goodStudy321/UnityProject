@@ -1,0 +1,13 @@
+// 1v1排行榜的p_结构
+message p_challenge {
+optional  int32  rank=1[default=0]; //排行
+optional  int64  role_id=2[default=0]; //role_id
+optional  string  role_name=3; //角色名字
+optional  int32  sex=4[default=0]; //性别
+optional  int32  category=5[default=0]; //职业
+optional  int32  level=6[default=0]; //等级
+optional  int32  power=7[default=0]; //战力
+repeated  int32  skin_list=8; //皮肤
+repeated  int32  ornament_list=9; //饰品列表
+}
+

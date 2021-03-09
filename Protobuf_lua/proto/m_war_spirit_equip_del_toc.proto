@@ -1,0 +1,5 @@
+// 战灵装备背包删除
+message m_war_spirit_equip_del_toc {
+repeated  int64  del_list=1; //战灵装备唯一id
+}
+

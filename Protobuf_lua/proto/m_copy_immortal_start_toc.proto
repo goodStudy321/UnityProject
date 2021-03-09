@@ -1,0 +1,5 @@
+// 开启副本返回
+message m_copy_immortal_start_toc {
+optional  int32  err_code=1[default=0]; //错误码
+}
+

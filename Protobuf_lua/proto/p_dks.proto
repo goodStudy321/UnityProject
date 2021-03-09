@@ -1,0 +1,6 @@
+// 公用int64key_string结构
+message p_dks {
+optional  int64  id=1[default=0]; //KEY
+optional  string  val=2; //key对应的val（string类型）
+}
+

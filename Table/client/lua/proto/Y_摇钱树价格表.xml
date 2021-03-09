@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MoneyTreeCostTemp" Key="num" ExportType="Arr" Src="Y 摇钱树价格表.xlsx" Sheet="Sheet1">
+  <P Name="num" Type="number" ColName= "次数" />
+  <P Name="cost" Type="K_V" Opt="true" ColName= "价格" />
+  <P Name="reward" Type="K_V" Opt="true" ColName= "奖励" />
+</Proto>

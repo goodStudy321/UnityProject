@@ -1,0 +1,7 @@
+// 1v1进入次数奖励
+message m_solo_enter_reward_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  type=2[default=0]; //领取奖励类型
+repeated  int32  enter_list=3; 
+}
+

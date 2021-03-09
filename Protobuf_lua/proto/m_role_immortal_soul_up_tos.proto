@@ -1,0 +1,5 @@
+// 仙魂升级
+message m_role_immortal_soul_up_tos {
+optional  int32  pos=1[default=0]; //镶嵌位置 901 - 906普通孔，907核心孔
+}
+

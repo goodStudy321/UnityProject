@@ -1,0 +1,10 @@
+import "p_bg_act.proto";
+// 后台充值有礼活动
+message m_bg_recharge_toc {
+optional  p_bg_act  info=1; //活动信息
+optional  int32  model=2[default=0]; //模型
+optional  int32  fight=3[default=0]; //战斗力
+optional  string  sigh_title=4; //叹号说明
+optional  string  mod_img=5; //模型图
+}
+

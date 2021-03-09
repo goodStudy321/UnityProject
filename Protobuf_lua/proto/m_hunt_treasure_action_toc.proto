@@ -1,0 +1,5 @@
+// 播放挖宝动画
+message m_hunt_treasure_action_toc {
+optional  int32  event_id=1[default=0]; //触发事件
+}
+

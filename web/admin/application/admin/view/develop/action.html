@@ -1,0 +1,320 @@
+{include file='public/head'}
+<style>
+  .layui-btn-normal {
+    background-color: #b9664c;
+  }
+  .on{
+    background-color:#b72c00;
+  }
+  .vlun-display{
+    display: none;
+  }
+</style>
+<div class="layui-field-box">
+  <blockquote class="layui-elem-quote">
+    <form class="layui-form" onsubmit="return false">
+      <div class="layui-inline">
+        <label class="layui-form-label" style="width:55px">时间:</label>
+        <div class="layui-input-inline" style="width:150px">
+          <input type="text" name="time" id="time" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-inline vlun-display" id="item">
+        <label class="layui-form-label" style="width:55px">道具:</label>
+        <div class="layui-input-inline" style="width:150px">
+          <input type="text" name="item" id="item" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-inline vlun-display" id="role_name">
+        <label class="layui-form-label" style="width:55px">角色名:</label>
+        <div class="layui-input-inline" style="width:150px">
+          <input type="text" name="role_name" id="role_name" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-inline">
+        <div class="layui-input-inline">
+          <button class="layui-btn layui-btn-sm" type="submit" lay-submit lay-filter="search">查询</button>
+          <button onclick="javascript:location.reload()" class="layui-btn layui-btn-sm">刷新</button>
+        </div>
+      </div>
+    </form>
+  </blockquote>
+
+  <div class="layui-row layui-col-space10">
+    <div class="layui-col-md2">
+      <br>
+      {volist name="action_type_arr" id="vo" key="i"}
+      <div class="layui-form-item" id="action_type">
+        <button class="layui-btn layui-btn-fluid layui-btn-normal {$i == 1 ? 'on' : ''}" data-type="{$key}">{$vo}</button>
+      </div>
+      {/volist}
+    </div>
+    <div class="layui-col-md10">
+      <div class="layui-tab layui-tab-brief" lay-filter="option" id="option" style="display: none;">
+        <ul class="layui-tab-title">
+          <li data-option="1" class="layui-this">各时间段消费比例</li>
+          <li data-option="2">元宝商城</li>
+          <li data-option="3">绑元商城</li>
+        </ul>
+      </div>
+      <table id="table" lay-filter="test"></table>
+      
+    </div>
+  </div>
+</div>
+{include file='public/foot'}
+
+<script>
+  form = layui.form;
+  layui.use(['element','laydate','form'], function(){
+    var element = layui.element;
+    var laydate = layui.laydate;
+    laydate.render({
+      elem: '#time' //指定元素
+      ,range: true
+    });
+  });
+
+  //表格
+  layui.use('table', function(){
+    var table = layui.table;
+    var tableIns = tableIns1 = tableIns2 = tableIns3 = tableIns4 = tableIns5 = tableIns6 = '';
+    var nowOption = '';
+    var nowActionType = '';
+
+    // 道具列表
+    var onTable1 = function(action_type, option){
+      layui.use('table', function(){
+        var table = layui.table;
+        tableIns1 = table.render({
+          elem: '#table'
+          ,where:{option:option}
+          ,url: 'action_data/?action_type='+action_type //数据接口
+          ,page: true //开启分页
+          ,cols: [[ //标题栏
+            {align: 'center',field:'action_name', title: '道具类型(道具ID)'}
+            ,{align: 'center',field:'action_get', title: '道具产出数量'}
+            ,{align: 'center',field:'action_used', title: '道具消耗数量'}
+            ,{align: 'center',field:'ratio', title: '道具产出消耗比'}
+          ]]
+        });
+      });
+    }
+
+    // 元宝产出消耗汇总
+    var onTable2 = function(action_type, option){
+      layui.use('table', function(){
+        var table = layui.table;
+        tableIns2 = table.render({
+          elem: '#table'
+          ,where:{option:option}
+          ,url: 'action_data/?action_type='+action_type //数据接口
+          ,page: true //开启分页
+          ,cols: [[ //标题栏
+          {align: 'center',field:'server_name', title: '区服'}
+            ,{align: 'center',field:'gold_get', title: '元宝产出数量'}
+            ,{align: 'center',field:'gold_used', title: '元宝消耗数量'}
+            ,{align: 'center',field:'gold_ratio', title: '元宝产出消耗比'}
+            ,{align: 'center',field:'bind_gold_get', title: '绑定元宝产出数量'}
+            ,{align: 'center',field:'bind_gold_used', title: '绑定元宝消耗数量'}
+            ,{align: 'center',field:'bind_gold_ratio', title: '绑定元宝产出消耗比'}
+            ,{align: 'center',field:'time', title: '日期'}
+          ]]
+        });
+      });
+    }
+
+    // 银两
+    var onTable3 = function(action_type, option){
+      layui.use('table', function(){
+        var table = layui.table;
+        tableIns3 = table.render({
+          elem: '#table'
+          ,where:{option:option}
+          ,url: 'action_data/?action_type='+action_type //数据接口
+          ,page: true //开启分页
+          ,cols: [[ //标题栏
+          {align: 'center',field:'role_name', title: '角色名'}
+            ,{align: 'center',field:'silver_get', title: '银两产出数量'}
+            ,{align: 'center',field:'silver_used', title: '银两消耗数量'}
+            ,{align: 'center',field:'silver_ratio', title: '银两产出消耗比'}
+            ,{align: 'center',field:'time', title: '日期'}
+          ]]
+        });
+      });
+    }
+
+    // 元宝、绑元各时间段消费比例
+    var onTable4 = function(action_type, option){
+      layui.use('table', function(){
+        var table = layui.table;
+        tableIns4 = table.render({
+          elem: '#table'
+          ,where:{option:option}
+          ,url: 'action_data/?action_type='+action_type //数据接口
+          ,page: true //开启分页
+          ,cols: [[ //标题栏
+          {align: 'center',field:'hour', title: '时间', width:60}
+            ,{align: 'center',field:'recharge', title: '元宝充值数'}
+            ,{align: 'center',field:'recharge_people_num', title: '元宝充值人数'}
+            ,{align: 'center',field:'recharge_people_num_ratio', title: '元宝充值人数比'}
+            ,{align: 'center',field:'gold_used', title: '元宝消耗数'}
+            ,{align: 'center',field:'gold_used_people_num', title: '元宝消耗人数'}
+            ,{align: 'center',field:'gold_used_people_num_ratio', title: '元宝消耗人数比'}
+            ,{align: 'center',field:'bind_gold_used', title: '绑定元宝消耗数'}
+            ,{align: 'center',field:'bind_gold_used_people_num', title: '绑定元宝消耗人数'}
+            ,{align: 'center',field:'bind_gold_used_people_num_ratio', title: '绑定元宝消耗人数比'}
+            ,{align: 'center',field:'time', title: '日期'}
+          ]]
+          ,limit:48
+          ,limits:[48,72,96,120]
+        });
+      });
+    }
+
+    // 元宝商城
+    var onTable5 = function(action_type, option){
+      layui.use('table', function(){
+        var table = layui.table;
+        tableIns5 = table.render({
+          elem: '#table'
+          ,where:{option:option}
+          ,url: 'action_data/?action_type='+action_type //数据接口
+          ,page: true //开启分页
+          ,cols: [[ //标题栏
+          {align: 'center',field:'title', title: '物品名称(物品ID)'}
+            ,{align: 'center',field:'gold', title: '消耗元宝'}
+            ,{align: 'center',field:'num', title: '购买数量'}
+            ,{align: 'center',field:'people_num', title: '购买人数'}
+            ,{align: 'center',field:'uesd_ratio', title: '消耗比例'}
+            ,{align: 'center',field:'time', title: '日期'}
+          ]]
+        });
+      });
+    }
+
+    // 绑元商城
+    var onTable6 = function(action_type, option){
+      layui.use('table', function(){
+        var table = layui.table;
+        tableIns6 = table.render({
+          elem: '#table'
+          ,where:{option:option}
+          ,url: 'action_data/?action_type='+action_type //数据接口
+          ,page: true //开启分页
+          ,cols: [[ //标题栏
+          {align: 'center',field:'title', title: '物品名称(物品ID)'}
+            ,{align: 'center',field:'bind_gold', title: '消耗绑定元宝'}
+            ,{align: 'center',field:'gold', title: '消耗非绑定元宝'}
+            ,{align: 'center',field:'num', title: '购买数量'}
+            ,{align: 'center',field:'people_num', title: '购买人数'}
+            ,{align: 'center',field:'uesd_ratio', title: '消耗比例'}
+            ,{align: 'center',field:'people_ratio', title: '人数比例'}
+            ,{align: 'center',field:'time', title: '日期'}
+          ]]
+        });
+      });
+    }
+
+    var tableInf = function (nowActionType, nowOption) {
+      $('#option').attr('style', 'display:none;');
+      $('#item').attr('style', 'display:none;')
+      $('#role_name').attr('style', 'display:none;');
+      if(nowActionType == 10001){
+        // 道具
+        $('#item').attr('style', 'display:inline-block');
+        onTable1(nowActionType, 1);
+        return ;
+
+      } else if(nowActionType == 10002){
+        // 银两
+        $('#role_name').attr('style', 'display:inline-block');
+        onTable3(nowActionType, nowOption);
+        return ;
+
+      } else if(nowActionType == 10003){
+        // 元宝、绑元
+        $('#option').attr('style', 'display:block;');
+        
+        switch(nowOption){
+          case 1: onTable4(nowActionType, nowOption);break;
+          case 2: onTable5(nowActionType, nowOption);break;
+          case 3: onTable6(nowActionType, nowOption);break;
+        }
+        return ;
+
+      } else if (nowActionType == 10004) {
+        // 元宝产出消耗汇总
+        onTable2(nowActionType, nowOption);
+        return ;
+
+      }
+    }
+
+    //初始化
+    nowOption = 1;
+    nowActionType = 10001;
+    tableInf(nowActionType, nowOption);
+  
+    $(document).on('click', '#action_type button', function(){
+      $('#time').val('');
+      var action_type = $(this).data('type');
+      nowActionType = action_type;
+      
+      $('#action_type button').removeClass('on');
+      $(this).addClass('on');
+
+      var data = {};
+      $.each($('form').serializeArray(), function(){
+        data[this.name] = this.value;
+      })
+
+      // 监听选项卡
+      element.on('tab(option)', function(data){
+        $('#time').val('');
+        var option = $(this).data('option');
+        nowOption = option;
+
+        tableInf(nowActionType, nowOption);
+      });
+      
+      tableInf(nowActionType, nowOption);
+      
+    })
+
+    form.on('submit(search)', function(data){
+        var data = {};
+        $.each($('form').serializeArray(), function(){
+          data[this.name] = this.value;
+        })
+        data.search = 1;
+        data.option = nowOption;
+        data.action_type = nowActionType;
+        switch(nowActionType){
+          case 10001: 
+            tableIns = tableIns1;
+            break;
+          case 10002: 
+            tableIns = tableIns3;
+            break;
+          case 10003: 
+            switch(nowOption){
+              case 1: tableIns = tableIns4; break;
+              case 2: tableIns = tableIns5; break;
+              case 3: tableIns = tableIns6; break;
+            };
+            break;
+          case 10004: 
+            tableIns = tableIns2;
+            break;
+        }
+        tableIns.reload({
+          where: data
+          ,page: {
+            curr: 1 //重新从第 1 页开始
+          }
+        });
+      })
+  });
+
+</script>

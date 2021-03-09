@@ -1,0 +1,10 @@
+import "p_kv.proto";
+// 开服冲榜活动领取返回
+message m_act_rank_reward_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  id=2[default=0]; //ID
+optional  int32  type=3[default=0]; //1 排行奖励 2通用奖励
+optional  int32  rank_reward_status=4[default=0]; //1 不能领取 2 可以领取 3 已经领取
+repeated  p_kv  base_reward_list=5; //id:ID, val:1 不能领取 2 可以领取 3 已经领取
+}
+

@@ -1,0 +1,7 @@
+// 返回道庭任务操作
+message m_role_family_asm_operate_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  mission_id=2[default=0]; //任务id
+optional  int32  type=3[default=0]; //类型
+}
+

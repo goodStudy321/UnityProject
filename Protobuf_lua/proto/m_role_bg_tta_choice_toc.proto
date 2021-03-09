@@ -1,0 +1,7 @@
+// 神秘宝藏  选择
+message m_role_bg_tta_choice_toc {
+optional  int32  err_code=1[default=0]; 
+repeated  int32  list=2; //ID
+optional  int32  layer=3[default=0]; //层
+}
+

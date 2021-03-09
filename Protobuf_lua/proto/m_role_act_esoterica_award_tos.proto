@@ -1,0 +1,6 @@
+// 修炼秘籍系统奖励领取
+message m_role_act_esoterica_award_tos {
+optional  int32  training_id=1[default=0]; //领取id
+optional  int32  type=2[default=0]; //1：凡，仙：2 
+}
+

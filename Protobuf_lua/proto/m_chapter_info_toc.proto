@@ -1,0 +1,6 @@
+import "p_chapter.proto";
+// 章节信息推送
+message m_chapter_info_toc {
+repeated  p_chapter  chapter_list=1; 
+}
+

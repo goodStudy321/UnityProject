@@ -1,0 +1,6 @@
+// 时装套装结构
+message p_fashion_suit {
+optional  int32  suit_id=1[default=0]; //套装ID
+optional  int32  active_num=2[default=0]; //激活套装件数
+}
+

@@ -1,0 +1,6 @@
+import "p_family_mission.proto";
+// 道庭任务更新
+message m_role_family_asm_update_toc {
+optional  p_family_mission  family_mission=1; //道庭任务
+}
+

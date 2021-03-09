@@ -1,0 +1,7 @@
+import "p_family_bt_open_info.proto";
+// 战场积分
+message m_family_battle_open_toc {
+optional  int32  open_time=1[default=0]; //本阶段开场时间戳
+repeated  p_family_bt_open_info  list=2; // 
+}
+

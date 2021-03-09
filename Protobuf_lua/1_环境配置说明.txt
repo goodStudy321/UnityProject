@@ -1,0 +1,21 @@
+﻿> **author  &emsp;:Loong**  
+> **date    &emsp;&emsp;&ensp;:2018-04-20 22:09:07**  
+> **descrition 	:工作日志**
+
+# 环境配置说明
+
+## 所需环境
+* 安装python2.7.3,在Phantom/软件 目录
+* protobuf-2.4.1
+* protoc-gen-lua
+
+## 配置步骤
+* 安装python后,将python的可执行文件添加到环境变量
+	* cmd中执行python,若能正常执行,说明环境变量设置正确
+* cmd进入到protobuf-2.4.1\python目录
+	* 执行命令 python setup.py install
+
+## 生成协议
+* 双击 make_lua_proto.bat(或者工程内使用快捷键 alt+b)生成lua文件
+* 协议结构目录 ./Proto
+* 生成的lua协议文件目录为 LuaCode/Protol

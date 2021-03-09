@@ -1,0 +1,6 @@
+import "p_demon_boss_room.proto";
+// 魔域boss房间信息更新
+message m_demon_boss_info_update_toc {
+optional  p_demon_boss_room  room=1; //房间结构
+}
+

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SMSOpenTemp" Key="id" ExportType="Dic" Src="T 天机印开孔表.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="name" Type="string" ColName= "名称" />
+  <P Name="type" Type="number" ColName= "类型" />
+  <P Name="index" Type="number" ColName= "部位" />
+  <P Name="condition" Type="number" Opt="true" ColName= "开启条件" />
+  <P Name="item" Type="k_V" Opt="true" ColName= "开启道具" />
+  <P Name="slv" Type="number" ColName= "初始强化ID" />
+</Proto>

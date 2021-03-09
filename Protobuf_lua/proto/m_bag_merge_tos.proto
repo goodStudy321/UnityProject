@@ -1,0 +1,6 @@
+import "p_bag_merge.proto";
+// 背包道具整理
+message m_bag_merge_tos {
+repeated  p_bag_merge  merge_list=1; //当前背包格子数量
+}
+

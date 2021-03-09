@@ -1,0 +1,11 @@
+import "p_team_role.proto";
+// 队伍p结构
+message p_team {
+optional  int32  team_id=1[default=0]; //队伍id
+optional  int32  copy_id=2[default=0]; //目标
+optional  int32  min_level=3[default=0]; //最小等级
+optional  int32  max_level=4[default=0]; //最大等级
+optional  int64  captain_role_id=5[default=0]; //队长ID
+repeated  p_team_role  role_list=6; //成员列表
+}
+

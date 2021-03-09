@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SoulBearstCfg" Key="id" Src="S 神兽基础表.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "神兽ID" />
+  <P Name="name" Type="string" ColName="神兽名称" />
+  <P Name="level" Type="number" ColName= "显示等级" />
+  <P Name="attrList" Type="K_V" IsList="true" Lsp=";" ColName= "基础属性" />
+  <P Name="skillList" Type="number" IsList="true" Lsp="," ColName= "神兽技能" />
+  <P Name="qua1" Type="number" ColName="兽首装备" />
+  <P Name="qua2" Type="number" ColName="旁肢装备" />
+  <P Name="qua3" Type="number" ColName="元中装备" />
+  <P Name="qua4" Type="number" ColName="定垂品质" />
+  <P Name="qua5" Type="number" ColName="偏足品质" />
+  <P Name="spriteName" Type="string" ColName="头像" />
+  <P Name="texture" Type="string" ColName="图片" />
+</Proto>

@@ -1,0 +1,7 @@
+import "p_dks.proto";
+// 获取预约场次返回(双方都返回)
+message m_marry_invite_guest_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  p_dks  guest=2; //宾客信息
+}
+

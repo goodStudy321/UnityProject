@@ -1,0 +1,7 @@
+// 成就信息
+message m_achievement_condition_toc {
+optional  int32  type=1[default=0]; //完成类型
+optional  int32  id=2[default=0]; //完成id
+optional  int32  val=3[default=0]; //完成Val
+}
+

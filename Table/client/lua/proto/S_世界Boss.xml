@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SBCfg" Key="id" ExportType="Dic" Src="S 世界Boss.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "怪物ID" />
+  <P Name="what" Type="number" ColName= "种类" />
+  <P Name="type" Type="number" ColName="类型" />
+  <P Name="uiElAgl" Type="number" IsList="true" Lsp="," ColName="UI模型角度" />
+  <P Name="uiPos" Type="number" IsList="true" Lsp="," ColName="UI模型位置" />
+  <P Name="layer" Type="number" ColName="层数" />
+  <P Name="sceneId" Type="number" ColName="场景ID" />
+  <P Name="pos" Type="K_V" ColName="坐标" />
+  <P Name="drops" Type="number" IsList="true" Lsp="|" ColName= "掉落物" />
+  <P Name="rareDrops" Type="number" IsList="true" Lsp="|" ColName= "珍稀掉落" />
+  <P Name="equipQua" Type="number" ColName="装备品阶" />
+  <P Name="safe" Type="number" ColName="安全" />
+</Proto>

@@ -1,0 +1,72 @@
+{include file='public/head'}
+<div class="layui-field-box">
+  <blockquote class="layui-elem-quote">
+    <form class="layui-form" onsubmit="return false">
+      <div class="layui-inline">
+        <label class="layui-form-label">是否在线：</label>
+        <div class="layui-input-inline">
+          <select id="online" style="height: 28px;">
+            <option value="all" selected>全部</option>
+            <option value="1">在线</option>
+            <option value="0">离线</option>
+          </select>
+        </div>
+      </div>
+      <div class="layui-inline">
+        <label class="layui-form-label">等级：</label>
+        <div class="layui-input-inline">
+          <input type="text" id="lv1" placeholder="请输入等级"  class="layui-input">
+        </div>
+        <div class="layui-input-inline">
+          -
+        </div>
+        <div class="layui-input-inline">
+          <input type="text" id="lv2" placeholder="请输入等级"  class="layui-input">
+        </div>
+      </div>
+      <div class="layui-inline">
+        <div class="layui-input-inline" id="button">
+          <button class="layui-btn layui-btn-sm">查询</button>
+        </div>
+        <button onclick="javascript:location.reload()" class="layui-btn layui-btn-sm">刷新</button>
+      </div>
+      <div class="layui-inline">
+      </div>
+    </form>
+  </blockquote>
+  <table id="table" lay-filter="test"></table>
+</div>
+{include file='public/foot'}
+
+<script>
+  var form = layui.form;
+
+  layui.use('table', function(){
+    var table = layui.table;
+    var tableIns = table.render({
+      elem: '#table'
+      ,url: 'map_data'
+      ,page: true
+      ,cols: [[
+    {field: 'map_id', title: '地图id'}
+      ,{field: 'map_name', title: '地图'}
+      ,{field: 'map_num', title: '人数'}
+      ]]
+    });
+    $("#button").click(function(){
+      var online = $("#online").val();
+      var lv1 = $("#lv1").val();
+      var lv2 = $("#lv2").val();
+      tableIns.reload({
+        where: { //设定异步数据接口的额外参数，任意设
+          online: online
+        ,lv1: lv1
+        ,lv2: lv2
+        }
+        ,page: {
+      curr: 1 //重新从第 1 页开始
+        }
+      });
+    });
+  });
+</script>

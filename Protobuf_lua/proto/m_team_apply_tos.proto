@@ -1,0 +1,6 @@
+// 申请加入队伍
+message m_team_apply_tos {
+optional  int32  team_id=1[default=0]; //根据队伍ID索引(这个不为0取这个)
+optional  int64  role_id=2[default=0]; //根据RoleID索引
+}
+

@@ -1,0 +1,6 @@
+import "p_kb.proto";
+// 开服冲榜活动可以领取奖励的集合
+message m_act_rank_status_toc {
+repeated  p_kb  status_list=1; //id:活动ID bool:true：有红点 false没有
+}
+

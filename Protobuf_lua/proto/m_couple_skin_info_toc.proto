@@ -1,0 +1,5 @@
+// 仙侣拥有的皮肤 养成+时装
+message m_couple_skin_info_toc {
+repeated  int32  base_id_list=1; //基础ID皮肤列表
+}
+

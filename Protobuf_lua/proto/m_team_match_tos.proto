@@ -1,0 +1,6 @@
+// 准备匹配
+message m_team_match_tos {
+optional  int32  copy_id=1[default=0]; //匹配id 个人匹配用到
+optional  bool  matching=2[default=true]; //确定匹配、取消匹配
+}
+

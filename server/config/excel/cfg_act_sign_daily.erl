@@ -1,0 +1,36 @@
+-module(cfg_act_sign_daily).
+-include("config.hrl").
+-export[find/1].
+?CFG_H
+
+?C(1, {c_act_sign_daily,1,"1,500000",0,0})
+?C(2, {c_act_sign_daily,2,"3,50",4,2})
+?C(3, {c_act_sign_daily,3,"30332,5",0,0})
+?C(4, {c_act_sign_daily,4,"3,50",5,2})
+?C(5, {c_act_sign_daily,5,"14,5000",7,3})
+?C(6, {c_act_sign_daily,6,"3,50",0,0})
+?C(7, {c_act_sign_daily,7,"1,500000",0,0})
+?C(8, {c_act_sign_daily,8,"3,50",5,2})
+?C(9, {c_act_sign_daily,9,"30332,5",0,0})
+?C(10, {c_act_sign_daily,10,"3,50",8,3})
+?C(11, {c_act_sign_daily,11,"14,5000",9,3})
+?C(12, {c_act_sign_daily,12,"3,50",0,0})
+?C(13, {c_act_sign_daily,13,"1,500000",0,0})
+?C(14, {c_act_sign_daily,14,"3,50",4,2})
+?C(15, {c_act_sign_daily,15,"30332,5",0,0})
+?C(16, {c_act_sign_daily,16,"3,50",5,2})
+?C(17, {c_act_sign_daily,17,"14,5000",7,3})
+?C(18, {c_act_sign_daily,18,"3,50",0,0})
+?C(19, {c_act_sign_daily,19,"1,500000",0,0})
+?C(20, {c_act_sign_daily,20,"3,50",5,2})
+?C(21, {c_act_sign_daily,21,"30332,5",0,0})
+?C(22, {c_act_sign_daily,22,"3,50",8,3})
+?C(23, {c_act_sign_daily,23,"14,5000",9,3})
+?C(24, {c_act_sign_daily,24,"3,50",0,0})
+?C(25, {c_act_sign_daily,25,"1,500000",0,0})
+?C(26, {c_act_sign_daily,26,"3,50",4,2})
+?C(27, {c_act_sign_daily,27,"30332,5",0,0})
+?C(28, {c_act_sign_daily,28,"3,50",5,2})
+?C(29, {c_act_sign_daily,29,"14,5000",7,3})
+?C(30, {c_act_sign_daily,30,"3,50",0,0})
+?CFG_E.

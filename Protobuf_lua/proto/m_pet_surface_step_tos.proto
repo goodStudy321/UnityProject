@@ -1,0 +1,7 @@
+// 宠物皮肤进阶
+message m_pet_surface_step_tos {
+optional  int32  base_id=1[default=0]; //基础ID
+optional  int32  item_id=2[default=0]; //道具ID
+optional  int32  item_num=3[default=0]; //道具数量
+}
+

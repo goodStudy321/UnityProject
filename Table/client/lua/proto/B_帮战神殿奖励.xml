@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="TempleSalary" Key="rank" ExportType="Arr" Src="B 帮战神殿奖励.xls" Sheet="Sheet1">
+  <P Name="rank" Type="number" ColName= "排名" />
+  <P Name="salary" Type="Item" IsList="true" Lsp=";" ColName= "俸禄" />
+  <P Name="buff" Type="number" ColName= "盟主buff" />
+  <P Name="title" Type="number" ColName= "盟主称号" />
+  <P Name="icon" Type="number" IsList="true" Lsp=";" ColName= "盟主奖励图片" />
+</Proto>

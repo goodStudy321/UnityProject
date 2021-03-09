@@ -1,0 +1,7 @@
+import "p_bg_act.proto";
+// 后台材料掉落类活动
+message m_bg_drop_toc {
+optional  p_bg_act  info=1; //活动信息
+repeated  int32  drop=2; //id-物品ID
+}
+

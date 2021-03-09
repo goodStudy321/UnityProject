@@ -1,0 +1,5 @@
+// 鼓舞
+message m_role_fgb_inspire_update_toc {
+optional  int32  all_inspire=1[default=0]; //道庭鼓舞次数
+}
+

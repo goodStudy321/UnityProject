@@ -1,0 +1,10 @@
+import "p_goods.proto";
+// 天机系统天机印操作
+message m_role_nature_place_operate_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  aperture_id=2[default=0]; //孔id
+optional  int32  type=3[default=0]; //类型,阴和阳
+repeated  p_goods  goods=4; //物品,卸下为空
+optional  int32  operate_type=5[default=0]; //操作类型,0:卸下,1:镶嵌,2:替换
+}
+

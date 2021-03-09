@@ -1,0 +1,10 @@
+import "p_fgb_rank.proto";
+// 帮会神兽排行  进图
+message m_role_fgb_rank_i_toc {
+optional  int32  inspire=1[default=0]; //个人鼓舞次数
+optional  int32  all_inspire=2[default=0]; //全部鼓舞次数
+optional  int32  type=3[default=0]; //1-a  2-b
+optional  string  self=4; //自我帮派名字
+repeated  p_fgb_rank  list=5; //排行榜
+}
+

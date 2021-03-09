@@ -1,0 +1,6 @@
+// 神兽装备强化合成返回
+message m_mythical_equip_compose_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  bool  is_succ=2[default=true]; //是否成功
+}
+

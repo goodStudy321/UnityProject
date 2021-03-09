@@ -1,0 +1,8 @@
+// 玩家充值信息
+message m_role_pay_info_toc {
+repeated  int32  first_pay_list=1; //首充列表
+optional  int32  package_days=2[default=0]; //礼包剩余天数
+optional  int32  today_pay_gold=3[default=0]; //今天充值元宝
+optional  int32  total_pay_gold=4[default=0]; //总充值元宝
+}
+

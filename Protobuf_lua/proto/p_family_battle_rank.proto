@@ -1,0 +1,8 @@
+// 单场结算单人排名
+message p_family_battle_rank {
+optional  int32  rank=1[default=0]; //排行
+optional  string  family_name=2; //道庭
+optional  string  role_name=3; //人名
+optional  int32  score=4[default=0]; //积分
+}
+

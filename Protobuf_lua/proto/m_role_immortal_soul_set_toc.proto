@@ -1,0 +1,5 @@
+// 仙魂设置
+message m_role_immortal_soul_set_toc {
+optional  int32  err_code=1[default=0]; 
+}
+

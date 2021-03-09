@@ -1,0 +1,6 @@
+// 更改时装返回
+message m_fashion_change_toc {
+optional  int32  err_code=1[default=0]; //是否成功
+repeated  int32  cur_id_list=2; //当前时装id列表
+}
+

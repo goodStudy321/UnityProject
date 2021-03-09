@@ -1,0 +1,5 @@
+// 宝座用户总华精推送
+message m_throne_essence_toc {
+optional  int32  total_essence=1[default=0]; //用户总华精
+}
+

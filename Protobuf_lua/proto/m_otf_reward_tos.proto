@@ -1,0 +1,5 @@
+// 领取
+message m_otf_reward_tos {
+optional  int32  id=1[default=0]; //奖励 id
+}
+

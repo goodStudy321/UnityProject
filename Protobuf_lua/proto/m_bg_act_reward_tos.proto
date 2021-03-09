@@ -1,0 +1,6 @@
+// 领取奖励 - 购买商品
+message m_bg_act_reward_tos {
+optional  int32  id=1[default=0]; //活动id
+optional  int32  entry=2[default=0]; //奖励条目id
+}
+

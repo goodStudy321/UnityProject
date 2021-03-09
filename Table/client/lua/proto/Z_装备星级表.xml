@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="EquipStarTbl" ExportType="Arr" Key="id" Src="Z 装备星级表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "编号" />
+  <P Name="part" Type="number" IsList="true" Lsp="," ColName="装备部位" />
+  <P Name="qua" Type="number" ColName="品质" />
+  <P Name="star" Type="number" ColName="星级" />
+  <P Name="att" Type="number" IsList="true" Lsp="," ColName="属性" />
+</Proto>

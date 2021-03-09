@@ -1,0 +1,6 @@
+// 天书类型领取返回
+message m_title_change_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  cur_title=2[default=0]; //当前装备的称号ID
+}
+

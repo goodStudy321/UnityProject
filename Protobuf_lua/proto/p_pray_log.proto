@@ -1,0 +1,7 @@
+// 月下情缘日志结构
+message p_pray_log {
+optional  string  role_name=1; //角色名字
+optional  int32  reward_type=2[default=0]; //奖励类型
+repeated  int32  type_id_list=3; //道具ID
+}
+

@@ -1,0 +1,5 @@
+// 鼓舞
+message m_copy_exp_cheer_toc {
+optional  int32  err_code=1[default=0]; 
+}
+

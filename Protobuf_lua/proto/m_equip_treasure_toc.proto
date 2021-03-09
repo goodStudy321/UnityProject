@@ -1,0 +1,7 @@
+// 装备寻宝返回
+message m_equip_treasure_toc {
+optional  int32  err_code=1[default=0]; 
+repeated  int32  add_log_list=2; //个人记录新增
+optional  int32  equip_weight=3[default=0]; //个人寻宝幸运值
+}
+

@@ -1,0 +1,10 @@
+import "p_immortal_soul.proto";
+// 仙魂分解
+message m_role_immortal_soul_bd_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  dust=2[default=0]; //最新仙尘数
+repeated  int32  del_list=3; //删除ID
+optional  int32  stone=4[default=0]; //最新仙魂石
+repeated  p_immortal_soul  add_list=5; //新增背包仙魂
+}
+

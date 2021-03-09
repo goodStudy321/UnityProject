@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Config>
+	<!--- 网关配置 -->
+	<a id="game_code" type="string" desc="游戏名" priority="1" default="ranger" />
+	<a id="agent_code" type="string" desc="代理" priority="1" default="local" />
+	<a id="agent_id" type="int" desc="代理商ID" priority="1" default="1" />
+	<a id="server_id" type="int" desc="服务器ID" priority="10" default="1" />
+	<a id="is_debug" type="boolean" desc="is_debug" priority="1" default="false" />
+  
+	<!--- 网关配置 -->
+	<a id="gateway_port" type="int" desc="网关端口" priority="10" default="40001" />
+	<a id="web_port" type="int" desc="web访问端口" priority="10" default="30001" />
+	<a id="gateway_sandbox" type="boolean" desc="是否需要启动安全沙箱" priority="1" default="false" />
+	
+	<!--- 跨服相关配置 -->
+	<a id="cross_id" type="int" desc="跨服服务器id" priority="1" default="90001" />
+	<a id="cross_ip" type="string" desc="跨服服务器ip" priority="1" default="127.0.0.1" />
+	<a id="cookie_extend" type="string" desc="节点cookie" priority="1" default="Best!" />
+	
+	<!--- mysql相关配置 -->
+	<a id="db_host" type="string" desc="游戏服数据库ip" priority="10" default="127.0.0.1" />
+	<a id="db_port" type="int" desc="游戏服数据库port" priority="1" default="3306" />
+	<a id="db_user" type="string" desc="user" priority="1" default="ranger" />
+	<a id="db_password" type="string" desc="password" priority="1" default="ranger666666" />
+	<a id="db_database" type="string" desc="database" priority="1" default="ranger" />
+	<a id="db_connections" type="int" desc="连接数" priority="1" default="10" />
+	
+	<a id="background_log_open" type="boolean" desc="是否记录后台日志" priority="1" default="true" />
+	
+	<a id="admin_host" type="string" desc="分服数据库ip" priority="10" default="127.0.0.1" />
+	<a id="admin_port" type="int" desc="分服数据库port" priority="1" default="3306" />
+	<a id="admin_user" type="string" desc="user" priority="1" default="ranger" />
+	<a id="admin_password" type="string" desc="password" priority="1" default="ranger666666" />
+	<a id="admin_database" type="string" desc="database" priority="1" default="admin" />
+	<a id="admin_connections" type="int" desc="连接数" priority="1" default="10" />
+	
+	<a id="central_host" type="string" desc="中央服数据库ip" priority="10" default="127.0.0.1" />
+	<a id="central_port" type="int" desc="中央服数据库port" priority="1" default="3306" />
+	<a id="central_user" type="string" desc="user" priority="1" default="ranger" />
+	<a id="central_password" type="string" desc="password" priority="1" default="ranger666666" />
+	<a id="central_database" type="string" desc="database" priority="1" default="central" />
+	<a id="central_connections" type="int" desc="连接数" priority="1" default="2" />
+	
+	<!--- 合服相关配置 -->
+	<a id="is_merge" type="boolean" desc="是否合服" priority="5" default="false" />
+	<a id="merge_list" type="string" desc="合并的区服" priority="5" default="" />
+	
+	<!--- log -->
+	<a id="log_level" type="int" desc="日志等级" priority="1" default="3" />
+	<a id="log_dir" type="string" desc="日志目录" priority="1" default="/data/logs/server" />
+	
+	<!--- 游戏内使用 -->
+	<a id="hb_check_closed" type="boolean" desc="心跳包检查是否关闭" priority="1" default="false" />
+	<a id="item_ban_list" type="string" desc="禁用道具" priority="1" default="" />
+	<a id="junhai_gold_log_open" type="boolean" desc="君海元宝日志开启" priority="1" default="true" />
+
+</Config>
+
+<!--- 生成格式
+%% desc
+{key, value}.
+
+%% desc
+{key, value}.
+-->

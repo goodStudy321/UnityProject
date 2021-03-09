@@ -1,0 +1,6 @@
+import "p_pray_log.proto";
+// 月下情缘日志新增
+message m_cycle_act_couple_pray_log_toc {
+repeated  p_pray_log  add_logs=1; //新增日志
+}
+

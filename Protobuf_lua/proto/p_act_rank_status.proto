@@ -1,0 +1,8 @@
+// 开服冲榜status
+message p_act_rank_status {
+optional  int32  id=1[default=0]; //ID
+optional  int32  rank_reward_status=2[default=0]; //1 不能领取 2 可以领取 3 已经领取
+optional  int32  base_reward_status=3[default=0]; //1 不能领取 2 可以领取 3 已经领取
+optional  int32  base_reward_status2=4[default=0]; //1 不能领取 2 可以领取 3 已经领取
+}
+

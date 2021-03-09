@@ -1,0 +1,7 @@
+// 邀请回复
+message m_team_invite_reply_tos {
+optional  int32  op_type=1[default=0]; //1为同意加入 2为拒绝加入
+optional  int32  team_id=2[default=0]; //队伍id
+optional  int64  role_id=3[default=0]; //角色ID
+}
+

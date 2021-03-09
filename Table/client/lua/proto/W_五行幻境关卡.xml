@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="FvElmntCfg" Key="id" ExportType="Dic" Src="W 五行幻境关卡.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "副本ID" />
+  <P Name="layer" Type="number" ColName= "副本层数" />
+  <P Name="name" Type="string" ColName= "关卡名称" />
+  <P Name="fpRwds" Type="K_V" IsList="true" Lsp=";" ColName= "首通奖励" />
+  <P Name="nmlRwds" Type="number" IsList="true" Lsp="," ColName= "普通奖励展示" />
+    <P Name="nmlRwds1" Type="number" IsList="true" Lsp="," ColName= "普通奖励显示1" />
+  <P Name="skySeal" Type="number" ColName= "获得天机印" />
+  <P Name="costIllusion" Type="number" ColName= "挑战消耗幻力" />
+  <P Name="IsBig" Type="number" ColName= "是否大关" />
+  <P Name="copyLv" Type="number" ColName= "关数" />
+  <P Name="worldLvl" Type="number" ColName= "世界等级" />
+  <P Name="BossName" Type="string" ColName= "怪物名称" />
+  <P Name="monsId" Type="number" ColName= "怪物Id" />
+  <P Name="monsPos" Type="K_V" IsList="true" Lsp=";" ColName= "怪物坐标" />
+  <P Name="monsNum" Type="number" ColName= "怪物数量" />
+</Proto>

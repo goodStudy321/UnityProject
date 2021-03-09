@@ -1,0 +1,8 @@
+import "p_equip.proto";
+// 装备强化返回
+message m_equip_refine_toc {
+optional  int32  err_code=1[default=0]; 
+optional  p_equip  equip=2; 
+optional  int32  multi=3[default=0]; //倍数 1为正常强化 
+}
+

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SecretData" Key="id" ExportType="Dic" Src="M 迷境探索单元格表.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="type" Type="number" ColName="类型" />
+  <P Name="name" Type="string" ColName="单元格名称" />
+  <P Name="qua" Type="number" ColName="品质" />
+  <P Name="num" Type="number" ColName="采集次数" />
+  <P Name="needtime" Type="number" ColName="采集效率" />
+  <P Name="icon" Type="string" ColName="资源图片ID" />
+  <P Name="cao" Type="string" ColName="地皮资源" />
+  <P Name="fight" Type="number" Opt="true" IsList="true" Lsp="," ColName= "标准战力" />
+  <P Name="propList" Type="number" Opt="true" IsList="true" Lsp="," ColName= "资源内容" />
+  <P Name="familyAdd" Type="number" Opt="true" ColName= "道庭加成" />
+</Proto>

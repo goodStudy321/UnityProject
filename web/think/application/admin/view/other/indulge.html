@@ -1,0 +1,172 @@
+<style>
+  .layui-form .layui-form-label{
+    width:90px;
+  }
+  .font-color{
+    color: red;
+  }
+  .layui-input-block{
+    min-height: 36px;
+    margin-left: 50px;
+    border-bottom: 1px solid #e6e6e6;
+  }
+  .layui-form-item .layui-input-inline{
+    width: 100px;
+  }
+  .vlun-line{
+    width:1px;
+    height: 36px;
+    background: #a5a5a5;
+  }
+  .vlun-option{
+    padding: 10px;
+    line-height: 18px;
+    font-size: 14px;
+    position: relative;
+    height: 16px; 
+    top: 6px;
+  }
+  .vlun-form-label{
+    width:70px;
+  }
+</style>
+<div class="site-text">
+  <form class="layui-form" onsubmit="return false" action="" method="post" id="indulgeform">
+
+    <div class="layui-form-item">
+      <div class="layui-input-block">
+        <input type="checkbox" name="indulge[option1]" id="option1" lay-skin="primary" title="" {if isset($data['indulge']['option1']) && $data['indulge']['option1'] == 'on'} checked {/if}/> 
+        <label for="option1" class="vlun-option">累计在线时间提醒设置：包括2个级别，在玩家在线达到<span class="font-color"> X，Y </span>个小时后，每间隔<span class="font-color"> M，N </span>分钟需要给予玩家1次提醒，提醒方式为当前已有的弹窗提示 </label>
+      </div>
+    </div>
+
+    <div class="layui-form-item">
+      <div class="layui-input-block">
+        <input type="checkbox" name="indulge[option2]" id="option2" lay-skin="primary" title="" {if isset($data['indulge']['option2']) && $data['indulge']['option2'] == 'on'} checked {/if}/>
+        <label for="option2" class="vlun-option">限定未成年用户游戏：是指玩家达到累计在线时间提醒的时间段后收益降低的设定，包括2个级别，<span class="font-color"> X </span>小时后收益降低50%和<span class="font-color"> Y </span>小时后收益为0</label>
+      </div>
+    </div>
+
+    <div class="layui-form-item">
+      <div class="layui-input-block">
+        <input type="checkbox" name="indulge[option3]" id="option3" lay-skin="primary" title="" {if isset($data['indulge']['option3']) && $data['indulge']['option3'] == 'on'} checked {/if}/>
+        <label for="option3" class="vlun-option">设置未成年消费限额：当玩家未通过验证时，最多可累计充值<span class="font-color"> Z </span>元，当超过时无法继续充值，进行充值行为时给予弹窗提示</label>
+      </div>
+    </div>
+
+
+    <div class="layui-form-item">
+      <div class="layui-inline">
+        <label class="layui-form-label">X：(分钟)</label>
+        <div class="layui-input-inline">
+          <input type="text" name="time[X]" id="X" autocomplete="off" class="layui-input" {if isset($data['time']['X'])}value="{$data.time.X}"{/if} />
+        </div>
+      </div>
+
+      <div class="layui-inline">
+        <label class="layui-form-label vlun-form-label">M：(分钟)</label>
+        <div class="layui-input-inline">
+          <input type="text" name="time[M]" id="M" autocomplete="off" class="layui-input" {if isset($data['time']['M'])}value="{$data.time.M}"{/if} />
+        </div>
+      </div>
+
+      <div class="layui-inline vlun-line"></div>
+
+      <div class="layui-inline">
+        <label class="layui-form-label vlun-form-label">Y：(分钟)</label>
+        <div class="layui-input-inline">
+          <input type="text" name="time[Y]" id="Y" autocomplete="off" class="layui-input" {if isset($data['time']['Y'])}value="{$data.time.Y}"{/if} />
+        </div>
+      </div>
+
+      <div class="layui-inline">
+        <label class="layui-form-label vlun-form-label">N：(分钟)</label>
+        <div class="layui-input-inline">
+          <input type="text" name="time[N]" id="N" autocomplete="off" class="layui-input" {if isset($data['time']['N'])}value="{$data.time.N}"{/if} />
+        </div>
+      </div>
+
+      <div class="layui-inline vlun-line"></div>
+
+      <div class="layui-inline">
+        <label class="layui-form-label vlun-form-label">Z：(元)</label>
+        <div class="layui-input-inline">
+          <input type="text" name="Z" autocomplete="off" class="layui-input" {if isset($data['Z'])}value="{$data.Z}"{/if} id="Z"/>
+        </div>
+      </div>
+      
+
+      <div class="layui-inline">
+        <div class="layui-input-inline">
+          <button class="layui-btn layui-btn-normal" onclick="ajaxsubmit()" lay-submit="" lay-filter="sub">确认</button>
+        </div>
+      </div>
+
+    </div>
+  </form>
+</div>
+
+<script>
+  form.render();
+  
+  function ajaxsubmit() {
+    var formData = $('#indulgeform').serializeArray(),
+        time     = new Array(),
+        Z        = $('#Z').val();
+
+    time['X']    = $('#X').val();
+    time['M']    = $('#M').val();
+    time['Y']    = $('#Y').val();
+    time['N']    = $('#N').val();
+    // 选项一
+    if($('#option1').is(':checked')){
+      // 表单验证
+      for(var index in time){
+        if(time[index] == ''){
+          layer.msg(index + ' 值不能为空');
+          return;
+        }
+      }
+    }
+    // 选项二
+    if($('#option2').is(':checked')){
+      //表单验证
+      for(var index in time){
+        if((index == 'X' || index == 'Y') && time[index] == ''){
+          layer.msg(index + ' 值不能为空');
+          return;
+        }
+      }
+    }
+    // 选项三
+    if($('#option3').is(':checked')){
+      //表单验证
+      if(Z == '') {
+        layer.msg('Z 值不能为空');
+        return;
+      }
+    }
+
+    $.ajax({
+      type: 'post',
+      url: '/admin/other/indulge',
+      data: formData,
+      success: function (data) {
+        var param = JSON.parse(data).status;
+        if(param.code == 10200){
+          layer.msg(param.msg);
+        } else {
+          layer.msg(param.code + '  ' + param.msg);
+        }
+      },
+      error:function(XmlHttpRequest,textStatus,errorThrown){
+        layer.msg('操作失败:服务器处理失败');
+      }
+    });
+    
+  }
+
+  function check() {
+    
+  }
+</script>

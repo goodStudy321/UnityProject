@@ -1,0 +1,6 @@
+import "p_level_buy_item.proto";
+// 等级抢购信息
+message m_role_level_panicbuy_info_toc {
+repeated  p_level_buy_item  list=1; //等级限购物品信息
+}
+

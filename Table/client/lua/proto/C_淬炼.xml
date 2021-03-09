@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="HonInfo" Key="id" ExportType="Dic" Src="C 淬炼.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "淬炼ID" />
+  <P Name="type" Type="number" ColName= "宝石类型" />
+  <P Name="honPer" Type="number" ColName= "淬炼度" />
+  <P Name="needItems" Type="K_V" IsList="true" Lsp=";" ColName= "消耗道具" />
+  <P Name="gemAddPer" Type="number" ColName= "宝石基础属性加成" />
+  <P Name="addAttrs" Type="K_V" IsList="true" Lsp="|" ColName= "属性" />
+</Proto>

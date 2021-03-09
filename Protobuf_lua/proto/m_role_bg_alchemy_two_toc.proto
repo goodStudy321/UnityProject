@@ -1,0 +1,6 @@
+// 后台新仙品丹炉  凡品
+message m_role_bg_alchemy_two_toc {
+optional  int32  times=1[default=0]; //可抽取次数
+optional  int32  schedule=2[default=0]; //材料进度
+}
+

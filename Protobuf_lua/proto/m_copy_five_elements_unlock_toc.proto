@@ -1,0 +1,6 @@
+// 五行副本解锁返回
+message m_copy_five_elements_unlock_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  unlock_floor=2[default=0]; //解锁层数
+}
+

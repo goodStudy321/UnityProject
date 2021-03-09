@@ -1,0 +1,6 @@
+// 仙魂镶嵌
+message m_role_immortal_soul_mosaic_tos {
+optional  int32  bag_id=1[default=0]; //背包ID
+optional  int32  pos=2[default=0]; //镶嵌位置 901 - 906普通孔，907核心孔
+}
+

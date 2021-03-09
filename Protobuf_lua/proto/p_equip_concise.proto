@@ -1,0 +1,7 @@
+// 装备的洗练结构
+message p_equip_concise {
+optional  int32  index=1[default=0]; //第几条
+optional  int32  prop_key=2[default=0]; //属性编码key值
+optional  int32  prop_value=3[default=0]; 
+}
+

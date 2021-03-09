@@ -1,0 +1,6 @@
+import "p_marry_wish.proto";
+// 祝福信息更新
+message m_marry_map_wish_log_toc {
+optional  p_marry_wish  wish_log=1; //婚礼祝福
+}
+

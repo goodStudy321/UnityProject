@@ -1,0 +1,7 @@
+import "p_kv.proto";
+// 冲级豪礼数据
+message m_act_level_info_toc {
+repeated  p_kv  world_level_list=1; //限制领取数量的列表 id = 等级, val = 已经领取的数量
+repeated  int32  my_level_list=2; //已经领取的等级列表
+}
+

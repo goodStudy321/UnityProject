@@ -1,0 +1,6 @@
+// 角色改名返回
+message m_role_rename_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  string  name=2; //名字
+}
+

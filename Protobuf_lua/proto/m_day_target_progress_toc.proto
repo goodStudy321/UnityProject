@@ -1,0 +1,6 @@
+// 7天目标 进度奖励领取
+message m_day_target_progress_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  progress=2[default=0]; //已经领取的进度
+}
+

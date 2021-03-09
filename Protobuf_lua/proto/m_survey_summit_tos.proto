@@ -1,0 +1,7 @@
+// 提交问卷
+message m_survey_summit_tos {
+optional  string  answer_string=1; 
+optional  int32  answer_time=2[default=0]; //答题时长
+optional  int32  survey_id=3[default=0]; 
+}
+

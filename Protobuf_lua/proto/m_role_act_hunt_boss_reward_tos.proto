@@ -1,0 +1,5 @@
+// 要求领取奖励
+message m_role_act_hunt_boss_reward_tos {
+optional  int32  id=1[default=0]; //猎杀boss奖励id
+}
+

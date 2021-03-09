@@ -1,0 +1,12 @@
+// 扫荡返回
+message m_offline_solo_mop_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  bool  is_success=2[default=true]; //是否成功
+optional  int32  power=3[default=0]; //对方战力
+optional  int64  add_exp=4[default=0]; //增加经验
+optional  int32  new_rank=5[default=0]; //最新排行
+optional  int32  new_challenge_times=6[default=0]; //最新挑战次数
+optional  int64  add_honor=7[default=0]; //增加荣誉
+optional  string  dest_name=8; //对方名字
+}
+

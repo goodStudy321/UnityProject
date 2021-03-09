@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="UICfg" Key="tn" IgnoreKey="true" ExportType="Dic" Src="U UI配置表.xls" Sheet="Sheet1">
+  <P Name="tn" Type="string" ColName= "类型名称" />
+  <P Name="sort" Type="number" ColName="层级" />
+  <P Name="cDp" Type="number" Opt="true" ColName="相机层级" />
+  <P Name="cp" Type="string" Opt="true" ColName="关联面板" />
+  <P Name="eBg" Type="number" ColName="背景效果" />
+  <P Name="eOn" Type="number" ColName="开关效果" />
+  <P Name="tOn" Type="number" ColName= "开关类型" />
+  <P Name="oAudio" Type="string" Opt="true" ColName= "打开音效" />
+  <P Name="cAudio" Type="string" Opt="true" ColName= "关闭音效" />
+  <P Name="cleanOp" Type="number" Opt="true" ColName= "释放选项" />
+  <P Name="swMainCam" Type="number" Opt="true" ColName= "是否开关主相机" />
+  <P Name="isJsCtrl" Type="number" ColName= "摇杆是否可控" />
+  <P Name="isPauseHg" Type="number" ColName= "是否暂停挂机" />
+  <P Name="relifeOpen" Type="number" ColName= "复活时弹出" />
+</Proto>

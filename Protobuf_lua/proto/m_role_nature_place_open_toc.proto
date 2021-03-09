@@ -1,0 +1,7 @@
+// 天机系统部位开启
+message m_role_nature_place_open_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  type=2[default=0]; //类型,阴和阳
+optional  int32  aperture_id=3[default=0]; //孔id
+}
+

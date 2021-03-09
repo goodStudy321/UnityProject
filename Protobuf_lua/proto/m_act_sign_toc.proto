@@ -1,0 +1,7 @@
+// 签到返回
+message m_act_sign_toc {
+optional  int32  err_code=1[default=0]; 
+optional  bool  is_sign=2[default=true]; //当天是否签到
+optional  int32  sign_times=3[default=0]; //已经签到的次数
+}
+

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="EquipSuit" Key="id" ExportType="Dic" Src="Z 装备套装属性表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "套装组" />
+  <P Name="name" Type="string" ColName= "备注" />
+  <P Name="num1" Type="number" ColName= "组成套装数量1" />
+  <P Name="att1" Type="NeedItem" IsList="true" Lsp="|" ColName="属性值1" />
+  <P Name="num2" Type="number" ColName= "组成套装数量2" />
+  <P Name="att2" Type="NeedItem" IsList="true" Lsp="|" ColName="属性值2" />
+  <P Name="num3" Type="number" ColName= "组成套装数量3" />
+  <P Name="att3" Type="NeedItem" IsList="true" Lsp="|" ColName="属性值3" />
+</Proto>

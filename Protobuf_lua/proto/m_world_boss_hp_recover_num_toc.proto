@@ -1,0 +1,5 @@
+// 世界boss血量恢复次数
+message m_world_boss_hp_recover_num_toc {
+optional  int32  hp_recover_num=1[default=0]; //当前血量恢复次数
+}
+

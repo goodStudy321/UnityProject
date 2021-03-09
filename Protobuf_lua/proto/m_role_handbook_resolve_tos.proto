@@ -1,0 +1,5 @@
+// 图鉴材料分解
+message m_role_handbook_resolve_tos {
+repeated  int64  resolve_item_id=1; //道具ID
+}
+

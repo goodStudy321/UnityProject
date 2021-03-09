@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SkillBaseTemp" Key="id" ExportType="Dic" Src="J 技能等级配置表.xls" Sheet="Sheet2">
+  <P Name="id" Type="number" ColName= "技能ID" />
+  <P Name="ty" Type="number" ColName= "技能类型" />
+  <P Name="name" Type="string" ColName="技能名称" />
+  <P Name="des" Type="string" ColName="技能描述" />
+  <P Name="unlockDes" Type="string" ColName="开启条件" />
+  <P Name="limLv" Type="number" ColName="最大等级" />
+  <P Name="sort" Type="number" ColName="界面排列顺序" />
+  <P Name="icon" Type="string" ColName= "图标路径" />
+</Proto>

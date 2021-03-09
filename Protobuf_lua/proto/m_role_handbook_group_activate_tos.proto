@@ -1,0 +1,5 @@
+// 图鉴组属性激活
+message m_role_handbook_group_activate_tos {
+optional  int32  card_group_id=1[default=0]; //卡片组阶段id(卡组配置表卡组id)
+}
+

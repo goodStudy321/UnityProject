@@ -1,0 +1,4 @@
+// 请求 发送援助消息
+message m_role_escort_for_help_tos {
+}
+

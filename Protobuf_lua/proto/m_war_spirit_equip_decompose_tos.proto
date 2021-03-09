@@ -1,0 +1,5 @@
+// 背包战灵灵饰分解
+message m_war_spirit_equip_decompose_tos {
+repeated  int64  equip_id=1; //分解装备id
+}
+

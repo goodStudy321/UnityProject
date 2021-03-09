@@ -1,0 +1,7 @@
+import "p_letter.proto";
+// 返回收到的信件
+message m_letter_get_toc {
+optional  int32  op_type=1[default=0]; //0为获取全部信件，1为获取新信件
+repeated  p_letter  letters=2; //信件的简单信息列表
+}
+

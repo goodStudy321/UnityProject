@@ -1,0 +1,448 @@
+#!/usr/bin/env bash
+
+##-----------------------------------------------------------
+##  游戏控制脚本
+##-----------------------------------------------------------
+
+##架构版本号, 用于标识产品所用的后端架构
+ARCH="1.0"
+
+ulimit -c unlimited
+ulimit -SHn 51200
+
+## 获取脚本执行目录
+## HERE=$(which "$0" 2>/dev/null || echo .)
+## BASE=$(dirname $HERE)
+BASE=$(dirname $0)
+CUR_DIR=$(cd $BASE; echo $PWD)
+
+## 自定义脚本
+source ${CUR_DIR}/script/run/mgectl_custom
+
+## 帮助命令
+help ()
+{
+    echo '使用说明'
+    echo '基本语法: ${0} 功能指令 [option]'
+    echo '命令模块：'
+    echo 'help                      显示当前帮助内容'
+    echo '-------------------------------------------------------'
+    echo 'start                     启动游戏'
+    echo 'lite                      轻量级模式启动，仅db和log'
+    echo 'stop                      停止游戏'
+    echo 'restart                   重启游戏'
+    echo 'stop_to_lite              游戏踢人'
+    echo 'stop_yes                  停止游戏，跳过二次确认'
+    echo 'restart_yes               重启游戏，跳过二次确认'
+    echo 'stop_to_lite_yes          游戏踢人，跳过二次确认'
+    echo 'debug                     debug相关操作'
+    echo 'live                      互动方式启动游戏，用于检查启动异常'
+    echo 'exprs                     执行代码'
+    echo 'status                    查看服务器状态'
+    echo 'IP                        查看节点IP'
+    echo 'reload_config             重新加载配置'
+    echo 'reload_beam               重新加载BEAM'
+    custom_help
+}
+
+## 若mgectl则显示帮助命令
+if [ $# -eq 0 ]; then
+	help
+    exit 0
+fi
+
+## 获取子shell命令
+TARGET=$1
+shift
+
+## 获取AGENT_CODE和server_id
+
+CONFIG_LIST=$(escript ${CUR_DIR}/script/tool/escript_tool.es ${CUR_DIR} get_common_config agent_code server_id game_code cookie_extend server_ip server_ip_public server_start_time)
+Array=($(tr " " " " <<< $CONFIG_LIST))
+AGENT_CODE=${Array[0]}
+SERVER_ID=${Array[1]}
+GAME_CODE=${Array[2]}
+COOKIE_EXTEND=${Array[3]}
+IP=${Array[4]}
+## 中央服的IP，用公网IP
+##if [ ${SERVER_ID} -ge 99990 ]; then
+##	IP=${Array[5]}
+##else
+##    IP=${Array[4]}
+##fi
+## 格式适配的原因，后续这个一定要最后一个获取
+OPEN_TIME="${Array[6]} ${Array[7]}"
+
+
+DATA_DIR='/data'
+LOG_DIR="${DATA_DIR}/logs"
+
+## 初始化文件夹
+mkdir -p ${LOG_DIR}/server/
+mkdir -p ${LOG_DIR}/game/
+mkdir -p ${LOG_DIR}/monitor/
+mkdir -p ${LOG_DIR}/erl_dump/
+
+## 运行目录设置
+RUNNING_DIR="${DATA_DIR}/${GAME_CODE}_${AGENT_CODE}_${SERVER_ID}/server"
+## cookie
+ERLANG_COOKIE="${GAME_CODE}_${COOKIE_EXTEND}"
+## 启动日志文件
+MANAGER_LOG_FILE="${LOG_DIR}/${GAME_CODE}_manager_${AGENT_CODE}_${SERVER_ID}.log"
+
+## 发布后的各个目录 ======= begin =============
+#### -- Server根目录
+SERVER_DIR="${RUNNING_DIR}"
+#### -- Ebin目录设置
+SERVER_EBIN="${SERVER_DIR}/ebin/"
+#### -- 最终config目录设置
+RELEASE_CONFIG_DIR="${SERVER_DIR}/config"
+#### -- 最终setting 目录
+RELEASE_SETTING_DIR="${SERVER_DIR}/setting"
+
+# 节点名称
+NODE_NAME="${GAME_CODE}_${AGENT_CODE}_${SERVER_ID}@${IP}"
+# 启动参数
+PARAMS=$(custom_param)
+START_PARAMS=$(start_param)
+LOCAL_NODE="@127.0.0.1"
+
+## 启动游戏
+start_game()
+{
+    START_SUCC="${RUNNING_DIR}/start_succ"
+    STARTING_FLAG="${RUNNING_DIR}/starting_flag"
+    /bin/rm -f ${START_SUCC}
+    /bin/rm -f $MANAGER_LOG_FILE
+    touch ${STARTING_FLAG}
+    COMMAND="${ERL} -name ${NODE_NAME} ${START_PARAMS} -s server_main start -detached -noinput  -hidden"
+    RETRY_COUNTER=1
+    ps ax | grep beam | grep "name ${NODE_NAME}" >/dev/null
+    if [ $? == 0  ]; then
+        echo "${NODE_NAME} is running"
+        exit 1
+    fi
+
+    LITE=$1
+    if [ "$LITE" == 'lite' ]; then
+         COMMAND="${COMMAND} -lite true"
+    fi
+    echo "$COMMAND" >> $MANAGER_LOG_FILE
+    bash -c "$COMMAND"
+    OldLine=0
+    LoopValue=0
+    while true
+    do
+        NowLine=`cat $MANAGER_LOG_FILE | wc -l`
+        tail -n +$(($OldLine+1)) $MANAGER_LOG_FILE
+        OldLine=${NowLine}
+        if [ -f ${START_SUCC} ]; then
+            FAKEPID=`ps ax | grep faketime | grep mgectl | awk '{print $1}'`
+            if [ ${FAKEPID} ]; then
+                kill -2 ${FAKEPID}
+            fi
+            break
+        fi
+        LoopValue=$((${LoopValue}+1))
+        if [ "${LoopValue}" -gt 1200 ]; then ## 600秒
+            echo "${NODE_NAME} start too long, check"
+            FAKEPID=`ps ax | grep faketime | grep mgectl | awk '{print $1}'`
+            if [ ${FAKEPID} ]; then
+                kill -2 ${FAKEPID}
+            fi
+            exit 1
+        fi
+        sleep 0.5
+    done
+}
+
+## 启动
+start()
+{
+    start_game
+}
+
+## 轻量级启动
+lite()
+{
+    start_game lite
+}
+
+## 停止游戏
+stop_game_confirm()
+{
+    confirm stop_game '还有Num个玩家在线，是否继续停止游戏[Y/N]?' $*
+}
+
+pre_stop()
+{
+    manager_ctl pre_stop
+}
+
+stop_game()
+{
+    START_SUCC="${RUNNING_DIR}/start_succ"
+    /bin/rm -f ${START_SUCC}
+    PID=$(manager_ctl get_pid)
+    manager_ctl stop $*
+    while $(kill -s 0 "$PID" 2>/dev/null);
+    do
+        sleep 1
+    done
+}
+
+all_restart()
+{
+    restart_game
+    sh ${DATA_DIR}/${GAME_CODE}_cross_90001/server/mgectl restart_yes
+    sh ${DATA_DIR}/${GAME_CODE}_center_99999/server/mgectl restart_yes
+}
+
+restart_game_confirm()
+{
+    confirm restart_game '还有Num个玩家在线，是否继续重启游戏[Y/N]?' $*
+}
+
+restart_game()
+{
+    stop_game
+    sleep 3
+    start_game
+}
+
+stop_to_lite_confirm()
+{
+    confirm stop_to_lite '还有Num个玩家在线，是否继续停止网关[Y/N]?' $*
+}
+
+stop_to_lite()
+{
+    manager_ctl stop_to_lite $*
+}
+
+
+## 运行命令确认函数，如果游戏中还有玩家在线，则进行确认
+confirm()
+{
+    FUN=$1
+    CONTENT=$2
+    if [ "$3" == 'yes' ] ; then
+        $FUN
+        return 0
+    fi
+    ROLENUM=$(online)
+    if [ "${ROLENUM}" -gt 0 ] ; then
+        read -n1 -p ${CONTENT/Num/${ROLENUM}} CONFIRM
+        case $CONFIRM in
+        Y|y)
+            $FUN;;
+        N|n)
+            echo '取消';;
+        *)
+            echo '输入错误';;
+        esac
+        return 0
+    fi
+    $FUN
+}
+
+## 进入游戏debug节点
+debug_game()
+{
+    EXTRA=$@
+    if [ "${EXTRA}" == '' ]; then
+        TIMESTAMP=$(date +%s)
+        EXTRA="${AGENT_CODE}_${SERVER_ID}_${TIMESTAMP}"
+    else
+        EXTRA=`echo "${EXTRA}" | sed 's/ /-/g'`
+    fi
+    COMMAND="${ERL} -name debug-${EXTRA}${LOCAL_NODE} ${PARAMS} -remsh ${NODE_NAME} "
+    bash -c "$COMMAND"
+}
+
+## live 方式启动游戏
+live_game()
+{
+    COMMAND="${ERL} -name ${NODE_NAME} ${PARAMS} -s server_main start  "
+    echo "$COMMAND" >> $MANAGER_LOG_FILE
+    bash -c "$COMMAND"
+}
+
+exprs()
+{
+    manager_ctl exprs \"$*\"
+}
+
+execute_cmd()
+{
+    manager_ctl execute_cmd $*
+}
+
+## 游戏状态
+status()
+{
+    manager_ctl status $*
+}
+
+merge_status()
+{
+    manager_ctl merge_status $*
+}
+
+## IP
+get_IP()
+{
+    manager_ctl IP $*
+}
+
+
+## 重新载入配置文件
+reload_config()
+{
+    manager_ctl reload_config $*
+}
+
+## 重新载入代码文件
+reload_beam()
+{
+    manager_ctl reload_beam $*
+}
+
+## 合服
+merge()
+{
+    manager_ctl merge $*
+}
+
+##
+manager_ctl()
+{
+    COMMAND=$(rpc_cmd $*)
+    if [ $? -eq 0 ] ; then
+        bash -c "$COMMAND"
+    else
+        echo $COMMAND;
+        exit
+    fi
+}
+
+## 常用接口的rpc
+rpc_cmd()
+{
+    CMD=$1
+    shift
+    TIMESTAMP=$(date +%s)
+    EXTRA_NAME="${AGENT_CODE}_${SERVER_ID}_${TIMESTAMP}"
+    if [ $# == 0 ] ; then
+        COMMAND="${ERL} -name command_${CMD}_${EXTRA_NAME}${LOCAL_NODE} -noinput ${PARAMS} -hidden -s server_main cmd -extra ${NODE_NAME} ${CMD}"
+    else
+        COMMAND="${ERL} -name command_${CMD}_${EXTRA_NAME}${LOCAL_NODE} -noinput ${PARAMS} -hidden -s server_main cmd -extra ${NODE_NAME} ${CMD} '$*'"
+    fi
+    echo ${COMMAND}
+}
+
+update_server()
+{
+    if [ $# -eq 0 ] ; then
+        DestIP="192.168.2.250"
+        FROM="local_1"
+        DEST="local_1"
+    else
+        FROM=$1
+        DestIP=$2
+        DEST=$3
+    fi
+    sh -x ${CUR_DIR}/script/update/update_server $FROM $DestIP $DEST
+    ssh -p 22 $DestIP "cd /data/ranger_$DEST/server && sh mgectl restart_yes"
+}
+
+cl2()
+{
+    MODULE=$*
+    cl $MODULE
+    for MOD in $MODULE
+    {
+        scp -P22 ebin/"$MOD.beam" 192.168.2.250:/data/ranger_local_53/server/ebin/
+        ssh -p22 192.168.2.250 "sh /data/ranger_local_53/server/mgectl reload_beam $MOD"
+    }
+}
+
+cl3(){
+    MODULE=$*
+    cl $MODULE
+    for MOD in $MODULE
+    {
+        cp -f ebin/"$MOD.beam" /data/ranger_cross_90001/server/ebin/
+        cp -f ebin/"$MOD.beam" /data/ranger_center_99999/server/ebin/
+    }
+    sh /data/ranger_cross_90001/server/mgectl reload_beam $MODULE
+	sh /data/ranger_center_99999/server/mgectl reload_beam $MODULE
+}
+
+get_auth_switch(){
+    manager_ctl get_auth_switch $*
+}
+
+verification(){
+    manager_ctl verification $8
+}
+
+admin_sql()
+{
+    mysql admin_${AGENT_CODE}_${SERVER_ID} -e "source ${CUR_DIR}/../web/admin.sql"
+    mysql central -e "source ${CUR_DIR}/../web/admin.sql"
+}
+
+rebuild_admin_sql()
+{
+    DATABASE=admin_${AGENT_CODE}_${SERVER_ID}
+    mysql -e "drop database ${DATABASE};create database ${DATABASE}"
+    mysql -e "drop database central;create database central"
+    admin_sql
+}
+
+rebuild_router_sql()
+{
+    mysql -e "drop database router;create database router"
+    mysql router -e "source ${CUR_DIR}/../web/router.sql"
+}
+
+rebuild_sql()
+{
+    mysql < ${CUR_DIR}/script/sql/rebuild.sql
+}
+
+case $TARGET in
+    help) help ;;
+    start) start $*;;
+    lite) lite $*;;
+    stop) stop_game_confirm $*;;
+    all_restart) all_restart $*;;
+    restart) restart_game_confirm $*;;
+    stop_to_lite) stop_to_lite_confirm $*;;
+    pre_stop_yes) pre_stop $*;;
+    stop_yes) stop_game $*;;
+    restart_yes) restart_game $*;;
+    stop_to_lite_yes) stop_to_lite $*;;
+    debug) debug_game $*;;
+    live) live_game $*;;
+    exprs) exprs $*;;
+    execute_cmd) execute_cmd $*;;
+    status) status ;;
+    merge_status) merge_status;;
+    [Ii][Pp]) get_IP;;
+    reload_config) reload_config $*;;
+    reload_beam) reload_beam $*;;
+    merge) merge $*;;
+    update_server) update_server $*;;
+    cl2) cl2 $*;;
+	cl3) cl3 $*;;
+	get_auth_switch) get_auth_switch $*;;
+	verification) verification $*;;
+    admin_sql) admin_sql $*;;
+    rebuild_admin_sql) rebuild_admin_sql $*;;
+    rebuild_router_sql) rebuild_router_sql $*;;
+    rebuild_sql) rebuild_sql $*;;
+    get_sbt) get_sbt $*;;
+    *) custom_cmd $*;;
+esac

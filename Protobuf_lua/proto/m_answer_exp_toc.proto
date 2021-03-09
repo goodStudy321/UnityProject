@@ -1,0 +1,6 @@
+// 经验
+message m_answer_exp_toc {
+optional  int32  exp=1[default=0]; //答题获得经验
+optional  int32  all_exp=2[default=0]; //活动获得总经验
+}
+

@@ -1,0 +1,10 @@
+import "p_dkv.proto";
+import "p_kvl.proto";
+import "p_kb.proto";
+// 1v1pk信息更新
+message m_solo_role_info_update_toc {
+repeated  p_dkv  kv_list=1; //int类型变化
+repeated  p_kvl  kl_list=2; //list类型变化
+repeated  p_kb  kb_list=3; //bool类型变化
+}
+

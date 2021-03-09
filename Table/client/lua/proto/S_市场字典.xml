@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MarketDic" Key="id" ExportType="Dic" Src="S 市场字典.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "id" />
+  <P Name="name" Type="string" ColName= "显示名称" />
+  <P Name="category" Type="number" ColName= "类别" />
+  <P Name="preids" Type="number" IsList="true" Lsp="," ColName= "前置属性" />
+  <P Name="unique" Type="number" ColName= "单独使用" />
+  <P Name="icon" Type="string" ColName= "icon显示" />
+  <P Name="color" Type="number" ColName= "品质搜索" />
+  <P Name="quality" Type="number" ColName= "品阶搜索" />
+</Proto>

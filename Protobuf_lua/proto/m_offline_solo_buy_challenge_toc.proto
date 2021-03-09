@@ -1,0 +1,7 @@
+// 购买次数返回
+message m_offline_solo_buy_challenge_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  new_challenge_times=2[default=0]; //可挑战次数
+optional  int32  new_buy_times=3[default=0]; //已购买次数
+}
+

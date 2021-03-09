@@ -1,0 +1,13 @@
+// vip信息推送
+message m_vip_info_toc {
+optional  int32  expire_time=1[default=0]; //vip过期时间
+optional  int32  level=2[default=0]; //vip等级
+optional  int32  exp=3[default=0]; //世界boss列表
+repeated  int32  first_buy_list=4; //VIP卡ID列表
+optional  bool  day_gift_status=5[default=true]; //周福利是否可领取 true：可
+repeated  int32  gift_list=6; //领取的VIP等级列表
+optional  bool  is_vip_experience=7[default=true]; //是否VIP体验期
+optional  bool  is_remind=8[default=true]; //是否提醒
+optional  int32  v4_remind_time=9[default=0]; //v4提醒过期时间
+}
+

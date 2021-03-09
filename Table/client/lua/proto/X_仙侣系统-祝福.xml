@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MarryWishCfg" Key="id" ExportType="Arr" Src="X 仙侣系统-祝福.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "id" />
+  <P Name="type" Type="number" ColName= "类型" />
+  <P Name="val" Type="number" ColName= "参数" />
+</Proto>

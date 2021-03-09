@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="GWLvCfg" ExportType="Arr" Key="lv" Src="S 神兵等级表.xls" Sheet="Sheet1">
+  <P Name="lv" Type="number" ColName= "神兵等级" />
+  <P Name="costexp" Type="number" ColName="升级经验" />
+  <P Name="atk" Type="number" ColName="攻击" />
+  <P Name="hit" Type="number" ColName="命中" />
+  <P Name="arm" Type="number" ColName= "破甲" />
+  <P Name="crit" Type="number" ColName= "暴击" />
+  <P Name="tena" Type="number" ColName= "韧性" />
+  <P Name="critpro" Type="number" ColName= "暴击几率" />
+  <P Name="oSkiID" Type="number" Opt="true" ColName="开放技能ID" />
+</Proto>

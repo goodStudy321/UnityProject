@@ -1,0 +1,6 @@
+import "p_friend.proto";
+// 好友推荐
+message m_friend_recommend_toc {
+repeated  p_friend  recommend_list=1; //好友推荐列表
+}
+

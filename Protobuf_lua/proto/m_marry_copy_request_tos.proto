@@ -1,0 +1,4 @@
+// 请求对方购买次数
+message m_marry_copy_request_tos {
+}
+

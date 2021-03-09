@@ -1,0 +1,1037 @@
+%% coding: latin-1
+%% "~"字符一律不用，使用"-"代替
+%% name必须是m_xxx_tos|toc或者p_xx,
+%% id奇数TOS,偶数TOC p结构不用写id %% TOS必须字段/TOC、p结构可选：router=>{gateway}, {role, mod_xx} %% 协议注释：note=>"XXX" 注释中目录名禁止使用"\"或"\\"，统一使用"/" %% fields字段为可选字段 列表结构 [{字段, 类型, 注释}] %% fields下的类型可为 int32、int64、string、bool、p_xx、[int32、int64 ····]列表
+%% toc可选字段：err_code=> [{num, 提示}]  列表结构，编译时会在error_no.hrl生成 ERROR_XXX_XXX_NUM宏定义
+%% 定义toc协议、p结构，如果不是大范围使用，推荐加上router =>, 会在include/proto/下生成对应的hrl。
+%% 没有加router的，record会默认在all_pb.hrl生成，toc对应的error_code会在include/proto/common_error_no.hrl里生成
+
+%%使用类型 int32、int64、bool、string
+
+%% 该文件id 从5000-20000
+%% 如果两边都有用到的p_结构 在game_proto.txt里定义
+
+%%%% ======== 通用p结构 =========
+%% p_kv,    int32,    int32
+%% p_kdv,   int32,    int64
+%% p_ks,    int32,    string
+%% p_kb,    int32,    bool
+%% p_kvl,   int32,    [int32]
+%% p_dkv,   int64,    int64
+%% p_kvll,  int32,    [int64]
+%% p_dks,   int64,    string
+%% p_dkl,   int64,    [int32]
+%% p_kvt,   int32,    int32,    int32
+%% p_lvt,   int64,    int32,    int32
+%% p_item,  int32,    int32,    int32
+%%%% ======== 通用p结构 =========
+
+{proto_list,  [
+    %% todo ================================================================================
+    %% todo [网关杂项5000-9999]
+    %% todo ================================================================================
+
+#{name => m_system_hb_tos, id => 5001, router => gateway, note => "心跳包",
+    fields => [
+    ]},
+
+#{name => m_system_hb_toc, id => 5002, router => gateway, note => "心跳包",
+    fields => [
+        {server_time,                    int64,                           ""}
+    ],
+    err_code => [
+    ]},
+
+#{name => m_system_error_toc, id => 5100, router => gateway, note => "提示各种系统错误",
+    fields => [
+        {error_code,                     int32,                            "错误号"},
+        {need_reconnect,                 bool,                             "是否需要重连socket true:要"}
+    ],
+    err_code => [
+        {1,                                  "服务器维护"},
+        {3,                                  "登录异常，请稍后再试"},
+        {4,                                  "未知登录系统错误"},
+        {5,                                  "您的网络不稳定"},
+        {6,                                  "您的消息过于繁忙"},
+        {7,                                  "您的网络已经断开，系统正尝试自动重连"},
+        {8,                                  "你的IP地址禁止登录游戏"},
+        {11,                                 "TCP收到异常未知错误"},
+        {12,                                 "TCP连接遇到异常状态"},
+        {13,                                 "解析数据失败，请重新登录"},
+        {14,                                 "您的网络似乎很堵塞，请刷新游戏"},
+        {16,                                 "进入地图失败"},
+        {21,                                 "账号在别处登录"},
+        {23,                                 "玩家位置有误"},
+        {25,                                 "此服务器禁止创建角色，请选择其他服务器！"},
+        {26,                                 "该角色已被封禁，请重新登录"},
+        {30,                                 "网关名注册失败"},
+        {39,                                 "启动角色失败，服务器未开启"},
+        {40,                                 "启动网关收到异常消息"},
+        {41,                                 "进程收到异常消息"},
+        {42,                                 "网络异常，请重新登录游戏"},
+        {43,                                 "你的网络压力太大，请休息一下"},
+        {44,                                 "实名认证未通过不能游戏"}
+    ]},
+
+#{name => m_bgp_login_tos, id => 5501, router => gateway, note => "bgp(边界网关协议)登录请求",
+    fields => [
+        {id,                             int32,                            ""},
+        {host,                           string,                         ""},
+        {port,                           int32,                            ""}
+    ]},
+
+#{name => m_bgp_login_toc, id => 5502, router => gateway, note => "bgp(边界网关协议)登录请求",
+    fields => [
+        {id,                             int32,                            ""},
+        {err_code,                       int32,                            ""}
+    ],
+    err_code => [
+    ]},
+
+
+#{name => m_auth_key_tos, id => 5601, router => {role, role_login}, note => "登陆请求",
+    fields => [
+        {account_name,                   string,                         "账号名"},
+        {key,                            string,                         "校验key"},
+        {time,                           int32,                          "前端需发时间戳，用于校验与匹配"},
+        {server_id,                      int32,                          "服务器ID"},
+        {pf_args,                        [string],                       "平台参数（各个平台参数数量可能不同） 君海：ChannelID, GameChannelID"},
+        {device_args,                    [string],                       "device_name、os_type、os_ver、net_type、imei、package_name、screen_width、screen_height"}
+    ]},
+
+#{name => m_auth_key_toc, id => 5602, router => {role, role_login}, note => "登陆返回",
+    fields => [
+        {err_code,                       int32,                            "是否成功"},
+        {role_list,                      [p_login_role],                   "是否需要创建帐号"},
+        {is_gm,                          bool,                              "是否开启GM模式"}
+    ],
+    err_code => [
+        {1,                                 "禁止空账号名登录"},
+        {2,                                 "此服务器禁止创建角色，请选择其他服务器！"},
+        {3,                                 "登录流程状态错误，请刷新游戏"},
+        {4,                                 "key错误"},
+        {5,                                 "平台参数错误"},
+        {6,                                 "当前服务器繁忙，请选择其他服务器！"}
+    ]},
+
+#{name => m_create_role_tos, id => 5603, router => {role, role_login}, note => "创建角色",
+    fields => [
+        {name,                           string,                         "名字"},
+        {sex,                            int32,                          "0为女性，1为男性"},
+        {category,                       int32,                          "职业"}
+    ]},
+
+#{name => m_create_role_toc, id => 5604, router => {role, role_login}, note => "创建角色",
+    fields => [
+        {err_code,                       int32,                            "是否成功"},
+        {role,                           p_login_role,                     "创建的角色"}
+    ],
+    err_code => [
+        {1,                                 "名字不能为空"},
+        {2,                                 "性别参数错误"},
+        {3,                                 "职业参数错误"},
+        {4,                                 "该名字已被使用"},
+        {5,                                 "最多只能创建3个帐号"},
+        {6,                                 "该服务器已爆满，请前往新服进行游戏"},
+        {7,                                 "名字过长"}
+    ]},
+
+#{name => m_select_role_tos, id => 5605, router => {role, role_login}, note => "选择角色",
+    fields => [
+        {role_id,                        int64,                          "选择的角色"}
+    ]},
+
+#{name => m_select_role_toc, id => 5606, router => {role, role_login}, note => "创建角色",
+    fields => [
+        {err_code,                       int32,                            "是否成功"},
+        {map_id,                         int32,                            "地图的map_id"},
+        {role_data,                      p_role_data,                      "p_role_data"}
+    ],
+    err_code => [
+        {1,                                 "没有该角色"},
+        {2,                                 "该角色已被封禁"},
+        {3,                                 "当前IP禁止登录"},
+        {4,                                 "当前设备禁止登录"},
+        {5,                                 "当前帐号禁止登录"}
+    ]},
+
+#{name => m_del_role_tos, id => 5607, router => {role, role_login}, note => "删除角色",
+    fields => [
+        {role_id,                        int64,                          "删除角色"}
+    ]},
+
+#{name => m_del_role_toc, id => 5608, router => {role, role_login}, note => "删除角色",
+    fields => [
+        {err_code,                       int32,                            "是否成功"},
+        {del_role_id,                    int64,                            "删除角色"}
+    ],
+    err_code => [
+        {1,                                 "没有该角色"}
+    ]},
+
+#{name => m_role_reconnect_tos, id => 5611, router => {role, role_login}, note => "玩家断线重连",
+    fields => [
+        {role_id,                        int64,                          "需要重连的RoleID"},
+        {key,                            string,                         "校验key"},
+        {time,                           int32,                          "前端需发时间戳，用于校验与匹配"},
+        {device_args,                    [string],                       "device_name、os_type、os_ver、net_type、imei、package_name、screen_width、screen_height"}
+    ]},
+
+#{name => m_role_reconnect_toc, id => 5612, router => {role, role_login}, note => "玩家断线重连返回",
+    fields => [
+        {err_code,                       int32,                            "错误码"}
+    ],
+    err_code => [
+        {1,                                 "已经连接成功"},
+        {2,                                 "此服务器禁止创建角色，请选择其他服务器！"},
+        {3,                                 "登录流程状态错误，请刷新游戏"},
+        {4,                                 "key错误"},
+        {5,                                 "平台参数错误"}
+    ]},
+
+#{name => m_role_login_toc, id => 5620, router => {role, role_login}, note => "角色登录成功",
+    fields => [
+    ]},
+
+#{name => m_role_gm_tos, id => 5651, router => {role, mod_role_gm}, note => "GM命令",
+    fields => [
+        {type,                           string,                         "类型 "},
+        {args,                           string,                         "参数 有多个参数用;来做分隔"}
+    ]},
+
+#{name => m_role_gm_toc, id => 5652, router => {role, mod_role_gm}, note => "登陆返回",
+    fields => [
+        {err_code,                       int32,                            "是否成功"},
+        {result,                         string,                           "返回结果"}
+    ],
+    err_code => [
+    ]},
+
+#{name => m_pre_enter_tos, id => 5711, router => {role, mod_role_map}, note => "请求进入地图",
+    fields => [
+        {map_id,                        int32,                             ""},
+        {extra_id,                      int64,                             "选择进入分线（0表示不主动选择）"}
+    ]},
+
+#{name => m_pre_enter_toc, id => 5712, router => {role, mod_role_map}, note => "请求进入地图返回",
+    fields => [
+        {err_code,                       int32,                             "是否成功"},
+        {map_id,                         int32,                             "地图ID"},
+        {pos,                            int64,                             "位置信息"}
+    ],
+    err_code => [
+        {1,                                  "等级不足，不能进入该副本"},
+        {2,                                  "没有足够的副本次数"},
+        {3,                                  "该时间段不能进入副本"},
+        {4,                                  "该副本还未开放"},
+        {5,                                  "已经在该地图"},
+        {6,                                  "当前不在地图中"},
+        {7,                                  "不能进入组队副本"},
+        {8,                                  "正处于冷却时间，无法挑战"},
+        {9,                                  "次数已满不能再进入"},
+        {10,                                 "战场未开启不能进入"},
+        {11,                                 "活动未开启不能进入"},
+        {12,                                 "没有匹配成功"},
+        {13,                                 "该地图未开启"},
+        {14,                                 "没有道庭不能进入"},
+        {15,                                 "本次活动已经结束"},
+        {16,                                 "本次活动已经不能进入"},
+        {17,                                 "执行流程中，不能进入其他地图"},
+        {18,                                 "护送任务中无法传送"},
+        {19,                                 "没有进入地图资格"},
+        {20,                                 "系统繁忙"},
+        {21,                                 "本轮活动已结束"},
+        {22,                                 "该地图已经达到最大进入人数，请稍后再试"},
+        {23,                                 "您已通关，无法再次参与"},
+        {24,                                 "活动期间新建道庭无法参与活动"},
+        {25,                                 "Boss已击杀"},
+        {26,                                 "当前还不是宾客，不能进入婚宴场景"},
+        {27,                                 "该分线不存在，不能进入"},
+        {28,                                 "该分线已到达上限"},
+        {29,                                 "当前处于副本场景，不能切换"},
+        {30,                                 "当前境界不满足条件"},
+        {31,                                 "当前属性不满足条件"},
+        {32,                                 "当前关卡不能重复进入"},
+        {33,                                 "未解锁不能进入"},
+        {34,                                 "体力不足不能进入"},
+        {35,                                 "今天已经通关该副本，请明日再来"},
+        {36,                                 "当前处于副本场景，不能进行此操作"}
+    ]},
+
+#{name => m_enter_map_tos, id => 5701, router => {role, mod_role_map}, note => "正式进入地图",
+    fields => [
+        {map_id,                         int32,                          "进入地图的map_id"}
+    ]},
+
+#{name => m_enter_map_toc, id => 5702, router => {role, mod_role_map}, note => "正式进入地图返回",
+    fields => [
+        {err_code,                       int32,                            "是否成功"},
+        {map_id,                         int32,                            "地图ID"},
+        {role_map_info,                  p_map_actor,                      "自己的p_map_actor"},
+        {extra_id,                       int64,                            "当前分线ID"}
+    ],
+    err_code => [
+        {1,                                  "先加载地图再进入"}
+    ]},
+
+#{name => m_quit_map_tos, id => 5703, router => {role, mod_role_map}, note => "请求退出地图",
+    fields => [
+    ]},
+
+#{name => m_quit_map_toc, id => 5704, router => {role, mod_role_map}, note => "请求退出地图返回",
+    fields => [
+        {err_code,                       int32,                            "是否成功"},
+        {map_id,                         int32,                            "地图ID"}
+    ],
+    err_code => [
+    ]},
+
+#{name => m_map_enter_list_toc, id => 5706, router => {role, mod_role_map}, note => "返回地图进入次数列表",
+    fields => [
+        {enter_list,                     [p_kv],                           "id:地图ID val:进入次数"}
+    ],
+    err_code => [
+    ]},
+
+#{name => m_map_change_pos_tos, id => 5751, router => {role, mod_role_map}, note => "请求传送",
+    fields => [
+        {dest_pos,                       int64,                            "目标位置"},
+        {map_id,                         int32,                            "目标地图"},
+        {jump_id,                        int32,                            "跳转ID"},
+        {dest_jump_id,                   int32,                             "跨地图跳转用到"}
+    ]},
+
+#{name => m_map_change_pos_toc, id => 5752, router => {map, mod_map_actor}, note => "位置改变",
+    fields => [
+        {err_code,                       int32,                            "错误码"},
+        {actor_id,                       int64,                            "actor_id"},
+        {src_pos,                        int64,                            "原始位置"},
+        {dest_pos,                       int64,                            "目标位置"},
+        {jump_id,                        int32,                            "跳转ID"},
+        {type,                           int32,                            "跳转类型 0普通跳转 1为冲刺 2为抓取 3跳转点跳转"}
+    ],
+    err_code => [
+        {1,                                  "目标点不存在"}
+    ]},
+
+#{name => m_role_dead_toc, id => 5772, router => {role, mod_role_map}, note => "角色死亡",
+    fields => [
+        {src_id,                         int64,                            ""},
+        {src_name,                       string,                           ""},
+        {normal_relive_time,             int32,                            "可以普通复活的时间戳 0表示只能原地复活"},
+        {normal_times,                   int32,                            "已经复活的次数"}
+    ],
+    err_code => [
+    ]},
+
+#{name => m_role_relive_tos, id => 5773, router => {role, mod_role_map}, note => "角色复活",
+    fields => [
+        {op_type,                        int32,                            "0为普通复活 1为原地复活"}
+    ]},
+
+#{name => m_role_relive_toc, id => 5774, router => {role, mod_role_map}, note => "角色复活",
+    fields => [
+        {err_code,                       int32,                            "是否成功"},
+        {op_type,                        int32,                            "0为普通复活 1为原地复活"}
+    ],
+    err_code => [
+        {1,                                  "死亡状态才可以复活"},
+        {2,                                  "该地图不能原地复活"},
+        {3,                                  "不能复活"}
+    ]},
+
+#{name => m_role_attr_change_toc, id => 5780, note => "角色属性更新",
+    fields => [
+        {kv_list,                        [p_dkv],                        "int类型变化"},
+        {ks_list,                        [p_ks],                         "string类型变化"}
+    ]},
+
+
+#{name => m_role_level_toc, id => 5856, router => {role, mod_role_level}, note => "经验/等级改变返回",
+    fields => [
+        {level,                          int32,                            "等级"},
+        {exp,                            int64,                            "错误码"},
+        {is_monster_add,                 bool,                             "是否杀怪经验加成"}
+    ],
+    err_code => [
+    ]},
+
+#{name => m_role_base_toc, id => 5870, router => {role, mod_role_fight}, note => "角色属性更新",
+    fields => [
+        {role_base,                      [p_kdv],                          "角色属性"},
+        {role_powers,                    [p_kv],                           "角色战力"}
+    ],
+    err_code => [
+    ]},
+
+#{name => m_map_slice_enter_toc, id => 10002, router => {map, mod_map_actor}, note => "",
+    fields => [
+        {actors,                         [p_map_actor],                  ""},
+        {del_actors,                     [int64],                        ""}
+    ],
+    err_code => [
+    ]},
+
+#{name => m_map_actor_attr_change_toc, id => 10004, router => {map, mod_map_actor}, note => "",
+    fields => [
+        {actor_id,                       int64,                          ""},
+        {kv_list,                        [p_dkv],                        "int类型变化"},
+        {ks_list,                        [p_ks],                         "string类型变化"},
+        {kl_list,                        [p_kvl],                        "list类型变化"}
+    ],
+    err_code => [
+    ]},
+
+#{name => m_actor_info_change_toc, id => 10008, router => {map, mod_map_actor}, note => "",
+    fields => [
+        {actor_id,                       int64,                          ""},
+        {hp,                             int64,                          "血量"},
+        {max_hp,                         int64,                          "最大血量"}
+    ],
+    err_code => [
+    ]},
+
+#{name => m_actor_buff_change_toc, id => 10010, router => {map, mod_map_actor}, note => "",
+    fields => [
+        {actor_id,                       int64,                          ""},
+        {update_list,                    [p_buff],                       "更新的buff 增加 or 值更新"},
+        {del_list,                       [int32],                        "移除的buff"}
+    ],
+    err_code => [
+    ]},
+
+#{name => m_world_boss_owner_update_toc, id => 10020, router => {map, mod_map_actor}, note => "boss归属者更新",
+    fields => [
+        {actor_id,                       int64,                          ""},
+        {world_boss_owner,               p_world_boss_owner,            ""}
+    ],
+    err_code => [
+    ]},
+
+#{name => m_move_role_walk_tos, id => 10101, router => {map, mod_map_role_move}, note => "",
+    fields => [
+        {pos,                            int64,                           ""}
+    ]},
+
+#{name => m_move_point_tos, id => 10103, router => {map, mod_map_role_move}, note => "",
+    fields => [
+        {point,                          int64,                           ""}
+    ]},
+
+#{name => m_move_point_toc, id => 10104, router => {map, mod_map_role_move}, note => "",
+    fields => [
+        {actor_id,                       int64,                           ""},
+        {point,                          int64,                           ""}
+    ],
+    err_code => [
+    ]},
+
+#{name => m_move_stop_tos, id => 10107, router => {map, mod_map_role_move}, note => "",
+    fields => [
+        {pos,                            int64,                           ""}
+    ]},
+
+#{name => m_move_stop_toc, id => 10108, router => {map, mod_map_role_move}, note => "",
+    fields => [
+        {actor_id,                       int64,                           ""},
+        {pos,                            int64,                           ""}
+    ],
+    err_code => [
+    ]},
+
+#{name => m_move_sync_toc, id => 10110, note => "广播同步某个玩家的位置",
+    fields => [
+        {actor_id,                       int64,                           ""},
+        {pos,                            int64,                           "拉回的位置"}
+    ],
+    err_code => [
+    ]},
+
+#{name => m_move_rush_tos, id => 10111, router => {map, mod_map_role_move}, note => "冲刺",
+    fields => [
+        {pos,                            int64,                           "目标点"}
+    ]},
+
+#{name => m_stick_move_tos, id => 10121, router => {map, mod_map_role_move}, note => "",
+    fields => [
+        {pos,                            int64,                           ""}
+    ]},
+
+#{name => m_stick_move_toc, id => 10122, router => {map, mod_map_role_move}, note => "",
+    fields => [
+        {actor_id,                       int64,                           ""},
+        {pos,                            int64,                           ""}
+    ],
+    err_code => [
+    ]},
+
+#{name => m_fight_attack_tos, id => 10201, router => {role, mod_role_fight}, note => "战斗",
+    fields => [
+        {skill_id,                       int32,                           "技能id"},
+        {dest_id_list,                   [int64],                         "目标id列表"},
+        {skill_pos,                      int64,                           "技能释放点"}
+    ]},
+
+#{name => m_fight_attack_toc, id => 10202, router => {role, mod_role_fight}, note => "战斗结果返回",
+    fields => [
+        {err_code,                       int32,                            "错误码"},
+        {skill_id,                       int32,                            "技能id"},
+        {src_id,                         int64,                            "释放者id"},
+        {effect_list,                    [p_result],                       "效果列表"},
+        {skill_pos,                      int64,                            "技能释放点"}
+    ],
+    err_code => [
+        {1,                             "没有该技能"},
+        {2,                             "技能还在冷却中"},
+        {3,                             "晕眩状态不能释放技能"},
+        {4,                             "当前状态不能使用该技能"},
+        {5,                             "攻击冷却中"},
+        {6,                             "被动尚未触发"}
+    ]},
+
+#{name => m_fight_prepare_tos, id => 10203, router => {role, mod_role_fight}, note => "技能释放预警",
+    fields => [
+        {skill_id,                       int32,                           "技能id"},
+        {dest_id,                        int64,                           ""},
+        {step_id,                        int32,                           ""},
+        {src_pos,                        int64,                           ""}
+    ]},
+
+#{name => m_fight_prepare_toc, id => 10204, router => {role, mod_role_fight}, note => "技能释放预警",
+    fields => [
+        {src_id,                         int64,                           "释放者id"},
+        {dest_id,                        int64,                           "目标ID"},
+        {skill_id,                       int32,                           "技能id"},
+        {step_id,                        int32,                           ""},
+        {src_pos,                        int64,                           ""},
+        {add_num,                        int32,                           "增加目标数量"}
+    ]},
+
+#{name => m_war_spirit_skill_toc, id => 10208, router => {role, mod_role_fight}, note => "战灵技能结束时间",
+    fields => [
+        {role_id,                        int64,                          "玩家ID"},
+        {skill_id,                       int32,                          "技能ID"}
+    ]},
+
+#{name => m_buff_change_hp_toc, id => 10210, router => {map, mod_map_actor}, note => "buff造成血量加减",
+    fields => [
+        {actor_id,                       int64,                          "玩家ID"},
+        {type,                           int32,                          "9为中毒扣血，10为治疗加血"},
+        {val,                            int64,                          ""},
+        {buff_id,                        int32,                          "buff_id"}
+    ]},
+
+#{name => m_change_pk_mode_tos, id => 10221, router => {role, mod_role_fight}, note => "转换pk模式",
+    fields => [
+        {pk_mode,                        int32,                       "pk模式"}
+    ]},
+
+#{name => m_change_pk_mode_toc, id => 10222, router => {role, mod_role_fight}, note => "转换pk模式",
+    fields => [
+        {err_code,                       int32,                        ""},
+        {pk_mode,                        int32,                        "pk模式"}
+    ],
+    err_code => [
+        {1,                             "已经是该模式了"},
+        {2,                             "该地图不能修改"}
+    ]},
+
+#{name => m_pk_value_time_toc, id => 10224, router => {role, mod_role_fight}, note => "pk值清0所需要的时间",
+    fields => [
+        {pk_value_time,                  int32,                        "倒计时，非时间戳"}
+    ]},
+
+#{name => m_role_skill_toc, id => 10252, router => {role, mod_role_skill}, note => "上线推送的技能数据",
+    fields => [
+        {skill_list,                     [p_skill],                        "技能列表 包括cd"}
+    ],
+    err_code => [
+    ]},
+
+#{name => m_skill_update_toc, id => 10254, router => {role, mod_role_skill}, note => "更新推送的技能数据",
+    fields => [
+        {op_type,                        int32,                            "0：正常推送 1：角色技能开启推送"},
+        {update_list,                    [p_skill],                        "技能列表 包括cd"},
+        {del_list,                       [int32],                          ""}
+    ],
+    err_code => [
+    ]},
+
+#{name => m_skill_target_add_toc, id => 10256, router => {role, mod_role_skill}, note => "技能目标数量增加",
+    fields => [
+        {add_list,                      [p_kv],                         "id:技能子类型ID val:增加数量"}
+    ]},
+
+#{name => m_skill_cd_reduce_toc, id => 10258, router => {role, mod_role_skill}, note => "技能cd缩减",
+    fields => [
+        {cd_list,                       [p_kv],                         "id:技能子类型ID val:缩短的cd时间"}
+    ]},
+
+#{name => m_collect_start_tos, id => 10401, router => {map, mod_map_collection}, note => "开始采集",
+    fields => [
+        {collect_id,                     int64,                            "采集的对象ID"}
+    ]},
+
+#{name => m_collect_start_toc, id => 10402, router => {map, mod_map_collection}, note => "",
+    fields => [
+        {err_code,                       int32,                            ""},
+        {collect_id,                     int64,                            "采集的对象ID"},
+        {collect_time,                   int32,                            "采集需要的时间（单位：毫秒）"}
+    ],
+    err_code => [
+        {1,                             "找不到该采集物"},
+        {2,                             "已经在采集中"},
+        {3,                             "其他玩家正在采集"},
+        {4,                             "距离不够"},
+        {5,                             "次数不足"},
+        {6,                             "采集物消失"}
+    ]},
+
+#{name => m_collect_stop_tos, id => 10403, router => {map, mod_map_collection}, note => "触发任务",
+    fields => [
+   ]},
+
+#{name => m_collect_stop_toc, id => 10404, router => {map, mod_map_collection}, note => "",
+    fields => [
+        {err_code,                       int32,                            ""},
+        {collect_id,                     int64,                            "采集的对象ID"}
+    ],
+    err_code => [
+        {1,                             "找不到该采集物"},
+        {2,                             "没有采集该物品"}
+    ]},
+
+#{name => m_collect_succ_toc, id => 10406, router => {map, mod_map_collection}, note => "",
+    fields => [
+        {err_code,                       int32,                            ""},
+        {collect_id,                     int64,                            "采集的对象ID"}
+    ],
+    err_code => [
+        {1,                             "该类型不能被触发"}
+    ]},
+
+#{name => m_pick_drop_tos, id => 10451, router => {role, mod_role_extra}, note => "拾取掉落物",
+    fields => [
+        {drop_id,                        int64,                            "拾取的对象ID"}
+   ]},
+
+#{name => m_pick_drop_toc, id => 10452, router => {role, mod_role_extra}, note => "拾取掉落物返回",
+    fields => [
+        {err_code,                       int32,                            ""},
+        {drop_id,                        int64,                            "拾取的对象ID"}
+    ],
+    err_code => [
+        {1,                             "不能拾取该掉落物"},
+        {2,                             "已经拾取了"},
+        {3,                             "该掉落不存在，不能拾取"},
+        {4,                             "次数不足，不能拾取"},
+        {5,                             "魂兽背包满，不能拾取"},
+        {6,                             "灵饰背包满，不能拾取"}
+    ]},
+
+#{name => m_single_summon_tos, id => 10501, router => {map, copy_single}, note => "",
+    fields => [
+        {monster,                        p_single_summon,                ""}
+    ]},
+
+#{name => m_single_summon_toc, id => 10502, router => {map, copy_single}, note => "",
+    fields => [
+        {err_code,                       int32,                            ""}
+    ],
+    err_code => [
+        {1,                             "找不到该采集物"},
+        {2,                             "没有采集该物品"}
+    ]},
+
+#{name => m_single_ai_tos, id => 10503, router => {map, copy_single}, note => "",
+    fields => [
+        {monster_id,                     int64,                         ""},
+        {type,                           int32,                         "触发某种类型AI 1停止行为，2启动行为，3按照特定路径行走 4死亡 5攻击锁定"},
+        {args,                           string,                        "参数"}
+    ]},
+
+#{name => m_single_ai_toc, id => 10504, router => {map, copy_single}, note => "",
+    fields => [
+        {err_code,                       int32,                            ""}
+    ],
+    err_code => [
+    ]},
+
+#{name => m_monster_reach_toc, id => 10506, router => {map, copy_single}, note => "怪物抵达最终点时的返回",
+    fields => [
+        {monster_id,                     int64,                         ""}
+    ],
+    err_code => [
+    ]},
+
+#{name => m_mount_status_change_tos, id => 11211, router => {role, mod_role_mount}, note => "上下坐骑",
+    fields => [
+        {status,                        int32,                            "0不骑乘 1骑乘"}
+    ]},
+
+#{name => m_mount_status_change_toc, id => 11212, router => {role, mod_role_mount}, note => "坐骑幻化返回",
+    fields => [
+        {err_code,                      int32,                            ""},
+        {status,                        int32,                            "0不骑乘 1骑乘"}
+    ],
+    err_code => [
+        {1,                             "没有坐骑不能操作"},
+        {2,                             "已经是该状态了"},
+        {3,                             "未知状态"}
+    ]},
+
+#{name => m_role_auto_tos, id => 11711, router => {role, mod_role_extra}, note => "角色开始自动挂机 加buff/移除buff",
+    fields => [
+        {op_type,                       int32,                          "1开启挂机 0停止挂机"}
+    ]},
+
+#{name => m_role_auto_toc, id => 11712, router => {role, mod_role_extra}, note => "角色开始自动挂机 加buff/移除buff",
+    fields => [
+        {op_type,                       int32,                          "1开启挂机 0停止挂机"}
+    ]},
+
+
+
+
+
+#{name => p_login_role, id => 0, note => "登陆时简略的角色数据",
+    fields => [
+        {role_id,                        int64,                           "角色ID"},
+        {role_name,                      string,                          "角色名"},
+        {level,                          int32,                           "等级"},
+        {sex,                            int32,                           "性别"},
+        {category,                       int32,                           "职业"},
+        {skin_list,                      [int32],                         "皮肤列表"},
+        {ornament_list,                  [int32],                         "饰品列表"}
+    ]},
+
+#{name => p_role_data, id => 0, note => "角色登陆数据结构",
+    fields => [
+        {role_id,                        int64,                           "角色ID"},
+        {attr,                           p_role_attr,                     "角色属性信息"},
+        {base,                           [p_kdv],                         "角色战斗属性"},
+        {powers,                         [p_kv],                          "角色战斗力相关"}
+    ]},
+
+#{name => p_role_attr, id => 0, note => "角色基本信息",
+    fields => [
+        {role_name,                      string,                         "名字"},
+        {sex,                            int32,                          "性别 0为女性，1为男性"},
+        {category,                       int32,                          "职业"},
+        {level,                          int32,                          "等级"},
+        {exp,                            int64,                          "经验值"},
+        {create_time,                    int32,                          "上次创建时间"},
+        {last_level_time,                int32,                          "上次升级时间"},
+        {offline_fight_time,             int32,                          "离线挂机时间"}
+    ]},
+
+#{name => p_goods, id => 0, note => "道具基本属性",
+    fields => [
+        {id,                             int32,                          "背包数据"},
+        {type_id,                        int32,                          "道具type_id"},
+        {bind,                           bool,                           "是否绑定"},
+        {num,                            int32,                          "数量"},
+        {excellent_list,                 [p_kv],                         "装备卓越属性"},
+        {start_time,                     int32,                          "道具可以使用的时间 0为不限制"},
+        {end_time,                       int32,                          "道具无效时间"},
+        {market_end_time,                int32,                          "物品系统诞生时间   暂用于市场"}
+    ]},
+
+#{name => p_result, id => 0, router => {role, mod_role_fight}, note => "战斗结果",
+    fields => [
+        {actor_id,                       int64,                           "效果作用者id"},
+        {result_type,                    int32,                           "32位 位数：1扣血 2闪避 3暴击 4会心 5格挡 6加血 7吸收"},
+        {value,                          int64,                           "value值*"},
+        {show_value,                     int64,                           "显示用的数值"}
+    ]},
+
+#{name => p_skill, id => 0, router => {role, mod_role_skill}, note => "技能",
+    fields => [
+        {skill_id,                       int32,                            "skill_id"},
+        {time,                           int64,                            "可以使用技能的时间 单位毫秒（>=该时间即可使用）"},
+        {seal_id,                        int32,                            "当前铭文ID"},
+        {seal_id_list,                   [int32],                          "之前升级or设置的铭文"}
+    ]},
+
+#{name => p_buff, id => 0, note => "buf结构体",
+    fields => [
+        {buff_id,                        int32,                            "BUFID由8位组成abcdefgh"},
+        {start_time,                     int32,                            "开始时间，时间戳，前端根据这个排序"},
+        {end_time,                       int32,                            "结束时间，时间戳"},
+        {value,                          int32,                            "value值"}
+    ]},
+
+#{name => p_map_actor, id => 0, note => "在地图中的物体",
+    fields => [
+        {actor_id,                       int64,                           "场景ID标志"},
+        {actor_type,                     int32,                           "actor类型 1为人物 2为怪物 3采集物 6召唤体 13为掉落物"},
+        {actor_name,                     string,                          "actor的名字"},
+        {status,                         int32,                           "状态，0为正常，1为死亡 2为战斗"},
+        {hp,                             int64,                           "血量"},
+        {max_hp,                         int64,                           "最大血量"},
+        {buff_id_list,                   [int32],                         "buff_id_list"},
+        {move_speed,                     int32,                           "cm/s"},
+        {pos,                            int64,                           "pos"},
+        {target_pos,                     int64,                           "目标位置"},
+        {camp_id,                        int32,                           "阵营"},
+        {pk_mode,                        int32,                           "pk 模式"},
+        {role_extra,                     p_map_role,                      "角色独有的信息"},
+        {monster_extra,                  p_map_monster,                   "怪物独有的信息"},
+        {collection_extra,               p_map_collection,                "采集物独有字段"},
+        {trap_extra,                     p_map_trap,                      "召唤体独有字段"},
+        {drop_extra,                     p_map_drop,                      "掉落物独有字段"}
+    ]},
+
+#{name => p_map_role, id => 0, note => "角色独有的数据",
+    fields => [
+        {sex,                            int32,                           "0为女性，1为男性"},
+        {category,                       int32,                           "职业"},
+        {level,                          int32,                           "等级"},
+        {weapon_state,                   int32,                           "武器状态 0为正常 1为战斗"},
+        {pk_value,                       int32,                           "pk值"},
+        {family_id,                      int64,                           "道庭id"},
+        {family_name,                    string,                          "道庭名"},
+        {family_title,                   int32,                           "道庭称号"},
+        {team_id,                        int32,                           "队伍id"},
+        {power,                          int32,                           "战斗力"},
+        {confine,                        int32,                           "境界"},
+        {title,                          int32,                           "称号"},
+        {couple_id,                      int64,                           "仙侣ID"},
+        {couple_name,                    string,                          "仙侣名字"},
+        {skin_list,                      [int32],                         "外观列表"},
+        {server_id,                      int32,                           "服务器ID"},
+        {server_name,                    string,                          "服务器名称"},
+        {relive_level,                   int32,                           "转生等级"},
+        {ornament_list,                  [int32],                         "饰品列表"}
+    ]},
+
+#{name => p_map_monster, id => 0, note => "怪物独有的数据",
+    fields => [
+        {type_id,                        int32,                           "怪物的type_id"},
+        {action_string,                  string,                          "动画参数"},
+        {level,                          int32,                           "怪物等级"},
+        {world_boss_owner,               p_world_boss_owner,              "世界boss怪物归属"},
+        {battle_owner,                   int32,                           "战场怪物归属"},
+        {countdown,                      int32,                           "倒计时"}
+    ]},
+
+#{name => p_world_boss_owner, id => 0, note => "采集物独有字段",
+    fields => [
+        {owner_id,                       int64,                           "拥有者ID"},
+        {owner_name,                     string,                          "拥有者名字"},
+        {owner_level,                    int32,                           "拥有者等级"},
+        {family_id,                      int64,                           "仙盟ID"},
+        {team_id,                        int32,                           "队伍ID"}
+    ]},
+
+#{name => p_map_collection, id => 0, note => "采集物独有字段",
+    fields => [
+        {type_id,                        int32,                           "怪物的type_id"},
+        {broadcast_missions,             [int32],                         "有该任务的玩家才会收到"}
+    ]},
+
+#{name => p_map_trap, id => 0, note => "陷阱独有字段",
+    fields => [
+        {type_id,                        int32,                           "陷阱的type_id"},
+        {owner_id,                       int64,                           "释放该陷阱的ActorID"},
+        {owner_type,                     int32,                           "释放该陷阱的ActorType"},
+        {owner_level,                    int32,                           "拥有者等级"}
+    ]},
+
+#{name => p_map_drop, id => 0, note => "掉落物独有字段",
+    fields => [
+        {type_id,                        int32,                           "掉落物品type_id 一般为道具ID"},
+        {num,                            int32,                           "掉落物数量"},
+        {bind,                           bool,                            "绑定类型"},
+        {monster_pos,                    int64,                           "怪物位置"},
+        {monster_type_id,                int32,                           "怪物类型id"},
+        {owner_roles,                    [int64],                         "可以拾取的玩家列表"},
+        {broadcast_roles,                [int64],                         "为空时所有人可见，不为空时特定玩家可见"}
+    ]},
+
+#{name => p_single_summon, id => 0, router => {copy, copy_single}, note => "",
+    fields => [
+        {actor_id,                       int64,                            "召唤的怪物的UID"},
+        {type_id,                        int32,                            "目标类型"},
+        {pos,                            int64,                            "位置"},
+        {action_string,                  string,                           "出生动画"}
+    ]},
+
+
+#{name => p_kvll, id => 0, note => "共用 key_int64list结构",
+    fields => [
+        {id,                             int32,                            "key"},
+        {list,                           [int64],                          ""}
+    ]},
+
+#{name => p_dks, id => 0, note => "公用int64key_string结构",
+    fields => [
+        {id,                             int64,                           "KEY"},
+        {val,                            string,                          "key对应的val（string类型）"}
+    ]},
+
+#{name => p_dkl, id => 0, note => "公用int64key_string结构",
+    fields => [
+        {id,                             int64,                           "KEY"},
+        {list,                           [int32],                          "key对应的val（list类型）"}
+    ]},
+
+#{name => p_kv, id => 0, note => "公用key_value结构",
+    fields => [
+        {id,                             int32,                            "key"},
+        {val,                            int32,                            "key对应的val（int32类型）"}
+    ]},
+
+#{name => p_kdv, id => 0, note => "公用key_value结构",
+    fields => [
+        {id,                             int32,                            "key"},
+        {val,                            int64,                            "key对应的val（int64类型）"}
+    ]},
+
+#{name => p_ks, id => 0, note => "公用key_string结构",
+    fields => [
+        {id,                             int32,                            "key"},
+        {str,                            string,                         "key对应的val（string类型）"}
+    ]},
+
+#{name => p_kb, id => 0, note => "公用key_bool结构",
+    fields => [
+        {id,                             int32,                            "key"},
+        {val,                            bool,                             "key对应的val（bool类型）"}
+    ]},
+
+#{name => p_kvl, id => 0, note => "共用 key_int32list结构",
+    fields => [
+        {id,                             int32,                            "key"},
+        {list,                           [int32],                          ""}
+    ]},
+
+#{name => p_dkv, id => 0, note => "公用key_value结构",
+    fields => [
+        {id,                             int64,                           "KEY"},
+        {val,                            int64,                            "key对应的val"}
+    ]},
+
+#{name => p_kvt, id => 0, note => "公用key_value_type结构",
+    fields => [
+        {id,                             int32,                            "key"},
+        {val,                            int32,                            "key对应的val"},
+        {type,                           int32,                            ""}
+
+    ]},
+
+#{name => p_kvs, id => 0, note => "公用key_value_string结构",
+    fields => [
+        {id,                             int32,                            "key"},
+        {val,                            int32,                            "key对应的val"},
+        {text,                           string,                            "key对应的s"}
+
+    ]},
+
+#{name => p_lvt, id => 0, note => "",
+    fields => [
+        {id,                             int64,                            ""},
+        {val,                            int32,                             ""},
+        {type,                           int32,                             ""}
+    ]},
+
+#{name => p_item, id => 0, note => "共用表示道具结构",
+    fields => [
+		{type_id,                        int32,                           "道具ID"},
+		{num,                            int32,                           "数量"},
+		{is_bind,                        int32,                           "1是绑定，0是不绑定"}
+    ]},
+
+#{name => p_item_i, id => 0, note => "共用表示道具结构",
+    fields => [
+		{type_id,                        int32,                           "道具ID"},
+		{num,                            int32,                           "数量"},
+		{is_bind,                        int32,                           "1是绑定，0是不绑定"},
+		{special_effect,                 int32,                           "特效"}
+    ]},
+
+#{name => c_map_tile, id => 0, note => "地图的格子类型",
+    fields => [
+        {x,                              int32,                           "x"},
+        {y,                              int32,                           "y"},
+        {is_safe,                        bool,                            "是不是安全区"}
+  ]},
+
+#{name => c_born_point, id => 0, note => "坐标内的信息",
+    fields => [
+        {mx,                             int32,                           "mx"},
+        {my,                             int32,                           "my"},
+        {mdir,                           int32,                           "mdir"},
+        {camp_id,                        int32,                           "阵营ID"}
+  ]},
+
+#{name => c_jump_point, id => 0, note => "坐标内的信息",
+    fields => [
+        {jump_id,                        int32,                           "跳转点唯一ID"},
+        {mx,                             int32,                           "跳转点的mx"},
+        {my,                             int32,                           "跳转点的my"}
+  ]},
+
+#{name => c_proto_id, id => 90000, note => "proto id用的结构,这个id跟名字不要修改",
+    fields => [
+		{id_list,                        [p_ks],                          "key -> string结构"}
+    ]},
+
+#{name => c_error_id, id => 90001, note => "error id用的结构,这个id跟名字不要修改",
+    fields => [
+		{id_list,                        [p_ks],                          "key -> string结构 string是utf8编码"}
+    ]},
+
+#{name => c_map_config, id => 90002, note => "",
+    fields => [
+		{map_id,                         int32,                           "map_id"},
+		{map_type,                       int32,                           "1为普通野外地图 2为副本地图"},
+		{map_width,                      int32,                           "长度"},
+		{map_height,                     int32,                           "宽度"},
+		{map_offset_mx,                  int32,                           "x方向偏移值 cm"},
+		{map_offset_my,                  int32,                           "y方向偏移值 cm"},
+		{tiles,                          [c_map_tile],                    "格子信息"},
+		{born_points,                    [c_born_point],                  "出生点（可以配置多个）"},
+		{jump_points,                    [c_jump_point],                  "跳转点"}
+    ]}
+
+]}.
+
+%% 通用错误码定义-
+%% 编译时在error_no.hrl中生成宏定义
+%% [{Code, Define, Note}]
+{common_error_list, [
+      {1,                       "ERROR_CODE_FAIL",                          "参考REASON字符串"},
+      {100,                     "ERROR_COMMON_SYSTEM_ERROR",                "系统错误"},
+      {101,                     "ERROR_COMMON_CONFIG_ERROR",                "配置错误"},
+      {102,                     "ERROR_COMMON_ROLE_DATA_ERROR",             "玩家数据错误"},
+      {104,                     "ERROR_COMMON_CLIENT_PARAM",                "参数有误"},
+      {105,                     "ERROR_COMMON_ACTION_TOO_FAST",             "操作过快，稍等一会再继续"},
+      {200,                     "ERROR_COMMON_BAG_FULL",                    "您的包裹空间不足"},
+      {201,                     "ERROR_COMMON_NO_ENOUGH_ITEM",              "道具数量不足"},
+      {202,                     "ERROR_COMMON_NO_ENOUGH_UNBIND_GOLD",       "元宝不足"},
+      {203,                     "ERROR_COMMON_NO_ENOUGH_BIND_GOLD",         "绑元不足"},
+      {204,                     "ERROR_COMMON_NO_ENOUGH_GOLD",              "元宝不足"},
+      {205,                     "ERROR_COMMON_NO_ENOUGH_SCORE",             "货币不足"},
+      {206,                     "ERROR_COMMON_NO_BAG_GOODS",                "道具不存在"},
+      {207,                     "ERROR_COMMON_NO_ENOUGH_SILVER",            "银两不足"},
+      {208,                     "ERROR_COMMON_NO_ENOUGH_LEVEL",             "等级不足"},
+      {209,                     "ERROR_COMMON_NO_ENOUGH_VIP_LEVEL",         "VIP等级不足"},
+      {210,                     "ERROR_COMMON_NO_ENOUGH_RELIVE_LEVEL",      "转生等级不足"},
+      {211,                     "ERROR_COMMON_NO_CATEGORY",                 "职业不符"},
+      {212,                     "ERROR_COMMON_ACT_NO_START",                "活动未开启"},
+      {213,                     "ERROR_COMMON_RUNE_BAG_FULL",               "符文背包已满"},
+      {214,                     "ERROR_COMMON_CONFINE_LIMIT",               "境界不足"},
+      {301,                     "ERROR_COMMON_WORD_CHECK",                  "字符中包含敏感词"},
+      {302,                     "ERROR_COMMON_WORD_SPACE",                  "字符中包含空格"},
+      {303,                     "ERROR_COMMON_WORD_SPECIAL_CHAR",           "包含特殊字符"},
+      {304,                     "ERROR_COMMON_FUNCTION_NOT_OPEN",           "该功能尚未开启"},
+      {401,                     "ERROR_COMMON_GLORY_NOT_ENOUGH",            "荣誉不足"},
+      {402,                     "ERROR_COMMON_TREASURE_SCORE_NOT_ENOUGH",   "寻宝积分不足"},
+      {403,                     "ERROR_COMMON_FORGE_SOUL_NOT_ENOUGH",       "铸魂精华不足"},
+      {404,                     "ERROR_COMMON_WAR_GOD_SCORE_NOT_ENOUGH",    "开光材料不足"},
+      {405,                     "ERROR_COMMON_HUNT_TREASURE_SCORE_NOT_ENOUGH","宝珠不足"},
+      {406,                     "ERROR_COMMON_FAMILY_CON_NOT_ENOUGH",        "道庭贡献不足"},
+      {501,                     "ERROR_COMMON_FUNCTION_BAN",                 "该功能暂不开放"}
+     ]}.
+

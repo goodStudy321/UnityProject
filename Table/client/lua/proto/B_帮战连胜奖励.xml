@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="streakRWD" Key="id" ExportType="Arr" Src="B 帮战连胜奖励.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "id" />
+  <P Name="rank" Type="number" ColName= "排名" />
+  <P Name="winNum" Type="number" ColName= "连胜" />
+  <P Name="worldLvl" Type="K_V" ColName= "世界等级" />
+  <P Name="RWD" Type="Item" IsList="true" Lsp=";" ColName= "奖励" />
+</Proto>

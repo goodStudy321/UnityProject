@@ -1,0 +1,116 @@
+{include file='public/head'}
+  <script src="__static__/wysibb/jquery.wysibb.min.js"></script>
+  <link rel="stylesheet" href="__static__/wysibb/wbbtheme.css" />
+
+  <style type="text/css" media="screen">
+    header {
+      color: black;
+    }
+  </style>
+  <div class="x-body" >
+    <form class="layui-form" id='mainForm' method="post" action="send">
+      <div class="layui-form-item">
+        <label class="layui-form-label">标题</label>
+        <div class="layui-input-block">
+          <input type="text" id="title"  name="title" lay-verify="required" autocomplete="off" placeholder="请输入标题" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">目标玩家</label>
+        <div class="layui-input-block">
+          <input type="text" id="user"  name="user" lay-verify="required" placeholder="请输入玩家id，如有多个，请使用英文状态下逗号分隔" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">是否全服</label>
+        <div class="layui-input-block">
+          <input type="radio" name="type" value="0" title="否" checked>
+          <input type="radio" name="type" value="1" title="是">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">选择道具</label>
+        <div class="layui-input-block">
+          <input type="text" id="prop"  name="prop" lay-verify="required" placeholder="请输入道具id，如需发送多个，请使用英文状态下逗号分割" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">道具数量</label>
+        <div class="layui-input-block">
+          <input type="text" id="propnum"  name="propnum" lay-verify="required" placeholder="道具数量，请使用英文状态下逗号分隔，与道具相对应。" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">是否绑定</label>
+        <div class="layui-input-block">
+          <input type="radio" name="bind" value="0" title="否" checked>
+          <input type="radio" name="bind" value="1" title="是">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">内&nbsp;&nbsp;&nbsp;容</label>
+        <div class="layui-input-block">
+            <textarea id="editor" name="content"></textarea>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <button style="margin-left: 20%" class="layui-btn layui-btn-sm" lay-submit="" lay-filter="toSubmit">提交</button>
+          <button id="reset" type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
+        </div>
+      </div>
+    </form>
+  </div>
+{include file='public/foot'}
+
+<script type="text/javascript">
+  var form = layui.form;
+  var layer = layui.layer;
+
+  //自定义验证规则
+  form.verify({
+    username: function(value){
+      if(value.length < 5){
+        return '用户名至少得5个字符啊';
+      }
+    }
+  });
+
+  $(document).ready(function(){
+    //bbcode editor
+    var wbbOpt = {
+      buttons: "bold,italic,underline,strike,sup,sub,|,fontcolor,fontsize",
+      minheight:80,
+    }
+    $("#editor").wysibb(wbbOpt);
+
+
+    //表单提交
+    var options = {
+      type:'post',
+      dataType:"json",
+      data:{},
+      clearForm: false,
+      resetForm: false,
+      cache:false,
+      async:false,
+      success:function(data){
+        console.log(data);
+        if(data.code==0){
+          layer.msg(data.msg);
+        }else{
+          layer.msg(data.msg,{icon:1,time:500},function(){
+            $("#reset").click();
+            x_admin_close();
+            parent.location.reload();
+          });
+        }
+      },
+      error:function(XmlHttpRequest,textStatus,errorThrown){
+        layer.msg('操作失败:服务器处理失败');
+      }
+    };
+    $('#mainForm').ajaxForm(options).submit(function(data){
+    });
+  });
+</script>

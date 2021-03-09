@@ -1,0 +1,5 @@
+// 热度事件触发
+message m_marry_map_heat_status_toc {
+optional  int32  heat=1[default=0]; //触发事件的热度值
+}
+

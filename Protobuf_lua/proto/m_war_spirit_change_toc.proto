@@ -1,0 +1,9 @@
+import "p_war_spirit.proto";
+// 战灵信息改变
+message m_war_spirit_change_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  time=2[default=0]; //X秒后可换
+optional  int32  war_spirit=3[default=0]; //当前战灵ID
+repeated  p_war_spirit  war_spirit_list=4; //其余战灵
+}
+

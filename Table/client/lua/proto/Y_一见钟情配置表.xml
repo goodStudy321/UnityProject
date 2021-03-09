@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="LoveAtFirstCfg" Key="id" ExportType="Arr" Src="Y 一见钟情配置表.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "序号" />
+  <P Name="award" Type="I_B_N" IsList="true" Lsp=";" ColName= "奖励" />
+  <P Name="type" Type="number" ColName= "类型" />
+  <P Name="configNum" Type="number" ColName= "套序号" />
+
+</Proto>

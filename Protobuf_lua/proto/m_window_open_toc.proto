@@ -1,0 +1,5 @@
+// 窗口打开记录返回
+message m_window_open_toc {
+repeated  int32  window_open_list=1; //打开过的窗口list
+}
+

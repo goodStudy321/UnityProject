@@ -1,0 +1,5 @@
+// 踢掉玩家
+message m_team_kick_toc {
+optional  int32  err_code=1[default=0]; 
+}
+

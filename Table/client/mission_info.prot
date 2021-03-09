@@ -1,0 +1,48 @@
+message MissionInfo [key=id, source="R 任务配置.xls", sheet="Sheet1"]
+{	
+	struct data [separator = ',']
+	{
+		int32 value;
+	};
+
+	struct param [separator = '|']
+	{
+		data value;
+	};
+
+	struct reward [separator = ';']
+	{
+		data value;
+	};
+
+	uint32 id						        [option = "任务id"];
+	string name					    		[option = "任务名称"]; 
+	uint16 chapter                          [option = "章节id"];
+	uint8 type						        [option = "类型"];
+	data three_id							[option = "启用流程树ID"];
+	uint8 quality						    [option = "品质"];
+	uint8 num						    	[option = "环数"];
+	uint8 turn 								[option = "轮数"];
+	string chapter_name						[option = "章节名称"];
+	string chapter_des						[option = "章节描述"];
+	uint32 first_id							[option = "前置任务ID"];
+	uint32 next_id							[option = "后置任务ID"];	
+	uint8 need_lv							[option = "任务最低等级"];	
+	uint8 auto_receive						[option = "自动接取任务"];	
+	uint8 auto_submit						[option = "自动完成任务"];
+	uint8 show_talk							[option = "完成自动弹出对话"];
+	uint32 npc_receive                      [option = "接任务NpcID"];
+	uint32 npc_submit                       [option = "完成任务NpcID"];
+	string talk_resceive                    [option = "任务接取对话"];
+	string mission_talk						[option = "任务对话"];
+	string talk_submit                    	[option = "任务完成对话"];
+	data auto_point							[option = "挂机点"];
+	data hide_monster						[option = "完成任务屏蔽的怪物"];
+	uint8  target                      		[option = "任务类型"];
+	param  target_param                    	[option = "目标参数"];
+	string custom_text                    [option = "任务目标自定义文本"];	
+	int32  exp_reward                      	[option = "经验奖励"];
+	reward  item_reward                      [option = "道具奖励"];
+	int32 quite_scene_id					[option = "任务场景"];
+	int32 scene_change						[option = "任务完成跳转场景"];
+};

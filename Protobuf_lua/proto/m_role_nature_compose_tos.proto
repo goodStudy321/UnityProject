@@ -1,0 +1,5 @@
+// 天机印合成
+message m_role_nature_compose_tos {
+optional  int32  compose_id=1[default=0]; //合成ID
+}
+

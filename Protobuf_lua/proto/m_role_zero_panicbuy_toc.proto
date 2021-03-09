@@ -1,0 +1,6 @@
+// 抢购返回
+message m_role_zero_panicbuy_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  id=2[default=0]; //抢购信息
+}
+

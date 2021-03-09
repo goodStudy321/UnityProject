@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="tWeekCalendar" Key="id" ExportType="Arr" Src="H 活动周历.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "id" />
+  <P Name="time" Type="string"  ColName= "开启时间" />
+  <P Name="active" Type="number" IsList="true" Lsp=";" ColName= "活动" />
+</Proto>

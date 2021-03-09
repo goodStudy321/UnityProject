@@ -1,0 +1,12 @@
+import "p_item_i.proto";
+// p_bg_act_entry活动条目
+message p_bg_act_entry {
+optional  int32  sort=1[default=0]; //条目序号 
+repeated  p_item_i  items=2; //奖励道具列表
+optional  string  title=3; //奖励条目说明    消费排行-玩家名字 
+optional  int32  status=4[default=0]; //奖励状态 1-不能领取2-可领取3-已领取  - 宝藏商城购买货币类型
+optional  int32  schedule=5[default=0]; //奖励状态进度  ，当为商店时代表剩余可兑换数量   仙人指路 - 价格
+optional  int32  target=6[default=0]; //奖励目标     ,可兑换总数量     ,当为任务奖励时为兑换条件  , 仙人指路 - 出售时间
+optional  int32  num=7[default=0]; //全服限量使用 ,当为商店是代表单价,双倍副本时代表副本ID    - 宝藏商城购买货币数量 
+}
+

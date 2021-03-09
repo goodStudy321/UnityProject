@@ -1,0 +1,6 @@
+// 防沉迷提示语弹窗
+message m_role_addict_window_toc {
+optional  string  notice=1; 
+optional  int32  type=2[default=0]; //类型1  已被剔除直接退出游戏
+}
+

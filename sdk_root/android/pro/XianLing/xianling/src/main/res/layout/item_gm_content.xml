@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    <RelativeLayout 
+        android:id="@+id/rootView"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:padding="5dp"
+        android:background="@drawable/ic_content_background">
+        <ImageView 
+            android:id="@+id/goodsImg"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"/>
+		        <LinearLayout 
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:orientation="vertical"
+		            android:layout_marginLeft="5dp"
+		            android:layout_toRightOf="@id/goodsImg"
+		            android:layout_centerVertical="true">
+		             <TextView 
+		            android:id="@+id/goodsName"
+		        	android:layout_width="wrap_content"
+		        	android:layout_height="wrap_content"
+		        	android:textSize="12sp"
+		        	android:minLines="2"
+		        	android:gravity="center_vertical"
+		        	android:textColor="@color/colorWhite"
+		        	android:text=""/>
+		        <TextView 
+		            android:id="@+id/goodsNum"
+		            android:layout_width="40dp"
+		            android:layout_height="15dp"
+		            android:text="10"
+		            android:layout_marginTop="5dp"
+		            android:textSize="8sp"
+		            android:gravity="center"
+		            android:background="@drawable/shape_edit"
+		            android:textColor="@color/colorWhite"/>
+        </LinearLayout>
+       <ImageView 
+            android:id="@+id/purchasedImg"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:visibility="gone"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_purchased"/>
+    </RelativeLayout>
+    
+
+</LinearLayout>

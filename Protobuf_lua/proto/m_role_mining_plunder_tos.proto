@@ -1,0 +1,5 @@
+// 挖矿掠夺
+message m_role_mining_plunder_tos {
+optional  int64  object_id=1[default=0]; //掠夺对象
+}
+

@@ -1,0 +1,11 @@
+import "p_immortal_soul.proto";
+// 仙魂信息
+message m_role_immortal_soul_toc {
+repeated  p_immortal_soul  use_list=1; //装备上的仙魂列表
+repeated  p_immortal_soul  bag_list=2; //背包的仙魂
+optional  int32  dust=3[default=0]; //仙尘
+optional  int32  stone=4[default=0]; //仙魂石
+repeated  int32  open_pos=5; //开启孔位
+optional  int32  auto_bd_type=6[default=0]; //是否自动分解   0-否  1-5 其他自动分解类型
+}
+

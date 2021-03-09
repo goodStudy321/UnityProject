@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MarryTitleCfg" Key="id" ExportType="Arr" Src="X 仙侣系统-称号.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "id" />
+  <P Name="titleId" Type="number" ColName="获得称号id" />
+  <P Name="friendly" Type="number" ColName="好感度" />
+  <P Name="knotId" Type="number" ColName="同心结id" />
+  <P Name="babyId" Type="number" ColName="仙娃id" />
+</Proto>

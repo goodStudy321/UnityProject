@@ -1,0 +1,4 @@
+// 自身市场信息
+message m_market_self_info_tos {
+}
+

@@ -1,0 +1,4 @@
+// 挖矿，取出资源
+message m_role_mining_take_out_goods_tos {
+}
+

@@ -1,0 +1,9 @@
+// 藏宝图状态信息推送
+message m_hunt_treasure_status_toc {
+optional  int32  end_time=1[default=0]; //宝藏结束时间
+optional  int32  type_id=2[default=0]; //哪种类型的藏宝图
+optional  int32  event_id=3[default=0]; //触发事件
+optional  int32  map_id=4[default=0]; //地图ID
+optional  int64  pos=5[default=0]; //坐标
+}
+

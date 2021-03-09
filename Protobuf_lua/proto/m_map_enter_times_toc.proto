@@ -1,0 +1,6 @@
+import "p_kv.proto";
+// 场景进入次数更新
+message m_map_enter_times_toc {
+repeated  p_kv  enter_list=1; //id:场景类型   val:次数
+}
+

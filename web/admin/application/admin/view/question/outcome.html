@@ -1,0 +1,80 @@
+{include file='public/head'}
+<div class="layui-field-box">
+  <blockquote class="layui-elem-quote">
+    <form class="layui-form" onsubmit="return false">
+      <div class="">
+        <div class="layui-inline">
+          <label class="layui-form-label" style="width:50px">渠道ID:</label>
+          <div class="layui-input-inline" style="width:150px">
+            <input type="text" name="channel_id"  class="layui-input">
+          </div>
+        </div>
+        <div class="layui-inline">
+          <label class="layui-form-label" style="width:55px">包渠道ID:</label>
+          <div class="layui-input-inline" style="width:150px">
+            <input type="text" name="game_channel_id"  class="layui-input">
+          </div>
+        </div>
+        <div class="layui-inline">
+          <label class="layui-form-label" style="width:55px">提交时间:</label>
+          <div class="layui-input-inline">
+            <input class="layui-input" id="time" name="time" type="text" autocomplete="off">
+          </div>
+        </div>
+        <div class="layui-inline">
+          <button class="layui-btn layui-btn-sm" id="submit">查询</button>
+          <button onclick="javascript:location.reload()" class="layui-btn layui-btn-sm">刷新</button>
+        </div>
+        <div class="layui-inline x-right">
+          <button class="layui-btn layui-btn-sm" id="submit" onclick="javascript:location.href='/admin/question/outcomeExportExcel?survey_id={$survey_id}'">导出为Excel</button>
+          <button class="layui-btn layui-btn-sm" onclick="javascript:location.href='/admin/question/make'">返回</button>
+        </div>
+      </div>
+    </form>
+  </blockquote>
+  <table id="table" lay-filter="test"></table>
+</div>
+{include file='public/foot'}
+
+<script>
+  layui.use(['laydate','form'], function(){
+    var laydate = layui.laydate;
+    //执行一个laydate实例
+    laydate.render({
+      elem: '#time'
+      ,max:0
+    ,range:true
+    });
+  });
+  //表格
+  layui.use('table', function(){
+    var table = layui.table;
+    //第一个实例
+    var tableIns = table.render({
+      elem: '#table'
+      ,url: 'outcomeData?survey_id={$survey_id}' //数据接口
+      ,page: true //开启分页
+      ,cols: [[ //标题栏
+      {align: 'center',field:'id', title: '记录ID',width:160}
+      ,{align: 'center',field:'time', title: '提交时间', width:143}
+      ,{align: 'center',field:'role_name', title: '角色名称'}
+      ,{align: 'center',field:'surver_name', title: '问卷'}
+      ,{align: 'center',field:'texts', title: '结果', width:900}
+      ,{align: 'center',field:'channel_name', title: '渠道'}
+      ,{align: 'center',field:'game_channel_name', title: '包渠道'}
+      ]]
+    });
+    $("#submit").click(function(){
+      var data = {};
+      $.each($('form').serializeArray(), function(){
+        data[this.name] = this.value;
+      })
+      tableIns.reload({
+        where: data   //设定异步数据接口的额外参数，任意设
+        ,page: {
+          curr: 1 //重新从第 1 页开始
+        }
+      })
+    });
+  });
+</script>

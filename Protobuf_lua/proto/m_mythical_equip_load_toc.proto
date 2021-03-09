@@ -1,0 +1,7 @@
+import "p_mythical_soul.proto";
+// 神兽穿上装备返回
+message m_mythical_equip_load_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  p_mythical_soul  soul=2; //魂兽信息
+}
+

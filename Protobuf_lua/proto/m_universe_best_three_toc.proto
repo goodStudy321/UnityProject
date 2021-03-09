@@ -1,0 +1,6 @@
+import "p_universe_best_three.proto";
+// 获取太虚通天塔 至尊三强返回
+message m_universe_best_three_toc {
+repeated  p_universe_best_three  best_three=1; //至尊三强
+}
+

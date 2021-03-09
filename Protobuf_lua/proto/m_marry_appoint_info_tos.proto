@@ -1,0 +1,4 @@
+// 获取预约场次
+message m_marry_appoint_info_tos {
+}
+

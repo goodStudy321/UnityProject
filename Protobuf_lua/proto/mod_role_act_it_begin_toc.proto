@@ -1,0 +1,8 @@
+// 放回鉴宝活动开始鉴宝
+message mod_role_act_it_begin_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  type=2[default=0]; //0:鉴宝一次.1：自动
+optional  int32  id=3[default=0]; //珍稀道具表id
+optional  int32  luck=4[default=0]; //幸运值
+}
+

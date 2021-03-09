@@ -1,0 +1,7 @@
+// oss- 开服第二阶段活动     领奖励or购买
+message m_oss_rank_reward_tos {
+optional  int32  type=1[default=0]; //排行类型  法宝战力 - 10013，翅膀战力 - 10014，图鉴战力 - 10012 
+optional  int32  type_i=2[default=0]; //改变类型   1-排名奖励 2-战力奖励 3-灵力奖励 4-抢购 5-累充奖励
+optional  int32  id=3[default=0]; //ID
+}
+

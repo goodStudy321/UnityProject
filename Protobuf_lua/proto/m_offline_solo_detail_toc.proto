@@ -1,0 +1,8 @@
+// 离线1v1详细信息
+message m_offline_solo_detail_toc {
+optional  int32  challenge_times=1[default=0]; //挑战次数
+optional  int32  buy_times=2[default=0]; //已购买次数
+optional  bool  is_reward=3[default=true]; //是否领取过奖励
+optional  int32  bestir_times=4[default=0]; //个人激励次数
+}
+

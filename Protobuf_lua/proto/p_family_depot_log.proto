@@ -1,0 +1,8 @@
+import "p_goods.proto";
+// 道庭仓库日志
+message p_family_depot_log {
+optional  string  role_name=1; //玩家名
+optional  int32  type=2[default=0]; //操作 1-存 0-取
+optional  p_goods  goods=3; //物品
+}
+

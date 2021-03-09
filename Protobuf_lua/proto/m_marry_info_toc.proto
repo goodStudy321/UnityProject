@@ -1,0 +1,13 @@
+// 仙侣信息推送
+message m_marry_info_toc {
+optional  int32  tree_end_time=1[default=0]; //自身姻缘树结束时间 当前时间大于这个时间表示未获得
+optional  bool  tree_active_reward=2[default=true]; //激活奖励是否可以领取 true:可以领取 false:不能领取
+optional  int32  tree_daily_time=3[default=0]; //上次领取姻缘树日常的时间
+optional  int32  couple_tree_end_time=4[default=0]; //仙侣姻缘树结束时间
+optional  int32  knot_id=5[default=0]; //同心结id
+optional  int32  knot_exp=6[default=0]; //同心结经验
+optional  int64  couple_id=7[default=0]; //仙侣id
+optional  int32  marry_time=8[default=0]; //结婚时间
+repeated  int32  marry_title_ids=9; //称号id激活
+}
+

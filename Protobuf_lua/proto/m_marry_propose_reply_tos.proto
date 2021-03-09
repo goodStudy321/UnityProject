@@ -1,0 +1,6 @@
+// 提亲回复
+message m_marry_propose_reply_tos {
+optional  int64  to_propose_id=1[default=0]; //to提亲id
+optional  int32  answer_type=2[default=0]; //1 同意 2 拒绝
+}
+

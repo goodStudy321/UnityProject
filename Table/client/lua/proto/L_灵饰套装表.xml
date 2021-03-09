@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SpiritSuitCfg" Key="suitId" ExportType="Dic" Src="L 灵饰套装表.xlsx" Sheet="Sheet1">
+  <P Name="suitId" Type="number" ColName= "套装分类" />
+  <P Name="spiritOwn" Type="number" Opt="true" IsList="true" Lsp="," ColName="战灵归属" />
+  <P Name="desName" Type="string" ColName= "备注" />
+  <P Name="hp" Type="number" ColName= "生命" />
+  <P Name="atk" Type="number" ColName="攻击" />
+  <P Name="def" Type="number" ColName="防御" />
+  <P Name="arm" Type="number" ColName= "破甲" />
+  <P Name="defadd" Type="number" ColName= "防御加成" />
+  <P Name="hpadd" Type="number" ColName="生命加成" />
+  <P Name="rolearmor" Type="number" ColName= "人物护甲" />
+  <P Name="armadd" Type="number" ColName= "破甲加成" />
+  <P Name="atkadd" Type="number" ColName="攻击加成" />
+  <P Name="critdam" Type="number" ColName="暴击伤害" />
+  <P Name="ampdam" Type="number" ColName="伤害加深" />
+  <P Name="damred" Type="number" ColName="伤害减免" />
+  <P Name="suitQ" Type="number" ColName="套装品质" />
+  <P Name="suitS" Type="number" ColName="套装星级" />
+</Proto>

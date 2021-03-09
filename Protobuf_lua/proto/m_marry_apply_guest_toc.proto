@@ -1,0 +1,7 @@
+import "p_dks.proto";
+// 宾客发起申请(三方都返回)
+message m_marry_apply_guest_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  p_dks  guest=2; //宾客信息
+}
+

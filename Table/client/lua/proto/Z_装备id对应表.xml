@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="EquipIdMap" Key="id" ExportType="Dic" Src="Z 装备id对应表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "掉落id" />
+  <P Name="equip0" Type="number" ColName= "0星装备" />
+  <P Name="equip1" Type="number" ColName= "1星装备" />
+  <P Name="equip2" Type="number" ColName= "2星装备" />
+  <P Name="equip3" Type="number" ColName= "3星装备" />
+</Proto>

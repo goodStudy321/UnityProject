@@ -1,0 +1,73 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.junhai.agent.demo">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
+
+    <application android:name="prj.chameleon.channelapi.ChameleonApplication"
+        android:label="君海独代SDK">
+        <meta-data android:name="GAME_ID" android:value="27" />
+        <meta-data android:name="PAY_SIGN" android:value="adb1cea113de396acb1e3968a0f15d9c" />
+        <meta-data android:name="JH_APPID" android:value="100000034" />
+        <meta-data android:name="JH_APPKEY" android:value="1d996f6964c8764ab9718e22c2a1fac3" />
+        <meta-data android:name="JH_GAME_CHANNEL_ID" android:value="10086" />
+        <!--下边这些配置，请直接拷贝，无需修改value-->
+        <meta-data android:name="JUNHAI Channel" android:value="junhai_test" />
+        <meta-data android:name="JUNHAI_DEBUG" android:value="true" />
+        <meta-data android:name="JH_CHANNEL_ID" android:value="18" />
+        <meta-data android:name="JH_NODE" android:value="https://agent.ijunhai.com" />
+
+        <activity android:name="com.junhai.agent.demo.DemoActivity" />
+
+        <!-- 闪屏 splash activity.程序的启动Activity，在执行完闪屏之后，君海SDK会根据所配置的游戏主Activity进行跳转。闪屏Activity是君海SDK二次打包跟换渠道闪屏的根本实现所在， 请务必按照要求配置。-->
+        <activity android:name="prj.chameleon.channelapi.SplashScreenActivity"
+            android:configChanges="fontScale|orientation|keyboardHidden|locale|navigation|screenSize|uiMode"
+            android:launchMode="standard" android:noHistory="true"
+            android:screenOrientation="portrait" android:stateNotNeeded="true"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <!-- TODO: value 的值是 游戏的主 Activity, 必须是完整的路径-->
+            <meta-data android:name="prj.chameleon.intent.main"
+                android:value="com.junhai.agent.demo.DemoActivity" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <!-- LAUNCHER 只能有一个。 游戏的主 Activity 不需要添加LAUNCHER, 否则会在应用列表看到两个启动 icon-->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.ijunhai.sdk.union.ui.ActivityContainer"
+            android:configChanges="fontScale|orientation|keyboardHidden|locale|navigation|screenSize|uiMode"
+            android:screenOrientation="portrait" android:theme="@style/jh_activity_container" />
+        <activity android:name="com.ijunhai.sdk.union.ui.webview.WebViewActivity"
+            android:configChanges="fontScale|orientation|keyboardHidden|locale|navigation|screenSize|uiMode"
+            android:launchMode="singleInstance" android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.NoActionBar" />
+        <activity android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation" android:exported="false"
+            android:screenOrientation="behind" />
+        <activity android:name="com.alipay.sdk.auth.AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation" android:exported="false"
+            android:screenOrientation="behind" />
+        <!--请不要修改QQWapPayWebView的android:screenOrientation属性值-->
+        <activity android:name="com.switfpass.pay.activity.QQWapPayWebView"
+            android:screenOrientation="sensorPortrait" />
+        <receiver android:name="prj.chameleon.channelapi.DownloadCompleteBroadcastReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <data android:scheme="package" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

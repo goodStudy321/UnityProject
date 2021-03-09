@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/jh_widget_layout_float"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clickable="true">
+
+    <ImageButton
+        android:id="@+id/jh_widget_image_btn_float"
+        style="@style/jh_widget_image_btn_float"
+        android:layout_width="45dp"
+        android:layout_height="45dp"/>
+
+    <!-- 默认不可见 -->
+
+    <LinearLayout
+
+        android:layout_toRightOf="@+id/jh_widget_image_btn_float"
+        android:id="@+id/jh_widget_content_layout"
+        style="@style/jh_widget_content_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:orientation="horizontal"
+        android:paddingBottom="2dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="2dp">
+
+        <LinearLayout
+            android:id="@+id/jh_widget_content_layout_account"
+            style="@style/jh_widget_content_layout_item"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/jh_widget_content_image_btn_account"
+                style="@style/jh_widget_content_image_btn_account"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:clickable="false"
+                android:maxHeight="20dp" />
+
+            <TextView
+                android:id="@+id/jh_widget_content_text_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:gravity="center"
+                android:text="@string/jh_widget_content_image_btn_account"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/jh_widget_content_layout_gift"
+            style="@style/jh_widget_content_layout_item"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/jh_widget_content_image_btn_gift"
+                style="@style/jh_widget_content_image_btn_gift"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:maxHeight="20dp" />
+
+            <TextView
+                android:id="@+id/jh_widget_content_text_gift"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:gravity="center"
+                android:text="@string/jh_widget_content_image_btn_gift"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/jh_widget_content_layout_activity"
+            style="@style/jh_widget_content_layout_item"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/jh_widget_content_image_btn_activity"
+                style="@style/jh_widget_content_image_btn_activity"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:maxHeight="20dp" />
+
+            <TextView
+                android:id="@+id/jh_widget_content_text_activity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:gravity="center"
+                android:text="@string/jh_widget_content_image_btn_activity"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/jh_widget_content_layout_new_game"
+            style="@style/jh_widget_content_layout_item"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/jh_widget_content_image_btn_new_game"
+                style="@style/jh_widget_content_image_btn_new_game"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:maxHeight="20dp" />
+
+            <TextView
+                android:id="@+id/jh_widget_content_text_new_game"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:gravity="center"
+                android:text="@string/jh_widget_content_image_btn_new_game"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/jh_widget_content_layout_website"
+            style="@style/jh_widget_content_layout_item"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/jh_widget_content_image_btn_website"
+                style="@style/jh_widget_content_image_btn_website"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:maxHeight="20dp" />
+
+            <TextView
+                android:id="@+id/jh_widget_content_text_website"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:gravity="center"
+                android:text="@string/jh_widget_content_image_btn_website"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SystemOpenTemp" Key="id" ExportType="Dic" Src="X 系统开放表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "激活系统ID" />
+  <P Name="flyType" Type="number" Opt="true" ColName="目标类型" />
+  <P Name="lvid" Type="number" Opt="true" ColName="系统按钮ID" />
+  <P Name="trigType" Type="number" ColName="触发方式" />
+  <P Name="trigParam" Type="number" ColName="触发参数" />
+  <P Name="des" Type="string" ColName="描述" />
+  <P Name="objID" Type="number" Opt="true" IsList="true" Lsp="," ColName="激活ID" />
+  <P Name="openType" Type="number" ColName="类型" />
+  <P Name="modid" Type="number" Opt="true" ColName= "播放动画模型ID" />
+  <P Name="openAnim" Type="number" Opt="true" ColName= "是否播放开启动画" />
+  <P Name="delay" Type="number" Opt="true" ColName= "播放动画时长" />
+  <P Name="icon" Type="string" Opt="true" IsList="true" Lsp="," ColName="图标" />
+  <P Name="preview" Type="number" Opt="true" ColName="是否开启预览" />
+  <P Name="preViewDes" Type="string" Opt="true" ColName="功能描述" />
+  <P Name="sDelay" Type="number" Opt="true" ColName="系统开启播放延时" />
+  <P Name="lvLimit" Type="number" Opt="true" ColName="最低可见等级" />
+  <P Name="jump" Type="string" Opt="true" IsList="true" Lsp="_" ColName="跳转UI" />
+  <P Name="award" Type="Item" Opt="true" IsList="true" Lsp=";" ColName="奖励道具" />
+</Proto>

@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="VIPInvestCfg" Key="id" ExportType="Arr" Src="V vip投资.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="minLv" Type="number" ColName= "最小等级" />
+  <P Name="maxLv" Type="number" ColName= "最大等级" />
+  <P Name="awards" Type="K_V" IsList="true" Lsp=";" ColName= "返利奖励" />
+</Proto>

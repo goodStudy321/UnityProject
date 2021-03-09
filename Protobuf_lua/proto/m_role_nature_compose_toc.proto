@@ -1,0 +1,5 @@
+// 天机印合成返回
+message m_role_nature_compose_toc {
+optional  int32  err_code=1[default=0]; //错误码
+}
+

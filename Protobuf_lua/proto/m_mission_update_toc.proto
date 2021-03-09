@@ -1,0 +1,7 @@
+import "p_mission.proto";
+// 
+message m_mission_update_toc {
+repeated  int32  del=1; //删除的任务列表id
+repeated  p_mission  update=2; //新增或者更新的任务
+}
+

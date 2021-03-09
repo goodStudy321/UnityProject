@@ -1,0 +1,6 @@
+// 领取奖励返回
+message m_trench_ceremony_reward_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  status=2[default=0]; //按钮状态: 1 立即领取 2 已领取 3 已结束
+}
+

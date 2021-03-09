@@ -1,0 +1,5 @@
+// 增加宾客上限
+message m_marry_add_guest_tos {
+optional  int32  add_num=1[default=0]; //增加数量
+}
+

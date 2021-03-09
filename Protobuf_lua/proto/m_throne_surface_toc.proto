@@ -1,0 +1,6 @@
+// 宝座幻化使用,改变场景的形象返回
+message m_throne_surface_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  throne_id=2[default=0]; //宝座升级表id
+}
+

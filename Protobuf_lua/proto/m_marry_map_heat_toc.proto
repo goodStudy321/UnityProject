@@ -1,0 +1,5 @@
+// 品尝次数更新
+message m_marry_map_heat_toc {
+optional  int32  heat=1[default=0]; //热度
+}
+

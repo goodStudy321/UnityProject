@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="tRemCollect" Key="id" ExportType="Dic" Src="Y 远古神迹-采集-精英.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "场景ID" />
+  <P Name="mID" Type="number" IsList="true"  Lsp="," ColName= "精英怪ID" />
+  <P Name="vecLst" Type="List_KV" IsList="true"  Lsp="|"  ColName="精英怪刷新参数" />
+</Proto>

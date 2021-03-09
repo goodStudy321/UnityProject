@@ -1,0 +1,7 @@
+import "p_kv.proto";
+// 七天活动信息
+message m_role_seven_toc {
+optional  int32  err_code=1[default=0]; 
+repeated  p_kv  list=2; //七天活动奖励 key-天数 value 1-不能领取2-可领取3-已领取,上线全发,之后只发送更新值,不发送为全部已领取
+}
+

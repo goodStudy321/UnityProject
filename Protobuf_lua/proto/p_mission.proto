@@ -1,0 +1,9 @@
+import "p_listen.proto";
+// 任务信息结构体
+message p_mission {
+optional  int32  mission_id=1[default=0]; 
+repeated  p_listen  listen=2; 
+optional  int32  status=3[default=0]; //任务状态，1未接。2未完成，3可提交
+optional  int32  succ_times=4[default=0]; //当前进行的次数
+}
+

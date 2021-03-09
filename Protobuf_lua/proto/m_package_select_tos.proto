@@ -1,0 +1,6 @@
+// 装备礼包选择
+message m_package_select_tos {
+optional  int32  goods_id=1[default=0]; //道具ID
+optional  int32  index=2[default=0]; //选择的部位
+}
+

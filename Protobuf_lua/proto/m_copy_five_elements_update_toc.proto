@@ -1,0 +1,5 @@
+// 五行秘境完成层数更新
+message m_copy_five_elements_update_toc {
+optional  int32  cur_five_elements=1[default=0]; //当前五行密境的层数:CopyID
+}
+

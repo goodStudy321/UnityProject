@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="GuideCfg" Key="id" ExportType="Arr" Src="X_新手引导表.xls" Sheet="Sheet2">
+  <P Name="id" Type="number" ColName="序列" />
+  <P Name="ty" Type="number" ColName="触发类型" />
+  <P Name="tArg" Type="number" Opt="true" ColName="触发参数" />
+  <P Name="tArg2" Type="number" Opt="true" ColName="触发参数2" />
+  <P Name="autoOn" Type="number" ColName="自动打开" />
+  <P Name="ui" Type="string" ColName="目标UI" />
+  <P Name="areaPath" Type="string" ColName="目标UI引导区域相对路径" />
+  <P Name="focus" Type="number" ColName="是否聚焦" />
+  <P Name="pause" Type="number" ColName="是否暂停" />
+  <P Name="holoPos" Type="Vector2" Opt="true"  ColName="光圈坐标" />
+  <P Name="gestPos" Type="Vector2" Opt="true" ColName="手势坐标" />
+  <P Name="textPos" Type="Vector2" ColName="文案坐标" />
+  <P Name="text" Type="string" ColName="文案描述" />
+  <P Name="audio" Type="string" Opt="true" ColName="语音" />
+  <P Name="delay" Type="number" Opt="true" ColName="延时" />
+  <P Name="isAuto" Type="number" Opt="true"  ColName="自动执行" />
+  <P Name="autoCom" Type="string" Opt="true" ColName="自动执行目标" />
+  <P Name="autoTime" Type="number" Opt="true" ColName="自动执行时间" />
+  <P Name="sFilter" Type="number" Opt="true" ColName="是否根据场景过滤" />
+  <P Name="autoOffTm" Type="number" ColName="自动关闭时间" />
+  <P Name="autoOnBottom" Type="number" Opt="true" ColName="自动打开主界面底部按钮" />
+  <P Name="z" Type="number" ColName="区域Z轴坐标" />
+</Proto>

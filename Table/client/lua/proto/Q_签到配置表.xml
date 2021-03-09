@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SignCfg" Key="id" ExportType="Arr" Src="Q 签到配置表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "日期" />
+  <P Name="award" Type="number" IsList="true" Lsp="," ColName= "奖励" />
+  <P Name="vipLv" Type="number" ColName= "VIP等级" />
+  <P Name="rate" Type="number" ColName= "倍率" />
+</Proto>

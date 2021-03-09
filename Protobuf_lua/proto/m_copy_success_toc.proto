@@ -1,0 +1,7 @@
+import "p_kv.proto";
+// 副本成功结算面板
+message m_copy_success_toc {
+optional  int64  exp=1[default=0]; //经验
+repeated  p_kv  goods_list=2; //id : 道具id，val：数量
+}
+

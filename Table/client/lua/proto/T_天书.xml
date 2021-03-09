@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SkyBookTemp" Key="id" ExportType="Dic" Src="T 天书.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="type" Type="number" ColName= "天书类型" />
+  <P Name="condition" Type="number" ColName= "条件类型" />
+  <P Name="des" Type="string" ColName= "描述" />
+  <P Name="param" Type="number" IsList="true" Lsp="," ColName= "条件参数" />
+  <P Name="reward" Type="K_V" ColName="奖励道具" />
+  <P Name="show" Type="number" Opt="true" IsList="true" Lsp="," ColName= "icon展示" />
+</Proto>

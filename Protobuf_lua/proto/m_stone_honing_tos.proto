@@ -1,0 +1,6 @@
+// 宝石淬炼
+message m_stone_honing_tos {
+optional  int32  equip_id=1[default=0]; //哪一件装备
+optional  int32  index=2[default=0]; //哪一个孔位
+}
+

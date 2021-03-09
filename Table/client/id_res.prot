@@ -1,0 +1,15 @@
+message IdRes [key=id, source="I ID资源事件配置表.xls", sheet="Sheet1"]
+{
+	struct resPFList [separator = '|']
+	{
+		string resPF;
+	};
+
+	uint32 id						[option = "ID"];
+	string res_name					[option = "资源名称"];
+	uint8 trigger_ent				[option = "是否抛出事件"];
+	string ent_str					[option = "事件字符串"];
+	uint8 type						[option = "区分方式"];
+	uint8 type_index				[option = "区分索引"];
+	resPFList respf_list			[option = "区分资源名结尾"];
+};

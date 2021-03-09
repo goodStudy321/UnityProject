@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="NatureCompose" Key="id" ExportType="Dic" Src="T 天机印合成表.xlsx" Sheet="Sheet3">
+  <P Name="id" Type="number" ColName= "道具ID" />
+  <P Name="tp1" Type="string" Opt="true" ColName= "一级分页" />
+  <P Name="tp2" Type="string" Opt="true" ColName= "二级分页" />
+  <P Name="bTp" Type="string" Opt="true" ColName= "大分页" />
+  <P Name="sTp" Type="string" Opt="true" ColName= "小分页" />
+  <P Name="name" Type="string" Opt="true" ColName= "名称" />
+  <P Name="part" Type="string" Opt="true" ColName= "部位" />
+  <P Name="qua" Type="string" Opt="true" ColName= "品质" />
+  <P Name="star" Type="string" Opt="true" ColName= "星级" />
+  <P Name="needNum" Type="number" Opt="true" ColName= "需要数量" />
+  <P Name="needId" Type="string" Opt="true" ColName= "合成消耗" />
+</Proto>

@@ -1,0 +1,19 @@
+import "p_copy_item.proto";
+// 副本信息列表
+message m_copy_list_toc {
+repeated  p_copy_item  copy_list=1; 
+optional  int32  tower_id=2[default=0]; //当前爬塔副本的进度id
+repeated  int32  tower_reward_list=3; //已经领取的层数列表
+optional  int32  exp_finish_times=4[default=0]; //新手经验副本完成次数
+optional  int32  exp_enter_times=5[default=0]; //新手经验副本可以进入的次数
+optional  int32  exp_merge_times=6[default=0]; //经验副本合并次数
+optional  int32  cur_five_elements=7[default=0]; //当前五行密境的层数:CopyID
+optional  int32  unlock_floor=8[default=0]; //通过这个ID查看大层
+optional  int32  illusion=9[default=0]; //幻力
+optional  int32  buy_illusion_times=10[default=0]; //已经购买了幻力的次数
+optional  int32  nat_intensify=11[default=0]; //天机勾玉可以领取的数量
+optional  int32  max_universe=12[default=0]; //当前通关的太虚层数
+optional  int32  universe_use_time=13[default=0]; //太虚通天塔最大层通关时间
+optional  int32  is_have_times=14[default=0]; //仙侣副本是否还有剩余次数 0:有剩余次数 1:没有剩余次数
+}
+

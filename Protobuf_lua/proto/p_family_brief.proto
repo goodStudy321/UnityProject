@@ -1,0 +1,12 @@
+// 道庭申请成员的p结构
+message p_family_brief {
+optional  int64  family_id=1[default=0]; //角色id
+optional  string  family_name=2; //角色名
+optional  int32  level=3[default=0]; //道庭等级
+optional  int32  num=4[default=0]; //人数
+optional  int64  owner_id=5[default=0]; //庭主id
+optional  string  owner_name=6; //庭主名字
+optional  int32  power=7[default=0]; //战斗力
+optional  int32  rank=8[default=0]; //排名
+}
+

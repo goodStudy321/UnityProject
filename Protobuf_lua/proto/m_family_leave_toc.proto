@@ -1,0 +1,6 @@
+// 离开道庭
+message m_family_leave_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int64  role_id=2[default=0]; //role_id
+}
+

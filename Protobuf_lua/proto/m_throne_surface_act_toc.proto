@@ -1,0 +1,7 @@
+import "p_kv.proto";
+// 宝座幻化激活返回
+message m_throne_surface_act_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  p_kv  surface=2; //宝座幻化观表id, key-surface_id, value-已消耗的次数
+}
+

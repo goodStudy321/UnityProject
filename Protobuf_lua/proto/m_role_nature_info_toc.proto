@@ -1,0 +1,10 @@
+import "p_nature_place.proto";
+// 返回天机系统孔部位信息
+message m_role_nature_info_toc {
+optional  int32  quality=1[default=0]; //选择的品质,大于0背包满了自动分解
+optional  int32  star=2[default=0]; //星级
+optional  int32  consume_money=3[default=0]; //强化消耗道具数量
+repeated  p_nature_place  nature_place=4; //部位信息
+repeated  int32  book_list=5; //图鉴
+}
+

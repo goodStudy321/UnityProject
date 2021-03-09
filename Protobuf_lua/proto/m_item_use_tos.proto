@@ -1,0 +1,7 @@
+// 使用道具
+message m_item_use_tos {
+optional  int32  type=1[default=0]; //0:唯一ID, 1:TypeID
+optional  int32  id=2[default=0]; //根据上面的类型传值
+optional  int32  num=3[default=0]; //num
+}
+

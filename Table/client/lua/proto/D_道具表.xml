@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ItemData" Key="id" ExportType="Dic" Src="D 道具配置.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "道具ID" />
+  <P Name="name" Type="string" ColName="道具名称" />
+  <P Name="icon" Type="string" ColName="道具图标" />
+  <P Name="model" Type="string" ColName="掉落模型" />
+  <P Name="type" Type="number" ColName="道具类型" />
+  <P Name="quality" Type="number" ColName= "物品品质" />
+  <P Name="overlayNum" Type="number" Opt="true" ColName= "叠加数量" />
+  <P Name="canUse" Type="number" Opt="true" ColName= "能否使用" />
+  <P Name="getwayList" Type="number" Opt="true" IsList="true" Lsp="_" ColName= "通用获取途径" />
+  <P Name="jump" Type="string" Opt="true" IsList="true" Lsp="_" ColName= "跳转界面" />
+  <P Name="useNum" Type="number" Opt="true" ColName= "使用次数" />
+  <P Name="useLevel" Type="number" Opt="true" ColName= "使用等级" />
+  <P Name="useVIP" Type="number" Opt="true" ColName= "VIP限制" />
+  <P Name="limitTime" Type="number" Opt="true" ColName= "有效期" />
+  <P Name="gilgulLv" Type="number" Opt="true" ColName= "转生等级" />
+  <P Name="realm" Type="number" Opt="true" ColName= "达到境界" />
+  <P Name="sexLim" Type="number" Opt="true" ColName= "性别限制" />
+  <P Name="cateLim" Type="number" Opt="true" ColName= "职业限制" />
+  <P Name="canBind" Type="number" Opt="true" ColName= "绑定类型" />
+  <P Name="canhouse" Type="number" Opt="true" ColName= "仓库标识" />
+  <P Name="bagToggle" Type="number" Opt="true" ColName= "背包页签" />
+  <P Name="canAbandon" Type="number" Opt="true" ColName= "能否丢弃" />
+  <P Name="uFx" Type="number" Opt="true" ColName= "使用效果" />
+  <P Name="useCond" Type="number" Opt="true" IsList="true" Lsp="," ColName= "使用条件" />
+  <P Name="uFxArg" Type="number" Opt="true" IsList="true" Lsp="," ColName= "效果参数" />
+  <P Name="price" Type="number" Opt="true" ColName= "出售价格" />
+  <P Name="canQuick" Type="number" Opt="true" ColName= "是否快速使用" />
+  <P Name="quickprice" Type="number" Opt="true" ColName= "快捷购买价格" />
+  <P Name="des" Type="string" Opt="true" ColName= "道具描述" />
+  <P Name="AucSecId" Type="number" Opt="true" ColName= "拍卖二级分类" />
+  <P Name="startPrice" Type="number" Opt="true" ColName= "起拍价" />
+  <P Name="fixedPrice" Type="number" Opt="true" ColName= "一口价" />
+  <P Name="auctionTime" Type="string" Opt="true" ColName= "购买后上架限制" />
+  <P Name="skillBaseId" Type="number" Opt="true" IsList="true" Lsp="，"  ColName= "技能基础id" />
+  <P Name="worth" Type="number" ColName="捐献贡献值" />
+  <P Name="cost" Type="number" ColName="兑换贡献值" />
+</Proto>

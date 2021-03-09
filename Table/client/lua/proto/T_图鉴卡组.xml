@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PicCollectGroupProTemp" Key="id" ExportType="Dic" Src="T 图鉴卡组.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "卡组id" />
+  <P Name="title" Type="string" Opt="true" ColName= "等阶" />
+  <P Name="name" Type="string" Opt="true" ColName= "卡组名称" />
+  <P Name="picIds" Type="number" Opt="true" IsList="true" Lsp="," ColName= "卡片id" />
+  <P Name="activonNum" Type="number" Opt="true" ColName= "激活数量" />
+  <P Name="stars" Type="number" Opt="true" ColName= "星级数量" />
+  <P Name="pro" Type="K_V" Opt="true" IsList="true" Lsp=";" ColName= "激活属性" />
+</Proto>

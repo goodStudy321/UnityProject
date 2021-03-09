@@ -1,0 +1,6 @@
+import "p_kv.proto";
+// 副本信息更新
+message m_copy_info_update_toc {
+repeated  p_kv  kv_list=1; //id 1状态 2开始时间 3结束时间 4当前进度 5副进度
+}
+

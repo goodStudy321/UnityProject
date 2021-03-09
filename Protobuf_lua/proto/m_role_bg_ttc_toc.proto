@@ -1,0 +1,6 @@
+import "p_bg_act.proto";
+// 宝藏商城
+message m_role_bg_ttc_toc {
+optional  p_bg_act  info=1; //宝藏商城
+}
+

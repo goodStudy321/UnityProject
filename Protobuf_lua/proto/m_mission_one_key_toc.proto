@@ -1,0 +1,5 @@
+// 
+message m_mission_one_key_toc {
+optional  int32  err_code=1[default=0]; 
+}
+

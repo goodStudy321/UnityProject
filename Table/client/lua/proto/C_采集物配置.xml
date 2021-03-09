@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="CollectionTemp" Key="id" ExportType="Arr" Src="C 采集物配置.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "id" />
+  <P Name="name" Type="string" ColName="名字" />
+  <P Name="icon" Type="string" ColName="采集图标" />
+  <P Name="mod" Type="string" ColName="模型名称" />
+  <P Name="text" Type="string" ColName="采集文本" />
+  <P Name="dis" Type="number" ColName="检测距离" />
+</Proto>

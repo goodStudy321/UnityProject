@@ -1,0 +1,15 @@
+import "p_ks.proto";
+// 寻宝相关信息
+message m_treasure_info_toc {
+repeated  p_ks  world_equip_logs=1; //全服寻宝记录
+repeated  int32  equip_logs=2; //个人装备寻宝记录
+optional  int32  rune_free_time=3[default=0]; //符文寻宝免费时间
+repeated  p_ks  world_summit_logs=4; //全服寻宝记录
+repeated  int32  summit_logs=5; //个人巅峰寻宝记录
+optional  int32  equip_weight=6[default=0]; //个人寻宝幸运值
+optional  int32  summit_weight=7[default=0]; //巅峰寻宝幸运值
+repeated  int32  unlimited_logs=8; //个人无限寻宝记录
+repeated  p_ks  world_unlimited_logs=9; //全服无限寻宝记录
+optional  int32  unlimited_weight=10[default=0]; //无限寻宝幸运值
+}
+

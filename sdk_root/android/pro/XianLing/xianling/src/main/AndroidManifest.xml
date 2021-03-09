@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.loong.xianling">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <!--<uses-permission android:name="android.permission.WRITE_SETTINGS" />-->
+
+    <!-- targetSdkVersion >= 28 必须添加 application 属性 android:usesCleartextTraffic="true" -->
+    <application
+        android:name="com.loong.xianling.GameApplication"
+        android:largeHeap="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true" >
+
+        <!-- 聚合渠道ID -->
+        <meta-data android:name="Super_Channe_ID" android:value="1" />
+
+        <!-- 奇葩游戏ID -->
+        <meta-data android:name="Super_Game_ID" android:value="823" />
+
+        <!-- (必接)闪屏Activity -->
+        <activity android:name="com.supersdk.application.MySplashActivity"
+                  android:screenOrientation="landscape">
+            <!--  此处横竖请跟随游戏设置 -->
+            <intent-filter>
+              <action android:name="android.intent.action.MAIN" />
+
+              <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <!-- 主Activity -->
+        <activity android:name="com.loong.xianling.xianlingSdkActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="landscape">
+
+            <meta-data android:name="unityplayer.UnityActivity"
+                        android:value="true"/>
+
+            <intent-filter>
+                <action android:name="com.super.sdk.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+    </application>
+</manifest>

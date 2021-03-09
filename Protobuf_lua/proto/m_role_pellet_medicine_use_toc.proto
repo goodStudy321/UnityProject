@@ -1,0 +1,7 @@
+import "p_pellet_medicine.proto";
+// 丹药系统丹药使用
+message m_role_pellet_medicine_use_toc {
+optional  int32  err_code=1[default=0]; 
+repeated  p_pellet_medicine  medicine=2; //丹药结构
+}
+

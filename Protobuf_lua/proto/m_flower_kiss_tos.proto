@@ -1,0 +1,5 @@
+// 送花回吻
+message m_flower_kiss_tos {
+optional  int64  to_role_id=1[default=0]; //给xxx回吻
+}
+

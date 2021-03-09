@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="EquipConcise" ExportType="Arr" Key="id" Src="Z 装备洗炼-品质表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "编号" />
+  <P Name="part" Type="number" ColName="部位" />
+  <P Name="qua" Type="number" ColName="品质" />
+  <P Name="atk" Type="number" Opt="true"  IsList="true" Lsp="," ColName="攻击" />
+  <P Name="atkadd" Type="number" Opt="true"  IsList="true" Lsp="," ColName="攻击加成" />
+  <P Name="arm" Type="number" Opt="true"  IsList="true" Lsp="," ColName="破甲" />
+  <P Name="armadd" Type="number" Opt="true"  IsList="true" Lsp="," ColName="破甲加成" />
+  <P Name="hit" Type="number" Opt="true"  IsList="true" Lsp="," ColName="命中" />
+  <P Name="hitadd" Type="number" Opt="true"  IsList="true" Lsp="," ColName="命中加成" />
+  <P Name="crit" Type="number" Opt="true"  IsList="true" Lsp="," ColName="暴击" />
+  <P Name="critadd" Type="number" Opt="true"  IsList="true" Lsp="," ColName="暴击加成" />
+  <P Name="hp" Type="number" Opt="true"  IsList="true" Lsp="," ColName="生命" />
+  <P Name="hpadd" Type="number" Opt="true"  IsList="true" Lsp="," ColName="生命加成" />
+  <P Name="def" Type="number" Opt="true"  IsList="true" Lsp="," ColName="防御" />
+  <P Name="defadd" Type="number" Opt="true"  IsList="true" Lsp="," ColName="防御加成" />
+  <P Name="dodge" Type="number" Opt="true"  IsList="true" Lsp="," ColName="闪避" />
+  <P Name="dodgeadd" Type="number" Opt="true"  IsList="true" Lsp="," ColName="闪避加成" />
+  <P Name="tena" Type="number" Opt="true"  IsList="true" Lsp="," ColName="韧性" />
+  <P Name="tenaadd" Type="number" Opt="true"  IsList="true" Lsp="," ColName="韧性加成" />
+  <P Name="stoneW" Type="number" Opt="true" ColName="洗练石洗练权重" />
+  <P Name="gemW" Type="number" Opt="true" ColName="元宝洗练权重" />
+</Proto>

@@ -1,0 +1,6 @@
+// 实名验证
+message m_role_addict_auth_tos {
+optional  string  id_card=1; //身份证信息
+optional  string  real_name=2; //姓名
+}
+

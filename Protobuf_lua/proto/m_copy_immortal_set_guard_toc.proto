@@ -1,0 +1,7 @@
+import "p_kv.proto";
+// 守卫信息设置返回
+message m_copy_immortal_set_guard_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  p_kv  guard_list=2; //id：区域 val：守卫
+}
+

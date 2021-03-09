@@ -1,0 +1,8 @@
+// 举办婚礼的角色信息
+message p_feast_role {
+optional  int64  role_id=1[default=0]; 
+optional  string  role_name=2; //角色名
+optional  int32  category=3[default=0]; //职业
+optional  int32  sex=4[default=0]; //性别
+}
+

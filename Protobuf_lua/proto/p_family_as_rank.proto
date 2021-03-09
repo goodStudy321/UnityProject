@@ -1,0 +1,7 @@
+// 道庭答题排行榜的p_结构
+message p_family_as_rank {
+optional  int32  rank=1[default=0]; //排行
+optional  string  name=2; //道庭名
+optional  int32  score=3[default=0]; //分数
+}
+

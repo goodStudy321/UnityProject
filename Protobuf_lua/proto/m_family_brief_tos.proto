@@ -1,0 +1,6 @@
+// 获取道庭信息
+message m_family_brief_tos {
+optional  int32  from=1[default=0]; //开始排名
+optional  int32  to=2[default=0]; //key - string
+}
+

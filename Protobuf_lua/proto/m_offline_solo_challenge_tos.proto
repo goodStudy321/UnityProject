@@ -1,0 +1,5 @@
+// 挑战
+message m_offline_solo_challenge_tos {
+optional  int32  rank=1[default=0]; //挑战某一名
+}
+

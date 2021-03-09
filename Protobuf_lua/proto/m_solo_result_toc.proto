@@ -1,0 +1,9 @@
+// 1v1匹配结果返回
+message m_solo_result_toc {
+optional  bool  is_success=1[default=true]; //是否成功
+optional  int64  solo_role_id=2[default=0]; //对手id
+optional  string  solo_role_name=3; //对手名字
+optional  int32  new_score=4[default=0]; //新积分
+optional  int64  add_exp=5[default=0]; //获得经验
+}
+

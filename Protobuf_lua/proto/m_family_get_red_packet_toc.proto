@@ -1,0 +1,7 @@
+// 道庭领取红包返回
+message m_family_get_red_packet_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  packet_id=2[default=0]; //红包ID
+optional  int32  gold=3[default=0]; //红包金额
+}
+

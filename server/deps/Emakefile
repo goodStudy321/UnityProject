@@ -1,0 +1,40 @@
+% -*- mode: erlang -*-
+
+{
+[
+    "deps/gpb/src/gpb_codegen"
+],
+ [
+ 	{i, "deps/emysql/include"},
+ 	{i, "deps/ibrowse/include"},
+ 	{i, "deps/mochiweb/include"},
+    {i, "../include"},
+  	{outdir, "../ebin"},
+	{inline_size, 30},
+	report,
+	warnings_as_errors,
+	verbose
+ ]
+}.
+
+{
+[
+    "db/src/*",
+    "lib/src/*",
+    "log/src/*",
+    "script/src/*",
+    "time/src/*",
+    "deps/*/src/*"
+ ],
+ [
+ 	{i, "deps/emysql/include"},
+ 	{i, "deps/ibrowse/include"},
+ 	{i, "deps/mochiweb/include"},
+    {i, "../include"},
+  	{outdir, "../ebin"},
+	{inline_size, 30},
+	report,
+	warnings_as_errors,
+	verbose
+ ]
+}.

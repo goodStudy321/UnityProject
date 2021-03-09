@@ -1,0 +1,6 @@
+import "p_kv.proto";
+// vip信息改变同送
+message m_vip_info_change_toc {
+repeated  p_kv  kv_list=1; //1等级 2经验
+}
+

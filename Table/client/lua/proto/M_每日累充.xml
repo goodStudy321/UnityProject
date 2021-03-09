@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="EvrDayPayCfg" Key="id" ExportType="Arr" Src="M 每日累充.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "额度" />
+  <P Name="award0" Type="K_V" IsList="true" Lsp=";" ColName= "常规奖励" />
+  <P Name="award1" Type="K_V" IsList="true" Lsp=";" ColName= "第一天奖励" />
+  <P Name="award2" Type="K_V" IsList="true" Lsp=";" ColName= "第二天奖励" />
+  <P Name="award3" Type="K_V" IsList="true" Lsp=";" ColName= "第三天奖励" />
+  <P Name="award4" Type="K_V" IsList="true" Lsp=";" ColName= "第四天奖励" />
+  <P Name="award5" Type="K_V" IsList="true" Lsp=";" ColName= "第五天奖励" />
+  <P Name="award6" Type="K_V" IsList="true" Lsp=";" ColName= "第六天奖励" />
+  <P Name="award7" Type="K_V" IsList="true" Lsp=";" ColName= "第七天奖励" />
+</Proto>

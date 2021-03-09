@@ -1,0 +1,7 @@
+import "p_war_armor_lock_info.proto";
+// 灵器
+message p_war_armor_lock {
+optional  int32  war_spirit_id=1[default=0]; //战灵id
+repeated  p_war_armor_lock_info  list=2; //灵器信息
+}
+

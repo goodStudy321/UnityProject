@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!-- 登录 -->
+    <LinearLayout
+        android:id="@+id/jh_login_layout_username"
+        style="@style/jh_label_edit_row"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            style="@style/jh_label_edit_row_label"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/jh_login_text_view_account" />
+
+        <EditText
+            android:id="@+id/jh_login_edit_text_user_name"
+            style="@style/jh_label_edit_row_edit"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:inputType="text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/jh_login_layout_password"
+        style="@style/jh_label_edit_row"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_below="@id/jh_login_layout_username"
+        android:layout_marginBottom="15dp">
+
+        <TextView
+            style="@style/jh_label_edit_row_label"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/jh_login_text_view_password" />
+
+        <EditText
+            android:id="@+id/jh_login_edit_text_password"
+            style="@style/jh_label_edit_row_edit"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:inputType="textPassword" />
+    </LinearLayout>
+
+    <!-- 复选框-->
+    <CheckBox
+        android:layout_marginBottom="15dp"
+        android:id="@+id/jh_login_checkbox_keep_pwd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/jh_login_layout_password"
+        android:layout_marginLeft="12dp"
+        android:checked="true" />
+    <!-- 君海游戏服务器协议 -->
+    <TextView
+        android:layout_marginBottom="15dp"
+        android:id="@+id/jh_login_text_view_keep_pwd"
+        android:layout_width="wrap_content"
+        android:layout_height="14sp"
+        android:layout_above="@+id/linearLayout"
+        android:layout_alignTop="@+id/jh_login_checkbox_keep_pwd"
+        android:layout_toLeftOf="@+id/jh_login_text_view_forget_pwd"
+        android:layout_toRightOf="@id/jh_login_checkbox_keep_pwd"
+        android:layout_toStartOf="@+id/jh_login_text_view_forget_pwd"
+        android:gravity="center_vertical"
+        android:text="@string/jh_login_checkbox_keep_pwd" />
+    <!-- 找回密码 -->
+    <TextView
+        android:layout_marginBottom="15dp"
+        android:id="@+id/jh_login_text_view_forget_pwd"
+        android:layout_width="wrap_content"
+        android:layout_height="14sp"
+        android:layout_above="@+id/linearLayout"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/jh_login_layout_password"
+        android:layout_marginRight="12dp"
+        android:gravity="center_vertical"
+        android:text="@string/jh_login_text_view_forget_pwd" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/jh_login_checkbox_keep_pwd"
+        android:weightSum="2">
+
+        <Button
+            android:layout_marginBottom="10dp"
+            android:id="@+id/jh_login_btn_quick_login"
+            style="@style/jh_login_btn_quick_login"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:text="@string/jh_login_btn_quick_login" />
+
+        <Button
+            android:layout_marginBottom="10dp"
+            android:id="@+id/jh_login_btn_quick_sign_up"
+            style="@style/jh_login_btn_quick_sign_up"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:text="@string/jh_login_btn_click_sign_up" />
+    </LinearLayout>
+</RelativeLayout>

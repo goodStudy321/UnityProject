@@ -1,0 +1,5 @@
+// 全服红包-领取
+message m_act_get_red_packet_tos {
+optional  int64  packet_id=1[default=0]; //红包ID
+}
+

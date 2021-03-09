@@ -1,0 +1,5 @@
+// 品尝次数更新
+message m_marry_map_taste_times_toc {
+optional  int32  taste_times=1[default=0]; //当前品尝次数
+}
+

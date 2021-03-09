@@ -1,0 +1,4 @@
+// 获取排行信息
+message m_family_td_rank_info_tos {
+}
+

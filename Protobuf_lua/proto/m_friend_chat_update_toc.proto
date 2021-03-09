@@ -1,0 +1,6 @@
+import "p_friend.proto";
+// 最近联系人更新
+message m_friend_chat_update_toc {
+optional  p_friend  friend_info=1; //是否在线
+}
+

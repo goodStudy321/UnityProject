@@ -1,0 +1,7 @@
+import "p_equip.proto";
+// 装备洗练开启返回
+message m_equip_concise_open_toc {
+optional  int32  err_code=1[default=0]; 
+optional  p_equip  equip=2; //装备信息
+}
+

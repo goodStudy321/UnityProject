@@ -1,0 +1,6 @@
+import "p_kvl.proto";
+// 活动信息更新类型1
+message m_bg_act_info_toc {
+repeated  p_kvl  update_list=1; //id = 活动类型
+}
+

@@ -1,0 +1,14 @@
+message WildMap [key=id, source="Y 野外地图.xls", sheet="刷新列表"]
+{
+	struct vecto2 [separator = ',']
+	{
+		int32 x;	// X
+		int32 z;	// Z
+	};
+	
+	uint32 id						    [option = "刷新序列"];
+	uint32 monster_id							[option = "怪物ID"];
+	uint32 collection_id							[option = "采集物ID"];
+	vecto2 left_pos								[option = "左下角点"];
+	vecto2 right_pos							[option = "右上角点"];
+};

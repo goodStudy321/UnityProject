@@ -1,0 +1,5 @@
+// 充值排行消费更新
+message m_role_bg_rrank_update_toc {
+optional  int32  my_use=1[default=0]; //ID
+}
+

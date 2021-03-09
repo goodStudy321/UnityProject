@@ -1,0 +1,5 @@
+// 1v1匹配
+message m_solo_match_tos {
+optional  int32  type=1[default=0]; //1开始匹配 0取消
+}
+

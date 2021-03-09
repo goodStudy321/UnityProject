@@ -1,0 +1,5 @@
+// 道庭每日奖励
+message m_family_day_reward_info_toc {
+optional  bool  reward=1[default=true]; //奖励状态 true - 已领
+}
+

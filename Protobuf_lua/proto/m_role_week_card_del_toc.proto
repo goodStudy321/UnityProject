@@ -1,0 +1,5 @@
+// 周卡信息 改名基金
+message m_role_week_card_del_toc {
+repeated  int32  list=1; //周卡列表
+}
+

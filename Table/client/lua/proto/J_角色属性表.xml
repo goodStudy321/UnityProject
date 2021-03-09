@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="RoleAtt" Key="id" ExportType="Dic" Src="J 角色属性表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="modelId" Type="string" ColName= "模型ID" />
+  <P Name="skills" Type="number" IsList="true" Lsp="_" ColName= "技能ID" />
+</Proto>

@@ -1,0 +1,8 @@
+import "p_kvl.proto";
+// 天书信息
+message m_god_book_info_toc {
+repeated  p_kvl  doing_list=1; //id:天书ID list:已经完成的参数
+repeated  int32  reward_list=2; //已经领取的奖励列表
+repeated  int32  type_reward_list=3; //已经领取的类型奖励列表
+}
+

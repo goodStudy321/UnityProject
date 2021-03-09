@@ -1,0 +1,8 @@
+// 装备收集信息
+message p_equip_collect {
+optional  int32  id=1[default=0]; //装备收集id
+optional  int32  suit_num=2[default=0]; //激活数量 0 未激活 2 激活2件 4 激活4件 6 激活6件 8 激活8件
+optional  bool  is_active=3[default=true]; //是否已激活技能
+repeated  int32  ids=4; //激活部位ID
+}
+

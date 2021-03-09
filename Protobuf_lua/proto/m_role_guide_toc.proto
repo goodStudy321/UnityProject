@@ -1,0 +1,5 @@
+// 新手引导进度
+message m_role_guide_toc {
+repeated  int32  guide_id_list=1; //触发完成的guide_id_list
+}
+

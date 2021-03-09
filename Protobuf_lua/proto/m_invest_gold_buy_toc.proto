@@ -1,0 +1,6 @@
+// 投资计划购买返回
+message m_invest_gold_buy_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  invest_gold=2[default=0]; //投资XX档次
+}
+

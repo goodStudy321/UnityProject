@@ -1,0 +1,7 @@
+import "p_kv.proto";
+// 称号信息更新
+message m_title_update_toc {
+repeated  p_kv  update_titles=1; //更新的称号信息
+repeated  int32  del_titles=2; //删除的称号ID
+}
+

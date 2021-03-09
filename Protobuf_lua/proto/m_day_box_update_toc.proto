@@ -1,0 +1,5 @@
+//  
+message m_day_box_update_toc {
+optional  int32  id=1[default=0]; //id 充值次数    奖励置换可领取状态
+}
+

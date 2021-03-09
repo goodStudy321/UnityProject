@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="LvInvestCfg" Key="id" ExportType="Arr" Src="H 化神投资.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "等级" />
+  <P Name="type1" Type="Item" IsList="true" Lsp=";" ColName= "一档" />
+  <P Name="type2" Type="Item" IsList="true" Lsp=";" ColName= "二档" />
+  <P Name="type3" Type="Item" IsList="true" Lsp=";" ColName= "三档" />
+</Proto>

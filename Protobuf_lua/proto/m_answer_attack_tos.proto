@@ -1,0 +1,7 @@
+// 答题活动进攻
+message m_answer_attack_tos {
+optional  int32  skill=1[default=0]; //技能 1-干扰2-踢飞
+optional  int32  pos=2[default=0]; //所在区域1-正确0-错误
+repeated  int64  target=3; //技能目标
+}
+

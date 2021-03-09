@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_marginBottom="10dp"
+        android:id="@+id/jh_sign_up_layout_username"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        style="@style/jh_label_edit_row"
+        >
+        <TextView
+            android:text="@string/jh_sign_up_text_view_account"
+            style="@style/jh_label_edit_row_label"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            />
+        <EditText
+            android:id="@+id/jh_sign_up_edit_text_user_name"
+            android:inputType="text"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            style="@style/jh_label_edit_row_edit"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginBottom="15dp"
+        android:id="@+id/jh_sign_up_layout_password"
+        android:layout_below="@id/jh_sign_up_layout_username"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        style="@style/jh_label_edit_row">
+        <TextView
+            android:text="@string/jh_sign_up_text_view_password"
+            style="@style/jh_label_edit_row_label"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+        <EditText
+            android:id="@+id/jh_sign_up_edit_text_password"
+            android:inputType="text"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:hint="@string/jh_sign_up_edit_text_password_hint"
+            style="@style/jh_label_edit_row_edit" />
+    </LinearLayout>
+
+    <!-- 复选框-->
+    <CheckBox
+        android:layout_marginBottom="15dp"
+        android:id="@+id/jh_sign_up_checkbox_game_protocol"
+        android:layout_below="@id/jh_sign_up_layout_password"
+        android:layout_alignParentLeft="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:layout_marginLeft="12dp"
+        />
+    <!-- 君海游戏服务协议 -->
+    <TextView
+        android:layout_marginBottom="15dp"
+        android:id="@+id/jh_sign_up_textview_game_protocol"
+        android:layout_toRightOf="@id/jh_sign_up_checkbox_game_protocol"
+        android:text="@string/jh_sign_up_text_view_game_protocol"
+        android:layout_width="wrap_content"
+        android:layout_height="14sp"
+        android:layout_above="@+id/linearLayout"
+        android:layout_alignTop="@+id/jh_sign_up_checkbox_game_protocol"
+        android:gravity="center_vertical"
+        />
+
+
+    <LinearLayout
+        android:layout_below="@id/jh_sign_up_checkbox_game_protocol"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout"
+        android:weightSum="2"
+        >
+        <Button
+            android:layout_marginBottom="10dp"
+            android:id="@+id/jh_sign_up_btn_ok"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="45dp"
+            android:text="@string/jh_sign_up_btn_ok"
+            style="@style/jh_sign_up_btn_ok"
+            />
+        <Button
+            android:layout_marginBottom="10dp"
+            android:id="@+id/jh_sign_up_btn_back"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="45dp"
+            style="@style/jh_sign_up_btn_back"
+            android:text="@string/jh_sign_up_btn_back"
+            />
+    </LinearLayout>
+</RelativeLayout>

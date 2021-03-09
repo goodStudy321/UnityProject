@@ -1,0 +1,6 @@
+message ItemCreate [key=id, source="D 道具生成表.xls", sheet="Sheet1"]
+{	
+	uint64 id						        [option = "ID"];
+	uint32 w1					            [option = "职业1"]; 
+	uint32 w2                             [option = "职业2"];
+};

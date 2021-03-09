@@ -1,0 +1,6 @@
+// 活动图片变更推送
+message m_bg_act_display_img_toc {
+optional  int32  id=1[default=0]; //活动id
+optional  string  bg_img=2; //背景图地址
+}
+

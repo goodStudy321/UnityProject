@@ -1,0 +1,5 @@
+// 抢购
+message m_role_zero_panicbuy_tos {
+optional  int32  id=1[default=0]; //道庭名
+}
+

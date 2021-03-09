@@ -1,0 +1,6 @@
+// 交易完成
+message m_market_info_change_toc {
+optional  int32  id=1[default=0]; //完成物品ID
+optional  int32  type=2[default=0]; // 市场上架  市场被购买2  求购市场被求购4  
+}
+

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="FamilyMissionCfg" Key="id" ExportType="Arr" Src="D 道庭任务.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="star" Type="number" ColName="星级" />
+  <P Name="name" Type="string" ColName="任务名称" />
+  <P Name="time" Type="number" ColName="消耗时间(min)" />
+  <P Name="award" Type="K_V" IsList="true" Lsp=";" ColName= "奖励" />
+  <P Name="vipWeight" Type="K_V" IsList="true" Lsp=";" ColName= "VIP权重" />
+  <P Name="refreshWeight" Type="K_V" IsList="true" Lsp=";" ColName= "极品刷新权重" />
+</Proto>

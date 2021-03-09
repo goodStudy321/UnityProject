@@ -1,0 +1,13 @@
+import "p_kv.proto";
+// 开服冲榜活动 信息返回
+message m_act_rank_info_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  id=2[default=0]; //ID
+optional  int32  condition=3[default=0]; //当前条件
+optional  int32  status=4[default=0]; //1:正在进行排行 2:领取奖励阶段
+optional  int32  my_rank=5[default=0]; //个人排名
+optional  int32  rank_reward_status=6[default=0]; //1 不能领取 2 可以领取 3 已经领取
+repeated  p_kv  base_reward_list=7; //id:ID, val:1 不能领取 2 可以领取 3 已经领取
+repeated  p_kv  buy_list=8; //购买记录
+}
+

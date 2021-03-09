@@ -1,0 +1,105 @@
+{include file='public/head'}
+<style>
+  .layui-btn-normal {
+    background-color: #b9664c;
+  }
+  .on{
+    background-color:#b72c00;
+  }
+</style>
+<div class="layui-field-box">
+  <blockquote class="layui-elem-quote">
+    <form class="layui-form" onsubmit="return false">
+      <div class="layui-inline">
+        <label class="layui-form-label" style="width:55px">时间:</label>
+        <div class="layui-input-inline" style="width:150px">
+          <input type="text" name="time" id="time"  autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-inline">
+        <div class="layui-input-inline">
+          <button class="layui-btn layui-btn-sm" id="submit">查询</button>
+          <button onclick="javascript:location.reload()" class="layui-btn layui-btn-sm">刷新</button>
+        </div>
+      </div>
+    </form>
+  </blockquote>
+
+  <div class="layui-row layui-col-space10">
+    <div class="layui-col-md2">
+      <br>
+      {volist name="rank_type_arr" id="vo" key="i"}
+      <div class="layui-form-item" id="rank_type">
+        <button class="layui-btn layui-btn-fluid layui-btn-normal {$i == 1 ? 'on' : ''}" data-type="{$key}">{$vo}</button>
+      </div>
+      {/volist}
+    </div>
+    <div class="layui-col-md10">
+      <table id="table" lay-filter="test"></table>
+    </div>
+  </div>
+</div>
+{include file='public/foot'}
+
+<script>
+  form = layui.form;
+  layui.use(['laydate','form'], function(){
+    var laydate = layui.laydate;
+    laydate.render({
+      elem: '#time' //指定元素
+      ,range: true
+    });
+  });
+
+  //表格
+  layui.use('table', function(){
+    var table = layui.table;
+    //第一个实例
+    var tableIns = table.render({
+      elem: '#table'
+      ,url: 'ranking/?rank_type={$first_rank_type}' //数据接口
+      ,page: true //开启分页
+      ,cols: [[ //标题栏
+        {align: 'center',field:'id', title: '记录ID',width:180}
+        ,{align: 'center',field:'role_name', title: '角色名称'}
+        ,{align: 'center',field:'role_vip_level', title: 'VIP等级'}
+        ,{align: 'center',field:'role_rank', title: '玩家排名'}
+        ,{align: 'center',field:'time', title: '时间'}
+      ]]
+    });
+
+    $("#submit").click(function(){
+      var data = {};
+      $.each($('form').serializeArray(), function(){
+        data[this.name] = this.value;
+      })
+
+      tableIns.reload({
+        where: data   //设定异步数据接口的额外参数，任意设
+        ,page: {
+          curr: 1 //重新从第 1 页开始
+        }
+      });
+    });
+
+    $(document).on('click', '#rank_type button', function(){
+      var type = $(this).data('type');
+      $('#rank_type button').removeClass('on');
+      $(this).addClass('on');
+
+      var data = {};
+      $.each($('form').serializeArray(), function(){
+        data[this.name] = this.value;
+      })
+
+      tableIns.reload({
+        where: data   //设定异步数据接口的额外参数，任意设
+        ,url: 'ranking/?rank_type='+type //数据接口
+        ,page: {
+          curr: 1 //重新从第 1 页开始
+        }
+      });
+    })
+  });
+
+</script>

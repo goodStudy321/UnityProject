@@ -1,0 +1,6 @@
+// 战灵灵器穿戴
+message m_war_spirit_armor_load_tos {
+optional  int32  war_spirit_id=1[default=0]; //战灵id
+repeated  int32  goods_ids=2; //穿戴某些装备
+}
+

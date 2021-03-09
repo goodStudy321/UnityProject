@@ -1,0 +1,6 @@
+// 在线奖励活动信息
+message m_act_online_toc {
+optional  int32  online_time=1[default=0]; //已在线时长
+repeated  int32  list=2; //未领奖励 
+}
+

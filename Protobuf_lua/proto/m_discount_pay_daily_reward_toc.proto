@@ -1,0 +1,7 @@
+import "p_daily_gift.proto";
+// 领取活跃礼包返回
+message m_discount_pay_daily_reward_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  p_daily_gift  daily_gift=2; //每日活跃礼包
+}
+

@@ -1,0 +1,7 @@
+import "p_auction_goods.proto";
+// 具体商品信息返回
+message m_auction_detail_toc {
+optional  int32  err_code=1[default=0]; //错误码
+repeated  p_auction_goods  auction_goods=2; //商品列表
+}
+

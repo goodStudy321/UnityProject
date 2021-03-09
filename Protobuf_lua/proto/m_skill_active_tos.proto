@@ -1,0 +1,5 @@
+// 激活技能
+message m_skill_active_tos {
+optional  int32  id=1[default=0]; //装备收集id
+}
+

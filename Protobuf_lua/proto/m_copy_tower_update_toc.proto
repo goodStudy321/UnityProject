@@ -1,0 +1,5 @@
+// 爬塔副本进度更新
+message m_copy_tower_update_toc {
+optional  int32  tower_id=1[default=0]; //当前爬塔副本的进度id
+}
+

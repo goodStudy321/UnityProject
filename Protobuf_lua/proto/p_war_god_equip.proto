@@ -1,0 +1,7 @@
+// 战神装备列表
+message p_war_god_equip {
+optional  int32  equip_id=1[default=0]; //战神装备ID
+optional  int32  refine_level=2[default=0]; //开光等级
+optional  int32  refine_exp=3[default=0]; //开光进度
+}
+

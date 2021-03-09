@@ -1,0 +1,8 @@
+import "p_immortal_soul.proto";
+// 仙魂卸下
+message m_role_immortal_soul_down_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  pos=2[default=0]; 
+optional  p_immortal_soul  bag_add=3; //卸下的仙魂
+}
+

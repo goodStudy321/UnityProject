@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Test2" Key="id" Src="U UI配置表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "id"/>
+  <P Name="sex" Type="string" ColName="性别" />
+  <P Name="age" Type="number" ColName="年龄" />
+  <P Name="place" Type="string" ColName="籍贯" />
+  <P Name="mar" Type="bool" ColName="已婚" />
+</Proto>

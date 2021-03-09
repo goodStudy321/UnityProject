@@ -1,0 +1,69 @@
+<style type="text/css">
+.vlun-right{
+  float: right;
+}
+</style>
+{include file='public/head'}
+<div class="layui-field-box">
+  <blockquote class="layui-elem-quote">
+    <form class="layui-form" onsubmit="return false">
+      <div class="layui-input-inline">
+        总注册：<b>{$create}</b>
+      </div>
+
+      <div class="layui-inline vlun-right">
+        <div class="layui-input-inline" id="button">
+          <button class="layui-btn layui-btn-sm">刷新</button>
+        </div>
+      </div>
+    </form>
+  </blockquote>
+  <table id="table" lay-filter="test"></table>
+</div>
+{include file='public/foot'}
+
+
+<script>
+layui.use(['form', 'table'], function(){
+  var table = layui.table;
+  var form = layui.form;
+  //第一个实例
+  var tableIns = table.render({
+    elem: '#table'
+    ,url: 'vocation_data' //数据接口
+    ,page: true //开启分页
+    ,cols: [[ //表头
+    {field: 'category', title: '职业', sort: true}
+    ,{field: 'cate_num', title: '职业角色数'}
+    ,{field: 'ratio', title: '比例 &nbsp;<i class="layui-icon layui-icon-about" id="ratio" data-title="当前职业角色数 / 总角色数"></i>'}
+    ]]
+  });
+  $("#button").click(function(){
+    var online = $("#online").val();
+    var login = $("#login").val();
+    var pay = $("#pay").val();
+    tableIns.reload({
+      where: { //设定异步数据接口的额外参数，任意设
+        online: online
+      ,login: login
+      ,pay: pay
+      }
+      ,page: {
+        curr: 1 //重新从第 1 页开始
+      }
+    });
+  });
+});
+
+var tip_index = 0;
+$(document).on('mouseenter', '#ratio', function(){
+    var title = $(this).data('title');
+    var id = $(this).attr('id');
+    tip_index = layer.tips(title, '#'+id, {
+      tips: [1, '#3595CC'],
+      time: 0,
+    });
+  }).on('mouseleave', '#ratio', function(){
+    layer.close(tip_index);
+  });
+</script>

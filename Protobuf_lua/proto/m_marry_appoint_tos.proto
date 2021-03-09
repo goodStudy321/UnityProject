@@ -1,0 +1,5 @@
+// 预约婚礼
+message m_marry_appoint_tos {
+optional  int32  hour=1[default=0]; //预约特定场次的婚礼
+}
+

@@ -1,0 +1,5 @@
+// 扫荡（必胜 不进入地图走真实战斗）
+message m_offline_solo_mop_tos {
+optional  int32  rank=1[default=0]; //挑战某一名
+}
+

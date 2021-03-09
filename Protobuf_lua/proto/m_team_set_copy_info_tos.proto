@@ -1,0 +1,7 @@
+// 设置副本相关信息
+message m_team_set_copy_info_tos {
+optional  int32  copy_id=1[default=0]; //目标分类
+optional  int32  min_level=2[default=0]; //最小等级
+optional  int32  max_level=3[default=0]; //最大等级
+}
+

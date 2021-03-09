@@ -1,0 +1,6 @@
+import "p_kv.proto";
+// 法宝ID变化
+message m_magic_weapon_skin_toc {
+optional  p_kv  skin=1; //法宝的皮肤-进度
+}
+

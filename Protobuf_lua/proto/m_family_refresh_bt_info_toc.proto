@@ -1,0 +1,8 @@
+import "p_kv.proto";
+// 刷新道庭战相关数据
+message m_family_refresh_bt_info_toc {
+repeated  p_kv  cv_reward=1; 
+repeated  p_kv  max_cv=2; 
+optional  int32  end_cv=3[default=0]; 
+}
+

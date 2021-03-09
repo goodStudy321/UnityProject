@@ -1,0 +1,6 @@
+import "p_kv.proto";
+// 告别单身状态推送
+message m_cycle_act_couple_propose_status_toc {
+repeated  p_kv  propose_status_list=1; //告别单身奖励领取状态 val:1可领取，2已领取
+}
+

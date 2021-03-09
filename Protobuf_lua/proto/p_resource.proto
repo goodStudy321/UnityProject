@@ -1,0 +1,8 @@
+// 资源找回的p结构
+message p_resource {
+optional  int32  resource_id=1[default=0]; //资源ID
+optional  int32  base_times=2[default=0]; //基础次数
+optional  int32  extra_times=3[default=0]; //额外次数
+optional  int32  copy_extra_buy_times=4[default=0]; //副本额外次数购买
+}
+

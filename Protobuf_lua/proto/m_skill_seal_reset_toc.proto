@@ -1,0 +1,5 @@
+// 铭文重置返回
+message m_skill_seal_reset_toc {
+optional  int32  err_code=1[default=0]; 
+}
+

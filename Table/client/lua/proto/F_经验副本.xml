@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="CopyExpTemp" Key="id" ExportType="Dic" Src="F 经验副本.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "副本ID" />
+  <P Name="mNum" Type="number" ColName= "每波刷怪数量" />
+  <P Name="interval" Type="number" Opt="true"  ColName= "间隔时间" />
+</Proto>

@@ -1,0 +1,6 @@
+// 背包格子数更新
+message m_bag_grid_open_tos {
+optional  int32  bag_id=1[default=0]; //背包ID
+optional  int32  add_num=2[default=0]; //增加的数量
+}
+

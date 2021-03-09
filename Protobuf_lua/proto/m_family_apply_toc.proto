@@ -1,0 +1,5 @@
+// 申请加入某个帮会
+message m_family_apply_toc {
+optional  int32  err_code=1[default=0]; 
+}
+

@@ -1,0 +1,7 @@
+// 装备洗练
+message m_equip_concise_tos {
+optional  int32  equip_id=1[default=0]; //要洗练的装备ID
+optional  int32  type=2[default=0]; //洗练类型 1普通洗练 2元宝洗练
+repeated  int32  lock_index_list=3; //锁定的列表
+}
+

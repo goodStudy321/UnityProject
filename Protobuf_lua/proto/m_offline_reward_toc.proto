@@ -1,0 +1,13 @@
+import "p_goods.proto";
+// 离线经验奖励
+message m_offline_reward_toc {
+optional  int32  offline_min=1[default=0]; //离线多少分钟
+optional  int32  old_level=2[default=0]; //旧等级
+optional  int32  new_level=3[default=0]; //新等级
+optional  int64  exp=4[default=0]; //经验奖励
+optional  int32  add_silver=5[default=0]; //获得金币
+optional  int32  pet_exp=6[default=0]; //伙伴经验
+repeated  p_goods  pet_goods=7; //伙伴吞噬的装备
+repeated  p_goods  goods=8; //到背包的装备
+}
+

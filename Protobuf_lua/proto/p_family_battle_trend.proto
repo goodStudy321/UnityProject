@@ -1,0 +1,8 @@
+// 积分趋势 秒推送
+message p_family_battle_trend {
+optional  int32  camp=1[default=0]; //阵营
+optional  int32  score=2[default=0]; //阵营占领度
+optional  int32  change=3[default=0]; //变化积分速率 
+optional  int32  trend=4[default=0]; //0-衰减 1-增加
+}
+

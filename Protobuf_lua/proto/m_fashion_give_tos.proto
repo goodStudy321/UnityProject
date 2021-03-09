@@ -1,0 +1,5 @@
+// 时装赠送
+message m_fashion_give_tos {
+optional  int32  base_id=1[default=0]; //时装基础ID
+}
+

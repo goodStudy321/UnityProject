@@ -1,0 +1,9 @@
+// 活动的p_act结构
+message p_cycle_act {
+optional  int32  id=1[default=0]; //活动ID
+optional  int32  val=2[default=0]; //val:状态 1：开启 2：关闭
+optional  int32  config_num=3[default=0]; // 活动开启时该读取哪套配置   套序号  
+optional  int32  start_time=4[default=0]; //活动开始时间
+optional  int32  end_time=5[default=0]; //活动结束时间
+}
+

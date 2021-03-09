@@ -1,0 +1,9 @@
+// 神秘宝藏
+message p_tta {
+optional  int32  id=1[default=0]; //ID
+optional  int32  type_id=2[default=0]; //道具ID
+optional  int32  num=3[default=0]; //数量
+optional  int32  is_bind=4[default=0]; //1是绑定，0是不绑定
+optional  int32  special_effect=5[default=0]; //特效
+}
+

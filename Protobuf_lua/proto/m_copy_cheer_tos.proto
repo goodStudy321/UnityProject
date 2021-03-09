@@ -1,0 +1,6 @@
+// 副本鼓舞
+message m_copy_cheer_tos {
+optional  int32  id=1[default=0]; //鼓舞技能ID
+optional  int32  asset_type=2[default=0]; //鼓舞货币类型
+}
+

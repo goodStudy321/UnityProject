@@ -1,0 +1,11 @@
+import "p_family_mission.proto";
+// 任务信息加速请求
+message p_family_mission_ask {
+optional  int64  role_id=1[default=0]; //角色ID
+optional  string  role_name=2; //角色名字
+optional  int32  sex=3[default=0]; //性别
+optional  int32  category=4[default=0]; //职业
+optional  int32  vip_level=5[default=0]; //vip等级
+repeated  p_family_mission  family_mission=6; //任务信息
+}
+

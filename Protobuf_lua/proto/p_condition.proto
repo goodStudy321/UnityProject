@@ -1,0 +1,7 @@
+import "p_dkv.proto";
+// 装备的p结构
+message p_condition {
+optional  int32  type=1[default=0]; //完成类型ID
+repeated  p_dkv  id_list=2; //id - 条件ID val - 条件参数
+}
+

@@ -1,0 +1,5 @@
+// 道庭争霸奖励领取
+message m_act_family_battle_reward_tos {
+optional  int32  id=1[default=0]; //栏目
+}
+

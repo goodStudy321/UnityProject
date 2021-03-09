@@ -1,0 +1,6 @@
+// 返回护送仙灵信息
+message m_fairy_info_toc {
+optional  int32  times=1[default=0]; //剩余次数
+optional  int32  fairy_id=2[default=0]; // 0 - 失败 1 - 暂时无任务  其他为仙灵ID
+}
+

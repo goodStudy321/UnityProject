@@ -1,0 +1,6 @@
+// 神兽岛次数更新推送
+message m_mythical_times_update_toc {
+optional  int32  times=1[default=0]; //神兽岛疲劳次数
+optional  int32  item_add_times=2[default=0]; //道具使用增加次数
+}
+

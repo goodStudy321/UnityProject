@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="FashionCfg" Key="baseid" ExportType="Dic" Src="S 时装基础表.xls" Sheet="Sheet1">
+  <P Name="baseid" Type="number" ColName= "时装ID" />
+  <P Name="name" Type="string" ColName="名称" />
+  <P Name="shopId" Type="number" ColName= "商城ID" />
+  <P Name="limitTime" Type="number" ColName= "是否限时" />
+  <P Name="type" Type="number" ColName= "类型ID" />
+  <P Name="parentPot" Type="number" Opt="true" ColName= "挂载点" />
+  <P Name="mMod" Type="string" ColName="男模型ID" />
+  <P Name="wMod" Type="string" ColName="女模型ID" />
+  <P Name="worth" Type="number" ColName="分解精华" />
+  <P Name="mIcon" Type="string" ColName="男性icon" />
+  <P Name="wIcon" Type="string" ColName="女性icon" />
+</Proto>

@@ -1,0 +1,5 @@
+// 符文兑换
+message m_rune_exchange_toc {
+optional  int32  err_code=1[default=0]; 
+}
+

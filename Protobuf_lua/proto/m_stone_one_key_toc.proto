@@ -1,0 +1,8 @@
+import "p_equip.proto";
+// 宝石一键穿戴
+message m_stone_one_key_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  type=2[default=0]; //1:一键穿戴 2:一键卸下
+repeated  p_equip  equip_list=3; //更新的装备列表
+}
+

@@ -1,0 +1,6 @@
+// 图鉴组属性激活
+message m_role_handbook_group_activate_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  card_group_id=2[default=0]; //成功激活后卡片组阶段id
+}
+

@@ -1,0 +1,5 @@
+// 祝福返回
+message m_marry_map_wish_toc {
+optional  int32  err_code=1[default=0]; //错误码
+}
+

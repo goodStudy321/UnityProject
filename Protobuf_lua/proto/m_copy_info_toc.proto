@@ -1,0 +1,11 @@
+// 副本面板信息
+message m_copy_info_toc {
+optional  int32  map_id=1[default=0]; //地图ID
+optional  int32  status=2[default=0]; //0未结束 1通关 2失败
+optional  int32  start_time=3[default=0]; //副本开始时间
+optional  int32  end_time=4[default=0]; //强制结束时间
+optional  int32  cur_progress=5[default=0]; //当前主进度
+optional  int32  sub_progress=6[default=0]; //副进度
+optional  int32  all_wave=7[default=0]; //总波数
+}
+

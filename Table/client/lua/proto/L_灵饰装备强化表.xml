@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SpiritEStrengthCfg" Key="sLv" ExportType="Arr" Src="L 灵饰装备强化表.xlsx" Sheet="Sheet1">
+  <P Name="sLv" Type="number" ColName= "强化等级" />
+  <P Name="costExp" Type="number" ColName= "每次扣除经验" />
+  <P Name="sExp" Type="number" ColName= "强化经验" />
+  <P Name="sExpAdd" Type="number" ColName= "强化经验累计值" />
+  <P Name="hp" Type="number" ColName= "生命累计值" />
+  <P Name="atk" Type="number" ColName="攻击累计值" />
+  <P Name="def" Type="number" ColName="防御累计值" />
+  <P Name="arm" Type="number" ColName= "破甲累计值" />
+</Proto>

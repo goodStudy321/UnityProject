@@ -1,0 +1,9 @@
+import "p_mythical_soul.proto";
+import "p_mythical_equip.proto";
+// 神兽信息推送
+message m_mythical_equip_info_toc {
+optional  int32  soul_num=1[default=0]; //可以激活的魂兽数量YY
+repeated  p_mythical_soul  soul_list=2; //有装备的魂兽信息
+repeated  p_mythical_equip  bag_list=3; //魂兽装备
+}
+

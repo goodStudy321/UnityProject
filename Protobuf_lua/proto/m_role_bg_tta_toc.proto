@@ -1,0 +1,22 @@
+import "p_bg_act.proto";
+import "p_kvt.proto";
+import "p_tta.proto";
+import "p_kv.proto";
+// 神秘宝藏
+message m_role_bg_tta_toc {
+optional  p_bg_act  info=1; //神秘宝藏
+optional  int32  gold=2[default=0]; //单个道具货币数量
+repeated  p_kvt  price_region=3; //id - 开始次数   val - 结束次数  type - 开启一次需要多少钥匙
+repeated  p_tta  rare=4; //珍稀
+repeated  p_tta  normal=5; //通常大奖
+optional  int32  rare_choice=6[default=0]; //珍稀   -  道具类型ID
+repeated  int32  normal_choice=7; //通常大奖   -  道具类型ID
+repeated  p_kv  open_id=8; //id  -  pos    val - 道具ID  0-没开
+repeated  p_tta  rare_i=9; //珍稀
+repeated  p_tta  normal_i=10; //通常大奖
+optional  int32  rare_choice_i=11[default=0]; //珍稀   -  道具类型ID
+repeated  int32  normal_choice_i=12; //通常大奖   -  道具类型ID
+repeated  p_kv  open_id_i=13; //id  -  pos    val - 道具ID  0-没开 
+optional  int32  open_layer=14[default=0]; //开启层
+}
+

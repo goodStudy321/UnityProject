@@ -1,0 +1,8 @@
+import "p_item_i.proto";
+// 炼丹返回
+message m_bg_alchemy_draw_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  lucky=2[default=0]; //幸运值
+optional  p_item_i  precious_reward=3; //大奖更新  type_id = 0 无更新
+}
+

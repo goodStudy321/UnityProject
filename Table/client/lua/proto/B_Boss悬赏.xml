@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="BossRewardCfg" Key="id" Src="B Boss悬赏.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "档位" />
+  <P Name="sceneType" Type="number" ColName= "场景类型" />
+  <P Name="level" Type="number" ColName= "等级" />
+  <P Name="bossList" Type="number" IsList="true" Lsp="," ColName= "boss列表" />
+  <P Name="rewardList" Type="K_V"  IsList="true" Lsp=";" ColName= "奖励" />
+  <P Name="count" Type="number" ColName= "次数" />
+  <P Name="address" Type="string" ColName= "地点" />
+</Proto>

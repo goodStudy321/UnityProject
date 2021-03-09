@@ -1,0 +1,5 @@
+// 渠道有实名认证验功能，通知防沉迷结果
+message m_role_addict_notice_tos {
+optional  bool  is_passed=1[default=true]; 
+}
+

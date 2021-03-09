@@ -1,0 +1,5 @@
+// 投资计划购买
+message m_invest_gold_buy_tos {
+optional  int32  invest_gold=1[default=0]; //投资XX档次
+}
+

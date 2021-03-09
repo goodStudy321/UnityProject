@@ -1,0 +1,10 @@
+import "p_goods.proto";
+import "p_kv.proto";
+// 背包道具更新
+message m_bag_update_toc {
+repeated  p_goods  update_list=1; //更新列表(新增或者数量更新)
+repeated  int32  del_list=2; //删除列表 p_goods的id
+repeated  p_kv  kv_list=3; //其他道具列表
+optional  int32  action=4[default=0]; //后端serverincludebehavior_log.hrl里定义
+}
+

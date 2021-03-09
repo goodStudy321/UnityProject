@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Global="true" Csp="," Name="GoodItem">
+  <P Name="i1" Type="number"/>
+  <P Name="i2" Type="number"/>
+  <P Name="i3" Type="number"/>
+  <P Name="i4" Type="number"/>
+</Proto>

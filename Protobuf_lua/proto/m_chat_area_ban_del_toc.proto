@@ -1,0 +1,6 @@
+// 区域屏蔽玩家删除返回
+message m_chat_area_ban_del_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int64  del_role_id=2[default=0]; //0表示所有 其他表示某一位
+}
+

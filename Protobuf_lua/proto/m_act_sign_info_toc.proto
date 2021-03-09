@@ -1,0 +1,7 @@
+// 签到活动信息
+message m_act_sign_info_toc {
+optional  bool  is_sign=1[default=true]; //当天是否签到
+optional  int32  sign_times=2[default=0]; //已经签到的次数
+repeated  int32  times_reward_list=3; //已经领取的总次数奖励
+}
+

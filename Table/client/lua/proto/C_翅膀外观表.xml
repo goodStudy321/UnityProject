@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="WingSkinCfg" Key="id" ExportType="Arr" Src="C 翅膀外观表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="st" Type="number" ColName="星级" />
+  <P Name="refid" Type="number" ColName="道具ID" />
+  <P Name="refNum" Type="number" ColName="数量" />
+  <P Name="atk" Type="number" ColName="攻击" />
+  <P Name="def" Type="number" ColName="防御" />
+  <P Name="arm" Type="number" ColName= "破甲" />
+  <P Name="hppro" Type="number" ColName="生命加成" />
+</Proto>

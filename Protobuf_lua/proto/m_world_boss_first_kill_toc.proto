@@ -1,0 +1,4 @@
+// boss首次击杀提示
+message m_world_boss_first_kill_toc {
+}
+

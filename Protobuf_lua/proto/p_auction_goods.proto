@@ -1,0 +1,13 @@
+// 拍卖商品结构
+message p_auction_goods {
+optional  int64  id=1[default=0]; //拍卖行拍卖的唯一ID
+optional  int32  type_id=2[default=0]; //道具ID
+optional  int32  num=3[default=0]; //数量
+optional  int32  auction_time=4[default=0]; //可以竞拍的时间戳
+optional  int32  end_time=5[default=0]; //结束的时间戳
+optional  int64  auction_role_id=6[default=0]; //当前竞价的RoleID（0 表示在竞价中）
+optional  int32  cur_gold=7[default=0]; //当前的竞价
+optional  int32  from_type=8[default=0]; //0:角色 1:道庭
+optional  int64  from_id=9[default=0]; //ID
+}
+

@@ -1,0 +1,7 @@
+import "p_world_boss_kill.proto";
+// 世界boss击杀记录查看返回
+message m_world_boss_kill_toc {
+optional  int32  err_code=1[default=0]; //错误码
+repeated  p_world_boss_kill  kill_list=2; //击杀记录
+}
+

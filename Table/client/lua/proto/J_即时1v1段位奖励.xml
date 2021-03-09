@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="OvODanRwd" Key="score" ExportType="Arr" Src="J 即时1v1段位奖励.xls" Sheet="Sheet1">
+  <P Name="score" Type="number" ColName= "积分" />
+  <P Name="danType" Type="number" ColName= "段位类型" />
+  <P Name="danId" Type="number" ColName= "段位Id" />
+  <P Name="danName" Type="string" ColName= "段位名称" />
+  <P Name="danIcon" Type="string" ColName= "段位图标" />
+  <P Name="honorRwd" Type="number" ColName= "荣誉奖励" />
+  <P Name="rwdItems" Type="K_V" IsList="true" Lsp=";" ColName= "道具奖励" />
+</Proto>

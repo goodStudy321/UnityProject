@@ -1,0 +1,6 @@
+// 关注取消关注boss
+message m_world_boss_care_tos {
+optional  int32  boss_type_id=1[default=0]; //bossID
+optional  int32  type=2[default=0]; //1关注，0取消
+}
+

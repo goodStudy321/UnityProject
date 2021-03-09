@@ -1,0 +1,6 @@
+// 激活取消激活神兽
+message m_mythical_equip_status_tos {
+optional  int32  soul_id=1[default=0]; //神兽ID
+optional  int32  status=2[default=0]; //当前神兽状态 1、2
+}
+

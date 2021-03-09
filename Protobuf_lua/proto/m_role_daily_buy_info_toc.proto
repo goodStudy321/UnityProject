@@ -1,0 +1,6 @@
+import "p_daily_buy.proto";
+// 每日抢购信息
+message m_role_daily_buy_info_toc {
+repeated  p_daily_buy  list=1; //id:ID val:结束时间
+}
+

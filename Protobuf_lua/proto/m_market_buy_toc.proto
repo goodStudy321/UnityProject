@@ -1,0 +1,6 @@
+// 购买商品返回
+message m_market_buy_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  id=2[default=0]; //ID
+}
+

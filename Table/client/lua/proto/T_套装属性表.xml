@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SuitAttData" Key="id" ExportType="Dic" Src="T 套装属性表.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "套装id" />
+  <P Name="suitName" Type="string" ColName= "套装名" />
+  <P Name="bType" Type="number" ColName= "大类" />
+  <P Name="sType" Type="number" ColName= "小类" />
+  <P Name="rank" Type="number" ColName= "阶数" />
+  <P Name="attList" Type="Suit" IsList="true" Lsp=";" Opt="true" ColName="属性值" />
+  <P Name="icon" Type="string" ColName="图标名称" />
+</Proto>

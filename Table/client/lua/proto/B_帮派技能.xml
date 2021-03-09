@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="FamilySkill" Key="id" ExportType="Dic" Src="B 帮派技能.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="name" Type="string" ColName="技能名称" />
+  <P Name="propId" Type="number" ColName="属性编码" />
+  <P Name="prop" Type="number" ColName="属性值" />
+  <P Name="pay" Type="number" ColName="消耗贡献" />
+  <P Name="unlockLv" Type="number" ColName="解锁条件" />
+  <P Name="rankId" Type="number" ColName="排序id" />
+  <P Name="showPct" Type="number" ColName="是否百分比显示" />
+</Proto>

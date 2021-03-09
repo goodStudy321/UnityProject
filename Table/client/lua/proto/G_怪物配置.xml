@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MonsterTemp" Key="id" ExportType="Dic" Src="G 怪物配置.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "id" />
+  <P Name="modId" Type="number" ColName= "模型id" />
+  <P Name="level" Type="number" ColName= "等级" />
+  <P Name="type" Type="number" ColName= "怪物类型" />
+  <P Name="life" Type="number" ColName= "生命" />
+  <P Name="attack" Type="number" ColName= "攻击" />
+  <P Name="defence" Type="number" ColName= "防御" />
+  <P Name="hited" Type="number" ColName= "命中" />
+  <P Name="anger" Type="number" ColName= "扣除停留时间" />
+  <P Name="dodge" Type="number" ColName= "闪避" />
+  <P Name="name" Type="string" ColName="名字" />
+  <P Name="icon" Type="string" ColName="图标" />
+  <P Name="des" Type="string" ColName="备注" />
+  <P Name="metalDef" Type="number" ColName= "金抗性" />
+  <P Name="woodDef" Type="number" ColName= "木抗性" />
+  <P Name="waterDef" Type="number" ColName= "水抗性" />
+  <P Name="fireDef" Type="number" ColName= "火抗性" />
+  <P Name="soilDef" Type="number" ColName= "土抗性" />
+  <P Name="atkLim" Type="number" ColName= "攻击等级上限" />
+</Proto>

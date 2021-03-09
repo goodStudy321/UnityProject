@@ -1,0 +1,5 @@
+// 重置天赋
+message m_talent_reset_tos {
+optional  int32  tab_id=1[default=0]; //页签ID
+}
+

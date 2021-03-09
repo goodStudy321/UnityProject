@@ -1,0 +1,11 @@
+import "p_kv.proto";
+// 伙伴数据
+message m_pet_info_toc {
+optional  int32  exp=1[default=0]; //经验值
+optional  int32  step_exp=2[default=0]; //进阶精华
+optional  int32  cur_id=3[default=0]; //伙伴幻化id
+optional  int32  pet_id=4[default=0]; //伙伴等阶id
+repeated  p_kv  pet_spirits=5; //伙伴精魄信息
+repeated  p_kv  pet_surface=6; //伙伴皮肤信息
+}
+

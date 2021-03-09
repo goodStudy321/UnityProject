@@ -1,0 +1,5 @@
+// 剩余怪物更新
+message m_copy_immortal_remain_monster_toc {
+optional  int32  remain_num=1[default=0]; //剩余怪物数量
+}
+

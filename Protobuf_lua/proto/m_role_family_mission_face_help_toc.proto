@@ -1,0 +1,6 @@
+// 道庭成员向自己求助
+message m_role_family_mission_face_help_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  member_id=2[default=0]; //成员id
+}
+

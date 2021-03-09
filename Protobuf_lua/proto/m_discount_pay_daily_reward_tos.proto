@@ -1,0 +1,5 @@
+// 领取活跃礼包
+message m_discount_pay_daily_reward_tos {
+optional  int32  daily_gift_id=1[default=0]; //领取的活跃礼包ID
+}
+

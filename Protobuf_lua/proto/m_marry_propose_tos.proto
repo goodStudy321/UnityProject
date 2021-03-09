@@ -1,0 +1,6 @@
+// 提亲
+message m_marry_propose_tos {
+optional  int64  propose_id=1[default=0]; //提亲id
+optional  int32  type=2[default=0]; //1 永结同心 2金玉良缘 3 神仙眷侣
+}
+

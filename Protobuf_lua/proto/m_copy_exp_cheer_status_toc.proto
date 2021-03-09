@@ -1,0 +1,7 @@
+// 经验副本状态设置返回
+message m_copy_exp_cheer_status_toc {
+optional  bool  is_silver_auto=1[default=true]; //是否自动银两鼓舞
+optional  bool  is_gold_auto=2[default=true]; //是否自动元宝鼓舞
+optional  bool  has_first_open=3[default=true]; //有没有第一次打开设置 true:有 false:没有
+}
+

@@ -1,0 +1,6 @@
+import "p_team_copy.proto";
+// 获取某个分类的队伍信息
+message m_team_copy_info_toc {
+repeated  p_team_copy  copy_teams=1; //队伍匹配信息
+}
+

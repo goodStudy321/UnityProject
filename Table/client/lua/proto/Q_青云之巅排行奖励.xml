@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="TopFRankCfg" Key="id" ExportType="Dic" Src="Q 青云之巅排行奖励.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "排名" />
+  <P Name="award" Type="K_V" IsList="true" Lsp=";" ColName= "奖励" />
+</Proto>

@@ -1,0 +1,6 @@
+// 1v1段位奖励领取
+message m_solo_step_reward_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  step=2[default=0]; //领取哪一段奖励
+}
+

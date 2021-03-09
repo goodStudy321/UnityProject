@@ -1,0 +1,144 @@
+{include file='public/head'}
+<body>
+  <style type="text/css" media="screen">
+    header {
+      color: black;
+    }
+    .layui-form-pane .layui-input-block-reset{
+      float:left;
+      overflow:hidden;
+      margin:0;
+    }
+    .layui-form-pane .layui-input-reset{
+      width:330px;
+    }
+  </style>
+  <div class="x-body" >
+    <form class="layui-form layui-form-pane" id='mainForm' method="post" action="questionSend">
+      <div class="layui-form-item">
+        <label class="layui-form-label">问卷题目</label>
+        <div class="layui-input-block">
+          <input type="text" name="question_name" value="{$data.question_name}"  placeholder="请输入问卷题目" class="layui-input">
+        </div>
+      </div>
+      <input type="hidden" name="edit" value="{$data.id}">
+      <input type="hidden" name="question_status" value="{$data.question_status}">
+      {if condition="$data.question_status!=1"}
+      <div class="layui-card-header">问卷选项</div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">A</label>
+        <div class="layui-input-block layui-input-block-reset">
+          <input type="text" name="question_value[]" value="{$data.question_value.0 ? $data.question_value.0 : ''}" placeholder="请输入选项" class="layui-input layui-input-reset">
+        </div>
+        <input type="radio" name="write" value="0" title="可填写" {$write_key == 1 ? 'checked' : ''}>
+        <div class="layui-unselect layui-form-radio {$write_key == 1 ? 'layui-form-radioed' : ''}"><i class="layui-anim layui-icon"></i><div>可填写</div></div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">B</label>
+        <div class="layui-input-block layui-input-block-reset">
+          <input type="text" name="question_value[]" value="{$data.question_value.1 ? $data.question_value.1 : ''}" placeholder="请输入选项" class="layui-input layui-input-reset">
+        </div>
+        <input type="radio" name="write" value="1" title="可填写" {$write_key == 2 ? 'checked' : ''}>
+        <div class="layui-unselect layui-form-radio {$write_key == 2 ? 'layui-form-radioed' : ''}"><i class="layui-anim layui-icon"></i><div>可填写</div></div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">C</label>
+        <div class="layui-input-block layui-input-block-reset">
+          <input type="text" name="question_value[]" value="{$data.question_value.2 ? $data.question_value.2 : ''}" placeholder="请输入选项" class="layui-input layui-input-reset">
+        </div>
+        <input type="radio" name="write" value="2" title="可填写" {$write_key == 3 ? 'checked' : ''}>
+        <div class="layui-unselect layui-form-radio {$write_key == 3 ? 'layui-form-radioed' : ''}"><i class="layui-anim layui-icon"></i><div>可填写</div></div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">D</label>
+        <div class="layui-input-block layui-input-block-reset">
+          <input type="text" name="question_value[]" value="{$data.question_value.3 ? $data.question_value.3 : ''}" placeholder="请输入选项" class="layui-input layui-input-reset">
+        </div>
+        <input type="radio" name="write" value="3" title="可填写" {$write_key == 4 ? 'checked' : ''}>
+        <div class="layui-unselect layui-form-radio {$write_key == 4 ? 'layui-form-radioed' : ''}"><i class="layui-anim layui-icon"></i><div>可填写</div></div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">E</label>
+        <div class="layui-input-block layui-input-block-reset">
+          <input type="text" name="question_value[]" value="{$data.question_value.4 ? $data.question_value.4 : ''}" placeholder="请输入选项" class="layui-input layui-input-reset">
+        </div>
+        <input type="radio" name="write" value="4" title="可填写" {$write_key == 5 ? 'checked' : ''}>
+        <div class="layui-unselect layui-form-radio {$write_key == 5 ? 'layui-form-radioed' : ''}"><i class="layui-anim layui-icon"></i><div>可填写</div></div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">F</label>
+        <div class="layui-input-block layui-input-block-reset">
+          <input type="text" name="question_value[]" value="{$data.question_value.5 ? $data.question_value.5 : ''}" placeholder="请输入选项" class="layui-input layui-input-reset">
+        </div>
+        <input type="radio" name="write" value="5" title="可填写" {$write_key == 6 ? 'checked' : ''}>
+        <div class="layui-unselect layui-form-radio {$write_key == 6 ? 'layui-form-radioed' : ''}"><i class="layui-anim layui-icon"></i><div>可填写</div></div>
+      </div>
+      {/if}
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <button style="margin-left: 20%" class="layui-btn layui-btn-sm" lay-submit="" lay-filter="toSubmit">提交</button>
+          <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
+          <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm" id="cancel">取消可填写</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+<script type="text/javascript">
+  var form = layui.form;
+  var layer = layui.layer;
+  $('#cancel').click(function(){
+    $("input[type='radio']").each(function(index, el) {
+      $(el).attr('checked', false);
+      el.checked= false;
+    })
+    form.render('radio');
+  })
+  //自定义验证规则
+  form.verify({
+    username: function(value){
+      if(value.length < 5){
+        return '用户名至少得5个字符啊';
+      }
+    }
+  });
+  //监听提交
+  form.on('submit(demo1)', function(data){
+    layer.alert(JSON.stringify(data.field), {
+      title: '最终的提交信息'
+    })
+    return false;
+  });
+  $(document).ready(function(){
+    var options = {
+      type:'post',           //post提交
+      //url:'http://ask.tongzhuo100.com/server/****.php?='+Math.random(),   //url
+      dataType:"json",        //json格式
+      data:{},    //如果需要提交附加参数，视情况添加
+      clearForm: false,        //成功提交后，清除所有表单元素的值
+      resetForm: false,        //成功提交后，重置所有表单元素的值
+      cache:false,
+      async:false,          //同步返回
+      success:function(data){
+        if(data.code==0){
+          layer.msg(data.msg);
+        }else{
+          layer.msg(data.msg,{icon:1,time:500},function(){
+            $("#reset").click();
+            x_admin_close();
+            parent.location.reload();
+          });
+        }
+        //服务器端返回处理逻辑
+      },
+      error:function(XmlHttpRequest,textStatus,errorThrown){
+        layer.msg('操作失败:服务器处理失败');
+      }
+    };
+    // bind form using 'ajaxForm'
+    $('#mainForm').ajaxForm(options).submit(function(data){
+      //无逻辑
+    });
+  });
+</script>
+{include file='public/foot'}

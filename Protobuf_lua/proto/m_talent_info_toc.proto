@@ -1,0 +1,7 @@
+import "p_tab_skill.proto";
+// 天赋信息推送
+message m_talent_info_toc {
+optional  int32  talent_points=1[default=0]; //当前天赋点数
+repeated  p_tab_skill  talent_skills=2; //所有分页的天赋技能
+}
+

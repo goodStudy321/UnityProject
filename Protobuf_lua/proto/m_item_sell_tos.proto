@@ -1,0 +1,6 @@
+import "p_kv.proto";
+// 出售道具
+message m_item_sell_tos {
+repeated  p_kv  item_list=1; //出售的kv_list, key: 道具唯一id val:数量
+}
+

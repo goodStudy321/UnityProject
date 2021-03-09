@@ -1,0 +1,6 @@
+// 购买商品
+message m_shop_buy_goods_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  type_id=2[default=0]; //道具ID
+}
+

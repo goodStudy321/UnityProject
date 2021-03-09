@@ -1,0 +1,5 @@
+// oss- 开服第二阶段活动最后一天
+message m_oss_rank_last {
+optional  int32  type=1[default=0]; //排行类型  法宝战力 - 10013，翅膀战力 - 10014，图鉴战力 - 10012 
+}
+

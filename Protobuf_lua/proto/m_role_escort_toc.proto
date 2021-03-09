@@ -1,0 +1,9 @@
+// 护送
+message m_role_escort_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  type=2[default=0]; //1-提升品质 2-最高品质 3-开始护送
+optional  int32  type_id=3[default=0]; //仙灵ID
+optional  int32  num=4[default=0]; //剩余护送数量
+optional  int32  end_time=5[default=0]; //结束时间
+}
+

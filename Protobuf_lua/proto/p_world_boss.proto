@@ -1,0 +1,11 @@
+// 世界boss的p结构
+message p_world_boss {
+optional  int32  map_id=1[default=0]; //地图ID
+optional  int32  type_id=2[default=0]; //怪物id
+optional  bool  is_alive=3[default=true]; //是否存活
+optional  int32  next_refresh_time=4[default=0]; //下次刷新时间
+optional  int32  remain_num=5[default=0]; //剩余数量
+optional  int32  role_num=6[default=0]; //世界boss类型用到：人数
+optional  bool  can_enter=7[default=true]; //世界boss类型用到：true:可以不扣次数进入 false:必须扣次数
+}
+

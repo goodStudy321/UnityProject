@@ -1,0 +1,4 @@
+// 宾客发起申请
+message m_marry_apply_guest_tos {
+}
+

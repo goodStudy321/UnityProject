@@ -1,0 +1,6 @@
+// 累充豪礼信息
+message m_acc_pay_info_toc {
+optional  int32  pay_gold=1[default=0]; //累积充值元宝
+repeated  int32  pay_reward_list=2; //已经领取的奖励列表
+}
+

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="StoreData" Key="id" ExportType="Dic" Src="S 商城.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "商店物品id" />
+  <P Name="PropId" Type="string" ColName="物品ID" />
+  <P Name="name" Type="string" ColName="物品名称" />
+  <P Name="bind" Type="number" ColName="是否绑定" />
+  <P Name="storeTp" Type="number" ColName="商店类型" />
+  <P Name="priceTp" Type="number" ColName= "价格类型" />
+  <P Name="curPrice" Type="number" ColName= "现价" />
+  <P Name="discount" Type="number" Opt="true" ColName= "折扣" />
+  <P Name="canPNum" Type="number" Opt="true" ColName= "限购数量" />
+  <P Name="lv" Type="number" Opt="true" ColName= "购买等级" />
+  <P Name="vipLv" Type="number" Opt="true" ColName= "限购VIP等级" />
+  <P Name="canAnnounce" Type="number" Opt="true" ColName= "是否全服公告" />
+  <P Name="lvAstrict" Type="number" ColName= "道庭等级限制" />
+  <P Name="cate" Type="number" ColName= "职业限制" />
+</Proto>

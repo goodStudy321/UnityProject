@@ -1,0 +1,5 @@
+// 招财猫抽奖
+message m_luckycat_lottery_tos {
+optional  int32  times=1[default=0]; //次数
+}
+

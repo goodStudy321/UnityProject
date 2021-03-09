@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="FamilyBossDrop" ExportType="Arr" Key="id" Src="D 道庭神兽掉落表.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "序号ID" />
+  <P Name="monsterId" Type="number" ColName= "怪物ID" />
+  <P Name="lv" Type="number" IsList="true" Lsp="|" ColName= "等级" />
+  <P Name="award" Type="number" IsList="true" Lsp="|" ColName= "掉落显示" />
+</Proto>

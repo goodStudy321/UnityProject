@@ -1,0 +1,5 @@
+// 天赋点数推送
+message m_talent_point_toc {
+optional  int32  talent_points=1[default=0]; //当前天赋点数
+}
+

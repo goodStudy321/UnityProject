@@ -1,0 +1,12 @@
+import "p_escort_log.proto";
+// 上线
+message m_role_escort_info_toc {
+optional  int32  escort_times=1[default=0]; //护送剩余次数
+optional  int32  rob_times=2[default=0]; //劫镖
+optional  int32  escort_end_time=3[default=0]; //护送结束   0-不护送
+optional  int32  type=4[default=0]; //护送类型id
+optional  int32  rob=5[default=0]; //是否被抢   0-否  1-被抢 2-自己抢回 3-盟友抢回  
+optional  int32  reward=6[default=0]; //是否可领  1-是  0-否
+repeated  p_escort_log  log_list=7; //护送日志
+}
+

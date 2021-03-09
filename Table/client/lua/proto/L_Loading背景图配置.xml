@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="LoadingBgCfg" Key="id" Src="L Loading图片配置表.xls" ExportType="Arr" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "序列" />
+  <P Name="name" Type="string" ColName="名称" />
+  <P Name="wt" Type="number" ColName="权重" />
+  <P Name="sIDS" Type="number" Opt="true" IsList="true" Lsp="," ColName="针对场景ID" />
+</Proto>

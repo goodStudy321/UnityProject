@@ -1,0 +1,6 @@
+import "p_bag_content.proto";
+// 背包道具列表
+message m_bag_info_toc {
+repeated  p_bag_content  bag_list=1; //道具列表
+}
+

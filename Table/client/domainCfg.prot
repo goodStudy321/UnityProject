@@ -1,0 +1,7 @@
+message DomainCfg [key=id, source="Y 域名配置.xls", sheet="Sheet1"]
+{
+	uint16 id                   [option = "id"];
+	string inter 			[option = "内网"];
+	string exter         	[option = "外网"];
+	string exterTest         [option = "外网测试"];
+};

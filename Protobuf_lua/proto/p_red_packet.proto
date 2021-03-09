@@ -1,0 +1,16 @@
+import "p_red_packet_content.proto";
+// 红包
+message p_red_packet {
+optional  int64  id=1[default=0]; //红包ID
+optional  int32  icon=2[default=0]; //头像 目前传职业ID
+optional  string  sender_name=3; //玩家名
+optional  string  content=4; //内容
+optional  int32  time=5[default=0]; //发送时间 0-未发
+optional  int32  amount=6[default=0]; //金额
+optional  int32  piece=7[default=0]; //份数
+optional  int32  bind=8[default=0]; //元宝种类  2 - 元宝 3-绑定元宝
+optional  int32  sent_num=9[default=0]; //现在发出的份数
+repeated  p_red_packet_content  packet_list=10; //红包列表
+repeated  int64  role_list=11; //可以领取的RoleID，为空时所有人都可领取
+}
+

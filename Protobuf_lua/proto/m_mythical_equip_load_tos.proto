@@ -1,0 +1,6 @@
+// 神兽穿上装备
+message m_mythical_equip_load_tos {
+optional  int32  soul_id=1[default=0]; //神兽ID
+optional  int64  id=2[default=0]; //魂兽装备唯一id
+}
+

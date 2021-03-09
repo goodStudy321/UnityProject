@@ -1,0 +1,13 @@
+// 队伍成员的p结构
+message p_team_role {
+optional  int64  role_id=1[default=0]; //角色id
+optional  string  role_name=2; //角色名
+optional  int32  role_level=3[default=0]; //角色等级
+optional  int32  category=4[default=0]; //职业
+optional  int32  sex=5[default=0]; //性别
+optional  bool  is_online=6[default=true]; //是否在线
+optional  int32  map_id=7[default=0]; //该队员所处的地图ID
+repeated  int32  skin_list=8; //皮肤信息
+repeated  int32  ornament_list=9; //饰品列表
+}
+

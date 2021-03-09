@@ -1,0 +1,6 @@
+// 帮助道庭成员加速
+message m_role_family_asm_help_member_tos {
+optional  int64  member_id=1[default=0]; //成员id
+optional  int32  mission_id=2[default=0]; //任务id
+}
+

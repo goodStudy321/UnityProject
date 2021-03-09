@@ -1,0 +1,6 @@
+import "p_copy_cheer.proto";
+// 副本鼓舞次数推送
+message m_copy_cheer_times_toc {
+repeated  p_copy_cheer  cheer_list=1; //鼓舞列表推送
+}
+

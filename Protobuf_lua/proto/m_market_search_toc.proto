@@ -1,0 +1,10 @@
+import "p_market_goods.proto";
+// 拍卖行搜索
+message m_market_search_toc {
+optional  int32  err_code=1[default=0]; //错误码
+repeated  p_market_goods  goods=2; //物品
+optional  int32  type=3[default=0]; //拍卖行类型 1-销售拍卖行 2-求购拍卖行
+optional  int32  dic_id=4[default=0]; //市场字典ID
+optional  bool  is_null=5[default=true]; //数据是否空  true 为空
+}
+

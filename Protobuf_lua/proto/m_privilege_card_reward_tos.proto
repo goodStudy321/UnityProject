@@ -1,0 +1,5 @@
+// 特权卡领取奖励
+message m_privilege_card_reward_tos {
+optional  int32  recharge=1[default=0]; //领取的金额奖励
+}
+

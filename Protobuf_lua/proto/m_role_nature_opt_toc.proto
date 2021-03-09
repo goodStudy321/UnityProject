@@ -1,0 +1,7 @@
+// 天机系统物品分解品质
+message m_role_nature_opt_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  quality=2[default=0]; //选择的品质
+optional  int32  star=3[default=0]; //星级
+}
+

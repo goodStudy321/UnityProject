@@ -1,0 +1,6 @@
+import "p_kv.proto";
+// 个人购买限购
+message m_shop_buy_limit_toc {
+repeated  p_kv  buy_limit=1; //id - val
+}
+

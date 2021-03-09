@@ -1,0 +1,5 @@
+message Title [key=id, source="C 称号配置表.xls", sheet="Sheet1"]
+{	
+	uint32 id								[option = "称号ID"];
+	string prefab						[option = "称号资源2"];
+};

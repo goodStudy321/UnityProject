@@ -1,0 +1,8 @@
+import "p_auction_goods.proto";
+// 领取护送仙灵任务
+message m_auction_buy_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  type=2[default=0]; //类型 1:一口价 2:竞价
+optional  p_auction_goods  auction_goods=3; //商品信息变化
+}
+

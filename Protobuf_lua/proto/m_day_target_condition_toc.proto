@@ -1,0 +1,6 @@
+import "p_kdv.proto";
+// 7天目标条件列表
+message m_day_target_condition_toc {
+repeated  p_kdv  condition=1; //条件更新
+}
+

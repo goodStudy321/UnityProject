@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="WishCfg" Key="id"  ExportType="Arr" Src="K 开服冲榜_许愿池.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName="ID" />
+  <P Name="isRare" Type="number" ColName="是否稀有" />
+  <P Name="award" Type="K_V" IsList="true" Lsp=";" ColName="奖励" />
+  <P Name="isShow" Type="number" ColName="展示" />
+  <P Name="nowDay" Type="number" ColName="开服天数" />
+</Proto>

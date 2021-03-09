@@ -1,0 +1,5 @@
+// 修炼秘籍系统仙找回修炼点
+message m_role_act_esoterica_training_point_tos {
+optional  int32  training_point=1[default=0]; //要找回的修炼点
+}
+

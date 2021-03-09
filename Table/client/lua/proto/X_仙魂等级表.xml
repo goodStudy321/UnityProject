@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ImmSoulLvCfg" Key="id" ExportType="Arr" Src="X 仙魂等级表.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "仙魂ID" />
+  <P Name="name" Type="string" ColName="名字" />
+  <P Name="lv" Type="number" ColName= "仙魂等级" />
+  <P Name="pro1" Type="number" ColName= "增加属性1" />
+  <P Name="proVal1" Type="number" ColName= "增加属性值1" />
+  <P Name="pro2" Type="number" ColName= "增加属性2" />
+  <P Name="proVal2" Type="number" ColName= "增加属性值2" />
+  <P Name="needDebris" Type="number" ColName= "升级所需仙尘" />
+  <P Name="getDebris" Type="number" ColName= "分解所得仙尘" />
+</Proto>

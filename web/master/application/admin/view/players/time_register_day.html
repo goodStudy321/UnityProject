@@ -1,0 +1,83 @@
+{include file='public/head'}
+<div class="x-body">
+  <div class="layui-tab layui-tab-brief" lay-filter="division">
+    <ul class="layui-tab-title">
+      <li data-type="1">按时</li>
+      <li data-type="2" class="layui-this">按天</li>
+    </ul>
+    <br>
+    <div class="layui-tab-content">
+      <div class="layui-tab-item layui-show">
+        <blockquote class="layui-elem-quote">
+          <form class="layui-form">
+            <div class="layui-inline">
+              <label class="layui-form-label">日期：</label>
+              <div class="layui-input-inline">
+                <input class="layui-input" id="time" name="time" type="text" value="{$time}" autocomplete="off">
+              </div>
+            </div>
+            <br>
+            <br>
+            {include file='public/filter'}
+          </form>
+        </blockquote>
+        <blockquote class="layui-elem-quote">
+          总注册账号数：{$account_total}
+          <br>
+          总注册角色数：{$role_total}
+        </blockquote>
+        <table id="daytable"></table>
+      </div>
+    </div>
+  </div>
+</div>
+{include file='public/foot'}
+
+<script>
+  laydate.render({
+    elem: '#time'
+    ,range: true
+  });
+
+  layui.use('table', function(){
+    tableIns = table.render({
+      elem: '#daytable'
+    ,url: 'timeregisterDay?{$where}'
+      ,page: true
+      ,where:{time:$('#time').val()}
+      ,cols: [[
+        {field: 'time', title: '时间/天', width:160}
+        ,{field: 'account_number', title: '新增账号数', width:160}
+        ,{field: 'account_proportion', title: '账号比例 &nbsp;<i class="layui-icon layui-icon-about" id="dayaccount" data-title="当天账号数 / 总账号数"></i>'}
+        ,{field: 'role_number', title: '新增角色数'}
+        ,{field: 'role_proportion', title: '角色比例 &nbsp;<i class="layui-icon layui-icon-about" id="dayrole" data-title="当天角色数 / 总角色数"></i>'}
+      ]]
+    });
+  });
+
+  //监听切换
+  element.on('tab(division)', function(data){
+    var type = $(this).data('type');
+    if(type == 1){
+      window.location.href='/admin/players/timeregister';
+      return ;
+    }
+
+    if(type == 2){
+      window.location.href='/admin/players/timeregisterDay';
+      return ;
+    }
+  })
+
+  var tip_index = 0;
+  $(document).on('mouseenter', '#dayaccount, #dayrole', function(){
+    var title = $(this).data('title');
+    var id = $(this).attr('id');
+    tip_index = layer.tips(title, '#'+id, {
+      tips: [1, '#3595CC'],
+      time: 0,
+    });
+  }).on('mouseleave', '#dayaccount, #dayrole', function(){
+    layer.close(tip_index);
+  });
+</script>

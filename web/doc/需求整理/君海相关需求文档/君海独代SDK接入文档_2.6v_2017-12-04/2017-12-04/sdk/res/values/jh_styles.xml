@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+    <!--<resources>-->
+        <!--<style-->
+            <!--name="style_name"-->
+            <!--parent="@[package:]style/style_to_inherit">-->
+            <!--<item-->
+                <!--name="[package:]style_property_name"-->
+                <!-->style_value</item>-->
+        <!--</style>-->
+    <!--</resources>-->
+    
+    <style name="jh_edit_text">
+        <item name="android:inputType">text</item>
+        <item name="android:color">@color/jh_edit_text_color</item>
+        <item name="android:paddingLeft">8dp</item>
+    </style>
+
+    <style name="jh_activity_container">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@drawable/jh_activity_container</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="jh_dialog_pay_quit">
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:background">@drawable/jh_dialog_pay_quit</item>
+        <item name="android:width">280dp</item>
+        <item name="android:layout_width">280dp</item>
+        <item name="android:layout_height">240dp</item>
+    </style>
+
+    <style name="jh_activity_float">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@drawable/jh_activity_float</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="jh_horizon_divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">?android:attr/listDivider</item>
+    </style>
+
+    <!--<style name="jh_login_btn_quick_login">-->
+        <!--<item name="android:background">@drawable/jh_login_btn_quick_login</item>-->
+        <!--<item name="android:layout_marginLeft">12dp</item>-->
+        <!--<item name="android:layout_marginRight">4dp</item>-->
+        <!--<item name="android:layout_marginBottom">4dp</item>-->
+    <!--</style>-->
+
+    <!--<style name="jh_login_btn_quick_sign_up">-->
+        <!--<item name="android:background">@drawable/jh_login_btn_click_sign_up</item>-->
+        <!--<item name="android:layout_marginLeft">4dp</item>-->
+        <!--<item name="android:layout_marginRight">12dp</item>-->
+        <!--<item name="android:layout_marginBottom">4dp</item>-->
+    <!--</style>-->
+
+    <style name="jh_login_btn_quick_login">
+        <item name="android:background">@drawable/jh_button_blue</item>
+        <item name="android:layout_marginLeft">12dp</item>
+        <item name="android:layout_marginRight">4dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+    </style>
+
+    <style name="jh_login_btn_quick_sign_up">
+        <item name="android:background">@drawable/jh_button_orange</item>
+        <item name="android:layout_marginLeft">4dp</item>
+        <item name="android:layout_marginRight">12dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+    </style>
+
+
+    <style name="jh_sign_up_btn_ok" parent="@style/jh_login_btn_quick_login">
+
+    </style>
+
+    <style name="jh_sign_up_btn_back" parent="@style/jh_login_btn_quick_sign_up"/>
+
+    <style name="jh_forgetpwd_btn_quick_back" parent="jh_login_btn_quick_sign_up"/>
+    <style name="jh_forgetpwd_btn_ok" parent="jh_login_btn_quick_login"/>
+
+    <style name="jh_title_bar">
+        <item name="android:color">@color/jh_title_bar</item>
+    </style>
+
+    <style name="jh_label_edit_row">
+        <item name="android:layout_marginLeft">12dp</item>
+        <item name="android:layout_marginRight">12dp</item>
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:layout_marginBottom">2dp</item>
+        <item name="android:background">@drawable/jh_label_edit_row_bg</item>
+    </style>
+
+    <style name="jh_label_edit_row_label">
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">4dp</item>
+        <item name="android:paddingTop">2dp</item>
+        <item name="android:paddingBottom">2dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="jh_label_edit_row_edit">
+        <item name="android:textColor">@color/jh_edit_text_color</item>
+        <item name="android:background">@drawable/jh_label_edit_row_edit</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:textColorHint">@color/jh_edit_text_color</item>
+        <item name="android:cursorVisible">true</item>
+        <item name="android:textCursorDrawable">@drawable/jh_edit_text_cursor</item>
+    </style>
+
+    <style name="jh_fragment">
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+
+    <style name="jh_label_edit_verify_code" parent="jh_label_edit_row_edit">
+        <item name="android:background">@drawable/jh_label_edit_verify_code</item>
+        <item name="android:textColorHint">@android:color/darker_gray</item>
+        <item name="android:layout_marginRight">8dp</item>
+    </style>
+
+    <style name="jh_forgetpwd_btn_verify_code">
+        <item name="android:background">@drawable/jh_button_white</item>
+        <item name="android:textColor">@color/jh_btn_text_black</item>
+        <item name="android:layout_marginLeft">2dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+    </style>
+
+    <style name="jh_forgetpwd_layout_verify_code">
+        <item name="android:layout_marginLeft">12dp</item>
+        <item name="android:layout_marginRight">12dp</item>
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:layout_marginBottom">2dp</item>
+    </style>
+
+    <style name="jh_img_label">
+        <item name="android:background">@drawable/jh_img_label</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+    </style>
+
+    <style name="jh_quit_btn_continue" parent="jh_login_btn_quick_login">
+    </style>
+
+    <style name="jh_quit_btn_quit" parent="jh_login_btn_quick_sign_up"></style>
+
+    <style name="jh_img_label_text"></style>
+
+    <style name="jh_img_label_img"></style>
+
+    <style name="jh_quit_layout_row">
+        <item name="android:padding">2dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:weightSum">4</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginLeft">12dp</item>
+        <item name="android:layout_marginRight">12dp</item>
+        <item name="android:background">@drawable/jh_quit_layout_row</item>
+    </style>
+
+    <style name="jh_widget_image_btn_float">
+        <item name="android:background">@drawable/jh_float_widget</item>
+    </style>
+
+
+    <style name="jh_widget_content_layout">
+        <item name="android:background">@drawable/jh_widget_content_layout</item>
+    </style>
+
+    <style name="jh_widget_content_image_btn_account">
+        <item name="android:background">@drawable/jh_widget_content_image_btn_account</item>
+        <item name="android:clickable">false</item>
+    </style>
+
+    <style name="jh_widget_content_image_btn_gift">
+        <item name="android:background">@drawable/jh_widget_content_image_btn_gift</item>
+        <item name="android:clickable">false</item>
+    </style>
+
+    <style name="jh_widget_content_image_btn_activity">
+        <item name="android:background">@drawable/jh_widget_content_image_btn_activity</item>
+        <item name="android:clickable">false</item>
+    </style>
+
+    <style name="jh_widget_content_image_btn_new_game">
+        <item name="android:background">@drawable/jh_widget_content_image_btn_new_game</item>
+        <item name="android:clickable">false</item>
+    </style>
+    <style name="jh_widget_content_image_btn_website">
+        <item name="android:background">@drawable/jh_widget_content_image_btn_website</item>
+        <item name="android:clickable">false</item>
+    </style>
+
+    <style name="jh_style_dialog_protocal">
+    </style>
+
+    <style name="jh_widget_content_layout_item">
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/jh_widget_content_layout_item</item>
+    </style>
+
+    <style name="jh_progress_dialog" parent="android:Widget.Holo.Light.ProgressBar">
+    </style>
+
+    <style name="jh_dialog_pay_quit_btn">
+        <item name="android:background">@drawable/jh_dialog_pay_quit_btn</item>
+    </style>
+
+    <style name="jh_dialog_pay_quit_btn_continue" parent="jh_dialog_pay_quit_btn">
+        <item name="android:textColor">#ff0099cc</item>
+        <item name="android:layout_marginLeft">4dp</item>
+    </style>
+
+    <style name="jh_dialog_pay_quit_btn_close" parent="jh_dialog_pay_quit_btn">
+        <item name="android:textColor">@color/jh_btn_text_black</item>
+        <item name="android:layout_marginRight">4dp</item>
+    </style>
+</resources>

@@ -1,0 +1,4 @@
+// 通知前端有新信件
+message m_letter_light_toc {
+}
+

@@ -1,0 +1,6 @@
+// 装备铸魂(部位)激活
+message m_equip_forge_soul_open_tos {
+optional  int32  equip_id=1[default=0]; //要开启的装备ID
+optional  int32  equip_location_id=2[default=0]; //装备部位id  例：1011
+}
+

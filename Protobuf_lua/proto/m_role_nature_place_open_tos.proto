@@ -1,0 +1,6 @@
+// 天机系统部位开启
+message m_role_nature_place_open_tos {
+optional  int32  aperture_id=1[default=0]; //孔id
+optional  int32  type=2[default=0]; //类型,阴和阳
+}
+

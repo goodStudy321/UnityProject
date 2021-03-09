@@ -1,0 +1,5 @@
+// 开启守护
+message m_role_open_guard_toc {
+optional  int32  err_code=1[default=0]; //错误码
+}
+

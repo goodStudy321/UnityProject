@@ -1,0 +1,7 @@
+import "p_kvt.proto";
+// 使用技能返回
+message m_copy_immortal_use_skill_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  p_kvt  skill=2; //id：技能id val：冷却时间 type：次数
+}
+

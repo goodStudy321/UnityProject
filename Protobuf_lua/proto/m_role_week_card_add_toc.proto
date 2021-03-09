@@ -1,0 +1,7 @@
+import "p_week_card.proto";
+// 周卡信息 改名基金
+message m_role_week_card_add_toc {
+optional  int32  type=1[default=0]; //1-替换 2-添加
+repeated  p_week_card  list=2; //周卡列表
+}
+

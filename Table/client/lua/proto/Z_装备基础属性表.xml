@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="EquipBaseTemp" Key="id" ExportType="Dic" Src="Z 装备基础属性表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "装备ID" />
+  <P Name="wearParts" Type="number" ColName="穿戴部位" />
+  <P Name="modelID" Type="number" ColName="装备模型ID" />
+  <P Name="startLv" Type="number" Opt="true" ColName="星级" />
+  <P Name="wearRank" Type="number" ColName="装备品阶" />
+  <P Name="wearJob" Type="number" ColName="穿戴职业限制" />
+  <P Name="lvLimit" Type="number" Opt="true" ColName="穿戴转生等级限制" />
+  <P Name="canBind" Type="number" Opt="true" ColName="绑定条件" />
+  <P Name="addID" Type="NeedItem" IsList="true" Lsp="|" ColName="强化增加属性ID" />
+  <P Name="hp" Type="number" Opt="true" ColName="生命" />
+  <P Name="atk" Type="number" Opt="true" ColName="攻击" />
+  <P Name="def" Type="number" Opt="true" ColName="防御" />
+  <P Name="arm" Type="number" Opt="true" ColName="破甲" />
+  <P Name="attGroup" Type="number" Opt="true" IsList="true" Lsp="," ColName="卓越属性组" />
+  <P Name="suitLv1" Type="number" Opt="true" ColName="套装等级1" />
+  <P Name="need1" Type="NeedItem" Opt="true" IsList="true" Lsp=";" ColName="进阶所需道具ID1" />
+  <P Name="suit1" Type="number" Opt="true" ColName="套装组1" />
+  <P Name="suitLv2" Type="number" Opt="true" ColName="套装等级2" />
+  <P Name="need2" Type="NeedItem" Opt="true" IsList="true" Lsp=";" ColName="进阶所需道具ID2" />
+  <P Name="suit2" Type="number" Opt="true" ColName="套装组2" />
+  <P Name="holesNum" Type="number" ColName="宝石孔数" />
+  <P Name="SealholesNum" Type="number" ColName="纹印孔数" />
+  <P Name="petExp" Type="number" ColName="宠物经验值" />
+  <P Name="worth" Type="number" ColName="捐献贡献值" />
+  <P Name="cost" Type="number" ColName="兑换贡献值" />
+</Proto>

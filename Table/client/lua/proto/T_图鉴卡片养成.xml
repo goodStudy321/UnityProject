@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PicCollectTemp" Key="id" ExportType="Dic" Src="T 图鉴卡片养成.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "id" /> 
+  <P Name="type" Type="number" ColName= "类型" />
+  <P Name="picId" Type="number" ColName= "卡片id" />
+  <P Name="name" Type="string" ColName= "名称" />
+  <P Name="show" Type="string" ColName= "卡片图片" />
+  <P Name="group" Type="number" ColName= "卡组" />
+  <P Name="quality" Type="number" ColName= "品质" />
+  <P Name="star" Type="number" ColName= "星级数" />
+  <P Name="lv" Type="number" ColName= "等级" />
+  <P Name="upLvCost" Type="K_V" Opt="true" ColName="升级消耗" />
+  <P Name="cost" Type="number" Opt="true" ColName= "消耗精华" />
+  <P Name="pro1" Type="K_V" Opt="true" ColName="属性1" />
+  <P Name="pro2" Type="K_V" Opt="true" ColName="属性2" />
+  <P Name="pro3" Type="K_V" Opt="true" ColName="属性3" />
+  <P Name="pro4" Type="K_V" Opt="true" ColName="属性4" />
+</Proto>

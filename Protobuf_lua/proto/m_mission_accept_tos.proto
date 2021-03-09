@@ -1,0 +1,5 @@
+// 接受任务请求
+message m_mission_accept_tos {
+optional  int32  mission_id=1[default=0]; //任务ID
+}
+

@@ -1,0 +1,5 @@
+// 坐骑皮肤进阶
+message m_mount_skin_tos {
+optional  int32  skin_id=1[default=0]; //skin_id
+}
+

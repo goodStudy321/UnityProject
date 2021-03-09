@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PetJingPoTemp" Key="id" ExportType="Arr" Src="C 宠物精魄表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "道具ID" />
+  <P Name="props" Type="K_V" Opt="true" IsList="true" Lsp="|" ColName= "属性" />
+  <P Name="useMax" Type="K_V" IsList="true" Lsp="|" ColName= "最大使用个数" />
+</Proto>

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="EquipLock" Key="num" ExportType="Dic" Src="Z 装备洗炼-锁定表.xls" Sheet="Sheet1">
+  <P Name="num" Type="string" ColName="锁定条数" />
+  <P Name="neednum" Type="number" ColName="需要洗炼石数量" />
+  <P Name="price" Type="number" ColName="元宝价格" />
+</Proto>

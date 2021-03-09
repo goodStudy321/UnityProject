@@ -1,0 +1,6 @@
+// 场景进入次数更新
+message m_world_boss_change_owner_toc {
+optional  string  old_owner_name=1; //被击杀的玩家
+optional  string  new_owner_name=2; //新归属玩家
+}
+

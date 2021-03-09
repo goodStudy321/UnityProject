@@ -1,0 +1,5 @@
+// 本次答题获取经验
+message m_family_as_exp_toc {
+optional  int32  exp=1[default=0]; //经验
+}
+

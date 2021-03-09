@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="IdRes" Key="id" ExportType="Dic" Src="I ID资源事件配置表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="resName" Type="string" ColName="资源名称" />
+  <P Name="triggerEnt" Type="number" ColName="是否抛出事件" />
+  <P Name="entStr" Type="string" ColName="事件字符串" />
+  <P Name="type" Type="number" ColName="区分方式" />
+  <P Name="typeIndex" Type="number" ColName="区分索引" />
+  <P Name="resPFList" Type="string" Opt="true" IsList="true" Lsp="|"  ColName= "区分资源名结尾" />
+</Proto>

@@ -1,0 +1,5 @@
+// 仙魂分解
+message m_role_immortal_soul_bd_tos {
+repeated  int32  bag_id=1; //仙魂背包ID列表
+}
+

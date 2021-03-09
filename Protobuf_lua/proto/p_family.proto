@@ -1,0 +1,30 @@
+import "p_kv.proto";
+import "p_red_packet.proto";
+import "p_red_packet_log.proto";
+import "p_family_member.proto";
+import "p_family_apply.proto";
+import "p_goods.proto";
+import "p_family_depot_log.proto";
+// 道庭的p结构
+message p_family {
+optional  int64  family_id=1[default=0]; //道庭id
+optional  string  family_name=2; //道庭名
+optional  int32  level=3[default=0]; //道庭等级
+optional  int32  money=4[default=0]; //道庭资金
+optional  bool  is_direct_join=5[default=true]; //是否可以直接加入
+optional  int32  limit_level=6[default=0]; //限制申请的等级
+optional  int32  limit_power=7[default=0]; //限制申请的战力
+optional  int32  rank=8[default=0]; //排名
+repeated  p_kv  cv_reward=9; //可领连胜奖励   id连胜排名  val连胜次数
+repeated  p_kv  max_cv=10; //最大连胜次数   id连胜排名  val连胜次数 
+optional  int32  end_cv=11[default=0]; //本周终结连胜次数  连胜排名-0时为没有终结 
+optional  string  notice=12; //公告
+repeated  p_red_packet  red_packet=13; //道庭红包 - 已发
+repeated  p_red_packet_log  red_packet_log=14; //道庭红包 - 日志
+optional  int32  packet_id=15[default=0]; //道庭红包ID
+repeated  p_family_member  members=16; //成员信息
+repeated  p_family_apply  apply_list=17; //申请人员的信息
+repeated  p_goods  depot=18; //道庭仓库
+repeated  p_family_depot_log  depot_log=19; //道庭仓库日志
+}
+

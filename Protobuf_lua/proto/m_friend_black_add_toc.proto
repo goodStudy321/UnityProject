@@ -1,0 +1,7 @@
+import "p_friend.proto";
+// 加入黑名单
+message m_friend_black_add_toc {
+optional  int32  err_code=1[default=0]; 
+optional  p_friend  black_info=2; //加入黑名单的信息
+}
+

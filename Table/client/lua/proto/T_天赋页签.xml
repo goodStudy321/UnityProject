@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="tInnateTb" Key="tb" ExportType="Arr" Src="T 天赋页签.xls" Sheet="Sheet1">
+  <P Name="tb" Type="number" ColName= "页签" />
+  <P Name="tree" Type="number" Opt="true" IsList="true" Lsp = "," ColName= "树" />
+  <P Name="need" Type="number" ColName= "前置技能点" />
+  <P Name="treeNameLst" Type="string" Opt="true" IsList="true" Lsp = ","  ColName= "天赋名称" />
+</Proto>

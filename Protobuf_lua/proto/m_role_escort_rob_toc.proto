@@ -1,0 +1,10 @@
+import "p_kv.proto";
+// 劫镖
+message m_role_escort_rob_toc {
+optional  int32  err_code=1[default=0]; //错误码
+repeated  p_kv  reward=2; //劫镖奖励
+optional  int64  exp=3[default=0]; //劫镖经验
+optional  bool  res=4[default=true]; //结果
+optional  int32  rob_times=5[default=0]; //抢夺次数
+}
+

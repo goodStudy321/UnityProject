@@ -1,0 +1,6 @@
+import "p_act_esoterica_task.proto";
+// 返回修炼秘籍系统任务信息变化
+message m_role_act_esoterica_task_info_toc {
+optional  p_act_esoterica_task  task=1; //任务信息
+}
+

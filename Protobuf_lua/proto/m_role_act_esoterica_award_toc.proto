@@ -1,0 +1,7 @@
+// 返回修炼秘籍系统奖励领取
+message m_role_act_esoterica_award_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  training_id=2[default=0]; //领取id
+optional  int32  type=3[default=0]; //1：凡，仙：2 
+}
+

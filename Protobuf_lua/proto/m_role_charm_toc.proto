@@ -1,0 +1,5 @@
+// 魅力值
+message m_role_charm_toc {
+optional  int32  charm=1[default=0]; //魅力值
+}
+

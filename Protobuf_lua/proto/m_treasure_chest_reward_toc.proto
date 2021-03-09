@@ -1,0 +1,7 @@
+import "p_kv.proto";
+// 领取奖励返回
+message m_treasure_chest_reward_toc {
+optional  int32  err_code=1[default=0]; //错误码
+repeated  p_kv  reward=2; //奖励列表 id 表ID val 0:不能领 1:可领 2:已领
+}
+

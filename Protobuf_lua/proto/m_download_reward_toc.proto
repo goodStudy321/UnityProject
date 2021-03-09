@@ -1,0 +1,6 @@
+// 引导好评领取奖励返回
+message m_download_reward_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  bool  is_reward=2[default=true]; //是否领取奖励
+}
+

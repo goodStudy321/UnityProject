@@ -1,0 +1,7 @@
+// 章节信息
+message p_chapter {
+optional  int32  id=1[default=0]; //章节id
+optional  int32  num=2[default=0]; //当前完成数量
+optional  bool  is_reward=3[default=true]; //是否领取奖励 true:领取 false:未领取
+}
+

@@ -1,0 +1,21 @@
+message DropTemp [key=id, source="D 掉落表.xls", sheet="Sheet1"]
+{
+	struct drops  [separator = ',']
+	{
+		uint32 k;
+		uint32 v;
+		uint32 b;
+	};
+	struct dropList  [separator = '#']
+	{
+		drops drop;
+	};
+
+	uint32 id				        [option = "掉落id"];
+	dropList drop_lists1		    [option = "掉落1"];
+	dropList drop_lists2		    [option = "掉落2"];
+	dropList drop_lists3		    [option = "掉落3"];
+	dropList drop_lists4		    [option = "掉落4"];
+	dropList drop_lists5		    [option = "掉落5"];
+	dropList drop_lists6		    [option = "掉落6"];
+};

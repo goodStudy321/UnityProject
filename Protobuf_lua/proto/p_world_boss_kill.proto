@@ -1,0 +1,7 @@
+// 世界boss击杀者的p结构
+message p_world_boss_kill {
+optional  int64  role_id=1[default=0]; //击杀者ID
+optional  string  role_name=2; //击杀者姓名
+optional  int32  kill_time=3[default=0]; //击杀时间
+}
+

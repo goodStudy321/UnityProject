@@ -1,0 +1,6 @@
+import "p_kv.proto";
+// 魔域boss血量奖励信息，进入地图增量更新 推送
+message m_demon_boss_hp_reward_status_toc {
+repeated  p_kv  hp_reward_status=1; //id:ID val:0不能领取奖励 1可以领取奖励 2:已经领取奖励
+}
+

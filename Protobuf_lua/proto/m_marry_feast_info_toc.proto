@@ -1,0 +1,11 @@
+import "p_dks.proto";
+// 婚宴相关信息推送
+message m_marry_feast_info_toc {
+optional  int32  feast_start_time=1[default=0]; //举办婚礼的时间
+optional  int32  feast_times=2[default=0]; //可以举办婚礼的次数
+optional  int32  extra_guest_num=3[default=0]; //额外增加的宾客 默认是20人
+optional  bool  is_buy_join=4[default=true]; //是否可以购买进入 默认是true
+repeated  p_dks  guest_list=5; //宾客列表
+repeated  p_dks  apply_guest_list=6; //申请的宾客列表
+}
+

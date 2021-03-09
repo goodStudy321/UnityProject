@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="tFvFloor" Key="CopyLv" ExportType="Arr" Src="W 五行幻境.xls" Sheet="Sheet1">
+  <P Name="CopyLv" Type="number" ColName= "副本层数" />
+  <P Name="CopyName" Type="string" ColName="幻境名称" />
+  <P Name="CopyNeed" Type="number" IsList="true" Lsp="," ColName="突破幻境需求" />
+  <P Name="NextGet" Type="number" IsList="true" Lsp="," ColName="收集奖励" />
+  <P Name="MapName" Type="string" ColName="背景图" />
+  <P Name="illMax" Type="number" ColName= "幻力上限" />
+  <P Name="illSpeed" Type="number" ColName= "幻力获得速度" />
+  <P Name="natMax" Type="number" ColName= "勾玉上限" />
+   <P Name="natSpeed" Type="number" ColName= "勾玉获得速度" />
+  <P Name="dec" Type="string" ColName= "突破说明" />
+</Proto>

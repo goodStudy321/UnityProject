@@ -1,0 +1,5 @@
+// 取消任务
+message m_mission_cancel_tos {
+optional  int32  mission_id=1[default=0]; 
+}
+

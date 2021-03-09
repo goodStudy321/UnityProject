@@ -1,0 +1,6 @@
+// 灵器信息
+message p_war_armor_lock_info {
+optional  int32  index=1[default=0]; //部位
+optional  bool  is_open=2[default=true]; //是否开启
+}
+

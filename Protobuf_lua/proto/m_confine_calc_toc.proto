@@ -1,0 +1,7 @@
+import "p_confine_mission.proto";
+// 境界提升属性计算
+message m_confine_calc_toc {
+optional  bool  reward=1[default=true]; //奖励是否已领取  true - 是   
+repeated  p_confine_mission  update_mission=2; //更新任务
+}
+

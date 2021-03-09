@@ -1,0 +1,8 @@
+import "p_war_spirit_armor.proto";
+// 战灵灵器穿戴返回
+message m_war_spirit_armor_load_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  war_spirit_id=2[default=0]; //战灵id
+repeated  p_war_spirit_armor  change_armors=3; //变化的灵器
+}
+

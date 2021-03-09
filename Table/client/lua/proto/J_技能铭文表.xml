@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="tSkillEpg" Key="id" ExportType="Dic" Src="J 技能铭文表.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "铭文ID" />
+    <P Name="baseId" Type="number" ColName= "基础铭文" />
+  <P Name="name" Type="string" ColName="铭文名称" />
+  <P Name="icon" Type="string" ColName="图片名称" />
+  <P Name="dec" Type="string"  ColName="效果描述" />
+  <P Name="lmLvl" Type="number"  ColName="升级等级" />
+  <P Name="curLvl" Type="number"  ColName="铭文等级" />
+    <P Name="maxLvl" Type="number"  ColName="最大等级" />
+  <P Name="cost" Type="K_V" IsList="true" Lsp=";"  ColName="升级道具" />
+</Proto>

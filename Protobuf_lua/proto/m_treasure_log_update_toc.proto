@@ -1,0 +1,6 @@
+import "p_ks.proto";
+// 寻宝相关信息
+message m_treasure_log_update_toc {
+repeated  p_ks  world_equip_logs=1; //新增全服寻宝记录
+}
+

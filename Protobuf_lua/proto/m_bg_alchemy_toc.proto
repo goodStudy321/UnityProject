@@ -1,0 +1,15 @@
+import "p_bg_act.proto";
+import "p_item_i.proto";
+// 炼丹炉
+message m_bg_alchemy_toc {
+optional  p_bg_act  info=1; //活动信息
+optional  int32  price=2[default=0]; //抽奖价格
+optional  int32  money=3[default=0]; //货币类型
+optional  int32  lucky=4[default=0]; //幸运值
+optional  int32  full_lucky=5[default=0]; //满幸运值
+optional  string  tips=6; //按钮文案
+optional  string  picture_tips=7; //图片文案
+repeated  p_item_i  common_reward=8; //普通奖励 按顺序显示
+optional  p_item_i  precious_reward=9; //大奖
+}
+

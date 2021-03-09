@@ -1,0 +1,25 @@
+message CollectionInfo [key=id, source="C 采集物配置.xls", sheet="Sheet1"]				
+{
+	struct CreateCond[separator=',']
+	{
+		uint8 type;		//类型
+		int32 arg;	//参数
+	};
+	uint32 id			    	[option = "id"];
+	string name			    	[option = "名字"];
+	string model			    [option = "模型名称"];
+	string bornAni			    [option = "出生动画"];
+	string idleAni				[option = "待机动画"];
+	string runAni				[option = "采集动画"];
+	string dieAni				[option = "消亡动画"];
+	uint8 TriTy				    [option = "触发类型"];
+	string TriAni				[option = "触发动画"];
+	string FloAni				[option = "连接动画"];
+	uint16 modelsize			[option = "大小倍数"];
+	uint16 distance				[option = "检测距离"];
+	string icon					[option = "采集图标"];
+	string text					[option = "采集文本"];
+	uint8 removeOnSuccess		[option = "采集成功时是否移除"]; //1移除
+	CreateCond cond				[option = "采集生成过滤"];
+	int16 ht					[option = "浮空高度"];//单位厘米
+};

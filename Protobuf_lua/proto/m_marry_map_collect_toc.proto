@@ -1,0 +1,5 @@
+// 剩余采集次数更新
+message m_marry_map_collect_toc {
+optional  int32  remain_times=1[default=0]; //热度采集物剩余采集次数
+}
+

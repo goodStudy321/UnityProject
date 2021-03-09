@@ -1,0 +1,7 @@
+// 返回物品提取的结果
+message m_letter_accept_goods_toc {
+optional  int32  err_code=1[default=0]; //信件物品提取是否成功
+optional  int32  op_type=2[default=0]; //0 领取所有的附件，1 领取id_list中的信件
+repeated  int32  id_list=3; //提取过附件的信件IDs
+}
+

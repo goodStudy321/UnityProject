@@ -1,0 +1,5 @@
+// 购买
+message m_role_daily_buy_tos {
+optional  int32  id=1[default=0]; //购买【每日抢购物品】
+}
+

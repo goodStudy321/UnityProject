@@ -1,0 +1,7 @@
+import "p_equip.proto";
+// 装备镶嵌
+message m_stone_remove_toc {
+optional  int32  err_code=1[default=0]; 
+optional  p_equip  equip=2; 
+}
+

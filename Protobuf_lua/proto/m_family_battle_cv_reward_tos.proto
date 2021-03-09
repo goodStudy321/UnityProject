@@ -1,0 +1,7 @@
+import "p_kv.proto";
+// 分配连胜奖励
+message m_family_battle_cv_reward_tos {
+optional  p_kv  reward=1; //奖励
+optional  int64  role_id=2[default=0]; //帮员奖励
+}
+

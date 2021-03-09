@@ -1,0 +1,8 @@
+import "p_mythical_equip.proto";
+// 神兽信息
+message p_mythical_soul {
+optional  int32  soul_id=1[default=0]; //魂兽id
+optional  int32  status=2[default=0]; //0不能激活 1未使用 2使用中
+repeated  p_mythical_equip  equip_list=3; //装备列表
+}
+

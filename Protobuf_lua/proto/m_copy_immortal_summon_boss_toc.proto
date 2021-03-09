@@ -1,0 +1,6 @@
+// 召唤boss返回
+message m_copy_immortal_summon_boss_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  summon_boss_round=2[default=0]; //在第几回合召唤
+}
+

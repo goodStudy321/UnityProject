@@ -1,0 +1,6 @@
+import "p_luckycat_log.proto";
+// 招财猫更新玩家记录
+message m_luckycat_log_update_toc {
+repeated  p_luckycat_log  logs=1; //招财猫更新玩家记录
+}
+

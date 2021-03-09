@@ -1,0 +1,9 @@
+import "p_kv.proto";
+// 每日累充信息返回
+message m_act_dayrecharge_toc {
+optional  int32  recharge=1[default=0]; //当天充值量
+optional  int32  day=2[default=0]; //开服第几天
+repeated  p_kv  day_reward=3; //当天充值奖励 , 1-不能领 2-可领 3-已领
+repeated  p_kv  count_reward=4; //id-天 val计数奖励, 1-不能领 2-可领 3-已领
+}
+

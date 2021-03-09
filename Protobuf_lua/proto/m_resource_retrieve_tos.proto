@@ -1,0 +1,7 @@
+// 资源找回
+message m_resource_retrieve_tos {
+optional  int32  resource_id=1[default=0]; //资源id
+optional  int32  type=2[default=0]; //1绑元 2银两
+optional  int32  times=3[default=0]; //找回次数
+}
+

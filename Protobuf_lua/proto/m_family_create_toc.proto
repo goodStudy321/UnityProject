@@ -1,0 +1,7 @@
+import "p_family.proto";
+// 创建道庭返回
+message m_family_create_toc {
+optional  int32  err_code=1[default=0]; 
+optional  p_family  family_info=2; //道庭详细信息
+}
+

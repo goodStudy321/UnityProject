@@ -1,0 +1,8 @@
+import "p_money_tree_log.proto";
+//  
+message m_money_tree_toc {
+optional  int32  times=1[default=0]; //今日使用次数
+repeated  p_money_tree_log  log=2; //日志
+repeated  p_money_tree_log  other_log=3; //全服日志
+}
+

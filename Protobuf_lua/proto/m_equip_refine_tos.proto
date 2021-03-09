@@ -1,0 +1,5 @@
+// 装备强化
+message m_equip_refine_tos {
+optional  int32  equip_id=1[default=0]; //装备ID
+}
+

@@ -1,0 +1,6 @@
+// 一见钟情 奖励领取返回
+message m_cycle_act_couple_login_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  type=2[default=0]; //1:奖励1 2:奖励2
+}
+

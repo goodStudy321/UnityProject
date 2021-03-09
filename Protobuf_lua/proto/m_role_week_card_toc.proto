@@ -1,0 +1,6 @@
+import "p_week_card.proto";
+// 周卡信息 改名基金
+message m_role_week_card_toc {
+repeated  p_week_card  list=1; //周卡列表
+}
+

@@ -1,0 +1,5 @@
+message RolePro [key=id, source="S 角色属性字段.xls", sheet="Sheet1"]				
+{
+	uint32 id				[option = "ID"];
+	string pro_name					[option = "属性名"];
+};

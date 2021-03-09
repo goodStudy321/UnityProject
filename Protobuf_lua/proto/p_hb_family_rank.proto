@@ -1,0 +1,8 @@
+// 猎杀BOSS之道庭排行榜的p_结构
+message p_hb_family_rank {
+optional  int32  rank=1[default=0]; //排行
+optional  string  name=2; //道庭名称
+optional  string  family_owner_name=3; //道庭庭主名字
+optional  int32  family_score=4[default=0]; //道庭猎杀boss积分
+}
+

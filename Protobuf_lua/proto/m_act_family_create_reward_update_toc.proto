@@ -1,0 +1,6 @@
+import "p_kv.proto";
+// 建帮立派已经领取数量更新
+message m_act_family_create_reward_update_toc {
+optional  p_kv  reward=1; //id: 栏目 val：已经领取的数量
+}
+

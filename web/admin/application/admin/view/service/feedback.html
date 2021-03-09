@@ -1,0 +1,134 @@
+{include file='public/head'}
+<div class="layui-field-box">
+  <blockquote class="layui-elem-quote">
+    <form class="layui-form" onsubmit="return false">
+      <div class="layui-inline">
+        <label class="layui-form-label">类型：</label>
+        <div class="layui-input-inline">
+          <select id="feedback_type" style="height: 28px;">
+            <option value="all" selected>全部类型</option>
+            <option value="1">建议</option>
+            <option value="2">bug提交</option>
+          </select>
+        </div>
+      </div>
+      <div class="layui-inline">
+        <label class="layui-form-label">状态：</label>
+        <div class="layui-input-inline">
+          <select id="status" style="height: 28px;">
+            <option value="all" selected>全部状态</option>
+            <option value="1">已回复</option>
+            <option value="0">未回复</option>
+          </select>
+        </div>
+      </div>
+      <div class="layui-inline">
+        <label class="layui-form-label">角色名：</label>
+        <div class="layui-input-inline">
+          <input type="text" id="role_name" placeholder="请输入角色名"  class="layui-input">
+        </div>
+      </div>
+      <div class="layui-inline">
+        <label class="layui-form-label">账号：</label>
+        <div class="layui-input-inline">
+          <input type="text" id="account_name" placeholder="请输入账号" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-inline">
+        <label class="layui-form-label">回复人：</label>
+        <div class="layui-input-inline">
+          <input type="text" id="back_name" placeholder="请输入回复人"  class="layui-input">
+        </div>
+      </div>
+      <br><br>
+      <div class="layui-inline">
+        <label class="layui-form-label">反馈时间：</label>
+        <div class="layui-input-inline">
+          <input type="text" id="time"  autocomplete="off"  class="layui-input">
+        </div>
+      </div>
+      <div class="layui-inline" >
+        &nbsp; &nbsp;
+        <div class="layui-input-inline" id="button">
+          <button class="layui-btn layui-btn-sm">查询</button>
+        </div>
+        <div class="layui-input-inline" id="button2">
+          <button class="layui-btn layui-btn-sm">所有玩家列表</button>
+        </div>
+        <button onclick="javascript:location.reload()" class="layui-btn layui-btn-sm">刷新</button>
+      </div>
+    </form>
+  </blockquote>
+  <table id="table" lay-filter="test"></table>
+</div>
+{include file='public/foot'}
+
+
+<script type="text/html" id="edit">
+  {{#  if(d.status == '未回复'){ }}
+  <button class="layui-btn layui-btn-xs" onclick="x_admin_show('回复内容','feedback_content.html?id={{d.id}}',500,250)">回复</button>
+  {{#  } else { }}
+  已回复
+  {{#  } }}
+</script>
+<script>
+  layui.use(['laydate','form'], function(){
+    var laydate = layui.laydate;
+    var form = layui.form;
+
+    laydate.render({
+      elem: '#time'
+      ,range: true
+    });
+
+  });
+  //表格
+  layui.use('table', function(){
+    var table = layui.table;
+    //第一个实例
+    var tableIns = table.render({
+      elem: '#table'
+      ,url: 'feedback_data' //数据接口
+      ,page: true //开启分页
+      ,cols: [[ //表头
+      {field: 'id', title: '记录id'}
+      ,{field: 'feedback_type', title: '类型'}
+      ,{field: 'status', title: '状态'}
+      ,{field: 'role_name', title: '角色名'}
+      ,{field: 'account_name', title: '账号'}
+      ,{field: 'title', title: '标题'}
+      ,{field: 'content', title: '内容'}
+      ,{field: 'time', title: '反馈时间', width:150}
+      ,{field: 'back_content', title: '回复内容'}
+      ,{field: 'back_name', title: '回复人'}
+      ,{field: 'back_time', title: '回复时间'}
+      ,{field: 'edit', title: '操作', templet: '#edit'}
+      ]]
+    });
+    $("#button").click(function(){
+      var feedback_type = $("#feedback_type").val();
+      var status = $("#status").val();
+      var role_name = $("#role_name").val();
+      var account_name = $("#account_name").val();
+      var back_name = $("#back_name").val();
+      var time = $("#time").val();
+      tableIns.reload({
+        where: { //设定异步数据接口的额外参数，任意设
+        find:1
+        ,feedback_type:feedback_type
+        ,status: status
+        ,role_name: role_name
+        ,account_name: account_name
+        ,back_name: back_name
+        ,time: time
+        }
+        ,page: {
+      curr: 1 //重新从第 1 页开始
+        }
+      });
+    });
+    $("#button2").click(function(){
+      location.reload();
+    });
+  });
+</script>

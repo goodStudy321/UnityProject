@@ -1,0 +1,5 @@
+// 天降喜糖采集结束时间更新
+message m_marry_map_collect_time_toc {
+optional  int32  collect_time=1[default=0]; //天降喜糖采集结束时间
+}
+

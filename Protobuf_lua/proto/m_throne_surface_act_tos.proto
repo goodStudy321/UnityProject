@@ -1,0 +1,5 @@
+// 宝座幻化激活
+message m_throne_surface_act_tos {
+optional  int32  surface_id=1[default=0]; //宝座幻化观表id
+}
+

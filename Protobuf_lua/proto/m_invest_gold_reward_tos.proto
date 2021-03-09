@@ -1,0 +1,5 @@
+// 投资计划获得奖励
+message m_invest_gold_reward_tos {
+optional  int32  level=1[default=0]; 
+}
+

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="RuneLvCfg" ExportType="Arr" Key="id" Src="F 符文等级表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "符文ID" />
+  <P Name="lv" Type="number" ColName="符文等级" />
+  <P Name="p1" Type="number" Opt="true" ColName="增加属性ID1" />
+  <P Name="v1" Type="number" Opt="true" ColName="增加属性值1" />
+  <P Name="p2" Type="number" Opt="true" ColName="增加属性ID2" />
+  <P Name="v2" Type="number" Opt="true" ColName="增加属性值2" />
+  <P Name="upExp" Type="number" ColName="升级经验" />
+  <P Name="deExp" Type="number" ColName="分解获得经验" />
+  <P Name="score" Type="number" ColName="评分" />
+  <P Name="maxId" Type="string" ColName="最高等级ID" />
+</Proto>

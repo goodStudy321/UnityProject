@@ -1,0 +1,5 @@
+// 总次数奖励领取
+message m_act_sign_reward_tos {
+optional  int32  times=1[default=0]; //次数
+}
+

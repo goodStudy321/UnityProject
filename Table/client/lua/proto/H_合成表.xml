@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SynInfo" ExportType="Arr" Key="id" Src="H 合成表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "合成ID" />
+  <P Name="type" Type="number" ColName="合成类型" />
+  <P Name="title" Type="string" ColName="大标题" />
+  <P Name="des" Type="string" ColName="描述" />
+  <P Name="work" Type="number" ColName= "职业" />
+  <P Name="needItems" Type="NeedItem" IsList="true" Lsp="|" ColName= "合成所需道具ID" />
+  <P Name="items" Type="number" Opt="true" IsList="true" Lsp="," ColName="合成后道具ID" />
+  <P Name="bSuc" Type="number" ColName="合成概率" />
+  <P Name="spItemId" Type="number" ColName="增加成功率道具" />
+  <P Name="addSuc" Type="number" ColName="增加概率" />
+</Proto>

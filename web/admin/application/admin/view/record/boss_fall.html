@@ -1,0 +1,77 @@
+{include file='public/head'}
+<div class="x-body" style=" overflow-y:auto; overflow-x:auto; width:auto; height:auto;">
+  <button class="layui-btn layui-btn-sm " onclick="javascript:location.href='/admin/record/bossFall'"></i>Boss掉落</button>
+  <button class="layui-btn layui-btn-sm"  onclick="javascript:location.href='/admin/record/bossGot'">拾取记录</button>
+  <br>
+  <br>
+
+  <fieldset class="layui-elem-field">
+    <legend> Boss掉落 </legend>
+    <div class="layui-field-box">
+      <blockquote class="layui-elem-quote">
+        <form class="layui-form" onsubmit="return false">
+            <div class="layui-inline">
+              <label class="layui-form-label" style="width:50px">BossID:</label>
+              <div class="layui-input-inline" style="width:150px">
+                <input type="text" name="boss_type_id"  class="layui-input">
+              </div>
+            </div>
+            <div class="layui-inline">
+              <label class="layui-form-label" style="width:55px">发送时间:</label>
+              <div class="layui-input-inline">
+                <input class="layui-input" id="time"  type="text" autocomplete="off" name="send_time">
+              </div>
+            </div>
+            <div class="layui-inline">
+              <div class="layui-input-inline">
+                <button class="layui-btn layui-btn-sm" id="submit">查询</button>
+                <button onclick="javascript:location.reload()" class="layui-btn layui-btn-sm">刷新</button>
+              </div>
+            </div>
+        </form>
+      </blockquote>
+      <table id="table" lay-filter="test"></table>
+    </div>
+  </fieldset>
+</div>
+<script>
+  layui.use('laydate', function() {
+    var laydate = layui.laydate;
+    laydate.render({
+      elem: '#time'
+      ,max:0
+    ,range:true
+    });
+  });
+  //表格
+  layui.use('table', function(){
+    var table = layui.table;
+    //第一个实例
+    var tableIns = table.render({
+      elem: '#table'
+      ,url: 'bossFallData' //数据接口
+      ,page: true //开启分页
+      ,cols: [[ //标题栏
+      {align: 'center',field:'id', title: 'BossID',width:160}
+      ,{align: 'center',field:'name', title: 'Boss名称', width:143}
+      ,{align: 'center',field:'time', title: '日志时间', width:143}
+      ,{align: 'center',field:'goods', title: '掉落物品 (道具 - 数量 - 是否绑定)'}
+      ,{align: 'center',field:'role_name', title: '击杀玩家'}
+      ]]
+    });
+    $("#submit").click(function(){
+      var data = {};
+      $.each($('form').serializeArray(), function(){
+        data[this.name] = this.value;
+      })
+
+      tableIns.reload({
+        where: data   //设定异步数据接口的额外参数，任意设
+        ,page: {
+          curr: 1 //重新从第 1 页开始
+        }
+      });
+    });
+  });
+</script>
+{include file='public/foot'}

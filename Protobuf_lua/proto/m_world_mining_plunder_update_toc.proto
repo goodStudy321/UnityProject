@@ -1,0 +1,6 @@
+import "p_ks.proto";
+// 掠夺记录更新
+message m_world_mining_plunder_update_toc {
+optional  p_ks  add_plunder_history=1; 
+}
+

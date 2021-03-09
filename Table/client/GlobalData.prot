@@ -1,0 +1,15 @@
+message GlobalData [key=id, source="G Global数据.xls", sheet="Sheet1"]
+{
+	struct values [separator = ',']
+	{
+		uint32 value;
+	};
+
+	uint8 id						[option = "规则ID"];
+	string name						[option = "规则名称"];
+	string num1					    [option = "数值1"];
+	values num2				        [option = "数值2"];
+	string  num3				    [option = "数值3"];
+    string  describe				[option = "描述"];
+	
+};

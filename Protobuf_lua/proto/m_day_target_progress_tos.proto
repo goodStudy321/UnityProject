@@ -1,0 +1,5 @@
+// 7天目标 进度奖励领取
+message m_day_target_progress_tos {
+optional  int32  progress=1[default=0]; //进度
+}
+

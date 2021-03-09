@@ -1,0 +1,33 @@
+import "p_kdv.proto";
+import "p_equip.proto";
+import "p_kv.proto";
+// 观察玩家返回
+message m_role_observe_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int64  role_id=2[default=0]; //role_id
+optional  string  role_name=3; //名字
+optional  int32  level=4[default=0]; //等级
+optional  int32  vip_level=5[default=0]; //VIP等级
+optional  int32  sex=6[default=0]; //性别
+optional  int32  category=7[default=0]; //职业
+optional  int32  relive_level=8[default=0]; //转生等级
+optional  int64  family_id=9[default=0]; //道庭id
+optional  string  family_name=10; //道庭名
+optional  int32  family_title=11[default=0]; //职位
+optional  int32  power=12[default=0]; //战力
+repeated  int32  skin_list=13; //外观列表
+repeated  p_kdv  role_base=14; //属性列表
+repeated  p_kv  decorations=15; //饰品
+repeated  p_equip  equip_list=16; //装备
+optional  int32  charm=17[default=0]; //魅力值
+optional  int32  title=18[default=0]; //称号
+optional  int32  mount=19[default=0]; //坐骑
+optional  int32  magic_weapon=20[default=0]; //法宝
+optional  int32  god_weapon=21[default=0]; //神兵
+optional  int32  pet=22[default=0]; //伙伴
+optional  p_kv  r_guard=23; //id 0-空 道具类型 , val -时间
+optional  p_kv  l_guard=24; //id -1未开 0-空  道具类型 , val -时间
+optional  int32  knot_id=25[default=0]; //同心结ID
+repeated  int32  ornament_list=26; //饰品列表
+}
+

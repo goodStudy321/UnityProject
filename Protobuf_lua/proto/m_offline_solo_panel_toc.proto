@@ -1,0 +1,5 @@
+// 关闭面板
+message m_offline_solo_panel_toc {
+optional  int32  type=1[default=0]; //1开启 0关闭
+}
+

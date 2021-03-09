@@ -1,0 +1,6 @@
+import "p_ks.proto";
+// 巅峰寻宝信息更新
+message m_summit_log_update_toc {
+repeated  p_ks  world_summit_logs=1; //全服巅峰寻宝记录
+}
+

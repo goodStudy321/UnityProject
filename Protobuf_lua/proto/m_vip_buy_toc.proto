@@ -1,0 +1,9 @@
+// vip信息改变同送
+message m_vip_buy_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  type=2[default=0]; //1-购买成功 2-使用成功
+optional  int32  expire_time=3[default=0]; //过期时间更新
+optional  int32  first_buy=4[default=0]; //购买的VIP卡ID
+optional  bool  is_vip_experience=5[default=true]; //是否VIP体验期
+}
+

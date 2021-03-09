@@ -1,0 +1,6 @@
+// 角色相关零碎数据
+message m_role_extra_info_toc {
+optional  int32  feedback_times=1[default=0]; //玩家意见反馈次数
+optional  int64  exp_efficiency=2[default=0]; //离线挂机效率
+}
+

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="RushBuyCfg" Key="sortId" ExportType="Arr" Src="L 零元抢购配置表.xlsx" Sheet="Sheet1">
+  <P Name="sortId" Type="number" ColName= "序号" />
+  <P Name="id" Type="number" ColName= "道具ID" />
+  <P Name="fightVal" Type="number" ColName= "战力数值" />
+  <P Name="coinType" Type="number" ColName= "货币类型" />
+  <P Name="price" Type="number" ColName= "价格数值" />
+  <P Name="duration" Type="number" ColName= "持续时间" />
+  <P Name="returnDay" Type="number" ColName= "返还天数" />
+  <P Name="modelPath" Type="string" ColName= "模型路径ID" />
+</Proto>

@@ -1,0 +1,12 @@
+import "p_kv.proto";
+import "p_pray_log.proto";
+// 天道情缘活动信息推送
+message m_cycle_act_couple_toc {
+optional  bool  login_reward1=1[default=true]; //登录奖励状态是否领取 true:领取 false：未领取
+optional  bool  login_reward2=2[default=true]; //登录奖励状态2是否领取 true:领取 false：未领取
+repeated  p_kv  propose_status_list=3; //告别单身奖励领取状态 val:1可领取，2已领取
+optional  int32  pray_score=4[default=0]; //告别单身积分
+repeated  int32  pray_exchange_list=5; //告别单身已经兑换的积分列表
+repeated  p_pray_log  pray_logs=6; //id:道具ID string:RoleName
+}
+

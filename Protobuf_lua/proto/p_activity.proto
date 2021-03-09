@@ -1,0 +1,7 @@
+// 活动P结构
+message p_activity {
+optional  int32  id=1[default=0]; //id
+optional  int32  status=2[default=0]; //0:提前X分钟 2:开启 3:关闭 
+optional  int32  end_time=3[default=0]; //结束时间 注:当status为0的时候 此时end_time是发X分钟后的时间（即活动开启时间）
+}
+

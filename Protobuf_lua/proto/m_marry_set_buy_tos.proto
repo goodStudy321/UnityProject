@@ -1,0 +1,5 @@
+// 设置是否可以购买进入
+message m_marry_set_buy_tos {
+optional  bool  is_buy_join=1[default=true]; //是否可以购买进入
+}
+

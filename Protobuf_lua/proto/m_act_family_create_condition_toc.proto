@@ -1,0 +1,6 @@
+import "p_kv.proto";
+// 建帮立派condition更新
+message m_act_family_create_condition_toc {
+optional  p_kv  condition=1; //id：栏目 val：状态
+}
+

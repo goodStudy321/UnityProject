@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="EquipCollData" Key="id" ExportType="Dic" Src="Z 装备收集.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="rank" Type="string" ColName= "激活阶数" />
+  <P Name="star" Type="string" ColName= "激活星级" />
+  <P Name="qua" Type="string" ColName= "激活品质" />
+  <P Name="idList" Type="number" IsList="true" Lsp="|" ColName= "激活装备id" />
+  <P Name="numList" Type="number" IsList="true" Lsp="|" ColName= "套装数量" />
+  <P Name="att1" Type="Value" IsList="true" Lsp="|" Opt="true" ColName="套装1属性" />
+  <P Name="att2" Type="Value" IsList="true" Lsp="|" Opt="true" ColName="套装2属性" />
+  <P Name="att3" Type="Value" IsList="true" Lsp="|" Opt="true" ColName="套装3属性" />
+  <P Name="att4" Type="Value" IsList="true" Lsp="|" Opt="true" ColName="套装4属性" />
+  <P Name="skillList" Type="Value" ColName= "技能奖励" />
+</Proto>

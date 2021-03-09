@@ -1,0 +1,6 @@
+// 道具合成
+message m_goods_compose_tos {
+optional  int32  compose_id=1[default=0]; //合成id
+optional  int32  add_rate_num=2[default=0]; //增加概率道具的数量
+}
+

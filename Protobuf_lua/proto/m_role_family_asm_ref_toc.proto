@@ -1,0 +1,7 @@
+// 返回道庭任务极品和元宝刷新
+message m_role_family_asm_ref_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  type=2[default=0]; //0:元宝刷新,1:极品刷新
+optional  int32  mission_id=3[default=0]; //替换任务id
+}
+

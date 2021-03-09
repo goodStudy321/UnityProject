@@ -1,0 +1,5 @@
+// 鉴宝活动开始鉴宝
+message mod_role_act_it_begin_tos {
+optional  int32  type=1[default=0]; //0:鉴宝一次.1：自动
+}
+

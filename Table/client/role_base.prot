@@ -1,0 +1,9 @@
+message RoleBase [key=baseid, source="J 角色模型表.xls", sheet="Sheet1"]				
+{
+    uint16 hero_no                  [option = "角色序号"];
+	uint16 baseid					[option = "角色ID"];
+	string role_name				[option = "角色名称"];
+	string model_path				[option = "模型路径"];
+	uint8 character_type			[option = "角色类型"];
+	string ui_model					[option = "UI模型路径"];
+};

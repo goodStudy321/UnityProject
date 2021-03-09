@@ -1,0 +1,5 @@
+// 请求排行榜信息
+message m_rank_info_tos {
+optional  int32  rank_id=1[default=0]; //排行榜id
+}
+

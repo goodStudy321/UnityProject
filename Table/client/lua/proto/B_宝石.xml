@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="GemData" Key="id" ExportType="Dic" Src="B 宝石.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="name" Type="string" ColName="宝石名称" />
+  <P Name="type" Type="number" ColName="宝石类型" />
+  <P Name="lv" Type="number" ColName="宝石等级" />
+  <P Name="hp" Type="number"  Opt="true" ColName= "生命" />
+  <P Name="atk" Type="number" Opt="true" ColName= "攻击" />
+  <P Name="def" Type="number" Opt="true" ColName= "防御" />
+  <P Name="arm" Type="number" Opt="true" ColName= "破甲" />
+  <P Name="parts" Type="number" Opt="true" IsList="true" Lsp="," ColName="镶嵌部位" />
+  <P Name="canGem" Type="number"  Opt="true" ColName= "可合成" />
+  <P Name="num" Type="number"  Opt="true" ColName= "数量" />
+  <P Name="need" Type="number"  Opt="true" ColName= "合成材料" />
+</Proto>

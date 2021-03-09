@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="tCloudBuy" Key="stage" ExportType="Arr" Src="X 限时云购.xls" Sheet="Sheet1">
+  <P Name="stage" Type="number" ColName= "序号" />
+  <P Name="BigRWD" Type="Item"  ColName= "大奖" />
+  <P Name="SRWD" Type="CloudItem" IsList="true" Lsp=";" ColName= "保底奖励" />
+  <P Name="Need" Type="number" ColName= "大奖价值" />
+</Proto>

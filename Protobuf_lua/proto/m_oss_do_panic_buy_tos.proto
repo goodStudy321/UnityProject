@@ -1,0 +1,5 @@
+// oss- 开服第二阶段活动  七天抢购   领奖励
+message m_oss_do_panic_buy_tos {
+optional  int32  id=1[default=0]; //ID
+}
+

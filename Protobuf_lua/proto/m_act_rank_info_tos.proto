@@ -1,0 +1,5 @@
+// 开服冲榜活动 信息
+message m_act_rank_info_tos {
+optional  int32  id=1[default=0]; //ID
+}
+

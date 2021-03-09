@@ -1,0 +1,99 @@
+{include file="public/head"}
+<body>
+  <div class="x-body">
+    <button class="layui-btn layui-btn-sm "  onclick="questionadd({$id})">添加问题</button>
+    <button onclick="javascript:location.reload()" class="layui-btn layui-btn-sm">刷新</button>
+    <a href="{:url('make')}"><button class="layui-btn layui-btn-sm ">返回列表</button></a>
+    <table class="layui-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>问卷ID</th>
+          <th>问卷题目</th>
+          <th>问卷选项</th>
+          <th>问卷类型</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        {volist name="data" id="vo"}
+        <tr>
+          <td style="width:50px">{$vo.id}</td>
+          <td style="width:50px">{$vo.question_id}</td>
+          <td>{$vo.question_name}</td>
+          <td>{$vo.question_value}</td>
+          <td style="width:60px">
+            {if condition="$vo.question_status==0"}
+            选择题
+            {elseif condition="$vo.question_status==1" /}
+            填空题
+            {else /}
+            多选题
+            {/if}
+          </td>
+          <td style="width:90px">
+            <button class="layui-btn layui-btn-xs"  onclick="questionedit({$vo.id})">编辑</button>
+            <button onclick="delServer(this,{$vo.id})" class="layui-btn layui-btn-xs layui-btn-danger">删除</button>
+          </td>
+        </tr>
+        {/volist}
+      </tbody>
+    </table>
+    <div class="page">
+      {$page}
+    </div>
+  </div>
+</body>
+<script>
+  layui.use(['laydate','form'], function(){
+    var laydate = layui.laydate;
+    //执行一个laydate实例
+    laydate.render({
+      elem: '#time' //指定元素
+    });
+  });
+  function questionadd(id){
+    layer.open({
+      offset:100 +'px', //右下角弹出
+      type: 2,
+      area: [600+'px', 610 +'px'],
+      fix: false, //不固定
+      maxmin: true,
+      shadeClose: true,
+      shade:0.4,
+      title: '添加问卷',
+      content: "/admin/question/questionAdd?id="+id
+    });
+  }
+  function questionedit(id){
+    layer.open({
+      offset:100 +'px', //右下角弹出
+      type: 2,
+      area: [600+'px', 610 +'px'],
+      fix: false, //不固定
+      maxmin: true,
+      shadeClose: true,
+      shade:0.4,
+      title: '添加问卷',
+      content: "/admin/question/questionEdit?id="+id
+    });
+  }
+  function delServer(obj,id){
+    layer.confirm('确认要删除吗？',function(index){
+      //捉到所有被选中的，发异步进行删除
+      $.post("{:url('admin/Question/questionDel')}", {id: id}, function(data, textStatus, xhr) {
+        /*optional stuff to do after success */
+        console.log(data);
+        if(data.code==1){
+          layer.msg(data.msg,{icon:1,time:1000},function(){
+            $(obj).parents('tr').remove();
+            $(".i_count").html(count-1);
+          });
+        }else{
+          layer.msg(data.msg,{icon:2,time:1000});
+        }
+      });
+    });
+  }
+</script>
+{include file="public/foot"}

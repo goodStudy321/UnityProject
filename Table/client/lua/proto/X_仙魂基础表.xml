@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ImmSoulCfg" Key="id" ExportType="Dic" Src="X 仙魂基础表.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "仙魂ID" />
+  <P Name="name" Type="string" ColName="名称" />
+  <P Name="icon" Type="string" ColName= "icon" />
+  <P Name="wearType" Type="number" ColName="属性" />
+  <P Name="onlyType" Type="number" ColName="种类" />
+  <P Name="proType" Type="number" IsList="true" Lsp="," ColName= "类型" />
+  <P Name="quality" Type="number" ColName="品质" />
+  <P Name="getWay" Type="string" ColName="获取途径" />
+  <P Name="des" Type="string" ColName="描述" />
+</Proto>

@@ -1,0 +1,6 @@
+// 同心结信息更新
+message m_marry_knot_update_toc {
+optional  int32  knot_id=1[default=0]; //knot_id
+optional  int32  knot_exp=2[default=0]; //同心结经验
+}
+

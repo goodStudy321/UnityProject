@@ -1,0 +1,58 @@
+{include file='public/head'}
+<div class="layui-field-box">
+  <button class="layui-btn layui-btn-sm " onclick="javascript:location.href='/admin/dataserver/category'"></i>服务器分类管理</button>
+  <button class="layui-btn layui-btn-sm"  onclick="x_admin_show('添加服务器','add.html',600,560)">添加服务器</button>
+  <button onclick="javascript:location.reload()" class="layui-btn layui-btn-sm">刷新</button>
+  <br>
+  <br>
+  <table id="table" lay-filter="test"></table>
+</div>
+{include file='public/foot'}
+
+<script>
+  //表格
+  layui.use('table', function(){
+    var table = layui.table;
+    //第一个实例
+    var tableIns = table.render({
+      elem: '#table'
+      ,url: 'dataserverData' //数据接口
+      ,page: true //开启分页
+      ,cols: [[ //标题栏
+      {align: 'center',field:'index_id', title: '记录ID'}
+      ,{align: 'center',field:'router_id', title: 'Router Id'}
+      ,{align: 'center',field:'server_id', title: 'Server Id'}
+      ,{align: 'center',field:'name', title: '名称'}
+      ,{align: 'center',field:'ip', title: 'IP', width:143}
+      ,{align: 'center',field:'port', title: '端口'}
+      ,{align: 'center',field:'status', title: '状态'}
+      ,{align: 'center',field:'is_new', title: '是否是新的'}
+      ,{align: 'center',field:'is_first_version', title: '是否首发'}
+      ,{align: 'center',field:'add_time', title: '创建时间', width:143}
+      ,{align: 'center',field:'action', title: '操作', width:243}
+      ]]
+    });
+    $("#submit").click(function(){
+      var data = {};
+      $.each($('form').serializeArray(), function(){
+        data[this.name] = this.value;
+      })
+      tableIns.reload({
+        where: data   //设定异步数据接口的额外参数，任意设
+        ,page: {
+          curr: 1 //重新从第 1 页开始
+        }
+      });
+    });
+  });
+  function del(id){
+    if(!confirm('确定删除吗？'))
+      return;
+    $.post('/admin/dataserver/del', {id:id}, function(data){
+      if(data.status.code == 10200){
+        window.location.reload();
+        return;
+      }
+    }, 'json')
+  }
+</script>

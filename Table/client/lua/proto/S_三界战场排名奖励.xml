@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ThrRankRwd" Key="startRank" ExportType="Arr" Src="S 三界战场排名奖励.xls" Sheet="Sheet1">
+  <P Name="startRank" Type="number" ColName= "名次1" />
+  <P Name="endRank" Type="number" ColName= "名次2" />
+  <P Name="drops" Type="K_V" IsList="true" Lsp=";" ColName= "道具奖励" />
+  <P Name="RankIcon" Type="string" ColName= "名次图标" />
+  <P Name="expRate" Type="number"  ColName= "奖励经验倍率" />
+</Proto>

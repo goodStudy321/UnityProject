@@ -1,0 +1,5 @@
+// 限时云购信息3
+message m_act_limitedtime_buy_round_toc {
+optional  int32  stage=1[default=0]; //第几轮
+}
+

@@ -1,0 +1,86 @@
+{include file="public/head"}
+<style type="text/css">
+.vlun-table{
+  table-layout: fixed;
+}
+.vlun-over{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+</style>
+<div class="layui-field-box">
+  <button class="layui-btn layui-btn-sm "  onclick="x_admin_show('添加邮件','mailAdd.html',700,650)"></i>添加邮件</button>
+  <button onclick="javascript:location.reload()" class="layui-btn layui-btn-sm">刷新</button>
+  <table class="layui-table vlun-table">
+    <thead>
+      <tr>
+        <th style="width:50px">ID</th>
+        <th style="width:130px">发送时间</th>
+        <th style="width:100px">标题</th>
+        <th>内容</th>
+        <th style="width:120px">目标玩家</th>
+        <th style="width:60px">邮件类型</th>
+        <th style="width:60px">管理员</th>
+        <th style="width:60px">发送状态</th>
+        <th style="width:70px">装备id</th>
+        <th style="width:60px">装备数量</th>
+        <th style="width:60px">是否绑定</th>
+        <th style="width:30px">操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      {volist name="data" id="vo"}
+      <tr>
+        <td>{$vo.id}</td>
+        <td>{$vo.time|date="Y-m-d H:i:s",###}</td>
+        <td>{$vo.title}</td>
+        <td class="vlun-over" title="{$vo.content}">{$vo.content}</td>
+        <td> {$vo.user} </td>
+        <td> {$vo.type} </td>
+        <td>{$vo.admin_name}</td>
+        <td>{$vo.status}</td>
+        <td>{$vo.prop}</td>
+        <td>{$vo.propnum}</td>
+        <td>{$vo.bind}</td>
+        <td>
+          <!--button class="layui-btn layui-btn-xs" disabled="disabled" onclick="x_admin_show('编辑开服信息','edit.html?id={$vo.id}',500,410)">编辑</button-->
+          <button onclick="delServer(this,{$vo.id})" class="layui-btn layui-btn-xs layui-btn-danger">删除</button>
+        </td>
+      </tr>
+      {/volist}
+    </tbody>
+  </table>
+  <div class="page">
+    {$page}
+  </div>
+</div>
+{include file="public/foot"}
+
+
+<script>
+  layui.use(['laydate','form'], function(){
+    var laydate = layui.laydate;
+    //执行一个laydate实例
+    laydate.render({
+      elem: '#time' //指定元素
+    });
+  });
+  function delServer(obj,id){
+    layer.confirm('确认要删除吗？',function(index){
+      //捉到所有被选中的，发异步进行删除
+      $.post("{:url('admin/Message/del')}", {id: id}, function(data, textStatus, xhr) {
+        /*optional stuff to do after success */
+        console.log(data);
+        if(data.code==1){
+          layer.msg(data.msg,{icon:1,time:1000},function(){
+            $(obj).parents('tr').remove();
+            $(".i_count").html(count-1);
+          });
+        }else{
+          layer.msg(data.msg,{icon:2,time:1000});
+        }
+      });
+    });
+  }
+</script>

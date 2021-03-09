@@ -1,0 +1,6 @@
+// 坐骑幻化返回
+message m_mount_change_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  cur_id=2[default=0]; //当前幻化坐骑id
+}
+

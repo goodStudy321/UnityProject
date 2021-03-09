@@ -1,0 +1,11 @@
+import "p_mining_role.proto";
+// 格子坐标结构
+message p_mining_lattice {
+optional  int32  x=1[default=0]; 
+optional  int32  y=2[default=0]; 
+optional  int32  type_id=3[default=0]; //表id
+optional  int32  surplus_num=4[default=0]; //剩余采集次数
+optional  int32  renovate_time=5[default=0]; //重置时间
+optional  p_mining_role  mining_role=6; //格子里的玩家
+}
+

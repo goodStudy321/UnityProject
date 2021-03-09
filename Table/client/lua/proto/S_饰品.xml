@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Decoration" Key="id" ExportType="Dic" Src="S 饰品.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="fight" Type="number" ColName= "装备评分" />
+  <P Name="rank" Type="number" ColName="品阶" />
+  <P Name="part" Type="number" ColName="部位" />
+  <P Name="autopick" Type="number" Opt="true" ColName="自动拾取" />
+  <P Name="model" Type="string" ColName="模型ID" />
+  <P Name="att" Type="NeedItem" IsList="true" Lsp="|" ColName="属性" />
+  <P Name="scale" Type="number" Opt="true" ColName="缩放" />
+</Proto>

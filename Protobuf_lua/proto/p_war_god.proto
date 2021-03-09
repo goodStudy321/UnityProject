@@ -1,0 +1,8 @@
+import "p_war_god_equip.proto";
+// 战神套装列表
+message p_war_god {
+optional  int32  id=1[default=0]; //战神套装ID
+optional  bool  is_active=2[default=true]; //是否激活
+repeated  p_war_god_equip  equip_list=3; //战神装备
+}
+

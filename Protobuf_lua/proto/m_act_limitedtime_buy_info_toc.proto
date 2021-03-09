@@ -1,0 +1,10 @@
+import "p_limitedtime_buy.proto";
+// 限时云购信息上线推送
+message m_act_limitedtime_buy_info_toc {
+optional  int32  buy_num=1[default=0]; //剩余数量全服
+repeated  p_limitedtime_buy  logs=2; //记录
+repeated  p_limitedtime_buy  big_reward_logs=3; //大奖记录
+optional  int32  stage=4[default=0]; //第几轮
+optional  int32  times=5[default=0]; //购买次数
+}
+

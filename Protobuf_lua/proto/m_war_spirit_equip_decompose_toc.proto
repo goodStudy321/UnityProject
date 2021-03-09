@@ -1,0 +1,6 @@
+// 战灵灵饰分解返回
+message m_war_spirit_equip_decompose_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int64  refine_all_exp=2[default=0]; //最新强化经验值
+}
+

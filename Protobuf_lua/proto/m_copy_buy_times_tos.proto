@@ -1,0 +1,5 @@
+// 购买副本次数
+message m_copy_buy_times_tos {
+optional  int32  map_id=1[default=0]; 
+}
+

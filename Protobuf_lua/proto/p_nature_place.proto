@@ -1,0 +1,9 @@
+import "p_goods.proto";
+// 天机系统孔信息
+message p_nature_place {
+optional  int32  aperture_id=1[default=0]; //孔id
+repeated  p_goods  nature=2; //天机印,没有为空
+optional  int32  type=3[default=0]; //类型,阴和阳
+optional  int32  refine=4[default=0]; //强化等级
+}
+

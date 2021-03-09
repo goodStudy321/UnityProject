@@ -1,0 +1,6 @@
+// 战神碎片碎片激活部位
+message m_war_god_piece_active_tos {
+optional  int32  war_god_id=1[default=0]; //战神套装ID
+optional  int32  equip_id=2[default=0]; //激活部位ID
+}
+

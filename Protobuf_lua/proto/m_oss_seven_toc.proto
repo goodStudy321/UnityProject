@@ -1,0 +1,7 @@
+import "p_kv.proto";
+// oss- 开服第二阶段活动  七天投资   上线 更新推送
+message m_oss_seven_toc {
+optional  int32  open=1[default=0]; //是否投资 1-是 0 -否
+repeated  p_kv  list=2; //未开启为空列表 奖励状态 val: 1-不能领 2-可领 3-已领
+}
+

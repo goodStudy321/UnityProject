@@ -1,0 +1,6 @@
+// 提升天命等级返回
+message m_destiny_up_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  destiny_id=2[default=0]; //天命觉醒ID
+}
+

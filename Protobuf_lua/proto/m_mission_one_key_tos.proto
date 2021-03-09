@@ -1,0 +1,5 @@
+// 一键完成任务
+message m_mission_one_key_tos {
+optional  int32  type=1[default=0]; //什么类型的任务(预留)
+}
+

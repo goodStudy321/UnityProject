@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SpecialItemData" Key="id" ExportType="Dic" Src="Z 装备特殊属性-手镯戒指.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="string" ColName= "道具ID" />
+  <P Name="name" Type="string" ColName="道具名称" />
+  <P Name="hp" Type="number" Opt="true" ColName="生命" />
+  <P Name="atk" Type="number" Opt="true" ColName="攻击" />
+  <P Name="atkP" Type="number" Opt="true" ColName="攻击力百分比吸血" />
+  <P Name="pvpAdd" Type="number" Opt="true" ColName="PVP伤害加成" />
+  <P Name="addskilldam" Type="number" Opt="true" ColName="技能伤害增加" />
+  <P Name="reduceskilldam" Type="number" Opt="true" ColName="技能伤害减少" />
+  <P Name="hpadd" Type="number" Opt="true" ColName="生命加成" />
+  <P Name="atkadd" Type="number" Opt="true" ColName="攻击加成" />
+  <P Name="ampdam" Type="number" Opt="true" ColName="伤害加深" />
+  <P Name="damred" Type="number" Opt="true" ColName="伤害减免" />
+</Proto>

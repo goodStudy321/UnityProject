@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Global="true" Csp="," Name="BuyList">
+  <P Name="index" Type="number" />
+  <P Name="id" Type="number" />
+  <P Name="num" Type="number" />
+  <P Name="type" Type="number" />
+  <P Name="origPrice" Type="number" />
+  <P Name="curPrice" Type="number" />
+  <P Name="discount" Type="number" />
+  <P Name="count" Type="number" />
+</Proto>

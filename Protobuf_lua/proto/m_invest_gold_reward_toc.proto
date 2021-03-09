@@ -1,0 +1,8 @@
+import "p_kv.proto";
+// 投资计划获得奖励返回
+message m_invest_gold_reward_toc {
+optional  int32  err_code=1[default=0]; 
+optional  p_kv  reward=2; //已经领取的奖励 id-等级 val-已经领取的档次
+optional  int32  add_gold=3[default=0]; //获得元宝
+}
+

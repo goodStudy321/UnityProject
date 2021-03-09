@@ -1,0 +1,34 @@
+message SynthetizeInfo [key=id, source="H 合成表.xls", sheet="Sheet1"]				
+{
+	struct needItem[separator=',']
+	{
+		uint32 item_id;		// 物品ID
+		uint32 item_num;	// 物品数量
+	};
+	
+	struct needItems[separator='|']
+	{
+		needItem needItems;
+	};
+	
+	struct newItem[separator=',']
+	{
+		uint32 item_id;		// 物品ID
+		uint8 item_type;	// 物品类型
+		uint16 weight;		// 权重
+	};
+	
+	struct newItems[separator='|']
+	{
+		newItem newItems;	// 合成物品列表
+	};
+	
+	uint32 id			    	[option = "合成ID"];
+	uint8 type					[option = "合成类型"];
+	string info					[option = "描述"];
+	needItems item_list			[option = "合成所需道具ID"];
+	newItems new_item_list		[option = "合成后道具ID"];
+	uint16 base_succ			[option = "合成概率"];
+	uint32 sp_item_id			[option = "增加成功率道具"];
+	uint16 add_secc				[option = "增加概率"];
+};

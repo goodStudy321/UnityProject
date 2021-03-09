@@ -1,0 +1,9 @@
+// 后台任务
+message p_bg_mission {
+optional  int32  id=1[default=0]; //任务id
+optional  string  word=2; //任务描述
+optional  int32  times=3[default=0]; //已完成次数
+optional  int32  all_times=4[default=0]; //全部可完成次数
+optional  int32  jump_type=5[default=0]; //跳转类型
+}
+

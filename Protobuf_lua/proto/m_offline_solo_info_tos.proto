@@ -1,0 +1,4 @@
+// 离线1v1请求信息
+message m_offline_solo_info_tos {
+}
+

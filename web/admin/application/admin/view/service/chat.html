@@ -1,0 +1,137 @@
+{include file='public/head'}
+<style type="text/css">
+.role-info:hover .info{
+  display: inline-grid;
+}
+.info{
+  display: none;
+  position: fixed;
+  width: 140px;
+  min-height: 100px;
+  background: #e6e6e6;
+  border: 2px solid rgb(0, 51, 102);
+  border-radius: 5px;
+  text-align: center;
+  color:#fff;
+}
+.vlun-table{
+  width: 100%;
+  background-color: #fff;
+  color: #666;
+}
+.vlun-table th{
+  background: #e6e6e6;
+}
+.vlun-table td, .vlun-table th{
+  min-height: 20px;
+  line-height: 20px;
+  font-size: 14px;
+  padding: 9px 10px;
+}
+.vlun-table-num{
+  width: 50px;
+  text-align: center;
+  min-height:80px;
+  line-height: 40px;
+}
+.vlun-table-msg{
+  text-align: left;
+  min-height:80px; 
+}
+.vlun-table-msg a{
+  color: black;
+  line-height: 32px;
+  display: block;
+}
+.vlun-table-msg a:hover{
+  font-size:14px;
+}
+.vlun-table-border{
+  border-bottom: 1px solid #e6e6e6;
+}
+.vlun-table-msg h2{
+  color: black;   
+  line-height: 32px;
+  font-weight: bold;
+}
+</style>
+<div class="layui-field-box">
+  <blockquote class="layui-elem-quote">
+    <form class="layui-form" action="{:url('/admin/service/chat')}" method="post" class="vlun-form-btn" style="display: inline;">
+      
+      <div class="layui-inline">
+        <label class="layui-form-label">频道：</label>
+        <div class="layui-input-inline">
+          <select id="chat_type" name="chat_type" style="height: 28px;">
+            <option value="all" {if isset($parm.chat_type) && $parm.chat_type == 'all'} selected{/if}>全部</option>
+            <option value="1" {if isset($parm.chat_type) && $parm.chat_type == '1'} selected{/if}>世界频道</option>
+            <option value="2" {if isset($parm.chat_type) && $parm.chat_type == '2'} selected{/if}>家族频道</option>
+            <option value="3" {if isset($parm.chat_type) && $parm.chat_type == '3'} selected{/if}>队伍频道</option>
+            <option value="4" {if isset($parm.chat_type) && $parm.chat_type == '4'} selected{/if}>私人频道</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="layui-inline">
+        <label class="layui-form-label">创建时间：</label>
+        <div class="layui-input-inline">
+          <input type="text" id="create" autocomplete="off" class="layui-input" name="create" {if isset($parm.create)}value="{$parm.create}"{/if}>
+        </div>
+      </div>
+      
+      <div class="layui-inline">
+        <label class="layui-form-label">角色名：</label>
+        <div class="layui-input-inline">
+          <input type="text" id="role_name" autocomplete="off" class="layui-input" name="role_name" {if isset($parm.role_name)}value="{$parm.role_name}"{/if}>
+        </div>
+      </div>
+
+      <div class="layui-inline">
+        <label class="layui-form-label">角色id：</label>
+        <div class="layui-input-inline">
+          <input type="text" id="role_id" autocomplete="off" class="layui-input" name="role_id" {if isset($parm.role_id)}value="{$parm.role_id}"{/if}>
+        </div>
+      </div>
+      
+      
+      <div class="layui-inline">
+        &nbsp; &nbsp;
+        <div class="layui-input-inline" id="button">
+          <button class="layui-btn layui-btn-sm" id="search">查询</button>
+        </div>
+      </div>
+    </form>
+    <button onclick="javascript:location.href='/admin/service/chat'" class="layui-btn layui-btn-sm" class="vlun-form-btn" style="display: inline;">刷新</button>
+
+  </blockquote>
+  <table class="vlun-table">
+    <tr>
+      <th class="vlun-table-num">序号</th>
+      <th class="vlun-table-msg">聊天内容</th>
+    </tr>
+    {if empty($data)}
+    <tr class="vlun-table-border">
+      <td class="vlun-table-num" colspan="2">暂无数据</td>
+    </tr>
+    {else/}
+    {volist name="data" id="vo"}
+    <tr class="vlun-table-border">
+      <td class="vlun-table-num">{$vo.num}</td>
+      <td class="vlun-table-msg">{$vo.msg}</td>
+    </tr>
+    {/volist}
+    {/if}
+  </table>
+  <div class="page">
+    {$page}
+  </div>
+</div>
+{include file='public/foot'}
+
+
+<script>
+    laydate.render({
+      elem: '#create' //指定元素
+    ,range:true
+    });
+</script>

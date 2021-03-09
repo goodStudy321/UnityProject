@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SuitStarData" Key="id" ExportType="Dic" Src="T 套装升星表.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "部位id" />
+  <P Name="part" Type="number" ColName= "部位" />
+  <P Name="partName" Type="string" ColName= "部位名字" />
+  <P Name="suitId" Type="number" ColName= "所属套装id" />
+  <P Name="rank" Type="number" ColName= "阶数" />
+  <P Name="needList" Type="number" IsList="true" Lsp="," ColName="消耗材料" />
+  <P Name="attList" Type="NeedItem" IsList="true" Lsp=";" ColName="属性" />
+  <P Name="bType" Type="number" ColName="大类" />
+  <P Name="sType" Type="number" ColName="小类" />
+  <P Name="icon" Type="string" ColName="图标名称" />
+  <P Name="lastId" Type="number" ColName="上一阶id" />
+  <P Name="nextId" Type="number" ColName="下一阶id" />
+</Proto>

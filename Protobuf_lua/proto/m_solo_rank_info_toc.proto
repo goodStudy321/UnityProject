@@ -1,0 +1,7 @@
+import "p_solo_rank.proto";
+// 1v1排行
+message m_solo_rank_info_toc {
+repeated  p_solo_rank  ranks=1; //1v1前50名排行
+optional  p_solo_rank  my_rank=2; //个人排名
+}
+

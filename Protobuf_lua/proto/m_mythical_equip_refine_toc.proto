@@ -1,0 +1,9 @@
+import "p_mythical_equip.proto";
+// 神兽装备强化返回
+message m_mythical_equip_refine_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  soul_id=2[default=0]; //神兽ID
+optional  p_mythical_equip  equip=3; //装备返回
+optional  bool  is_double=4[default=true]; //是否勾选双倍强化
+}
+

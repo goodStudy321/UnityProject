@@ -1,0 +1,5 @@
+// 开服冲榜排行榜信息
+message m_act_rank_rank_tos {
+optional  int32  id=1[default=0]; //ID
+}
+

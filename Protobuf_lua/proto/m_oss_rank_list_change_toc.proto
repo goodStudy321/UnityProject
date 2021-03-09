@@ -1,0 +1,7 @@
+import "p_open_act_rank.proto";
+// oss- 开服第二阶段活动     排行榜数据变化
+message m_oss_rank_list_change_toc {
+repeated  p_open_act_rank  rank_list=1; //排行榜
+optional  int32  type=2[default=0]; //排行类型  法宝战力 - 10013，翅膀战力 - 10014，图鉴战力 - 10012 
+}
+

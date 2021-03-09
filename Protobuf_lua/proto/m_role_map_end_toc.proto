@@ -1,0 +1,6 @@
+// 地图倒计时
+message m_role_map_end_toc {
+optional  int32  map_id=1[default=0]; //护送列表
+optional  int32  count_down=2[default=0]; //倒计时
+}
+

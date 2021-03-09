@@ -1,0 +1,5 @@
+// 天机系统物品分解
+message m_role_nature_goods_refine_toc {
+optional  int32  err_code=1[default=0]; 
+}
+

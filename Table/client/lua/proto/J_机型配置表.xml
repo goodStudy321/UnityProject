@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MobileInfo" Key="id" ExportType="Dic" Src="J 机型配置表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "索引ID" />
+  <P Name="motype" Type="string" ColName="机型" />
+  <P Name="ram" Type="number" ColName="物理内存（M）" />
+  <P Name="quility" Type="number" ColName="配置" />
+</Proto>

@@ -1,0 +1,6 @@
+// 图鉴材料分解
+message m_role_handbook_resolve_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  get_essence=2[default=0]; //获得精华
+}
+

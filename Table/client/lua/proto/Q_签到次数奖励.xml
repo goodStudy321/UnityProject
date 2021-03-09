@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SignCountCfg" Key="id" ExportType="Arr" Src="Q 签到次数奖励.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "次数" />
+  <P Name="award" Type="number" IsList="true" Lsp="," ColName= "奖励" />
+</Proto>

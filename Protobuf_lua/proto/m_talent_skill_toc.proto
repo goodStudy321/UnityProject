@@ -1,0 +1,7 @@
+// 升级天赋技能返回
+message m_talent_skill_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  talent_points=2[default=0]; //当前天赋点数
+optional  int32  learn_skill=3[default=0]; //升级技能
+}
+

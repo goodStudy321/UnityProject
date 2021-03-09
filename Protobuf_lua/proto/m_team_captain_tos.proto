@@ -1,0 +1,5 @@
+// 提升队长
+message m_team_captain_tos {
+optional  int64  role_id=1[default=0]; //提升为队长的玩家
+}
+

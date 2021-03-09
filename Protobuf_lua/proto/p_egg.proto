@@ -1,0 +1,10 @@
+// 共用表示道具结构
+message p_egg {
+optional  int32  id=1[default=0]; //ID -  位置1-8
+optional  int32  egg_id=2[default=0]; //与表序号ID对应
+optional  int32  egg_type=3[default=0]; //蛋类型
+optional  int32  type_id=4[default=0]; //道具ID
+optional  int32  num=5[default=0]; //数量
+optional  int32  is_bind=6[default=0]; //1是绑定，0是不绑定
+}
+

@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="CharmRankData" Key="id" ExportType="Arr" Src="M 魅力之王排行奖励配置表.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "序号" />
+  <P Name="giftList" Type="NNS" IsList="true" Lsp=";" ColName="奖励" />
+  <P Name="rank" Type="number" IsList="true" Lsp="," ColName= "排名" />
+  <P Name="cIndex" Type="number" ColName="套序号" />
+</Proto>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="RebirthFTemp" Key="index" Src="Z 四转配置.xls" ExportType="Arr" Sheet="Sheet1">
+  <P Name="index" Type="number" ColName= "激活顺序" />
+  <P Name="name" Type="string" ColName="天命名称" />
+  <P Name="Items" Type="K_V" IsList="true" Lsp=";"  ColName="道具消耗" />
+  <P Name="exp" Type="number" ColName="经验消耗" />
+  <P Name="get" Type="K_V" IsList="true" Lsp=";" ColName="点亮获得属性" />
+</Proto>

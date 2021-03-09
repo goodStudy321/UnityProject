@@ -1,0 +1,8 @@
+// 限时云购结束大奖记录
+message p_limitedtime_buy {
+optional  int32  reward=1[default=0]; //道具ID
+optional  int32  type=2[default=0]; //1-大奖 2-2挡
+optional  string  name=3; //获奖名
+optional  int32  time=4[default=0]; //获奖时间
+}
+

@@ -1,0 +1,6 @@
+// 战灵装备穿戴
+message m_war_spirit_equip_load_tos {
+optional  int32  war_spirit_id=1[default=0]; //战灵id
+optional  int64  equip_id=2[default=0]; //穿戴哪一件装备
+}
+

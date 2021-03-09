@@ -1,0 +1,6 @@
+import "p_demon_boss_role.proto";
+// 魔域boss占领玩家的信息
+message m_demon_boss_occupy_toc {
+optional  p_demon_boss_role  occupy_role=1; //占领玩家信息
+}
+

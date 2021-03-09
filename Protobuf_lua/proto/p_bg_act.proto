@@ -1,0 +1,18 @@
+import "p_bg_act_entry.proto";
+// 后台活动的p_bg_act结构
+message p_bg_act {
+optional  int32  id=1[default=0]; //活动ID
+optional  int32  sort=2[default=0]; //显示排序
+optional  int32  template=3[default=0]; //模板ID  前端UI
+optional  int32  icon=4[default=0]; //图标
+optional  string  icon_name=5; //图标名
+optional  int32  start_time=6[default=0]; //活动开始时间   每天开启秒数
+optional  int32  end_time=7[default=0]; //活动结束时间   每天结束秒数 0为当天不结束
+optional  int32  start_date=8[default=0]; //开始日期
+optional  int32  end_date=9[default=0]; //结束日期
+optional  string  title=10; //活动名
+optional  string  explain=11; //活动说明
+repeated  p_bg_act_entry  entry_list=12; //活动条目
+optional  string  bg_img=13; //背景图地址
+}
+

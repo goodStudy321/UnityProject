@@ -1,0 +1,7 @@
+// 仙魂的p结构
+message p_immortal_soul {
+optional  int32  immortal_soul_id=1[default=0]; //仙魂唯一ID
+optional  int32  level_id=2[default=0]; //仙魂等级ID
+optional  int32  index=3[default=0]; //位置信息 装备列表里为装备的位置，背包列表为背包位置
+}
+

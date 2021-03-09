@@ -1,0 +1,8 @@
+message SkillBase [key=baseid, source="J 技能等级配置表.xls", sheet="Sheet2"]
+{	
+	uint32 baseid					[option = "技能ID"];
+	string name					    [option = "技能名称"];
+	string name_suffix			    [option = "技能描述"];
+	uint16 lv_max			        [option = "最大等级"];
+	string pathicon				    [option = "图标路径"];
+};

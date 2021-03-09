@@ -1,0 +1,7 @@
+// 从背包A - 背包B
+message m_bag_depot_tos {
+optional  int32  from_bag_id=1[default=0]; //从哪个背包的物品
+optional  int32  to_bag_id=2[default=0]; //到仓库的id
+optional  int32  id=3[default=0]; //物品ID
+}
+

@@ -1,0 +1,30 @@
+<style>
+  .layui-form .layui-form-label{
+    width:150px;
+  }
+</style>
+<div class="layui-field-box">
+  <button class="layui-btn layui-btn-primary" onclick="javascript:getExcel(1)">机型首次打开</button>
+  <button class="layui-btn layui-btn-primary" onclick="javascript:getExcel(2)">机型注册</button>
+  <button class="layui-btn layui-btn-primary" onclick="javascript:getExcel(3)">账号注册</button>
+  <button class="layui-btn layui-btn-primary" onclick="javascript:getExcel(4)">账号登录登出</button>
+  <button class="layui-btn layui-btn-primary" onclick="javascript:getExcel(5)">区账号注册</button>
+  <button class="layui-btn layui-btn-primary" onclick="javascript:getExcel(6)">区账号登录登出</button>
+  <button class="layui-btn layui-btn-primary" onclick="javascript:getExcel(7)">客户端异常</button>
+  <button class="layui-btn layui-btn-primary" onclick="javascript:getExcel(8)">补丁相关</button>
+  <button class="layui-btn layui-btn-primary" onclick="javascript:getExcel(9)">角色注册</button>
+</div>
+
+<script>
+  var layer = layui.layer;
+  var form = layui.form;
+  var getExcel = function(type){
+    if(type <= 0)
+      return;
+
+    layer.confirm('可能耗时长，你确定导出吗？', function(index){
+      layer.close(index);
+      window.location.href='/admin/other/buried?type='+type;
+    });
+  }
+</script>

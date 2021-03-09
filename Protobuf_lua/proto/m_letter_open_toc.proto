@@ -1,0 +1,6 @@
+// 返回打开信件的信息
+message m_letter_open_toc {
+optional  int32  err_code=1[default=0]; //处理信件打开
+optional  int32  letter_id=2[default=0]; 
+}
+

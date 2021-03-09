@@ -1,0 +1,10 @@
+// 祈福信息
+message m_bless_info_toc {
+optional  int32  today_times=1[default=0]; //今日次数
+optional  int32  all_times=2[default=0]; //总次数
+optional  int32  power_add=3[default=0]; //战力加成  表ID
+optional  int32  war_spirit_add=4[default=0]; //战灵加成  表ID
+optional  int64  exp=5[default=0]; //当前经验收益  每5秒 
+optional  int32  add_times=6[default=0]; //额外增加的次数
+}
+

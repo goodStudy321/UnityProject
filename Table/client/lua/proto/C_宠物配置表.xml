@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PetStepTemp" Key="id" ExportType="Arr" Src="C 宠物配置表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "宠物ID" />
+  <P Name="type" Type="number" ColName= "宠物类型" />
+  <P Name="step" Type="number" ColName= "宠物等阶" />
+  <P Name="condition" Type="number" Opt="true" IsList="true" Lsp="," ColName= "解锁条件" />
+  <P Name="costSoul" Type="number" ColName= "进阶消耗精华" />
+  <P Name="hp" Type="number" ColName= "生命" />
+  <P Name="atk" Type="number" ColName="攻击" />
+  <P Name="def" Type="number" ColName="防御" />
+  <P Name="arm" Type="number" ColName= "破甲" />
+  <P Name="skills" Type="number" Opt="true" IsList="true" Lsp="," ColName= "拥有的技能列表" />
+  <P Name="open" Type="number" Opt="true" ColName= "宠物开启技能" />
+</Proto>

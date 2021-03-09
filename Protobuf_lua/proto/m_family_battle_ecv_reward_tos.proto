@@ -1,0 +1,5 @@
+// 分配终结连胜奖励
+message m_family_battle_ecv_reward_tos {
+optional  int64  role_id=1[default=0]; //帮员奖励
+}
+

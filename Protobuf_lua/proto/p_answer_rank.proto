@@ -1,0 +1,8 @@
+// 答题排行榜的p_结构
+message p_answer_rank {
+optional  int32  rank=1[default=0]; //排行
+optional  int64  role_id=2[default=0]; //role_id
+optional  string  role_name=3; //角色名字
+optional  int32  score=4[default=0]; //分数
+}
+

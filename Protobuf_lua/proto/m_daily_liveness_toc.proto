@@ -1,0 +1,7 @@
+import "p_kv.proto";
+// 活跃度完成状态
+message m_daily_liveness_toc {
+optional  int32  liveness=1[default=0]; //当前活跃度
+repeated  p_kv  list=2; //活跃度完成状态,key活跃类型,value完成次数
+}
+

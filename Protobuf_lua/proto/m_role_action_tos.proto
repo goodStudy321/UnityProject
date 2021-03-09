@@ -1,0 +1,5 @@
+// 玩家客户端行为
+message m_role_action_tos {
+optional  int32  action=1[default=0]; //1-按渡劫指引点开好友 2-查看仙侣副本 3-许愿池提示取消
+}
+

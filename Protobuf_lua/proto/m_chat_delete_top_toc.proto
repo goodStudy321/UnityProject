@@ -1,0 +1,4 @@
+// 删除置顶聊天
+message m_chat_delete_top_toc {
+}
+

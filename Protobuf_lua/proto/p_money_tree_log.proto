@@ -1,0 +1,8 @@
+// 摇钱树日志
+message p_money_tree_log {
+optional  int32  type=1[default=0]; // 1- 全服  2 - 个人
+optional  string  name=2; // 人名
+optional  int32  rate=3[default=0]; //暴击倍率
+optional  int64  money=4[default=0]; //金钱数量
+}
+

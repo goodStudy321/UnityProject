@@ -1,0 +1,7 @@
+import "p_chapter.proto";
+// 章节奖励领取返回
+message m_chapter_reward_toc {
+optional  int32  err_code=1[default=0]; 
+optional  p_chapter  chapter=2; 
+}
+

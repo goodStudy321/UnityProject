@@ -1,0 +1,5 @@
+// 夺回劫镖
+message m_role_escort_rob_back_tos {
+optional  int64  id=1[default=0]; //被帮助   Role  ID
+}
+

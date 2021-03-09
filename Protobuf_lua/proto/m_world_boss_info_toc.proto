@@ -1,0 +1,7 @@
+import "p_world_boss.proto";
+// 
+message m_world_boss_info_toc {
+repeated  p_world_boss  boss_list=1; //世界boss列表
+optional  int32  role_num=2[default=0]; //当前层数人数
+}
+

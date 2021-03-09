@@ -1,0 +1,104 @@
+{include file="public/head"}
+<div class="layui-field-box">
+<button class="layui-btn layui-btn-sm " onclick="x_admin_show('添加','serverAdd.html',600,600)"></i>添加服务器配置</button>
+<button onclick="javascript:location.reload()" class="layui-btn layui-btn-sm">刷新</button>
+<table class="layui-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>开服时间</th>
+      <th>区名</th>
+      <th>代理商ID</th>
+      <th>服务器ID</th>
+      <th>代理商对应平台</th>
+      <th>ip解析</th>
+      <th>添加人/时间</th>
+      <th>是否审核/审核人/时间</th>
+      <th>测试状态/测试人/测试时间</th>
+      <th>操作</th>
+    </thead>
+    <tbody>
+      {volist name="data" id="vo"}
+      <tr>
+        <td>{$vo.id}</td>
+        <td>{$vo.server_time|date="Y-m-d H:i:s",###} 	<button class="layui-btn layui-btn-xs" onclick="x_admin_show('编辑开服时间','timeedit.html?id={$vo.id}',500,400)">编辑开服时间</button>
+        </td>
+        <td>{$vo.server_name}</td>
+        <td>{$vo.agent_id}</td>
+        <td>{$vo.server_id}</td>
+        <td>{$vo.facilitator}</td>
+        <td>{$vo.ip}</td>
+        <td>{$vo.add_name}/{$vo.time|date="Y-m-d H:i:s",###}</td>
+        <td>
+          {if condition="$vo.is_verify == 0 "}
+          <b style="color: #eb3a3f">未审核</b>
+          {else /}
+          {$vo.verify_name}/{$vo.verify_time|date="Y-m-d H:i:s",###}
+          {/if}
+        </td>
+        <td>
+          {if condition="empty($vo.test_status)"}
+          --/--
+          {else /}
+          {$vo.test_status}
+          {/if}
+        </td>
+        <td>
+          <button class="layui-btn layui-btn-xs" onclick="x_admin_show('编辑开服信息','edit.html?id={$vo.id}',600,600)">编辑</button>
+          <button class="layui-btn layui-btn-xs" onclick="openServer(this,{$vo.server_data_id})">确认开服</button>
+          <button onclick="delServer(this,{$vo.id})" class="layui-btn layui-btn-xs layui-btn-danger">删除</button>
+        </td>
+      </tr>
+      {/volist}
+    </tbody>
+  </table>
+  <div class="page">
+    {$page}
+  </div>
+</div>
+{include file="public/foot"}
+
+<script>
+  layui.use(['laydate','form'], function(){
+    var laydate = layui.laydate;
+    //执行一个laydate实例
+    laydate.render({
+      elem: '#time' //指定元素
+    });
+  });
+  function delServer(obj,id){
+    layer.confirm('确认要删除吗？',function(index){
+      //捉到所有被选中的，发异步进行删除
+      $.post("{:url('admin/Server/delServer')}", {id: id}, function(data, textStatus, xhr) {
+        /*optional stuff to do after success */
+        //console.log(data);
+        if(data.code==1){
+          layer.msg(data.msg,{icon:1,time:1000},function(){
+            $(obj).parents('tr').remove();
+            $(".i_count").html(count-1);
+          });
+        }else{
+          layer.msg(data.msg,{icon:2,time:1000});
+        }
+      });
+    });
+  }
+  //运行文件
+  function openServer(obj,id){
+    layer.confirm('确认开服',function(index){
+      //捉到所有被选中的，发异步进行删除
+      $.post("{:url('admin/Server/openServer')}", {id: id}, function(data, textStatus, xhr) {
+        /*optional stuff to do after success */
+        console.log(data);
+        if(data.code==1){
+          layer.msg(data.msg,{icon:1,time:1000},function(){
+            $(obj).parents('tr').remove();
+            $(".i_count").html(count-1);
+          });
+        }else{
+          layer.msg(data.msg,{icon:2,time:1000});
+        }
+      });
+    });
+  }
+</script>

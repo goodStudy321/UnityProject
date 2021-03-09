@@ -1,0 +1,6 @@
+// 每分钟更新的幻力勾玉领取的
+message m_copy_min_update_toc {
+optional  int32  illusion=1[default=0]; //幻力
+optional  int32  nat_intensify=2[default=0]; //天机勾玉可以领取的数量
+}
+

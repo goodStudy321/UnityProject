@@ -1,0 +1,5 @@
+// 称号id激活更新
+message m_marry_title_update_toc {
+repeated  int32  marry_title_ids=1; //称号id激活
+}
+

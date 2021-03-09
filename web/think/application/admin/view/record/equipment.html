@@ -1,0 +1,153 @@
+{include file='public/head'}
+<div class="layui-field-box">
+  <div class="layui-tab layui-tab-brief" lay-filter="equipment">
+    <ul class="layui-tab-title">
+      <li data-type="1" class="layui-this">准备强化</li>
+      <li data-type="2">宝石镶嵌</li>
+    </ul>
+    <br>
+    <blockquote class="layui-elem-quote">
+      <form class="layui-form" onsubmit="return false">
+        <div class="layui-inline">
+          <label class="layui-form-label" style="width:50px">角色ID:</label>
+          <div class="layui-input-inline" style="width:150px">
+            <input type="text" name="role_id" id="role_id" class="layui-input">
+          </div>
+        </div>
+        <div class="layui-inline">
+          <label class="layui-form-label" style="width:55px">时间:</label>
+          <div class="layui-input-inline" style="width:150px">
+            <input type="text" name="time" id="time"  autocomplete="off" class="layui-input">
+          </div>
+        </div>
+        <div class="layui-inline">
+          <div class="layui-input-inline">
+            <button class="layui-btn layui-btn-sm" type="submit" lay-submit lay-filter="search">查询</button>
+            <button onclick="javascript:location.reload()" class="layui-btn layui-btn-sm">刷新</button>
+          </div>
+        </div>
+      </form>
+    </blockquote>
+    <div class="layui-tab-content">
+      <div class="layui-tab-item layui-show">
+          <table id="table1"></table>
+      </div>
+      <div class="layui-tab-item">
+          <table id="table2"></table>
+      </div>
+    </div>
+  </div>
+</div>
+{include file='public/foot'}
+
+<script>
+  $(function(){
+    layui.use(['element', 'laydate', 'form'], function(){
+      var element = layui.element;
+      var form    = layui.form;
+      var laydate = layui.laydate;
+      var tableIns1 = tableIns2 = '';
+      var nowType = '';
+
+      laydate.render({
+        elem: '#time'
+        ,range: true
+      });
+
+      var onTable1 = function(type){
+        layui.use('table', function(){
+          var table = layui.table;
+          tableIns1 = table.render({
+            elem: '#table'+type
+            ,where:{type:type}
+            ,url: 'equipment'
+            ,page: true
+            ,cols: [[
+              {align: 'center',field:'id', title: '记录ID',width:180}
+              ,{align: 'center',field:'time', title: '时间'}
+              ,{align: 'center',field:'agent_id', title: '代理商ID'}
+              ,{align: 'center',field:'server_id', title: '区服ID'}
+              ,{align: 'center',field:'role_name', title: '角色名称'}
+              ,{align: 'center',field:'equip', title: '装备名'}
+              ,{align: 'center',field:'refine_level', title: '强化等级'}
+              ,{align: 'center',field:'new_mastery', title: '熟练度'}
+              ,{align: 'center',field:'consume_silver', title: '消耗银两'}
+              ,{align: 'center',field:'channel_name', title: '渠道'}
+              ,{align: 'center',field:'game_channel_name', title: '包渠道'}
+            ]]
+          });
+        });
+      }
+
+      var onTable2 = function(type){
+        layui.use('table', function(){
+          var table = layui.table;
+          tableIns2 = table.render({
+            elem: '#table'+type
+            ,where:{type:type}
+            ,url: 'equipment'
+            ,page: true
+            ,cols: [[
+              {align: 'center',field:'id', title: '记录ID',width:180}
+              ,{align: 'center',field:'time', title: '时间'}
+              ,{align: 'center',field:'agent_id', title: '代理商ID'}
+              ,{align: 'center',field:'server_id', title: '区服ID'}
+              ,{align: 'center',field:'role_name', title: '角色名称'}
+              ,{align: 'center',field:'equip', title: '装备名'}
+              ,{align: 'center',field:'action_type', title: '行为'}
+              ,{align: 'center',field:'stone_index', title: '部位'}
+              ,{align: 'center',field:'stone', title: '灵石'}
+              ,{align: 'center',field:'channel_name', title: '渠道'}
+              ,{align: 'center',field:'game_channel_name', title: '包渠道'}
+            ]]
+          });
+        });
+      }
+
+      //初始化
+      nowType = 1;
+      onTable1(1);
+
+      //监听切换
+      element.on('tab(equipment)', function(data){
+        var type = $(this).data('type');
+        var html = $.trim($('#table'+type).next().html());
+
+        $('#time, #role_id').val('');
+        nowType = type;
+
+        if(html != '')
+          return ;
+
+        if(type == 1){
+          onTable1(1);
+          return ;
+        }
+
+        if(type == 2){
+          onTable2(2);
+          return ;
+        }
+
+      })
+
+      form.on('submit(search)', function(data){
+        var data = {};
+        $.each($('form').serializeArray(), function(){
+          data[this.name] = this.value;
+        })
+        data.type = nowType;
+
+        var tableIns = nowType == 2 ? tableIns2 : tableIns1;
+        tableIns.reload({
+          where: data
+          ,page: {
+            curr: 1 //重新从第 1 页开始
+          }
+        });
+      })
+
+    })
+  })
+
+</script>

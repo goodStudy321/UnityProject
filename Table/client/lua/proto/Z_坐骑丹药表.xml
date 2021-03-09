@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MountQualCfg" IgnoreKey="true" Key="id" Src="Z 坐骑丹药表.xls" ExportType="Arr" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "道具ID" />
+  <P Name="props" Type="K_V" IsList="true" Lsp="|" ColName="属性" />
+  <P Name="useMax" Type="K_V" IsList="true" Lsp="|" ColName="最大可使用数量" />
+</Proto>

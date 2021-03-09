@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="CloseExpCfg" Key="id" ExportType="Dic" Src="B 闭关经验加成.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="type" Type="number" ColName="类型" />
+  <P Name="val" Type="number" ColName="值" />
+  <P Name="add" Type="number" ColName="加成" />
+</Proto>

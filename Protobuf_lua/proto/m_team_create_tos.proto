@@ -1,0 +1,4 @@
+// 创建队伍
+message m_team_create_tos {
+}
+

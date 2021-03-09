@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SuccessTypeCfg" Key="id" ExportType="Arr" Src="C 成就类型.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "成就ID" />
+  <P Name="pType" Type="string" ColName="成就母类型" />
+  <P Name="cType" Type="K_S" IsList="true" Lsp=";" ColName= "成就子类型" />
+</Proto>

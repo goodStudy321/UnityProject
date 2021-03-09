@@ -1,0 +1,7 @@
+// 周卡奖励
+message m_role_week_card_reward_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  id=2[default=0]; //周卡ID
+optional  int32  day=3[default=0]; //天
+}
+

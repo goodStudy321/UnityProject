@@ -1,0 +1,7 @@
+// 套装系统
+message p_suit {
+optional  int32  type=1[default=0]; //大类
+optional  int32  subtype=2[default=0]; //小类
+repeated  int32  place=3; //部位ID列表
+}
+

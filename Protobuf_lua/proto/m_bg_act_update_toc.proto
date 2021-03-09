@@ -1,0 +1,6 @@
+import "p_bg_act.proto";
+// 活动信息推送
+message m_bg_act_update_toc {
+repeated  p_bg_act  act_list=1; //活动信息推送
+}
+

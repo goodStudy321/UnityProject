@@ -1,0 +1,96 @@
+{include file='public/head'}
+<div class="layui-tab">
+  <div class="x-body">
+    <blockquote class="layui-elem-quote">
+      <form class="layui-form" action="" lay-filter="filterForm">
+        <div class="layui-form-item">
+          <div class="layui-inline">
+            <label class="layui-form-label">类型：</label>
+            <div class="layui-input-inline">
+              <select name="feedback_type">
+                <option value="all" selected>全部类型</option>
+                <option value="1" {if (isset($selected_filter.feedback_type) && $selected_filter.feedback_type == 1)} selected{/if}>建议</option>
+                <option value="2" {if (isset($selected_filter.feedback_type) && $selected_filter.feedback_type == 2)} selected{/if}>bug提交</option>
+              </select>
+            </div>
+          </div>
+          <div class="layui-inline">
+            <label class="layui-form-label">状态：</label>
+            <div class="layui-input-inline">
+              <select name="status">
+                <option value="all" selected>全部状态</option>
+                <option value="2" {if (isset($selected_filter.status) && $selected_filter.status == 2)} selected{/if}>已回复</option>
+                <option value="1" {if (isset($selected_filter.status) && $selected_filter.status == 1)} selected{/if}>未回复</option>
+              </select>
+            </div>
+          </div>
+          <div class="layui-inline">
+            <label class="layui-form-label">角色名：</label>
+            <div class="layui-input-inline">
+              <input type="text" name="role_name" placeholder="请输入角色名"  class="layui-input" value="{$selected_filter.role_name ? $selected_filter.role_name : ''}">
+            </div>
+          </div>
+          <div class="layui-inline">
+            <label class="layui-form-label">账号：</label>
+            <div class="layui-input-inline">
+              <input type="text" name="account_name" placeholder="请输入账号" class="layui-input" value="{$selected_filter.account_name ? $selected_filter.account_name : ''}">
+            </div>
+          </div>
+          <div class="layui-inline">
+            <label class="layui-form-label">回复人：</label>
+            <div class="layui-input-inline">
+              <input type="text" name="back_name" placeholder="请输入回复人"  class="layui-input" value="{$selected_filter.back_name ? $selected_filter.back_name : ''}">
+            </div>
+          </div>
+          <div class="layui-inline">
+            <label class="layui-form-label">反馈时间：</label>
+            <div class="layui-input-inline">
+              <input type="text" id="time" name="time" class="layui-input" value="{$selected_filter.time ? $selected_filter.time : ''}" autocomplete="off">
+            </div>
+          </div>
+        </div>
+        {include file='public/filter'}
+      </form>
+    </blockquote>
+    <table id="table" lay-filter="test"></table>
+  </div>
+</div>
+{include file='public/foot'}
+
+<script type="text/html" id="edit">
+  {{#  if(d.status == '未回复'){ }}
+  <!-- <button class="layui-btn layui-btn-xs" onclick="x_admin_show('回复内容','feedback_content.html?id={{d.id}}',500,250)">回复</button> -->
+  {{#  } else { }}
+  已回复
+  {{#  } }}
+</script>
+<script>
+  layui.use(['laydate','form'], function(){
+    laydate.render({
+      elem: '#time'
+    });
+
+  });
+  //表格
+  layui.use('table', function(){
+    var tableIns = table.render({
+      elem: '#table'
+      ,url: 'feedback?{$where}'
+      ,page: true
+      ,cols: [[
+      {field: 'id', title: '记录id'}
+      ,{field: 'feedback_type', title: '类型'}
+      ,{field: 'status', title: '状态'}
+      ,{field: 'role_name', title: '角色名'}
+      ,{field: 'account_name', title: '账号'}
+      ,{field: 'title', title: '标题'}
+      ,{field: 'content', title: '内容'}
+      ,{field: 'time', title: '反馈时间', width:150}
+      ,{field: 'back_content', title: '回复内容'}
+      ,{field: 'back_name', title: '回复人'}
+      ,{field: 'back_time', title: '回复时间'}
+      ,{field: 'edit', title: '操作', templet: '#edit'}
+      ]]
+    });
+  });
+</script>

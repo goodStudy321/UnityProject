@@ -1,0 +1,5 @@
+// 充值卡碎片合成
+message m_recharge_card_fragment_compose_tos {
+optional  int32  type_id=1[default=0]; //道具id
+}
+

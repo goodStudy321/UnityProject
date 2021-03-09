@@ -1,0 +1,8 @@
+import "p_kv.proto";
+// 招财猫抽奖
+message m_luckycat_lottery_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  rate=2[default=0]; //倍数
+repeated  p_kv  gold_list=3; //key:元宝id  value:元宝数量
+}
+

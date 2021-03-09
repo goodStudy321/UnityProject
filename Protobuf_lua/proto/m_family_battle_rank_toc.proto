@@ -1,0 +1,7 @@
+import "p_family_battle_rank.proto";
+// 结算
+message m_family_battle_rank_toc {
+repeated  p_family_battle_rank  list=1; //结算排行 
+optional  int32  winner=2[default=0]; //胜利方阵营
+}
+

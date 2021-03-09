@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ProposeCfg" ExportType="Arr" Key="id" Src="X 仙侣系统-求亲.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "档次" />
+  <P Name="goldType" Type="number" ColName= "花费元宝类型" />
+  <P Name="goldCount" Type="number" ColName= "元宝数" />
+  <P Name="titleId" Type="number" ColName= "称号id" />
+  <P Name="feastCount" Type="number" ColName= "婚礼次数" />
+  <P Name="award" Type="K_V" IsList="true" Lsp=";" ColName= "道具奖励" />
+  <P Name="friendly" Type="number" ColName= "亲密度" />
+</Proto>

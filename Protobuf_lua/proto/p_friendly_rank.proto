@@ -1,0 +1,8 @@
+// 三生三世活动亲密度排行榜的p结构
+message p_friendly_rank {
+optional  int32  rank=1[default=0]; //排名
+optional  string  name_man=2; //仙侣男
+optional  string  name_woman=3; //仙侣女
+optional  int32  friendly=4[default=0]; //亲密度
+}
+

@@ -1,0 +1,5 @@
+// boss悬赏领取
+message m_boss_reward_get_toc {
+optional  int32  err_code=1[default=0]; //错误码
+}
+

@@ -1,0 +1,6 @@
+// 道庭技能信息
+message m_family_skill_toc {
+optional  int32  err_code=1[default=0]; 
+repeated  int32  skill_list=2; //道庭技能列表
+}
+

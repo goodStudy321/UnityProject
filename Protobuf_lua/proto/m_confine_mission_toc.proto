@@ -1,0 +1,8 @@
+import "p_confine_mission.proto";
+// 境界任务更新
+message m_confine_mission_toc {
+repeated  p_confine_mission  add_mission=1; //新增任务
+repeated  p_confine_mission  update_mission=2; //更新任务
+repeated  int32  del_mission=3; //完成任务
+}
+

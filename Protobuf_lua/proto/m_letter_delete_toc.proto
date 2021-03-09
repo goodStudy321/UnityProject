@@ -1,0 +1,7 @@
+// 返回信件删除的结果
+message m_letter_delete_toc {
+optional  int32  err_code=1[default=0]; //信件删除是否成功
+optional  int32  op_type=2[default=0]; 
+repeated  int32  id_list=3; //被删除的信件id列表
+}
+

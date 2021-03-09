@@ -1,0 +1,16 @@
+import "p_bg_act.proto";
+import "p_item_i.proto";
+// 许愿池
+message m_bg_trevi_fountain_toc {
+optional  p_bg_act  info=1; //活动信息
+optional  int32  bless=2[default=0]; //祝福值
+optional  int32  consume_item=3[default=0]; //优先消耗道具
+optional  int32  unit_price=4[default=0]; //单价        
+optional  int32  full_price=5[default=0]; //10连抽价钱  按顺序显示
+repeated  p_item_i  precious_reward=6; //珍贵物  按顺序显示
+repeated  p_item_i  common_reward=7; //普通奖励 按顺序显示
+optional  int32  integral=8[default=0]; //积分
+optional  bool  precious_exist=9[default=true]; //大奖是否存在
+optional  bool  notice=10[default=true]; //是否提醒大奖
+}
+

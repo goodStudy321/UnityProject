@@ -1,0 +1,13 @@
+// 上下线提示
+message m_bless_reward_online_toc {
+optional  int64  exp=1[default=0]; //当前经验收益
+optional  int32  time=2[default=0]; //秒
+optional  int32  old_level=3[default=0]; //原等级
+optional  int32  now_level=4[default=0]; //现等级
+optional  int32  illusion=5[default=0]; //幻力
+optional  int32  nat_intensify=6[default=0]; //天机勾玉可以领取的数量
+optional  int32  mining_bind_gold=7[default=0]; //迷境可取绑元
+optional  int32  mining_bind_copper=8[default=0]; //迷境可取铜钱
+optional  int32  family_box=9[default=0]; //新增宝箱数
+}
+

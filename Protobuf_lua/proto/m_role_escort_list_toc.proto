@@ -1,0 +1,6 @@
+import "p_escort.proto";
+// 护送列表
+message m_role_escort_list_toc {
+repeated  p_escort  list=1; //护送列表
+}
+

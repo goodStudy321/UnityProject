@@ -1,0 +1,12 @@
+message ItemData [key=id, source="D 道具配置.xls", sheet="Sheet1"]
+{	
+	uint32 id						        [option = "道具ID"];
+	string name					            [option = "道具名称"]; 
+	string icon                             [option = "道具图标"];
+	string model                            [option = "掉落模型"];
+	uint8 type                              [option = "道具类型"];
+	uint8 quality                           [option = "物品品质"];
+	uint8 canBind                           [option="绑定类型"];
+	uint8 useEffect1                        [option="使用效果"];
+	string useEffectArg1                    [option="效果参数"];		
+};

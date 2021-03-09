@@ -1,0 +1,6 @@
+// 删除信件
+message m_letter_delete_tos {
+optional  int32  op_type=1[default=0]; //0 删除所有已读无附件信息，1 删除ids中的信件
+repeated  int32  id_list=2; //要被删除的信件列表
+}
+

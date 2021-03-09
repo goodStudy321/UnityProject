@@ -1,0 +1,5 @@
+// 仙魂石
+message m_role_immortal_soul_stone_toc {
+optional  int32  stone=1[default=0]; //仙魂石
+}
+

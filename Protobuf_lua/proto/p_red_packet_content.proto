@@ -1,0 +1,9 @@
+// 红包领取列表
+message p_red_packet_content {
+optional  int32  id=1[default=0]; //id
+optional  string  name=2; //名字
+optional  int64  role_id=3[default=0]; //RoleID  未领为1
+optional  int32  icon=4[default=0]; //头像 目前传职业ID
+optional  int32  amount=5[default=0]; //金额
+}
+

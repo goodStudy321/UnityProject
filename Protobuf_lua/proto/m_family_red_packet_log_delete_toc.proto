@@ -1,0 +1,4 @@
+// 道庭红包日志全部删除
+message m_family_red_packet_log_delete_toc {
+}
+

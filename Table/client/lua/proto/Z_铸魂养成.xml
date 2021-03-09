@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="CastingSoulCfg" Key="id" ExportType="Arr" Src="Z 铸魂养成.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="part" Type="number" ColName= "部位id" />
+  <P Name="lv" Type="number" ColName="等级" />
+  <P Name="expend" Type="number" ColName="升级消耗" />
+  <P Name="layer" Type="number" ColName="塔层数" />
+  <P Name="class" Type="number" ColName="装备阶数" />
+  <P Name="pro" Type="K_V" IsList="true" Lsp=";" ColName= "属性加成" />
+</Proto>

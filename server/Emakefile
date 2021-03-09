@@ -1,0 +1,55 @@
+% -*- mode: erlang -*-
+% vim: ft=erlang:
+% 某些代码需要首先编译(如otp behaviour)
+{[	
+	"src/common/user_default"
+ ], 
+ [	
+	{i, "."},
+ 	{i, "include"},
+ 	{i, "include/proto"},
+  	{outdir, "ebin"},
+  	{i, "config/erl/"},
+	debug_info,
+	report,
+	warnings_as_errors,
+	verbose
+ ]
+}.
+{[	
+	"src/common/*"
+ ],
+ [	
+	{i, "."},
+ 	{i, "include"},
+ 	{i, "include/proto"},
+ 	{i, "config/erl/"},
+  	{outdir, "ebin"},
+	{inline_size, 30},
+	report,
+	warnings_as_errors,
+	verbose
+ ]
+}.
+{[
+    "src/*/*/*/*",
+    "src/*/*/*",
+    "src/*/*",
+    "config/dyn/*",
+    "config/map_dyn/*",
+    "config/erl/*",
+    "config/excel/*",
+	"src/*"
+ ],
+ [
+ 	{i, "."},
+ 	{i, "include"},
+ 	{i, "include/proto"},
+ 	{i, "config/erl/"},
+  	{outdir, "ebin"},
+	{inline_size, 30},
+	report,
+	warnings_as_errors,
+	verbose
+ ]
+}.

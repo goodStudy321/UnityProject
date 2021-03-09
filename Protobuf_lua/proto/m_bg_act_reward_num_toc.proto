@@ -1,0 +1,7 @@
+import "p_kv.proto";
+// 奖励数量变更
+message m_bg_act_reward_num_toc {
+optional  int32  id=1[default=0]; 
+repeated  p_kv  list=2; //奖励数量变更
+}
+

@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="HotLoveAwardCfg" Key="id"  ExportType="Arr" Src="Q 全程热恋奖励.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName="ID" />
+  <P Name="needNum" Type="number" ColName="所需点数" />
+  <P Name="awards"  Type="I_B_N" IsList="true" Lsp=";" ColName="奖励" />
+  <P Name="configNum" Type="number" ColName="套序号" />
+</Proto>

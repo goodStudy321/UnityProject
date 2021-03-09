@@ -1,0 +1,6 @@
+// 魔域boss鼓舞次数推送
+message m_demon_boss_cheer_times_toc {
+optional  int32  cheer_times=1[default=0]; //魔域boss总共可鼓舞次数
+optional  int32  add_buff_times=2[default=0]; //魔域boss已经鼓舞的次数
+}
+

@@ -1,0 +1,9 @@
+import "p_feast_role.proto";
+// 婚宴相关信息推送
+message m_marry_feast_state_toc {
+optional  int32  status=1[default=0]; //0结束 1准备 2开始
+optional  int32  end_time=2[default=0]; //状态结束时间
+optional  p_feast_role  feast_role1=3; //举办婚礼角色1
+optional  p_feast_role  feast_role2=4; //举办婚礼角色2
+}
+

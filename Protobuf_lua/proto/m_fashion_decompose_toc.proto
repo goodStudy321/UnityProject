@@ -1,0 +1,7 @@
+import "p_fashion.proto";
+// 时装分解返回
+message m_fashion_decompose_toc {
+optional  int32  err_code=1[default=0]; //是否成功
+optional  p_fashion  essence=2; //时装精华信息
+}
+

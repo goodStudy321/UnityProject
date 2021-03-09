@@ -1,0 +1,6 @@
+// 境界提升
+message m_confine_up_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  confine=2[default=0]; //境界
+}
+

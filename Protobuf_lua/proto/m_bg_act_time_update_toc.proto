@@ -1,0 +1,9 @@
+// 活动信息变更推送
+message m_bg_act_time_update_toc {
+optional  int32  id=1[default=0]; //活动id
+optional  int32  start_time=2[default=0]; //活动开始时间
+optional  int32  end_time=3[default=0]; //活动结束时间
+optional  int32  start_date=4[default=0]; //开始日期
+optional  int32  end_date=5[default=0]; //结束日期
+}
+

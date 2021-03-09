@@ -1,0 +1,8 @@
+// 天机系统部位强化
+message m_role_nature_place_refine_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  aperture_id=2[default=0]; //孔id
+optional  int32  type=3[default=0]; //类型,阴和阳
+optional  int32  refine=4[default=0]; //强化等级
+}
+

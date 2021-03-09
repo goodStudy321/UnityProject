@@ -1,0 +1,5 @@
+// 世界boss击杀记录查看
+message m_world_boss_kill_tos {
+optional  int32  type_id=1[default=0]; //怪物ID
+}
+

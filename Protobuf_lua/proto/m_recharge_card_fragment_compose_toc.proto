@@ -1,0 +1,5 @@
+// 充值卡碎片合成返回
+message m_recharge_card_fragment_compose_toc {
+optional  int32  err_code=1[default=0]; 
+}
+

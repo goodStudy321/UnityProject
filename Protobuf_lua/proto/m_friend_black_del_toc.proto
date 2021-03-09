@@ -1,0 +1,6 @@
+// 删除黑名单
+message m_friend_black_del_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int64  black_id=2[default=0]; //转回好友的时候，该字段有意义
+}
+

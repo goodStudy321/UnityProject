@@ -1,0 +1,6 @@
+// 兑换装备返回
+message m_family_exchange_depot_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  integral=2[default=0]; //新的积分
+}
+

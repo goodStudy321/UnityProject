@@ -1,0 +1,8 @@
+// 帮会神兽排行
+message p_fgb_rank {
+optional  string  family_name=1; //道庭名
+optional  int64  hurt_num=2[default=0]; //伤害值
+optional  int32  rank=3[default=0]; //排名
+optional  int32  num=4[default=0]; //参与人数
+}
+

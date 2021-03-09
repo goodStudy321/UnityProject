@@ -1,0 +1,5 @@
+// 道庭BOSS次数改变
+message m_family_boss_times_update_toc {
+optional  int32  times=1[default=0]; //道庭BOSS已开启次数改变
+}
+

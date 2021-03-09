@@ -1,0 +1,5 @@
+// 神兽装备背包删除
+message m_mythical_equip_del_toc {
+repeated  int64  del_list=1; //魂兽装备唯一id
+}
+

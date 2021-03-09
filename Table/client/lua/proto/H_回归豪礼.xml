@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ReturnRewardCfg" Key="id" ExportType="Arr" Src="J 节日活动_回归豪礼.xls" Sheet="Sheet2">
+  <P Name="id" Type="number" ColName= "天数" />
+  <P Name="loginReward" Type="K_V" Lsp = ";" IsList = "true" ColName= "登陆奖励" />
+  <P Name="returnReward" Type="K_V" Lsp = ";" IsList = "true" ColName= "回归奖励" />
+</Proto>

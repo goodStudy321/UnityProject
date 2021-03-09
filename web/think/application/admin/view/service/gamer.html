@@ -1,0 +1,149 @@
+{include file='public/head'}
+<div class="layui-field-box">
+  <blockquote class="layui-elem-quote">
+    <form class="layui-form" onsubmit="return false">
+      <div class="layui-inline">
+        <label class="layui-form-label">id：</label>
+        <div class="layui-input-inline">
+          <input type="text" id="roleid"  class="layui-input">
+        </div>
+      </div>
+      <div class="layui-inline">
+        <label class="layui-form-label">是否在线：</label>
+        <div class="layui-input-inline">
+          <select id="online" style="height: 28px;">
+            <option value="all" selected>全部</option>
+            <option value="1">在线</option>
+            <option value="0">离线</option>
+          </select>
+        </div>
+      </div>
+      <div class="layui-inline">
+        <label class="layui-form-label">等级：</label>
+        <div class="layui-input-inline">
+          <input type="text" id="lv1" placeholder="请输入等级"  class="layui-input">
+        </div>
+        <div class="layui-input-inline">
+          -
+        </div>
+        <div class="layui-input-inline">
+          <input type="text" id="lv2" placeholder="请输入等级"  class="layui-input">
+        </div>
+      </div>
+      <br><br>
+      <div class="layui-inline">
+        <label class="layui-form-label">角色：</label>
+        <div class="layui-input-inline">
+          <input type="text" id="role"  class="layui-input">
+        </div>
+      </div>
+      <div class="layui-inline">
+        <label class="layui-form-label">账号：</label>
+        <div class="layui-input-inline">
+          <input type="text" id="account"  class="layui-input">
+        </div>
+      </div>
+      <div class="layui-inline">
+        <label class="layui-form-label">vip等级：</label>
+        <div class="layui-input-inline">
+          <input type="text" id="vip1" placeholder="请输入等级"  class="layui-input">
+        </div>
+        <div class="layui-input-inline">
+          -
+        </div>
+        <div class="layui-input-inline">
+          <input type="text" id="vip2" placeholder="请输入等级"  class="layui-input">
+        </div>
+      </div>
+      <br><br>
+      <div class="layui-inline">
+        <label class="layui-form-label">创建时间：</label>
+        <div class="layui-input-inline">
+          <input type="text" id="create" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-inline">
+        &nbsp; &nbsp;
+        <div class="layui-input-inline" id="button">
+          <button class="layui-btn layui-btn-sm">查询</button>
+        </div>
+        <div class="layui-input-inline" id="button2">
+          <button class="layui-btn layui-btn-sm">所有玩家列表</button>
+        </div>
+      </div>
+    </form>
+  </blockquote>
+  <table id="table" lay-filter="test"></table>
+</div>
+{include file='public/foot'}
+
+
+<script>
+  layui.use(['laydate','form'], function(){
+    var laydate = layui.laydate;
+    var form = layui.form;
+    //执行一个laydate实例
+    laydate.render({
+      elem: '#create' //指定元素
+      ,max:0
+    ,range:true
+    });
+  });
+  //表格
+  layui.use('table', function(){
+    var table = layui.table;
+    //第一个实例
+    var tableIns = table.render({
+      elem: '#table'
+      ,url: 'gamer_data' //数据接口
+      ,page: true //开启分页
+      ,cols: [[ //表头
+      {field: 'role_id', title: 'id', width:160}
+      ,{field: 'account_name', title: '账号'}
+      ,{field: 'role_name', title: '角色名'}
+      ,{field: 'is_online', title: '在线状态'}
+      ,{field: 'role_level', title: '角色等级'}
+      ,{field: 'role_vip_level', title: 'VIP等级'}
+      ,{field: 'category', title: '职业'}
+    /*,{field: 'none', title: '是否锁定'}*/
+      ,{field: 'power', title: '战力'}
+      ,{field: 'gold', title: '元宝剩余'}
+      ,{field: 'create_time', title: '注册时间', width:150}
+      ,{field: 'last_login_time', title: '上次登录时间', width:150}
+      ,{field: 'last_login_ip', title: '登录ip'}
+      ,{field: 'edit', title: '操作'}
+      ]]
+    });
+    $("#button").click(function(){
+      var online = $("#online").val();
+      var roleid = $("#roleid").val();
+      var lv1 = $("#lv1").val();
+      var lv2 = $("#lv2").val();
+      var role = $("#role").val();
+      var account = $("#account").val();
+      var vip1 = $("#vip1").val();
+      var vip2 = $("#vip2").val();
+      var create = $("#create").val();
+      tableIns.reload({
+        where: { //设定异步数据接口的额外参数，任意设
+          find:1
+        ,roleid:roleid
+        ,online: online
+        ,lv1: lv1
+        ,lv2: lv2
+        ,role: role
+        ,account: account
+        ,vip1: vip1
+        ,vip2: vip2
+        ,create: create
+        }
+        ,page: {
+      curr: 1 //重新从第 1 页开始
+        }
+      });
+    });
+    $("#button2").click(function(){
+      location.reload();
+    });
+  });
+</script>

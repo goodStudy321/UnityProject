@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="TongTianTowerCfg" Key="id" ExportType="Dic" Src="T 通天宝塔活动表.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "序号" />
+  <P Name="type" Type="number" ColName= "奖励类型" />
+  <P Name="poolId" Type="number" ColName= "奖池ID" />
+  <P Name="layer" Type="number" ColName= "层数" />
+  <P Name="itemId" Type="number" ColName= "道具ID" />
+  <P Name="count" Type="number" ColName= "数量" />
+  <P Name="configNum" Type="number" ColName= "套序号" />
+  <P Name="towerPos" Type="Vector3" Opt="true" ColName= "大奖坐标" />
+</Proto>

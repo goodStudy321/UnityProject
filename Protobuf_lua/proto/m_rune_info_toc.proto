@@ -1,0 +1,10 @@
+import "p_rune.proto";
+// 符文全部信息，上线推送
+message m_rune_info_toc {
+optional  int32  exp=1[default=0]; //符文经验 升级
+optional  int32  piece=2[default=0]; //符文碎片 兑换
+optional  int32  essence=3[default=0]; //符文精粹 合成
+repeated  p_rune  load_runes=4; //镶嵌符文
+repeated  p_rune  bag_runes=5; //背包符文
+}
+

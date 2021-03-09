@@ -1,0 +1,6 @@
+// 公用key_value结构
+message p_dkv {
+optional  int64  id=1[default=0]; //KEY
+optional  int64  val=2[default=0]; //key对应的val
+}
+

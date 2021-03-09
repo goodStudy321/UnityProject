@@ -1,0 +1,8 @@
+// 邀请回复返回
+message m_team_invite_reply_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  op_type=2[default=0]; //1为同意加入 2为拒绝加入
+optional  int64  reply_role_id=3[default=0]; //反馈者的role_id
+optional  string  reply_role_name=4; //反馈者的姓名
+}
+

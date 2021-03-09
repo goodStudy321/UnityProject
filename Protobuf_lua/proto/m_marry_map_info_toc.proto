@@ -1,0 +1,13 @@
+import "p_marry_wish.proto";
+// 进入场景推送对应的信息
+message m_marry_map_info_toc {
+optional  int32  bow_time=1[default=0]; //拜堂时间
+optional  int32  end_time=2[default=0]; //结束时间
+optional  int32  collect_time=3[default=0]; //天降喜糖采集结束时间
+optional  int32  taste_times=4[default=0]; //当前品尝次数
+optional  int32  heat=5[default=0]; //热度
+optional  int32  remain_times=6[default=0]; //热度采集物剩余采集次数
+optional  int32  pick_times=7[default=0]; //掉落可拾取的次数
+repeated  p_marry_wish  wish_logs=8; //婚礼祝福
+}
+

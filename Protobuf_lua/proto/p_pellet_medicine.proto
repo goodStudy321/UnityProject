@@ -1,0 +1,8 @@
+// 丹药系统
+message p_pellet_medicine {
+optional  int32  goods_id=1[default=0]; //物品id
+optional  int32  type=2[default=0]; //类型
+optional  int32  num=3[default=0]; //数量
+optional  int32  stop_time=4[default=0]; //结束时间
+}
+

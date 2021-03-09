@@ -1,0 +1,4 @@
+// 帮战对战信息
+message m_family_battle_qua_tos {
+}
+

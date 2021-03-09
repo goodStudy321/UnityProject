@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SceneTemp" Key="id" ExportType="Dic" Src="C 场景设置表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "场景ID" />
+  <P Name="name" Type="string" ColName="名称" />
+  <P Name="res" Type="string" ColName="场景资源" />
+  <P Name="dontDestroy" Type ="number" Opt="true" ColName="不释放野外场景"/>
+  <P Name="maptype" Type="number" ColName="场景类型" />
+  <P Name="mapchildtype" Type="number" Opt="true" ColName="场景子类型" />
+  <P Name="map" Type="number" ColName="地图数据ID" />
+  <P Name="ui" Type="number" Opt="true" IsList="true" Lsp="|" ColName="打开UI" />
+  <P Name="grid" Type="string" Opt="true" ColName="九宫格资源名" />
+  <P Name="npcList" Type="number" Opt="true" IsList="true" Lsp="|" ColName="场景中npc" />
+  <P Name="update" Type="number" Opt="true" IsList="true" Lsp="," ColName="刷新序列" />
+  <P Name="reviveType" Type="number" ColName="复活方式"/>
+  <P Name="reviveTime" Type="number" ColName="普通复活CD"/>
+  <P Name="costcoin" Type="number" ColName="原地复活消耗金币"/>
+  <P Name="fightmode" Type="number" Opt="true" IsList="true" Lsp="," ColName="可选择模式" />
+  <P Name="freeTimes" Type="number" ColName="免费进入次数" />
+  <P Name="fvipLv" Type="number" ColName="免费进入VIP等级" />
+  <P Name="stayTime" Type="number" ColName="单次停留时间" />
+  <P Name="entTimes" Type="number" ColName="可进入次数" />
+  <P Name="costGold" Type="number" ColName="花费元宝" />
+  <P Name="costItems" Type="Vector3" Opt="true" IsList="true" Lsp=";" ColName="消耗道具" />
+  <P Name="playId" Type="number" ColName="地图玩法Id" />
+  <P Name="unlocklv" Type="number" ColName="场景解锁等级" />
+  <P Name="maptex" Type="string" ColName="小地图名称" />
+  <P Name="lockWMap" Type="number" ColName="禁止大地图" />
+  <P Name="mapRot" Type="number" ColName="小地图旋转角度" />
+  <P Name="portal_type" Type="number" ColName="跨场景类型" />
+  <P Name="sceneDes" Type="string"  Opt="true" ColName="场景描述图片" />
+   <P Name="maxNum" Type="number" ColName="同屏显示最大人数" />
+  <P Name="relifeHungUp" Type="number" ColName="普通复活后是否自动挂机" />
+  <P Name="enterUI" Type="number" Opt="true" IsList="true" Lsp="|" ColName="入口界面" />
+  <P Name="isCross" Type="number" Opt="true" ColName="是跨服地图" />
+  <P Name="endTime" Type="number" Opt="true" ColName="结算倒计时" />
+  <P Name="canEnterVIP" Type="number" Opt="true" ColName="进入VIP等级" />
+  <P Name="type" Type="number" ColName="跳转类型" />
+  <P Name="isBassScene" Type="number" ColName="是否打宝地图" />
+  <P Name="forbidCamCtrl" Type="number" ColName="禁止手操相机" />
+  <P Name="BossCare" Type="number" ColName="Boss关注提示" />
+</Proto>

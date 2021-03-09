@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="FortuneCatCfg" Key="id" ExportType="Dic" Src="Z 招财猫.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="count" Type="number" ColName= "抽取次数" />
+  <P Name="ingot" Type="number" ColName= "元宝消耗" />
+  <P Name="multiple" Type="Value" IsList="true" Lsp="," ColName= "倍数概率" />
+</Proto>

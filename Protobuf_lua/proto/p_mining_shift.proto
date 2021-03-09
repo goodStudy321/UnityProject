@@ -1,0 +1,8 @@
+// 已探索格子的数据
+message p_mining_shift {
+optional  int32  x=1[default=0]; 
+optional  int32  y=2[default=0]; 
+optional  int32  type_id=3[default=0]; //表id
+optional  int32  surplus_num=4[default=0]; //剩余采集次数
+}
+

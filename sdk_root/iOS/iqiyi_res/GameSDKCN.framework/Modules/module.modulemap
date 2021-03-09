@@ -1,0 +1,6 @@
+framework module GameSDKCN {
+  umbrella header "GameSDKCN.h"
+
+  export *
+  module * { export * }
+}

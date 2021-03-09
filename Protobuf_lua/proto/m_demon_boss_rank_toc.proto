@@ -1,0 +1,6 @@
+import "p_demon_boss_role.proto";
+// 魔域boss排行玩家的信息
+message m_demon_boss_rank_toc {
+repeated  p_demon_boss_role  rank_roles=1; //排行玩家信息
+}
+

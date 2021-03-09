@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="BagGrid" Key="id" ExportType="Dic" Src="B 背包格子表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "背包ID" />
+  <P Name="maxNum" Type="number" ColName="上限格子数" />
+</Proto>

@@ -1,0 +1,66 @@
+{include file='public/head'}
+<div class="layui-field-box">
+  <blockquote class="layui-elem-quote">
+    <div class="layui-inline">
+      &nbsp; &nbsp;
+      <div class="layui-input-inline" id="button">
+        <button class="layui-btn layui-btn-sm" onclick="x_admin_show('添加组', 'add.html', 500, 300)">添加组</button>
+      </div>
+      <div class="layui-input-inline">
+        <button onclick="javascript:location.reload()" class="layui-btn layui-btn-sm">刷新</button>
+      </div>
+    </div>
+  </blockquote>
+  <table id="table" lay-filter="test"></table>
+</div>
+{include file='public/foot'}
+
+
+<script>
+  //表格
+  layui.use('table', function(){
+    var table = layui.table;
+    //第一个实例
+    var tableIns = table.render({
+      elem: '#table'
+      ,url: 'list' //数据接口
+      ,page: true //开启分页
+      ,cols: [[ //标题栏
+      {align: 'center',field: 'num', title: '序号', width:130}
+      ,{align: 'left',field: 'group_name', title: '组名'}
+      ,{align: 'center',field: 'status_name', title: '状态', width:130}
+      ,{align: 'center',field: 'time', title:'上一次操作时间', width:150}
+      ,{align: 'center',field: 'control', title: '操作', width:130}
+      ]]
+    });
+    $("#button").click(function(){
+      var email = $("#email").val();
+      tableIns.reload({
+        where: {
+          email:email
+        }
+        ,page: {
+          curr: 1 //重新从第 1 页开始
+        }
+      });
+    });
+    $("#button2").click(function(){
+      location.reload();
+    });
+  });
+
+  function del(id){
+    if(!confirm('确定禁用吗？'))
+      return;
+    $.post('/admin/department/del', {id:id}, function(data){
+      layer.msg(data.status.msg, {
+        time:2000
+      }, function(){
+        if(data.status.code == 10200){
+          window.location.reload();
+          return;
+        }
+      });
+    }, 'json')
+  }
+</script>

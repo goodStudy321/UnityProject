@@ -1,0 +1,6 @@
+// 战神套装激活返回
+message m_war_god_active_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  war_god_id=2[default=0]; //战神套装ID
+}
+

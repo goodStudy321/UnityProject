@@ -1,0 +1,51 @@
+<form class="ui form" method="POST" action="/home/addscript">
+  @csrf
+  <div class="field">
+    <select class="ui fluid dropdown" name="server_id">
+      @foreach ($data as $v)
+      <option value="{{ $v->id }}">{{ $v->url }}</option>
+      @endforeach
+    </select>
+  </div>
+  <div class="field">
+    <input type="text" name="script" placeholder="脚本地址">
+  </div>
+  <div id="code-list">
+    <div class="two fields">
+      <div class="field">
+        <input type="text" name="name[]" placeholder="名称">
+      </div>
+      <div class="field">
+        <input type="text" name="code[]" placeholder="返回码">
+      </div>
+    </div>
+  </div>
+  <div class="ui ignored icon font buttons right">
+    <a class="decrease ui button" href="javascript:add()"> <i class="plus icon"></i></a>
+  </div>
+  <button class="ui primary button"> Save </button>
+  <div class="ui reset button">Reset</div>
+</form>
+<script>
+  $(document).on('click', '#code-list .minus', function(){
+    $(this).parents('.two').remove();
+  })
+  function add(){
+    var html = '';
+    html += '<div class="two fields">';
+    html += '  <div class="field">';
+    html += '    <input type="text" name="name[]" placeholder="名称">';
+    html += '  </div>';
+    html += '  <div class="field">';
+    html += '    <input type="text" name="code[]" placeholder="返回码">';
+    html += '  </div>';
+    html += '  <div class="ui ignored icon font buttons">';
+    html += '    <a class="decrease ui button"> <i class="minus icon"></i></a>';
+    html += '  </div>';
+    html += '</div>';
+
+    $('#code-list').append(html);
+  }
+</script>
+
+

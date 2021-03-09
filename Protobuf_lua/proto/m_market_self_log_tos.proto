@@ -1,0 +1,4 @@
+// 请求交易日志
+message m_market_self_log_tos {
+}
+

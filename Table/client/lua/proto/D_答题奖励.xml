@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="AnswerAwardCfg" Key="id" ExportType="Arr" Src="D 答题奖励.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "奖励编号" />
+  <P Name="rank" Type="number" IsList="true" Lsp="," ColName= "名次奖励" />
+  <P Name="award" Type="K_V" IsList="true" Lsp=";" ColName= "道具奖励" />
+  <P Name="expRate" Type="number" ColName= "结算经验倍数" />
+</Proto>

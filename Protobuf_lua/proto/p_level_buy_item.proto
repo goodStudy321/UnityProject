@@ -1,0 +1,6 @@
+// 等级限时购买物品的信息
+message p_level_buy_item {
+optional  int32  level_buy_id=1[default=0]; //等级限时购ID
+optional  int32  expire_time=2[default=0]; //等级购买物品的截止时间戳
+}
+

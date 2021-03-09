@@ -1,0 +1,5 @@
+// 请求当前地图分线信息
+message m_map_line_info_tos {
+optional  int32  map_id=1[default=0]; //地图分线信息
+}
+

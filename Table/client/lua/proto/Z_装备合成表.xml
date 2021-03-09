@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="EquipCompound" Key="id" ExportType="Dic" Src="Z 装备合成表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "合成后装备ID" />
+  <P Name="work" Type="number" ColName= "职业" />
+  <P Name="tp1" Type="string" ColName= "一级分页" />
+  <P Name="tp2" Type="string" ColName= "二级分页" />
+  <P Name="type" Type="number" ColName= "类型" />
+  <P Name="rank" Type="number" ColName= "装备品阶" />
+  <P Name="lv" Type="number" ColName= "显示等级" />
+  <P Name="part" Type="number" ColName= "装备部位" />
+  <P Name="canId" Type="number" Opt="true" IsList="true" Lsp="," ColName="可合成装备ID" />
+  <P Name="prob" Type="NeedItem" IsList="true" Lsp=";" ColName="合成概率" />
+
+</Proto>

@@ -1,0 +1,6 @@
+import "p_auction_goods.proto";
+// 面板道具信息尝试增加
+message m_auction_panel_add_toc {
+optional  p_auction_goods  add_goods=1; //新增|变化的拍品
+}
+

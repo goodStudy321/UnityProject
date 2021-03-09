@@ -1,0 +1,5 @@
+// 活动关闭
+message m_bg_act_close_toc {
+optional  int32  act_id=1[default=0]; //活动关闭
+}
+

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ElixirCfg" Key="id" ExportType="Dic" Src="D 丹药配置.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "道具ID" />
+  <P Name="type" Type="number" ColName="类型" />
+  <P Name="time" Type="number" ColName="有效时间" />
+  <P Name="max" Type="number" ColName="使用上限" />
+  <P Name="condList" Type="K_V" IsList="true" Lsp=";" ColName= "境界控制" />
+  <P Name="pro1" Type="number" IsList="true" Lsp="," ColName= "属性1" />
+  <P Name="pro2" Type="number" IsList="true" Lsp="," ColName= "属性2" />
+  <P Name="pro3" Type="number" IsList="true" Lsp="," ColName= "属性3" />
+  <P Name="pro4" Type="number" IsList="true" Lsp="," ColName= "属性4" />
+  <P Name="pro5" Type="number" IsList="true" Lsp="," ColName= "属性5" />
+</Proto>

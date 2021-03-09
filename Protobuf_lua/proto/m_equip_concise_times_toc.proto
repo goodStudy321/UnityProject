@@ -1,0 +1,5 @@
+// 免费洗练次数返回
+message m_equip_concise_times_toc {
+optional  int32  free_concise_times=1[default=0]; //每天免费洗练次数
+}
+

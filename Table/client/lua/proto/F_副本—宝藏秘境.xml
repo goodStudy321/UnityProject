@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="CopyFeverTemp" Key="id" ExportType="Dic" Src="F 副本—宝藏秘境.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "副本ID" />
+  <P Name="pos" Type="Vector2" Opt="true" IsList="true" Lsp=";" ColName= "坐标" />
+</Proto>

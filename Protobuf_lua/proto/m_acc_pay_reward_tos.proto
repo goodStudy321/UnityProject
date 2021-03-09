@@ -1,0 +1,5 @@
+// 累充豪礼奖励领取
+message m_acc_pay_reward_tos {
+optional  int32  gold=1[default=0]; //领取X重置元宝的奖励
+}
+

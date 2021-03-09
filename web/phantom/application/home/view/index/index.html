@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>蜃龙游戏链接管理后台</title>
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="shortcut icon" href="__static__/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="__static__/css/font.css">
+    <link rel="stylesheet" href="__module__/layui/css/layui.css">
+    <link rel="stylesheet" href="__static__/css/xadmin.css">
+    <script type="text/javascript" src="__js__/jquery.min.js"></script>
+    <script src="__module__/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="__static__/js/xadmin.js"></script>
+    <style type="text/css">
+      html,body{ font-size: 12px; }
+      .left{ float:left; }
+      .right{ float:right; }
+      .layui-nav *{
+        font-size:12px;
+      }
+      .container .logo a {font-size:14px}
+      .image,.username{
+        width: 12px;
+        height: 12px;
+        border-radius: 100%;
+        margin-right: 5px;
+      }
+      .username{
+        background: green;
+        font-size: 14px;
+        text-align: center;
+        padding: 10px;
+        line-height: 15px;
+        display: inline-block;
+      }
+      .content{width: 100%;text-align: center;}
+      .box{width: 11%; margin:20px;display: inline-block;vertical-align:text-top;}
+      .group{
+        width: 100%;border: 1px solid #ccc; padding:10px 0;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-bottom:none;
+        font-weight:bold;
+      }
+      .urls{width: 100%;height:600px;border:1px solid #ccc;overflow-y:scroll;
+        border-top:1px solid #e4e4e4;
+        border-bottom:1px solid #e4e4e4;
+      }
+      .urls li{padding:10px 10px;height:20px;line-height:20px;text-align: left; }
+      .urls li:hover{
+        background:#f9f9f9;
+      }
+      .urls a{height: 20px;width: 90%;display: inline-block;}
+      .vlun_icon{display: none;float:right;width:8%;}
+      .btn{
+        width:100%;border: 1px solid #ccc;border-top: none;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+      .btn button{border:0;}
+      .urls::-webkit-scrollbar {display: none;}
+      .bottom{
+        overflow:hidden;
+        position: fixed;
+        bottom: 0;
+        float: bottom;
+        background: #ffffff;
+        width: 100%;
+        padding: 10px 0px;
+        border-top: 1px solid #e4e4e4;
+      }
+      .footer-box{
+        padding:0px 20px;
+      }
+      .what{
+        text-decoration:underline;
+      }
+      #finish{display: none;}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo"><a href="/"><img src="__images__/logo.jpg" class="image">蜃龙游戏链接</a></div>
+
+      <ul class="layui-nav right" lay-filter="">
+        {if session('url_username') == ''}
+        <li class="layui-nav-item"><a onclick="x_admin_show('登录', '{:url('/home/index/login')}', 500, 360)">登录</a></li>
+        {else/}
+        <li class="layui-nav-item" id="edit">编辑</li>
+        <li class="layui-nav-item" id="finish">完成</li>
+        <li class="layui-nav-item">
+          <a href="javascript:;"><qq class="username">{$username}</qq></a>
+          <dl class="layui-nav-child">
+            <dd><a href="{:url('home/index/logout')}">切换帐号</a></dd>
+            <dd><a href="{:url('home/index/logout')}">退出</a></dd>
+          </dl>
+        </li>
+        {/if}
+      </ul>
+    </div>
+
+    <div class="content">
+      {volist name="data" id="vo"}
+      <div class="box">
+        <div class="group">{$vo.group_name}</div>
+        <div class="urls">
+          <ul>
+            {foreach $vo.url as $url}
+            <li><a href="{$url.url}" target="_blank">{$url.url_name}</a><i title="删除链接" class="layui-icon vlun_icon" onclick="del({$url.id}, {$url.user_id})" data-user_id="{$url.user_id}">&#x1007;</i></li>
+            {/foreach}
+          </ul>
+        </div>
+        <div class="btn">
+          <button class="layui-btn layui-btn-primary" onclick="x_admin_show('', '{:url('/home/index/add')}?group_id={$vo.id}', 500, 360)">
+            <i title="添加链接" class="layui-icon">&#xe608;</i>添加链接
+          </button>
+        </div>
+      </div>
+      {/volist}
+    </div>
+
+    <div class="bottom">
+      <div class="footer-box">
+        <div class="left">
+          蜃龙游戏
+        </div>
+        <div class="right">
+          <a class="what" href="/home/help">这是什么？</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  function del(id,user_id){
+    if(user_id != "{:session('url_user_id')}"){
+      layer.msg('请先登录');
+      return ;
+    }
+    if(!confirm('确定删除吗？'))
+      return;
+    $.post('/home/index/del', {id:id}, function(data){
+      layer.msg(data.status.msg, {
+        time:1000
+      }, function(){
+        if(data.status.code == 10200){
+          window.location.reload();
+          return;
+        }else if(data.status.code == 10100){
+          x_admin_show('登录', "{:url('/home/index/login')}", 500, 360);
+        }
+      });
+    }, 'json')
+  }
+
+  $('#edit').on('click', function(){
+    $('.vlun_icon').each(function(i,d){
+      if($(this).data('user_id') == "{:session('url_user_id')}"){
+        $(this).show();
+      }
+    });
+    $('#finish').attr('style', 'display:inline-block');
+    $(this).hide();
+  });
+  $('#finish').on('click', function(){
+    $('.vlun_icon').hide();
+    $('#edit').attr('style', 'display:inline-block');
+    $(this).hide();
+  });
+</script>

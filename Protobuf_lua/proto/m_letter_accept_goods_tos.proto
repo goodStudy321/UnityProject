@@ -1,0 +1,6 @@
+// 物品提取
+message m_letter_accept_goods_tos {
+optional  int32  op_type=1[default=0]; //0 领取所有的附件，1 领取id_list中的信件
+repeated  int32  id_list=2; //信件ID
+}
+

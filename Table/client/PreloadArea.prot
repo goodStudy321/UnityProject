@@ -1,0 +1,19 @@
+message PreloadArea [key=id, source="Q 区域预加载.xls", sheet="Sheet1"]
+{
+	
+	struct UInts [separator = ',']
+	{
+		uint32 id;
+	};
+
+	struct Strs [separator = ',']
+	{
+		string str;
+	};
+
+
+	uint32 id							[option = "id"];
+	UInts wildIDs					    [option = "野外刷新ID列表"];
+	UInts npcIDs					    [option = "npcID列表"];
+	Strs ftNames		    			[option = "流程树名称列表"];
+};

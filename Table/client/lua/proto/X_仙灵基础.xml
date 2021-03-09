@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="EscortTemp" Key="id" ExportType="Dic" Src="X 仙灵基础.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "仙灵ID" />
+  <P Name="quality" Type="number" ColName= "品质" />
+  <P Name="modelId" Type="number" ColName="模型ID" />
+  <P Name="cost" Type="K_V"  Opt="true" ColName="护仙令" />
+  <P Name="preferPrice" Type="number"  Opt="true" ColName="直升数量" />
+  <P Name="expRatio" Type="number" ColName="经验比例" />
+  <P Name="rewards" Type="K_V" IsList="true" Lsp=";" ColName= "护送奖励" />
+  <P Name="minute" Type="number"  ColName= "护送时间" />
+</Proto>

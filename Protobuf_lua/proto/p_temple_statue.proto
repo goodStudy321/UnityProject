@@ -1,0 +1,12 @@
+// 神殿雕像
+message p_temple_statue {
+repeated  int32  skin=1; //皮肤
+optional  int32  cv_times=2[default=0]; //连胜次数
+optional  int32  rank=3[default=0]; //排行
+optional  string  family_name=4; //道庭名字
+optional  string  name=5; //名字
+optional  int32  sex=6[default=0]; //性别
+optional  int32  level=7[default=0]; //等级
+optional  int32  category=8[default=0]; //职业
+}
+

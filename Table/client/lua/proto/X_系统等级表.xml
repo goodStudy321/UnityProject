@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ActivityTemp" Key="id" ExportType="Dic" Src="X 系统等级表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "系统ID" />
+  <P Name="lv" Type="number" ColName="开放等级" />
+  <P Name="index" Type="number" ColName="显示顺序" />
+  <P Name="name" Type="string" ColName="系统名称" />
+  <P Name="layer" Type="number" ColName="层数" />
+  <P Name="icon" Type="string" ColName="主界面图标" />
+  <P Name="continued" Type="number" Opt="true" ColName= "持续显示" />
+  <P Name="zoom" Type="number" Opt="true" ColName= "收纳" />
+  <P Name="type" Type="number" ColName= "功能类型" />
+  <P Name="effect" Type="number" ColName= "特效" />
+  <P Name="ui" Type="string" ColName="ui名称" />
+  <P Name="change" Type="number" Opt="true" ColName= "顶替顺序"/>
+</Proto>

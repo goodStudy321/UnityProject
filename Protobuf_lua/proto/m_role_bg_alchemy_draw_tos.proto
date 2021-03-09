@@ -1,0 +1,6 @@
+// 后台新仙品丹炉  抽取
+message m_role_bg_alchemy_draw_tos {
+optional  int32  times=1[default=0]; //抽取次数
+optional  int32  type=2[default=0]; //1 - 仙品 2- 凡品
+}
+

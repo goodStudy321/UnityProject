@@ -1,0 +1,9 @@
+import "p_ks.proto";
+// 帮战对战信息
+message m_family_battle_qua_toc {
+repeated  p_ks  list=1; //id - rank   val  - name , rank为0时表示此排名没有道庭
+optional  string  opponent=2; //对手
+optional  int32  open_time=3[default=0]; //下轮开启时间
+optional  int32  round=4[default=0]; //即将或正在开启轮
+}
+

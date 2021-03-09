@@ -1,0 +1,11 @@
+import "p_kv.proto";
+// oss- 开服第二阶段活动     数据变化
+message m_oss_rank_change_toc {
+optional  int32  type=1[default=0]; //排行类型  法宝战力 - 10013，翅膀战力 - 10014，图鉴战力 - 10012 
+optional  int32  type_i=2[default=0]; //改变类型   1-排名奖励 2-战力奖励 3-灵力奖励 5-累充奖励
+repeated  p_kv  change_list=3; //val: 1-不能领 2-可领 3-已领
+optional  int32  mana=4[default=0]; //灵力
+repeated  p_kv  mana_list=5; //灵力列表
+optional  int32  recharge=6[default=0]; //充值
+}
+

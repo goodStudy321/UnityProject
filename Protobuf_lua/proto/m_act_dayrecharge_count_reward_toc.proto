@@ -1,0 +1,6 @@
+// 领取每日累计累充奖励
+message m_act_dayrecharge_count_reward_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  day=2[default=0]; //奖励关键字
+}
+

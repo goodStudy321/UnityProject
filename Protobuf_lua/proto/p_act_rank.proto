@@ -1,0 +1,8 @@
+// 开服冲榜排行结构
+message p_act_rank {
+optional  int32  rank=1[default=0]; //排行
+optional  int64  role_id=2[default=0]; //role_id
+optional  string  role_name=3; //角色名
+optional  int32  rank_value=4[default=0]; //排行key值
+}
+

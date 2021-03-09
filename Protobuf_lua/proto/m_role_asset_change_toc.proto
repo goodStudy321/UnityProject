@@ -1,0 +1,6 @@
+import "p_dkv.proto";
+// 角色资产属性更新
+message m_role_asset_change_toc {
+repeated  p_dkv  change_list=1; //p_dkv列表
+}
+

@@ -1,0 +1,12 @@
+import "p_red_packet_content.proto";
+// 全服红包结构
+message p_act_red_packet {
+optional  int64  packet_id=1[default=0]; //红包ID
+optional  int32  start_time=2[default=0]; //开始时间
+optional  int32  end_time=3[default=0]; //结束时间
+optional  int32  amount=4[default=0]; //金额
+optional  int32  piece=5[default=0]; //份数
+optional  int32  bind=6[default=0]; //元宝种类  1- 银两 3-绑定元宝
+repeated  p_red_packet_content  packet_list=7; //红包列表
+}
+

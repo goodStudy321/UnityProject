@@ -1,0 +1,7 @@
+import "p_kv.proto";
+// 累积信息返回
+message m_act_accrecharge_toc {
+optional  int32  recharge=1[default=0]; //当天充值量
+repeated  p_kv  reward=2; //当天充值奖励 , 1-不能领 2-可领 3-已领
+}
+

@@ -1,0 +1,8 @@
+import "p_egg.proto";
+// 周期砸蛋活动  刷新蛋 
+message m_cycle_egg_refresh_toc {
+optional  int32  err_code=1[default=0]; //错误码
+repeated  p_egg  eggs=2; //蛋列表
+optional  bool  can_refresh=3[default=true]; //能否刷新
+}
+

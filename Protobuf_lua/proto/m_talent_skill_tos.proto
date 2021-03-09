@@ -1,0 +1,6 @@
+// 升级天赋技能
+message m_talent_skill_tos {
+optional  int32  tab_id=1[default=0]; //页签
+optional  int32  talent_skill_id=2[default=0]; //下一级等级技能
+}
+

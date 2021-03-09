@@ -1,0 +1,6 @@
+import "p_kv.proto";
+// 雕像血量更新
+message m_family_td_hp_toc {
+optional  p_kv  hp=1; //id:雕像类型ID val:万分比血量
+}
+

@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>逍遥九歌行分后台</title>
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="shortcut icon" href="__static__/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="__static__/css/font.css">
+    <link rel="stylesheet" href="__module__/layui/css/layui.css">
+    <link rel="stylesheet" href="__static__/css/xadmin.css">
+    <script type="text/javascript" src="__js__/jquery.min.js"></script>
+    <script type="text/javascript" src="__module__/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="__static__/js/xadmin.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo"><a href="./index.html">逍遥九歌行分后台-1.0</a></div>
+      <div class="left_open">
+        <i title="展开左侧栏" class="iconfont">&#xe699;</i>
+      </div>
+      <ul class="layui-nav right" lay-filter="">
+        <li class="layui-nav-item">
+          <a href="javascript:;">{:session('username')}</a>
+          <dl class="layui-nav-child"> <!-- 二级菜单 -->
+            <dd><a href="{:url('admin/user/logout')}">切换帐号</a></dd>
+            <dd><a href="{:url('admin/user/logout')}">退出</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item to-index"><a href="/">前台首页</a></li>
+      </ul>
+      <ul class="layui-nav right" lay-filter="">
+        <li class="layui-nav-item">
+          <a href="javascript:;"> 当前区服：{$config_server.title_name}
+          </a>
+          <dl class="layui-nav-child layui-anim layui-anim-upbit">
+            {volist name="servers" id="vo"}
+            <dd class="{$config_server.id == $key ? 'layui-this' : ''}"><a href="javascript:doChangeRoleStatus({$key})">{$vo}</a></dd>
+            {/volist}
+          </dl>
+        </li>
+      </ul>
+    </div>
+    <div class="left-nav">
+      <div id="side-nav">
+        <ul id="nav">
+          {foreach name="menu" item="vo"}
+          {if condition="isset($vo['children'])"}
+          <li>
+            <a href="javascript:;">
+              {if condition="!empty($vo['icon'])"}
+              <i class="layui-icon">&#{$vo.icon};</i>
+              {else/}
+              <i class="layui-icon"></i>
+              {/if}
+              <!-- <i class="iconfont">&#xe620;</i> -->
+              <cite>{$vo.title}</cite>
+              <i class="iconfont nav_right">&#xe697;</i>
+            </a>
+            <ul class="sub-menu">
+              {foreach name="vo['children']" item="v"}
+              {if condition="isset($v['children'])"}
+              <li>
+                <a _href="{:url($v.name)}">
+                  {if condition="empty($v['icon'])"}
+                  <i class="layui-icon"></i>
+                  {else/}
+                  <i class="layui-icon">&#{$v.icon};</i>
+                  {/if}
+                  <cite> {$v.title}</cite>
+                </a>
+                <ul class="sub-menu">
+                  {foreach name="v['children']" item="vs"}
+                  <li>
+                    <a _href="{:url($vs.name)}">
+                      <i class="layui-icon">&#xe602;</i>
+                      <cite> {$vs.title}</cite>
+                    </a>
+                    </li >
+                    {/foreach}
+                  </ul>
+                </li>
+                {else/}
+                <li>
+                  <a _href="{:url($v.name)}">
+                    <i class="layui-icon">&#xe602;</i>
+                    <cite> {$v.title}</cite>
+                  </a>
+                </li>
+                {/if}
+                </li >
+                {/foreach}
+              </ul>
+            </li>
+            {else /}
+            <li>
+              <a _href="{:url($vo.name)}">
+                {if condition="!empty($vo['icon'])"}
+                <i class="layui-icon">&#{$vo.icon};</i>
+                {else/}
+                <i class="layui-icon"></i>
+                {/if}
+                <cite>{$vo.title}</cite>
+                <i class="iconfont nav_right">&#xe697;</i>
+              </a>
+              </li >
+              {/if}
+              {/foreach}
+            </ul>
+          </div>
+        </div>
+        <div class="page-content">
+          <div class="layui-tab tab" lay-filter="xbs_tab" lay-allowclose="false">
+            <ul class="layui-tab-title">
+              <li class="layui-this">我的桌面</li>
+            </ul>
+            <div class="layui-tab-content">
+              <div class="layui-tab-item layui-show">
+                <iframe src="{:url('admin/index/welcome')}" frameborder="0" scrolling="yes" class="x-iframe"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </body>
+    </html>
+    <script>
+    //修改角色状态
+    function doChangeRoleStatus(id){
+      $.ajax({
+        url: '/admin/config/doChangeConfigStatus',
+        type: 'post',
+        dataType: 'json',
+        data: {id:id,status:status},
+      })
+      .done(function(data){
+        if(data.status.code==10200){
+            location.reload();
+        }else{
+          layer.msg(data.msg,{icon:2,offset:"t"});
+        }
+      })
+    }
+    </script>

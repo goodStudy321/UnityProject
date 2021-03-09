@@ -1,0 +1,5 @@
+// 章节奖励领取
+message m_chapter_reward_tos {
+optional  int32  chapter_id=1[default=0]; 
+}
+

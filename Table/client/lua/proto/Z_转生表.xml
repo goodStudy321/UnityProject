@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Rebirth" ExportType="Arr" Key="rbLev" Src="Z 转生表.xls" Sheet="Sheet1">
+  <P Name="rbLev" Type="number" ColName= "转生等级" />
+  <P Name="limLev" Type="number" ColName= "角色等级" />
+  <P Name="getAttrs" Type="K_V" IsList="true" Lsp=";" ColName= "转生获得属性" />
+  <P Name="targets" Type="K_V" IsList="true" Lsp=";" ColName= "转生目标" />
+  <P Name="stageAttrs" Type="List_KV" IsList="true" Lsp="|" ColName= "阶段属性" />
+  <P Name="unlockItems" Type="number" IsList="true" Lsp="," ColName= "解锁装备ID" />
+  <P Name="unlockDescs" Type="string" IsList="true" Lsp="," ColName= "解锁装备" />
+  <P Name="models" Type="string" IsList="true" Lsp="," ColName= "模型" />
+</Proto>

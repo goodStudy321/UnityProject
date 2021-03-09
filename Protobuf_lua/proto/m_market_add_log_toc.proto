@@ -1,0 +1,6 @@
+import "p_market_log.proto";
+// 增加日志
+message m_market_add_log_toc {
+optional  p_market_log  log=1; //增加日志
+}
+

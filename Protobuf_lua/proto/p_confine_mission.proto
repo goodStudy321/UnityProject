@@ -1,0 +1,7 @@
+// 境界任务信息结构体
+message p_confine_mission {
+optional  int32  mission_id=1[default=0]; 
+optional  int32  status=2[default=0]; //1-不能领 2-可领 3-已领
+optional  int32  times=3[default=0]; //当前进行的次数
+}
+

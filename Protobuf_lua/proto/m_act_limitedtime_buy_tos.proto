@@ -1,0 +1,5 @@
+// 购买
+message m_act_limitedtime_buy_tos {
+optional  int32  times=1[default=0]; //购买次数
+}
+

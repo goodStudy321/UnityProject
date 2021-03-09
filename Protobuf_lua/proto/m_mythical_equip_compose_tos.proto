@@ -1,0 +1,6 @@
+// 神兽装备强化合成
+message m_mythical_equip_compose_tos {
+optional  int32  compose_id=1[default=0]; //合成ID
+repeated  int64  material_list=2; //材料列表
+}
+

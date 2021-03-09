@@ -1,0 +1,7 @@
+import "p_war_spirit.proto";
+// 战灵装备穿戴返回
+message m_war_spirit_equip_load_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  p_war_spirit  war_spirit=2; //战灵数据
+}
+

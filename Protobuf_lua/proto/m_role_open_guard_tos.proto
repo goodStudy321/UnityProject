@@ -1,0 +1,4 @@
+// 开启守护
+message m_role_open_guard_tos {
+}
+

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Notice" Key="id" ExportType="Dic" Src="G 系统公告表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "公告ID" />
+  <P Name="content" Type="string" ColName= "公告内容" />
+  <P Name="lv" Type="number" ColName= "可见等级" />
+   <P Name="showType" Type="number" ColName= "显示类型" />
+  <P Name="show" Type="number" ColName= "是否显示跑马灯" />
+  <P Name="open" Type="string" Opt="true" IsList="true" Lsp="_" ColName= "快捷跳转" />
+  <P Name="refresh" Type="number" Opt="true" ColName= "即时刷新" />
+  <P Name="model" Type="string" Opt="true" ColName= "公告模型" />
+  <P Name="modelPos" Type="Vector3" Opt="true" ColName= "公告模型位置" />
+  <P Name="modelRotate" Type="Vector3" Opt="true" ColName= "公告模型旋转角度" />
+</Proto>

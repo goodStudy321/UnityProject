@@ -1,0 +1,5 @@
+// 领取奖励
+message m_demon_boss_hp_reward_tos {
+optional  int32  reward_id=1[default=0]; //领奖id
+}
+

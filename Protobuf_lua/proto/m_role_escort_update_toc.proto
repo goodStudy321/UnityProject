@@ -1,0 +1,7 @@
+import "p_escort.proto";
+// 护送列表
+message m_role_escort_update_toc {
+repeated  p_escort  list=1; //护送列表
+repeated  int32  del_id=2; //删除ID
+}
+

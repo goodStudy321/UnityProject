@@ -1,0 +1,7 @@
+import "p_world_boss_log.proto";
+// 
+message m_world_boss_log_toc {
+repeated  p_world_boss_log  log_list=1; //世界boss珍惜掉落
+repeated  p_world_boss_log  normal_log_list=2; //世界boss普通掉落
+}
+

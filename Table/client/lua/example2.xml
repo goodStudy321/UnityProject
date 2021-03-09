@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Test1" Key="id" Src="U UI配置表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="atk" Type="number" ColName="攻击" />
+  <P Name="hp" Type="number" ColName="血量" />
+  <P Name="mp" Type="number" ColName="魔法" />
+  <P Name="skills" Type="number" IsList="true" Lsp="_" ColName= "技能列表" />
+  <P Name="rand" Type="bool" IsList="true" Lsp="|" ColName= "随机值" />
+  <P Name="way" Type="string" IsList="true" Lsp="," ColName= "获取方式" />
+  <P Name="rot" Type="Vector3"  ColName= "角度" />
+  <P Name="pos" Type="Vector3" IsList="true" Lsp="|"  ColName= "位置" />
+</Proto>

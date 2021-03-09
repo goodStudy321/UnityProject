@@ -1,0 +1,5 @@
+// 送花返回
+message m_flower_send_toc {
+optional  int32  err_code=1[default=0]; //错误码
+}
+

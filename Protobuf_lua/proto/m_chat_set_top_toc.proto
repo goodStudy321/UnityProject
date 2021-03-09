@@ -1,0 +1,6 @@
+// 置顶聊天消息
+message m_chat_set_top_toc {
+optional  int32  channel_type=1[default=0]; //0系统消息 1世界频道 2家族 
+optional  string  msg=2; //消息
+}
+

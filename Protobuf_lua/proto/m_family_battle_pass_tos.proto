@@ -1,0 +1,6 @@
+// 玩家进出
+message m_family_battle_pass_tos {
+optional  int32  region=1[default=0]; //区域
+optional  int32  state=2[default=0]; //1-进 0-出
+}
+

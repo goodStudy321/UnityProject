@@ -1,0 +1,5 @@
+// 移动次数更新
+message m_mining_shift_num_update_toc {
+optional  int32  shift_num=1[default=0]; //移动次数更新
+}
+

@@ -1,0 +1,6 @@
+import "p_kv.proto";
+// 占领阵地
+message m_family_battle_region_toc {
+optional  p_kv  info=1; //id  - 阵营 val - 占领点   3空白
+}
+

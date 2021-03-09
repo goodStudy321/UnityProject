@@ -1,0 +1,7 @@
+import "p_kv.proto";
+// 结算面板
+message m_boss_end_panel_toc {
+optional  string  role_name=1; //归属玩家
+repeated  p_kv  goods=2; 
+}
+

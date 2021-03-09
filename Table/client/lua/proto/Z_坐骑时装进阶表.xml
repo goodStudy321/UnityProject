@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MountSkinCfg" Key="id" ExportType="Arr" Src="Z 坐骑时装进阶表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "进阶模块" />
+  <P Name="st" Type="number" ColName="坐骑等阶" />
+  <P Name="name" Type="string" Opt="true" ColName="名称" />
+  <P Name="uMod" Type="number" Opt="true" ColName="UI模型ID" />
+  <P Name="conItID" Type="number" ColName= "进阶消耗道具ID" />
+  <P Name="conItNum" Type="number" ColName= "消耗道具数量" />
+  <P Name="hp" Type="number" ColName= "生命" />
+  <P Name="atk" Type="number" ColName="攻击" />
+  <P Name="def" Type="number" ColName="防御" />
+  <P Name="arm" Type="number" ColName= "破甲" />
+  <P Name="tBless" Type="number" ColName="进阶所需总祝福值" />
+  <P Name="oSkiID" Opt="true" Type="number" ColName= "开放技能ID" />
+</Proto>

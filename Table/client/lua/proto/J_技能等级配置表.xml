@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SkillLvTemp" Key="id" ExportType="Dic" Src="J 技能等级配置表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "等级技能ID" />
+  <P Name="baseid" Type="number" ColName="技能ID" />
+  <P Name="level" Type="number" ColName="技能等级" />
+  <P Name="name" Type="string" ColName="技能名称" />
+  <P Name="desc" Type="string" ColName="技能描述" />
+  <P Name="icon" Type="string" ColName="技能图标" />
+  <P Name="type" Type="number" ColName= "技能类型" />
+  <P Name="tb" Type="number" ColName= "标签识别" />
+  <P Name="targetType" Type="number" ColName= "目标类型" />
+  <P Name="index" Type="number" ColName= "对应技能按钮顺序" />
+  <P Name="cost" Type="K_V"  ColName="升级消耗" />
+  <P Name="sealLst" Type="number" IsList="true" Lsp="," ColName= "铭文编号" />
+  <P Name="user" Type="number" ColName= "学习需求职业" />
+  <P Name="skillCd" Type="number" ColName= "技能CD" />
+  <P Name="SealLim" Type="number"	Opt="true" ColName= "铭文开启等级" />
+   <P Name="hurtDec" Type="string" ColName= "伤害描述" />
+  <P Name="numDec" Type="string"	 ColName= "数量描述" />
+    <P Name="farDec" Type="string" ColName= "最大施放距离" />
+ 
+</Proto>

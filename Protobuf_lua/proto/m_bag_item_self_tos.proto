@@ -1,0 +1,6 @@
+import "p_kv.proto";
+// 自己使用，不上架
+message m_bag_item_self_tos {
+repeated  p_kv  kv_list=1; //id:ID val:数量
+}
+

@@ -1,0 +1,7 @@
+import "p_bg_act.proto";
+// 充值排行
+message m_role_bg_rrank_toc {
+optional  p_bg_act  info=1; //ID
+optional  int32  my_use=2[default=0]; //ID
+}
+

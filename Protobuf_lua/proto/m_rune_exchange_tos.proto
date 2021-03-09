@@ -1,0 +1,5 @@
+// 符文兑换
+message m_rune_exchange_tos {
+optional  int32  level_id=1[default=0]; //符文等级ID
+}
+

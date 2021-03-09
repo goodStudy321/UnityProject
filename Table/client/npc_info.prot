@@ -1,0 +1,50 @@
+message NPCInfo [key=id, source="N NPC配置表.xls", sheet="Sheet1"]
+{	
+	struct vector3 [separator = ',']
+	{
+		int32 x;
+		int32 y;
+		int32 z;
+	};
+
+	struct data [separator = '|']
+	{
+		uint8 type;
+		string btn_des;
+		uint32 id;
+	};
+
+	
+	struct hide [separator = ',']
+	{
+		uint32 scene_id;
+		uint32 mission_id;
+	};
+
+	
+	struct hideList [separator = '|']
+	{
+		hide list;
+	};
+
+	uint32 id						        [option = "NPCID"];
+	uint16 mode_id					    	[option = "模型ID"]; 
+	uint16 ui_mode_id					    [option = "对话优先模型"]; 
+	string name					    		[option = "名字"]; 
+	string head_pic_path					[option = "NPC头像"]; 
+	string title							[option = "显示title"]; 
+	uint8 type								[option = "NPC类型"]; 
+	uint32 map_id							[option = "地图ID"];
+	vector3 pos								[option = "坐标"];
+	uint16 rot								[option = "旋转朝向"];
+	uint16 scal								[option = "缩放系数"];
+	uint8 camp								[option = "阵营"];
+	uint8 interactive						[option = "是否可交互"];
+	data interactive_data					[option = "交互类型"];
+	string interactive_talk					[option = "对话内容"];
+	string audio							[option = "语音对话"];
+	hideList h_list 						[option = "隐藏条件参数"];
+	hideList s_list 						[option = "隐藏条件参数2"];
+	string pose							[option = "Pose动作"]; 
+	uint8 rotation								[option = "禁止旋转"];
+};

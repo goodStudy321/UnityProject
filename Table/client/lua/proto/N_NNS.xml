@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Global="true" Csp="," Name="NNS">
+  <P Name="n1" Type="number" />
+  <P Name="n2" Type="number" />
+  <P Name="s1" Type="string" />
+</Proto>

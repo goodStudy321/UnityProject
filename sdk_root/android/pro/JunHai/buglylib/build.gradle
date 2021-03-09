@@ -1,0 +1,3 @@
+configurations.maybeCreate("default")
+artifacts.add("default", file('bugly.jar'))
+artifacts.add("default", file('buglyagent.jar'))

@@ -1,0 +1,12 @@
+import "p_kv.proto";
+import "p_kvt.proto";
+// 进入地图推送信息
+message m_copy_immortal_info_toc {
+repeated  p_kv  guard_list=1; //id：区域 val：守卫
+repeated  p_kvt  skill_list=2; //id：技能id val：冷却时间 type：次数
+optional  int32  remain_num=3[default=0]; //剩余怪物数量
+optional  int32  run_num=4[default=0]; //逃跑怪物数量
+optional  int32  summon_boss_round=5[default=0]; //上一次召唤boss的回合
+optional  bool  is_auto_summon=6[default=true]; //是否自动召唤
+}
+

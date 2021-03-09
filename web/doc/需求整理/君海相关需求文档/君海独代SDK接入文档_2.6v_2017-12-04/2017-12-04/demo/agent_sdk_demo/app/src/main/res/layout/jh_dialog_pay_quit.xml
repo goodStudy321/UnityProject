@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="240dp"
+    android:layout_height="wrap_content"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:background="@drawable/jh_dialog_pay_quit"
+    android:paddingTop="4dp"
+    android:paddingBottom="4dp"
+    >
+    <TextView
+        android:text="@string/jh_dialog_pay_quit_text_title"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:textColor="@android:color/black"
+        />
+
+    <!-- 分割线 -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.4dp"
+        android:background="#ff0099cc" />
+
+    <TextView
+        android:text="@string/jh_dialog_pay_quit_text_detail"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_marginBottom="4dp"
+        android:textSize="18sp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_marginBottom="4dp"
+        >
+
+        <Button
+            android:id="@+id/jh_dialog_pay_quit_btn_close"
+            android:text="@string/jh_dialog_pay_quit_btn_close"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            style="@style/jh_dialog_pay_quit_btn_close"
+            />
+
+        <Button
+            android:id="@+id/jh_dialog_pay_quit_btn_continue"
+            android:text="@string/jh_dialog_pay_quit_btn_continue"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            style="@style/jh_dialog_pay_quit_btn_continue"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>

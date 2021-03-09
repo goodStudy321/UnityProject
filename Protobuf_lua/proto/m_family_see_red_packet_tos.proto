@@ -1,0 +1,5 @@
+// 道庭查看红包领取情况
+message m_family_see_red_packet_tos {
+optional  int32  packet_id=1[default=0]; //红包ID
+}
+

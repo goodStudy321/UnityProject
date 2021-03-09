@@ -1,0 +1,6 @@
+// 玩家是否在线
+message m_friend_is_online_toc {
+optional  int64  role_id=1[default=0]; //role_id
+optional  bool  is_online=2[default=true]; //是否在线
+}
+

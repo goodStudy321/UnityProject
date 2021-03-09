@@ -1,0 +1,7 @@
+import "p_market_log.proto";
+// 交易日志
+message m_market_self_log_toc {
+optional  int32  err_code=1[default=0]; //错误码
+repeated  p_market_log  logs=2; //日志
+}
+

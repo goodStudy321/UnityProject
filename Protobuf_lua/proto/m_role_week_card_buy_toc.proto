@@ -1,0 +1,7 @@
+import "p_week_card.proto";
+// 购买周卡 改名基金
+message m_role_week_card_buy_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  p_week_card  card=2; //新激活卡
+}
+

@@ -1,0 +1,12 @@
+import "p_fashion_time.proto";
+import "p_fashion.proto";
+import "p_fashion_suit.proto";
+// 时装信息提示
+message m_fashion_info_toc {
+optional  int32  op_type=1[default=0]; //0：上线推送 1：更新推送
+repeated  int32  cur_id_list=2; //当前时装id列表
+repeated  p_fashion_time  fashion_list=3; //时装的ID列表
+repeated  p_fashion  essence_list=4; //时装精华信息
+repeated  p_fashion_suit  suit_list=5; //时装套装
+}
+

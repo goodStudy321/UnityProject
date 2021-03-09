@@ -1,0 +1,6 @@
+// 领取活跃度奖励
+message m_daily_liveness_reward_toc {
+repeated  int32  list=1; //已领取奖励类型，上线发送完整列表，以后只发送单个领取数据
+optional  int32  err_code=2[default=0]; //错误码
+}
+

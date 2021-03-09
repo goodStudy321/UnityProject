@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="FamiliarityTemp" Key="lv" ExportType="Arr" Src="H 好友_亲密度成长表.xls" Sheet="Sheet1">
+  <P Name="lv" Type="number" ColName= "亲密度等级" />
+  <P Name="name" Type="string" ColName= "等级名称" />
+  <P Name="need" Type="number" ColName= "需要亲密度" />
+  <P Name="buff" Type="number" ColName= "增加buff" />
+</Proto>

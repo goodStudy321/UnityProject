@@ -1,0 +1,8 @@
+// 道庭BOSS开启时间返回 此外boss死时主动推送
+message m_family_boss_time_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  time=2[default=0]; //开启时间戳
+optional  int32  dead=3[default=0]; //击杀时间 - 0未击杀
+optional  int32  delayed=4[default=0]; //倒计时  秒
+}
+

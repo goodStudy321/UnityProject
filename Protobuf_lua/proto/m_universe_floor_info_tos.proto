@@ -1,0 +1,5 @@
+// 获取太虚通天塔最快&最低战力通关玩家
+message m_universe_floor_info_tos {
+optional  int32  copy_id=1[default=0]; //第X层
+}
+

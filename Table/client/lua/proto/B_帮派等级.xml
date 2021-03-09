@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="FamilyLvCfg" Key="lv" ExportType="Dic" Src="B 帮派等级.xls" Sheet="Sheet1">
+  <P Name="lv" Type="number" ColName= "等级" />
+  <P Name="uMoney" Type="number" ColName="升级帮派资金" />
+  <P Name="maxPer" Type="number" ColName="最大帮派人数" />
+  <P Name="maxPer7" Type="number" ColName="公会最大帮派人数" />
+</Proto>

@@ -1,0 +1,6 @@
+// 升阶返回
+message m_suit_upgrade_star_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  place_id=2[default=0]; //部位id
+}
+

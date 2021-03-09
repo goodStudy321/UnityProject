@@ -1,0 +1,5 @@
+// 分配终结连胜奖励
+message m_family_battle_ecv_reward_toc {
+optional  int32  err_code=1[default=0]; //错误码
+}
+

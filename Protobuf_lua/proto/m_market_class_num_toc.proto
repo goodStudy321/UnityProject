@@ -1,0 +1,8 @@
+import "p_kv.proto";
+// 请求类别总数
+message m_market_class_num_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  type=2[default=0]; //拍卖行类型 1-销售拍卖行 2-求购拍卖行
+repeated  p_kv  list=3; //上架销售市场物品
+}
+

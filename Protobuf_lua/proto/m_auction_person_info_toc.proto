@@ -1,0 +1,11 @@
+import "p_auction_goods.proto";
+import "p_auction_log.proto";
+// 个人信息推送
+message m_auction_person_info_toc {
+repeated  int32  care_type_ids=1; //关注过的商品
+repeated  p_auction_goods  auction_goods=2; //我的拍品
+repeated  p_auction_log  sell_logs=3; //拍品记录
+repeated  p_auction_log  buy_logs=4; //竞拍记录
+repeated  p_auction_log  family_sell_logs=5; //行会拍品记录
+}
+

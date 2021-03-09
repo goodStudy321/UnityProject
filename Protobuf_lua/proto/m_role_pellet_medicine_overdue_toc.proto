@@ -1,0 +1,5 @@
+// 丹药系统丹药过期
+message m_role_pellet_medicine_overdue_toc {
+optional  int32  type_id=1[default=0]; //item表id
+}
+

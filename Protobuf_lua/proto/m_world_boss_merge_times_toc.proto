@@ -1,0 +1,6 @@
+// 世界boss次数合并返回
+message m_world_boss_merge_times_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  merge_times=2[default=0]; //合并次数 0或者1表示不合并
+}
+

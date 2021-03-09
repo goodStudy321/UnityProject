@@ -1,0 +1,6 @@
+import "p_act_esoterica_task.proto";
+// 返回修炼秘籍系统任务
+message m_role_act_esoterica_task_toc {
+repeated  p_act_esoterica_task  task_list=1; //随机到的任务列表
+}
+

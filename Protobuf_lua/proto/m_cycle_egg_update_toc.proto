@@ -1,0 +1,7 @@
+import "p_kvs.proto";
+// 刷新
+message m_cycle_egg_update_toc {
+repeated  p_kvs  a_log=1; // 普通 id - 蛋类型   text - 玩家名  val - 道具ID
+repeated  p_kvs  b_log=2; // 稀有 id - 蛋类型   text - 玩家名  val - 道具ID
+}
+

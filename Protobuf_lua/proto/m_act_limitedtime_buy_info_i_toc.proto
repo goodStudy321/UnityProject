@@ -1,0 +1,7 @@
+import "p_limitedtime_buy.proto";
+// 限时云购信息2
+message m_act_limitedtime_buy_info_i_toc {
+optional  int32  buy_num=1[default=0]; //剩余数量全服
+repeated  p_limitedtime_buy  log=2; //日志
+}
+

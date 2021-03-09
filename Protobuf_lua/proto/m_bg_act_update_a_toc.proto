@@ -1,0 +1,6 @@
+// 活动信息变更推送
+message m_bg_act_update_a_toc {
+optional  int32  id=1[default=0]; //活动id
+optional  int32  val=2[default=0]; //转盘 - 充值金额
+}
+

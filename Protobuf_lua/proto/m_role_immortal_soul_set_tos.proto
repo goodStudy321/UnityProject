@@ -1,0 +1,5 @@
+// 仙魂设置
+message m_role_immortal_soul_set_tos {
+optional  int32  bd_type=1[default=0]; //自动分解类型 0 不自动分解
+}
+

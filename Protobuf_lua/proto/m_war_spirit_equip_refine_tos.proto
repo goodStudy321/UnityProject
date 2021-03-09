@@ -1,0 +1,6 @@
+// 战灵灵饰强化
+message m_war_spirit_equip_refine_tos {
+optional  int32  war_spirit_id=1[default=0]; //战灵id
+optional  int64  equip_id=2[default=0]; //强化的装备id
+}
+

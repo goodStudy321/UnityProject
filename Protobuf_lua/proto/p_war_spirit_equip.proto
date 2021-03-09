@@ -1,0 +1,11 @@
+import "p_kvt.proto";
+// 战灵灵饰
+message p_war_spirit_equip {
+optional  int64  id=1[default=0]; //战灵装备唯一id
+optional  int32  type_id=2[default=0]; //装备类型id
+optional  int32  refine_level=3[default=0]; //当前强化等级
+optional  int32  refine_exp=4[default=0]; //当前强化经验
+optional  int32  first_step_type_id=5[default=0]; //初始进阶的TypeID
+repeated  p_kvt  excellent_list=6; //id:key val:值 type:评分
+}
+

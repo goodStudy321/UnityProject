@@ -1,0 +1,13 @@
+message UIConfig [key=id, source="U UI配置表.xls", sheet="Sheet1"]
+{
+	
+	
+	uint16 id						    [option = "ID"];
+	string typeName						[option = "类型名称"]; // 和资源UI面板资源名称一致
+	uint16 sort                         [option = "层级"];
+	uint8 bgEffect						[option = "背景效果"];
+	uint8 onOffEffect					[option = "开关效果"]; //0:无 1:位移
+	uint8 onOffType						[option = "开关类型"];
+	string openAudio					[option = "打开音效"];
+	string closeAudio					[option = "关闭音效"];
+};

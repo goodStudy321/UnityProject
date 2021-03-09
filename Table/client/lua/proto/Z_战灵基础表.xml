@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SpiriteCfg" Key="spiriteId" ExportType="Dic" Src="Z 战灵基础表.xls" Sheet="Sheet1">
+  <P Name="spiriteId" Type="number" ColName= "战灵ID" />
+  <P Name="skillId" Type="number" ColName= "主动技能ID" />
+  <P Name="name" Type="string" ColName="战灵名称" />
+  <P Name="mIcon" Type="string" ColName="战灵icon" />
+  <P Name="uiMod" Type="string" ColName="战灵UI模型" />
+  <P Name="warMod" Type="string" ColName="战灵战斗模型" />
+  <P Name="lockState" Type="number" ColName= "解锁条件" />
+  <P Name="tip" Type="string" ColName= "开启文字说明" />
+  <P Name="qLimit" Type="I_B_N" Opt="true" IsList="true" Lsp=";" ColName= "灵饰品质上限" />
+  <P Name="wTip" Type="string" ColName= "穿戴文字说明" />
+  <P Name="suitGroup" Type="number" Opt="true" IsList="true" Lsp="," ColName="归属套装分类" />
+  <P Name="equips" Type="number" IsList="true" Lsp="," ColName= "装备孔开启境界" />
+  <P Name="needItems" Type="K_V" IsList="true" Lsp=";" ColName= "装备孔开启道具" />
+</Proto>

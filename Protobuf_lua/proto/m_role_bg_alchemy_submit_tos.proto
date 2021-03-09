@@ -1,0 +1,5 @@
+// 后台新仙品丹炉  凡品   提交材料
+message m_role_bg_alchemy_submit_tos {
+repeated  int32  bag=1; //材料列表
+}
+

@@ -1,0 +1,12 @@
+import "p_kv.proto";
+// 宝座结构体
+message p_throne {
+optional  int32  throne_id=1[default=0]; //宝座等级表的唯一id
+optional  int32  cur_id=2[default=0]; //当前幻化id(宝座基础表id)
+optional  int32  status=3[default=0]; //状态，0-隐藏，1-使用
+optional  int32  throne_essence=4[default=0]; //当前拥有的精华
+optional  int32  accum_essence=5[default=0]; //当前已使用累加的精华
+repeated  int32  throne_base_list=6; //已激活的宝座基础表id列表
+repeated  p_kv  surface_list=7; //幻化外观表id
+}
+

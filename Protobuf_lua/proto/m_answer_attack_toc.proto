@@ -1,0 +1,5 @@
+// 答题活动受到攻击
+message m_answer_attack_toc {
+optional  int32  skill=1[default=0]; //受到技能
+}
+

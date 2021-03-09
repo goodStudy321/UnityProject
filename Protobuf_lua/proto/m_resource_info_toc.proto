@@ -1,0 +1,6 @@
+import "p_resource.proto";
+// 资源找回信息推送
+message m_resource_info_toc {
+repeated  p_resource  resource_list=1; //条件更新
+}
+

@@ -1,0 +1,7 @@
+// 购买幻力返回
+message m_copy_buy_illusion_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  illusion=2[default=0]; //幻力
+optional  int32  buy_illusion_times=3[default=0]; //已经购买了幻力的次数
+}
+

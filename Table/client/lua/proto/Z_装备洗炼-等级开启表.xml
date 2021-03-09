@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="EquipOpenLv" Key="id" ExportType="Dic" Src="Z 装备洗炼-等级开启表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "部位" />
+  <P Name="lv" Type="number" ColName="开启等级" />
+</Proto>

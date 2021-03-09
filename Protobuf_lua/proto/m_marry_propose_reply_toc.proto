@@ -1,0 +1,6 @@
+// 提亲回复返回(只推送给回复者)
+message m_marry_propose_reply_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  answer_type=2[default=0]; //1 同意 2 拒绝
+}
+

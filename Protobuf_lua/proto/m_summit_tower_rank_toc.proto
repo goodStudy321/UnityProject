@@ -1,0 +1,7 @@
+import "p_summit_tower_rank.proto";
+// 巅峰爬塔排行
+message m_summit_tower_rank_toc {
+repeated  p_summit_tower_rank  ranks=1; 
+optional  int32  use_time=2[default=0]; //用时
+}
+

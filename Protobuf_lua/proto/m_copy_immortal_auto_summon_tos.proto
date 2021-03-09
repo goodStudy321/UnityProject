@@ -1,0 +1,5 @@
+// 设置自动召唤
+message m_copy_immortal_auto_summon_tos {
+optional  bool  is_auto_summon=1[default=true]; //true:自动召唤
+}
+

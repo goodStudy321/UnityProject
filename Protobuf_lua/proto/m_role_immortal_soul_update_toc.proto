@@ -1,0 +1,8 @@
+import "p_immortal_soul.proto";
+// 仙魂背包数据更新
+message m_role_immortal_soul_update_toc {
+repeated  p_immortal_soul  update_list=1; //新增背包仙魂
+optional  int32  dust=2[default=0]; //更新仙尘
+repeated  int32  del_list=3; //删除背包仙魂
+}
+

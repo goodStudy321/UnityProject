@@ -1,0 +1,7 @@
+// 坐标信息
+message m_chat_pos_tos {
+optional  int32  channel_type=1[default=0]; //0系统消息 1世界频道 2家族 3队伍 4私聊
+optional  int64  channel_id=2[default=0]; //私聊频道用到
+optional  string  pos=3; //位置
+}
+

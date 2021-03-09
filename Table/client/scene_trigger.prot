@@ -1,0 +1,15 @@
+message SceneTrigger [key=ID, source="C 场景Trigger配置表.xls", sheet="Sheet1"]
+{
+	struct vector3 [separator = '|']
+	{
+		int32 x;	// X 单位厘米
+		int32 z;	// Z
+	};
+	
+	uint32 ID						[option = "ID"];
+	string triggerName				[option = "流程树名称"];
+	vector3 left					[option = "左下角坐标"];
+	vector3 right					[option = "右上角坐标"];
+	uint8 times						[option = "是否可多次触发"]; //0:不可多次触发 1:可多次触发
+	uint8 premiseTimes				[option = "执行完毕后才可多次触发"];//0:不用执行完毕 1:需要执行完毕
+};

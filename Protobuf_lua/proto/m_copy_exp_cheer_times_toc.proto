@@ -1,0 +1,6 @@
+// 经验副本鼓舞次数更新
+message m_copy_exp_cheer_times_toc {
+optional  int32  cheer_times=1[default=0]; //已经鼓舞的次数
+optional  int32  silver_cheer_times=2[default=0]; //铜钱鼓舞次数
+}
+

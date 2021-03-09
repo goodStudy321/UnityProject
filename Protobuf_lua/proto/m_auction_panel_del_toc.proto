@@ -1,0 +1,5 @@
+// 面板道具删除
+message m_auction_panel_del_toc {
+optional  int64  del_goods_id=1[default=0]; //被删除的ID
+}
+

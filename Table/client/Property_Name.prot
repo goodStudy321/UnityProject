@@ -1,0 +1,36 @@
+message PropertyName[key=id, source="S 角色属性字段.xls", sheet="Sheet1"]
+{	
+	uint32 id						        	[option = "ID"];
+	string propertyName                         [option="属性名"];
+	uint8 is_show_typ                           [option="显示效果"];
+	string gain_des								[option="增益描述"];
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

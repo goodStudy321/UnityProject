@@ -1,0 +1,10 @@
+// 许愿池抽奖
+message m_oss_trevi_fountain_draw_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  score=2[default=0]; //积分
+repeated  int32  reward=3; //奖励
+optional  int32  bless=4[default=0]; //祝福值
+optional  int32  times=5[default=0]; //抽奖次数
+optional  bool  precious_exist=6[default=true]; //大奖是否存在
+}
+

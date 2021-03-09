@@ -1,0 +1,117 @@
+{include file="public/head"}
+<div class="layui-field-box">
+  <button class="layui-btn layui-btn-sm "  onclick="x_admin_show('添加激活码分类','produceAdd.html',500,500)"></i>添加激活码分类</button>
+<button onclick="javascript:location.reload()" class="layui-btn layui-btn-sm">刷新</button>
+<table class="layui-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>渠道</th>
+      <th>服务器</th>
+      <th>限制条件</th>
+      <th>奖励物品ID</th>
+      <th>奖励物品数量</th>
+      <th>生成激活码数量</th>
+      <th>生成次数</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    {volist name="data" id="vo"}
+    <tr>
+      <td>{$vo.id}</td>
+      <td>{$vo.channel_id == 'all' ? '' : '分渠道 - '}{$vo.channel_name}</td>
+      <td>{$vo.server_id == 'all' ? '全服' : $server[$vo.data_server_id]['name']}</td>
+      <td>
+        {switch $vo.code_status}
+        {case 1}每个角色只能领取一次{/case}
+        {case 2}每个账号只能领取一次{/case}
+        {case 3}每个服务器只能领取一次{/case}
+        {case 4}“每个服务器/每个角色”只能领取一次{/case}
+        {/switch}
+      </td>
+      <td>{$vo.reward}</td>
+      <td>{$vo.reward_num}</td>
+      <td>{$vo.time|date="Y-m-d H:i:s",###}</td>
+      <td>{$vo.create_num}</td>
+      <td>
+        <button class="layui-btn layui-btn-xs"  onclick="x_admin_show('编辑激活码分类{$vo.id}','produceEdit.html?id={$vo.id}',500,460)">编辑</button>
+        <button onclick="generate({$vo.id})" class="layui-btn layui-btn-xs">生成激活码</button>
+        <button onclick="delServer(this,{$vo.id})" class="layui-btn layui-btn-xs layui-btn-danger">删除</button>
+        <button onclick="javascript:location.href='/admin/activation/examine?id={$vo.id}'" class="layui-btn layui-btn-xs">管理激活码</button>
+        {if condition="$vo.create_num > 0"}
+        <button class="layui-btn layui-btn-xs" id="submit" onclick="javascript:location.href='/admin/activation/exportExcel?create_id={$vo.id}'">导出为Excel</button>
+        {/if}
+      </td>
+    </tr>
+    {/volist}
+  </tbody>
+</table>
+<div class="page">
+  {$page}
+</div>
+</div>
+{include file="public/foot"}
+
+
+<script>
+    layui.use(['laydate','form'], function(){
+        var laydate = layui.laydate;
+        //执行一个laydate实例
+        laydate.render({
+            elem: '#time' //指定元素
+        });
+    });
+    function delServer(obj,id){
+        layer.confirm('确认要删除吗？',function(index){
+            $.post("{:url('admin/Activation/produceDel')}", {id: id}, function(data, textStatus, xhr) {
+                if(data.code==1){
+                    layer.msg(data.msg,{icon:1,time:1000},function(){
+                        $(obj).parents('tr').remove();
+                        $(".i_count").html(count-1);
+                    });
+                }else{
+                    layer.msg(data.msg,{icon:2,time:1000});
+                }
+            });
+        });
+    }
+
+    function generate(id){
+      if(id <= 0)
+        return ;
+
+      var html = '';
+      html += '<div class="layui-form-item">';
+      html += '    <input type="text" id="act_num" class="layui-input" placeholder="生成激活码数">';
+      html += '</div>';
+      html += '<div class="layui-form-item">';
+      html += '    <button class="layui-btn layui-btn-sm" onclick="javascript:send('+id+')" lay-filter="toSubmit">提交</button>';
+      html += '</div>';
+      layer.open({
+        content: '<div style="with:300px; padding: 20px;">'+html+'</div>',
+        type: 1,
+        offset: 'auto',
+        fix: false, //不固定
+        maxmin: true,
+        shadeClose: true,
+        shade:0.4,
+        title: '生成激活码',
+      });
+    }
+
+    function send(id){
+      var act_num = $('#act_num').val();
+      if(id <= 0 || act_num <= 0)
+        return ;
+
+      $.post("{:url('admin/Activation/send')}", {id: id, act_num:act_num}, function(data, textStatus, xhr) {
+        if(data.code==1){
+          layer.msg(data.msg,{icon:1,time:1000});
+          layer.closeAll();
+        }else{
+          layer.msg(data.msg,{icon:2,time:1000});
+        }
+      });
+    }
+</script>

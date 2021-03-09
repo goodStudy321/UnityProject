@@ -1,0 +1,5 @@
+// 上线膜拜次数推送
+message m_universe_admire_times_toc {
+optional  int32  admire_times=1[default=0]; //膜拜次数
+}
+

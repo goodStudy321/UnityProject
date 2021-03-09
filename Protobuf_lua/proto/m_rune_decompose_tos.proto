@@ -1,0 +1,5 @@
+// 符文分解
+message m_rune_decompose_tos {
+repeated  int32  rune_ids=1; //分解的符文id列表
+}
+

@@ -1,0 +1,7 @@
+import "p_goods.proto";
+// 帮会神兽结束奖励
+message m_role_fgb_end_toc {
+repeated  p_goods  role=1; //个人奖励
+repeated  p_goods  family=2; //道庭奖励
+}
+

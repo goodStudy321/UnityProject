@@ -1,0 +1,5 @@
+// 时装分解
+message m_fashion_decompose_tos {
+repeated  int32  id_list=1; //分解的道具ID
+}
+

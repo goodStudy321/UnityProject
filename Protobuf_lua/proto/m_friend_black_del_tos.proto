@@ -1,0 +1,5 @@
+// 删除黑名单
+message m_friend_black_del_tos {
+optional  int64  black_id=1[default=0]; //删除黑名单的ID
+}
+

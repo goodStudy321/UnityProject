@@ -1,0 +1,9 @@
+import "p_immortal_soul.proto";
+// 仙魂镶嵌
+message m_role_immortal_soul_mosaic_toc {
+optional  int32  err_code=1[default=0]; 
+optional  p_immortal_soul  use=2; //镶嵌宝石
+optional  int32  del_id=3[default=0]; //删除背包仙魂
+repeated  p_immortal_soul  add=4; //暗包回退
+}
+

@@ -1,0 +1,6 @@
+// 公用key_bool结构
+message p_kb {
+optional  int32  id=1[default=0]; //key
+optional  bool  val=2[default=true]; //key对应的val（bool类型）
+}
+

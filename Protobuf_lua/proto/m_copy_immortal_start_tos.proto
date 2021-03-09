@@ -1,0 +1,4 @@
+// 开启副本
+message m_copy_immortal_start_tos {
+}
+

@@ -1,0 +1,5 @@
+// 天机系统图鉴信息更新
+message m_role_nature_book_update_toc {
+repeated  int32  book_list=1; //最新图鉴
+}
+

@@ -1,0 +1,7 @@
+import "p_auction_goods.proto";
+// 个人拍品信息更新
+message m_auction_goods_update_toc {
+optional  int64  del_goods_id=1[default=0]; //被删除的ID
+optional  p_auction_goods  update_goods=2; //新增|变化的拍品
+}
+

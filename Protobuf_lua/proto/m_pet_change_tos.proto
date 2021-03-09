@@ -1,0 +1,5 @@
+// 伙伴幻化
+message m_pet_change_tos {
+optional  int32  cur_id=1[default=0]; //伙伴幻化id
+}
+

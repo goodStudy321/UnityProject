@@ -1,0 +1,9 @@
+// 任务信息
+message p_family_mission {
+optional  int32  mission_id=1[default=0]; //任务id
+optional  int32  type=2[default=0]; //0:可接,1:可请求加速,2:已请求加速,3:待领取奖励,4:放弃
+optional  int32  expedite=3[default=0]; //已加速次数
+optional  int32  start_time=4[default=0]; //开始时间戳
+optional  int32  stop_time=5[default=0]; //结束时间戳
+}
+

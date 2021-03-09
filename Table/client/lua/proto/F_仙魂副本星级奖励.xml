@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="XHCopyStarCfg" Key="level" Src="F 仙魂副本星级奖励.xls" Sheet="Sheet1">
+  <P Name="level" Type="number" ColName= "等级" />
+  <P Name="star1" Type="K_V" Opt="true" IsList="true" Lsp=";" ColName= "1星奖励" />
+  <P Name="star2" Type="K_V" Opt="true" IsList="true" Lsp=";" ColName= "2星奖励" />
+  <P Name="star3" Type="K_V" Opt="true" IsList="true" Lsp=";" ColName= "3星奖励" />
+</Proto>

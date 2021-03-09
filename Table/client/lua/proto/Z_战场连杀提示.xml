@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="BatKillTip" ExportType="Arr" Key="killNum" Src="Z 战场连杀提示.xls" Sheet="Sheet1">
+  <P Name="killNum" Type="number" ColName= "击杀数量" />
+  <P Name="killTip" Type="string" ColName= "连杀提示" />
+  <P Name="endKillNum" Type="string" ColName= "终结提示" />
+</Proto>

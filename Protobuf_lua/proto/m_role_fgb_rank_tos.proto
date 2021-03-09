@@ -1,0 +1,5 @@
+// 请求神兽排行
+message m_role_fgb_rank_tos {
+optional  int32  type=1[default=0]; //1-a  2-b 
+}
+

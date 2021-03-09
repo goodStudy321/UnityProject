@@ -1,0 +1,6 @@
+// 队长开启时，有队员不满足条件
+message m_team_copy_stop_toc {
+optional  int32  type=1[default=0]; //0不用任何提示 1等级不足 2该难度未开启 3在副本中 4不在线 5拒绝进入 6次数不足 7异性 8准备超时
+optional  int64  role_id=2[default=0]; //不满足条件的role_id
+}
+

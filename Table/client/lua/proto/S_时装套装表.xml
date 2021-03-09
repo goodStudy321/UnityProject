@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="FashionSuitCfg" Key="id" ExportType="Arr" Src="S 时装套装表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "套装ID" />
+  <P Name="name" Type="string"  ColName= "套装名称" />
+  <P Name="type" Type="number"  Opt="true" ColName="套装类型" />
+  <P Name="mIcon" Type="string"   ColName= "男性icon" />
+  <P Name="wIcon" Type="string"   ColName= "女性icon" />
+  <P Name="fashionList" Type="number"  IsList="true" Lsp="," ColName="套装所需部件ID" />
+  <P Name="skillInfo" Type="K_V"  Opt="true" ColName="套装技能" />
+  <P Name="suitAttrs" Type="Suit"  IsList="true" Lsp=";" ColName="套装属性" />
+</Proto>

@@ -1,0 +1,7 @@
+import "p_war_armor_lock.proto";
+// 战灵灵器穿戴记录返回
+message m_war_spirit_armor_lock_info_toc {
+optional  int32  err_code=1[default=0]; //错误码
+repeated  p_war_armor_lock  armors=2; //变化的灵器
+}
+

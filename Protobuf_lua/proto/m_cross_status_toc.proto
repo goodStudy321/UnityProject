@@ -1,0 +1,6 @@
+// 跨服状态推送
+message m_cross_status_toc {
+optional  bool  is_connected=1[default=true]; //是否连接
+optional  int32  next_match_time=2[default=0]; //下次匹配时间
+}
+

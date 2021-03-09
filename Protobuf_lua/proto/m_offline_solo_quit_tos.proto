@@ -1,0 +1,4 @@
+// 离线竞技场退出
+message m_offline_solo_quit_tos {
+}
+

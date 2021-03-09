@@ -1,0 +1,7 @@
+import "p_kv.proto";
+// 特权卡领取奖励返回
+message m_privilege_card_reward_toc {
+optional  int32  err_code=1[default=0]; //错误码
+repeated  p_kv  reward=2; //奖励列表 id 金额 val 1:不能领 2:可领 3:已领
+}
+

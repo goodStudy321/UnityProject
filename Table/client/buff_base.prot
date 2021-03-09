@@ -1,0 +1,57 @@
+message BuffBase [key=buff_id, source="B Buff配置表.xls", sheet="Sheet1"]
+{
+    struct Effect [separator = ':']
+	{
+		uint16 effect_id;	// 消耗类别
+	};
+	
+	struct ResistBuff [separator = ',']
+	{
+		uint16 resist_buff_id;
+	};
+	
+	struct IDs [separator = ':']
+	{
+		uint32 id;	// id;技能为技能id前三位(一系列技能)；药品与buff为具体id
+	};
+	
+	struct Val[separator = ',']
+	{
+		int32 k;
+		int32 v;
+	}
+	
+	struct Items [separator = '|']
+	{
+		Val values;
+	};
+
+	uint32 buff_id					[option = "ID"];
+	uint32 series_id				[option = "系列ID"];
+	string buff_name				[option = "名称"];
+	string buff_describe			[option = "描述"];
+	uint8 buff_type					[option = "Buff类型"];
+	uint8 effect_type				[option = "Buff效果类型"];
+	uint8 exist_type				[option = "Buff存在类型"];
+    uint16 trigger_precent			[option = "触发几率"];
+	uint16 header_level				[option = "冲顶等级"];
+	uint16 disperse_level			[option = "驱散等级"];
+	float live_time					[option = "存活时间"];
+	uint8 fold_num					[option = "可叠加次数"];
+	uint8 cancel_type				[option = "取消方式"];
+	uint8 outline					[option = "下线处理"];
+	uint16 affect_interval			[option = "起效间隔"];
+	string icon						[option = "icon"];
+	string eft						[option = "特效名称"];
+	uint8 eft_pos					[option = "特效显示位置"];
+	uint8 eft_forward			    [option = "特效方向"];
+	Items items						[option = "参数值"];
+	ResistBuff resist_buff		    [option = "抵抗buff"];	
+	string Play_action				[option = "播放指定动作"];
+	uint16 Illusion_model			[option = "光环范围"];
+	uint8 Illusion_type				[option = "光环目标"];	
+	uint16 Totem_Target				[option = "光环目标数量"];
+	IDs Totem_TarBuf				[option = "光环发射BUFF"];
+	uint16 RadTimes					[option = "辐射次数"];
+	uint8  AbsorbType				[option = "吸收类型"];
+};

@@ -1,0 +1,295 @@
+#!/usr/bin/env bash
+
+##-----------------------------------------------------------
+##  自定义游戏控制脚本
+##-----------------------------------------------------------
+
+## erl路径
+ERL='/usr/local/bin/erl'
+ESCRIPT='/usr/local/bin/escript'
+
+custom_help()
+{
+    echo '-------------------------------------------------------'
+    echo 'merge_bk                  生成合服前数据'
+    echo 'merge_do  ID1 ID2..IDn    合服操作'
+    echo 'merge_log                 生成合服角色数据'
+    echo 'online                    获取在线玩家数'
+    echo 'reg                       获取注册玩家数'
+    echo 'get_port                  获取网关和mochiweb端口号'
+    echo 'get_game_info             获取游戏的各种信息'
+    echo 'get_common_info           获取common.config所有信息'
+    echo 'remote init_src $IP       拷贝源码到远程机器'
+    echo 'localhost                 本地服务器命令'
+    echo 'update_tx                 更新到腾讯服务器'
+    echo 'update_elex               更新到繁体服务器'
+    echo 'stop_fast                 紧急停止游戏'
+    echo 'cl                        编译并加载文件'
+    echo 'tail                      tail当前日志文件'
+}
+
+custom_cmd()
+{
+    case $TARGET in
+        merge_bk) merge_bk $*;;
+        merge_do) merge_do $*;;
+        merge_log) merge_log $*;;
+        mulog_size) mulog_size $*;;
+        online) online $*;;
+        reg) reg $*;;
+        get_port) get_port $*;;
+        get_game_info) get_game_info $*;;
+        get_game_stat) get_game_stat $*;;
+        get_common_info) get_common_info $*;;
+        lognum) lognum $*;;
+        remote) remote $*;;
+        localhost) localhost $*;;
+        update_tx) update_tx;;
+        update_elex) update_elex;;
+        stop_fast) stop_game_fast $*;;
+        cl) cl $*;;
+        cfile) cfile $*;;
+        lmod) lmod $*;;
+        tail) tail_log_file $*;;
+        *) help;;
+    esac
+}
+
+## 节点启动时，cookie在启动完之后在设
+start_param()
+{
+    SBT_TYPE=`get_sbt`
+    ## DUMP文件路径
+    DATE=$(date "+%Y-%m-%d-%H%M%S")
+    START_START_PARAMS=""
+    START_PARAMS="${START_PARAMS} -pa ${SERVER_EBIN} "
+    START_PARAMS="${START_PARAMS} -server_root ${SERVER_DIR}/ "
+    START_PARAMS="${START_PARAMS} -server_type  ${SERVER_TYPE} "
+    START_PARAMS="${START_PARAMS} -smp enable "
+    START_PARAMS="${START_PARAMS} +K true +t 10485760 "
+    START_PARAMS="${START_PARAMS} -env ERL_MAX_ETS_TABLES 500000  -env ERL_NO_VFORK 1  "
+    START_PARAMS="${START_PARAMS} +sbt ${SBT_TYPE} "
+    START_PARAMS="${START_PARAMS} -env ERL_CRASH_DUMP ${LOG_DIR}/erl_dump/${NODE_NAME}_${DATE}.erl_dump"
+    START_PARAMS="${START_PARAMS}  +zdbbl 204800 "
+    START_PARAMS="${START_PARAMS}  -kernel inet_dist_listen_min 50001 inet_dist_listen_max 54000"
+    echo $START_PARAMS
+}
+
+custom_param()
+{
+    PARAMS=$(start_param)
+    PARAMS="${PARAMS} -setcookie ${ERLANG_COOKIE} "
+    echo $PARAMS
+}
+
+get_sbt()
+{
+    ##开服前3天启动时，允许绑定调度器(单位为s)
+    LAST_SECOND=259200
+    NOW=`date +%s`
+    case `uname` in
+        Linux)  OPEN_TIMESTAMP=`date -d "${OPEN_TIME}" +%s`;;
+        Darwin) OPEN_TIMESTAMP=`date  -j -f "%Y-%m-%d %H:%M:%S" "${OPEN_TIME}"  +%s`;;
+    esac
+
+    VALUE=`expr ${NOW} - ${OPEN_TIMESTAMP}`
+
+    ##差值小于指定的时间，则要绑定
+    if [ $VALUE -lt $LAST_SECOND ] ; then
+        echo "nnts"
+    else
+        echo "u"
+    fi
+}
+
+cl()
+{
+    MODULE=$*
+    cfile $MODULE
+    lmod $MODULE
+}
+
+cfile()
+{
+    MODULE=$*
+    escript ./script/tool/escript_tool.es ${CUR_DIR} cfile $MODULE
+}
+
+lmod()
+{
+    manager_ctl reload_beam $*
+}
+
+## 生成原服务器表数据文件
+merge_bk()
+{
+    manager_ctl merge_bk $*
+}
+
+## 合服
+merge_do()
+{
+    manager_ctl merge_do $*
+}
+
+## 合服记录玩家数据日志
+merge_log()
+{
+    manager_ctl merge_log $*
+}
+
+mulog_size()
+{
+    manager_ctl mulog_size $*
+}
+
+
+online()
+{
+    ONLINE_NUM=$(exprs 'world_online_server:get_online_num()')
+    if [[ $ONLINE_NUM =~ ^[0-9]+$ ]] ;then
+        echo $ONLINE_NUM
+    else
+        echo 0
+    fi
+}
+
+reg()
+{
+    exprs 'mdb:table_info(db_role_account_p,size)'
+}
+
+get_port()
+{
+    manager_ctl get_port $*
+}
+get_game_info()
+{
+    manager_ctl get_game_info $*
+}
+get_game_stat()
+{
+    manager_ctl get_game_stat $*
+}
+get_common_info()
+{
+    manager_ctl get_common_info $*
+}
+## 更新到腾讯的FTP服务
+update_tx()
+{
+    mkdir -p release
+    TAR_FILE=m10.server.tar.gz
+    tar cfz release/$TAR_FILE config ebin script mgectl user_default.beam version_client.txt version_server.txt
+    echo "文件已生成：release/${TAR_FILE}"
+    lftp -u app100666811,SNNwFD5sB6CsdBPX @ftp-cvmgz00.opencloud.qq.com:53000 -e "mput release/${TAR_FILE} -O /;quit"
+    echo '上传完成'
+}
+
+## 更新到ELEX的服务机
+update_elex()
+{
+    mkdir -p release
+    TAR_FILE=m10_ft.server.tar.gz
+    tar cfz release/$TAR_FILE config ebin script mgectl user_default.beam version_client.txt version_server.txt
+    echo "文件已生成：release/${TAR_FILE}"
+    scp -P61618 release/${TAR_FILE} 210.59.247.105:/data/${GAME_CODE}_server/
+    echo '上传完成'
+}
+
+
+## 清档
+local_clear_db()
+{
+    ## 检查服务器，只有local代理才能使用这个命令清档
+    if [ "$AGENT_CODE" == 'local' ] ; then
+        rm -rf ${DB_DIR}
+        echo '清理数据库目录成功'
+    fi
+}
+
+## 编译相关
+local_compile()
+{
+    compile $1
+}
+
+## 测试nif启动
+local_test_nif()
+{
+    COMMAND="${ERL} -name ${NODE_NAME} ${PARAMS}"
+    bash -c "$COMMAND"
+}
+
+## 打包
+pack()
+{
+    mkdir -p release
+    TAR_FILE=m10.server.tar.gz
+    tar cfz release/$TAR_FILE config ebin script mgectl
+    echo "文件已生成：release/${TAR_FILE}"
+}
+
+## 本地命令入口
+localhost()
+{
+    if [ "$AGENT_CODE" == 'local' ] ; then
+        CODE=$1
+        shift
+        ARGS=$*
+        case $CODE in
+            clear_db) local_clear_db $ARGS;;
+            compile) local_compile $ARGS;;
+            test_nif) local_test_nif ;;
+            pack ) pack ;;
+            *) help;;
+        esac
+    fi
+}
+
+## 在远程服务器上初始化代码
+remote_init_src()
+{
+    IP=$1
+    Date=$(date "+%Y-%m-%d-%H%M%S")
+    mkdir -p release
+    TAR_FILE=m10.server.$Date.tar.gz
+    tar cfz release/$TAR_FILE config deps include ebin proto script setting src update Emakefile Makefile mgectl
+    ssh -p61618 $IP "mkdir -p ${SHELL_DIR}"
+    scp -P 61618 release/$TAR_FILE $IP:${SHELL_DIR}
+    ssh -p61618 $IP "cd ${SHELL_DIR}; tar xfz $TAR_FILE; chmod +x mgectl; rm -rf *.tar.gz;"
+    echo "更新 $IP 完成"
+}
+
+## 远程命令入口
+remote()
+{
+    CODE=$1
+    shift
+    ARGS=$*
+    case $CODE in
+        init_src) remote_init_src $ARGS;;
+        *) help;;
+    esac
+}
+
+## 紧急停止游戏，就不确认了
+stop_game_fast()
+{
+    START_SUCC="${RUNNING_DIR}/start_succ_${SERVER_TYPE}"
+    /bin/rm -f ${START_SUCC}
+    if [ "${OP_ALL}" == 'true' ]; then
+        STOP='stop_all'
+        ALL_CMD=$(${ESCRIPT} ${CUR_DIR}/script/run/gen_ggroup_cmd.es stop_fast ${CUR_DIR} ${IP})
+        bash -c "$ALL_CMD"
+    fi
+    check_stop_slave
+    manager_ctl stop_fast $*
+}
+
+tail_log_file()
+{
+    DATE=`date "+%Y_%-m_%-e"`
+    CURRENT_LOG_FILE="${LOG_DIR}/server/${GAME_CODE}_${AGENT_CODE}_${SERVER_ID}_${SERVER_TYPE}_${DATE}.log"
+    tail -n50 -f ${CURRENT_LOG_FILE} $*
+}

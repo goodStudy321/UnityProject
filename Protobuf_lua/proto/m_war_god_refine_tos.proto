@@ -1,0 +1,6 @@
+// 战神装备开光
+message m_war_god_refine_tos {
+optional  int32  war_god_id=1[default=0]; //战神套装ID
+optional  int32  equip_id=2[default=0]; //开光部位ID
+}
+

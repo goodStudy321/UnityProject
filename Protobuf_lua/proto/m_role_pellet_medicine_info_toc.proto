@@ -1,0 +1,6 @@
+import "p_pellet_medicine.proto";
+// 丹药系统信息
+message m_role_pellet_medicine_info_toc {
+repeated  p_pellet_medicine  medicine=1; //丹药结构
+}
+

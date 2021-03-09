@@ -1,0 +1,13 @@
+import "p_item_i.proto";
+// 后台新仙品丹炉  仙品
+message m_role_bg_alchemy_one_toc {
+optional  int32  need_item=1[default=0]; //需要物品
+optional  int32  once_gold=2[default=0]; //物品单价
+optional  int32  ten_gold=3[default=0]; //物品十次价格
+optional  string  btn_text=4; //1次按钮文本
+optional  string  btn_text_i=5; //10次按钮文本
+repeated  p_item_i  list_one=6; //仙
+repeated  p_item_i  list_two=7; //极
+repeated  p_item_i  list_three=8; //凡
+}
+

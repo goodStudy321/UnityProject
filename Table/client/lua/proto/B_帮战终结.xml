@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ShutRWD" Key="winNum" ExportType="Arr" Src="B 帮战终结.xls" Sheet="Sheet1">
+  <P Name="winNum" Type="number" ColName= "连胜" />
+  <P Name="buff" Type="number" ColName= "buff" />
+  <P Name="RWD" Type="Item" IsList="true" Lsp=";" ColName= "终结奖励" />
+</Proto>

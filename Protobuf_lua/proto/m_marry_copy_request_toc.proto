@@ -1,0 +1,6 @@
+// 请求对方购买次数返回
+message m_marry_copy_request_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int64  from_role_id=2[default=0]; //来自于谁的请求
+}
+

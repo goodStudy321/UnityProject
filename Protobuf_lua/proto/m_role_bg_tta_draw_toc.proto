@@ -1,0 +1,10 @@
+import "p_kvt.proto";
+// 神秘宝藏  购买
+message m_role_bg_tta_draw_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  times=2[default=0]; //次数
+repeated  p_kvt  reward=3; //id - 位置   val -  1-大奖其他否  type - 道具类型 
+optional  int32  layer=4[default=0]; //抽奖层
+optional  int32  open_layer=5[default=0]; //开启层
+}
+

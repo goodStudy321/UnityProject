@@ -1,0 +1,6 @@
+import "p_team.proto";
+// 组队信息，上线推送
+message m_team_info_toc {
+optional  p_team  team_info=1; //组队信息
+}
+

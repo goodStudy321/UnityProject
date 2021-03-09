@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="TimeLimitFightCfg" Key="id" ExportType="Arr" Src="K 开服冲榜_翅膀_法宝_图鉴_战力奖励.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="type" Type="number" ColName="活动类型" />
+  <P Name="cond" Type="number" ColName= "战力" />
+  <P Name="rankAward" Type="I_B_N" IsList="true" Lsp=";" ColName= "奖励" />
+</Proto>

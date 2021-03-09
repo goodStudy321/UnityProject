@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="EquipStr" Key="id" ExportType="Dic" Src="Z 装备强化概率表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "编号" />
+  <P Name="lv" Type="number" ColName= "强化等级" />
+  <P Name="level" Type="number" ColName= "人物等级" />
+  <P Name="money" Type="number" ColName="强化消耗货币数量" />
+  <P Name="mas" Type="number" ColName="强化熟练度" />
+  <P Name="addMas" Type="number" ColName= "每次强化提高熟练度" />
+  <P Name="def" Type="number" Opt="true" ColName="防御" />
+  <P Name="hp" Type="number" Opt="true" ColName="生命" />
+  <P Name="atk" Type="number" Opt="true" ColName="攻击" />
+  <P Name="arm" Type="number" Opt="true" ColName="破甲" />
+</Proto>
+

@@ -1,0 +1,7 @@
+import "p_kv.proto";
+// 化身投资信息返回
+message m_summit_invest_gold_info_toc {
+optional  int32  summit_invest_gold=1[default=0]; //化身投资当前投资的档次
+repeated  p_kv  reward_list=2; //已经领取的奖励列表 id-等级 val-已经领取的档次
+}
+

@@ -1,0 +1,142 @@
+{include file='public/head'}
+<div class="x-body">
+  <blockquote class="layui-elem-quote">
+    <form class="layui-form" action="" lay-filter="filterForm" method="GET">
+      <div class="layui-form-item">
+        <label class="layui-form-label">日期：</label>
+        <div class="layui-input-inline">
+          <input class="layui-input" id="time" name="time" type="text" value="{$time}" autocomplete="off">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">间隔时间：</label>
+        <div class="layui-input-block">
+          <input type="radio" name="time_limit" {$time_limit == 60 ? 'checked=""' : ''} value="60" title="1小时">
+          <input type="radio" name="time_limit" {$time_limit == 30 ? 'checked=""' : ''} value="30" title="30分钟">
+          <input type="radio" name="time_limit" {$time_limit == 10 ? 'checked=""' : ''} value="10" title="10分钟">
+          <input type="radio" name="time_limit" {$time_limit == 5  ? 'checked=""' : ''} value="5" title="5分钟">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">区服：</label>
+        <div class="layui-input-block" id="server">
+          <input type="checkbox" name="server[all]" title="全部" lay-filter="server_all" {$selected_filter.server_id ? '' : 'checked'}>
+          {volist name="filter.database" id="vo"}
+          <input type="checkbox" name="server[{$vo.server_id}]" title="{$vo.title_name}" lay-filter="server"
+            {if condition="!isset($selected_filter.server_id) || in_array($vo.server_id, $selected_filter.server_id)"} checked {/if} >
+          {/volist}
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">渠道：</label>
+        <div class="layui-input-block" id="channel">
+          <input type="checkbox" name="channel[all]" title="全部" lay-filter="channel_all" {$selected_filter.channel_id ? '' : 'checked'}>
+          {volist name="filter.channel" id="vo"}
+          <input type="checkbox" name="channel[{$key}]" title="{$vo.name}" lay-filter="channel"
+            {if condition="!isset($selected_filter.channel_id) || in_array($key, $selected_filter.channel_id)"} checked {/if} >
+          {/volist}
+        </div>
+      </div>
+      <div class="">
+        <label class="layui-form-label"> </label>
+        <button type="submit" id="query" class="layui-btn layui-btn-sm">查询</button>
+        <button type="button" onclick="javascript:location.reload()" class="layui-btn layui-btn-sm">刷新</button>
+        <button type="button" onclick="location.href='{$export_url}'" class="layui-btn layui-btn-sm x-right">导出 (当前筛选条件的所有结果)</button>
+      </div>
+    </form>
+  </blockquote>
+  <div style="overflow-x:scroll">
+    <div id="container" style="min-width:{$width}px;height:auto;"></div>
+  </div>
+</div>
+<script src="/public/static/highcharts/highcharts.js"></script>
+{include file='public/foot'}
+
+<script>
+  $(function(){
+    var layer = layui.layer;
+    form.render();
+
+    form.on('checkbox(server)', function (data) {
+    })
+
+    //区服全选
+    form.on('checkbox(server_all)', function (data) {
+      $("input[name^='server']").each(function (i,d) {
+        this.checked = data.elem.checked;
+      });
+      form.render('checkbox');
+    });
+    // 取消全选
+    form.on('checkbox(server)', function (data) {
+      if(this.checked == false){
+        $("input[name^='server[all]']").attr('checked', false);
+      }
+      form.render('checkbox');
+    });
+
+
+    //渠道
+    form.on('checkbox(channel_all)', function (data) {
+      $("input[name^='channel']").each(function (i,d) {
+        this.checked = data.elem.checked;
+      });
+      form.render('checkbox');
+    });
+    // 取消全选
+    form.on('checkbox(channel)', function (data) {
+      var id = $(this).data('id');
+      if(this.checked == false){
+        $("input[name^='channel[all]']").attr('checked', false);
+      }
+      form.render('checkbox');
+    });
+
+
+
+    form.on('submit(filterForm)', function(data){
+      // var len1 = $("input[name^='game_channel']:checked").length;
+      var len2 = $("input[name^='channel']:checked").length;
+      var len3 = $("input[name^='server']:checked").length;
+      if(len2 > 0 && len3 > 0)
+        return true;
+
+      message('每一项至少选一个');
+      return false;
+    })
+  })
+</script>
+<script>
+
+  laydate.render({
+    elem: '#time',
+  });
+
+  var getData = function(){
+    $.getJSON('timeOnLine?{$where}', {}, function(data){
+        var chart = Highcharts.chart('container', {
+          chart: {
+            type: 'line'                          //指定图表的类型，默认是折线图（line）
+          },
+          title: {
+            text: '在线人数'                 // 标题
+          },
+          xAxis: {
+            categories: data.name   // x 轴分类
+          },
+          yAxis: {
+            title: {
+              text: '在线人数'                // y 轴标题
+            }
+          },
+          series: [{                              // 数据列
+            name: '在线',                        // 数据列名
+            data: data.val                     // 数据
+          }]
+        });
+    })
+  }
+
+  getData();
+
+</script>

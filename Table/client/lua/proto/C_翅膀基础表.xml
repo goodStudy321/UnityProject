@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="WingCfg" Key="id" ExportType="Arr" Src="C 翅膀基础表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName="ID" />
+  <P Name="name" Type="string" ColName="名称" />
+  <P Name="rLv" Type="number" ColName="转生等级" />
+  <P Name="mMod" Type="number"  ColName="男模型" />
+  <P Name="wMod" Type="number"  ColName="女模型" />
+  <P Name="muMod" Type="number"  ColName="男UI模型" />
+  <P Name="wuMod" Type="number"  ColName="女UI模型" />
+  <P Name="parentPot" Type="number" ColName="挂载点" />
+  <P Name="icon" Type="string"  ColName="图标" />
+  <P Name="type" Type="number" ColName="类型" />
+</Proto>

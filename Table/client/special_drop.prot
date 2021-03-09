@@ -1,0 +1,6 @@
+message SpecialDrop [key=id, source="T 特殊掉落.xls", sheet="Sheet1"]
+{
+	uint32 id				[option = "序号"];
+	uint32 groupId 			[option = "特殊掉落组ID"];
+	uint32 dropid		    [option = "掉落组"];
+};

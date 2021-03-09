@@ -1,0 +1,6 @@
+// 元宝激励返回
+message m_offline_solo_bestir_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  bestir_times=2[default=0]; //是否领取奖励
+}
+

@@ -1,0 +1,6 @@
+import "p_kv.proto";
+// 玩家进出
+message m_family_battle_pass_toc {
+repeated  p_kv  list=1; //id阵营 val 占领度
+}
+

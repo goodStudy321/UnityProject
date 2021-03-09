@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="GemLv" ExportType="Arr" Key="id" Src="B 宝石等级属性表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="lv" Type="number" ColName= "等级" />
+  <P Name="hp" Type="number" ColName= "生命" />
+  <P Name="atk" Type="number" ColName= "攻击" />
+  <P Name="def" Type="number" ColName= "防御" />
+  <P Name="hit" Type="number" ColName= "命中" />
+  <P Name="dodge" Type="number" ColName= "闪避" />
+  <P Name="crit" Type="number" ColName= "暴击" />
+  <P Name="tena" Type="number" ColName= "韧性" />
+</Proto>

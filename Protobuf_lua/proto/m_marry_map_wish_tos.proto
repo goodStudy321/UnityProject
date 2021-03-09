@@ -1,0 +1,6 @@
+// 祝福
+message m_marry_map_wish_tos {
+optional  int32  index_id=1[default=0]; //祝福类型
+optional  int64  to_role_id=2[default=0]; //祝福人的名字
+}
+

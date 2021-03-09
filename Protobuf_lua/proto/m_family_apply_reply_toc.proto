@@ -1,0 +1,8 @@
+// 申请加入某个帮会
+message m_family_apply_reply_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  op_type=2[default=0]; //1同意加入 2为拒绝加入
+optional  int64  reply_role_id=3[default=0]; //操作人的RoleID
+optional  string  reply_role_name=4; //操作人的RoleName
+}
+

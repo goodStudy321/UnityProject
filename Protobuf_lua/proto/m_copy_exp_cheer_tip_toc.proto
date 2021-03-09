@@ -1,0 +1,5 @@
+// 经验副本鼓舞提示
+message m_copy_exp_cheer_tip_toc {
+optional  int32  status=1[default=0]; //1银两鼓舞次数不足 2元宝鼓舞次数不足 3两个都不足
+}
+

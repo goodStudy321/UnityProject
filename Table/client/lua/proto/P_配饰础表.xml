@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="OrnamentInfo" Key="id" ExportType="Dic" Src="P 配饰础表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName="ID" />
+  <P Name="name" Type="string" ColName="名称" />
+  <P Name="modID" Type="number"  ColName="模型ID" />
+  <P Name="parentPot" Type="number" ColName="挂载点" />
+</Proto>

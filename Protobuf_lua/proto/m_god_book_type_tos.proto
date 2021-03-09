@@ -1,0 +1,5 @@
+// 天书类型奖励领取
+message m_god_book_type_tos {
+optional  int32  type_id=1[default=0]; //领取id
+}
+

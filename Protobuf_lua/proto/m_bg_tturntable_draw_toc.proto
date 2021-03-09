@@ -1,0 +1,7 @@
+import "p_item_i.proto";
+// 转活跃转盘返回
+message m_bg_tturntable_draw_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  p_item_i  reward=2; //倍率
+}
+

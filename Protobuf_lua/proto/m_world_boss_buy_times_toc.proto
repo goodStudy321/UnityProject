@@ -1,0 +1,8 @@
+// 购买世界boss挑战次数返回
+message m_world_boss_buy_times_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  times=2[default=0]; //挑战次数
+optional  int32  buy_times=3[default=0]; //当天购买次数
+optional  int32  resume_time=4[default=0]; //恢复时间
+}
+

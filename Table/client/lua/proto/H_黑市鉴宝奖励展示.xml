@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="tBlackAwardCfg" Key="configNum" ExportType="Dic" Src="H 黑市鉴宝奖励展示.xlsx" Sheet="Sheet1">
+  <P Name="configNum" Type="number" ColName= "套序号" />
+  <P Name="awardList" Type="number"  IsList="true" Lsp="," ColName= "奖励道具" />
+</Proto>

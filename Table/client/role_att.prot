@@ -1,0 +1,35 @@
+message RoleAtt [key=id, source="J 角色属性表.xls", sheet="Sheet1"]				
+{
+	struct AttRestaint	 [separator = '_']
+	{
+		uint16 value;	
+	};
+	
+
+	struct skillid	 [separator = '_']
+	{
+		uint32 skillid;	
+	};
+
+	uint32 id				[option = "ID"];
+	uint8 sex					[option = "性别"];
+	uint16 level					[option = "等级"];
+	int64 exp					[option = "经验"];
+	uint16 model_id					[option = "模型ID"];
+	uint16 weapon_mod_id		[option = "武器模型ID"];
+	uint16 profession					[option = "职业"];
+	uint8 speed					[option = "速度"];
+	int32 hp					[option = "生命"];
+	uint32 att					[option = "攻击"];
+	uint32 def					[option = "防御"];
+	uint32 hit					[option = "命中"];
+	uint32 dodge					[option = "闪避"];
+	uint32 crit					[option = "暴击"];
+	uint32 toughness					[option = "韧性"];
+	uint32 pojia					[option = "破甲"];
+	uint32 shanghaijiacheng					[option = "伤害加深"];
+	uint32 baojishanghai					[option = "暴击伤害"];
+	uint32 shanghaijianmian					[option = "伤害减免"];	
+	skillid skill_id							[option = "技能ID"];
+	uint32 view_distance					[option = "视野距离"];
+};

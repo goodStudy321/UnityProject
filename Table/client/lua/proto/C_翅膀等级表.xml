@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="WingLvCfg" ExportType="Arr" Key="lv" Src="C 翅膀等级表.xls" Sheet="Sheet1">
+  <P Name="lv" Type="number" ColName= "等级" />
+  <P Name="costexp" Type="number" ColName="升级经验" />
+  <P Name="hp" Type="number" ColName="生命" />
+  <P Name="def" Type="number" ColName="防御" />
+  <P Name="tena" Type="number" ColName="韧性" />
+  <P Name="dodge" Type="number" ColName= "闪避" />
+  <P Name="oSkiID" Type="number" Opt="true" ColName="开启技能" />
+</Proto>

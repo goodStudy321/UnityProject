@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ItemModel" Key="id" ExportType="Dic" Src="W 外观展示模型.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "道具ID" />
+  <P Name="name" Type="string" ColName="名称" />
+  <P Name="model" Type="string" Opt="true" IsList="true" Lsp=";" ColName= "模型" />
+  <P Name="icon" Type="string" Opt="true" ColName= "图片icon" />
+  <P Name="pos" Type="Vector3" ColName="位置" />
+  <P Name="CZPos" Type="Vector3" ColName="充值有礼展示" />
+  <P Name="drawPos" Type="Vector3" Opt="true" ColName="上上签位置" />
+  <P Name="fight" Type="number" ColName="显示战力" />
+  <P Name="BlaPos" Type="Vector3" ColName="显示位置" />
+  <P Name="rotate" Type="Vector3" Opt="true" ColName="旋转" />
+</Proto>

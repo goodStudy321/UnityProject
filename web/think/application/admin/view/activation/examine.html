@@ -1,0 +1,115 @@
+{include file='public/head'}
+<div class="layui-field-box">
+  <button onclick="javascript:location.href='/admin/activation/produce'" class="layui-btn layui-btn-xs"> 返回列表 </button>
+  <br>
+  <br>
+  <blockquote class="layui-elem-quote">
+    <form class="layui-form" onsubmit="return false">
+      <div class="layui-inline">
+        <label class="layui-form-label">分类ID：</label>
+        <div class="layui-input-inline">
+          <input type="text" id="create_id"  class="layui-input">
+        </div>
+      </div>
+      <div class="layui-inline">
+        <label class="layui-form-label">绑定物品id：</label>
+        <div class="layui-input-inline">
+          <input type="text" id="reward"  class="layui-input">
+        </div>
+      </div>
+      <div class="layui-inline">
+        <label class="layui-form-label">限制条件：</label>
+        <div class="layui-input-inline">
+          <select id="code_status" style="height: 28px;">
+            <option value="all" selected>全部</option>
+            <option value="1">每个角色只能领取一次</option>
+            <option value="2">每个账号只能领取一次</option>
+            <option value="3">每个服务器只能领取一次</option>
+            <option value="4">“每个服务器/每个角色”只能领取一次</option>
+          </select>
+        </div>
+      </div>
+      <br><br>
+      <div class="layui-inline">
+        <label class="layui-form-label">激活码：</label>
+        <div class="layui-input-inline">
+          <input type="text" id="code_name"  class="layui-input">
+        </div>
+      </div>
+      <div class="layui-inline">
+        <label class="layui-form-label">创建时间：</label>
+        <div class="layui-input-inline">
+          <input type="text" id="create" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <br><br>
+      <div class="layui-inline">
+        <label class="layui-form-label" style="margin-left: -70px;"></label>
+      </div>
+      <div class="layui-inline">
+        <div class="layui-input-inline" id="button">
+          <button class="layui-btn layui-btn-sm">查询</button>
+        </div>
+        <div class="layui-input-inline">
+          <button onclick="javascript:location.reload()" class="layui-btn layui-btn-sm">刷新</button>
+        </div>
+      </div>
+    </form>
+  </blockquote>
+  <table id="table" lay-filter="test"></table>
+</div>
+{include file='public/foot'}
+
+<script>
+  layui.use(['laydate','form'], function(){
+    var laydate = layui.laydate;
+    var form = layui.form;
+    //执行一个laydate实例
+    laydate.render({
+      elem: '#create' //指定元素
+      ,max:0
+    ,range:true
+    });
+  });
+  //表格
+  layui.use('table', function(){
+    var table = layui.table;
+    //第一个实例
+    var tableIns = table.render({
+      elem: '#table'
+      ,url: 'examine_data?create_id={$id}' //数据接口
+      ,page: true //开启分页
+      ,cols: [[ //表头
+      {field: 'id', title: 'id', width:80}
+      ,{field: 'code_name', title: '激活码'}
+      ,{field: 'code_status', title: '限制条件'}
+      ,{field: 'time', title: '生成时间', width:160}
+      ,{field: 'reward', title: '绑定物品ID'}
+      ,{field: 'reward_num', title: '绑定数量'}
+      ,{field: 'create_id', title: '激活码分类ID'}
+      ]]
+    });
+
+    $("#button").click(function(){
+      var create_id = $("#create_id").val();
+      var code_status = $("#code_status").val();
+      var code_name = $("#code_name").val();
+      var reward = $("#reward").val();
+      var create = $("#create").val();
+      console.log(create_id);
+      tableIns.reload({
+        where: { //设定异步数据接口的额外参数，任意设
+          find:1
+        ,create_id:create_id
+        ,code_status: code_status
+        ,code_name: code_name
+        ,reward: reward
+        ,create: create
+        }
+        ,page: {
+      curr: 1 //重新从第 1 页开始
+        }
+      });
+    });
+  });
+</script>

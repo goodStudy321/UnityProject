@@ -1,0 +1,6 @@
+// 洞天福地挑战次数更新
+message m_cave_times_update_toc {
+optional  int32  cave_times=1[default=0]; //洞天福地已经击杀的次数
+optional  int32  cave_assist_times=2[default=0]; //洞天福地剩余援助次数
+}
+

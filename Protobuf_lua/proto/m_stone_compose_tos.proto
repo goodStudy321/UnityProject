@@ -1,0 +1,5 @@
+// 宝石合成
+message m_stone_compose_tos {
+optional  int32  stone_id=1[default=0]; //要合成宝石ID
+}
+

@@ -1,0 +1,5 @@
+// 问卷调查状态
+message m_survey_state_toc {
+optional  bool  is_open=1[default=true]; //是否开启问卷
+}
+

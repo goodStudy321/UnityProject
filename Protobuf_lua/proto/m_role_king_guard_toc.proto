@@ -1,0 +1,6 @@
+// 上线
+message m_role_king_guard_toc {
+optional  int32  money=1[default=0]; //价格为0时读配置
+optional  int32  type=2[default=0]; //0 - 未买  1- 已买   2  已领
+}
+

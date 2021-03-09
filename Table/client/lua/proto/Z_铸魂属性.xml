@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="CastingSoulProCfg" Key="id" ExportType="Arr" Src="Z 铸魂属性.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName="装备部位id" />
+  <P Name="class" Type="number" ColName="铸魂属性阶数" />
+  <P Name="classCond" Type="number" ColName="铸魂阶数" />
+  <P Name="layerCond" Type="number" ColName="通关塔层数" />
+  <P Name="pro" Type="K_V" IsList="true" Lsp=";" ColName= "属性加成" />
+</Proto>

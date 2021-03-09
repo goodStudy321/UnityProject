@@ -1,0 +1,4 @@
+// 请求猎杀boss道庭排行榜信息
+message m_act_boss_hunt_family_rank_info_tos {
+}
+

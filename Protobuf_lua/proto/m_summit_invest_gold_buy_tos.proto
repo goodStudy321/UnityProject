@@ -1,0 +1,5 @@
+// 化身投资投资计划购买
+message m_summit_invest_gold_buy_tos {
+optional  int32  summit_invest_gold=1[default=0]; //化身投资XX档次
+}
+

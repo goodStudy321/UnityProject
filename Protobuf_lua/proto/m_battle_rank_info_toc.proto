@@ -1,0 +1,6 @@
+import "p_battle_rank.proto";
+// 战场排行信息
+message m_battle_rank_info_toc {
+repeated  p_battle_rank  ranks=1; //战场排行
+}
+

@@ -1,0 +1,6 @@
+// 符文寻宝返回
+message m_rune_treasure_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  rune_free_time=2[default=0]; //符文寻宝免费时间
+}
+

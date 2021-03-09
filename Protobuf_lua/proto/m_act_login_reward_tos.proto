@@ -1,0 +1,5 @@
+// 回归豪礼奖励领取
+message m_act_login_reward_tos {
+optional  int32  type=1[default=0]; //0:领取回归奖励 1:领取登录奖励
+}
+

@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MoonExchangeCfg" Key="id" ExportType="Arr" Src="Y 月下情缘兑换配置表.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "序号" />
+  <P Name="needScore" Type="number" ColName="需要积分" />
+  <P Name="rewTab" Type="I_B_N" Opt="true" IsList="true" Lsp=";" ColName="奖励" />
+  <P Name="configNum" Type="number" ColName="套序号" />
+</Proto>

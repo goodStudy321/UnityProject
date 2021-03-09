@@ -1,0 +1,7 @@
+// 
+message p_listen {
+optional  int32  type=1[default=0]; //0杀怪任务 1对话，2采集 3流程树
+optional  int32  val=2[default=0]; //目标类型
+optional  int32  num=3[default=0]; //当前进度
+}
+

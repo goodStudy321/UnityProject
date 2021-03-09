@@ -1,0 +1,7 @@
+import "p_kv.proto";
+// 宠物皮肤激活返回
+message m_mount_surface_active_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  p_kv  surface=2; //id:当前进度id, val:当前进阶经验值
+}
+

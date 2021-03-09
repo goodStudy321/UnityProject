@@ -1,0 +1,5 @@
+// 添加好友
+message m_friend_add_tos {
+optional  int64  role_id=1[default=0]; 
+}
+

@@ -1,0 +1,4 @@
+// 获取收到的信件
+message m_letter_get_tos {
+}
+

@@ -1,0 +1,7 @@
+import "p_kv.proto";
+// 化身投资获得奖励返回
+message m_summit_invest_gold_reward_toc {
+optional  int32  err_code=1[default=0]; 
+optional  p_kv  reward=2; //投资数据更新
+}
+

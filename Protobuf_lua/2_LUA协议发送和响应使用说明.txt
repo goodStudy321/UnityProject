@@ -1,0 +1,52 @@
+> **author  &emsp;:Loong**  
+> **date    &emsp;&emsp;&ensp;:2018-04-20 22:09:07**  
+> **descrition 	:工作日志**
+
+# 协议池
+* 不管是发送协议还是是接收协议都不要保持引用
+* 这些都会在收发后自动放入协议池
+* 发送完成后的协议放入协议池时会自动清理数据
+* 接收完成并处理后的协议放入协议池时交由工具自动清理
+
+# 发送协议说明
+
+* 假设请求协议结构文件为: myproto_tos.proto
+* 生成的lua协议文件名为: myproto_tos_pb.lua
+* 可以这样发送协议:
+`
+	--加载模块
+	local myproto = require("Protol.myproto_tos_pb")
+
+	function My:Send()
+		--创建消息,以下是直接创建一个协议实例
+		--如无意外,应该使用使用ProtoPool从协议池创建消息
+		local msg = myproto.myproto_tos()
+		msg.field1 = "arg1"
+		msg.field2 = "arg2"
+		ProtoMgr.Send(msg)
+	end
+` 
+* 注意加载模块时需加上后缀_pb,但是创建消息时不需要
+* 从协议池获取消息实例:
+`
+	local msg = ProtoPool.Get(protoName)
+	or
+	local msg = ProtoPool.GetByID(protoID)
+	or
+	local msg = ProtoPool.GetByType(module)
+`
+
+
+# 接受协议说明
+
+## 添加协议监听事件
+* 协议ID和类型,可以通过LuaProtoCfg.lua查看
+* 注册事件
+`
+	--msg:接收的协议类型的实例
+	function Your:Func(msg)
+		print(tostring(msg))
+	end
+
+	ProtoLsnr.Add(protoID,Func,Your)
+`

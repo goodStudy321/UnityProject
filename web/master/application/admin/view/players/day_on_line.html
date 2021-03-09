@@ -1,0 +1,120 @@
+{include file='public/head'}
+<div class="layui-tab">
+  <div class="x-body">
+    <blockquote class="layui-elem-quote">
+      <form class="layui-form" action="" onsubmit="return false;">
+        <div class="layui-form-item">
+          <label class="layui-form-label">渠道：</label>
+          <div class="layui-input-block" id="channel">
+            <input type="checkbox" name="channel[all]" title="全部" lay-filter="channel_all" {$selected_filter.channel_id ? '' : 'checked'}>
+            {volist name="filter.channel" id="vo"}
+            <input type="checkbox" name="channel[{$key}]" title="{$vo.name}" lay-filter="channel"
+            {if condition="!isset($selected_filter.channel_id) || in_array($key, $selected_filter.channel_id)"} checked {/if} >
+            {/volist}
+          </div>
+        </div>
+        <div class="layui-inline">
+          <label class="layui-form-label">日期：</label>
+          <div class="layui-inline">
+            <div class="layui-input-inline">
+              <input type="text" class="layui-input" id="time" autocomplete="off">
+            </div>
+            <button class="layui-btn layui-btn-sm" id="button1" onclick="ajax()">查询</button>
+            <button type="button" onclick="javascript:location.reload()" class="layui-btn layui-btn-sm">刷新</button>
+          </div>
+        </div>
+      </form>
+    </blockquote>
+  </div>
+</div>
+
+<div class="layui-field-box">
+  <div id="container" style="height:auto;"></div>
+</div>
+
+<script src="/public/static/highcharts/highcharts.js"></script>
+<script type="text/html" id="avg">{{(d.max_online+d.min_online)/2}}</script>
+<script>
+  $(function(){
+    form.render();
+
+    laydate.render({
+      elem: '#time'
+      ,range: true
+    });
+
+    //渠道
+    form.on('checkbox(channel_all)', function (data) {
+      $("input[name^='channel']").each(function (i,d) {
+        this.checked = data.elem.checked;
+      });
+      form.render('checkbox');
+    });
+    // 取消全选
+    form.on('checkbox(channel)', function (data) {
+      var id = $(this).data('id');
+      if(this.checked == false){
+        $("input[name^='channel[all]']").attr('checked', false);
+      }
+      form.render('checkbox');
+    });
+
+    ajax();
+  })
+
+  //表格
+  function ajax(){
+    //检查渠道选择
+    var len = $("input[name^='channel']:checked").length;
+    if(len <= 0){
+      message('至少选一个渠道');
+      return false;
+    }
+
+    var time = $("#time").val();
+    var where = {};
+
+    //组装参数
+    $.each($("input[type='checkbox']:checked").serializeArray(), function(i,d){
+      where[d.name] = d.value;
+    })
+    where.time = time;
+
+    //ajax刷新
+    $.ajax({
+      url: "dayOnline",
+      type: 'GET',     // 请求类型，常用的有 GET 和 POST
+      data: where,
+      success: function(data) { // 接口调用成功回调函数
+        data  = JSON.parse(data);
+        var chart = Highcharts.chart('container', {
+          chart: {
+            type: 'line'                          //指定图表的类型，默认是折线图（line）
+          },
+          title: {
+            text: '峰值曲线'
+          },
+          yAxis: {
+            title: {
+              text: '单位：人'
+            }
+          },
+          xAxis: {
+            categories: data.name   // x 轴分类
+          },
+          series: [{
+            name: '峰值曲线cpu',
+            data: data.val.a1
+          },{
+            name: '平均在线acu',
+            data: data.val.a2
+          },{
+            name: '最低在线',
+            data: data.val.a3
+          }]
+        });
+      }
+    });
+  }
+</script>
+{include file='public/foot'}

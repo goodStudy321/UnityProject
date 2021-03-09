@@ -1,0 +1,97 @@
+{include file='public/head'}
+<body>
+  <style type="text/css" media="screen">
+    header {
+      color: black;
+    }
+  </style>
+  <div class="x-body" >
+    <form class="layui-form layui-form-pane" id='mainForm' method="post" action="configAdd">
+      <div class="layui-form-item">
+        <label class="layui-form-label">名称</label>
+        <div class="layui-input-block">
+          <input type="text"  name="title_name" lay-verify="username"  autocomplete="off" value="" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">代理ID</label>
+        <div class="layui-input-block">
+          <input type="text"  name="agent_id" lay-verify="required"  autocomplete="off" value="" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">服务器ID</label>
+        <div class="layui-input-block">
+          <input type="text"  name="server_id" lay-verify="required"  autocomplete="off" value="" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-card-header"><b>数据库</b></div> <br>
+      <div class="layui-form-item">
+        <label class="layui-form-label">服务器地址</label>
+        <div class="layui-input-block">
+          <input type="text"  name="mysql[hostname]" lay-verify="required" autocomplete="off" placeholder="请输入ip，示例：192.168.2.250" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">数据库名</label>
+        <div class="layui-input-block">
+          <input type="text"  name="mysql[database]" lay-verify="required" autocomplete="off" placeholder="请输入数据库名" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-card-header"><b>其他</b></div> <br>
+      <div class="layui-form-item">
+        <label class="layui-form-label">信息发送地址</label>
+        <div class="layui-input-block">
+          <input type="text"  name="other[send_to_url]" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <button style="margin-left: 20%" class="layui-btn layui-btn-sm" lay-submit="" lay-filter="toSubmit">提交</button>
+          <button id="reset" type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+<script type="text/javascript">
+  var form = layui.form;
+  var layer = layui.layer;
+  //自定义验证规则
+  form.verify({
+    username: function(value){
+      if(value.length < 5){
+        return '用户名至少得5个字符啊';
+      }
+    }
+  });
+
+  $(document).ready(function(){
+    var options = {
+      type:'post',           //post提交
+      //url:'http://ask.tongzhuo100.com/server/****.php?='+Math.random(),   //url
+      dataType:"json",        //json格式
+      data:{},    //如果需要提交附加参数，视情况添加
+      clearForm: false,        //成功提交后，清除所有表单元素的值
+      resetForm: false,        //成功提交后，重置所有表单元素的值
+      cache:false,
+      async:false,          //同步返回
+      success:function(data){
+        if(data.code==0){
+          layer.msg(data.msg);
+        }else{
+          layer.msg(data.msg,{icon:1,time:500},function(){
+            parent.location.reload();
+            $("#reset").click();
+            x_admin_close();
+          });
+        }
+        //服务器端返回处理逻辑
+      },
+      error:function(XmlHttpRequest,textStatus,errorThrown){
+        layer.msg('操作失败:服务器处理失败');
+      }
+    };
+  });
+</script>
+{include file='public/foot'}

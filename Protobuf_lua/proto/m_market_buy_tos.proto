@@ -1,0 +1,6 @@
+// 购买商品
+message m_market_buy_tos {
+optional  int32  id=1[default=0]; //ID
+optional  string  password=2; //密码 无则-“”
+}
+

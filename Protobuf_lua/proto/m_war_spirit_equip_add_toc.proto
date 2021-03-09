@@ -1,0 +1,6 @@
+import "p_war_spirit_equip.proto";
+// 战灵装备背包新增
+message m_war_spirit_equip_add_toc {
+repeated  p_war_spirit_equip  add_list=1; //战灵装备
+}
+

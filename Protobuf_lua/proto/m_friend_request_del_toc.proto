@@ -1,0 +1,5 @@
+// 删除申请人
+message m_friend_request_del_toc {
+optional  int64  request_id=1[default=0]; //删除申请人的ID
+}
+

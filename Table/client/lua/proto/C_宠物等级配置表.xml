@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PetLvTemp" Key="lv" ExportType="Dic" Src="C 宠物等级配置表.xls" Sheet="Sheet1">
+  <P Name="lv" Type="number" ColName= "宠物等级" />
+  <P Name="costExp" Type="number" ColName= "消耗经验" />
+  <P Name="hp" Type="number" ColName= "生命" />
+  <P Name="atk" Type="number" ColName="攻击" />
+  <P Name="def" Type="number" ColName="防御" />
+  <P Name="arm" Type="number" ColName= "破甲" />
+</Proto>

@@ -1,0 +1,9 @@
+import "p_answer_rank.proto";
+// 发送排行榜
+message m_answer_rank_toc {
+repeated  p_answer_rank  rank_list=1; //排行信息
+optional  p_answer_rank  self=2; //自我信息
+optional  int32  add_score=3[default=0]; //本次增加份数
+optional  int32  is_end=4[default=0]; //最终结束时间戳  - 0为还未开始结束
+}
+

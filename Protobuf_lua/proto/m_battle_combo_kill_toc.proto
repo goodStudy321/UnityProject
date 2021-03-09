@@ -1,0 +1,6 @@
+// 战场连杀信息
+message m_battle_combo_kill_toc {
+optional  string  role_name=1; //连杀者名字
+optional  int32  kill_num=2[default=0]; //被杀者的击杀数量
+}
+

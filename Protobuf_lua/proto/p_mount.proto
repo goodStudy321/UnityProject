@@ -1,0 +1,11 @@
+import "p_kv.proto";
+// 坐骑的p结构
+message p_mount {
+optional  int32  mount_id=1[default=0]; //进阶表的唯一id
+optional  int32  cur_id=2[default=0]; //当前幻化id
+optional  int32  exp=3[default=0]; //exp
+repeated  p_kv  skin_list=4; //坐骑皮肤
+repeated  p_kv  quality_list=5; //资质丹列表 key:道具ID value:数量
+repeated  p_kv  surface_list=6; //幻化外观列表
+}
+

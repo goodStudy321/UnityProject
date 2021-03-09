@@ -1,0 +1,157 @@
+@extends('layouts.base')
+
+@section('content')
+<div class="ui grid">
+  <div class="left floated six wide column">
+    <div class="ui download primary button"> 批量更新 </div>
+  </div>
+  <div class="right floated six wide column">
+    <div class="ui download primary button right" id="addServer"> 添加服务器 </div>
+  </div>
+</div>
+<div class="ui divider"></div>
+<div class="ui grid">
+  <div class="four column row">
+    <div class="twelve wide column bd">
+      <div class="column">
+        @foreach ($data as $v)
+        <table class="ui celled striped table">
+          <thead>
+            <tr>
+              <th colspan="5">
+                {{ $v['url'] }}
+                <div class="ui tiny red basic button right" onclick="javascript:delModal({{ $v['id'] }})"> 删除 </div>
+                <div class="ui tiny basic button right change-url" data-user="{{ $v['user'] }}" data-url="{{ $v['url'] }}" data-id="{{ $v['id'] }}"> 修改服务器 </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="two wide">
+                <div class="ui checkbox checked">
+                  <input type="checkbox" name="all">
+                  <label>全部选择</label>
+                </div>
+              </td>
+              <td class="one wide"> 编号 </td>
+              <td class="seven wide">脚本</td>
+              <td class="three wide">最后执行时间</td>
+              <td class="three wide">最后执行状态</td>
+              <td class="two wide">最后执行状态</td>
+            </tr>
+            @foreach($v['scripts'] as $s)
+            <tr>
+              <td class="two wide">
+                <div class="ui checkbox checked">
+                  <input type="checkbox" name="all">
+                  <label>.</label>
+                </div>
+              </td>
+              <td class="one wide"> {{ $s['id']}} </td>
+              <td class="seven wide">{{ $s['script'] }}</td>
+              <td class="three wide">最后执行时间</td>
+              <td class="three wide">最后执行状态</td>
+              <td class="two wide">最后执行状态</td>
+            </tr>
+            @endforeach
+          </tbody>
+        </table>
+        @endforeach
+      </div>
+    </div>
+      <div class="four wide column bd" id="loading">
+      </div>
+    </div>
+    <div class="ui mini modal" id="change">
+      <div class="header"> 添加服务器 </div>
+      <div class="content" id="change-url">
+        <form id="serverForm" class="ui form" method="POST" action="/home/addserver">
+          @csrf
+          <div class="ui fluid input">
+            <input type="text" name="user" placeholder="服务器用户" value="" id="server-user">
+          </div>
+          <div class="ui fluid input">
+            <input type="text" name="url" placeholder="服务器地址" value="" id="server-url">
+          </div>
+          <input type="hidden" name="id" value="0" id="server-id">
+        </form>
+      </div>
+      <div class="actions">
+        <div class="ui black deny button">
+          取消
+        </div>
+        <div class="ui positive right labeled icon button" onclick="javascript:$('#serverForm').submit();">
+          确定
+          <i class="checkmark icon"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui mini modal" id="confrim">
+      <div class="header">
+        确定要删除吗？
+      </div>
+      <div class="content">
+        <p>此服务器下可能有脚本，请再次确定</p>
+      </div>
+      <div class="actions">
+        <div class="ui negative button"> 取消 </div>
+        <div class="ui positive right labeled icon button" onclick="del()">
+          确定删除
+          <i class="checkmark icon"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    var delID = 0;
+    $('#addServer').click(function(){
+      $('#server-id').val('0');
+      $('#server-url, #server-user').val('');
+      $('#change').modal('show');
+    })
+
+    $('.change-url').click(function(){
+      var old_user = $.trim($(this).data('user'));
+      var old_url  = $.trim($(this).data('url'));
+      var old_id   = Number($(this).data('id'));
+      if(old_user == '' && old_url == '' && old_id <= 0)
+        return ;
+
+      $('#server-user').val(old_user);
+      $('#server-url').val(old_url);
+      $('#server-id').val(old_id);
+      $('#change').modal('show');
+    })
+
+    function delModal(id){
+      if(id <= 0)
+        return;
+
+      delID = id;
+      $('#confrim').modal('show');
+    }
+
+    function del(){
+      if(delID <= 0)
+        return;
+      window.location.href='/home/delserver?id='+delID;
+    }
+
+    $(function(){
+      var loading = function(){
+        var html = '';
+        $.post('/home/loading', {}, function(info){
+          if(info.status.code != 10200)
+            return ;
+
+          $('#loading').html(info.data);
+        }, 'json')
+      }
+
+      //初始化
+      loading();
+    })
+
+  </script>
+@endsection

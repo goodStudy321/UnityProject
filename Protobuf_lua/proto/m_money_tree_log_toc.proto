@@ -1,0 +1,6 @@
+import "p_money_tree_log.proto";
+//  
+message m_money_tree_log_toc {
+optional  p_money_tree_log  other_log=1; //全服日志更新
+}
+

@@ -1,0 +1,6 @@
+// 申请加入队伍回应
+message m_team_apply_reply_tos {
+optional  int32  op_type=1[default=0]; //1同意加入 2为拒绝加入
+optional  int64  role_id=2[default=0]; //玩家
+}
+

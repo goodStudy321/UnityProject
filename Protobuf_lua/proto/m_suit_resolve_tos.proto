@@ -1,0 +1,5 @@
+// 分解
+message m_suit_resolve_tos {
+optional  int32  place_id=1[default=0]; //部位id
+}
+

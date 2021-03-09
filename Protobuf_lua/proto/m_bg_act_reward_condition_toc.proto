@@ -1,0 +1,7 @@
+import "p_kvt.proto";
+// 奖励条件变化
+message m_bg_act_reward_condition_toc {
+optional  int32  id=1[default=0]; 
+repeated  p_kvt  list=2; //val  =  进度   type- 领取状态
+}
+

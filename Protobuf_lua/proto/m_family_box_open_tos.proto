@@ -1,0 +1,6 @@
+import "p_family_box.proto";
+// 开宝箱
+message m_family_box_open_tos {
+repeated  p_family_box  box=1; //开启宝箱
+}
+

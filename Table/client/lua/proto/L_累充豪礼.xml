@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ChargeRewardCfg" Key="id" ExportType="Arr" Src="J 节日活动_累计充值.xls" Sheet="Sheet3">
+  <P Name="id" Type="number" ColName= "累计充值" />
+  <P Name="reward" Type="K_V" Lsp = ";" IsList = "true" ColName= "奖励" />
+</Proto>

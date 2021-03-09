@@ -1,0 +1,7 @@
+import "p_chat_role.proto";
+// 区域-屏蔽某个玩家返回
+message m_chat_area_ban_add_toc {
+optional  int32  err_code=1[default=0]; 
+optional  p_chat_role  add_role_info=2; //跨服屏蔽玩家的信息
+}
+

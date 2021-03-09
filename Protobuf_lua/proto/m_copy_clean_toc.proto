@@ -1,0 +1,10 @@
+import "p_goods.proto";
+// 扫荡副本返回
+message m_copy_clean_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  map_id=2[default=0]; //副本ID
+optional  int32  num=3[default=0]; //扫荡次数
+optional  int64  add_exp=4[default=0]; //获得的经验
+repeated  p_goods  goods_list=5; //获得的物品
+}
+

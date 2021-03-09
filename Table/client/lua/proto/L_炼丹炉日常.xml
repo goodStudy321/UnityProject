@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="CommonAlchemyCfg" Key="ID"  Src="L 炼丹炉日常.xlsx" Sheet="Sheet1">
+  <P Name="ID" Type="number" ColName= "ID" />
+  <P Name="ItemId" Type="number" ColName="道具" />
+  <P Name="Num" Type="number" ColName="数量" />
+  <P Name="Power" Type="number" ColName="权重" />
+</Proto>

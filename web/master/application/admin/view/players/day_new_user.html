@@ -1,0 +1,79 @@
+{include file='public/head'}
+<style>
+  .layui-table-body {
+    display: block;
+  }
+</style>
+
+<div class="layui-tab">
+  <div class="x-body">
+    <blockquote class="layui-elem-quote">
+      <form class="layui-form" action="" lay-filter="filterForm">
+        <div class="layui-inline">
+          <label class="layui-form-label">日期：</label>
+          <div class="layui-input-inline">
+            <input type="text" class="layui-input" name="time" id="time" value="{$time}" autocomplete="off">
+          </div>
+        </div>
+        <br>
+        <br>
+        {include file='public/filter'}
+      </form>
+    </blockquote>
+    <table id="table2" lay-filter="test"></table>
+  </div>
+</div>
+
+  <script>
+    layui.use('table', function(){
+      var where   = {};
+
+      laydate.render({
+        elem: '#time'
+        ,range: true
+      });
+
+      //第一个实例
+      var tableIns2 = table.render({
+        elem: '#table2'
+        ,url: 'dayNewUser?{$where}' //数据接口
+        ,page: true //开启分页
+        ,cellMinWidth:90
+        ,cols:[[ //标题栏
+        {field:'time' , align: 'center'       , title: '注册日期' , width:110}
+        , {field: 'add' , title: '当日注册账号' , width:110}
+        , {field: 'a1'  , title: '1日登录'}
+        , {field: 'a2'  , title: '2日登录'}
+        , {field: 'a3'  , title: '3日登录'}
+        , {field: 'a4'  , title: '4日登录'}
+        , {field: 'a5'  , title: '5日登录'}
+        , {field: 'a6'  , title: '6日登录'}
+        , {field: 'a7'  , title: '7日登录'}
+        , {field: 'a8'  , title: '8日登录'}
+        , {field: 'a9'  , title: '9日登录'}
+        , {field: 'a10' , title: '10日登录'}
+        , {field: 'a11' , title: '11日登录'}
+        , {field: 'a12' , title: '12日登录'}
+        , {field: 'a13' , title: '13日登录'}
+        , {field: 'a14' , title: '14日登录'}
+        , {field: 'a15' , title: '15日登录'}
+        , {field: 'a16' , title: '16日登录'}
+        , {field: 'a17' , title: '17日登录'}
+        , {field: 'a18' , title: '18日登录'}
+        , {field: 'a19' , title: '19日登录'}
+        , {field: 'a20' , title: '20日登录'}
+        , {field: 'a21' , title: '21日登录'}
+        , {field: 'a22' , title: '22日登录'}
+        , {field: 'a23' , title: '23日登录'}
+        , {field: 'a24' , title: '24日登录'}
+        , {field: 'a25' , title: '25日登录'}
+        , {field: 'a26' , title: '26日登录'}
+        , {field: 'a27' , title: '27日登录'}
+        , {field: 'a28' , title: '28日登录'}
+        , {field: 'a29' , title: '29日登录'}
+        , {field: 'a30' , title: '30日登录'}
+        ]]
+      });
+    });
+  </script>
+  {include file='public/foot'}

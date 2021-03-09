@@ -1,0 +1,6 @@
+// 开服冲榜购买道具
+message m_act_rank_buy_tos {
+optional  int32  id=1[default=0]; //ID
+optional  int32  type_id=2[default=0]; //购买道具ID
+}
+

@@ -1,0 +1,8 @@
+import "p_war_spirit_equip.proto";
+// 战灵灵饰进阶返回
+message m_war_spirit_equip_step_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  war_spirit_id=2[default=0]; //战灵id
+optional  p_war_spirit_equip  equip=3; //穿戴装备
+}
+

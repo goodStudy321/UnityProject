@@ -1,0 +1,5 @@
+// 兑换装备
+message m_family_rename_tos {
+optional  string  family_name=1; //道庭名
+}
+

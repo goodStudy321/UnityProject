@@ -1,0 +1,10 @@
+import "p_kv.proto";
+// 魔域boss房间信息
+message p_demon_boss_room {
+optional  int32  room_id=1[default=0]; //房间ID
+optional  bool  is_alive=2[default=true]; //true：存活可进 false：不可进入
+optional  int64  role_id=3[default=0]; //击杀者角色ID
+optional  string  role_name=4; //击杀者名字
+repeated  p_kv  panel_goods=5; //掉落
+}
+

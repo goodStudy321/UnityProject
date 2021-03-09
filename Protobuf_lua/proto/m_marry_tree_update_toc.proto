@@ -1,0 +1,7 @@
+// 姻缘树信息更新
+message m_marry_tree_update_toc {
+optional  int32  tree_end_time=1[default=0]; //自身姻缘树结束时间 为0时表示未获得
+optional  bool  tree_active_reward=2[default=true]; //激活奖励是否可以领取 true:可以领取 false:不能领取
+optional  int32  tree_daily_time=3[default=0]; //上次领取姻缘树日常的时间
+}
+

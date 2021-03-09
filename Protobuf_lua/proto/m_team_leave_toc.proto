@@ -1,0 +1,5 @@
+// 离开队伍
+message m_team_leave_toc {
+optional  int32  err_code=1[default=0]; 
+}
+

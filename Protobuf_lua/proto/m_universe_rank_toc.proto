@@ -1,0 +1,8 @@
+import "p_universe_rank.proto";
+import "p_universe_best_three.proto";
+// 获取太虚通天塔排行返回
+message m_universe_rank_toc {
+repeated  p_universe_rank  universe_ranks=1; //排行数据
+repeated  p_universe_best_three  best_three=2; //至尊三强
+}
+

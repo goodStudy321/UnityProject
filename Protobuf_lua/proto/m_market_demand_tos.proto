@@ -1,0 +1,6 @@
+import "p_market_goods.proto";
+// 上架求购信息
+message m_market_demand_tos {
+optional  p_market_goods  info=1; //ID
+}
+

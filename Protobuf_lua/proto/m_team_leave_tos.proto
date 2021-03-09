@@ -1,0 +1,4 @@
+// 离开队伍
+message m_team_leave_tos {
+}
+

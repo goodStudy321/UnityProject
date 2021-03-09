@@ -1,0 +1,10 @@
+import "p_kv.proto";
+// 神兽岛次数推送
+message m_mythical_boss_times_toc {
+optional  int32  times=1[default=0]; //神兽岛疲劳次数
+optional  int32  item_add_times=2[default=0]; //道具使用增加次数
+optional  int32  collect_times=3[default=0]; //采集物次数
+optional  int32  collect2_times=4[default=0]; //凤血次数更新
+repeated  p_kv  item_times=5; //神兽岛宝箱开启次数 id:使用效果类型 val:已经使用的次数
+}
+

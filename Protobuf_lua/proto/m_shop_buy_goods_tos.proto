@@ -1,0 +1,7 @@
+// 购买商品
+message m_shop_buy_goods_tos {
+optional  int32  shop_id=1[default=0]; //商品id
+optional  int32  num=2[default=0]; //购买个数
+optional  int32  type_id=3[default=0]; //道具ID，用于校验
+}
+

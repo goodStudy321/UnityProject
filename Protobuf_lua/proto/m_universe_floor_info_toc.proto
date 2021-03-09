@@ -1,0 +1,12 @@
+// 获取太虚通天塔最快&最低战力通关玩家返回
+message m_universe_floor_info_toc {
+optional  int64  fast_role_id=1[default=0]; //最快通关RoleID
+optional  string  fast_role_name=2; //最快通关RoleName
+optional  string  fast_server_name=3; //最快通关玩家服务器名字
+optional  int32  use_time=4[default=0]; //用时(毫秒)
+optional  int64  power_role_id=5[default=0]; //战力最低RoleID
+optional  string  power_role_name=6; //战力最低关RoleName
+optional  string  power_server_name=7; //战力最低
+optional  int32  power=8[default=0]; //战力
+}
+

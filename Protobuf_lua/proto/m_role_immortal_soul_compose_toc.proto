@@ -1,0 +1,11 @@
+import "p_immortal_soul.proto";
+// 仙魂合成
+message m_role_immortal_soul_compose_toc {
+optional  int32  err_code=1[default=0]; 
+repeated  int32  del_list=2; //删除列表
+optional  p_immortal_soul  immortal_soul=3; //合成仙魂
+repeated  p_immortal_soul  add=4; //暗包回退
+optional  int32  stone=5[default=0]; //现有仙魂石
+optional  int32  dust=6[default=0]; //仙尘
+}
+

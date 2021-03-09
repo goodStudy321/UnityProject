@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="CopyTowerTemp" Key="id" ExportType="Dic" Src="F 爬塔副本.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "副本ID" />
+  <P Name="receiveR" Type="K_V" Opt="true" IsList="true" Lsp=";" ColName= "领取奖励" />
+  <P Name="endR" Type="K_V" Opt="true" IsList="true" Lsp=";" ColName= "通关奖励" />
+  <P Name="hold" Type="number" Opt="true" ColName= "符文槽开启" />
+  <P Name="pos" Type="Vector2" Opt="true" IsList="true" Lsp=";" ColName= "怪物坐标" />
+  <P Name="treasureId" Type="number" ColName= "寻宝宝箱ID" />
+</Proto>

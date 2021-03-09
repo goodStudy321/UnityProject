@@ -1,0 +1,5 @@
+// 实名验证返回
+message m_role_addict_auth_toc {
+optional  int32  err_code=1[default=0]; 
+}
+

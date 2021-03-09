@@ -1,0 +1,5 @@
+// 许愿池抽奖
+message m_oss_trevi_fountain_reward_tos {
+optional  int32  id=1[default=0]; //积分ID
+}
+

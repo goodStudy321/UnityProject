@@ -1,0 +1,8 @@
+// 套装激活返回
+message m_suit_active_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  id=2[default=0]; //装备收集id
+optional  int32  suit_num=3[default=0]; //激活数量 0 未激活 2 激活2件 4 激活4件 6 激活6件 8 激活8件
+repeated  int32  ids=4; //激活部位ID
+}
+

@@ -1,0 +1,7 @@
+import "p_condition.proto";
+// 成就信息
+message m_achievement_info_toc {
+repeated  p_condition  conditions=1; //各个子类型的条件
+repeated  int32  reward_list=2; //已经领取的reward_list
+}
+

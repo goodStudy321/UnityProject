@@ -1,0 +1,6 @@
+// 购买返回信息
+message m_role_level_panicbuy_toc {
+optional  int32  err_code=1[default=0]; //购买等级抢购物品后的返回信息.
+optional  int32  id=2[default=0]; //等级限时购id
+}
+

@@ -1,0 +1,5 @@
+// 完成任务
+message m_mission_complete_tos {
+optional  int32  mission_id=1[default=0]; //任务ID
+}
+

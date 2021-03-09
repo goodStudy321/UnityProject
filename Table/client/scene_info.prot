@@ -1,0 +1,85 @@
+message SceneInfo [key=id, source="C 场景设置表.xls", sheet="Sheet1"]
+{
+	struct vector3 [separator = '|']
+	{
+		int32 x;	// X
+		int32 y;	// Y
+		int32 z;	// Z
+	};
+	
+	struct npcs [separator = '|']
+	{
+		uint32 npcid;
+	};
+	
+	struct res_npc [separator = ';']
+	{
+		npcs npcid;
+	};
+
+	struct triggers [separator = ',']
+	{
+		string trigger_id;
+	};
+
+	struct update [separator = ',']
+	{
+		uint32 trigger_id;
+	};
+	
+	struct sceneids [separator = '|']
+	{
+		uint32 scene_id;
+	};
+
+	struct uilist [separator = '|']
+	{
+		uint16 ui_id;
+	};
+	
+	struct fightmodestruct [separator = ',']
+	{
+		uint8 fightmode;
+	};
+	
+	struct res_screen [separator = '|']
+	{
+		string res;
+	};
+	
+	struct fbUnits [separator = ',']
+	{
+		uint8 fb_type;
+	};
+	
+	uint32 id						[option = "场景ID"];
+	string name						[option = "名称"];
+	string comment					[option = "简述"];
+	uint8  dontDestroy					[option = "不释放野外场景"];
+	res_screen res_name					[option = "场景资源"];
+	string gridName					[option = "九宫格资源名"];
+	string bgm						[option = "背景音乐"];
+	uint16 camSet					[option = "摄像机设置"];
+	uilist openUI					[option = "打开UI"];
+	uint8 scene_type				[option = "场景类型"];
+	uint8 scene_sub_type			[option = "场景子类型"];
+	int32 show_num					[option = "同时显示相同特效数量"];
+	uint8 can_hit_safe_mons			[option = "安全区是否可攻击怪物"];
+	npcs npc_list					[option = "场景中npc"];
+	update update_list            [option = "刷新序列"];
+	uint8 isNorRevive				[option = "是否可以普通复活"];
+	uint8 isOrigRevive				[option = "是否可以原地复活"];
+	triggers Trigger				[option = "场景Trigger"];
+	uint32 map_id					[option = "地图数据ID"];
+	sceneids link_scene				[option = "连接场景ID"];
+	triggers mission_trigger		[option = "场景任务Trigger"];
+	triggers enter_scene_trigger		[option = "进入场景后预加载Trigger"];
+	fightmodestruct fightmodes		[option = "可选择模式"];
+	uint16 playId					[option = "地图玩法Id"];
+	fbUnits fbUnitList 				[option = "场景单位禁令"];
+	string maptex					[option = "小地图名称"];
+	uint8 portal_type				[option = "跨场景类型"];
+	uint32 scene_view				[option = "场景视野"];
+	uint8 enable_preload			[option = "启用分区预加载"];
+	uint8 forbid_cam_ctrl			[option = "禁止手操相机"];
+};

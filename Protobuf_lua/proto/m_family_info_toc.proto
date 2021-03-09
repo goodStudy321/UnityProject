@@ -1,0 +1,10 @@
+import "p_family.proto";
+import "p_family_box.proto";
+// 道庭信息，上线推送
+message m_family_info_toc {
+optional  p_family  family_info=1; //道庭信息
+optional  int32  integral=2[default=0]; //道庭积分-捐献装备
+repeated  p_family_box  box_list=3; //道庭宝箱
+repeated  int32  skill_list=4; //道庭技能
+}
+

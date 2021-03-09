@@ -1,0 +1,8 @@
+import "p_tab_skill.proto";
+// 重置天赋返回
+message m_talent_reset_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  talent_points=2[default=0]; //当前天赋点数
+optional  p_tab_skill  tab_skills=3; //当前页签技能
+}
+

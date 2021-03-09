@@ -1,0 +1,5 @@
+// 上缴兽粮
+message m_family_up_boss_grain_tos {
+optional  int32  num=1[default=0]; //兽粮
+}
+

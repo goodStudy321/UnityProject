@@ -1,0 +1,8 @@
+import "p_charm_rank.proto";
+// 魅力之王排行返回
+message m_cycle_act_couple_charm_rank_toc {
+repeated  p_charm_rank  ranks=1; 
+optional  int32  my_charm=2[default=0]; //我的魅力
+optional  int32  type=3[default=0]; //0:女 1:男
+}
+

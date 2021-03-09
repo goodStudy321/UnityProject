@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="XHSkillCfg"  Key="id" ExportType="Dic" Src="X 仙魂副本技能表.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "技能ID" />
+  <P Name="buffId" Type="number" ColName= "BuffID" />
+  <P Name="time" Type="number" ColName= "使用次数" />
+  <P Name="cd" Type="number" ColName= "使用CD时间" />
+  <P Name="sprite" Type="string" ColName= "图片" />
+  <P Name="name" Type="string" ColName= "技能名称" />
+  <P Name="des" Type="string" ColName= "技能说明" />
+</Proto>

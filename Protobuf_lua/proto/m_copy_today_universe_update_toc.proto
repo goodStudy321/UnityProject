@@ -1,0 +1,6 @@
+// 今日通关太虚层数更新
+message m_copy_today_universe_update_toc {
+optional  int32  today_universe=1[default=0]; //今日通关太虚层数更新
+optional  int32  status=2[default=0]; //0正常通关 1最低战力 2最快通关 3最低最快通关
+}
+

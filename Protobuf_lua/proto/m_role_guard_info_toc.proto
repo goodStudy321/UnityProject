@@ -1,0 +1,8 @@
+// 角色守护信息  需求书名为饰品  11-guard精灵  12-big_guard仙女 
+message m_role_guard_info_toc {
+optional  int32  guard=1[default=0]; //对应物品type_id  0-无
+optional  int32  end_time=2[default=0]; //消失时间  0-无
+optional  int32  big_guard=3[default=0]; //对应物品type_id  0-无 -1未开启
+optional  int32  big_end_time=4[default=0]; //消失时间  0-无
+}
+

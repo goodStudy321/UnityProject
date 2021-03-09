@@ -1,0 +1,8 @@
+// 周卡数据
+message p_week_card {
+optional  int32  id=1[default=0]; //周卡id
+optional  int32  open_time=2[default=0]; //周卡激活时间 0-未激活
+optional  int32  end_time=3[default=0]; //周卡消失时间 0-永久
+repeated  int32  reward=4; //已领取奖励天数
+}
+

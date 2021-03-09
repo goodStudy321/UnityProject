@@ -1,0 +1,7 @@
+import "p_kv.proto";
+// 领取每日累充奖励
+message m_act_dayrecharge_reward_toc {
+optional  int32  err_code=1[default=0]; 
+optional  p_kv  reward=2; //领取奖励
+}
+

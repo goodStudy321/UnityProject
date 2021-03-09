@@ -1,0 +1,7 @@
+import "p_act_rank.proto";
+// 开服冲榜活动领取返回
+message m_act_rank_rank_toc {
+optional  int32  err_code=1[default=0]; 
+repeated  p_act_rank  ranks=2; //排行信息
+}
+

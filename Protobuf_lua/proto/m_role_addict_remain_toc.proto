@@ -1,0 +1,6 @@
+// 实名&&防沉迷弹窗提醒
+message m_role_addict_remain_toc {
+optional  int32  online_time=1[default=0]; //当前在线时间 分钟
+optional  string  benefit=2; //收益
+}
+

@@ -1,0 +1,7 @@
+import "p_bg_act.proto";
+// 后台商店活动
+message m_bg_store_toc {
+optional  p_bg_act  info=1; //活动信息
+optional  int32  item=2[default=0]; //交易物品
+}
+

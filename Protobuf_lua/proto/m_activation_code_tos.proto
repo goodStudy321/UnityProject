@@ -1,0 +1,5 @@
+// 激活码
+message m_activation_code_tos {
+optional  string  code=1; 
+}
+

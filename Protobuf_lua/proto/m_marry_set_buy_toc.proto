@@ -1,0 +1,6 @@
+// 设置是否可以购买进入(双方返回)
+message m_marry_set_buy_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  bool  is_buy_join=2[default=true]; //是否可以购买进入
+}
+

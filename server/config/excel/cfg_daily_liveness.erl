@@ -1,0 +1,38 @@
+-module(cfg_daily_liveness).
+-include("config.hrl").
+-export[find/1].
+?CFG_H
+
+?C(1, {c_daily_liveness,1,10,1})
+?C(2, {c_daily_liveness,2,3,5})
+?C(3, {c_daily_liveness,3,3,5})
+?C(4, {c_daily_liveness,4,3,5})
+?C(6, {c_daily_liveness,6,10,4})
+?C(7, {c_daily_liveness,7,5,1})
+?C(8, {c_daily_liveness,8,3,5})
+?C(9, {c_daily_liveness,9,1,5})
+?C(11, {c_daily_liveness,11,1,5})
+?C(13, {c_daily_liveness,13,1,5})
+?C(15, {c_daily_liveness,15,1,5})
+?C(16, {c_daily_liveness,16,3,5})
+?C(18, {c_daily_liveness,18,0,0})
+?C(20, {c_daily_liveness,20,1,5})
+?C(22, {c_daily_liveness,22,15,1})
+?C(23, {c_daily_liveness,23,2,5})
+?C(24, {c_daily_liveness,24,1,5})
+?C(26, {c_daily_liveness,26,2,5})
+?C(27, {c_daily_liveness,27,1,10})
+?C(30, {c_daily_liveness,30,3,5})
+?C(31, {c_daily_liveness,31,1,40})
+?C(29, {c_daily_liveness,29,0,0})
+?C(32, {c_daily_liveness,32,3,5})
+?C(33, {c_daily_liveness,33,2,5})
+?C(34, {c_daily_liveness,34,3,5})
+?C(35, {c_daily_liveness,35,1,5})
+?C(36, {c_daily_liveness,36,0,0})
+?C(37, {c_daily_liveness,37,3,5})
+?C(38, {c_daily_liveness,38,10,1})
+?C(39, {c_daily_liveness,39,5,2})
+?C(40, {c_daily_liveness,40,2,5})
+?C(41, {c_daily_liveness,41,2,5})
+?CFG_E.

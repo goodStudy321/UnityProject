@@ -1,0 +1,5 @@
+// 屏蔽功能
+message m_ban_function_list_toc {
+repeated  int32  id_list=1; //功能屏蔽的List
+}
+

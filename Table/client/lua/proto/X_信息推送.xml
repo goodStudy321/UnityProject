@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PushCfg" Key="id" ExportType="Arr" Src="X_信息推送.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "id" />
+  <P Name="name" Type="string" ColName= "活动名称" />
+  <P Name="text" Type="string" ColName= "内容" />
+  <P Name="cycle" Type="number" IsList="true" Lsp=","  ColName= "星期" />
+  <P Name="time" Type="number" IsList="true" Lsp=":"  ColName= "时间" />
+  <P Name="at" Type="number" ColName= "是否启用" />
+  <P Name="d_at" Type="number" ColName= "默认状态" />
+</Proto>

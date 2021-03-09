@@ -1,0 +1,5 @@
+// 登录有礼奖励领取
+message m_act_entry_reward_toc {
+optional  int32  err_code=1[default=0]; //错误码
+}
+

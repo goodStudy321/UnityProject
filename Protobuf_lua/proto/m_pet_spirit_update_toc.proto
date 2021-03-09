@@ -1,0 +1,6 @@
+import "p_kv.proto";
+// 伙伴精魄更新
+message m_pet_spirit_update_toc {
+optional  p_kv  pet_spirit=1; //伙伴精魄更新
+}
+

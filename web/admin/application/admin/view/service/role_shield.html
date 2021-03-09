@@ -1,0 +1,85 @@
+{include file='public/head'}
+<div class="layui-field-box">
+  <blockquote class="layui-elem-quote">
+    <div class="layui-row layui-col-space10">
+      <div class="layui-col-md4">
+        <form class="layui-form" action="" method="POST">
+          <div class="layui-form-item ">
+            <input type="text" placeholder="角色ID/角色名，多个与英文逗号分隔" name="roles" class="layui-input" lay-verify="roles">
+          </div>
+          <div class="layui-form-item ">
+            <input type="text" placeholder="封禁原因" name="reason" class="layui-input" lay-verify="reason">
+          </div>
+          <button class="layui-btn layui-btn-sm layui-btn-danger" type="submit" lay-submit="">封禁</button>
+        </form>
+      </div>
+    </div>
+  </blockquote>
+
+  <blockquote class="layui-elem-quote">
+    <form class="layui-form" method="GET">
+      <div class="layui-inline">
+        <div class="layui-input-inline">
+          <input type="text" placeholder="角色ID/角色名" name="role" class="layui-input" value="{$role}">
+        </div>
+        <div class="layui-input-inline">
+          <button class="layui-btn layui-btn-sm" type="submit">查询</button>
+        </div>
+        <button onclick="javascript:location.reload()" class="layui-btn layui-btn-sm">刷新</button>
+      </div>
+    </form>
+  </blockquote>
+  <table id="table" lay-filter="test"></table>
+</div>
+{include file='public/foot'}
+
+<script type="text/javascript">
+  //表单验证
+  form.verify({
+    roles: function(value){
+      value = $.trim(value);
+      if(value.length < 1){
+        return '角色都没有啊！';
+      }
+    },
+    reason: function(value){
+      value = $.trim(value);
+      if(value.length < 1){
+        return '请填写一下封禁原因';
+      }
+    },
+  });
+
+  layui.use('table', function(){
+    var table = layui.table;
+    var tableIns = table.render({
+      elem: '#table'
+      ,url: 'roleshield?role={$role}'
+      ,page: true
+      ,cols: [[
+        {field: 'role_id'         , title: '角色ID'            , width:130}
+      , {field: 'role_name'       , title: '角色名'}
+      , {field: 'account_name'    , title: '账号'}
+      , {field: 'last_login_ip'   , title: 'IP'            , width:110}
+      , {field: 'map_id'            , title: '地区'          , width:80}
+      , {field: 'role_level'      , title: '角色等级'      , width:80}
+      , {field: 'last_login_time' , title: '最近登录时间'  , width:110}
+      , {field: 'imei'            , title: '登录设备IMEI'}
+      , {field: 'status'          , title: '状态'          , width:60}
+      , {field: 'admin_user'      , title: '操作人'        , width:100}
+      , {field: 'add_time'        , title: '操作时间'      , width:100}
+      , {field: 'reason'          , title: '封禁原因'      , width:150}
+      , {field: 'action'          , title: '操作'          , width:80}
+      ]]
+    });
+  });
+
+  var unshield = function(id, status){
+    if(id <= 0)
+      return;
+
+    $.post('/admin/service/roleUnshield', {id:id, status:status}, function(msg){
+      window.location.reload();
+    }, 'json');
+  }
+</script>

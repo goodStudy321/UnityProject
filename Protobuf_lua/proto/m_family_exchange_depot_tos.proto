@@ -1,0 +1,6 @@
+// 兑换装备
+message m_family_exchange_depot_tos {
+optional  int32  goods_id=1[default=0]; //仓库里的道具id
+optional  int32  num=2[default=0]; //兑换数量
+}
+

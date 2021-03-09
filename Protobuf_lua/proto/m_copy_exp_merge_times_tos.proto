@@ -1,0 +1,5 @@
+// 经验副本合并次数
+message m_copy_exp_merge_times_tos {
+optional  int32  merge_times=1[default=0]; //合并次数
+}
+

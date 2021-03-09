@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ZHTowerPartOpen" ExportType="Arr" Key="copyId" Src="Z 镇魂塔部位开启.xls" Sheet="Sheet1">
+  <P Name="copyId" Type="number" ColName="副本ID" />
+  <P Name="partName" Type="string" ColName="部位名称" />
+  <P Name="itemId" Type="number" ColName="道具展示" />
+  <P Name="part" Type="number" ColName="开启部位" />
+</Proto>

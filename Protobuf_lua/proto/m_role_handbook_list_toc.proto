@@ -1,0 +1,7 @@
+import "p_handbook_data.proto";
+// 获取卡组已激活的卡片id（登录时推送）
+message m_role_handbook_list_toc {
+repeated  p_handbook_data  handbook_list=1; //已激活的卡片和卡片组结构列表
+optional  int32  total_essence=2[default=0]; //用户当前的拥有精华总数
+}
+

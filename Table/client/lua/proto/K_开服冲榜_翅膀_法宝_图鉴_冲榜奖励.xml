@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="TimeLimitRankCfg" Key="id" ExportType="Arr" Src="K 开服冲榜_翅膀_法宝_图鉴_冲榜奖励.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="type" Type="number" ColName="活动类型" />
+  <P Name="rank" Type="number" IsList="true" Lsp="," ColName= "排名区间" />
+  <P Name="cond" Type="number" ColName= "条件" />
+  <P Name="condVal" Type="number" ColName= "条件参数" />
+  <P Name="rankAward" Type="I_B_N" IsList="true" Lsp=";" ColName= "排行奖励" />
+  <P Name="sysName" Type="string" IsList="true" Lsp="," ColName= "系统名称" />
+  <P Name="iconName" Type="string" IsList="true" Lsp="," ColName= "图标icon" />
+  <P Name="mark" Type="number" IsList="true" Lsp="," ColName= "跳转标识" />
+</Proto>

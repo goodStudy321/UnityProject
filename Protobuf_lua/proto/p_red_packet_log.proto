@@ -1,0 +1,8 @@
+// 红包日志
+message p_red_packet_log {
+optional  string  sender_name=1; //玩家名
+optional  int32  from=2[default=0]; //来源
+optional  int32  amount=3[default=0]; //金额
+optional  int32  time=4[default=0]; //时间
+}
+

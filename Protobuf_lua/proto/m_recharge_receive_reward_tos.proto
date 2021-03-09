@@ -1,0 +1,5 @@
+// 福利累充领取奖励
+message m_recharge_receive_reward_tos {
+optional  int32  receive_recharge=1[default=0]; //领取的充值数
+}
+

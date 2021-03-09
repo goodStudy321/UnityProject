@@ -1,0 +1,4 @@
+// 引导好评状态设置
+message m_comment_status_tos {
+}
+

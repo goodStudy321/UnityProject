@@ -1,0 +1,5 @@
+// 选择铭文返回
+message m_skill_seal_choose_toc {
+optional  int32  err_code=1[default=0]; 
+}
+

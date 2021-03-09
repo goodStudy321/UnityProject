@@ -1,0 +1,10 @@
+// 祝福日志
+message p_marry_wish {
+optional  int32  wish_time=1[default=0]; //祝福时间
+optional  int64  role_id=2[default=0]; 
+optional  string  role_name=3; //角色名
+optional  int64  to_role_id=4[default=0]; 
+optional  string  to_role_name=5; //角色名
+optional  int32  index_id=6[default=0]; //祝福类型
+}
+

@@ -1,0 +1,6 @@
+import "p_mining_shift.proto";
+// 移动历史记录更新
+message m_mining_shift_history_update_toc {
+repeated  p_mining_shift  shift_history=1; //移动历史更新
+}
+

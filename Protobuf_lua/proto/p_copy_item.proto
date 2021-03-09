@@ -1,0 +1,12 @@
+import "p_kv.proto";
+// 副本数据
+message p_copy_item {
+optional  int32  copy_type=1[default=0]; //副本类型
+optional  int32  enter_times=2[default=0]; //已经进入的次数
+optional  int32  buy_times=3[default=0]; //购买次数
+optional  int32  can_enter_time=4[default=0]; //可以进入的时间戳
+optional  int32  item_add_times=5[default=0]; //道具增加次数
+repeated  p_kv  star_list=6; //星级 id:CopyID val:星级
+optional  int32  clean_times=7[default=0]; //已经扫荡过的次数
+}
+

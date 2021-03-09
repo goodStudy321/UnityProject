@@ -1,0 +1,91 @@
+{include file='public/head'}
+<div class="layui-field-box">
+  <blockquote class="layui-elem-quote">
+    <form class="layui-form" onsubmit="return false">
+      <div class="layui-input-inline">
+        总注册：<b>{$create}</b>
+      </div>
+      <div class="layui-inline">
+        <label class="layui-form-label">是否在线：</label>
+        <div class="layui-input-inline">
+          <select id="online" style="height: 28px;">
+            <option value="" selected>全部</option>
+            <option value="1">在线</option>
+            <option value="0">离线</option>
+          </select>
+        </div>
+      </div>
+      <div class="layui-inline">
+        <label class="layui-form-label">登录：</label>
+        <div class="layui-input-inline">
+          <select id="login" style="height: 30px;">
+            <option value="" selected>全部</option>
+            <option value="3">三天内有登录</option>
+            <option value="7">七天内有登录</option>
+          </select>
+        </div>
+      </div>
+      <div class="layui-inline">
+        <label class="layui-form-label">付费：</label>
+        <div class="layui-input-inline">
+          <select id="pay" style="height: 30px;">
+            <option value="" selected>全部</option>
+            <option value="1" >有付费</option>
+            <option value="0" >无付费</option>
+          </select>
+        </div>
+        <div class="layui-input-inline" id="button">
+          <button class="layui-btn layui-btn-sm">刷新</button>
+        </div>
+      </div>
+    </form>
+  </blockquote>
+  <table id="table" lay-filter="test"></table>
+</div>
+{include file='public/foot'}
+
+
+<script>
+layui.use(['form', 'table'], function(){
+  var table = layui.table;
+  var form = layui.form;
+  //第一个实例
+  var tableIns = table.render({
+    elem: '#table'
+    ,url: 'lv_data' //数据接口
+    ,page: true //开启分页
+    ,cols: [[ //表头
+    {field: 'lv', title: '等级', sort: true}
+    ,{field: 'role_num', title: '角色数'}
+    ,{field: 'avg', title: '比例 &nbsp;<i class="layui-icon layui-icon-about" id="ratio" data-title="当前等级角色数 / 总角色数"></i>'}
+    ]]
+  });
+  $("#button").click(function(){
+    var online = $("#online").val();
+    var login = $("#login").val();
+    var pay = $("#pay").val();
+    tableIns.reload({
+      where: { //设定异步数据接口的额外参数，任意设
+        online: online
+      ,login: login
+      ,pay: pay
+      }
+      ,page: {
+        curr: 1 //重新从第 1 页开始
+      }
+    });
+  });
+});
+
+var tip_index = 0;
+$(document).on('mouseenter', '#ratio', function(){
+    var title = $(this).data('title');
+    var id = $(this).attr('id');
+    tip_index = layer.tips(title, '#'+id, {
+      tips: [1, '#3595CC'],
+      time: 0,
+    });
+  }).on('mouseleave', '#ratio', function(){
+    layer.close(tip_index);
+  });
+</script>

@@ -1,0 +1,5 @@
+// 幸运上上签 N抽
+message m_lucky_token_pray_tos {
+optional  int32  times=1[default=0]; //抽1次 or 10次
+}
+

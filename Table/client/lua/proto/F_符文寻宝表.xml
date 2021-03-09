@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="RuneTreasureCfg" Key="id" ExportType="Arr" Src="F 符文寻宝表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "编号" />
+  <P Name="treasureId" Type="number" ColName= "宝藏枚举" />
+  <P Name="awardId" Type="number" ColName= "物品id" />
+  <P Name="showType" Type="number" ColName= "展示类型" />
+</Proto>

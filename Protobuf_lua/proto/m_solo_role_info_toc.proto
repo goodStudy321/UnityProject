@@ -1,0 +1,15 @@
+// 1v1pk信息推送
+message m_solo_role_info_toc {
+optional  int32  score=1[default=0]; //当前积分
+repeated  int32  step_reward_list=2; //段位奖励
+optional  int32  season_win_times=3[default=0]; //赛季胜利场次
+optional  int32  season_enter_times=4[default=0]; //赛季参与次数
+optional  int32  enter_times=5[default=0]; //今天参与次数
+repeated  int32  enter_reward_list=6; //当天已经领取参与奖励列表
+optional  int64  exp=7[default=0]; //当天获得经验
+optional  bool  is_matching=8[default=true]; //是否在匹配中
+optional  int32  start_time=9[default=0]; //赛季开始时间,0代表是在单服
+optional  int32  stop_time=10[default=0]; //赛季结束时间,0代表是在单服
+optional  int32  season=11[default=0]; //赛季次数,0代表是在单服
+}
+

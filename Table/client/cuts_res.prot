@@ -1,0 +1,33 @@
+message CutsRes [key=index, source="C 动画片段资源配置表.xls", sheet="Sheet1"]
+{
+	struct groupRes [separator = ':']
+	{
+		string group_name;		// 动画组名称
+		string actor_name;		// 主体角色资源名称
+	};
+	
+	struct changeList [separator = '|']
+	{
+		groupRes gr_list;
+	};
+	
+	struct clips [separator = ':']
+	{
+		string clip_name;		// 动画名称
+	};
+	
+	struct clipList [separator = '|']
+	{
+		clips clip_list;		// clip名称数值
+	};
+
+	
+	uint32 index					[option = "ID"];
+	string cuts_name				[option = "动画片段名称"];
+	uint8 repl_type					[option = "替换轨迹类型"];
+	uint8 con_type1					[option = "替换识别类型1"];
+	uint16 con_val1					[option = "类型1参数"];
+	changeList res_list				[option = "动画组对应资源"];
+	clipList track_clips			[option = "动画轨对应动画资源"];
+	string postfix					[option = "文件后缀"];
+};

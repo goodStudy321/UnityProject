@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PropName" ExportType="Arr" Key="id" Src="S 角色属性字段.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="name" Type="string" ColName="属性名" />
+  <P Name="nLua" Type="string" Opt="true" ColName="lua字段名" />
+  <P Name="show" Type="number" ColName= "显示效果" />
+  <P Name="fight" Type="number" Opt="true" ColName= "属性战力" />
+  <P Name="Text" Type="string" Opt="true" ColName= "增益描述" />
+</Proto>

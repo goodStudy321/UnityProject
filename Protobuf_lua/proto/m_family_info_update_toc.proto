@@ -1,0 +1,6 @@
+import "p_kv.proto";
+// 道庭信息，上线推送
+message m_family_info_update_toc {
+repeated  p_kv  kv_list=1; //p_kv 1：排名, 2:等级 3资金
+}
+

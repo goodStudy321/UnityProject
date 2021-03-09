@@ -1,0 +1,5 @@
+// 奖励数量变更
+message m_bg_act_reward_num_tos {
+optional  int32  id=1[default=0]; //活动id
+}
+

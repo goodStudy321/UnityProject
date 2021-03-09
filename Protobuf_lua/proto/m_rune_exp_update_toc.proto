@@ -1,0 +1,5 @@
+// 符文经验更新
+message m_rune_exp_update_toc {
+optional  int32  exp=1[default=0]; //符文经验
+}
+

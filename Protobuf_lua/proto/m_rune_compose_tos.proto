@@ -1,0 +1,5 @@
+// 符文合成
+message m_rune_compose_tos {
+optional  int32  type_id=1[default=0]; //合成的符文的类型id
+}
+

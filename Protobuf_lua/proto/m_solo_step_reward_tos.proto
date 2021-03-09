@@ -1,0 +1,5 @@
+// 1v1段位奖励领取
+message m_solo_step_reward_tos {
+optional  int32  step=1[default=0]; //领取哪一段奖励
+}
+

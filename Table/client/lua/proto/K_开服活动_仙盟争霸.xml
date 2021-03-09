@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="FamilyBattleRewardCfg" Key="id" ExportType="Arr" Src="K 开服活动_仙盟争霸.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "id" />
+  <P Name="des" Type="string" ColName= "描述" />
+  <P Name="rewardList" Type="K_V" IsList="true" Lsp=";" ColName= "奖励" />
+</Proto>

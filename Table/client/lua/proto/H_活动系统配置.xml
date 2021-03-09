@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="XsActiveCfg" Key="id" ExportType="Dic" Src="H 活动系统配置.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "活动ID" />
+  <P Name="type" Type="number" ColName= "活动类型" />
+  <P Name="name" Type="string" ColName= "活动名称" />
+  <P Name="detail" Type="string" ColName= "活动描述" />
+  <P Name="lv" Type="number" ColName= "等级限制" />
+  <P Name="openDay" Type="number" ColName= "开服开启" />
+  <P Name="endDay" Type="number" ColName= "开服结束" />
+  <P Name="timeStr" Type="string" IsList="true" Lsp="|" Opt="true" ColName= "时间段" />
+</Proto>

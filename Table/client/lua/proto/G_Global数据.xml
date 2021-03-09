@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="GlobalTemp" Key="id" Src="G Global数据.xls" ExportType="Dic" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "规则ID" />
+  <P Name="Value1" Type="Value" IsList="true" Lsp=","  ColName="数值1" />
+  <P Name="Value2" Type="number" IsList="true" Lsp=","  ColName="数值2" />
+  <P Name="Value3" Type="number" Opt="true" ColName="数值3" />
+  <P Name="Value4" Type="K_S" IsList="true" Lsp="|" ColName="数值4" />
+  <P Name="Value5" Type="string" Opt="true" ColName="数值5" />
+</Proto>

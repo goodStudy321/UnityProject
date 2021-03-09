@@ -1,0 +1,6 @@
+import "p_red_packet.proto";
+// 道庭发新红包返回
+message m_family_new_red_packet_toc {
+optional  p_red_packet  red_packet=1; //红包
+}
+

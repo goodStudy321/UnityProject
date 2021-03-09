@@ -1,0 +1,7 @@
+import "p_kv.proto";
+// 许愿池抽奖
+message m_oss_trevi_fountain_reward_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  p_kv  reward=2; //奖励
+}
+

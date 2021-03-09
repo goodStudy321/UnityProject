@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="tSealData" Key="id" ExportType="Dic" Src="W 纹印.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="name" Type="string" ColName="纹印名称" />
+  <P Name="type" Type="number" ColName="纹印类型" />
+  <P Name="lv" Type="number" ColName="纹印等级" />
+  <P Name="dodge" Type="number"  Opt="true" ColName= "闪避" />
+  <P Name="hit" Type="number" Opt="true" ColName= "命中" />
+  <P Name="tena" Type="number" Opt="true" ColName= "韧性" />
+  <P Name="crit" Type="number" Opt="true" ColName= "暴击" />
+  <P Name="parts" Type="number" Opt="true" IsList="true" Lsp="," ColName="镶嵌部位" />
+  <P Name="canGem" Type="number"  Opt="true" ColName= "可合成" />
+  <P Name="num" Type="number"  Opt="true" ColName= "数量" />
+  <P Name="need" Type="number"  Opt="true" ColName= "合成材料" />
+</Proto>

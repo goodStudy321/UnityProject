@@ -1,0 +1,5 @@
+// 伙伴吞噬装备
+message m_pet_level_up_tos {
+repeated  int32  goods_list=1; //装备列表
+}
+

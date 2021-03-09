@@ -1,0 +1,10 @@
+message CollFeedbackCfg [key=id, source="C 采集反馈配置.xls", sheet="Sheet1"]				
+{
+
+	uint32 id			    	[option = "采集物id"];
+	uint8 ty					[option = "触发类型"];
+	uint8 at					[option = "显示隐藏"];
+	string name			    	[option = "组件名称"];
+	uint32 time			    	[option = "延迟反馈"];
+	string flowName			    [option = "触发流程树名称"];
+};

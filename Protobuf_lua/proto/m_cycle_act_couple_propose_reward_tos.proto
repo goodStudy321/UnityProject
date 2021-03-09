@@ -1,0 +1,5 @@
+// 告别单身 奖励领取
+message m_cycle_act_couple_propose_reward_tos {
+optional  int32  id=1[default=0]; //1、2、3分别对应提亲档次 4为称号奖励领取
+}
+

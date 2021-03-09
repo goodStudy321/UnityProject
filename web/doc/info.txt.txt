@@ -1,0 +1,4 @@
+
+外网测试：
+1. 分后台：http://admin.sl-xyjgx.com/
+2. 中央后台：http://master.sl-xyjgx.com/

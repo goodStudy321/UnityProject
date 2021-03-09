@@ -1,0 +1,5 @@
+// 请求领取七天奖励
+message m_role_seven_tos {
+optional  int32  day=1[default=0]; //天数
+}
+

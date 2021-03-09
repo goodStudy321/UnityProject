@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="LvCfg" Key="num" ExportType="Dic" Src="D 等级表.xls" Sheet="Sheet1">
+  <P Name="num" Type="number" ColName= "等级" />
+  <P Name="expNum" Type="number" ColName= "祈福经验" />
+  <P Name="moneyNum" Type="number" ColName= "祈福银两" />
+  <P Name="exp" Type="number" ColName= "活动基准经验" />
+  <P Name="closeExp" Type="number" ColName= "闭关等级经验" />
+</Proto>

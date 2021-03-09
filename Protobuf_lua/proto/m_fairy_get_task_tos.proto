@@ -1,0 +1,5 @@
+// 领取护送仙灵任务
+message m_fairy_get_task_tos {
+optional  int32  fairy_id=1[default=0]; //仙灵ID
+}
+

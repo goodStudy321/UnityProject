@@ -1,0 +1,5 @@
+// 法宝幻化
+message m_magic_weapon_change_tos {
+optional  int32  cur_id=1[default=0]; //法宝幻化id
+}
+

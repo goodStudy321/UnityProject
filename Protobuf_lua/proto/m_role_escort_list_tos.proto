@@ -1,0 +1,6 @@
+// 护送列表
+message m_role_escort_list_tos {
+optional  int32  id=1[default=0]; //记录ID
+optional  int32  time=2[default=0]; //记录结束时间
+}
+

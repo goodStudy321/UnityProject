@@ -1,0 +1,7 @@
+import "p_kv.proto";
+// 建帮立派信息推送
+message m_act_family_create_info_toc {
+repeated  p_kv  conditions=1; //id：栏目 val：状态
+repeated  p_kv  reward_list=2; //id: 栏目 val：已经领取的数量
+}
+

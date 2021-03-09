@@ -1,0 +1,7 @@
+import "p_family_battle_trend.proto";
+// 战场占领进度
+message m_family_battle_trend_toc {
+repeated  p_family_battle_trend  info=1; //信息
+optional  int32  owner=2[default=0]; //归属 0 无 or 其他阵营ID
+}
+

@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="TimeLimitPayCfg" Key="id" ExportType="Arr" Src="K 开服冲榜_翅膀_法宝_图鉴_累计充值.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="type" Type="number" ColName="活动类型" />
+  <P Name="limit" Type="number" ColName= "额度" />
+  <P Name="rankAward" Type="I_B_N" IsList="true" Lsp=";" ColName= "奖励" />
+</Proto>

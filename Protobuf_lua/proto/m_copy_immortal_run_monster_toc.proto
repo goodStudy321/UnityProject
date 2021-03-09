@@ -1,0 +1,5 @@
+// 逃跑怪物数量更新
+message m_copy_immortal_run_monster_toc {
+optional  int32  run_num=1[default=0]; //逃跑怪物数量
+}
+

@@ -1,0 +1,6 @@
+// 关注的boss要刷新了
+message m_world_boss_care_notice_toc {
+optional  int32  boss_type_id=1[default=0]; //快刷新的世界boss的type_id
+optional  int32  type=2[default=0]; //0快刷新 1死亡
+}
+

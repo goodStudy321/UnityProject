@@ -1,0 +1,7 @@
+import "p_challenge.proto";
+// 离线1v1请求信息返回
+message m_offline_solo_info_toc {
+optional  int32  my_rank=1[default=0]; //个人排名
+repeated  p_challenge  challengers=2; //挑战者
+}
+

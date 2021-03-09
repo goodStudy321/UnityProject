@@ -1,0 +1,12 @@
+import "p_chat_role.proto";
+// 坐标信息返回
+message m_chat_pos_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  channel_type=2[default=0]; //0系统消息 1世界频道 2家族 3队伍 4私聊
+optional  int64  channel_id=3[default=0]; //私聊频道用到
+optional  p_chat_role  role_info=4; //发送者的role_info
+optional  int32  map_id=5[default=0]; //地图位置
+optional  string  pos=6; //位置
+optional  int32  time=7[default=0]; //时间戳
+}
+

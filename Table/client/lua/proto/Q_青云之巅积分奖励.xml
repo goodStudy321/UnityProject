@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="TopFScoreCfg" Key="id" ExportType="Dic" Src="Q 青云之巅积分奖励.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "层数" />
+  <P Name="score" Type="number" ColName="需要积分" />
+  <P Name="expRate" Type="number" ColName="经验倍率" />
+  <P Name="award" Type="K_V" IsList="true" Lsp=";" ColName= "完成积分奖励" />
+  <P Name="mapId" Type="number" ColName="场景id" />
+</Proto>

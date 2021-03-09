@@ -1,0 +1,8 @@
+// 宝座升级
+message m_throne_upgrade_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  throne_id=2[default=0]; //宝座等级表id
+optional  int32  total_essence=3[default=0]; //用户总华精
+optional  int32  accum_essence=4[default=0]; //当前已使用累加的精华
+}
+

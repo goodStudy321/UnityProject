@@ -1,0 +1,6 @@
+message Summon [key=baseid, source="Z 召唤体配置.xls", sheet="Sheet1"]				
+{
+    uint32 baseid                  	[option = "id"];
+	uint16 model_id					[option = "召唤体模型ID"];
+	uint32 carry_skill				[option = "携带技能"];
+};

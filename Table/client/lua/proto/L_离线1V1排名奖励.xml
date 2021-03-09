@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="OffLRankRwd" Key="startRank" ExportType="Arr" Src="L 离线1V1排名奖励.xls" Sheet="Sheet1">
+  <P Name="startRank" Type="number" ColName= "名次1" />
+  <P Name="endRank" Type="number" ColName= "名次2" />
+  <P Name="RwdHonor" Type="number" ColName= "奖励荣誉" />
+  <P Name="HonorIcon" Type="number" ColName= "荣誉图标" />
+  <P Name="RwdCoin" Type="number" ColName= "奖励金币" />
+  <P Name="CoinIcon" Type="number" ColName= "金币图标" />
+  <P Name="RankIcon" Type="string" ColName= "名次图标" />
+</Proto>

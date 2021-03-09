@@ -1,0 +1,5 @@
+// 红包数据删除
+message m_act_red_packet_del_toc {
+repeated  int64  packet_ids=1; //删除的ID
+}
+

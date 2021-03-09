@@ -1,0 +1,5 @@
+// 创建道庭
+message m_family_create_tos {
+optional  string  family_name=1; //宗族名字
+}
+

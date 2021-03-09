@@ -1,0 +1,10 @@
+message PetLevel [key=level, source="C 宠物等级配置表.xls", sheet="Sheet1"]
+{	
+
+	uint16 level						        [option = "宠物等级"];
+	uint32 cost_exp					    	[option = "消耗经验"]; 
+	uint32 att					    		[option = "攻击"]; 
+	uint32 arm								[option = "破甲"]; 
+	uint32 hp 								[option = "生命"];
+	uint32 def							[option = "防御"]; 
+};

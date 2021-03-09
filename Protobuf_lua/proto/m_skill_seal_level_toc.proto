@@ -1,0 +1,5 @@
+// 铭文升级返回
+message m_skill_seal_level_toc {
+optional  int32  err_code=1[default=0]; 
+}
+

@@ -1,0 +1,7 @@
+// 伙伴进阶
+message m_pet_step_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  new_pet_id=2[default=0]; //新的伙伴等阶id
+optional  int32  new_step_exp=3[default=0]; //新的进阶精华
+}
+

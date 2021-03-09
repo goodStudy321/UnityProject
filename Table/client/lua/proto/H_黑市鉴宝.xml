@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="tBlack" Key="id" ExportType="Dic" Src="H 黑市鉴宝.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="gears" Type="number" ColName= "奖励档位" />
+  <P Name="ani" Type="string" ColName= "播放动画" />
+  <P Name="eff" Type="number" ColName= "特效" />
+   <P Name="WiteTime" Type="number" ColName= "播放特效时间" />
+</Proto>

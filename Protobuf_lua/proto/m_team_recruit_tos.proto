@@ -1,0 +1,5 @@
+// 队伍招募
+message m_team_recruit_tos {
+optional  int32  sub_type=1[default=0]; //子状态
+}
+

@@ -1,0 +1,6 @@
+import "p_kv.proto";
+// 特权卡信息推送
+message m_privilege_card_info_toc {
+repeated  p_kv  reward=1; //奖励列表 id 金额 val 1:不能领 2:可领 3:已领
+}
+

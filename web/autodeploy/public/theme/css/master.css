@@ -1,0 +1,29 @@
+.bd{
+  border:1px solid red;
+}
+
+.container{
+  padding:60px 20px 60px 20px;
+}
+
+.ofh{
+  overflow:hidden;
+}
+
+.left{
+  float:left;
+}
+.right{
+  float:right;
+}
+
+.public-message{
+  position: absolute;
+  width: 100%;
+  padding-top: 50px;
+}
+.public-message .message{
+  width: 30%;
+  margin: 0 auto;
+  padding: 10px;
+}

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="V4Data" Key="id" ExportType="Arr" Src="V4专属界面.xlsx" Sheet="Sheet1">
+  <P Name="cardId" Type="number" ColName= "VIP卡" />
+  <P Name="id" Type="number" ColName= "坐骑道具ID" />
+  <P Name="name" Type="string" ColName="坐骑名称" />
+  <P Name="mod1" Type="string" ColName="坐骑模型" />
+  <P Name="mod2" Type="string" ColName="配套模型1" />
+  <P Name="mod3" Type="string" ColName="配套模型2" />
+</Proto>

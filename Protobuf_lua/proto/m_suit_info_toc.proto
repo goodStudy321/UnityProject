@@ -1,0 +1,6 @@
+import "p_suit.proto";
+// 已经激活的套装信息
+message m_suit_info_toc {
+repeated  p_suit  suit_info=1; //套装信息
+}
+

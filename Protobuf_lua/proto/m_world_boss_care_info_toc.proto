@@ -1,0 +1,5 @@
+// 关注的boss列表
+message m_world_boss_care_info_toc {
+repeated  int32  care_list=1; //关注的世界boss
+}
+

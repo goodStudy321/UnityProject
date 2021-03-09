@@ -1,0 +1,9 @@
+import "p_dkv.proto";
+// 角色财产信息
+message m_role_asset_info_toc {
+optional  int64  silver=1[default=0]; //银两
+optional  int64  gold=2[default=0]; //元宝
+optional  int64  bind_gold=3[default=0]; //绑定元宝
+repeated  p_dkv  score_list=4; //p_dkv结构的积分列表
+}
+

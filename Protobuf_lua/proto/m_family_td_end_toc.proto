@@ -1,0 +1,10 @@
+// 守卫道庭结束
+message m_family_td_end_toc {
+optional  bool  is_succ=1[default=true]; 
+optional  int32  star=2[default=0]; //星级
+optional  int32  kill_num=3[default=0]; //杀怪数量
+optional  int64  kill_monster_exp=4[default=0]; //杀怪经验奖励
+optional  int64  star_exp=5[default=0]; //星级经验奖励
+optional  int64  rank_exp=6[default=0]; //排行奖励
+}
+

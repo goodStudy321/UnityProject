@@ -1,0 +1,6 @@
+import "p_world_boss.proto";
+// 
+message m_world_boss_map_update_toc {
+optional  p_world_boss  map_boss=1; //场景中世界boss数据 增量更新
+}
+

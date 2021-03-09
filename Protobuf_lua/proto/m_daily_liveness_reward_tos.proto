@@ -1,0 +1,5 @@
+// 领取活跃度奖励
+message m_daily_liveness_reward_tos {
+optional  int32  type=1[default=0]; //领取奖励类型
+}
+

@@ -1,0 +1,761 @@
+// 心跳包
+message m_system_hb_tos {
+}
+
+// 心跳包
+message m_system_hb_toc {
+optional  int64  server_time=1[default=0]; 
+}
+
+// 提示各种系统错误
+message m_system_error_toc {
+optional  int32  error_code=1[default=0]; //错误号
+optional  bool  need_reconnect=2[default=true]; //是否需要重连socket true:要
+}
+
+// bgp(边界网关协议)登录请求
+message m_bgp_login_tos {
+optional  int32  id=1[default=0]; 
+optional  string  host=2; 
+optional  int32  port=3[default=0]; 
+}
+
+// bgp(边界网关协议)登录请求
+message m_bgp_login_toc {
+optional  int32  id=1[default=0]; 
+optional  int32  err_code=2[default=0]; 
+}
+
+// 登陆请求
+message m_auth_key_tos {
+optional  string  account_name=1; //账号名
+optional  string  key=2; //校验key
+optional  int32  time=3[default=0]; //前端需发时间戳，用于校验与匹配
+optional  int32  server_id=4[default=0]; //服务器ID
+repeated  string  pf_args=5; //平台参数（各个平台参数数量可能不同） 君海：ChannelID, GameChannelID
+repeated  string  device_args=6; //device_name、os_type、os_ver、net_type、imei、package_name、screen_width、screen_height
+}
+
+// 登陆返回
+message m_auth_key_toc {
+optional  int32  err_code=1[default=0]; //是否成功
+repeated  p_login_role  role_list=2; //是否需要创建帐号
+optional  bool  is_gm=3[default=true]; //是否开启GM模式
+}
+
+// 创建角色
+message m_create_role_tos {
+optional  string  name=1; //名字
+optional  int32  sex=2[default=0]; //0为女性，1为男性
+optional  int32  category=3[default=0]; //职业
+}
+
+// 创建角色
+message m_create_role_toc {
+optional  int32  err_code=1[default=0]; //是否成功
+optional  p_login_role  role=2; //创建的角色
+}
+
+// 选择角色
+message m_select_role_tos {
+optional  int64  role_id=1[default=0]; //选择的角色
+}
+
+// 创建角色
+message m_select_role_toc {
+optional  int32  err_code=1[default=0]; //是否成功
+optional  int32  map_id=2[default=0]; //地图的map_id
+optional  p_role_data  role_data=3; //p_role_data
+}
+
+// 删除角色
+message m_del_role_tos {
+optional  int64  role_id=1[default=0]; //删除角色
+}
+
+// 删除角色
+message m_del_role_toc {
+optional  int32  err_code=1[default=0]; //是否成功
+optional  int64  del_role_id=2[default=0]; //删除角色
+}
+
+// 玩家断线重连
+message m_role_reconnect_tos {
+optional  int64  role_id=1[default=0]; //需要重连的RoleID
+optional  string  key=2; //校验key
+optional  int32  time=3[default=0]; //前端需发时间戳，用于校验与匹配
+repeated  string  device_args=4; //device_name、os_type、os_ver、net_type、imei、package_name、screen_width、screen_height
+}
+
+// 玩家断线重连返回
+message m_role_reconnect_toc {
+optional  int32  err_code=1[default=0]; //错误码
+}
+
+// 角色登录成功
+message m_role_login_toc {
+}
+
+// GM命令
+message m_role_gm_tos {
+optional  string  type=1; //类型 
+optional  string  args=2; //参数 有多个参数用;来做分隔
+}
+
+// 登陆返回
+message m_role_gm_toc {
+optional  int32  err_code=1[default=0]; //是否成功
+optional  string  result=2; //返回结果
+}
+
+// 请求进入地图
+message m_pre_enter_tos {
+optional  int32  map_id=1[default=0]; 
+optional  int64  extra_id=2[default=0]; //选择进入分线（0表示不主动选择）
+}
+
+// 请求进入地图返回
+message m_pre_enter_toc {
+optional  int32  err_code=1[default=0]; //是否成功
+optional  int32  map_id=2[default=0]; //地图ID
+optional  int64  pos=3[default=0]; //位置信息
+}
+
+// 正式进入地图
+message m_enter_map_tos {
+optional  int32  map_id=1[default=0]; //进入地图的map_id
+}
+
+// 正式进入地图返回
+message m_enter_map_toc {
+optional  int32  err_code=1[default=0]; //是否成功
+optional  int32  map_id=2[default=0]; //地图ID
+optional  p_map_actor  role_map_info=3; //自己的p_map_actor
+optional  int64  extra_id=4[default=0]; //当前分线ID
+}
+
+// 请求退出地图
+message m_quit_map_tos {
+}
+
+// 请求退出地图返回
+message m_quit_map_toc {
+optional  int32  err_code=1[default=0]; //是否成功
+optional  int32  map_id=2[default=0]; //地图ID
+}
+
+// 返回地图进入次数列表
+message m_map_enter_list_toc {
+repeated  p_kv  enter_list=1; //id:地图ID val:进入次数
+}
+
+// 请求传送
+message m_map_change_pos_tos {
+optional  int64  dest_pos=1[default=0]; //目标位置
+optional  int32  map_id=2[default=0]; //目标地图
+optional  int32  jump_id=3[default=0]; //跳转ID
+optional  int32  dest_jump_id=4[default=0]; //跨地图跳转用到
+}
+
+// 位置改变
+message m_map_change_pos_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int64  actor_id=2[default=0]; //actor_id
+optional  int64  src_pos=3[default=0]; //原始位置
+optional  int64  dest_pos=4[default=0]; //目标位置
+optional  int32  jump_id=5[default=0]; //跳转ID
+optional  int32  type=6[default=0]; //跳转类型 0普通跳转 1为冲刺 2为抓取 3跳转点跳转
+}
+
+// 角色死亡
+message m_role_dead_toc {
+optional  int64  src_id=1[default=0]; 
+optional  string  src_name=2; 
+optional  int32  normal_relive_time=3[default=0]; //可以普通复活的时间戳 0表示只能原地复活
+optional  int32  normal_times=4[default=0]; //已经复活的次数
+}
+
+// 角色复活
+message m_role_relive_tos {
+optional  int32  op_type=1[default=0]; //0为普通复活 1为原地复活
+}
+
+// 角色复活
+message m_role_relive_toc {
+optional  int32  err_code=1[default=0]; //是否成功
+optional  int32  op_type=2[default=0]; //0为普通复活 1为原地复活
+}
+
+// 角色属性更新
+message m_role_attr_change_toc {
+repeated  p_dkv  kv_list=1; //int类型变化
+repeated  p_ks  ks_list=2; //string类型变化
+}
+
+// 经验等级改变返回
+message m_role_level_toc {
+optional  int32  level=1[default=0]; //等级
+optional  int64  exp=2[default=0]; //错误码
+optional  bool  is_monster_add=3[default=true]; //是否杀怪经验加成
+}
+
+// 角色属性更新
+message m_role_base_toc {
+repeated  p_kdv  role_base=1; //角色属性
+repeated  p_kv  role_powers=2; //角色战力
+}
+
+// 
+message m_map_slice_enter_toc {
+repeated  p_map_actor  actors=1; 
+repeated  int64  del_actors=2; 
+}
+
+// 
+message m_map_actor_attr_change_toc {
+optional  int64  actor_id=1[default=0]; 
+repeated  p_dkv  kv_list=2; //int类型变化
+repeated  p_ks  ks_list=3; //string类型变化
+repeated  p_kvl  kl_list=4; //list类型变化
+}
+
+// 
+message m_actor_info_change_toc {
+optional  int64  actor_id=1[default=0]; 
+optional  int64  hp=2[default=0]; //血量
+optional  int64  max_hp=3[default=0]; //最大血量
+}
+
+// 
+message m_actor_buff_change_toc {
+optional  int64  actor_id=1[default=0]; 
+repeated  p_buff  update_list=2; //更新的buff 增加 or 值更新
+repeated  int32  del_list=3; //移除的buff
+}
+
+// boss归属者更新
+message m_world_boss_owner_update_toc {
+optional  int64  actor_id=1[default=0]; 
+optional  p_world_boss_owner  world_boss_owner=2; 
+}
+
+// 
+message m_move_role_walk_tos {
+optional  int64  pos=1[default=0]; 
+}
+
+// 
+message m_move_point_tos {
+optional  int64  point=1[default=0]; 
+}
+
+// 
+message m_move_point_toc {
+optional  int64  actor_id=1[default=0]; 
+optional  int64  point=2[default=0]; 
+}
+
+// 
+message m_move_stop_tos {
+optional  int64  pos=1[default=0]; 
+}
+
+// 
+message m_move_stop_toc {
+optional  int64  actor_id=1[default=0]; 
+optional  int64  pos=2[default=0]; 
+}
+
+// 广播同步某个玩家的位置
+message m_move_sync_toc {
+optional  int64  actor_id=1[default=0]; 
+optional  int64  pos=2[default=0]; //拉回的位置
+}
+
+// 冲刺
+message m_move_rush_tos {
+optional  int64  pos=1[default=0]; //目标点
+}
+
+// 
+message m_stick_move_tos {
+optional  int64  pos=1[default=0]; 
+}
+
+// 
+message m_stick_move_toc {
+optional  int64  actor_id=1[default=0]; 
+optional  int64  pos=2[default=0]; 
+}
+
+// 战斗
+message m_fight_attack_tos {
+optional  int32  skill_id=1[default=0]; //技能id
+repeated  int64  dest_id_list=2; //目标id列表
+optional  int64  skill_pos=3[default=0]; //技能释放点
+}
+
+// 战斗结果返回
+message m_fight_attack_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  skill_id=2[default=0]; //技能id
+optional  int64  src_id=3[default=0]; //释放者id
+repeated  p_result  effect_list=4; //效果列表
+optional  int64  skill_pos=5[default=0]; //技能释放点
+}
+
+// 技能释放预警
+message m_fight_prepare_tos {
+optional  int32  skill_id=1[default=0]; //技能id
+optional  int64  dest_id=2[default=0]; 
+optional  int32  step_id=3[default=0]; 
+optional  int64  src_pos=4[default=0]; 
+}
+
+// 技能释放预警
+message m_fight_prepare_toc {
+optional  int64  src_id=1[default=0]; //释放者id
+optional  int64  dest_id=2[default=0]; //目标ID
+optional  int32  skill_id=3[default=0]; //技能id
+optional  int32  step_id=4[default=0]; 
+optional  int64  src_pos=5[default=0]; 
+optional  int32  add_num=6[default=0]; //增加目标数量
+}
+
+// 战灵技能结束时间
+message m_war_spirit_skill_toc {
+optional  int64  role_id=1[default=0]; //玩家ID
+optional  int32  skill_id=2[default=0]; //技能ID
+}
+
+// buff造成血量加减
+message m_buff_change_hp_toc {
+optional  int64  actor_id=1[default=0]; //玩家ID
+optional  int32  type=2[default=0]; //9为中毒扣血，10为治疗加血
+optional  int64  val=3[default=0]; 
+optional  int32  buff_id=4[default=0]; //buff_id
+}
+
+// 转换pk模式
+message m_change_pk_mode_tos {
+optional  int32  pk_mode=1[default=0]; //pk模式
+}
+
+// 转换pk模式
+message m_change_pk_mode_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  pk_mode=2[default=0]; //pk模式
+}
+
+// pk值清0所需要的时间
+message m_pk_value_time_toc {
+optional  int32  pk_value_time=1[default=0]; //倒计时，非时间戳
+}
+
+// 上线推送的技能数据
+message m_role_skill_toc {
+repeated  p_skill  skill_list=1; //技能列表 包括cd
+}
+
+// 更新推送的技能数据
+message m_skill_update_toc {
+optional  int32  op_type=1[default=0]; //0：正常推送 1：角色技能开启推送
+repeated  p_skill  update_list=2; //技能列表 包括cd
+repeated  int32  del_list=3; 
+}
+
+// 技能目标数量增加
+message m_skill_target_add_toc {
+repeated  p_kv  add_list=1; //id:技能子类型ID val:增加数量
+}
+
+// 技能cd缩减
+message m_skill_cd_reduce_toc {
+repeated  p_kv  cd_list=1; //id:技能子类型ID val:缩短的cd时间
+}
+
+// 开始采集
+message m_collect_start_tos {
+optional  int64  collect_id=1[default=0]; //采集的对象ID
+}
+
+// 
+message m_collect_start_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int64  collect_id=2[default=0]; //采集的对象ID
+optional  int32  collect_time=3[default=0]; //采集需要的时间（单位：毫秒）
+}
+
+// 触发任务
+message m_collect_stop_tos {
+}
+
+// 
+message m_collect_stop_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int64  collect_id=2[default=0]; //采集的对象ID
+}
+
+// 
+message m_collect_succ_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int64  collect_id=2[default=0]; //采集的对象ID
+}
+
+// 拾取掉落物
+message m_pick_drop_tos {
+optional  int64  drop_id=1[default=0]; //拾取的对象ID
+}
+
+// 拾取掉落物返回
+message m_pick_drop_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int64  drop_id=2[default=0]; //拾取的对象ID
+}
+
+// 
+message m_single_summon_tos {
+optional  p_single_summon  monster=1; 
+}
+
+// 
+message m_single_summon_toc {
+optional  int32  err_code=1[default=0]; 
+}
+
+// 
+message m_single_ai_tos {
+optional  int64  monster_id=1[default=0]; 
+optional  int32  type=2[default=0]; //触发某种类型AI 1停止行为，2启动行为，3按照特定路径行走 4死亡 5攻击锁定
+optional  string  args=3; //参数
+}
+
+// 
+message m_single_ai_toc {
+optional  int32  err_code=1[default=0]; 
+}
+
+// 怪物抵达最终点时的返回
+message m_monster_reach_toc {
+optional  int64  monster_id=1[default=0]; 
+}
+
+// 上下坐骑
+message m_mount_status_change_tos {
+optional  int32  status=1[default=0]; //0不骑乘 1骑乘
+}
+
+// 坐骑幻化返回
+message m_mount_status_change_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  status=2[default=0]; //0不骑乘 1骑乘
+}
+
+// 角色开始自动挂机 加buff移除buff
+message m_role_auto_tos {
+optional  int32  op_type=1[default=0]; //1开启挂机 0停止挂机
+}
+
+// 角色开始自动挂机 加buff移除buff
+message m_role_auto_toc {
+optional  int32  op_type=1[default=0]; //1开启挂机 0停止挂机
+}
+
+// 登陆时简略的角色数据
+message p_login_role {
+optional  int64  role_id=1[default=0]; //角色ID
+optional  string  role_name=2; //角色名
+optional  int32  level=3[default=0]; //等级
+optional  int32  sex=4[default=0]; //性别
+optional  int32  category=5[default=0]; //职业
+repeated  int32  skin_list=6; //皮肤列表
+repeated  int32  ornament_list=7; //饰品列表
+}
+
+// 角色登陆数据结构
+message p_role_data {
+optional  int64  role_id=1[default=0]; //角色ID
+optional  p_role_attr  attr=2; //角色属性信息
+repeated  p_kdv  base=3; //角色战斗属性
+repeated  p_kv  powers=4; //角色战斗力相关
+}
+
+// 角色基本信息
+message p_role_attr {
+optional  string  role_name=1; //名字
+optional  int32  sex=2[default=0]; //性别 0为女性，1为男性
+optional  int32  category=3[default=0]; //职业
+optional  int32  level=4[default=0]; //等级
+optional  int64  exp=5[default=0]; //经验值
+optional  int32  create_time=6[default=0]; //上次创建时间
+optional  int32  last_level_time=7[default=0]; //上次升级时间
+optional  int32  offline_fight_time=8[default=0]; //离线挂机时间
+}
+
+// 道具基本属性
+message p_goods {
+optional  int32  id=1[default=0]; //背包数据
+optional  int32  type_id=2[default=0]; //道具type_id
+optional  bool  bind=3[default=true]; //是否绑定
+optional  int32  num=4[default=0]; //数量
+repeated  p_kv  excellent_list=5; //装备卓越属性
+optional  int32  start_time=6[default=0]; //道具可以使用的时间 0为不限制
+optional  int32  end_time=7[default=0]; //道具无效时间
+optional  int32  market_end_time=8[default=0]; //物品系统诞生时间   暂用于市场
+}
+
+// 战斗结果
+message p_result {
+optional  int64  actor_id=1[default=0]; //效果作用者id
+optional  int32  result_type=2[default=0]; //32位 位数：1扣血 2闪避 3暴击 4会心 5格挡 6加血 7吸收
+optional  int64  value=3[default=0]; //value值*
+optional  int64  show_value=4[default=0]; //显示用的数值
+}
+
+// 技能
+message p_skill {
+optional  int32  skill_id=1[default=0]; //skill_id
+optional  int64  time=2[default=0]; //可以使用技能的时间 单位毫秒（=该时间即可使用）
+optional  int32  seal_id=3[default=0]; //当前铭文ID
+repeated  int32  seal_id_list=4; //之前升级or设置的铭文
+}
+
+// buf结构体
+message p_buff {
+optional  int32  buff_id=1[default=0]; //BUFID由8位组成abcdefgh
+optional  int32  start_time=2[default=0]; //开始时间，时间戳，前端根据这个排序
+optional  int32  end_time=3[default=0]; //结束时间，时间戳
+optional  int32  value=4[default=0]; //value值
+}
+
+// 在地图中的物体
+message p_map_actor {
+optional  int64  actor_id=1[default=0]; //场景ID标志
+optional  int32  actor_type=2[default=0]; //actor类型 1为人物 2为怪物 3采集物 6召唤体 13为掉落物
+optional  string  actor_name=3; //actor的名字
+optional  int32  status=4[default=0]; //状态，0为正常，1为死亡 2为战斗
+optional  int64  hp=5[default=0]; //血量
+optional  int64  max_hp=6[default=0]; //最大血量
+repeated  int32  buff_id_list=7; //buff_id_list
+optional  int32  move_speed=8[default=0]; //cms
+optional  int64  pos=9[default=0]; //pos
+optional  int64  target_pos=10[default=0]; //目标位置
+optional  int32  camp_id=11[default=0]; //阵营
+optional  int32  pk_mode=12[default=0]; //pk 模式
+optional  p_map_role  role_extra=13; //角色独有的信息
+optional  p_map_monster  monster_extra=14; //怪物独有的信息
+optional  p_map_collection  collection_extra=15; //采集物独有字段
+optional  p_map_trap  trap_extra=16; //召唤体独有字段
+optional  p_map_drop  drop_extra=17; //掉落物独有字段
+}
+
+// 角色独有的数据
+message p_map_role {
+optional  int32  sex=1[default=0]; //0为女性，1为男性
+optional  int32  category=2[default=0]; //职业
+optional  int32  level=3[default=0]; //等级
+optional  int32  weapon_state=4[default=0]; //武器状态 0为正常 1为战斗
+optional  int32  pk_value=5[default=0]; //pk值
+optional  int64  family_id=6[default=0]; //道庭id
+optional  string  family_name=7; //道庭名
+optional  int32  family_title=8[default=0]; //道庭称号
+optional  int32  team_id=9[default=0]; //队伍id
+optional  int32  power=10[default=0]; //战斗力
+optional  int32  confine=11[default=0]; //境界
+optional  int32  title=12[default=0]; //称号
+optional  int64  couple_id=13[default=0]; //仙侣ID
+optional  string  couple_name=14; //仙侣名字
+repeated  int32  skin_list=15; //外观列表
+optional  int32  server_id=16[default=0]; //服务器ID
+optional  string  server_name=17; //服务器名称
+optional  int32  relive_level=18[default=0]; //转生等级
+repeated  int32  ornament_list=19; //饰品列表
+}
+
+// 怪物独有的数据
+message p_map_monster {
+optional  int32  type_id=1[default=0]; //怪物的type_id
+optional  string  action_string=2; //动画参数
+optional  int32  level=3[default=0]; //怪物等级
+optional  p_world_boss_owner  world_boss_owner=4; //世界boss怪物归属
+optional  int32  battle_owner=5[default=0]; //战场怪物归属
+optional  int32  countdown=6[default=0]; //倒计时
+}
+
+// 采集物独有字段
+message p_world_boss_owner {
+optional  int64  owner_id=1[default=0]; //拥有者ID
+optional  string  owner_name=2; //拥有者名字
+optional  int32  owner_level=3[default=0]; //拥有者等级
+optional  int64  family_id=4[default=0]; //仙盟ID
+optional  int32  team_id=5[default=0]; //队伍ID
+}
+
+// 采集物独有字段
+message p_map_collection {
+optional  int32  type_id=1[default=0]; //怪物的type_id
+repeated  int32  broadcast_missions=2; //有该任务的玩家才会收到
+}
+
+// 陷阱独有字段
+message p_map_trap {
+optional  int32  type_id=1[default=0]; //陷阱的type_id
+optional  int64  owner_id=2[default=0]; //释放该陷阱的ActorID
+optional  int32  owner_type=3[default=0]; //释放该陷阱的ActorType
+optional  int32  owner_level=4[default=0]; //拥有者等级
+}
+
+// 掉落物独有字段
+message p_map_drop {
+optional  int32  type_id=1[default=0]; //掉落物品type_id 一般为道具ID
+optional  int32  num=2[default=0]; //掉落物数量
+optional  bool  bind=3[default=true]; //绑定类型
+optional  int64  monster_pos=4[default=0]; //怪物位置
+optional  int32  monster_type_id=5[default=0]; //怪物类型id
+repeated  int64  owner_roles=6; //可以拾取的玩家列表
+repeated  int64  broadcast_roles=7; //为空时所有人可见，不为空时特定玩家可见
+}
+
+// 
+message p_single_summon {
+optional  int64  actor_id=1[default=0]; //召唤的怪物的UID
+optional  int32  type_id=2[default=0]; //目标类型
+optional  int64  pos=3[default=0]; //位置
+optional  string  action_string=4; //出生动画
+}
+
+// 共用 key_int64list结构
+message p_kvll {
+optional  int32  id=1[default=0]; //key
+repeated  int64  list=2; 
+}
+
+// 公用int64key_string结构
+message p_dks {
+optional  int64  id=1[default=0]; //KEY
+optional  string  val=2; //key对应的val（string类型）
+}
+
+// 公用int64key_string结构
+message p_dkl {
+optional  int64  id=1[default=0]; //KEY
+repeated  int32  list=2; //key对应的val（list类型）
+}
+
+// 公用key_value结构
+message p_kv {
+optional  int32  id=1[default=0]; //key
+optional  int32  val=2[default=0]; //key对应的val（int32类型）
+}
+
+// 公用key_value结构
+message p_kdv {
+optional  int32  id=1[default=0]; //key
+optional  int64  val=2[default=0]; //key对应的val（int64类型）
+}
+
+// 公用key_string结构
+message p_ks {
+optional  int32  id=1[default=0]; //key
+optional  string  str=2; //key对应的val（string类型）
+}
+
+// 公用key_bool结构
+message p_kb {
+optional  int32  id=1[default=0]; //key
+optional  bool  val=2[default=true]; //key对应的val（bool类型）
+}
+
+// 共用 key_int32list结构
+message p_kvl {
+optional  int32  id=1[default=0]; //key
+repeated  int32  list=2; 
+}
+
+// 公用key_value结构
+message p_dkv {
+optional  int64  id=1[default=0]; //KEY
+optional  int64  val=2[default=0]; //key对应的val
+}
+
+// 公用key_value_type结构
+message p_kvt {
+optional  int32  id=1[default=0]; //key
+optional  int32  val=2[default=0]; //key对应的val
+optional  int32  type=3[default=0]; 
+}
+
+// 公用key_value_string结构
+message p_kvs {
+optional  int32  id=1[default=0]; //key
+optional  int32  val=2[default=0]; //key对应的val
+optional  string  text=3; //key对应的s
+}
+
+// 
+message p_lvt {
+optional  int64  id=1[default=0]; 
+optional  int32  val=2[default=0]; 
+optional  int32  type=3[default=0]; 
+}
+
+// 共用表示道具结构
+message p_item {
+optional  int32  type_id=1[default=0]; //道具ID
+optional  int32  num=2[default=0]; //数量
+optional  int32  is_bind=3[default=0]; //1是绑定，0是不绑定
+}
+
+// 共用表示道具结构
+message p_item_i {
+optional  int32  type_id=1[default=0]; //道具ID
+optional  int32  num=2[default=0]; //数量
+optional  int32  is_bind=3[default=0]; //1是绑定，0是不绑定
+optional  int32  special_effect=4[default=0]; //特效
+}
+
+// 地图的格子类型
+message c_map_tile {
+optional  int32  x=1[default=0]; //x
+optional  int32  y=2[default=0]; //y
+optional  bool  is_safe=3[default=true]; //是不是安全区
+}
+
+// 坐标内的信息
+message c_born_point {
+optional  int32  mx=1[default=0]; //mx
+optional  int32  my=2[default=0]; //my
+optional  int32  mdir=3[default=0]; //mdir
+optional  int32  camp_id=4[default=0]; //阵营ID
+}
+
+// 坐标内的信息
+message c_jump_point {
+optional  int32  jump_id=1[default=0]; //跳转点唯一ID
+optional  int32  mx=2[default=0]; //跳转点的mx
+optional  int32  my=3[default=0]; //跳转点的my
+}
+
+// proto id用的结构,这个id跟名字不要修改
+message c_proto_id {
+repeated  p_ks  id_list=1; //key - string结构
+}
+
+// error id用的结构,这个id跟名字不要修改
+message c_error_id {
+repeated  p_ks  id_list=1; //key - string结构 string是utf8编码
+}
+
+// 
+message c_map_config {
+optional  int32  map_id=1[default=0]; //map_id
+optional  int32  map_type=2[default=0]; //1为普通野外地图 2为副本地图
+optional  int32  map_width=3[default=0]; //长度
+optional  int32  map_height=4[default=0]; //宽度
+optional  int32  map_offset_mx=5[default=0]; //x方向偏移值 cm
+optional  int32  map_offset_my=6[default=0]; //y方向偏移值 cm
+repeated  c_map_tile  tiles=7; //格子信息
+repeated  c_born_point  born_points=8; //出生点（可以配置多个）
+repeated  c_jump_point  jump_points=9; //跳转点
+}
+

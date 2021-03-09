@@ -1,0 +1,7 @@
+// 获取预约场次返回(双方都返回)
+message m_marry_appoint_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  feast_start_time=2[default=0]; //举办婚礼的时间
+optional  int32  feast_times=3[default=0]; //可以举办婚礼的次数
+}
+

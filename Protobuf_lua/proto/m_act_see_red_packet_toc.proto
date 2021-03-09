@@ -1,0 +1,8 @@
+import "p_red_packet_content.proto";
+// 全服红包-查看手气返回
+message m_act_see_red_packet_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int64  packet_id=2[default=0]; //红包ID
+repeated  p_red_packet_content  list=3; //红包内容
+}
+

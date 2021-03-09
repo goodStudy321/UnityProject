@@ -1,0 +1,5 @@
+// 是否经历过世界boss副本
+message m_world_boss_guide_toc {
+optional  int32  is_guide=1[default=0]; //世界boss，最大击杀
+}
+

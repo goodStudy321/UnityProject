@@ -1,0 +1,12 @@
+// 魔域boss玩家的信息
+message p_demon_boss_role {
+optional  int64  role_id=1[default=0]; //角色ID
+optional  string  role_name=2; //角色名字
+optional  int32  sex=3[default=0]; //性别
+optional  int32  category=4[default=0]; //职业
+optional  int32  level=5[default=0]; //等级
+optional  int32  occupy_time=6[default=0]; //占领时间
+optional  int32  time=7[default=0]; //抵达时间
+optional  int32  cur_occupy_time=8[default=0]; //单次占领的时间
+}
+

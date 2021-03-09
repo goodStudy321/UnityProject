@@ -1,0 +1,6 @@
+// 开服冲榜活动领取
+message m_act_rank_reward_tos {
+optional  int32  id=1[default=0]; //ID
+optional  int32  type=2[default=0]; //1排行奖励 其他:基础奖励id+1
+}
+

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="NPCTemp" Key="id" ExportType="Dic" Src="N NPC配置表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "NPCID" />
+  <P Name="modeID" Type="number" ColName="模型ID" />
+  <P Name="name" Type="string" ColName="名字" />
+  <P Name="pic" Type="string" ColName="NPC头像" />
+  <P Name="title" Type="string" ColName="显示title" />
+  <P Name="type" Type="number" ColName="NPC类型" />
+  <P Name="sceen" Type="number" ColName= "地图ID" />
+  <P Name="pos" Type="Vector3" ColName= "坐标" />
+  <P Name="rot" Type="number" ColName= "旋转朝向" />
+  <P Name="scal" Type="number" ColName= "缩放系数" />
+  <P Name="camp" Type="number" ColName= "阵营" />
+  <P Name="active" Type="number" ColName= "是否可交互" />
+  <P Name="activeData" Type="MissionActionData" ColName= "交互类型" />
+  <P Name="inMap" Type="number" ColName= "小地图显示" />
+  <P Name="talk" Type="string" ColName= "对话内容" />
+  <P Name="audio" Type="string" Opt="true" ColName= "语音对话" />
+  <P Name="uiMod" Type="number" Opt="true" ColName="对话优先模型" />
+  <P Name="uis" Type="number" Opt="true" ColName="缩放比例" />
+  <P Name="uix" Type="number" Opt="true" ColName="位置X初始值" />
+  <P Name="uiy" Type="number" Opt="true" ColName="位置Y初始值" />
+  <P Name="uiz" Type="number" Opt="true" ColName="位置Z初始值" />
+  <P Name="uie" Type="number" Opt="true" ColName="角度Y初始值" />
+  <P Name="pose" Type="string" Opt="true" ColName="Pose动作" />
+  <P Name="rotation" Type="number" Opt="true" ColName="禁止旋转" />
+  <P Name="reset" Type="number" Opt="true" ColName="恢复摄像机默认参数" />
+</Proto>

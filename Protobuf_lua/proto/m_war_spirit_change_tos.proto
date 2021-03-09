@@ -1,0 +1,5 @@
+// 更换战灵
+message m_war_spirit_change_tos {
+optional  int32  id=1[default=0]; //战灵ID
+}
+

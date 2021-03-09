@@ -1,0 +1,5 @@
+// 副本倒计时清除返回
+message m_copy_cd_remove_toc {
+optional  int32  err_code=1[default=0]; 
+}
+

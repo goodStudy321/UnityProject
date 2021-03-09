@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PracticeMisCfg" Key="id" ExportType="Arr" Src="X 修炼秘籍任务库.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="des" Type="string" ColName="任务描述"/>
+  <P Name="condId" Type="number" ColName="条件ID"/>
+  <P Name="condArg" Type="number" ColName="条件参数"/>
+  <P Name="pracNum" Type="number" ColName="奖励修炼点"/>
+  <P Name="jump" Type="number" IsList="true" Lsp=","  ColName="跳转" />
+</Proto>

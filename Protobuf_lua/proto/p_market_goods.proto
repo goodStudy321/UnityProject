@@ -1,0 +1,15 @@
+import "p_kv.proto";
+// 道具基本属性
+message p_market_goods {
+optional  int32  id=1[default=0]; //市场ID
+optional  int64  role_id=2[default=0]; //role_id
+optional  string  role_name=3; //名字
+optional  int32  type_id=4[default=0]; //道具type_id
+optional  int32  num=5[default=0]; //数量
+optional  int32  time=6[default=0]; //产生时间
+repeated  p_kv  excellent_list=7; //装备卓越属性
+optional  int32  unit_price=8[default=0]; //单价
+optional  int32  total_price=9[default=0]; //总价
+optional  string  password=10; //空-没有  1-有
+}
+

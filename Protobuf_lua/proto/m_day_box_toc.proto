@@ -1,0 +1,7 @@
+import "p_kv.proto";
+//  
+message m_day_box_toc {
+optional  int32  day=1[default=0]; // 读哪天的礼包
+repeated  p_kv  list=2; //id 充值次数  val-奖励状态 1-不能领 2-可领 3-已领
+}
+

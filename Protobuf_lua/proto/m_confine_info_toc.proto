@@ -1,0 +1,20 @@
+import "p_war_spirit.proto";
+import "p_confine_mission.proto";
+import "p_war_spirit_equip.proto";
+import "p_war_god.proto";
+import "p_kv.proto";
+import "p_war_armor_lock.proto";
+// 境界信息
+message m_confine_info_toc {
+optional  int32  confine=1[default=0]; //境界
+optional  int32  war_spirit=2[default=0]; //当前战灵ID
+repeated  p_war_spirit  war_spirit_list=3; //战灵列表
+repeated  p_confine_mission  mission=4; //当前任务
+optional  int64  refine_all_exp=5[default=0]; //强化经验
+repeated  p_war_spirit_equip  bag_list=6; //战灵装备
+repeated  p_war_god  war_god_list=7; //战神套装
+optional  bool  reward=8[default=true]; //奖励是否已领取  true - 是   
+repeated  p_kv  war_god_pieces=9; //战神套装碎片 id:碎片道具ID val:多少个碎片
+repeated  p_war_armor_lock  war_spirit_lock_info=10; //战灵穿戴记录
+}
+

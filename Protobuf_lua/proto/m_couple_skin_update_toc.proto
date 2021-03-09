@@ -1,0 +1,5 @@
+// 仙侣拥有的皮肤更新 养成+时装
+message m_couple_skin_update_toc {
+optional  int32  base_id=1[default=0]; 
+}
+

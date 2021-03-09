@@ -1,0 +1,5 @@
+// 窗口打开记录
+message m_window_open_tos {
+optional  int32  type=1[default=0]; //打开哪个窗口
+}
+

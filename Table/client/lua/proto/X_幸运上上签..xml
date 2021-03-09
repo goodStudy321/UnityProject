@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DrawLotsData" ExportType="Dic" Key="id" Src="X 幸运上上签.xlsx" Sheet="Sheet">
+  <P Name="id" Type="number" ColName= "序号" />
+  <P Name="tp" Type="number" ColName="奖励类型" />
+  <P Name="propId" Type="string" ColName= "道具ID" />
+  <P Name="num" Type="number" ColName= "数量" />
+  <P Name="lvLimit" Type="number" IsList="true" Lsp="," ColName= "世界等级" />
+  <P Name="cIndex" Type="number" ColName= "套序号" />
+</Proto>

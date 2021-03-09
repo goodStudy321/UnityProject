@@ -1,0 +1,7 @@
+import "p_kv.proto";
+// 道庭争霸领取返回
+message m_act_family_battle_reward_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  p_kv  condition=2; //id：栏目 val：状态
+}
+

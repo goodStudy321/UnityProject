@@ -1,0 +1,6 @@
+// 图分线信息返回
+message m_map_line_info_toc {
+repeated  int32  extra_id_list=1; //分线ID列表
+optional  int64  cur_extra_id=2[default=0]; //当前分线
+}
+

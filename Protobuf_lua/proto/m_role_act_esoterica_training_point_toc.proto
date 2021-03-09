@@ -1,0 +1,8 @@
+// 返回修炼秘籍系统仙找回修炼点
+message m_role_act_esoterica_training_point_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  training_point=2[default=0]; //剩余可找回的修炼点
+optional  int32  training_grade=3[default=0]; //修炼等级
+optional  int32  experience=4[default=0]; //经验
+}
+

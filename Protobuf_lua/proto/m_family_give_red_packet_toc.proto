@@ -1,0 +1,7 @@
+// 道庭发红包返回
+message m_family_give_red_packet_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  type=2[default=0]; //系统红包 - 1 V6自我创建红包 - 0
+optional  int32  amount=3[default=0]; //红包金额
+}
+

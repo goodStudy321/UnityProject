@@ -1,0 +1,6 @@
+import "p_equip_collect.proto";
+// 装备收集系统信息推送
+message m_equip_collect_info_toc {
+repeated  p_equip_collect  equip_list=1; //有装备的部位信息
+}
+

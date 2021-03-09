@@ -1,0 +1,7 @@
+import "p_kv.proto";
+// 领取奖励返回
+message m_demon_boss_hp_reward_toc {
+optional  int32  err_code=1[default=0]; 
+optional  p_kv  hp_reward_status=2; //状态更新
+}
+

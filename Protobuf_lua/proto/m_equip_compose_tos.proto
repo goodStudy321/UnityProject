@@ -1,0 +1,6 @@
+// 装备合成
+message m_equip_compose_tos {
+optional  int32  equip_id=1[default=0]; //要合成装备ID
+repeated  int32  material_list=2; //消耗的道具id
+}
+

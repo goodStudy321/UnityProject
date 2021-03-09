@@ -1,0 +1,13 @@
+import "p_item_i.proto";
+import "p_kvt.proto";
+// 许愿池抽奖
+message m_bg_trevi_fountain_draw_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  integral=2[default=0]; //积分
+repeated  p_item_i  reward=3; //奖励
+optional  int32  times=4[default=0]; //抽奖次数
+optional  int32  bless=5[default=0]; //祝福值
+optional  bool  precious_exist=6[default=true]; //大奖是否存在
+repeated  p_kvt  update_list=7; //好运池更新列表   领取状态-val  进度-type
+}
+

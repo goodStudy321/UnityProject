@@ -1,0 +1,6 @@
+// 道庭任务操作
+message m_role_family_mission_operate_tos {
+optional  int32  mission_id=1[default=0]; //任务id
+optional  int32  type=2[default=0]; //0:接任务,1:向道庭成员求助,2:放弃,3:领取奖励
+}
+

@@ -1,0 +1,6 @@
+// 申请
+message m_family_apply_reply_tos {
+optional  int32  op_type=1[default=0]; //1同意加入 2为拒绝加入
+repeated  int64  role_ids=2; //玩家列表
+}
+

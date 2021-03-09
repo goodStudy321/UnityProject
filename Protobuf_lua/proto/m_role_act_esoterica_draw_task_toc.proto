@@ -1,0 +1,8 @@
+// 放回修炼秘籍系统任务经验领取
+message m_role_act_esoterica_draw_task_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  training_grade=2[default=0]; //修炼等级
+optional  int32  experience=3[default=0]; //经验
+optional  int32  mission_id=4[default=0]; //任务id
+}
+

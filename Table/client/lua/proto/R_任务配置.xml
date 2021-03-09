@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MissionTemp" Key="id" ExportType="Dic" Src="R 任务配置.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "任务id" />
+  <P Name="name" Type="string" ColName="任务名称" />
+  <P Name="chapter" Type="number" ColName="章节id" />
+  <P Name="type" Type="number" ColName="类型" />
+  <P Name="childType" Type="number" Opt="true" ColName="二级分类" />
+  <P Name="group" Type="number" Opt="true" ColName="组ID" />
+  <P Name="tree" Type="MissionFlowChart" Opt="true" ColName="启用流程树ID" />
+  <P Name="quality" Type="number" ColName="品质" />
+  <P Name="ring" Type="number" ColName= "环数" />
+  <P Name="turns" Type="number" ColName= "轮数" />
+  <P Name="cName" Type="string" ColName= "章节名称" />
+  <P Name="cDes" Type="string" ColName= "章节描述" />
+  <P Name="firstId" Type="string" Opt="true" ColName= "前置任务ID" />
+  <P Name="nextId" Type="string" ColName= "后置任务ID" />
+  <P Name="lv" Type="number" ColName= "任务最低等级" />
+  <P Name="limitLv" Type="number" ColName= "任务最高等级" />
+  <P Name="autoReceive" Type="number" ColName= "自动接取任务" />
+  <P Name="autoSubmit" Type="number" ColName= "自动完成任务" />
+  <P Name="autoTalk" Type="number" ColName= "完成自动弹出对话" />
+  <P Name="npcReceive" Type="number" Opt="true" ColName= "接任务NpcID" />
+  <P Name="npcSubmit" Type="number" Opt="true" ColName= "完成任务NpcID" />
+  <P Name="talkReceive" Type="K_S" Opt="true" IsList="true" Lsp="|"  ColName= "任务接取对话" />
+  <P Name="takeMAudio" Type="string" Opt="true" IsList="true" Lsp="|" ColName= "接取对话音频" />
+  <P Name="talk" Type="K_S" Opt="true" IsList="true" Lsp="|"  ColName= "任务对话" />
+  <P Name="inMAudio" Type="string" Opt="true" IsList="true" Lsp="|" ColName= "任务对话音频" />
+  <P Name="talkSubmit" Type="K_S" Opt="true" IsList="true" Lsp="|"  ColName= "任务完成对话" />
+  <P Name="finMAudio" Type="string" Opt="true" IsList="true" Lsp="|" ColName= "完成对话音频" />
+  <P Name="hideMonster" Type="string" Opt="true" ColName= "完成任务屏蔽的怪物" />
+  <P Name="tarType" Type="number" ColName="任务类型" />
+  <P Name="tarList" Type="MissionTarget" IsList="true" Lsp="|"  ColName="目标参数" />
+  <P Name="customSubmitDes" Type="string" Opt="true" ColName= "完成任务自定义文本" />
+  <P Name="customDes" Type="string" Opt="true" ColName= "任务目标自定义文本" />
+  <P Name="currency" Type="K_V" Opt="true" ColName= "货币奖励" />
+  <P Name="expType" Type="number" ColName= "经验奖励类型" />
+  <P Name="exp" Type="number" Opt="true" ColName= "经验奖励" />
+  <P Name="item" Type="Item" Opt="true" IsList="true" Lsp=";" ColName= "道具奖励" />
+  <P Name="screen" Type="number" Opt="true" ColName= "任务场景" />
+  <P Name="jumpScreen" Type="number" Opt="true" ColName= "任务完成跳转场景" />
+   <P Name="flowJS" Type="number" Opt="true" ColName= "流程树完成跳转场景" />
+   <P Name="notFly" Type="number" Opt="true" ColName= "禁用飞鞋" />
+   <P Name="cStart" Type="number" Opt="true" ColName= "章节开始" />
+   <P Name="cEnd" Type="number" Opt="true" ColName= "章节结束" />
+</Proto>

@@ -1,0 +1,75 @@
+{include file="public/head"}
+<div class="layui-field-box">
+  <button class="layui-btn layui-btn-sm" onclick="x_admin_show('添加公告','noticeAdd.html',500,410)"></i>添加公告</button>
+  <button onclick="javascript:location.reload()" class="layui-btn layui-btn-sm">刷新</button>
+  <table class="layui-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>发送时间</th>
+        <th>内容</th>
+        <th>状态</th>
+        <th>循环次数</th>
+        <th>间隔时间</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      {volist name="data" id="vo"}
+      <tr>
+        <td>{$vo.id}</td>
+        <td>{$vo.time}</td>
+        <td>{$vo.content}</td>
+        <td>
+          {if condition="$vo.status==0"}
+          未成功
+          {elseif condition="$vo.status==2"/}
+          已经删除
+          {else /}
+          发送成功
+          {/if}
+        </td>
+        <td>{$vo.num}</td>
+        <td>{$vo.time_interval}秒</td>
+        <td>
+          {if condition="$vo.status==1"}
+          <button onclick="delServer(this,{$vo.id})" class="layui-btn layui-btn-xs layui-btn-danger">删除</button>
+          {/if}
+        </td>
+      </tr>
+      {/volist}
+    </tbody>
+  </table>
+  <div class="page">
+    {$page}
+  </div>
+</div>
+{include file="public/foot"}
+
+
+<script>
+  layui.use(['laydate','form'], function(){
+    var laydate = layui.laydate;
+    //执行一个laydate实例
+    laydate.render({
+      elem: '#time' //指定元素
+    });
+  });
+  function delServer(obj,id){
+    layer.confirm('确认要删除吗？',function(index){
+      //捉到所有被选中的，发异步进行删除
+      $.post("{:url('admin/Message/noticeDel')}", {id: id}, function(data, textStatus, xhr) {
+        /*optional stuff to do after success */
+        if(data.code==1){
+          layer.msg(data.msg,{icon:1,time:1000},function(){
+            location.reload();
+            // $(obj).parents('tr').remove();
+            // $(".i_count").html(count-1);
+          });
+        }else{
+          layer.msg(data.msg,{icon:2,time:1000});
+        }
+      });
+    });
+  }
+</script>

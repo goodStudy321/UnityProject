@@ -1,0 +1,5 @@
+message MountLevel [key=level, source="Z 坐骑等级表.xls", sheet="Sheet1"]				
+{
+	uint16 level					[option = "坐骑等级"];
+	uint32 consume					[option = "消耗时间"];
+};

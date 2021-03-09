@@ -1,0 +1,7 @@
+import "p_kv.proto";
+// 领取奖励
+message m_role_act_hunt_boss_reward_toc {
+optional  int32  err_code=1[default=0]; 
+optional  p_kv  hunt_boss_reward_list=2; //猎杀boss个人奖励的id
+}
+

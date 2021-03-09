@@ -1,0 +1,9 @@
+// 帮会神兽
+message m_role_fgb_toc {
+optional  int32  type=1[default=0]; //1-a  2-b   0- 活动没开 
+optional  int32  a_num=2[default=0]; //参与数量
+optional  int32  a_hp=3[default=0]; //百分比
+optional  int32  b_num=4[default=0]; //参与数量
+optional  int32  b_hp=5[default=0]; //百分比
+}
+

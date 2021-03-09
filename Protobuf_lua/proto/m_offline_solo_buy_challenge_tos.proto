@@ -1,0 +1,5 @@
+// 购买次数
+message m_offline_solo_buy_challenge_tos {
+optional  int32  buy_times=1[default=0]; //购买次数
+}
+

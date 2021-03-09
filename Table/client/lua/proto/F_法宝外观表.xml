@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MWSkinCfg" Key="id" ExportType="Arr" Src="F 法宝外观表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="type" Type="number" ColName="类型" />
+  <P Name="acPropId" Type="number" Opt="true" ColName="激活道具" />
+  <P Name="step" Type="number" Opt="true" ColName="等阶" />
+  <P Name="stPropId" Type="number" Opt="true" ColName="进阶道具" />
+  <P Name="stNum" Type="number" Opt="true" ColName="数量" />
+  <P Name="lv" Type="number" Opt="true" ColName="等级" />
+  <P Name="lvPropId" Type="number" Opt="true" ColName="升级道具" />
+  <P Name="lvExp" Type="number" Opt="true" ColName="经验" />
+  <P Name="hp" Type="number" ColName= "生命" />
+  <P Name="atk" Type="number" ColName= "攻击" />
+  <P Name="def" Type="number" ColName="防御" />
+  <P Name="arm" Type="number" ColName= "破甲" />
+  <P Name="hit" Type="number" ColName= "命中" />
+  <P Name="dodge" Type="number" ColName= "闪避" />
+  <P Name="crit" Type="number" ColName= "暴击" />
+  <P Name="tena" Type="number" ColName= "韧性" />
+  <P Name="atkadd" Type="number" ColName= "攻击加成" />
+  <P Name="hpadd" Type="number" ColName= "生命加成" />
+  <P Name="fight" Type="number" ColName= "显示战力" />
+  <P Name="skillTab" Type="number" IsList="true" Lsp="," ColName= "法宝技能列表" />
+  <P Name="oSkiID" Type="number" Opt="true" ColName= "开放技能ID" />
+</Proto>

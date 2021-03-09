@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="StrengthenTemp" Key="id" ExportType="Arr" Src="B 变强菜单.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="name" Type="string" ColName="名称" />
+  <P Name="type" Type="number" ColName="UI类型" />
+  <P Name="ident" Type="number" ColName="标识" />
+  <P Name="page" Type="number" ColName= "分页" />
+  <P Name="t" Type="number" ColName= "分类" />
+  <P Name="ui" Type="string" ColName= "打开UI" />
+</Proto>

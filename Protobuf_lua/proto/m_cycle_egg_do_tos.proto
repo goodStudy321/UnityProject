@@ -1,0 +1,5 @@
+// 周期砸蛋活动  砸蛋
+message m_cycle_egg_do_tos {
+optional  int32  num=1[default=0]; // 1-8    砸对应位置蛋 其他-全砸 
+}
+

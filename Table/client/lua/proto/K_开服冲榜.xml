@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="RankActivCfg" Key="id" ExportType="Arr" Src="K 开服冲榜.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="name" Type="string" ColName="活动名称" />
+  <P Name="day" Type="number" ColName= "开启天数" />
+  <P Name="rankTime" Type="number" IsList="true" Lsp="," ColName= "排行时间" />
+  <P Name="rankCriteria" Type="number" ColName= "排行条件" />
+  <P Name="rank1" Type="number" IsList="true" Lsp="," ColName= "排行1" />
+  <P Name="rankAward1" Type="I_B_N" IsList="true" Lsp=";" ColName= "排行奖励1" />
+  <P Name="rank2" Type="number" IsList="true" Lsp="," ColName= "排行2" />
+  <P Name="rankAward2" Type="I_B_N" IsList="true" Lsp=";" ColName= "排行奖励2" />
+  <P Name="rank3" Type="number" IsList="true" Lsp="," ColName= "排行3" />
+  <P Name="rankAward3" Type="I_B_N" IsList="true" Lsp=";" ColName= "排行奖励3" />
+  <P Name="rank4" Type="number" IsList="true" Lsp="," ColName= "排行4" />
+  <P Name="rankAward4" Type="I_B_N" IsList="true" Lsp=";" ColName= "排行奖励4" />
+  <P Name="baseCond1" Type="number" IsList="true" Lsp="," ColName= "基础奖励条件" />
+  <P Name="baseAward1" Type="I_B_N" IsList="true" Lsp=";" ColName= "基础奖励" />
+  <P Name="baseCond2" Type="number" IsList="true" Lsp="," ColName= "基础奖励条件2" />
+  <P Name="baseAward2" Type="I_B_N" IsList="true" Lsp=";" ColName= "基础奖励2" />
+  <P Name="baseCond3" Type="number" IsList="true" Lsp="," ColName= "基础奖励条件3" />
+  <P Name="baseAward3" Type="I_B_N" IsList="true" Lsp=";" ColName= "基础奖励3" />
+  <P Name="baseCond4" Type="number" IsList="true" Lsp="," ColName= "基础奖励条件4" />
+  <P Name="baseAward4" Type="I_B_N" IsList="true" Lsp=";" ColName= "基础奖励4" />
+  <P Name="baseCond5" Type="number" IsList="true" Lsp="," ColName= "基础奖励条件5" />
+  <P Name="baseAward5" Type="I_B_N" IsList="true" Lsp=";" ColName= "基础奖励5" />
+  <P Name="sprName" Type="string" ColName="图片名称" />
+  <P Name="sysName" Type="string" IsList="true" Lsp="," ColName= "系统名称" />
+  <P Name="iconName" Type="string" IsList="true" Lsp="," ColName= "图标icon" />
+  <P Name="mark" Type="number" IsList="true" Lsp="," ColName= "跳转标识" />
+  <P Name="buyItems" Type="BuyList" IsList="true" Lsp=";" ColName= "购买道具" />
+  <P Name="markList" Type="K_V"  IsList="true" Lsp=";" ColName= "绝版标识" />
+</Proto>

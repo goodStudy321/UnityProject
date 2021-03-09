@@ -1,0 +1,6 @@
+// 获取VIP等级礼物
+message m_vip_gift_get_toc {
+optional  int32  err_code=1[default=0]; //错误码
+repeated  int32  gift_list=2; //已经领取的VIP等级列表
+}
+

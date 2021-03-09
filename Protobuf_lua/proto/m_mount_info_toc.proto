@@ -1,0 +1,7 @@
+import "p_mount.proto";
+// 坐骑系统消息推送
+message m_mount_info_toc {
+optional  int32  op_type=1[default=0]; //0：上线推送 1：更新推送
+optional  p_mount  mount_info=2; //p_mount
+}
+

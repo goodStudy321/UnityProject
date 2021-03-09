@@ -1,0 +1,5 @@
+message AudioCfg [key=id, source="Y 音效配置表.xls", sheet="Sheet1"]
+{
+	uint16 id						    [option = "ID"];
+	string name						[option = "音效名称"]; // 包含后缀名
+};

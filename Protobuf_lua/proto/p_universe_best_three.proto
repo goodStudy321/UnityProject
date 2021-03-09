@@ -1,0 +1,13 @@
+// 太虚通天塔至尊三强p结构
+message p_universe_best_three {
+optional  int32  rank=1[default=0]; //排行
+optional  int64  role_id=2[default=0]; //role_id
+optional  string  role_name=3; //角色名字
+optional  string  server_name=4; //服务器名字
+optional  int32  copy_id=5[default=0]; //最大通关副本ID
+optional  int32  category=6[default=0]; //职业
+optional  int32  sex=7[default=0]; //性别
+optional  int32  level=8[default=0]; //等级
+repeated  int32  skin_list=9; //皮肤
+}
+

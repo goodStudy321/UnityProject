@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PracticeRewCfg" Key="id" ExportType="Arr" Src="X 修炼秘籍等级奖励.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="lv" Type="number" ColName="等级" />
+  <P Name="flagId" Type="number" ColName="套ID" />
+  <P Name="comRew" Type="K_V" ColName="凡品奖励"  IsList="true" Lsp=";" />
+  <P Name="specRew" Type="K_V" ColName="仙品奖励"  IsList="true" Lsp=";" />
+</Proto>

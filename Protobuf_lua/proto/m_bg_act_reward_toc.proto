@@ -1,0 +1,8 @@
+// 领取奖励
+message m_bg_act_reward_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  id=2[default=0]; //活动id
+optional  int32  entry=3[default=0]; //奖励条目id
+optional  int32  num=4[default=0]; //-1无数量限制
+}
+

@@ -1,0 +1,7 @@
+// 黑市鉴宝，开始鉴宝
+message m_role_act_choose_info_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  count=2[default=0]; //鉴宝次数
+repeated  int32  goods_list=3; //礼包组
+}
+

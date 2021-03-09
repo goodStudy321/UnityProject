@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="CopyPBoss" Key="id" ExportType="Dic" Src="F 个人Boss副本.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "副本ID" />
+  <P Name="mId" Type="number" ColName= "怪物ID" />
+  <P Name="pos" Type="Vector2" Opt="true" IsList="true" Lsp=";" ColName= "坐标" />
+</Proto>

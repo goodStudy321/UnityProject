@@ -1,0 +1,8 @@
+import "p_kv.proto";
+// 开服仙途
+message m_otf_info_toc {
+optional  int32  score=1[default=0]; //仙灵力
+repeated  p_kv  mission_list=2; //任务  val - 已完成次数
+repeated  p_kv  reward_list=3; //奖励 val: 1-不能领 2-可领 3-已领
+}
+

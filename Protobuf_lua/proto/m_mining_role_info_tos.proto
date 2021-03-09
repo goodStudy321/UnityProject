@@ -1,0 +1,4 @@
+// 请求打开面板
+message m_mining_role_info_tos {
+}
+

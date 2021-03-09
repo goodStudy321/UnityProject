@@ -1,0 +1,6 @@
+// 时装套装激活
+message m_fashion_suit_tos {
+optional  int32  suit_id=1[default=0]; //激活套装ID
+optional  int32  active_num=2[default=0]; //激活数量
+}
+

@@ -1,0 +1,6 @@
+// 图鉴卡片激活
+message m_role_handbook_activate_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  card_id=2[default=0]; //激活后的卡片id
+}
+

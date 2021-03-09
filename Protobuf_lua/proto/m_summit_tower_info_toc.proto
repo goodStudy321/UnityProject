@@ -1,0 +1,6 @@
+// 进入时的积分信息
+message m_summit_tower_info_toc {
+optional  int32  score=1[default=0]; //积分
+optional  int32  rank=2[default=0]; //0表示没有排名
+}
+

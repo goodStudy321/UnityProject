@@ -1,0 +1,8 @@
+// 拍品记录
+message p_auction_log {
+optional  int32  time=1[default=0]; //时间
+optional  int32  type_id=2[default=0]; //道具
+optional  int32  num=3[default=0]; //数量
+optional  int32  gold=4[default=0]; //竞拍价格（0表示竞拍失败 -1表示下架）
+}
+

@@ -1,0 +1,5 @@
+// 天机系统更新货币
+message m_role_nature_consume_money_toc {
+optional  int32  consume_money=1[default=0]; //强化消耗道具数量
+}
+

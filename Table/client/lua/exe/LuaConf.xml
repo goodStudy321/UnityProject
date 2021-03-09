@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LuaConf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Temp>./temp</Temp>
+  <Output>../../../../LuaCode/Conf</Output>
+  <SrcDir>../proto</SrcDir>
+  <ExcelDir>../../../</ExcelDir>
+  <Company>Phantom CO,.LTD</Company>
+  <LoadName>Conf</LoadName>
+  <HeaderSym>*</HeaderSym>
+  <RequirePre>Conf</RequirePre>
+</LuaConf>

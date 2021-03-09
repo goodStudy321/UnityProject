@@ -1,0 +1,119 @@
+{include file='public/head'}
+<div class="layui-field-box">
+  <div class="layui-tab layui-tab-brief" lay-filter="equipment">
+    <ul class="layui-tab-title">
+      <li data-type="1" class="layui-this">元宝</li>
+      <li data-type="2">绑定元宝</li>
+      <li data-type="3">金币</li>
+    </ul>
+    <br>
+    <blockquote class="layui-elem-quote">
+      <form class="layui-form" onsubmit="return false">
+        <div class="layui-inline">
+          <label class="layui-form-label" style="width:55px">时间:</label>
+          <div class="layui-input-inline" style="width:150px">
+            <input type="text" name="time" id="time"  autocomplete="off" class="layui-input">
+          </div>
+        </div>
+        <div class="layui-inline">
+          <label class="layui-form-label" style="width:55px">渠道:</label>
+          <div class="layui-input-inline" style="width:150px">
+            <select id="channel" name="channel" style="height: 28px;" lay-filter="channel">
+              <option value="all">全渠道</option>
+              {volist name="channel_data" id="vo" empty="暂时没有数据" }
+              <option value="{$vo.channel_id}">分渠道 - {$vo.name}</option>
+              {/volist}
+          </select>
+          </div>
+        </div>
+        <div class="layui-inline">
+          <div class="layui-input-inline">
+            <button class="layui-btn layui-btn-sm" type="submit" lay-submit lay-filter="search">查询</button>
+            <button onclick="javascript:location.reload()" class="layui-btn layui-btn-sm">刷新</button>
+            <button type="button" onclick="location.href='{$excel_url}'" id="excel_url" class="layui-btn layui-btn-sm x-right">导出 (当前筛选条件的所有结果)</button>
+          </div>
+        </div>
+      </form>
+    </blockquote>
+    <table id="table" lay-filter="test"></table>
+  </div>
+</div>
+{include file='public/foot'}
+
+<script>
+  $(function(){
+    layui.use(['element', 'laydate', 'form'], function(){
+      var element = layui.element;
+      var form    = layui.form;
+      var laydate = layui.laydate;
+      var tableIns1= '';
+      var nowType = '';
+
+      laydate.render({
+        elem: '#time'
+        ,range: true
+      });
+
+      var onTable1 = function(type){
+        layui.use('table', function(){
+          var table = layui.table;
+          tableIns1 = table.render({
+            elem: '#table'
+            ,where:{type:type, search:1}
+            ,url: 'resource_consumption'
+            ,page: true
+            ,cols: [[
+              {align: 'center',field:'id', title: '序号',width:180}
+              ,{align: 'center',field:'role_name', title: '角色名'}
+              ,{align: 'center',field:'role_vip_level', title: 'VIP等级'}
+              ,{align: 'center',field:'role_level', title: '角色等级'}
+              ,{align: 'center',field:'power', title: '战力'}
+              ,{align: 'center',field:'num', title: '消耗量(降序)'}
+              ,{align: 'center',field:'channel_name', title: '渠道'}
+            ]]
+          });
+        });
+      }
+
+      //初始化
+      nowType = 1;
+      onTable1(1);
+
+      //监听切换
+      element.on('tab(equipment)', function(data){
+        // form表单重置
+        $('#time').val('');
+        $("#channel").next().find("dd[lay-value='all']").click();
+        var type = $(this).data('type');
+        nowType = type;
+
+        onTable1(type);
+        return ;
+
+      })
+
+      form.on('submit(search)', function(data){
+        var data = {};
+        $.each($('form').serializeArray(), function(){
+          data[this.name] = this.value;
+        })
+        data.search = 1;
+        data.type = nowType;
+        
+        tableIns1.reload({
+          where: data
+          ,page: {
+            curr: 1 //重新从第 1 页开始
+          }
+        });
+      })
+
+      $('#excel_url').unbind('click').click(function(){
+        var url_query = $('form').serialize();
+        location.href="/admin/develop/resource_consumption?excel_total=2&type="+nowType+"&"+url_query;
+      });
+
+    })
+  })
+
+</script>

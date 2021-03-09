@@ -1,0 +1,5 @@
+// 魅力之王排行查看
+message m_cycle_act_couple_charm_rank_tos {
+optional  int32  type=1[default=0]; //0:女 1:男
+}
+

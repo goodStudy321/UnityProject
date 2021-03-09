@@ -1,0 +1,5 @@
+// 打宝
+message m_da_bao_toc {
+optional  bool  can_get=1[default=true]; //前端显示开了，没有领取 返回true
+}
+

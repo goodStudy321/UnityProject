@@ -1,0 +1,23 @@
+<style>
+  .layui-form .layui-form-label{
+    width:150px;
+  }
+</style>
+<div class="layui-field-box">
+  <button class="layui-btn layui-btn-primary" onclick="javascript:getExcel(1)">用户信息</button>
+  <button class="layui-btn layui-btn-primary" onclick="javascript:getExcel(2)">机型转化</button>
+</div>
+
+<script>
+  var layer = layui.layer;
+  var form = layui.form;
+  var getExcel = function(type){
+    if(type <= 0)
+      return;
+
+    layer.confirm('可能耗时长，你确定导出吗？', function(index){
+      layer.close(index);
+      window.location.href='/admin/Getexcel/getExcel?type='+type;
+    });
+  }
+</script>

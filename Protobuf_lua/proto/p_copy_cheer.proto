@@ -1,0 +1,7 @@
+// 副本鼓舞信息
+message p_copy_cheer {
+optional  int32  id=1[default=0]; //ID
+optional  int32  silver_cheer_times=2[default=0]; //铜钱鼓舞次数
+optional  int32  all_cheer_times=3[default=0]; //总鼓舞次数
+}
+

@@ -1,0 +1,7 @@
+import "p_kv.proto";
+// 福利累充推送
+message m_recharge_info_toc {
+optional  int32  accrecharge=1[default=0]; //累计充值数
+repeated  p_kv  reward=2; //奖励列表 id 充值数 val 1:不能领 2:可领 3:已领
+}
+

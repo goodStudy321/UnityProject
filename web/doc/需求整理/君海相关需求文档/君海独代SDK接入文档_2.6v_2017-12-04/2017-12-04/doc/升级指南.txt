@@ -1,0 +1,43 @@
+第一次接入游戏请看文档
+---------------------------2017年12月04日------------------------------------
+2.5 --> 2.6
+	1、替换所有jar包
+	2、新增用户中心接口，接口选接，详情请看文档
+---------------------------2017年05月11日------------------------------------
+2.4 --> 2.5
+	1、替换所有jar包
+	2、清单文件增加<meta-data android:name="JH_NODE" android:value="由君海提供的JH_NODE" />
+
+---------------------------2017年02月17日------------------------------------
+2.3 --> 2.4
+	1、替换所有jar包
+
+---------------------------2016年6月22日------------------------------------
+2.2 --> 2.3
+	1、替换所有jar包
+	2、复制清单文件所有配置
+	3、服务器登录验证接口，添加game_channel_id参数，通过SDK的ChannelInterface.getGameChannelId()获取
+	4、服务器接口有变化，请查看服务器接口文档
+	
+---------------------------2016年6月16日------------------------------------
+2.1 --> 2.2
+	1、替换所有jar包
+	2、复制清单文件所有配置
+	3、uploadUserData接口，添加Constants.User.BUY_ITEM事件
+		代码示例，详情请看文档：
+		// 游戏内购买道具统计数据接口
+        params = new HashMap<>();
+        params.put(Constants.User.ACTION, Constants.User.BUY_ITEM); // 事件名称
+        params.put(Constants.User.CONSUME_COIN, 100);// 购买道具所花费的游戏币
+        params.put(Constants.User.CONSUME_BIND_COIN, 0);// 购买道具所花费的绑定游戏币
+        params.put(Constants.User.REMAIN_COIN, 1000); //剩余多少游戏币
+        params.put(Constants.User.REMAIN_BIND_COIN, 100);// 剩余多少绑定游戏币
+        params.put(Constants.User.ITEM_COUNT, 10);//购买道具的数量
+        params.put(Constants.User.ITEM_NAME, "套套");// 道具名称
+        params.put(Constants.User.ITEM_DESC, "国庆大特价,走过路过不要错过"); // 道具描述,可以传空串
+        ChannelInterface.uploadUserData(this, params);
+
+---------------------------2016年5月13日------------------------------------
+2.0 --> 2.1
+	1、替换 junhai_agent_base_2.0.jar 为 junhai_agent_base_2.1.jar
+	2、ChannelInterface.uploadUserData接口，添加Constants.User.ROLE_CREATE_TIME和Constants.User.ROLE_UPDATE_TIME两参数，详情请看文档。

@@ -1,0 +1,6 @@
+import "p_kv.proto";
+// 守卫信息设置
+message m_copy_immortal_set_guard_tos {
+optional  p_kv  guard_list=1; //id：区域 val：守卫  val为0表示删除
+}
+

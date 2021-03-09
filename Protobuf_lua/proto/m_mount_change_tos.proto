@@ -1,0 +1,5 @@
+// 坐骑幻化
+message m_mount_change_tos {
+optional  int32  cur_id=1[default=0]; //当前幻化坐骑id
+}
+

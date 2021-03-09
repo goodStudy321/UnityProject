@@ -1,0 +1,5 @@
+// 删除装备
+message m_family_del_depot_tos {
+repeated  int32  goods_list=1; //道庭仓库的装备列表
+}
+

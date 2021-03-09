@@ -1,0 +1,17 @@
+import "p_open_act_rank.proto";
+import "p_kv.proto";
+// oss- 开服第二阶段活动     上线推送
+message m_oss_rank_toc {
+optional  int32  type=1[default=0]; //排行类型  法宝战力 - 10013，翅膀战力 - 10014，图鉴战力 - 10012 
+optional  int32  is_last_day=2[default=0]; //是否最后一天 1-是最后一天 0-不是 
+repeated  p_kv  rank_reward=3; //排名奖励  val: 1-不能领 2-可领 3-已领
+repeated  p_kv  power_reward=4; //战力奖励  val: 1-不能领 2-可领 3-已领
+repeated  p_kv  panic_buy=5; //抢购奖励  val - 购买次数
+optional  int32  mana=6[default=0]; //灵力
+repeated  p_kv  mana_list=7; //灵力列表 id  任务 val 灵力
+repeated  p_kv  mana_reward=8; //灵力奖励  val: 1-不能领 2-可领 3-已领
+repeated  p_open_act_rank  rank_list=9; //排行榜
+repeated  p_kv  recharge_reward=10; //累充列表 id-奖励ID val: 1-不能领 2-可领 3-已领 
+optional  int32  recharge=11[default=0]; //充值
+}
+

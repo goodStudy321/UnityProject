@@ -1,0 +1,11 @@
+// 活动的p_act结构
+message p_act {
+optional  int32  id=1[default=0]; //活动ID
+optional  int32  val=2[default=0]; //val:状态 1：开启 2：关闭
+optional  bool  is_visible=3[default=true]; //是否显示
+optional  int32  start_time=4[default=0]; //活动开始时间
+optional  int32  end_time=5[default=0]; //活动结束时间
+optional  int32  start_date=6[default=0]; //开始日期
+optional  int32  end_date=7[default=0]; //结束日期
+}
+

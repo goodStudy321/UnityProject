@@ -1,0 +1,7 @@
+import "p_market_goods.proto";
+// 上架商品返回
+message m_market_on_shelf_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  p_market_goods  sell_grid=2; //上架销售市场物品
+}
+

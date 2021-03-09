@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="GetWayData" Key="id" ExportType="Dic" Src="H 获取途径配置表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "id" />
+  <P Name="uiName" Type="string" ColName= "ui名称" />
+  <P Name="des" Type="string" ColName="描述" />
+  <P Name="b" Type="number" Opt="true" ColName="跳转大分页" />
+  <P Name="s" Type="number" Opt="true" ColName= "跳转小分页" />
+  <P Name="systemId" Type="number" Opt="true" ColName= "激活系统ID" />
+  <P Name="ActivityId" Type="number" Opt="true" ColName= "系统ID" />
+  <P Name="lv" Type="number" Opt="true" ColName= "等级限制" />
+</Proto>
+

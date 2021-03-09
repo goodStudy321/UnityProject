@@ -1,0 +1,36 @@
+<style>
+  .layui-form .layui-form-label{
+    width:150px;
+  }
+</style>
+<div class="site-text">
+  <form class="layui-form" onsubmit="return false" action="" method="post">
+    <div class="layui-form-item">
+      <label class="layui-form-label">是否可注册账号</label>
+      <div class="layui-input-block">
+        <input type="checkbox"  {$register_status ? 'checked=""' : ''} lay-skin="switch" lay-filter="register" lay-text="是|否">
+      </div>
+    </div>
+  </form>
+</div>
+
+<script>
+  $(function(){
+    var form = layui.form;
+    var layer = layui.layer;
+    form.render();
+
+    //监听指定开关
+    form.on('switch(register)', function(data){
+      var is_open = this.checked ? 1 : 0;
+      layer.confirm('点击后就修改了，你确定这样做吗？', function(index){
+        $.post('/admin/other/register', {type:2, is_open:is_open}, function(msg){
+        }, 'json')
+        layer.close(index);
+        return;
+      });
+      this.checked = is_open == 1 ? false : true;
+    });
+
+  })
+</script>

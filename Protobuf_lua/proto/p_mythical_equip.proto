@@ -1,0 +1,10 @@
+import "p_kvt.proto";
+// 装备信息
+message p_mythical_equip {
+optional  int64  id=1[default=0]; //魂兽装备唯一ID
+optional  int32  type_id=2[default=0]; //魂兽装备类型ID
+optional  int32  refine_level=3[default=0]; //强化等级
+optional  int64  refine_exp=4[default=0]; //强化经验值
+repeated  p_kvt  excellent_list=5; //id:key val:值 type:评分
+}
+

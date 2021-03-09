@@ -1,0 +1,11 @@
+import "p_bg_act.proto";
+import "p_goods.proto";
+// 宝藏关卡
+message m_role_bg_ttb_toc {
+optional  p_bg_act  info=1; //宝藏关卡
+optional  int32  check_point=2[default=0]; //关卡
+optional  int32  all_check_point=3[default=0]; //总关卡
+optional  int32  boss=4[default=0]; //关卡boss
+repeated  p_goods  reward=5; //奖励
+}
+

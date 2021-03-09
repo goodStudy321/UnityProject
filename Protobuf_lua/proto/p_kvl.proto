@@ -1,0 +1,6 @@
+// 共用 key_int32list结构
+message p_kvl {
+optional  int32  id=1[default=0]; //key
+repeated  int32  list=2; 
+}
+

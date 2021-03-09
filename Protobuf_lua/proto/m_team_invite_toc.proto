@@ -1,0 +1,9 @@
+import "p_team_invite.proto";
+// 邀请加入队伍返回
+message m_team_invite_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  team_id=2[default=0]; //队伍id
+optional  int64  invited_role_id=3[default=0]; //被邀请者role_id
+optional  p_team_invite  invite_role=4; //邀请者信息
+}
+

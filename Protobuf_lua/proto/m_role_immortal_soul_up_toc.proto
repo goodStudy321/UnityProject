@@ -1,0 +1,8 @@
+// 仙魂升级
+message m_role_immortal_soul_up_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  pos=2[default=0]; //位置
+optional  int32  level_id=3[default=0]; //升级后ID
+optional  int32  dust=4[default=0]; //仙尘
+}
+

@@ -1,0 +1,7 @@
+// 邀请者同意or拒绝
+message m_family_invite_reply_tos {
+optional  int32  op_type=1[default=0]; //1为同意加入 2为拒绝加入
+optional  int64  role_id=2[default=0]; //邀请者id
+optional  int64  family_id=3[default=0]; //帮会id
+}
+

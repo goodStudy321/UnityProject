@@ -1,0 +1,13 @@
+message MountInfo [key=baseid, source="Z 坐骑基础表.xls", sheet="Sheet1"]				
+{
+
+	uint32 baseid					[option = "ID"];
+
+	string name					    [option = "名称"];
+	uint16 model_id			    	[option = "模型ID"];
+	uint16 model_ui_id				[option = "UI模型ID"];
+	uint8 mount_point				[option = "挂载点"];
+	uint32 open_skill               [option = "开放技能ID"];
+	string role_idle_id					[option = "人物乘骑待机"];
+	string role_move_id					[option = "人物乘骑移动"];
+};

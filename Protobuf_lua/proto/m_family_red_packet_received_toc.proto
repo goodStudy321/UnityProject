@@ -1,0 +1,6 @@
+// 个人红包信息
+message m_family_red_packet_received_toc {
+repeated  int32  amount=1; //红包额度
+optional  int32  times=2[default=0]; //当天已发个人红包次数
+}
+

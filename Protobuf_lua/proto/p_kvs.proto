@@ -1,0 +1,7 @@
+// 公用key_value_string结构
+message p_kvs {
+optional  int32  id=1[default=0]; //key
+optional  int32  val=2[default=0]; //key对应的val
+optional  string  text=3; //key对应的s
+}
+

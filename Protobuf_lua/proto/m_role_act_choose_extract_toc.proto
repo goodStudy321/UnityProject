@@ -1,0 +1,8 @@
+import "p_goods.proto";
+// 返回黑市鉴宝，抽取
+message m_role_act_choose_extract_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  count=2[default=0]; //鉴宝次数
+repeated  p_goods  reward=3; //奖励
+}
+

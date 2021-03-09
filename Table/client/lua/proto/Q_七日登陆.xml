@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SevenCfg" Key="id"  ExportType="Arr" Src="Q 七日登录.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName="登录天数" />
+  <P Name="awards" Type="K_V" IsList="true" Lsp=";" ColName="登录奖励" />
+  <P Name="icon" Type="string" ColName="道具icon" />
+  <P Name="path" Type="string" ColName="展示模型" />
+  <P Name="pros" Type="number" IsList="true" Lsp="," ColName= "模型属性" />
+</Proto>

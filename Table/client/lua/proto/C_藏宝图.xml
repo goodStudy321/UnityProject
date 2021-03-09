@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="TreasureCfg" Key="id" ExportType="Dic" Src="C 藏宝图.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "道具ID" />
+  <P Name="des" Type="string" ColName="备注" />
+  <P Name="tNum" Type="number" ColName= "宝珠" />
+  <P Name="rewards" Type="K_V" Opt="true" IsList="true" Lsp=";" ColName="奖励预览" />
+  <P Name="pos" Type="List_V3" IsList="true" Lsp="|" ColName="挖宝坐标" />
+</Proto>

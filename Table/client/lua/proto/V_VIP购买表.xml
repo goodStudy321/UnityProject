@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="VIPBuy" Key="id" ExportType="Dic" Src="V VIP购买表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "id" />
+  <P Name="name" Type="string" ColName= "名称" />
+  <P Name="icon" Type="string" ColName="icon" />
+  <P Name="shopid" Type="string" ColName="商城id" />
+  <P Name="day" Type="number" ColName="增加天数" />
+  <P Name="lv" Type="number" ColName="首次购买直升等级" />
+  <P Name="price" Type="number" ColName="消费元宝" />
+  <P Name="fPrice" Type="number" ColName="原价显示" />
+  <P Name="list" Type="NeedItem" Opt="true" IsList="true" Lsp=";" ColName= "首次礼包" />
+  <P Name="last" Type="NeedItem" Opt="true" IsList="true" Lsp=";" ColName= "多次购买礼包" />
+</Proto>

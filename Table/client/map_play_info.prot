@@ -1,0 +1,31 @@
+message MapPlayInfo [key=playId, source="D 地图玩法配置表.xls", sheet="Sheet1"]
+{
+	struct TypeIdList [separator = ',']
+	{
+		uint32 tarTypeId;
+	};
+	
+	struct tarTypeLst [separator = ',']
+	{
+		uint16 unitType;
+	};
+	
+	struct vector2 [separator = '|']
+	{
+		float x;	// X
+		float z;	// Z
+	};
+	
+	struct PosList [separator = ';']
+	{
+		vector2 pos;
+	};
+	
+	uint16		playId				[option = "玩法ID"];
+	TypeIdList 	attTypeIdLst		[option = "攻击目标Id"];
+	tarTypeLst 	attTypeList			[option = "攻击目标类型"];
+	PosList	   	loopPosLst			[option = "循环寻路点"];
+	PosList	   	linearPosLst		[option = "线性寻路点"];
+	uint32		stayTime			[option = "路点停留时间"];
+	uint32 		hangupTime			[option = "自动挂机时间"];
+};

@@ -1,0 +1,8 @@
+message MissionCameraInfo [key=index, source="R 任务相机关联表.xls", sheet="Sheet1"]
+{
+	uint32   index						    		[option = "序列"];
+	uint32   miss_id						    	[option = "任务ID"];
+	uint32   scene_id						    	[option = "场景ID"];
+	uint32   camera_id						    	[option = "相机ID"];
+	uint32	 time									[option = "时间"];
+};

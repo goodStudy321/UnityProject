@@ -1,0 +1,5 @@
+// 升阶
+message m_suit_upgrade_star_tos {
+optional  int32  place_id=1[default=0]; //部位id
+}
+

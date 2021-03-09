@@ -1,0 +1,58 @@
+message SkillLevelAttr [key=level_skill_id, source="J 技能等级配置表.xls", sheet="Sheet1"]
+{	
+	struct passive_buff [separator = '_']
+	{
+		uint32 buff_ID;	//buff_ID;
+	};
+	
+	struct direct_buf [separator = '_']
+	{
+		uint32 buff_ID;	//buff_ID;
+	};
+	
+	struct hit_buf    [separator = '_']
+	{
+		uint32 buff_ID;	//buff_ID;
+	};
+	
+	struct self_buf    [separator = '_']
+	{
+		uint32 buff_ID;	//buff_ID;
+	};
+
+	struct consume_item [separator=',']
+	{
+		uint8 item_id;
+		uint32 item_num;
+	};
+
+	struct consume_items [separator=';']
+	{
+		consume_item item;
+	};
+	
+	uint32 level_skill_id			[option = "等级技能ID"];
+	uint32 baseid					[option = "技能ID"];
+	uint8 level					    [option = "技能等级"];
+	string name						[option = "技能名称"];
+	uint8 type					    [option = "技能类型"];
+	uint32 action_id				[option = "动作id"];
+	uint8 skill_ui_index			[option = "对应技能按钮顺序"];
+	uint8 target_type				[option = "目标类型"];
+	
+	uint8 passtive_tri_condit		[option = "buff触发条件"];
+	uint32 condit_param				[option = "条件参数"];
+	
+	passive_buff passive_buff	    [option = "属性加成"];
+	self_buf self_buff  		    [option = "加BUFF对己"];
+	direct_buf direct_buff  		[option = "加BUFF对敌"];
+	hit_buf hit_buff     			[option = "加BUFF概率"];
+	consume_items level_up_consume	[option = "升级消耗"];
+
+	uint16 user				        [option = "学习需求职业"];
+
+	uint32 skill_cd				    [option = "技能CD"];
+	uint16 max_distance				[option = "最大施放距离"];
+
+
+};

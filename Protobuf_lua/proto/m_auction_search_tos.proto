@@ -1,0 +1,5 @@
+// 搜索商品
+message m_auction_search_tos {
+repeated  int32  type_id_list=1; //道具ID
+}
+

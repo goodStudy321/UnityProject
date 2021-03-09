@@ -1,0 +1,7 @@
+// 修炼秘籍系统的任务信息
+message p_act_esoterica_task {
+optional  int32  mission_id=1[default=0]; //任务id
+optional  int32  expedite=2[default=0]; //已完成的次数
+optional  bool  is_reward=3[default=true]; //当天奖励是否领取 true:已领取 false:未领取
+}
+

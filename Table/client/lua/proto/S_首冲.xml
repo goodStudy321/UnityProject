@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="FirstPayCfg" Key="day" ExportType="Arr" Src="S 首冲表.xls" Sheet="Sheet1">
+  <P Name="day" Type="number" ColName= "天数" />
+  <P Name="id" Type="number" ColName= "额度" />
+  <P Name="award" Type="K_V" IsList="true" Lsp=";" ColName= "奖励" />
+  <P Name="Weapon1" Type="number" ColName= "职业1武器展示" />
+  <P Name="Weapon2" Type="number" ColName= "职业2武器展示" />
+  <P Name="Clothes1" Type="number" ColName= "职业1时装展示" />
+  <P Name="Clothes2" Type="number" ColName= "职业2时装展示" />
+  <P Name="CPCloOne" Type="string" ColName= "职业1首充时装" />
+  <P Name="CPCloTwo" Type="string" ColName= "职业2首充时装" />
+  <P Name="CPMWeapon" Type="string" ColName= "首充武器" />
+  <P Name="WeaponTxt" Type="string" ColName= "武器展示文字" />
+  <P Name="FashionTxt" Type="string" ColName= "时装展示文字" />
+  <P Name="iconPath" Type="string" ColName= "小标题文字" />
+</Proto>

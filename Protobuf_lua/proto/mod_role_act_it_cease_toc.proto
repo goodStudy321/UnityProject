@@ -1,0 +1,5 @@
+// 鉴宝活动停止自动
+message mod_role_act_it_cease_toc {
+optional  int32  err_code=1[default=0]; //错误码
+}
+

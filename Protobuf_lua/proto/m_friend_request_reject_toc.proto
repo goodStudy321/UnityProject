@@ -1,0 +1,5 @@
+// 收到对方拒绝的信息
+message m_friend_request_reject_toc {
+optional  string  from_role_name=1; //XX拒绝了你的申请
+}
+

@@ -1,0 +1,7 @@
+import "p_fgb_rank.proto";
+// 帮会神兽排行
+message m_role_fgb_rank_toc {
+optional  int32  type=1[default=0]; //1-a  2-b
+repeated  p_fgb_rank  list=2; //排行榜
+}
+

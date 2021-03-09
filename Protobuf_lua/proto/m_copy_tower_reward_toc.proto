@@ -1,0 +1,6 @@
+// 领取爬塔副本额外奖励
+message m_copy_tower_reward_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  tower_reward_id=2[default=0]; //已经领取的层数
+}
+

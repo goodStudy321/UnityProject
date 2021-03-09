@@ -1,0 +1,5 @@
+// 时装删除
+message m_fashion_del_toc {
+optional  int32  fashion_id=1[default=0]; //时装删除 时装ID
+}
+

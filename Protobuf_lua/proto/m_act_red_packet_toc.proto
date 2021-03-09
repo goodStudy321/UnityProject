@@ -1,0 +1,6 @@
+import "p_act_red_packet.proto";
+// 红包数据更新（增量更新）
+message m_act_red_packet_toc {
+repeated  p_act_red_packet  red_packets=1; //全服红包特有数据
+}
+

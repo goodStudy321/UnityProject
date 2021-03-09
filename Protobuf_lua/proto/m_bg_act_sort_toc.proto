@@ -1,0 +1,6 @@
+import "p_kv.proto";
+// 活动排序变更推送
+message m_bg_act_sort_toc {
+repeated  p_kv  list=1; //id  - 活动ID ， val = 排序
+}
+

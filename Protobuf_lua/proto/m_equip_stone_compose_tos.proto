@@ -1,0 +1,8 @@
+import "p_kv.proto";
+// 装备身上宝石合成
+message m_equip_stone_compose_tos {
+optional  int32  equip_id=1[default=0]; //哪一件装备
+optional  int32  index=2[default=0]; //哪一个宝石
+repeated  p_kv  material_list=3; //id:宝石ID val:Num
+}
+

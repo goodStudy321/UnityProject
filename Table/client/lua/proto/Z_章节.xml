@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ChapterTemp" ExportType="Arr" Key="id" Src="Z 章节.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "章节ID" />
+  <P Name="index" Type="string" ColName="章节顺序" />
+  <P Name="name" Type="string" ColName="章节名字" />
+  <P Name="des" Type="string" ColName="章节描述" />
+  <P Name="limit" Type="number" ColName="任务数量" />
+  <P Name="openEff" Type="number" Opt="true" ColName= "章节开启任务ID" />
+  <P Name="endEff" Type="number" Opt="true" ColName= "章节结束任务ID" />
+  <P Name="mapid" Type="number" ColName="对应地图ID" />
+  <P Name="pic" Type="string"  Opt="true" ColName= "背景图" />
+  <P Name="start" Type="number" Opt="true" ColName= "开始任务id" />
+  <P Name="complete" Type="number" Opt="true" ColName= "结束任务id" />
+  <P Name="items" Type="NeedItem" Opt="true" IsList="true" Lsp=";" ColName="章节奖励" />
+  <P Name="strPic" Type="string" Opt="true" ColName= "章节字体" />
+</Proto>

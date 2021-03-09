@@ -1,0 +1,5 @@
+// 许愿池抽奖
+message m_oss_trevi_fountain_draw_tos {
+optional  int32  times=1[default=0]; //抽奖次数
+}
+

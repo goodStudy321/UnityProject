@@ -1,0 +1,9 @@
+import "p_market_goods.proto";
+// 自身市场信息
+message m_market_self_info_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  prohibit_time=2[default=0]; //交易解禁时间 0-为无限制
+repeated  p_market_goods  sell_grid=3; //上架销售市场物品
+repeated  p_market_goods  demand_grid=4; //上架求购市场物品
+}
+

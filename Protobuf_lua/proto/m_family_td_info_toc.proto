@@ -1,0 +1,11 @@
+import "p_kv.proto";
+// 守卫道庭部分信息
+message m_family_td_info_toc {
+optional  int32  wave=1[default=0]; //当前波数
+optional  int32  all_wave=2[default=0]; //总波数
+optional  int32  kill_num=3[default=0]; //击杀怪物数量
+optional  int32  next_wave_time=4[default=0]; //下波出生的时间戳
+optional  int32  assault_time=5[default=0]; //怪物突袭时间
+repeated  p_kv  hp_list=6; //id:雕像类型ID val:万分比血量
+}
+

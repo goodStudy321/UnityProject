@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="HappyChestCfg" ExportType="Arr" Key="id" Src="H 欢乐宝箱.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="configNum" Type="number" ColName= "套序号" />
+  <P Name="payCondition" Type="number" ColName= "充值条件" />
+  <P Name="award" Type="Global_it" IsList = "true" Lsp = ";" ColName="奖励配置" />
+</Proto>

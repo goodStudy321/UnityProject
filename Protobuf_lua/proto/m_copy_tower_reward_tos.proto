@@ -1,0 +1,5 @@
+// 领取爬塔副本额外奖励
+message m_copy_tower_reward_tos {
+optional  int32  tower_id=1[default=0]; //领取层数
+}
+

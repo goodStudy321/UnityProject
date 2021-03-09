@@ -1,0 +1,59 @@
+{include file="public/head"}
+<div class="layui-field-box">
+  <button class="layui-btn layui-btn-sm "  onclick="x_admin_show('添加弹窗公告','announcementadd.html',500,450)"></i>添加弹窗公告</button>
+  <button onclick="javascript:location.reload()" class="layui-btn layui-btn-sm">刷新</button>
+  <table class="layui-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th style="width:80%">公告内容</th>
+        <th>渠道名</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      {volist name="data" id="vo"}
+      <tr>
+        <td>{$vo.id}</td>
+        <td>{$vo.text}</td>
+        <td>{$vo.channel_name}</td>
+        <td>
+          <button class="layui-btn layui-btn-xs"  onclick="x_admin_show('编辑开服信息','announcementedit.html?id={$vo.id}',500,450)">编辑</button>
+          <button onclick="delServer(this,{$vo.id})" class="layui-btn layui-btn-xs layui-btn-danger">删除</button>
+        </td>
+      </tr>
+      {/volist}
+    </tbody>
+  </table>
+  <div class="page">
+    {$page}
+  </div>
+</div>
+{include file="public/foot"}
+
+<script>
+  layui.use(['laydate','form'], function(){
+    var laydate = layui.laydate;
+    //执行一个laydate实例
+    laydate.render({
+      elem: '#time' //指定元素
+    });
+  });
+  function delServer(obj,id){
+    layer.confirm('确认要删除吗？',function(index){
+      //捉到所有被选中的，发异步进行删除
+      $.post("{:url('admin/Message/announcementdel')}", {id: id}, function(data, textStatus, xhr) {
+        /*optional stuff to do after success */
+        console.log(data);
+        if(data.code==1){
+          layer.msg(data.msg,{icon:1,time:1000},function(){
+            $(obj).parents('tr').remove();
+            $(".i_count").html(count-1);
+          });
+        }else{
+          layer.msg(data.msg,{icon:2,time:1000});
+        }
+      });
+    });
+  }
+</script>

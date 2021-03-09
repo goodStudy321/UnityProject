@@ -1,0 +1,5 @@
+// 设置状态
+message m_throne_set_status_tos {
+optional  int32  status=1[default=0]; //状态，0-隐藏，1-使用
+}
+

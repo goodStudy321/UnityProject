@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="FashionAdvCfg" Key="id" ExportType="Dic" Src="S 时装升星表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "时装ID" />
+  <P Name="name" Type="string" ColName="名称" />
+  <P Name="type" Type="number" ColName="类型ID" />
+  <P Name="star" Type="number" ColName="时装星级" />
+  <P Name="atk" Type="number" ColName="攻击" />
+  <P Name="hp" Type="number" ColName="生命" />
+  <P Name="arm" Type="number" ColName="破甲" />
+  <P Name="def" Type="number" ColName="防御" />
+  <P Name="fight" Type="number" ColName="战斗力" />
+  <P Name="comsume" Type="K_V" Lsp = ";" IsList = "true" ColName="升星消耗" />
+  <P Name="skillId" Type="number"  Opt="true" ColName="时装技能" />
+</Proto>

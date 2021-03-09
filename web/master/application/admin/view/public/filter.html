@@ -1,0 +1,125 @@
+<style>
+  .layui-form-label{
+    width:60px;
+  }
+  .layui-input-block{
+    margin-left:90px;
+  }
+</style>
+    <div class="layui-form-item">
+      <label class="layui-form-label">区服：</label>
+      <div class="layui-input-block" id="server">
+        <input type="checkbox" name="server[all]" title="全部" lay-filter="server_all" {$selected_filter.server_id ? '' : 'checked'}>
+        {volist name="filter.database" id="vo"}
+        <input type="checkbox" name="server[{$vo.server_id}]" title="{$vo.title_name}" lay-filter="server"
+          {if condition="!isset($selected_filter.server_id) || in_array($vo.server_id, $selected_filter.server_id)"} checked {/if} >
+        {/volist}
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">渠道：</label>
+      <div class="layui-input-block" id="channel">
+        <input type="checkbox" name="channel[all]" title="全部" lay-filter="channel_all" {$selected_filter.channel_id ? '' : 'checked'}>
+        {volist name="filter.channel" id="vo"}
+        <input type="checkbox" name="channel[{$vo.channel_id}]" title="{$vo.name}" lay-filter="channel" data-id="{$vo.channel_id}"
+          {if condition="!isset($selected_filter.channel_id) || in_array($vo.channel_id, $selected_filter.channel_id)"} checked {/if} >
+        {/volist}
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">包渠道：</label>
+      <div class="layui-input-block" id="game_channel">
+        <input type="checkbox" name="game_channel[all]" title="全部" lay-filter="game_channel_all" {$selected_filter.game_channel_id ? '' : 'checked'}>
+        {volist name="filter.channel_game" id="vo"}
+          <span id="">
+            {volist name="vo" id="v"}
+            <input type="checkbox" name="game_channel[{$v.game_channel_id}]" title="{$v.name}" lay-filter="game_channel" data-channel="{$v.channel_id}"
+            {if condition="!isset($selected_filter.game_channel_id) || in_array($v.game_channel_id, $selected_filter.game_channel_id)"} checked {/if} >
+            {/volist}
+          </span>
+        {/volist}
+      </div>
+    </div>
+    <div class="">
+      <label class="layui-form-label"> </label>
+      <button type="submit" id="query" class="layui-btn layui-btn-sm">查询</button>
+      <button type="button" onclick="javascript:location.reload()" class="layui-btn layui-btn-sm">刷新</button>
+      <button type="button" onclick="location.href='{$export_url}'" class="layui-btn layui-btn-sm x-right">导出 (当前筛选条件的所有结果)</button>
+    </div>
+
+<script>
+  $(function(){
+    var layer = layui.layer;
+    form.render();
+
+    form.on('checkbox(server)', function (data) {
+    })
+
+    //区服全选
+    form.on('checkbox(server_all)', function (data) {
+      $("input[name^='server']").each(function (i,d) {
+        this.checked = data.elem.checked;
+      });
+      form.render('checkbox');
+    });
+    // 取消全选
+    form.on('checkbox(server)', function (data) {
+      if(this.checked == false){
+        $("input[name^='server[all]']").attr('checked', false);
+      }
+      form.render('checkbox');
+    });
+
+    //渠道
+    form.on('checkbox(channel_all)', function (data) {
+      $("input[name^='channel']").each(function (i,d) {
+        this.checked = data.elem.checked;
+      });
+      form.render('checkbox');
+    });
+    // 取消全选&包渠道联动
+    form.on('checkbox(channel)', function (data) {
+      var id = $(this).data('id');
+      if(this.checked == false){
+        $("input[name^='channel[all]']").attr('checked', false);
+      }
+      
+      $("input[name^='game_channel']").each(function () {
+        var channel_id = $(this).data('channel');
+        if(id == channel_id){
+          this.checked = data.elem.checked;
+          if(!(this.checked)){
+            $("input[name^='game_channel[all]']").attr('checked', false);
+          }
+        }
+      });
+      form.render('checkbox');
+    });
+
+    //包渠道
+    form.on('checkbox(game_channel_all)', function (data) {
+      $("input[name^='game_channel']").each(function (i,d) {
+        this.checked = data.elem.checked;
+      });
+      form.render('checkbox');
+    });
+    // 取消全选
+    form.on('checkbox(game_channel)', function (data) {
+      if(this.checked == false){
+        $("input[name^='game_channel[all]']").attr('checked', false);
+      }
+      form.render('checkbox');
+    });
+
+    form.on('submit(filterForm)', function(data){
+      var len1 = $("input[name^='game_channel']:checked").length;
+      var len2 = $("input[name^='channel']:checked").length;
+      var len3 = $("input[name^='server']:checked").length;
+      if(len1 > 0 && len2 > 0 && len3 > 0)
+        return true;
+
+      message('每一项至少选一个');
+      return false;
+    })
+  })
+</script>

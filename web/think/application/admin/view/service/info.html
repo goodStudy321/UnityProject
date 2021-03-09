@@ -1,0 +1,195 @@
+{include file="public/head"}
+<style>
+  .width{
+    width:180px;
+  }
+  .layui-table td{
+    font-size:8px;
+  }
+</style>
+<div class="layui-field-box">
+  <div class="layui-row">
+    <div class="x-left">
+      <br> <b>玩家信息</b>
+    </div>
+    <div class="x-right">
+      <button class="layui-btn layui-btn-sm" onclick="javascript:location.href='{:url('gamer')}'">返回列表</button>
+      <button onclick="javascript:location.reload()" class="layui-btn layui-btn-sm">刷新</button> &nbsp;&nbsp;
+    </div>
+  </div>
+  <hr>
+  <div class="layui-row">
+    {if condition="isset($data.role_basic)"}
+    <br>
+    <h2>{$data.role_basic.name}</h2>
+    <div class="layui-row">
+      <div class="layui-col-xs6">
+        <table class="layui-table" lay-skin="line">
+          <tbody>
+            <tr><td>玩家ID            </td><td>{$data.role_basic.role_id}</td></tr>
+            <tr><td>账号              </td><td>{$data.role_basic.account_name}</td></tr>
+            <tr><td>角色名           </td><td> {$data.role_basic.role_name}</td></tr>
+            <tr><td>玩家等级        </td><td>  {$data.role_basic.role_level}</td></tr>
+            <tr><td>性别              </td><td>{$data.role_basic.sex}</td></tr>
+            <tr><td>职业              </td><td>{$data.role_basic.category}</td></tr>
+            <tr><td>战斗力           </td><td> {$data.role_basic.power}</td></tr>
+            <tr><td>当天在线时长  </td><td>    {$data.role_basic.today_online_time}</td></tr>
+            <tr><td>总在线时长     </td><td>   {$data.role_basic.total_online_time}</td></tr>
+            <tr><td>帮派ID            </td><td>{$data.role_basic.family_id}</td></tr>
+            <tr><td>帮派名           </td><td> {$data.role_basic.family_name}</td></tr>
+            <tr><td>vip等级           </td><td>{$data.role_basic.vip_level}</td></tr>
+            <tr><td>vip过期时间     </td><td>  {$data.role_basic.expire_time}</td></tr>
+            <tr><td>不绑元宝        </td><td>  {$data.role_basic.gold}</td></tr>
+            <tr><td>绑定元宝        </td><td>  {$data.role_basic.bind_gold}</td></tr>
+            <tr><td>铜钱              </td><td>{$data.role_basic.silver}</td></tr>
+            <tr><td>总充值元宝     </td><td>   {$data.role_basic.total_pay_gold}</td></tr>
+            <tr><td>当前地图        </td><td>  {$data.role_basic.map_id}</td></tr>
+            <tr><td>转生等级        </td><td>  {$data.role_basic.relive_level}</td></tr>
+            <tr><td>转生第几阶段  </td><td>    {$data.role_basic.relive_progress}</td></tr>
+            <tr><td>攻击              </td><td>{$data.role_basic.attack}</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="layui-col-xs6">
+        <table class="layui-table" lay-skin="line">
+          <tbody>
+            <tr><td>生命              </td><td>{$data.role_basic.hp}</td></tr>
+            <tr><td>防御              </td><td>{$data.role_basic.defence}</td></tr>
+            <tr><td>破甲              </td><td>{$data.role_basic.arp}</td></tr>
+            <tr><td>命中              </td><td>{$data.role_basic.hit_rate}</td></tr>
+            <tr><td>闪避              </td><td>{$data.role_basic.miss}</td></tr>
+            <tr><td>暴击              </td><td>{$data.role_basic.double}</td></tr>
+            <tr><td>韧性              </td><td>{$data.role_basic.double_anti}</td></tr>
+            <tr><td>加伤              </td><td>{$data.role_basic.hurt_rate}</td></tr>
+            <tr><td>免伤              </td><td>{$data.role_basic.hurt_derate}</td></tr>
+            <tr><td>暴击几率        </td><td>  {$data.role_basic.double_rate}</td></tr>
+            <tr><td>暴伤              </td><td>{$data.role_basic.double_multi}</td></tr>
+            <tr><td>闪避几率        </td><td>  {$data.role_basic.miss_rate}</td></tr>
+            <tr><td>暴击抵抗        </td><td>  {$data.role_basic.double_anti_rate }</td></tr>
+            <tr><td>护甲              </td><td>{$data.role_basic.armor}</td></tr>
+            <tr><td>技能伤害增加  </td><td>    {$data.role_basic.skill_hurt}</td></tr>
+            <tr><td>技能伤害减少  </td><td>    {$data.role_basic.skill_hurt_anti}</td></tr>
+            <tr><td>技能DSP系数     </td><td>  {$data.role_basic.skill_dps}</td></tr>
+            <tr><td>技能EHP系数     </td><td>  {$data.role_basic.skill_ehp}</td></tr>
+            <tr><td>pvp伤害减免     </td><td>  {$data.role_basic.role_hurt_reduce}</td></tr>
+            <tr><td>Boss伤害加深    </td><td>  {$data.role_basic.boss_hurt_add}</td></tr>
+            <tr><td>伤害反弹        </td><td>  {$data.role_basic.rebound}</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    {/if}
+    {if condition="isset($data.role_equip_list)"}
+    <br>
+    <h2>{$data.role_equip_list.name}</h2>
+    {volist name="data.role_equip_list.equip_list" id="vo" empty="<font color=gray>暂时没有数据</font><br>" }
+    <div>
+      <table class="layui-table" lay-skin="line">
+        <tbody>
+          <tr><td class="width">装备ID</td><td>{$vo.equip_id}</td></tr>
+          <tr><td class="width">强化等级</td><td>{$vo.refine_level}</td></tr>
+          <tr><td class="width">熟练度</td><td>{$vo.mastery}</td></tr>
+          <tr><td class="width">套装等级</td><td>{$vo.suit_level}</td></tr>
+          <tr><td class="width">镶嵌灵石</td><td>{$vo.stone_list}</td></tr>
+          <tr><td class="width">属性</td><td>{$vo.excellent_list}</td></tr>
+        </tbody>
+      </table>
+    </div>
+    {/volist}
+    {/if}
+    {if condition="isset($data.role_mount)"}
+    <br>
+    <h2>{$data.role_mount.name}</h2>
+    <div>
+      <table class="layui-table" lay-skin="line">
+        <tbody>
+          <tr><td class="width">当前进度</td><td>{$data.role_mount.mount_id}</td></tr>
+          <tr><td class="width">当前经验</td><td>{$data.role_mount.exp}</td></tr>
+          <tr><td class="width">幻化ID</td><td>{$data.role_mount.cur_id}</td></tr>
+          <tr><td class="width">坐骑拥有的外观</td><td>{$data.role_mount.skin_list}</td></tr>
+          <tr><td class="width">丹药列表</td><td>{$data.role_mount.pellet_list}</td></tr>
+        </tbody>
+      </table>
+    </div>
+    {/if}
+    {if condition="isset($data.role_pet)"}
+    <br>
+    <h2>{$data.role_pet.name}</h2>
+    <div>
+      <table class="layui-table" lay-skin="line">
+        <tbody>
+          <tr><td class="width">当前进度 </td><td>{$data.role_pet.pet_id}</td></tr>
+          <tr><td class="width">幻化ID </td><td>{$data.role_pet.cur_id}</td></tr>
+          <tr><td class="width">宠物等级 </td><td>{$data.role_pet.level}</td></tr>
+          <tr><td class="width">当前经验 </td><td>{$data.role_pet.exp}</td></tr>
+          <tr><td class="width">进阶经验 </td><td>{$data.role_pet.step_exp}</td></tr>
+          <tr><td class="width">宠物拥有的外观 </td><td>{$data.role_pet.skin_list}</td></tr>
+          <tr><td class="width">丹药列表 </td><td>{$data.role_pet.pellet_list}</td></tr>
+        </tbody>
+      </table>
+    </div>
+    {/if}
+    {if condition="isset($data.role_god_weapon)"}
+    <br>
+    <h2>{$data.role_god_weapon.name}</h2>
+    <div>
+      <table class="layui-table" lay-skin="line">
+        <tbody>
+          <tr><td class="width">幻化ID </td><td>{$data.role_god_weapon.cur_id}</td></tr>
+          <tr><td class="width">等级 </td><td>{$data.role_god_weapon.level}</td></tr>
+          <tr><td class="width">经验 </td><td>{$data.role_god_weapon.exp}</td></tr>
+          <tr><td class="width">拥有的外观 </td><td>{$data.role_god_weapon.skin_list}</td></tr>
+          <tr><td class="width">丹药列表 </td><td>{$data.role_god_weapon.pellet_list}</td></tr>
+        </tbody>
+      </table>
+    </div>
+    {/if}
+    {if condition="isset($data.role_magic_weapon)"}
+    <br>
+    <h2>{$data.role_magic_weapon.name}</h2>
+    <div>
+      <table class="layui-table" lay-skin="line">
+        <tbody>
+          <tr><td class="width">幻化ID </td><td>{$data.role_magic_weapon.cur_id}</td></tr>
+          <tr><td class="width">等级 </td><td>{$data.role_magic_weapon.level}</td></tr>
+          <tr><td class="width">经验 </td><td>{$data.role_magic_weapon.exp}</td></tr>
+          <tr><td class="width">拥有的外观 </td><td>{$data.role_magic_weapon.skin_list}</td></tr>
+          <tr><td class="width">丹药列表 </td><td>{$data.role_magic_weapon.pellet_list}</td></tr>
+        </tbody>
+      </table>
+    </div>
+    {/if}
+    {if condition="isset($data.role_wing)"}
+    <br>
+    <h2>{$data.role_wing.name}</h2>
+    <div>
+      <table class="layui-table" lay-skin="line">
+        <tbody>
+          <tr><td class="width">幻化ID </td><td>{$data.role_wing.cur_id}</td></tr>
+          <tr><td class="width">等级 </td><td>{$data.role_wing.level}</td></tr>
+          <tr><td class="width">经验 </td><td>{$data.role_wing.exp}</td></tr>
+          <tr><td class="width">拥有的外观 </td><td>{$data.role_wing.skin_list}</td></tr>
+          <tr><td class="width">丹药列表 </td><td>{$data.role_wing.pellet_list}</td></tr>
+        </tbody>
+      </table>
+    </div>
+    {/if}
+    {if condition="isset($data.role_rune)"}
+    <br>
+    <h2>{$data.role_rune.name}</h2>
+    <div>
+      <table class="layui-table" lay-skin="line">
+        <tbody>
+          <tr><td class="width">经验 </td><td>{$data.role_rune.exp}</td></tr>
+          <tr><td class="width">碎片</td><td>{$data.role_rune.piece}</td></tr>
+          <tr><td class="width">精粹 </td><td>{$data.role_rune.essence}</td></tr>
+          <tr><td class="width">当前装备的符文 </td><td>{$data.role_rune.load_runes}</td></tr>
+        </tbody>
+      </table>
+    </div>
+    {/if}
+  </div>
+</div>
+{include file="public/foot"}
+
+

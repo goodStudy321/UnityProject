@@ -1,0 +1,6 @@
+// 抢购信息
+message m_role_zero_panicbuy_info_toc {
+repeated  int32  id_list=1; //已购道具
+optional  int32  end_time=2[default=0]; //结束时间   为0时直接关闭活动
+}
+

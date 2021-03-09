@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="AucSecType" Key="id" ExportType="Dic" Src="P 拍卖行子类.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName="id" />
+  <P Name="name" Type="string" ColName="显示名称" />
+  <P Name="icon" Type="string"  ColName="icon" />
+</Proto>

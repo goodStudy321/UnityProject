@@ -1,0 +1,5 @@
+// 提交境界任务
+message m_confine_mission_tos {
+optional  int32  mission=1[default=0]; //境界任务
+}
+

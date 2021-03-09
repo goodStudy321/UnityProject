@@ -1,0 +1,8 @@
+// 抽取返回 
+message m_cycle_tower_draw_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  layer=2[default=0]; //层数
+optional  int32  pool=3[default=0]; //奖池
+optional  int32  id=4[default=0]; //奖励表序号
+}
+

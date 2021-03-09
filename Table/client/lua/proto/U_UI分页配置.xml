@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="UITabCfg" Key="id" IgnoreKey="true" ExportType="Arr" Src="U UI分页配置表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "id" />
+  <P Name="ui" Type="string" ColName="ui名称" />
+  <P Name="t1" Type="number" Opt="true" ColName="1级分页索引" />
+  <P Name="t2" Type="number" Opt="true" ColName="2级分页索引" />
+  <P Name="t3" Type="number" Opt="true" ColName="3级分页索引" />
+  <P Name="t4" Type="number" Opt="true" ColName="4级分页索引" />
+  <P Name="psysid" Type="number" Opt="true" ColName="前置系统Id" />
+  <P Name="puiid" Type="number" Opt="true" ColName="前置失败UI分页" />
+</Proto>

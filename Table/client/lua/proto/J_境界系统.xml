@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="AmbitCfg" Key="id" ExportType="Arr" Src="J 境界系统.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "境界ID" />
+  <P Name="stateName" Type="string" ColName = "境界名称显示" />
+  <P Name="nameOnly" Type="string" ColName = "境界名称" />
+  <P Name="floorName" Type="string" ColName = "境界" />
+  <P Name="floorMax" Type="number" ColName = "层数上限" />
+  <P Name="step" Type="K_V" ColName = "境界进度" />
+  <P Name="getSkill" Type="K_V" IsList="true" Lsp=";" ColName = "获得技能" />
+  <P Name="getBook" Type="K_V" IsList="true" Lsp=";" ColName = "获得技能书/天赋书" />
+  <P Name="costNum" Type="number" ColName = "渡劫丹" />
+  <P Name="atk" Type="number" ColName = "增加攻击" />
+  <P Name="hp" Type="number" ColName = "增加生命" />
+  <P Name="def" Type="number" ColName = "增加防御" />
+  <P Name="ampdam" Type="number" ColName = "伤害加深" />
+  <P Name="damred" Type="number" ColName = "伤害减免" />
+  <P Name="arm" Type="number" ColName = "破甲" />
+  <P Name="attT" Type="number" ColName = "攻击累计" />
+  <P Name="healthT" Type="number" ColName = "生命累计" />
+  <P Name="defT" Type="number" ColName = "防御累计" />
+  <P Name="aHurtT" Type="number" ColName = "伤害加深累计" />
+  <P Name="rHurtT" Type="number" ColName = "伤害减免累计" />
+  <P Name="armT" Type="number" ColName = "破甲累计" />
+  <P Name="openSp" Type="number" ColName = "战灵开启" />
+  <P Name= "needCopyId" Type="number" ColName="渡劫副本ID"/>
+  <P Name= "path" Type="string" ColName="名字显示资源"/>
+  <P Name= "ringId" Type="number" ColName="法阵icon"/>
+</Proto>

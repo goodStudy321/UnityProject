@@ -1,0 +1,9 @@
+// 提亲返回
+message m_marry_propose_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int64  from_role_id=2[default=0]; //求婚的role_id
+optional  string  from_role_name=3; //来自xxx的求婚
+optional  int32  type=4[default=0]; //提亲类型 1 永结同心 2金玉良缘 3 神仙眷侣
+optional  int32  propose_end_time=5[default=0]; //提亲结束时间
+}
+

@@ -1,0 +1,44 @@
+﻿  wire_format_lite.cc
+  wire_format.cc
+  unknown_field_set.cc
+  text_format.cc
+  substitute.cc
+  strutil.cc
+  structurally_valid.cc
+  once.cc
+  common.cc
+  service.cc
+  repeated_field.cc
+  reflection_ops.cc
+  message_lite.cc
+  message.cc
+d:\soft\vs2015\vc\include\hash_map(17): error C2338: <hash_map> is deprecated and will be REMOVED. Please use <unordered_map>. You can define _SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
+d:\soft\vs2015\vc\include\hash_set(17): error C2338: <hash_set> is deprecated and will be REMOVED. Please use <unordered_set>. You can define _SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
+  zero_copy_stream_impl_lite.cc
+  zero_copy_stream_impl.cc
+  zero_copy_stream.cc
+  tokenizer.cc
+  printer.cc
+  gzip_stream.cc
+  正在生成代码...
+  正在编译...
+  coded_stream.cc
+  generated_message_util.cc
+  generated_message_reflection.cc
+  extension_set_heavy.cc
+  extension_set.cc
+d:\soft\vs2015\vc\include\hash_map(17): error C2338: <hash_map> is deprecated and will be REMOVED. Please use <unordered_map>. You can define _SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
+d:\soft\vs2015\vc\include\hash_set(17): error C2338: <hash_set> is deprecated and will be REMOVED. Please use <unordered_set>. You can define _SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
+  dynamic_message.cc
+d:\soft\vs2015\vc\include\hash_map(17): error C2338: <hash_map> is deprecated and will be REMOVED. Please use <unordered_map>. You can define _SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
+d:\soft\vs2015\vc\include\hash_set(17): error C2338: <hash_set> is deprecated and will be REMOVED. Please use <unordered_set>. You can define _SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
+  descriptor_database.cc
+  descriptor.pb.cc
+  descriptor.cc
+d:\soft\vs2015\vc\include\hash_map(17): error C2338: <hash_map> is deprecated and will be REMOVED. Please use <unordered_map>. You can define _SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
+d:\soft\vs2015\vc\include\hash_set(17): error C2338: <hash_set> is deprecated and will be REMOVED. Please use <unordered_set>. You can define _SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
+  parser.cc
+d:\soft\vs2015\vc\include\hash_map(17): error C2338: <hash_map> is deprecated and will be REMOVED. Please use <unordered_map>. You can define _SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
+d:\soft\vs2015\vc\include\hash_set(17): error C2338: <hash_set> is deprecated and will be REMOVED. Please use <unordered_set>. You can define _SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
+  importer.cc
+  正在生成代码...

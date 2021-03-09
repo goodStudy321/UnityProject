@@ -1,0 +1,6 @@
+// 购买返回
+message m_act_limitedtime_buy_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  num=2[default=0]; //已购买数量
+}
+

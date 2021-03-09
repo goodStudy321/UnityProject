@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="RuneExchgCfg" Key="id" ExportType="Arr" Src="F 符文兑换表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName="符文ID" />
+  <P Name="con" Type="number" ColName="兑换消耗" />
+  <P Name="tID" Type="number" ColName="爬塔ID" />
+  <P Name="sID" Type="number" ColName="排序id" />
+</Proto>

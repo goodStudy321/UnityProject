@@ -1,0 +1,6 @@
+import "p_family_td_rank.proto";
+// 排行信息返回
+message m_family_td_rank_info_toc {
+repeated  p_family_td_rank  rank_info=1; //伤害排行
+}
+

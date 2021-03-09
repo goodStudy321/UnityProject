@@ -1,0 +1,8 @@
+// 招财猫全服记录
+message p_luckycat_log {
+optional  string  name=1; //人名
+optional  int64  consume_gold=2[default=0]; //花费的元宝
+optional  int32  rate=3[default=0]; //倍率
+optional  int64  add_gold=4[default=0]; //获得的元宝
+}
+

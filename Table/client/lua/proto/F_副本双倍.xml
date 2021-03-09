@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="CopyDoubleCfg" Key="id" ExportType="Arr" Src="J 节日活动_副本双倍.xls" Sheet="Sheet2">
+  <P Name="id" Type="number" ColName= "天数" />
+  <P Name="copyTypeList" Type="number" IsList = "true" Lsp = "," ColName= "副本类型" />
+</Proto>

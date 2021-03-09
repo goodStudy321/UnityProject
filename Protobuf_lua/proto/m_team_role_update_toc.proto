@@ -1,0 +1,7 @@
+import "p_team_role.proto";
+// 组队成员加入、更新、退出
+message m_team_role_update_toc {
+optional  p_team_role  role=1; //更新成员信息
+optional  int64  del_role_id=2[default=0]; //退出的成员
+}
+

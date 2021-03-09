@@ -1,0 +1,67 @@
+{include file='public/head'}
+<style>
+  .layui-table-body {
+    display: block;
+  }
+</style>
+
+<div class="layui-tab">
+  <div class="x-body">
+    <blockquote class="layui-elem-quote">
+      <form class="layui-form" action="" lay-filter="filterForm">
+        <div class="layui-inline">
+          <label class="layui-form-label">日期：</label>
+          <div class="layui-input-inline">
+            <input class="layui-input" id="time" name="time" type="text" value="{$time}" autocomplete="off">
+          </div>
+        </div>
+        <br>
+        <br>
+        {include file='public/filter'}
+      </form>
+    </blockquote>
+    <table id="table" lay-filter="test"></table>
+  </div>
+</div>
+
+<script>
+  layui.use('table', function(){
+    var where = {};
+
+    laydate.render({
+      elem: '#time'
+      ,range: true
+    });
+
+    var tableIns = table.render({
+      elem: '#table'
+      ,url: 'allstatistics?{$where}'
+      ,page: true
+      ,cols:[[
+           {field:'time'              , title: '日期'       , rowspan: 2  , align:'center'  , width: 100}
+         //, {field:'channel'           , title: '渠道'       , rowspan: 2  , align:'center'}
+         , {field:'new_user'          , title: '新增用户'   , rowspan: 2  , align:'center'}
+         , {field:'old_user'          , title: '老用户'     , rowspan: 2  , align:'center'}
+         , {field:'active_user'       , title: '活跃用户'   , rowspan: 2  , align:'center'}
+         , {field:'paid_user'         , title: '付费人数'   , rowspan: 2  , align:'center'}
+         , {field:'paid_total'        , title: '付费金额'   , rowspan: 2  , align:'center'}
+         , {field:'paid_arpu'         , title: '付费ARPU'   , rowspan: 2  , align:'center'}
+         , {field:'active_arpu'       , title: '活跃ARPU'   , rowspan: 2  , align:'center'}
+         , {field:'active_paid_scale' , title: '活跃付费率' , rowspan: 2  , align:'center'  , width:100}
+         , {align:'center'            , title: '新用户'     , colspan: 4}
+         , {align:'center'            , title: '老用户'     , colspan: 4}
+        ],[
+            {field:'new_paid_user'  , align:'center' , title: '付费人数'}
+          , {field:'new_paid_total' , align:'center' , title: '付费金额'}
+          , {field:'new_paid_arpu'  , align:'center' , title: 'ARPU'}
+          , {field:'new_paid_scale' , align:'center' , title: '付费率'}
+          , {field:'old_paid_user'  , align:'center' , title: '付费人数'}
+          , {field:'old_paid_total' , align:'center' , title: '付费金额'}
+          , {field:'old_paid_arpu'  , align:'center' , title: 'ARPU'}
+          , {field:'old_paid_scale' , align:'center' , title: '付费率'}
+        ]
+      ]
+    });
+  });
+</script>
+{include file='public/foot'}

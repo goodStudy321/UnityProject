@@ -1,0 +1,6 @@
+// 领取奖励放回
+message m_act_level_reward_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  level=2[default=0]; //已经领取的总次数奖励
+}
+

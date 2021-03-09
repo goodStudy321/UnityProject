@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="HotLoveCfg" Key="id"  ExportType="Arr" Src="Q 全程热恋.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName="ID" />
+  <P Name="taskId" Type="number" ColName="任务ID" />
+  <P Name="finishTarget" Type="number" ColName="完成条件" />
+  <P Name="getNum" Type="number" ColName="完成获得点数" />
+  <P Name="finishNum" Type="number" ColName="可完成次数" />
+  <P Name="configNum" Type="number" ColName="套序号" />
+  <P Name="content" Type="string" ColName= "描述" />
+</Proto>

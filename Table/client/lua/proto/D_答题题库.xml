@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="AnswerCfg" Key="id" ExportType="Dic" Src="D 答题题库.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "编号" />
+  <P Name="question" Type="string" ColName="题目" />
+  <P Name="result" Type="number" ColName= "答案" />
+</Proto>

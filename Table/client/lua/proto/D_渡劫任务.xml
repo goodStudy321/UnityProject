@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="RobberyMCfg" Key="id" ExportType="Dic" Src="D 渡劫任务.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="missionDes" Type="string" ColName="描述" />
+  <P Name="comType" Type="number" ColName="完成类型" />
+  <P Name="copTarget" Type="K_V" IsList="true" Lsp="," ColName="完成参数"/>
+  <P Name="rewardDic" Type="K_V" IsList="true" Lsp=";" ColName="奖励道具"/>
+  <P Name="jumpInfo" Type="string" IsList="true" Lsp="," ColName="跳转系统名称"/>
+  <P Name="jumpFlag" Type="number" ColName="跳转标识" />
+  <P Name="jumpName" Type="string" ColName="多跳转名称" />
+  <P Name="jumpGetWay" Type="number" Opt="true" IsList="true" Lsp="_" ColName= "多跳转配置" />
+</Proto>

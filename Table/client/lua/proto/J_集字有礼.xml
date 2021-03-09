@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="CollWordsCfg" Key="id" ExportType="Arr" Src="J 集字有礼.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "兑换ID" />
+  <P Name="use" Type="K_V" IsList="true" Lsp=";" ColName= "消耗道具" />
+  <P Name="exchange" Type="K_V" IsList="true" Lsp=";" ColName= "兑换道具" />
+  <P Name="count" Type="number" ColName= "可兑换次数" />
+  <P Name="type" Type="number" ColName= "类型" />
+</Proto>

@@ -1,0 +1,17 @@
+message systemopen [key=systemid, source="X 系统开放表.xls", sheet="Sheet1"]
+{	
+	struct paramList [separator = ',']
+	{
+		uint32 npcid;
+	}; 
+    uint16 systemid                         [option = "激活系统ID"]; 
+	uint16 triggermethod				    [option = "触发方式"];
+    uint16 triggerparm				        [option = "触发参数"]; 
+	string buttonname                       [option = "对应系统按钮名"];
+    string sysdescribe	                    [option = "描述"];
+	paramList itemid                           [option = "激活ID"]; 
+	uint16 modelid							[option = "播放动画模型ID"];
+	uint8 open_type							[option = "类型"];
+	uint8 open_anime						[option = "是否播放开启动画"];
+	uint16 open_anime_time					[option = "播放动画时长"];
+};

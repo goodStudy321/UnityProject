@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SpiritEQualityCfg" Key="groupId" ExportType="Dic" Src="L 灵饰装备极品属性.xlsx" Sheet="Sheet1">
+  <P Name="groupId" Type="number" ColName= "属性组ID" />
+  <P Name="groupName" Type="string" ColName= "备注" />
+  <P Name="def" Type="number" Opt="true" IsList="true" Lsp="," ColName="防御加成" />
+  <P Name="hp" Type="number" Opt="true" IsList="true" Lsp="," ColName="生命加成" />
+  <P Name="atk" Type="number" Opt="true" IsList="true" Lsp="," ColName="攻击加成" />
+  <P Name="arm" Type="number" Opt="true" IsList="true" Lsp="," ColName="破甲加成" />
+  <P Name="hit" Type="number" Opt="true" IsList="true" Lsp="," ColName="命中加成" />
+  <P Name="dodge" Type="number" Opt="true" IsList="true" Lsp="," ColName="闪避加成" />
+  <P Name="crit" Type="number" Opt="true" IsList="true" Lsp="," ColName="暴击加成" />
+  <P Name="tena" Type="number" Opt="true" IsList="true" Lsp="," ColName="坚韧加成" />
+  <P Name="defadd" Type="number" Opt="true" IsList="true" Lsp="," ColName="防御百分比" />
+  <P Name="hpadd" Type="number" Opt="true" IsList="true" Lsp="," ColName="生命百分比" />
+  <P Name="atkadd" Type="number" Opt="true" IsList="true" Lsp="," ColName="攻击百分比" />
+  <P Name="armadd" Type="number" Opt="true" IsList="true" Lsp="," ColName="破甲百分比" />
+  <P Name="hitadd" Type="number" Opt="true" IsList="true" Lsp="," ColName="命中百分比" />
+  <P Name="dodgeadd" Type="number" Opt="true" IsList="true" Lsp="," ColName="闪避百分比" />
+  <P Name="critadd" Type="number" Opt="true" IsList="true" Lsp="," ColName="暴击百分比" />
+  <P Name="tenaadd" Type="number" Opt="true" IsList="true" Lsp="," ColName="坚韧百分比" />
+</Proto>

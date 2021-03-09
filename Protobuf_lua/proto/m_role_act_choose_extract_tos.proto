@@ -1,0 +1,5 @@
+// 黑市鉴宝，抽取
+message m_role_act_choose_extract_tos {
+optional  int32  id=1[default=0]; //抽取id
+}
+

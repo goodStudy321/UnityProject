@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="LoveCopyCfg" Key="id" ExportType="Dic" Src="F 仙侣副本刷怪表.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "副本刷怪ID" />
+  <P Name="mId" Type="number" ColName= "怪物ID" />
+  <P Name="mNum" Type="number" ColName= "数量" />
+  <P Name="pos" Type="Vector2" IsList="true" Opt="true" Lsp=";" ColName= "坐标1" />
+  <P Name="pos1" Type="Vector2" IsList="true" Opt="true" Lsp=";" ColName= "坐标1" />
+  <P Name="pos2" Type="Vector2" IsList="true" Opt="true" Lsp=";" ColName= "坐标2" />
+</Proto>

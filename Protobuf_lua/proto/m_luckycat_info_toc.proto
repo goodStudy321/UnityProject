@@ -1,0 +1,7 @@
+import "p_luckycat_log.proto";
+// 招财猫相关信息
+message m_luckycat_info_toc {
+repeated  p_luckycat_log  logs=1; //全服记录
+optional  int32  times=2[default=0]; //抽取次数
+}
+

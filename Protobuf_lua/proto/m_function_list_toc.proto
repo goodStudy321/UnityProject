@@ -1,0 +1,7 @@
+// 功能开启
+message m_function_list_toc {
+optional  int32  op_type=1[default=0]; //0：上线推送 1：更新推送
+repeated  int32  id_list=2; //功能开启的List 
+repeated  int32  reward_list=3; //已领
+}
+

@@ -1,0 +1,121 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.ShenLong.SLRPGA">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
+	
+	<uses-permission  android:name="android.permission.RECORD_AUDIO" />
+	<uses-permission android:name="android.permission.VIBRATE" />
+	<uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+	<uses-permission android:name="android.permission.WRITE_SETTINGS" />
+	
+    <application
+        android:name="phantom.lib.PhantomApp"
+        android:label="@string/app_name"
+        android:icon="@drawable/app_icon"
+		android:largeHeap="true"
+		android:theme="@style/UnityThemeSelector">
+		<meta-data android:name="android.notch_support" android:value="true"/>
+		<meta-data android:name="notch.config" android:value="landscape"/>
+		<meta-data android:name="android.max_aspect" android:value="2.2"/>
+        <!--meta-data需要放在application节点中-->
+        <meta-data android:name="GAME_ID" android:value="175" />
+        <meta-data android:name="PAY_SIGN" android:value="32f59ae5b8016a388a89ecba5d3cb0cd" />
+        <meta-data android:name="JH_APPID" android:value="100000385" />
+        <meta-data android:name="JH_APPKEY" android:value="0ef5712c419e1ba02bba0d62432e4f49" />
+        <meta-data android:name="JH_GAME_CHANNEL_ID" android:value="104287" />
+        <meta-data android:name="JH_NODE" android:value="https://agent1.ijunhai.com" />
+        <!--下边这些配置，请直接拷贝，无需修改value-->
+        <meta-data android:name="JUNHAI Channel" android:value="junhai_test" />
+        <meta-data android:name="JUNHAI_DEBUG" android:value="true"/>
+        <meta-data android:name="JH_CHANNEL_ID" android:value="18" />
+		<meta-data android:name="unityplayer.SkipPermissionsDialog" android:value="true"/>
+		<activity
+            android:name="prj.chameleon.permission.activity.PermissionAty"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="standard"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
+        <activity android:name="phantom.lib.MainActivity">
+            <meta-data android:name="unityplayer.UnityActivity" android:value="true"/>
+        </activity>
+
+        <!-- 闪屏 splash activity.程序的启动Activity，在执行完闪屏之后，君海SDK会根据所配置的游戏主Activity进行跳转。闪屏Activity是君海SDK二次打包跟换渠道闪屏的根本实现所在， 请务必按照要求配置。-->
+        <activity
+            android:name="prj.chameleon.channelapi.SplashScreenActivity"
+            android:configChanges="fontScale|orientation|keyboardHidden|locale|navigation|screenSize|uiMode"
+            android:launchMode="standard"
+            android:noHistory="true"
+            android:screenOrientation="landscape"
+            android:stateNotNeeded="true"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <!-- TODO: value 的值是 游戏的主 Activity, 必须是完整的路径-->
+            <meta-data
+                android:name="prj.chameleon.intent.main"
+                android:value="phantom.lib.MainActivity" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <!-- LAUNCHER 只能有一个。 游戏的主 Activity 不需要添加LAUNCHER, 否则会在应用列表看到两个启动 icon-->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.ijunhai.sdk.union.ui.ActivityContainer"
+            android:configChanges="fontScale|orientation|keyboardHidden|locale|navigation|screenSize|uiMode"
+            android:screenOrientation="landscape"
+            android:theme="@style/jh_activity_container" />
+        <activity
+            android:name="com.ijunhai.sdk.union.ui.webview.WebViewActivity"
+            android:configChanges="fontScale|orientation|keyboardHidden|locale|navigation|screenSize|uiMode"
+            android:launchMode="singleInstance"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Holo.NoActionBar" />
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" />
+        <activity
+            android:name="com.alipay.sdk.auth.AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" />
+        <!--请不要修改QQWapPayWebView的android:screenOrientation属性值-->
+        <activity
+            android:name="com.switfpass.pay.activity.QQWapPayWebView"
+            android:screenOrientation="sensorPortrait" />
+			
+			
+		<service android:name="com.floure.core.lib.CoreService" />
+		
+        <receiver
+            android:name="prj.chameleon.channelapi.DownloadCompleteBroadcastReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <data android:scheme="package" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
+            </intent-filter>
+        </receiver>
+		<provider
+            android:name="prj.chameleon.provider.JunHaiProvider"
+            android:authorities="${applicationId}.junhai.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/junhai_provider_paths" />
+        </provider>
+    </application>
+
+</manifest>

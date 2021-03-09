@@ -1,0 +1,7 @@
+import "p_family_mission_ask.proto";
+// 返回道庭任务求助信息
+message m_role_family_mission_ask_info_toc {
+optional  int32  inspire=1[default=0]; //已帮助加速次数
+repeated  p_family_mission_ask  mission_ask=2; //求助列表
+}
+

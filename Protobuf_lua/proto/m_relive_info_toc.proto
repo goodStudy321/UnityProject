@@ -1,0 +1,7 @@
+// 转生等级、阶段
+message m_relive_info_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  relive_level=2[default=0]; //转生等级
+optional  int32  progress=3[default=0]; //当前阶段
+}
+

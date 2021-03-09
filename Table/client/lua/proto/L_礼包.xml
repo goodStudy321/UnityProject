@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="GiftData" Key="id" ExportType="Dic" Src="L 礼包.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "礼包ID" />
+  <P Name="des" Type="string" ColName="礼包描述" />
+  <P Name="item1" Type="Good" Opt="true" ColName= "物品1" />
+  <P Name="item2" Type="Good" Opt="true" ColName= "物品2" />
+  <P Name="item3" Type="Good" Opt="true" ColName= "物品3" />
+  <P Name="item4" Type="Good" Opt="true" ColName= "物品4" />
+  <P Name="item5" Type="Good" Opt="true" ColName= "物品5" />
+  <P Name="item6" Type="Good" Opt="true" ColName= "物品6" />
+  <P Name="item7" Type="Good" Opt="true" ColName= "物品7" />
+  <P Name="item8" Type="Good" Opt="true" ColName= "物品8" />
+  <P Name="item9" Type="Good" Opt="true" ColName= "物品9" />
+  <P Name="item10" Type="Good" Opt="true" ColName= "物品10" />
+</Proto>

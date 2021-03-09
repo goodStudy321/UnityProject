@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SBEquipCfg" Key="id" ExportType="Dic" Src="S 神兽装备表.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "装备ID" />
+  <P Name="name" Type="string" ColName="装备名称" />
+  <P Name="type" Type="number" ColName="部位" />
+  <P Name="quality" Type="number" Opt="true" ColName="品质" />
+  <P Name="star" Type="number" ColName="星级" />
+  <P Name="advNum" Type="number" ColName="强化次数" />
+  <P Name="hp" Type="number" Opt="true" ColName="生命" />
+  <P Name="atk" Type="number" Opt="true" ColName="攻击" />
+  <P Name="def" Type="number" Opt="true" ColName="防御" />
+  <P Name="arm" Type="number" Opt="true" ColName="破甲" />
+  <P Name="AdvVal" Type="number" Opt="true" ColName="强化值" />
+  <P Name="blueNum" Type="number" Opt="true" ColName="蓝色属性数量" />
+  <P Name="purpleNum" Type="number" Opt="true" ColName="紫色属性数量" />
+</Proto>

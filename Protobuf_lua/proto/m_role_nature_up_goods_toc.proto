@@ -1,0 +1,6 @@
+import "p_goods.proto";
+// 天机系统背包物品更新
+message m_role_nature_up_goods_toc {
+repeated  p_goods  goods=1; //物品,物品的数量为0时就是物品不存在背包
+}
+

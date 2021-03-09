@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="RoleBaseTemp" Key="id" ExportType="Dic" Src="J 角色模型表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "角色ID" />
+  <P Name="number" Type="number" ColName= "角色序号" />
+  <P Name="name" Type="string" ColName= "角色名称" />
+  <P Name="path" Type="string" ColName= "模型路径" />
+  <P Name="uipath" Type="string" Opt="true" ColName= "UI模型路径" />
+  <P Name="type" Type="number" ColName= "角色类型" />
+</Proto>

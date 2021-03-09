@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="EquipGoal" Key="id" ExportType="Arr" Src="Z 装备星级目标表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" Opt="true" ColName= "ID" />
+  <P Name="lv" Type="number" Opt="true" ColName= "强化等级" />
+  <P Name="hp" Type="number" Opt="true" ColName="生命" />
+  <P Name="atk" Type="number" Opt="true" ColName="攻击" />
+  <P Name="def" Type="number" Opt="true" ColName="防御" />
+  <P Name="arm" Type="number" Opt="true" ColName="破甲" />
+</Proto>

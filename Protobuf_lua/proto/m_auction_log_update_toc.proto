@@ -1,0 +1,7 @@
+import "p_auction_log.proto";
+// 记录更新推送
+message m_auction_log_update_toc {
+optional  int32  type=1[default=0]; //类型更新1:拍品记录 2竞拍记录 3行会拍品记录
+optional  p_auction_log  log=2; //记录
+}
+

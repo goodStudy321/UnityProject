@@ -1,0 +1,10 @@
+// 道庭申请成员的p结构
+message p_family_apply {
+optional  int64  role_id=1[default=0]; //角色id
+optional  string  role_name=2; //角色名
+optional  int32  role_level=3[default=0]; //等级
+optional  int32  category=4[default=0]; //职业
+optional  int32  sex=5[default=0]; //性别
+optional  int32  power=6[default=0]; //战斗力
+}
+

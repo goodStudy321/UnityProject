@@ -1,0 +1,8 @@
+import "p_kv.proto";
+import "p_ks.proto";
+// 修改道庭设置
+message m_family_config_tos {
+repeated  p_kv  kv_list=1; //key - int32
+repeated  p_ks  ks_list=2; //key - string
+}
+

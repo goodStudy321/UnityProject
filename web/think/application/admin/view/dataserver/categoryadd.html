@@ -1,0 +1,75 @@
+{include file='public/head'}
+<body>
+  <style type="text/css" media="screen">
+    header {
+      color: black;
+    }
+  </style>
+  <div class="x-body" >
+    <form class="layui-form" id='mainForm' method="post" action="">
+      <div class="layui-form-item">
+        <label class="layui-form-label">Router ID</label>
+        <div class="layui-input-block">
+          <input type="text" name="router_id" lay-verify="number" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">标题名</label>
+        <div class="layui-input-block">
+          <input type="text" name="name" lay-verify="required" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">开始ID</label>
+        <div class="layui-input-block">
+          <input type="text" name="begin_id" lay-verify="number" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">结束ID</label>
+        <div class="layui-input-block">
+          <input type="text" name="end_id" lay-verify="number" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <button style="margin-left: 20%" class="layui-btn layui-btn-sm" lay-submit="" lay-filter="toSubmit">提交</button>
+          <button id="reset" type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+{include file='public/foot'}
+<script type="text/javascript">
+  var form  = layui.form;
+  var layer = layui.layer;
+  $(document).ready(function(){
+    var options = {
+      type:'post',
+      dataType:"json",
+      data:{},
+      clearForm: false,        //成功提交后，清除所有表单元素的值
+      resetForm: false,        //成功提交后，重置所有表单元素的值
+      cache:false,
+      async:false,
+      success:function(data){
+        if(data.status.code != 10200){
+          layer.msg(data.status.msg);
+        }else{
+          layer.msg(data.status.msg,{icon:1,time:500},function(){
+            $("#reset").click();
+            x_admin_close();
+            parent.location.reload();
+          });
+        }
+        //服务器端返回处理逻辑
+      },
+      error:function(XmlHttpRequest,textStatus,errorThrown){
+        layer.msg('操作失败:服务器处理失败');
+      }
+    };
+    $('#mainForm').ajaxForm(options).submit(function(data){
+    });
+  });
+</script>

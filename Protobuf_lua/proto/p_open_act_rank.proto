@@ -1,0 +1,9 @@
+// 开服冲榜第二阶排行结构
+message p_open_act_rank {
+optional  int32  type=1[default=0]; //排行类型  法宝战力 - 10013，翅膀战力 - 10014，图鉴战力 - 10012 
+optional  int32  rank=2[default=0]; //排行
+optional  int64  role_id=3[default=0]; //role_id
+optional  string  role_name=4; //角色名
+optional  int32  rank_value=5[default=0]; //排行key值
+}
+

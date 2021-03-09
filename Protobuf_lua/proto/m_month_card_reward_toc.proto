@@ -1,0 +1,9 @@
+// 月卡获得奖励返回
+message m_month_card_reward_toc {
+optional  int32  err_code=1[default=0]; 
+optional  bool  is_reward=2[default=true]; //当天奖励是否领取 true:已领取 false:未领取
+optional  bool  is_principal_reward=3[default=true]; //本金是否领取 true:已领取 false:未领取
+optional  int32  remain_days=4[default=0]; //剩余领取天数
+optional  int32  add_gold=5[default=0]; //获得元宝
+}
+

@@ -1,0 +1,7 @@
+// 转充值转盘返回
+message m_bg_rturntable_draw_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  rate=2[default=0]; //倍率
+optional  int32  gold=3[default=0]; //转盘金额
+}
+

@@ -1,0 +1,7 @@
+import "p_red_packet_content.proto";
+// 红包领取列表更新
+message m_family_red_packet_content_toc {
+repeated  p_red_packet_content  content=1; //红包
+optional  int32  id=2[default=0]; //红包id
+}
+

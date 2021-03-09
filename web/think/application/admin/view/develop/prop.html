@@ -1,0 +1,106 @@
+{include file='public/head'}
+<div class="layui-field-box">
+  <blockquote class="layui-elem-quote">
+    <div class="layui-inline">
+      <label class="layui-form-label">角色id：</label>
+      <div class="layui-input-inline">
+        <input type="text" id="role_id"  class="layui-input">
+      </div>
+    </div>
+    <div class="layui-inline">
+      <label class="layui-form-label">账号：</label>
+      <div class="layui-input-inline">
+        <input type="text" id="account_name"  class="layui-input">
+      </div>
+    </div>
+    <!--<div class="layui-inline">
+      <label class="layui-form-label">拥有装备：</label>
+      <div class="layui-input-inline">
+        <select id="prop_status" style="height: 28px;">
+          <option value="all" selected>全部</option>
+          <option value="1">神兵</option>
+          <option value="2">翅膀</option>
+          <option value="3">法宝</option>
+          <option value="4" disabled>坐骑</option>
+        </select>
+      </div>
+    </div>-->
+    <div class="layui-inline">
+      &nbsp; &nbsp;
+      <div class="layui-input-inline" id="button">
+        <button class="layui-btn layui-btn-sm">查询</button>
+      </div>
+      <div class="layui-input-inline">
+        <button onclick="javascript:location.reload()" class="layui-btn layui-btn-sm">刷新</button>
+      </div>
+    </div>
+  </blockquote>
+  <table id="table" lay-filter="test"></table>
+</div>
+{include file='public/foot'}
+
+
+<script>
+  layui.use(['laydate','form'], function(){
+    var laydate = layui.laydate;
+    //执行一个laydate实例
+    laydate.render({
+      elem: '#create1' //指定元素
+    });
+    laydate.render({
+      elem: '#create2' //指定元素
+    });
+  });
+  //表格
+  layui.use('table', function(){
+    var table = layui.table;
+    //第一个实例
+    var tableIns = table.render({
+      elem: '#table'
+      ,url: 'develop_data' //数据接口
+      ,page: true //开启分页
+      ,cols: [[ //标题栏
+      {align: 'center',field: 'id', title: 'id', rowspan: 2}
+      ,{align: 'center',field: 'role_name', title: '角色名', rowspan: 2}
+      ,{align: 'center',field: 'account_name', title: '账号', rowspan: 2}
+      ,{align: 'center', title: '神兵',  colspan: 3}
+      ,{align: 'center', title: '翅膀', colspan: 3} //colspan即横跨的单元格数，这种情况下不用设置field和width
+      ,{align: 'center', title: '法宝', colspan: 3} //colspan即横跨的单元格数，这种情况下不用设置field和width
+      ],
+      [ //表头
+      {field: 'weapon_name', title: '神兵名称'}
+      ,{field: 'weapon_level', title: '神兵等级'}
+      ,{field: 'weapon_star', title: '神兵星级'}
+      ,{field: 'wing_name', title: '翅膀名称'}
+      ,{field: 'wing_level', title: '翅膀等级'}
+      ,{field: 'wing_star', title: '翅膀星级'}
+      ,{field: 'magic_name', title: '法宝名称'}
+      ,{field: 'magic_level', title: '法宝等级'}
+      ,{field: 'magic_star', title: '法宝星级'}
+      ]]
+    });
+    $("#button").click(function(){
+      var role_id = $("#role_id").val();
+      var account_name = $("#account_name").val();
+      var code_status = $("#code_status").val();
+      var code_name = $("#code_name").val();
+      var reward = $("#reward").val();
+      var create1 = $("#create1").val();
+      var create2 = $("#create2").val();
+      tableIns.reload({
+        where: { //设定异步数据接口的额外参数，任意设
+          find:1
+        ,role_id:role_id
+        ,account_name: account_name
+        ,prop_status: code_status
+        }
+        ,page: {
+      curr: 1 //重新从第 1 页开始
+        }
+      });
+    });
+    $("#button2").click(function(){
+      location.reload();
+    });
+  });
+</script>

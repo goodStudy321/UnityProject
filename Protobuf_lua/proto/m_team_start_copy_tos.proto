@@ -1,0 +1,5 @@
+// 队长开启进入副本
+message m_team_start_copy_tos {
+optional  int32  enter_copy_id=1[default=0]; //准备进入的副本ID
+}
+

@@ -1,0 +1,5 @@
+// 下架商品
+message m_auction_obtain_tos {
+optional  int64  id=1[default=0]; //下架的物品ID
+}
+

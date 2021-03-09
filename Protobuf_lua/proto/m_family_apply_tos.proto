@@ -1,0 +1,5 @@
+// 申请加入某个帮会
+message m_family_apply_tos {
+optional  int64  family_id=1[default=0]; //申请的帮会
+}
+

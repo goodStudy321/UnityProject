@@ -1,0 +1,9 @@
+message PetInfo [key=id, source="C 宠物基础表.xls", sheet="Sheet1"]				
+{
+	uint32 id						[option = "ID"];
+	string name 					[option = "宠物名称"];
+	uint16 model_id					[option = "宠物模型"];
+	uint16 ui_model_id				[option = "宠物UI模型"];
+	string icon 					[option = "图标"];
+	uint8 mount_point				[option = "挂载点"];
+};

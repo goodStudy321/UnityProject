@@ -1,0 +1,5 @@
+// 天命等级上线推送
+message m_destiny_info_toc {
+optional  int32  destiny_id=1[default=0]; //天命觉醒ID
+}
+

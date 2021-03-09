@@ -1,0 +1,6 @@
+// 甜蜜度信息更新
+message m_marry_copy_sweet_toc {
+optional  bool  is_decrease=1[default=true]; //是否衰减
+optional  int32  remain_time=2[default=0]; //剩余时间(秒)
+}
+

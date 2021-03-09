@@ -1,0 +1,5 @@
+// 纹印合成
+message m_seal_compose_tos {
+optional  int32  seal_id=1[default=0]; //要合成纹印ID
+}
+

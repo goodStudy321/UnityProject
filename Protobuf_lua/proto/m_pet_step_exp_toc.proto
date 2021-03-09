@@ -1,0 +1,5 @@
+// 伙伴进阶精华
+message m_pet_step_exp_toc {
+optional  int32  exp=1[default=0]; //进阶精华
+}
+

@@ -1,0 +1,7 @@
+// 时装p结构
+message p_fashion {
+optional  int32  type=1[default=0]; //时装类型
+optional  int32  level=2[default=0]; //当前等级
+optional  int32  exp=3[default=0]; //当前精华
+}
+

@@ -1,0 +1,5 @@
+// 月下情缘 奖励抽取
+message m_cycle_act_couple_pray_tos {
+optional  int32  times=1[default=0]; //1 or 10 连抽
+}
+

@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ZaDanAddUpCfg" Key="id" ExportType="Arr" Src="X 幸运砸蛋累计砸蛋奖励配置表.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "序号" />
+  <P Name="cond" Type="number" ColName="领取条件"/>
+  <P Name="its" Type="Global_it" ColName="领取道具"  IsList="true" Lsp=";" />
+  <P Name="num" Type="number" ColName="套序号" />
+</Proto>

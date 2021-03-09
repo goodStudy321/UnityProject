@@ -1,0 +1,6 @@
+// 总次数奖励领取
+message m_act_sign_reward_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  times=2[default=0]; //已经领取的总次数
+}
+

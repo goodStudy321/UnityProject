@@ -1,0 +1,10 @@
+import "p_bg_act.proto";
+import "p_item_i.proto";
+//  后台活动一见倾心
+message m_role_bg_package_toc {
+optional  p_bg_act  info=1; //ID
+optional  int32  price=2[default=0]; //价格
+optional  int32  item=3[default=0]; //购买信物 道具ID
+repeated  p_item_i  list=4; //展示
+}
+

@@ -1,0 +1,6 @@
+import "p_activity.proto";
+// 活动信息推送
+message m_activity_info_toc {
+repeated  p_activity  activity_list=1; //增量更新
+}
+

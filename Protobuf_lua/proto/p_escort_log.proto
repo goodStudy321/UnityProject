@@ -1,0 +1,6 @@
+// 护送日志更新
+message p_escort_log {
+optional  int32  type=1[default=0]; //日志类型
+repeated  string  text=2; //文本列表
+}
+

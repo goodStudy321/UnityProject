@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="TimeLimitMissionCfg" Key="id" ExportType="Arr" Src="K 开服冲榜_翅膀_法宝_图鉴_灵力.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID条件" />
+  <P Name="type" Type="number" ColName="活动类型" />
+  <P Name="award" Type="number" ColName= "奖励灵力" />
+  <P Name="cond" Type="number" ColName= "条件参数" />
+  <P Name="mType" Type="number" ColName= "任务类型" />
+  <P Name="icon" Type="string" ColName= "icon" />
+  <P Name="jumpInfo" Type="number" IsList="true" Lsp="," ColName= "跳转系统" />
+  <P Name="des" Type="string" ColName= "描述" />
+  <P Name="btnName" Type="string" ColName= "按钮名字" />
+  <P Name="btnIcon" Type="string" ColName= "按钮图片" />
+</Proto>

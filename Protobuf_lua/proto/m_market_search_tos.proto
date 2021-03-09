@@ -1,0 +1,15 @@
+import "p_kv.proto";
+// 拍卖行搜索
+message m_market_search_tos {
+optional  int32  type=1[default=0]; //拍卖行类型 1-销售拍卖行 2-求购拍卖行
+repeated  int32  key_word=2; //前端检索输入关键字，直接发物品ID List
+optional  int32  first_type=3[default=0]; //第一分类
+optional  int32  second_type=4[default=0]; //第二分类
+optional  int32  color=5[default=0]; //品质 - 0 时没有需求
+optional  int32  order=6[default=0]; //品阶 - 0 时没有需求
+optional  int32  dic=7[default=0]; //字典
+optional  p_kv  sort_type=8; //排序方式 id - 1时序 2单价 3-总价 val  1-正序 2-倒序 时序只有正序  
+optional  bool  search_type=9[default=true]; //true - 请求第一页 false 向下翻页 一页20条数据
+optional  int32  password=10[default=0]; //密码 - 1-所有 2-没有 3-有
+}
+

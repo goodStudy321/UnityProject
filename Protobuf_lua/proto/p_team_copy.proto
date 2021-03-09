@@ -1,0 +1,10 @@
+import "p_team_role.proto";
+// 队伍匹配里的队伍信息
+message p_team_copy {
+optional  int32  team_id=1[default=0]; //队伍id
+optional  int32  min_level=2[default=0]; //最小等级
+optional  int32  max_level=3[default=0]; //最大等级
+optional  int64  captain_role_id=4[default=0]; //队长ID
+repeated  p_team_role  team_roles=5; //队伍信息
+}
+

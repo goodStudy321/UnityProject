@@ -1,0 +1,7 @@
+// 发送题目
+message m_answer_question_toc {
+optional  int32  time=1[default=0]; //节点时间
+optional  int32  question=2[default=0]; //题目
+optional  int32  num=3[default=0]; //序号
+}
+

@@ -1,0 +1,4 @@
+// 请求道庭BOSS开启时间
+message m_family_boss_time_tos {
+}
+

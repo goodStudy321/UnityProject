@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DemonCfg" Key="Id" ExportType="Arr" Src="M 魔域Boss掉落表.xlsx" Sheet="Sheet1">
+  <P Name="Id" Type="number" ColName= "序号ID" />
+  <P Name="Lv" Type="number" ColName= "等级2" />
+  <P Name="InevitableRewards" Type="number" IsList="true" Lsp="|" ColName= "必定掉落展示" />
+  <P Name="IncidentalRewards" Type="number" IsList="true" Lsp="|" ColName= "随机掉落展示" />
+</Proto>

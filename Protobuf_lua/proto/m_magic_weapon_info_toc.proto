@@ -1,0 +1,10 @@
+import "p_kv.proto";
+// 法宝信息
+message m_magic_weapon_info_toc {
+optional  int32  level=1[default=0]; //等级
+optional  int32  exp=2[default=0]; //经验
+optional  int32  cur_id=3[default=0]; //当前幻化的法宝ID
+repeated  p_kv  skin_list=4; //当前所有法宝的皮肤-进度信息
+repeated  p_kv  soul_list=5; //器魂列表
+}
+

@@ -1,0 +1,35 @@
+-module(cfg_world_level).
+-include("config.hrl").
+-export[find/1].
+?CFG_H
+
+?C(1, {c_world_level,1,210044,0})
+?C(2, {c_world_level,2,210044,0})
+?C(3, {c_world_level,3,210044,0})
+?C(4, {c_world_level,4,210044,0})
+?C(5, {c_world_level,5,210044,0})
+?C(6, {c_world_level,6,210044,0})
+?C(7, {c_world_level,7,210044,0})
+?C(8, {c_world_level,8,210044,0})
+?C(9, {c_world_level,9,210044,0})
+?C(10, {c_world_level,10,210044,0})
+?C(11, {c_world_level,11,210044,2})
+?C(12, {c_world_level,12,210044,2})
+?C(13, {c_world_level,13,210044,2})
+?C(14, {c_world_level,14,210044,2})
+?C(15, {c_world_level,15,210044,2})
+?C(16, {c_world_level,16,210044,2})
+?C(17, {c_world_level,17,210044,2})
+?C(18, {c_world_level,18,210044,2})
+?C(19, {c_world_level,19,210044,2})
+?C(20, {c_world_level,20,210044,2})
+?C(21, {c_world_level,21,210044,5})
+?C(22, {c_world_level,22,210044,5})
+?C(23, {c_world_level,23,210044,5})
+?C(24, {c_world_level,24,210044,5})
+?C(25, {c_world_level,25,210044,5})
+?C(26, {c_world_level,26,210044,5})
+?C(27, {c_world_level,27,210044,5})
+?C(28, {c_world_level,28,210044,5})
+?C(29, {c_world_level,29,210044,5})
+?CFG_E.

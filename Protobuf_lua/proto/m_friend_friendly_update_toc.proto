@@ -1,0 +1,6 @@
+// 好友亲密度更新
+message m_friend_friendly_update_toc {
+optional  int64  friend_id=1[default=0]; //更新的好感度值
+optional  int32  friendly=2[default=0]; //亲密度
+}
+

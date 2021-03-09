@@ -1,0 +1,5 @@
+// 一键添加好友
+message m_friend_all_add_tos {
+optional  int32  choose=1[default=0]; //0:拒绝,1:同意
+}
+

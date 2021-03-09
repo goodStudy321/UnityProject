@@ -1,0 +1,6 @@
+// 1v1匹配
+message m_solo_match_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  type=2[default=0]; //1开始匹配 0取消
+}
+

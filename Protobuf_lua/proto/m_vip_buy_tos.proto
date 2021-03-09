@@ -1,0 +1,5 @@
+// vip卡购买
+message m_vip_buy_tos {
+optional  int32  id=1[default=0]; //vip卡id
+}
+

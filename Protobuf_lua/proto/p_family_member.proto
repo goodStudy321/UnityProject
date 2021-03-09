@@ -1,0 +1,15 @@
+// 道庭成员的p结构
+message p_family_member {
+optional  int64  role_id=1[default=0]; //角色id
+optional  string  role_name=2; //角色名
+optional  int32  role_level=3[default=0]; //等级
+optional  int32  category=4[default=0]; //职业
+optional  int32  title=5[default=0]; //职位
+optional  int32  sex=6[default=0]; //性别
+optional  bool  salary=7[default=true]; //神殿俸禄是否领取
+optional  int32  integral=8[default=0]; //积分
+optional  int32  power=9[default=0]; //战斗力
+optional  bool  is_online=10[default=true]; //是否在线
+optional  int32  last_offline_time=11[default=0]; //上次下线时间 时间戳
+}
+

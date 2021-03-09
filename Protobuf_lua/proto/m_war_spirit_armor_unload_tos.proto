@@ -1,0 +1,6 @@
+// 战灵灵器脱下
+message m_war_spirit_armor_unload_tos {
+optional  int32  war_spirit_id=1[default=0]; //战灵id
+repeated  int32  type_ids=2; //穿戴的哪一些装备
+}
+

@@ -1,0 +1,10 @@
+message MagicWeaponLevel [key=level, source="F 法宝等级表.xls", sheet="Sheet1"]
+{
+	struct array [separator = ',']
+	{
+		uint32 value;
+	};
+	
+	uint32 level						[option = "法宝等级"];
+	array skills 						[option = "法宝技能列表"];
+};

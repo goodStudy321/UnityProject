@@ -1,0 +1,5 @@
+// 图标选择完毕 or 超时
+message m_marry_copy_finish_toc {
+optional  int32  reward_type=1[default=0]; //奖励类型 57心有灵犀奖励 58缘差一线
+}
+

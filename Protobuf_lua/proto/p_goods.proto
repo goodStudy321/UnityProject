@@ -1,0 +1,13 @@
+import "p_kv.proto";
+// 道具基本属性
+message p_goods {
+optional  int32  id=1[default=0]; //背包数据
+optional  int32  type_id=2[default=0]; //道具type_id
+optional  bool  bind=3[default=true]; //是否绑定
+optional  int32  num=4[default=0]; //数量
+repeated  p_kv  excellent_list=5; //装备卓越属性
+optional  int32  start_time=6[default=0]; //道具可以使用的时间 0为不限制
+optional  int32  end_time=7[default=0]; //道具无效时间
+optional  int32  market_end_time=8[default=0]; //物品系统诞生时间   暂用于市场
+}
+

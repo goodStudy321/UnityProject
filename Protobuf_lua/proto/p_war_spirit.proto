@@ -1,0 +1,11 @@
+import "p_war_spirit_equip.proto";
+import "p_war_spirit_armor.proto";
+// 战灵
+message p_war_spirit {
+optional  int32  id=1[default=0]; //战灵
+optional  int32  level=2[default=0]; //等级
+optional  int32  exp=3[default=0]; //经验
+repeated  p_war_spirit_equip  equip_list=4; //战灵灵饰
+repeated  p_war_spirit_armor  armor_list=5; //战灵灵器
+}
+

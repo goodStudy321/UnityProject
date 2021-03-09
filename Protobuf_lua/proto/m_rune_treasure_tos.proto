@@ -1,0 +1,5 @@
+// 符文寻宝
+message m_rune_treasure_tos {
+optional  int32  times=1[default=0]; //次数
+}
+

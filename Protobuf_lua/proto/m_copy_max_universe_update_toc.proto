@@ -1,0 +1,7 @@
+// 太虚最大层数更新
+message m_copy_max_universe_update_toc {
+optional  int32  max_universe=1[default=0]; //太虚最大层数
+optional  int32  universe_use_time=2[default=0]; //最大层
+optional  int32  status=3[default=0]; //0正常通关 1最低战力 2最快通关 3最低最快通关
+}
+

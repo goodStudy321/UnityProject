@@ -1,0 +1,7 @@
+import "p_family_apply.proto";
+// 道庭申请新加、更新、删除
+message m_family_apply_update_toc {
+optional  p_family_apply  apply=1; //申请成员
+repeated  int64  del_apply_ids=2; //删除的申请成员
+}
+

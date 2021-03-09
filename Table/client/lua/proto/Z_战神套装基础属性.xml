@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="AresBaseCfg" ExportType="Arr" Key="id" Src="Z 战神套装基础属性.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "战神套装ID" />
+  <P Name="name" Type="string" ColName= "战神套装名称" />
+  <P Name="texture" Type="string" ColName= "头像icon" />
+  <P Name="modelId" Type="string" ColName= "套装UI模型" />
+  <P Name="part1" Type="number" ColName= "武器部件ID" />
+  <P Name="part2" Type="number" ColName= "背饰部件ID" />
+  <P Name="part3" Type="number" ColName= "上衣部件ID" />
+  <P Name="part4" Type="number" ColName= "下衣部件ID" />
+  <P Name="arg1" Type="K_V" ColName= "武器激活条件" />
+  <P Name="arg2" Type="K_V" ColName= "背饰激活条件" />
+  <P Name="arg3" Type="K_V" ColName= "上衣激活条件" />
+  <P Name="arg4" Type="K_V" ColName= "下衣激活条件" />
+  <P Name="hp" Type="number" ColName= "基础生命" />
+  <P Name="atk" Type="number" ColName= "基础攻击" />
+  <P Name="def" Type="number" ColName= "基础防御" />
+  <P Name="arm" Type="number" ColName= "基础破甲" />
+</Proto>

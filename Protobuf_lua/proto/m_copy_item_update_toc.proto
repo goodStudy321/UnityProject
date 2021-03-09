@@ -1,0 +1,6 @@
+import "p_copy_item.proto";
+// 副本信息更新
+message m_copy_item_update_toc {
+optional  p_copy_item  copy_item=1; 
+}
+

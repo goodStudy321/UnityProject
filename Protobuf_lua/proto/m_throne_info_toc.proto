@@ -1,0 +1,7 @@
+import "p_throne.proto";
+// 宝座系统消息推送
+message m_throne_info_toc {
+optional  int32  op_type=1[default=0]; //0：上线推送 1：更新推送
+optional  p_throne  throne_info=2; //p_throne
+}
+

@@ -1,0 +1,6 @@
+// 首冲信息返回
+message m_act_firstrecharge_toc {
+optional  int32  pay_time=1[default=0]; //首充时间，0为未充值
+repeated  int32  reward_list=2; //已经领取奖励天数[1,2,3]
+}
+

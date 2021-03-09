@@ -1,0 +1,4 @@
+// boss悬赏领取
+message m_boss_reward_get_tos {
+}
+

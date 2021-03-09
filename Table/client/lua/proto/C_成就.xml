@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SuccessCfg" Key="id" ExportType="Dic" Src="C 成就.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="name" Type="string" ColName="成就名称" />
+  <P Name="des" Type="string" ColName="描述" />
+  <P Name="succType" Type="number" ColName="成就类型" />
+  <P Name="tagType" Type="number" ColName="标签类型" />
+  <P Name="compType" Type="number" ColName="完成类型" />
+  <P Name="condId" Type="number" ColName="条件ID" />
+  <P Name="condition" Type="number" ColName="条件参数" />
+  <P Name="award" Type="K_V" IsList="true" Lsp=";" ColName= "奖励道具" />
+  <P Name="score" Type="number" ColName="成就奖励成就点" />
+</Proto>

@@ -1,0 +1,5 @@
+// 宝座道具分解精华
+message m_throne_resolve_tos {
+repeated  int64  resolve_item_id=1; //背包道具唯一ID
+}
+

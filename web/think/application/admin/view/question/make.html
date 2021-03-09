@@ -1,0 +1,81 @@
+{include file="public/head"}
+<body>
+  <div class="x-body">
+    <button class="layui-btn layui-btn-sm "  onclick="x_admin_show('添加问卷','makeAdd.html',500,410)"></i>添加问卷</button>
+  <button onclick="javascript:location.reload()" class="layui-btn layui-btn-sm">刷新</button>
+  <table class="layui-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>问卷名</th>
+        <th>最低等级</th>
+        <th>奖励道具id</th>
+        <th>渠道名</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      {volist name="data" id="vo"}
+      <tr>
+        <td>{$vo.id}</td>
+        <td>{$vo.question}</td>
+        <td>{$vo.condition}</td>
+        <td>{$vo.reward}</td>
+        <td>{$vo.channel_name}</td>
+        <td>
+          <button class="layui-btn layui-btn-xs"  onclick="x_admin_show('编辑开服信息','makeEdit.html?id={$vo.id}',500,410)">编辑</button>
+          <a href="{:url('questionlist',['id' => $vo['id']])}"><button class="layui-btn layui-btn-xs">填写问卷</button></a>
+          <button onclick="send(this,{$vo.id})" class="layui-btn layui-btn-xs">提交问卷</button>
+          <button onclick="javascript:location.href='/admin/question/outcome?survey_id={$vo.id}'" class="layui-btn layui-btn-xs">问卷结果</button>
+          <button onclick="delServer(this,{$vo.id})" class="layui-btn layui-btn-xs layui-btn-danger">删除</button>
+        </td>
+      </tr>
+      {/volist}
+    </tbody>
+  </table>
+  <div class="page">
+    {$page}
+  </div>
+</div>
+</body>
+<script>
+  layui.use(['laydate','form'], function(){
+    var laydate = layui.laydate;
+    laydate.render({
+      elem: '#time'
+    });
+  });
+
+  function delServer(obj,id){
+    layer.confirm('确认要删除吗？',function(index){
+      //捉到所有被选中的，发异步进行删除
+      $.post("{:url('admin/Question/makeDel')}", {id: id}, function(data, textStatus, xhr) {
+        /*optional stuff to do after success */
+        console.log(data);
+        if(data.code==1){
+          layer.msg(data.msg,{icon:1,time:1000},function(){
+            $(obj).parents('tr').remove();
+            $(".i_count").html(count-1);
+          });
+        }else{
+          layer.msg(data.msg,{icon:2,time:1000});
+        }
+      });
+    });
+  }
+  function send(obj,id){
+    layer.confirm('确认提交',function(index){
+      //捉到所有被选中的，发异步进行删除
+      $.post("{:url('admin/Question/send')}", {id: id}, function(data, textStatus, xhr) {
+        /*optional stuff to do after success */
+        console.log(data);
+        if(data.code==1){
+          layer.msg(data.msg,{icon:1,time:1000});
+        }else{
+          layer.msg(data.msg,{icon:2,time:1000});
+        }
+      });
+    });
+  }
+</script>
+{include file="public/foot"}

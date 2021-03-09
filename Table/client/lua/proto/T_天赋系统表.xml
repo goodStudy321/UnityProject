@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="tInnateSys" Key="id" ExportType="Dic" Src="T 天赋系统表.xls" Sheet="Sheet1">
+  <P Name="id" Type="string" ColName= "技能ID" />
+  <P Name="baseId" Type="string" ColName= "基础技能" />
+    <P Name="backPoint" Type="number" ColName= "重置天赋点数" />
+  <P Name="exp" Type="number"  ColName= "升级消耗" />
+  <P Name="lv" Type="number" ColName= "技能等级" />
+  <P Name="lmt" Type="string" ColName= "前置技能限制" />
+    <P Name="tree" Type="number"  ColName= "天赋树ID" />
+  <P Name="lmLv" Type="number" ColName= "等级限制" />
+  <P Name="lmPoint" Type="number" ColName= "投入点数" />
+</Proto>

@@ -1,0 +1,7 @@
+// 竞价
+message m_auction_buy_tos {
+optional  int32  type=1[default=0]; //类型 1:一口价 2:竞价
+optional  int64  id=2[default=0]; //该买的ID
+optional  int32  gold=3[default=0]; //2竞价时用到，发当前价格过来，有变化时会推送该商品更新
+}
+

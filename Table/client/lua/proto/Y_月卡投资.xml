@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MonthCardCfg" Key="id"  ExportType="Arr" Src="Y 月卡投资.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName="天数" />
+  <P Name="count" Type="number" ColName="返还元宝" />
+</Proto>

@@ -1,0 +1,9 @@
+// 申请加入队伍回应
+message m_team_apply_reply_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  op_type=2[default=0]; //1同意加入 2为拒绝加入
+optional  int64  reply_role_id=3[default=0]; //操作人的RoleID
+optional  string  reply_role_name=4; //操作人的RoleName
+optional  int64  apply_role_id=5[default=0]; //申请者的RoleID
+}
+

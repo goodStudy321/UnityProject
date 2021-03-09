@@ -1,0 +1,5 @@
+// 购买副本次数返回
+message m_copy_buy_times_toc {
+optional  int32  err_code=1[default=0]; 
+}
+

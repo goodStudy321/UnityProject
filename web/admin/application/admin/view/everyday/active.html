@@ -1,0 +1,142 @@
+{include file='public/head'}
+<div class="layui-field-box">
+  <div class="layui-tab layui-tab-brief" lay-filter="division">
+    <ul class="layui-tab-title">
+      <li class="layui-this">活跃玩家</li>
+      <li>活跃用户构成</li>
+    </ul>
+    <br>
+
+    <div class="layui-tab-content">
+      <div class="layui-tab-item layui-show">
+        <blockquote class="layui-elem-quote">
+          <div class="layui-input-inline">
+            总注册角色数：{$create}
+          </div>
+          <div class="layui-inline">
+            <label class="layui-form-label">时间：</label>
+            <div class="layui-input-inline">
+              <input class="layui-input" id="time"  type="text" autocomplete="off">
+            </div>
+            <div class="layui-input-inline" id="button">
+              <button class="layui-btn layui-btn-sm">查询</button>
+            </div>
+          </div>
+        </blockquote>
+        <table id="table" lay-filter="test"></table>
+      </div>
+
+      <div class="layui-tab-item">
+        <blockquote class="layui-elem-quote">
+          <div class="layui-inline">
+              时间：
+            <div class="layui-input-inline">
+              <input class="layui-input" id="time2"  type="text">
+            </div>
+            <div class="layui-input-inline" id="button2">
+              <button class="layui-btn layui-btn-sm">查询</button>
+            </div>
+          </div>
+        </blockquote>
+        <table id="table2" lay-filter="test"></table>
+      </div>
+    </div>
+  </div>
+</div>
+{include file='public/foot'}
+
+<script>
+  layui.use('laydate', function() {
+    var laydate = layui.laydate;
+    laydate.render({
+      elem: '#time'
+      ,max:0
+    ,range:true
+    });
+  });
+
+  layui.use('table', function(){
+    var table = layui.table;
+    var util = layui.util;
+    var tableIns = table.render({
+      elem: '#table'
+      ,url: 'active_table_gamer'
+      ,page: true
+      ,cols:[[
+      {field:'time',align: 'center', title: '日期', width: 200, rowspan: 2}
+      ,{align: 'center', title: '新增玩家',  colspan: 3}
+      ,{align: 'center', title: '活跃玩家', colspan: 3}
+      ,{align: 'center', title: '老玩家', colspan: 3}
+      ], [
+       {field: 'new_imei'       , title: '新增设备'}
+      , {field: 'new_account'    , title: '新增账号' }
+      , {field: 'new_role'       , title: '新增角色' }
+      , {field: 'active_imei'    , title: '活跃设备' }
+      , {field: 'active_account' , title: '活跃账号' }
+      , {field: 'active_role'    , title: '活跃角色' }
+      , {field: 'old_imei'       , title: '设备'     }
+      , {field: 'old_account'    , title: '账号'     }
+      , {field: 'old_role'       , title: '角色'     }
+      ]]
+    });
+    $("#button").click(function(){
+      var time = $("#time").val();
+      tableIns.reload({
+        where: {time: time}
+        ,page: {
+          curr: 1
+        }
+      });
+    });
+  });
+
+  layui.use('laydate', function() {
+    var laydate = layui.laydate;
+    laydate.render({
+      elem: '#time2'
+      ,range:true
+      ,max:0
+    });
+  });
+
+  layui.use('table', function(){
+    var table = layui.table;
+    var util = layui.util;
+    var tableIns2 = table.render({
+      elem: '#table2'
+      ,url: 'active_table'
+      ,page: true
+      ,cols:[[
+      {field:'time',align: 'center', title: '日期', width: 100}
+      ,{field: 'active', title: '当天活跃人数',width: 110}
+      ,{field: 'add', title: '当天新增'}
+      ,{field: 'a1', title: '1天前'}
+      ,{field: 'a2', title: '2天'}
+      ,{field: 'a3', title: '3天'}
+      ,{field: 'a4', title: '4天'}
+      ,{field: 'a5', title: '5天'}
+      ,{field: 'a6', title: '6天'}
+      ,{field: 'a7', title: '7天'}
+      ,{field: 'a8', title: '8天'}
+      ,{field: 'a9', title: '9天'}
+      ,{field: 'a10', title: '10天'}
+      ,{field: 'a11', title: '11天'}
+      ,{field: 'a12', title: '12天'}
+      ,{field: 'a13', title: '13天'}
+      ,{field: 'a14', title: '14天'}
+      ,{field: 'a15', title: '15天'}
+      ,{field: 'a21', title: '21天'}
+      ,{field: 'a30', title: '30天'}
+      ]]
+    });
+    $("#button2").click(function(){
+      var time = $("#time2").val();
+      tableIns2.reload({
+        where: {time: time}
+        ,page: {
+          curr: 1
+        }
+      });
+    });
+  });
+</script>

@@ -1,0 +1,5 @@
+// 需要整理的道具
+message p_bag_merge {
+repeated  int32  id_list=1; //背包数据
+}
+

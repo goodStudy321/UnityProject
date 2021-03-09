@@ -1,0 +1,6 @@
+// 仙魂合成
+message m_role_immortal_soul_compose_tos {
+optional  int32  immortal_soul_id=1[default=0]; //仙魂ID
+repeated  int32  bag_list=2; //消耗材料ID列表
+}
+

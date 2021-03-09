@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="AresAdvCfg" ExportType="Arr" Key="id" Src="Z 战神套装开光表.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "部件ID" />
+  <P Name="level" Type="number" ColName= "开光品阶" />
+  <P Name="maxNum" Type="number" ColName= "开光次数" />
+  <P Name="consume" Type="number" ColName= "开光消耗" />
+  <P Name="hp" Type="number" ColName= "生命累计" />
+  <P Name="atk" Type="number" ColName= "攻击累计" />
+  <P Name="def" Type="number" ColName= "防御累计" />
+  <P Name="arm" Type="number" ColName= "破甲累计" />
+</Proto>

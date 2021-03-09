@@ -1,0 +1,5 @@
+// 幻力更新
+message m_copy_illusion_update_toc {
+optional  int32  illusion=1[default=0]; //幻力
+}
+

@@ -1,0 +1,7 @@
+// 背包格子数更新
+message m_bag_grid_open_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  bag_id=2[default=0]; //背包ID
+optional  int32  bag_grid=3[default=0]; //当前背包格子数量
+}
+

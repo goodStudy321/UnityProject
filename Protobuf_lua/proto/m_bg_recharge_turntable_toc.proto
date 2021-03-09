@@ -1,0 +1,10 @@
+import "p_bg_act.proto";
+// 充值转盘
+message m_bg_recharge_turntable_toc {
+optional  p_bg_act  info=1; //活动信息
+repeated  int32  gold=2; //转盘金额列表
+repeated  int32  rate=3; //倍率
+optional  int32  recharge=4[default=0]; //充值金额
+optional  int32  times=5[default=0]; //可转次数
+}
+

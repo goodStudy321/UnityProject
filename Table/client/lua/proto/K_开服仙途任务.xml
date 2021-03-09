@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="JourneysMissionCfg" Key="id" ExportType="Arr" Src="K 开服仙途任务.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "任务ID" />
+  <P Name="mana" Type="number" ColName="仙力值" />
+  <P Name="type" Type="number" ColName="任务类型" />
+  <P Name="cond" Type="number" ColName= "条件参数" />
+  <P Name="lv" Type="number" ColName= "开启等级" />
+  <P Name="count" Type="number" ColName= "完成次数" />
+  <P Name="icon" Type="string" ColName= "图标" />
+  <P Name="iconName" Type="string" ColName= "图标名称" />
+  <P Name="des" Type="string" ColName= "描述" />
+  <P Name="jumpInfo" Type="number" IsList="true" Lsp="," ColName= "跳转系统" />
+  <P Name="sysType" Type="number" ColName= "系统类型" />
+</Proto>

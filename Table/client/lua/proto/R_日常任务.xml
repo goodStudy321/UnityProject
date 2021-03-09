@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MissionGroupTemp" Key="id" ExportType="Dic" Src="R 日常任务.xlsx" Sheet="Sheet1">
+
+  <P Name="id" Type="number" Opt="true" ColName="组ID" />
+  <P Name="des" Type="string" ColName= "备注" />
+  <P Name="ring" Type="number" Opt="true" ColName= "轮数" />
+  <P Name="reward" Type="Item" Opt="true" ColName= "奖励" />
+</Proto>

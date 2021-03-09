@@ -1,0 +1,6 @@
+// 战灵灵器穿戴记录
+message m_war_spirit_armor_lock_info_tos {
+optional  int32  war_spirit_id=1[default=0]; //战灵id
+optional  int32  index=2[default=0]; //部位
+}
+

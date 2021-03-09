@@ -1,0 +1,12 @@
+import "p_kv.proto";
+// 每日限购p机构
+message p_daily_buy {
+optional  int32  id=1[default=0]; //ID
+optional  int32  end_time=2[default=0]; //限购时间
+repeated  p_kv  goods_list=3; //奖励配置
+optional  int32  asset_type=4[default=0]; //消耗货币类型
+optional  int32  old_price=5[default=0]; //原价
+optional  int32  now_price=6[default=0]; //现价
+optional  int32  discount=7[default=0]; //折扣
+}
+

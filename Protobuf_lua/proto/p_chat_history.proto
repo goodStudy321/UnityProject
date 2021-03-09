@@ -1,0 +1,14 @@
+import "p_chat_role.proto";
+import "p_goods.proto";
+// 聊天历史P结构
+message p_chat_history {
+optional  int32  channel_type=1[default=0]; //0系统消息 1世界频道 2家族 3队伍 4私聊 5组队 6区域
+optional  int64  channel_id=2[default=0]; //私聊频道用到
+optional  p_chat_role  role_info=3; //发送者的role_info
+optional  int32  voice_sec=4[default=0]; //0表示语音
+optional  string  msg=5; //消息
+repeated  p_goods  goods_list=6; //道具列表
+optional  int32  time=7[default=0]; //时间戳
+optional  string  voice_url=8; //语音url
+}
+

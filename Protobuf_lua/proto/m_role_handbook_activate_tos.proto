@@ -1,0 +1,5 @@
+// 图鉴卡片激活
+message m_role_handbook_activate_tos {
+optional  int32  card_id=1[default=0]; //卡片id,(养成表的id)
+}
+

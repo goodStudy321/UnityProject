@@ -1,0 +1,5 @@
+// 纹印合成
+message m_seal_compose_toc {
+optional  int32  err_code=1[default=0]; 
+}
+

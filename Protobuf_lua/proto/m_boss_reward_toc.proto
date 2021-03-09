@@ -1,0 +1,7 @@
+// boss悬赏信息
+message m_boss_reward_toc {
+optional  int32  grade=1[default=0]; //档位
+optional  int32  got_reward=2[default=0]; //1-已领 0-未领
+optional  int32  kill_num=3[default=0]; //已杀数量
+}
+

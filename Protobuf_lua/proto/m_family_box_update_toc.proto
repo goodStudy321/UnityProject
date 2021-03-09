@@ -1,0 +1,6 @@
+import "p_family_box.proto";
+// 宝箱增加
+message m_family_box_update_toc {
+repeated  p_family_box  box_list=1; //道庭宝箱
+}
+

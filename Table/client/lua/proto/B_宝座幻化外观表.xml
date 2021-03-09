@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ThroneChangeLvCfg" Key="id" ExportType="Arr" Src="B 宝座幻化外观表.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="step" Type="number" ColName="宝座等阶" />
+  <P Name="stars" Type="number" ColName="宝座星级" />
+  <P Name="name" Type="string" ColName="名称" />
+  <P Name="propId" Type="number" ColName="升级道具ID" />
+  <P Name="propNum" Type="number" ColName= "升级物品消耗" />
+  <P Name="hp" Type="number" ColName="生命" />
+  <P Name="atk" Type="number" ColName="攻击" />
+  <P Name="def" Type="number" ColName="防御" />
+  <P Name="arm" Type="number" ColName="破甲" />
+  <P Name="hSkillIds" Type="number" Opt="true" IsList="true" Lsp="," ColName="拥有技能ID" />
+</Proto>

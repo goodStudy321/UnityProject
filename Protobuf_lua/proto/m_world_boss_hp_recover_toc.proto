@@ -1,0 +1,7 @@
+// 世界boss血量恢复返回
+message m_world_boss_hp_recover_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  hp_recover_num=2[default=0]; //血量恢复次数
+optional  int32  hp_recover_time=3[default=0]; //血量恢复可用的时间
+}
+

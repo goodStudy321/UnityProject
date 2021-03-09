@@ -1,0 +1,6 @@
+// 提亲活动的状态
+message m_act_marry_three_life_info_toc {
+repeated  int32  act_marry_info=1; //已经提亲的类型列表[1,2,3]
+optional  int32  marry_three_life_achieve=2[default=0]; //0 不能领取， 1 未领取，2 已经领取
+}
+

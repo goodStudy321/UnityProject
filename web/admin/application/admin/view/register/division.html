@@ -1,0 +1,87 @@
+{include file='public/head'}
+<div class="layui-field-box">
+  <div class="layui-tab layui-tab-brief" lay-filter="division">
+    <ul class="layui-tab-title">
+      <li data-type="1" class="layui-this">按时</li>
+      <li data-type="2">按天</li>
+    </ul>
+    <br>
+    <div class="layui-tab-content">
+      <div class="layui-tab-item layui-show">
+        <blockquote class="layui-elem-quote">
+          <form class="layui-form">
+            <div class="layui-inline">
+              日期：
+              <div class="layui-input-inline">
+                <input class="layui-input" id="time" name="time" type="text" value="{$time}"  autocomplete="off">
+              </div>
+              <div class="layui-input-inline">
+                <button class="layui-btn layui-btn-sm" type="submit">查询</button>
+                <button onclick="javascript:location.reload()" class="layui-btn layui-btn-sm">刷新</button>
+              </div>
+            </div>
+          </form>
+        </blockquote>
+        <blockquote class="layui-elem-quote">
+          当天总注册账号数：{$account_total}
+          <br>
+          当天总注册角色数：{$role_total}
+        </blockquote>
+        <table id="hourtable"></table>
+      </div>
+    </div>
+  </div>
+</div>
+{include file='public/foot'}
+
+<script>
+  var form     = layui.form;
+  var table    = layui.table;
+  var element  = layui.element;
+  var laydate  = layui.laydate;
+
+  laydate.render({
+    elem: '#time',
+  });
+
+  layui.use('table', function(){
+    tableIns = table.render({
+      elem: '#hourtable'
+      ,url: 'division'
+      ,where:{time:$('#time').val()}
+      ,cols: [[
+        {field: 'time', title: '时间 [时间段]'}
+        ,{field: 'account_number', title: '新增账号数'}
+        ,{field: 'account_proportion', title: '账号比例 &nbsp;<i class="layui-icon layui-icon-about" id="houraccount" data-title="当前账号数 / 当天总注册账号数"></i>'}
+        ,{field: 'role_number', title: '新增角色数'}
+        ,{field: 'role_proportion', title: '角色比例 &nbsp;<i class="layui-icon layui-icon-about" id="hourrole" data-title="当前角色数 / 当天总注册角色数"></i>'}
+        ]]
+      });
+  });
+
+  //监听切换
+  element.on('tab(division)', function(data){
+    var type = $(this).data('type');
+    if(type == 1){
+      window.location.href='/admin/register/division';
+      return ;
+    }
+
+    if(type == 2){
+      window.location.href='/admin/register/divisionday';
+      return ;
+    }
+  })
+
+  var tip_index = 0;
+  $(document).on('mouseenter', '#houraccount, #hourrole', function(){
+    var title = $(this).data('title');
+    var id = $(this).attr('id');
+    tip_index = layer.tips(title, '#'+id, {
+      tips: [1, '#3595CC'],
+      time: 0,
+    });
+  }).on('mouseleave', '#houraccount, #hourrole', function(){
+    layer.close(tip_index);
+  });
+</script>

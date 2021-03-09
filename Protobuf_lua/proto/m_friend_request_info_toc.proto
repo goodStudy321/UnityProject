@@ -1,0 +1,6 @@
+import "p_friend.proto";
+// 有人发起好友请求
+message m_friend_request_info_toc {
+optional  p_friend  request_info=1; //申请人信息
+}
+

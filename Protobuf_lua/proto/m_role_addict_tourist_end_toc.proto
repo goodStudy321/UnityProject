@@ -1,0 +1,5 @@
+// 游客模式结束
+message m_role_addict_tourist_end_toc {
+optional  int32  min=1[default=0]; //分钟
+}
+

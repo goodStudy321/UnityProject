@@ -1,0 +1,9 @@
+import "p_friend.proto";
+// 好友信息推送
+message m_friend_info_toc {
+repeated  p_friend  friend_list=1; //好友列表
+repeated  p_friend  black_list=2; //黑名单列表
+repeated  p_friend  request_list=3; //好友申请列表
+repeated  p_friend  chat_list=4; //最近聊天
+}
+

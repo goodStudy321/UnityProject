@@ -1,0 +1,6 @@
+// 宝座道具分解精华
+message m_throne_resolve_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  total_essence=2[default=0]; //用户总华精
+}
+

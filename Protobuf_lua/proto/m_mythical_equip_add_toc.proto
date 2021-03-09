@@ -1,0 +1,6 @@
+import "p_mythical_equip.proto";
+// 神兽装备背包新增
+message m_mythical_equip_add_toc {
+repeated  p_mythical_equip  add_list=1; //魂兽装备
+}
+

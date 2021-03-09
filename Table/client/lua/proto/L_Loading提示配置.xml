@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="LoadingTipCfg" Key="id" Src="L Loading提示配置表.xls" ExportType="Arr" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "序列" />
+  <P Name="des" Type="string" ColName="描述" />
+</Proto>

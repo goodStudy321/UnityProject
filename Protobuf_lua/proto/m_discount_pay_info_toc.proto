@@ -1,0 +1,8 @@
+import "p_discount_pay.proto";
+import "p_daily_gift.proto";
+// 特惠信息推送
+message m_discount_pay_info_toc {
+repeated  p_discount_pay  pay_list=1; //特惠礼包信息
+repeated  p_daily_gift  daily_gift=2; //每日活跃礼包
+}
+

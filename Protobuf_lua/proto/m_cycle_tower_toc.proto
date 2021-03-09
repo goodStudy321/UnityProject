@@ -1,0 +1,6 @@
+// 上线通知
+message m_cycle_tower_toc {
+optional  int32  layer=1[default=0]; //当前层数
+optional  int32  pool=2[default=0]; //奖池
+}
+

@@ -1,0 +1,6 @@
+import "p_kv.proto";
+// 上架商品
+message m_auction_sell_tos {
+repeated  p_kv  sell_goods=1; //id:上架的物品ID val:上架数量
+}
+

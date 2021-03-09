@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DayTargetCfg" Key="id"  ExportType="Arr" Src="K 开服目标.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName="ID" />
+  <P Name="des" Type="string" ColName="描述" />
+  <P Name="day" Type="number" ColName="天数" />
+  <P Name="tParam" Type="number" ColName="次数" />
+  <P Name="rewardList" Type="K_V" IsList="true" Lsp=";" ColName="奖励道具" />
+  <P Name="diff" Type="number"  ColName="难度" />
+  <P Name="pro" Type="number"  ColName="增加进度点数" />
+  <P Name="getWay" Type="number" IsList="true" Lsp="," Opt="true" ColName= "跳转系统" />
+  <P Name="activeType" Type="number" Opt="true" ColName="表类型" />
+</Proto>

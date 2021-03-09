@@ -1,0 +1,6 @@
+// 领取
+message m_otf_reward_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  int32  id=2[default=0]; //奖励 id
+}
+

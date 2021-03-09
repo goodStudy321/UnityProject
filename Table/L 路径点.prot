@@ -1,0 +1,24 @@
+message PathInfo [key=id, source="L 路径点.xls", sheet="Sheet1"]
+{
+	struct Vector3 [separator = '|']
+	{
+		int32 x;	// X
+		int32 y;	// Y
+		int32 z;	// Z
+	};
+	
+	struct PointInfo [separator = ',']
+	{
+		Vector3 point;
+		double duration;	//到达此点需要的时间
+		double delay;		//到达此点后停顿时间
+	};
+	
+	struct Points [separator = ';']
+	{
+		PointInfo pointInfo;
+	};
+	
+	uint16 id						  	[option = "ID"];
+	Points points						[option = "路径"];
+};

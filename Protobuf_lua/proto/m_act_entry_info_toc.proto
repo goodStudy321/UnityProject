@@ -1,0 +1,5 @@
+// 登录有礼信息
+message m_act_entry_info_toc {
+repeated  int32  entry_reward_list=1; //领取过奖励的天数
+}
+

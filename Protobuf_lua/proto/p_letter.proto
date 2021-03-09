@@ -1,0 +1,12 @@
+import "p_goods.proto";
+// 信件信息
+message p_letter {
+optional  int32  id=1[default=0]; //信件唯一id
+optional  int32  letter_state=2[default=0]; //信件状态,1表示未读，2表示已读
+optional  int32  send_time=3[default=0]; //发送时间
+optional  int32  template_id=4[default=0]; //信件编码ID 默认为 0 直接读title和text中的第一条 其他ID采用填充的形式
+repeated  p_goods  goods_list=5; //信件中还有的物品
+repeated  string  title_string=6; //信件标题中的字符串
+repeated  string  text_string=7; //信件内容中的字符串
+}
+

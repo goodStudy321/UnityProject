@@ -1,0 +1,6 @@
+// 同意or拒绝申请
+message m_marry_reply_guest_tos {
+optional  int32  op_type=1[default=0]; //0拒绝 1同意
+repeated  int64  role_ids=2; //role_id列表
+}
+

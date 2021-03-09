@@ -1,0 +1,5 @@
+// 角色改名
+message m_role_rename_tos {
+optional  string  name=1; //名字
+}
+

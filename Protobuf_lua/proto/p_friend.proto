@@ -1,0 +1,14 @@
+// 聊天信息的p结构
+message p_friend {
+optional  int64  role_id=1[default=0]; //角色id
+optional  string  role_name=2; //角色名
+optional  string  family_name=3; //道庭名
+optional  int32  sex=4[default=0]; //性别
+optional  int32  level=5[default=0]; //等级
+optional  int32  vip_level=6[default=0]; //vip等级
+optional  int32  category=7[default=0]; //职业
+optional  int32  friendly=8[default=0]; //亲密度
+optional  bool  is_online=9[default=true]; //是否在线
+optional  int64  couple_id=10[default=0]; //仙侣ID
+}
+

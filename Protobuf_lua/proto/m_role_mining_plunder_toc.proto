@@ -1,0 +1,7 @@
+// 挖矿掠夺返回
+message m_role_mining_plunder_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  status=2[default=0]; //状态:0,失败;1:成功
+optional  int32  shift_num=3[default=0]; //移动次数
+}
+

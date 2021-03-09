@@ -1,0 +1,5 @@
+// 图标选择
+message m_marry_copy_select_tos {
+optional  int32  item=1[default=0]; //选择的图标
+}
+

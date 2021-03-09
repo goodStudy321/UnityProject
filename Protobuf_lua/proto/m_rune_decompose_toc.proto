@@ -1,0 +1,5 @@
+// 符文分解
+message m_rune_decompose_toc {
+optional  int32  err_code=1[default=0]; 
+}
+

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PetTemp" ExportType="Arr" Key="id" Src="C 宠物基础表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="name" Type="string" ColName="宠物名称" />
+  <P Name="mod" Type="number" ColName="宠物模型" />
+  <P Name="uMod" Type="number" ColName="宠物UI模型" />
+  <P Name="icon" Type="string" ColName="图标" />
+  <P Name="type" Type="number" ColName="类型" />
+</Proto>

@@ -1,0 +1,11 @@
+message WingView [key=id, source="C 翅膀外观表.xls", sheet="Sheet1"]
+{
+	uint32 id						[option = "ID"];
+	uint32 start					[option = "星级"];
+	uint32 up_item					[option = "道具ID"];
+	uint32 up_item_num				[option = "数量"];
+	uint32 atk						[option = "攻击"];
+	uint32 def						[option = "防御"];
+	uint32 arp						[option = "破甲"];
+	uint32 hppro					[option = "生命加成"];
+};

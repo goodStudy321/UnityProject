@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="EquipStar" Key="id" ExportType="Dic" Src="Z 装备星级属性表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "编号" />
+  <P Name="qua" Type="number" ColName="品质" />
+  <P Name="defadd" Type="number" Opt="true" IsList="true" Lsp="," ColName="防御加成" />
+  <P Name="hpadd" Type="number" Opt="true" IsList="true" Lsp="," ColName="生命加成" />
+  <P Name="damred" Type="number" Opt="true" IsList="true" Lsp="," ColName="伤害减免" />
+  <P Name="atkadd" Type="number" Opt="true" IsList="true" Lsp="," ColName="攻击加成" />
+  <P Name="armadd" Type="number" Opt="true" IsList="true" Lsp="," ColName="破甲加成" />
+  <P Name="ampdam" Type="number" Opt="true" IsList="true" Lsp="," ColName="伤害加深" />
+  <P Name="critpro" Type="number" Opt="true" IsList="true" Lsp="," ColName="暴击几率" />
+  <P Name="lv_atk" Type="number" Opt="true" IsList="true" Lsp="," ColName="每3级攻击" />
+  <P Name="lv_arm" Type="number" Opt="true" IsList="true" Lsp="," ColName="每3级破甲" />
+  <P Name="lv_hp" Type="number" Opt="true" IsList="true" Lsp="," ColName="每3级生命" />
+  <P Name="lv_def" Type="number" Opt="true" IsList="true" Lsp="," ColName="每3级防御" />
+  <P Name="money_drop" Type="number" Opt="true" IsList="true" Lsp="," ColName="铜钱掉落" />
+  <P Name="item_drop" Type="number" Opt="true" IsList="true" Lsp="," ColName="物品掉率" />
+  <P Name="critdef" Type="number" Opt="true" IsList="true" Lsp="," ColName="暴击抵抗" />
+  <P Name="dodgepro" Type="number" Opt="true" IsList="true" Lsp="," ColName="闪避几率" />
+</Proto>

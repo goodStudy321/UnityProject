@@ -1,0 +1,7 @@
+import "p_copy_cheer.proto";
+// 副本鼓舞返回
+message m_copy_cheer_toc {
+optional  int32  err_code=1[default=0]; 
+optional  p_copy_cheer  cheer=2; 
+}
+

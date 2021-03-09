@@ -1,0 +1,5 @@
+// 所有队员准备 or 拒绝
+message m_team_copy_ready_tos {
+optional  bool  is_ready=1[default=true]; //true：接受 false：拒绝
+}
+

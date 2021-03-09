@@ -1,0 +1,5 @@
+// 
+message m_mission_trigger_toc {
+optional  int32  err_code=1[default=0]; 
+}
+

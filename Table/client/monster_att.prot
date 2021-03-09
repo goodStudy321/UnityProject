@@ -1,0 +1,32 @@
+message MonsterAtt [key=id, source="G 怪物配置.xls", sheet="Sheet1"]
+{
+	struct skillid	 [separator = ',']
+	{
+		uint32 skillid;
+	};
+	struct dropList	 [separator = ',']
+	{
+		uint32 dropid;
+		uint32 dropNum;
+	};
+	struct firstDrop	 [separator = ';']
+	{
+		dropList drop_List;
+	};
+
+
+
+	uint32 id				[option = "id"];
+	string name 			[option = "名字"];
+	uint8 fight_type		[option = "战斗类型"];
+	uint16 level			[option = "等级"];
+	uint16 model_id			[option = "模型id"];
+	skillid skill_id		[option = "技能id"];
+	uint32 view_distance	[option = "活动范围"];
+	uint8 monter_type		[option = "怪物类型"];
+	uint16 hpSeg			[option = "怪物血条段数"];
+	firstDrop first_Drops    [option = "首次掉落"];
+	uint8 pickRange			[option = "掉落物拾取范围"];
+	uint8 canQuickPick		[option = "是否可快捷拾取"];
+	uint16 angryTime		[option = "扣除停留时间"];
+};

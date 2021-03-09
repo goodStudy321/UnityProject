@@ -1,0 +1,5 @@
+// 世界boss次数合并
+message m_world_boss_merge_times_tos {
+optional  int32  merge_times=1[default=0]; //合并次数 0或者1表示不合并
+}
+

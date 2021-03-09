@@ -1,0 +1,7 @@
+// 翅膀升级
+message m_wing_level_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  new_level=2[default=0]; //等级
+optional  int32  new_exp=3[default=0]; //经验
+}
+

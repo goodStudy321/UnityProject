@@ -1,0 +1,5 @@
+// 神兵幻化
+message m_god_weapon_change_tos {
+optional  int32  cur_id=1[default=0]; //神兵幻化id
+}
+

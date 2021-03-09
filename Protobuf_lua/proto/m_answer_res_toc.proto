@@ -1,0 +1,6 @@
+// 答题结果
+message m_answer_res_toc {
+optional  int32  res=1[default=0]; //1-对 2-错
+optional  int32  answer_res=2[default=0]; //题目答案  1-对 0-错
+}
+

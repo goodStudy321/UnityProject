@@ -1,0 +1,9 @@
+// 实名&&防沉迷信息
+message m_role_addict_info_toc {
+optional  int32  addict_state=1[default=0]; //0:表示无要求 1:宽松版 2:严格版本
+optional  int32  is_tourist=2[default=0]; // 1：能进行游客模式选择    2：正在进行游客模式直接要认证   3：游客模式结束直接要认证
+optional  int32  min=3[default=0]; //分钟
+optional  bool  is_auth=4[default=true]; //是否进行过实名验证
+optional  bool  is_passed=5[default=true]; //年龄是否达标
+}
+

@@ -1,0 +1,7 @@
+import "p_friend.proto";
+// 查找好友
+message m_friend_search_toc {
+optional  int32  err_code=1[default=0]; 
+optional  p_friend  friend_info=2; //好友信息
+}
+

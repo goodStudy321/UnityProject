@@ -1,0 +1,7 @@
+message Confine [key=confine, source="J 境界系统.xls", sheet="Sheet1"]
+{	
+	uint32 confine								[option = "境界ID"];
+	string confineStr						[option = "境界名称显示"];
+	string path 							[option = "名字显示资源"];
+	string aperturePath 					[option = "法阵资源"];
+};

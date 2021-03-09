@@ -1,0 +1,5 @@
+// 剩余掉落物可拾取的次数
+message m_marry_map_pick_toc {
+optional  int32  pick_times=1[default=0]; //掉落物可拾取的次数
+}
+

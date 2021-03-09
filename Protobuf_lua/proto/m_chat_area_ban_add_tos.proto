@@ -1,0 +1,5 @@
+// 区域-屏蔽某个玩家
+message m_chat_area_ban_add_tos {
+optional  int64  add_role_id=1[default=0]; //0表示所有 其他表示某一位
+}
+

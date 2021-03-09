@@ -1,0 +1,12 @@
+import "p_chat_role.proto";
+// 队伍招募返回
+message m_team_recruit_toc {
+optional  int32  err_code=1[default=0]; 
+optional  p_chat_role  role_info=2; //发送者的role_info
+optional  int32  map_id=3[default=0]; //地图ID
+optional  int32  min_level=4[default=0]; //最小等级
+optional  int32  max_level=5[default=0]; //最大等级
+optional  int32  team_id=6[default=0]; //队伍ID
+optional  int32  sub_type=7[default=0]; //子状态
+}
+

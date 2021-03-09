@@ -1,0 +1,5 @@
+// 领精灵王
+message m_role_king_guard_reward_toc {
+optional  int32  err_code=1[default=0]; //错误码
+}
+

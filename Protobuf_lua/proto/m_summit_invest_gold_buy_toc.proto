@@ -1,0 +1,6 @@
+// 化身投资购买返回
+message m_summit_invest_gold_buy_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  summit_invest_gold=2[default=0]; //投资XX档次
+}
+

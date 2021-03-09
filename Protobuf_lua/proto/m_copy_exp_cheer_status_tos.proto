@@ -1,0 +1,6 @@
+// 经验副本状态设置
+message m_copy_exp_cheer_status_tos {
+optional  bool  is_silver_auto=1[default=true]; //是否自动银两鼓舞
+optional  bool  is_gold_auto=2[default=true]; //是否自动元宝鼓舞
+}
+

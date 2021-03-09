@@ -1,0 +1,17 @@
+import "p_mining_shift.proto";
+import "p_ks.proto";
+import "p_kv.proto";
+import "p_mining_lattice.proto";
+// 推送秘境面板信息
+message m_mining_role_info_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  gather_num=2[default=0]; //采集次数
+optional  int32  gather_stop_time=3[default=0]; //采集结束时间
+optional  int32  shift_num=4[default=0]; //移动次数
+optional  int32  inspire=5[default=0]; //鼓舞次数
+repeated  p_mining_shift  shift_history=6; //已探索的格子数据
+repeated  p_ks  plunder_history=7; //掠夺历史,key:时间
+repeated  p_kv  goods_list=8; //资源创库,key:goodsID,val:数量
+repeated  p_mining_lattice  lattice_list=9; //格子坐标信息
+}
+

@@ -1,0 +1,171 @@
+{include file='public/head'}
+<body>
+  <style type="text/css" media="screen">
+    header {
+      color: black;
+    }
+  </style>
+  <div class="x-body" >
+    <form class="layui-form" id='mainForm' method="post" action="produceSend">
+      <div class="layui-form-item">
+        <label class="layui-form-label">渠道名</label>
+        <div class="layui-input-block">
+          <select id="channel" name="channel" style="height: 28px;" lay-filter="channel">
+            <option value="all-全渠道" {$data.channel_id == 'all' ? 'selected' : ''}>全渠道</option>
+            {volist name="channel" id="vo"}
+            <option value="{$vo.id}-{$vo.name}" {if condition="$data.channel_id != 'all' && $data.channel_id == $vo.id"} selected {/if} >分渠道 - {$vo.name}</option>
+            {/volist}
+          </select>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">服务器</label>
+        <div class="layui-input-block">
+          <select id="server" name="server_id" style="height: 28px;" lay-filter="server" lay-verify="required">
+            <option value="all">全服</option>
+            {volist name="server" id="vo"}
+            <option value="{$vo.server_id}-{$vo.name}" {$data.data_server_id == $vo.index_id ? 'selected' : ''}>{$vo.name}</option>
+            {/volist}
+          </select>
+        </div>
+      </div>
+      <!--表示编辑-->
+      <input type="hidden" name="edit" value="{$data.id}">
+      <div class="layui-form-item">
+        <label class="layui-form-label">奖励道具</label>
+        <div class="layui-input-block">
+          <input type="text" name="reward" lay-verify="required"  value="{$data.reward}" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">道具数量</label>
+        <div class="layui-input-block">
+          <input type="text" name="reward_num" lay-verify="required"  value="{$data.reward_num}" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">限制条件</label>
+        <div class="layui-input-block">
+          <select id="on" name="code_status" style="height: 28px;" lay-verify="required">
+            <option value="">-请选择-</option>
+            <option value="1">每个角色只能领取一次</option>
+            <option value="2">每个账号只能领取一次</option>
+            <option value="3">每个服务器只能领取一次</option>
+            <option value="4">“每个服务器/每个角色”只能领取一次</option>
+          </select>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <button style="margin-left: 20%" class="layui-btn layui-btn-sm" lay-submit="" lay-filter="toSubmit">提交</button>
+          <button id="reset" type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+<script type="text/javascript">
+  var form = layui.form;
+  var layer = layui.layer;
+  //自定义验证规则
+  form.verify({
+    username: function(value){
+      if(value.length < 5){
+        return '用户名至少得5个字符啊';
+      }
+    }
+  });
+  //监听提交
+  form.on('submit(demo1)', function(data){
+    layer.alert(JSON.stringify(data.field), {
+      title: '最终的提交信息'
+    })
+    return false;
+  });
+  $(document).ready(function(){
+    var options = {
+      type:'post',           //post提交
+      dataType:"json",        //json格式
+      data:{},    //如果需要提交附加参数，视情况添加
+      clearForm: false,        //成功提交后，清除所有表单元素的值
+      resetForm: false,        //成功提交后，重置所有表单元素的值
+      cache:false,
+      async:false,          //同步返回
+      success:function(data){
+        console.log(data);
+        if(data.code==0){
+          layer.msg(data.msg);
+        }else{
+          layer.msg(data.msg,{icon:1,time:500},function(){
+            $("#reset").click();
+            x_admin_close();
+            parent.location.reload();
+          });
+        }
+        //服务器端返回处理逻辑
+      },
+      error:function(XmlHttpRequest,textStatus,errorThrown){
+        layer.msg('操作失败:服务器处理失败');
+      }
+    };
+    $('#mainForm').ajaxForm(options).submit(function(data){
+      //无逻辑
+    });
+
+    //1. 渠道-服务器联动
+    form.on('select(channel)', function(data){
+      var channel = data.value;
+      var html = '<option value="all">全服</option>';
+      if(channel != 'all-全渠道'){
+        $.post('/admin/dataserver/getByChannelID', {channel: channel}, function(data){
+          if(data.data){
+            $.each(data.data, function(i,v){
+              html += '<option value="'+v.server_id+'-'+v.index_id+'">'+v.name+'</option>';
+            })
+          }
+          $('#server').html(html);
+          constraint();
+        }, 'json')
+      }
+
+      $('#server').html(html);
+
+      constraint();
+    })
+
+    //2. 服务器-限制规则联动
+    form.on('select(server)', function(data){
+      constraint();
+    })
+
+    var constraint = function(){
+      var obj     = $('#on');
+      var channel = $('#channel').val();
+      var server  =  $('#server').val();
+      console.log(channel, server);
+
+      obj.find('option').attr('disabled', true);
+
+      if(channel == 'all-全渠道' && server == 'all'){
+          obj.find("option[value='1']").removeAttr('disabled');
+          obj.find("option[value='2']").removeAttr('disabled');
+          obj.find("option[value='3']").removeAttr('disabled');
+          return;
+      }
+
+      if(channel != 'all-全渠道'){
+        if(server == 'all'){
+          obj.find("option[value='4']").removeAttr('disabled');
+          return ;
+        }
+
+        obj.find("option[value='1']").removeAttr('disabled');
+      }
+    }
+
+    //初始化
+    constraint();
+    $('#on').val({$data.code_status});
+  });
+</script>
+{include file='public/foot'}

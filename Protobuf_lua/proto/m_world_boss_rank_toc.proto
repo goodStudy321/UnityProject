@@ -1,0 +1,6 @@
+import "p_world_boss_rank.proto";
+// 世界boss排行信息
+message m_world_boss_rank_toc {
+repeated  p_world_boss_rank  ranks=1; //boss排行
+}
+

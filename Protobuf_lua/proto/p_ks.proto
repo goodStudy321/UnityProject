@@ -1,0 +1,6 @@
+// 公用key_string结构
+message p_ks {
+optional  int32  id=1[default=0]; //key
+optional  string  str=2; //key对应的val（string类型）
+}
+

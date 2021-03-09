@@ -1,0 +1,19 @@
+import "p_equip_concise.proto";
+import "p_kv.proto";
+// 装备的p结构
+message p_equip {
+optional  int32  equip_id=1[default=0]; //equip_id
+optional  int32  refine_level=2[default=0]; //强化等级
+optional  int32  mastery=3[default=0]; //熟练度
+optional  int32  suit_level=4[default=0]; //套装等级
+repeated  p_kv  stone_list=5; //灵石列表
+repeated  p_kv  excellent_list=6; //id:属性编码 val：绝对值 or 万分比
+optional  bool  bind=7[default=true]; //是否绑定
+optional  int32  concise_num=8[default=0]; //洗练条数
+repeated  p_equip_concise  concise_list=9; //洗练数据
+optional  int32  forge_soul=10[default=0]; //铸魂属性  id
+optional  int32  forge_soul_cultivate=11[default=0]; //铸魂养成   等级
+repeated  p_kv  stone_honings=12; //淬炼 id:孔数 val:淬炼值
+repeated  p_kv  seal_list=13; //纹印 id:孔数 val:镶嵌纹印
+}
+

@@ -1,0 +1,5 @@
+// 神兽岛龙灵水晶次数更新推送
+message m_mythical_collect_times_toc {
+optional  int32  collect_times=1[default=0]; //采集物次数
+}
+

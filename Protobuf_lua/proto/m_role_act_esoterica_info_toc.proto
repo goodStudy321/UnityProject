@@ -1,0 +1,10 @@
+// 返回修炼秘籍系统信息
+message m_role_act_esoterica_info_toc {
+optional  int32  training_grade=1[default=0]; //修炼等级
+optional  int32  experience=2[default=0]; //经验
+optional  int32  retrieve=3[default=0]; //可以找回的修炼点
+repeated  int32  ordinary_grade=4; //已经领取奖励凡等级
+repeated  int32  celestial_grade=5; //已经领取奖励仙等级
+optional  int32  is_activate=6[default=0]; //仙，1：激活；0：否
+}
+

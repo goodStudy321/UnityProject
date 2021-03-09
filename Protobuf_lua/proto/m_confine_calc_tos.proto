@@ -1,0 +1,4 @@
+// 境界提升属性计算
+message m_confine_calc_tos {
+}
+

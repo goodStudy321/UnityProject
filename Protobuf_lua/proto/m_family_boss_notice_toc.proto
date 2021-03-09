@@ -1,0 +1,5 @@
+// 道庭BOSS开始通知
+message m_family_boss_notice_toc {
+optional  int32  type=1[default=0]; //1-在线发送,0-上线通知
+}
+

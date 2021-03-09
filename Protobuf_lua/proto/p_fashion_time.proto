@@ -1,0 +1,6 @@
+// 时装时间结构
+message p_fashion_time {
+optional  int32  fashion_id=1[default=0]; //时装ID
+optional  int32  end_time=2[default=0]; //结束时间 0表示永久
+}
+

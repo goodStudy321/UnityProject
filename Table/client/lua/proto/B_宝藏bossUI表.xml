@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="tFeverBoss" Key="id" ExportType="Dic" Src="B 宝藏bossUI表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "BossId" />
+  <P Name="uiElAgl" Type="number" IsList="true" Lsp="," ColName="UI模型角度" />
+  <P Name="uiPos" Type="number" IsList="true" Lsp="," ColName="UI模型位置" />
+</Proto>

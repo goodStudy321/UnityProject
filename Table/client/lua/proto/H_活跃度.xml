@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="LivenessCfg" Key="id" ExportType="Arr" Src="H 活跃度.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "活跃度类型" />
+  <P Name="name" Type="string" ColName="活跃度名称" />
+  <P Name="type" Type="number" ColName= "类型" />
+  <P Name="count" Type="number" ColName="次数" />
+  <P Name="once" Type="number" ColName="单次活跃度" />
+  <P Name="total" Type="number" ColName="总活跃度" />
+  <P Name="lv" Type="number" ColName="等级要求" />
+  <P Name="time" Type="number" IsList="true" Lsp="," ColName= "星期" />
+  <P Name="openTime" Type="K_V" IsList="true" Lsp="/" ColName= "开启时间" />
+  <P Name="awardItems" Type="number" IsList="true" Lsp="/" ColName= "奖励道具" />
+  <P Name="des" Type="string" ColName="描述" />
+  <P Name="existTime" Type="number" ColName="持续时间" />
+  <P Name="icon" Type="string" ColName="图片" />
+  <P Name="activId" Type="number" ColName="活动id" />
+  <P Name="outType" Type="number" ColName="产出类型" />
+  <P Name="jumpInfo" Type="number" IsList="true" Lsp="," ColName= "跳转系统" />
+</Proto>

@@ -1,0 +1,8 @@
+// 在线奖励活动信息
+message m_act_online_get_reward_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  online_time=2[default=0]; //已在线时长
+optional  int32  minute=3[default=0]; //获取奖励
+optional  int32  is_all=4[default=0]; //1-领完 0 -没领完
+}
+

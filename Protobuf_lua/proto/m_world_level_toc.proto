@@ -1,0 +1,5 @@
+// 世界等级推送
+message m_world_level_toc {
+optional  int32  level=1[default=0]; //LV
+}
+

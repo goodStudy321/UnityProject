@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="TopData" Key="uiName"  ExportType="Dic" Src="H 货币栏配置.xlsx" Sheet="Sheet1">
+  <P Name="uiName" Type="string" ColName= "UI名字" />
+  <P Name="idList" Type="number" Opt="true" IsList="true" Lsp="," ColName="货币id" />
+</Proto>

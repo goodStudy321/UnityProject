@@ -1,0 +1,82 @@
+{include file='public/head'}
+<div class="layui-field-box">
+  <blockquote class="layui-elem-quote">
+    <form class="layui-form" onsubmit="return false">
+      <div class="layui-inline">
+        <label class="layui-form-label">组：</label>
+        <div class="layui-input-inline">
+          <select id="group_id" style="height: 28px;">
+            <option value="">请选择所属组</option>
+            {volist name="group" id="vo"}
+              <option value="{$vo.id}">{$vo.group_name}</option>
+            {/volist}
+          </select>
+        </div>
+      </div>
+      <div class="layui-inline">
+        <div class="layui-input-inline" id="button">
+          <button class="layui-btn layui-btn-sm">查询</button>
+        </div>
+        <div class="layui-input-inline">
+          <button onclick="javascript:location.reload()" class="layui-btn layui-btn-sm">刷新</button>
+        </div>
+        <div class="layui-input-inline">
+          <button onclick="x_admin_show('添加链接', 'add.html', 500, 360)" class="layui-btn layui-btn-sm">添加链接</button>
+        </div>
+      </div>
+    </form>
+  </blockquote>
+  <table id="table" lay-filter="test"></table>
+</div>
+{include file='public/foot'}
+
+
+<script>
+  //表格
+  layui.use('table', function(){
+    var table = layui.table;
+    //第一个实例
+    var tableIns = table.render({
+      elem: '#table'
+      ,url: 'list' //数据接口
+      ,page: true //开启分页
+      ,cols: [[ //标题栏
+      {align: 'center',field: 'num', title: '序号', width:130}
+      ,{align: 'left',field: 'group_name', title: '组名', width:130}
+      ,{align: 'left',field: 'url_name', title: '链接名', width:130}
+      ,{align: 'left',field: 'url', title: '链接地址'}
+      ,{align: 'center',field: 'url_status', title: '状态', width:130}
+      ,{align: 'center',field: 'control', title: '操作', width:130}
+      ]]
+    });
+    $("#button").click(function(){
+      var group_id = $("#group_id").val();
+      tableIns.reload({
+        where: {
+          group_id:group_id
+        }
+        ,page: {
+          curr: 1 //重新从第 1 页开始
+        }
+      });
+    });
+    $("#button2").click(function(){
+      location.reload();
+    });
+  });
+
+  function del(id){
+    if(!confirm('确定禁用吗？'))
+      return;
+    $.post('/admin/link/del', {id:id}, function(data){
+      layer.msg(data.status.msg, {
+        time:2000
+      }, function(){
+        if(data.status.code == 10200){
+          window.location.reload();
+          return;
+        }
+      });
+    }, 'json')
+  }
+</script>

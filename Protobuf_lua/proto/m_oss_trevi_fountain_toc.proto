@@ -1,0 +1,11 @@
+import "p_kv.proto";
+// 许愿池
+message m_oss_trevi_fountain_toc {
+optional  int32  score=1[default=0]; //积分
+optional  int32  bless=2[default=0]; //祝福值
+repeated  p_kv  got_reward=3; //全部奖励
+optional  bool  precious_exist=4[default=true]; //大奖是否存在
+optional  bool  notice=5[default=true]; //是否提醒大奖
+optional  int32  config=6[default=0]; //配置ID
+}
+

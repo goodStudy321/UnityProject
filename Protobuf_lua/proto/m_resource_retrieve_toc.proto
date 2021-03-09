@@ -1,0 +1,7 @@
+import "p_resource.proto";
+// 资源找回返回
+message m_resource_retrieve_toc {
+optional  int32  err_code=1[default=0]; //错误码
+optional  p_resource  resource=2; //已经领取的进度
+}
+

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SpiriteLvCfg" Key="id" ExportType="Arr" Src="Z 战灵升级表.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "序列ID" />
+  <P Name="spiriteId" Type="number" ColName= "战灵ID" />
+  <P Name="lv" Type="number" ColName="等级" />
+  <P Name="exp" Type="number" ColName="升级经验" />
+  <P Name="health" Type="number" ColName="生命" />
+  <P Name="attVal" Type="number" ColName="攻击" />
+  <P Name="defVal" Type="number" ColName="防御" />
+  <P Name="breakVal" Type="number" ColName="破甲" />
+  <P Name="attAddVal" Type="number" ColName="攻击加成" />
+  <P Name="skills" Type="number" Opt="true" IsList="true" Lsp="," ColName="战灵技能列表" />
+  <P Name="getState" Type="number" ColName="解锁境界" />
+</Proto>

@@ -1,0 +1,5 @@
+// 神秘宝藏  选择
+message m_role_bg_tta_choice_tos {
+repeated  int32  list=1; //ID
+}
+

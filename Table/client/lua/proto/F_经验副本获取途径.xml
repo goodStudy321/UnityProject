@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ExpGeyWayCfg" Key="id"  Src="F 经验副本获取途径.xls" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "id" />
+  <P Name="name" Type="string" ColName= "途径" />
+  <P Name="itemId" Type="number" ColName= "获取道具" />
+  <P Name="arg1" Type="number" Opt="true" ColName= "参数1" />
+  <P Name="arg2" Type="number" Opt="true" ColName= "参数2" />
+</Proto>

@@ -1,0 +1,6 @@
+import "p_kv.proto";
+// 神兵器魂
+message m_god_weapon_soul_toc {
+optional  p_kv  soul=1; //器魂
+}
+

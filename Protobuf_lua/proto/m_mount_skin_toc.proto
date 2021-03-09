@@ -1,0 +1,7 @@
+import "p_kv.proto";
+// 坐骑皮肤进阶返回
+message m_mount_skin_toc {
+optional  int32  err_code=1[default=0]; 
+optional  p_kv  skin=2; //坐骑皮肤
+}
+

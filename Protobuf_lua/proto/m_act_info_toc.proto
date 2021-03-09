@@ -1,0 +1,6 @@
+import "p_act.proto";
+// 活动状态列表
+message m_act_info_toc {
+repeated  p_act  act_list=1; //id:活动ID val:状态 1：开启 2：关闭
+}
+

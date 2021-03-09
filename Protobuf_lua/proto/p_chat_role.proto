@@ -1,0 +1,12 @@
+// 聊天信息的p结构
+message p_chat_role {
+optional  int64  role_id=1[default=0]; //角色id   已被占用列表[1,2]
+optional  string  role_name=2; //角色名
+optional  int32  sex=3[default=0]; //性别
+optional  int32  level=4[default=0]; //等级
+optional  int32  category=5[default=0]; //职业
+optional  int32  vip_level=6[default=0]; //VIP等级
+optional  string  server_name=7; //区服名字 没有的话就不显示
+repeated  int32  skin_list=8; //聊天皮肤
+}
+

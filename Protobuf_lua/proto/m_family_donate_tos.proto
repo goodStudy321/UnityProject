@@ -1,0 +1,5 @@
+// 捐献装备
+message m_family_donate_tos {
+repeated  int32  goods_list=1; //个人背包里的id_list
+}
+

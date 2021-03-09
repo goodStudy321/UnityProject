@@ -1,0 +1,6 @@
+// 伙伴吞噬装备返回
+message m_pet_level_up_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  exp=2[default=0]; //经验值
+}
+

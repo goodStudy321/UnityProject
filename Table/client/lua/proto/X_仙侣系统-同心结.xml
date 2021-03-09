@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="KnotData" Key="id" ExportType="Arr"
+ Src="X 仙侣系统-同心结.xls" Sheet="Sheet1">  
+  <P Name="id" Type="number" ColName= "id" />
+  <P Name="rank" Type="number" ColName="等阶" />
+  <P Name="lv" Type="number" ColName="等级" />
+  <P Name="exp" Type="number" ColName="升级需要经验" />
+  <P Name="baseAtt" Type="NeedItem" Opt="true" IsList="true" Lsp=";" ColName="基础属性加成" />
+  <P Name="att" Type="NeedItem" Opt="true" IsList="true" Lsp=";" ColName="额外属性加成" />
+</Proto>

@@ -1,0 +1,8 @@
+import "p_goods.proto";
+// 背包的p结构
+message p_bag_content {
+optional  int32  bag_id=1[default=0]; //1 背包, 2 临时仓库 3 个人仓库
+optional  int32  bag_grid=2[default=0]; //格子数
+repeated  p_goods  goods_list=3; //道具列表
+}
+

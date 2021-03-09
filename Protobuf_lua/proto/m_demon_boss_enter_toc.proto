@@ -1,0 +1,9 @@
+import "p_demon_boss_role.proto";
+// 魔域boss进入场景推送
+message m_demon_boss_enter_toc {
+optional  p_demon_boss_role  occupy_role=1; //占领玩家信息
+repeated  p_demon_boss_role  rank_roles=2; //排行玩家信息
+optional  int32  cheer_times=3[default=0]; //魔域boss总共可鼓舞次数
+optional  int32  add_buff_times=4[default=0]; //魔域boss已经鼓舞的次数
+}
+

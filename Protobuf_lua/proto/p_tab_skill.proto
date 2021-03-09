@@ -1,0 +1,6 @@
+// 天赋页签相关
+message p_tab_skill {
+optional  int32  tab_id=1[default=0]; //页签ID
+repeated  int32  skills=2; //拥有的技能
+}
+

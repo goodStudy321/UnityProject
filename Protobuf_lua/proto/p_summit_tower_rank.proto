@@ -1,0 +1,10 @@
+// 巅峰爬塔排行榜的p_结构
+message p_summit_tower_rank {
+optional  int32  rank=1[default=0]; //排行
+optional  int64  role_id=2[default=0]; //role_id
+optional  string  role_name=3; //角色名字
+optional  int32  floor=4[default=0]; //层数
+optional  int32  score=5[default=0]; //积分
+optional  int32  use_time=6[default=0]; //用时
+}
+

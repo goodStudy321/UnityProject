@@ -1,0 +1,9 @@
+// 道庭战开场信息
+message p_family_bt_open_info {
+optional  int64  family_id=1[default=0]; //道庭ID
+optional  string  family_name=2; //道庭名字
+optional  int32  id=3[default=0]; //阵营ID
+repeated  int32  region=4; //占领据点ID
+optional  int32  score=5[default=0]; //分数
+}
+

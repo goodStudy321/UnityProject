@@ -1,0 +1,7 @@
+import "p_kv.proto";
+// 周期活动
+message m_cycle_mission_update_toc {
+repeated  p_kv  list=1; //id为任务ID ，Val为任务进度
+optional  int32  money=2[default=0]; //活动货币最新值
+}
+

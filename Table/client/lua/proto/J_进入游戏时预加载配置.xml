@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PreloadEntryCfg" Key="name" ExportType="Dic" IgnoreKey="true" Src="J_进入游戏时预加载配置.xls" Sheet="创角之前">
+  <P Name="name" Type="string" ColName= "名称" />
+  <P Name="pst" Type="number" ColName="持久化" />
+  <P Name="num" Type="number" Opt="true" ColName="预加载数量" />
+</Proto>

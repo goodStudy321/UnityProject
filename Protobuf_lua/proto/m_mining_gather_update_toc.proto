@@ -1,0 +1,7 @@
+// 采集时间、次数更新
+message m_mining_gather_update_toc {
+optional  int32  gather_num=1[default=0]; //已经采集次数
+optional  int32  gather_stop_time=2[default=0]; //采集结束时间
+optional  bool  is_family_add=3[default=true]; //是否有道庭加成
+}
+

@@ -1,0 +1,8 @@
+import "p_kv.proto";
+// 开服冲榜购买道具返回
+message m_act_rank_buy_toc {
+optional  int32  err_code=1[default=0]; 
+optional  int32  id=2[default=0]; 
+optional  p_kv  buy_info=3; //道具限购数量更新
+}
+

@@ -1,0 +1,6 @@
+import "p_kv.proto";
+// 配置材料掉落类商店
+message m_role_act_store_toc {
+repeated  p_kv  buy_list=1; //id-物品ID   -val   购买数量
+}
+
