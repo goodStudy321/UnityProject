@@ -1,6 +1,0 @@
-framework module LokiUnionSDK {
-  umbrella header "LokiUnionSDK.h"
-
-  export *
-  module * { export * }
-}

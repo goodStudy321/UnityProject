@@ -1,5 +1,0 @@
-<resources>
-    <declare-styleable name="FixdBugViewHHH">
-        <attr name="fixdBug" format="dimension" />
-    </declare-styleable>
-</resources>

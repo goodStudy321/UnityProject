@@ -1,0 +1,2109 @@
+//gamedreamer 語言包
+//en 英文
+//zh-Hans 簡體中文
+//zh-Hant 繁體中文
+//id 印尼
+//th 泰文
+//ko 韓文
+//ja 日本語
+
+//2 版本检测中…
+"checkingVersion_en"        = "Checking version...";
+"checkingVersion_zh-Hans"   = "版本检测中…";
+"checkingVersion_zh-Hant"   = "版本檢測中…";
+"checkingVersion_id"        = "Loading";
+"checkingVersion_th"        = "กำลังตรวจสอบเวอร์ชั่น...";
+"checkingVersion_ko"        = "버전 체크 중 입니다.";
+"checkingVersion_ja"        = "バージョン確認中";
+//3 选择登入方式
+"chooseloginway_en"         = "Choose a way to login";
+"chooseloginway_zh-Hans"    = "选择登入方式";
+"chooseloginway_zh-Hant"    = "選擇登入方式";
+"chooseloginway_id"         = "Cara login";
+"chooseloginway_th"         = "เลือกช่องทางล็อกอิน";
+"chooseloginway_ko"         = "로그인 방식을 선택하세요";
+"chooseloginway_ja"         = "ログイン選択";
+//4 试玩游戏
+"guest_en"                  = "Guest";
+"guest_zh-Hans"             = "试玩游戏";
+"guest_zh-Hant"             = "試玩遊戲";
+"guest_id"                  = "Guest";
+"guest_th"                  = "เล่นทันที";
+"guest_ko"                  = "게스트 로그인";
+"guest_ja"                  = "Guest";
+//5 会员登入
+"memberlogin_en"            = "Acct Login";
+"memberlogin_zh-Hans"       = "帐号登入";
+"memberlogin_zh-Hant"       = "帳號登入";
+"memberlogin_id"            = "Acct Login";
+"memberlogin_th"            = "ผูกมัดบัญชีล็อกอิน";
+"memberlogin_ko"            = "귀속로그인";
+"memberlogin_ja"            = "Member";
+//5 手机登入
+"phonelogin_en"            = "Acct Login";
+"phonelogin_zh-Hans"       = "手机登入";
+"phonelogin_zh-Hant"       = "手机登入";
+"phonelogin_id"            = "Acct Login";
+"phonelogin_th"            = "ผูกมัดบัญชีล็อกอิน";
+"phonelogin_ko"            = "귀속로그인";
+"phonelogin_ja"            = "携帯ログイン";
+
+"additional_en"            = "Only supports bound account.";
+"additional_zh-Hans"       = "(仅限已绑定用户)";
+"additional_zh-Hant"       = "(僅限已綁定用戶)";
+"additional_id"            = "Only supports bound account.";
+"additional_th"            = "เฉพาะผู้ใช้ที่ถูกผูกไว้";
+"additional_ko"            = "Only supports bound account.";
+"additional_ja"            = "連携アカウント限定";
+//7 版本信息
+"versionnumber_en"          = "Version Number: ";
+"versionnumber_zh-Hans"     = "版本信息：";
+"versionnumber_zh-Hant"     = "版本資訊：";
+"versionnumber_id"          = "Informasi versi ";
+"versionnumber_th"          = "ข้อมูลเวอร์ชั่น：";
+"versionnumber_ko"          = "버전 :";
+"versionnumber_ja"          = "バージョン情報: ";
+//8 版权所有
+"copyrightowner_en"         = "Copyright Owner: ";
+"copyrightowner_zh-Hans"    = "版权所有：";
+"copyrightowner_zh-Hant"    = "版權所有：";
+"copyrightowner_id"         = "Hak pengarang ";
+"copyrightowner_th"         = "เจ้าของลิขสิทธิ์：";
+"copyrightowner_ko"         = "저작권 소유: ";
+"copyrightowner_ja"         = "書作権：";
+//10 帐号（邮箱/手机号码）
+"account_en"                = "Account (Email / Phone Number)";
+"account_zh-Hans"           = "帐号（邮箱/手机号码）";
+"account_zh-Hant"           = "帳號（信箱/手機號碼）";
+"account_id"                = "Akun( alamat email/ nomor HP)";
+"account_th"                = "ไอดี（อีเมล์ / เบอร์โทรศัพท์）";
+"account_ko"                = "아이디 (이메일 / 핸드폰 번호)";
+"account_ja"                = "アカウント（メールアドレス/携帯番号）";
+//10 帐号（邮箱/手机号码）
+"accountPhone_en"                = "Account ( Phone Number)";
+"accountPhone_zh-Hans"           = "帐号（手机号码）";
+"accountPhone_zh-Hant"           = "帳號（手機號碼）";
+"accountPhone_id"                = "Akun(  nomor HP)";
+"accountPhone_th"                = "ไอดี（ เบอร์โทรศัพท์）";
+"accountPhone_ko"                = "아이디（핸드폰 번호)";
+"accountPhone_ja"                = "メールアドレス/携帯番号";
+//11 密码
+"password_en"               = "Password";
+"password_zh-Hans"          = "密码";
+"password_zh-Hant"          = "密碼";
+"password_id"               = "Kata sandi";
+"password_th"               = "รหัสผ่าน";
+"password_ko"               = "비밀번호";
+"password_ja"               = "パスワード";
+//12 登入
+"login_en"                  = "Login";
+"login_zh-Hans"             = "登入";
+"login_zh-Hant"             = "登入";
+"login_id"                  = "Login";
+"login_th"                  = "ล็อกอิน";
+"login_ko"                  = "로그인";
+"login_ja"                  = "ログイン";
+//13 忘记密码
+"forgetPassword_en"         = "Forget Password?";
+"forgetPassword_zh-Hans"    = "忘记密码？";
+"forgetPassword_zh-Hant"    = "忘記密碼？";
+"forgetPassword_id"         = "Lupa Password?";
+"forgetPassword_th"         = "ลืมรหัสผ่าน？";
+"forgetPassword_ko"         = "비밀번호 찾기";
+"forgetPassword_ja"         = "パスワードを忘れた？";
+//14 试玩帐号找回
+"retrieveGuestAccount_en"       = "Retrieve Guest Account";
+"retrieveGuestAccount_zh-Hans"  = "试玩帐号找回";
+"retrieveGuestAccount_zh-Hant"  = "找回試玩帳號";
+"retrieveGuestAccount_id"       = "Mengembalikan Akun";
+"retrieveGuestAccount_th"       = "กู้คืนบัญชีเล่นทันที";
+"retrieveGuestAccount_ko"       = "게스트 아이디 찾기";
+"retrieveGuestAccount_ja"       = "アカウント復旧";
+//15 忘记密码
+"ForgetPassword_en"         = "Forget Password";
+"ForgetPassword_zh-Hans"    = "忘记密码";
+"ForgetPassword_zh-Hant"    = "忘記密碼";
+"ForgetPassword_id"         = "Lupa kata sandi";
+"ForgetPassword_th"         = "ลืมรหัสผ่าน";
+"ForgetPassword_ko"         = "비밀번호 찾기";
+"ForgetPassword_ja"         = "パスワードを忘れた場合";
+//16 手机号码
+"PhoneNumber_en"            = "Phone No.";
+"PhoneNumber_zh-Hans"       = "手机号码";
+"PhoneNumber_zh-Hant"       = "手機號碼";
+"PhoneNumber_id"            = "Nomor HP";
+"PhoneNumber_th"            = "เบอร์โทร";
+"PhoneNumber_ko"            = "핸드폰 번호";
+"PhoneNumber_ja"            = "携帯番号";
+//17 电子信箱
+"Email_en"                  = "Email";
+"Email_zh-Hans"             = "电子信箱";
+"Email_zh-Hant"             = "電子信箱";
+"Email_id"                  = "Alamat email";
+"Email_th"                  = "อีเมล์";
+"Email_ko"                  = "이메일";
+"Email_ja"                  = "メールアドレス";
+
+//18 请输入绑定的邮箱
+"PleaseEnterBoundEmail_en"      = "Please enter bound email";
+"PleaseEnterBoundEmail_zh-Hans" = "请输入绑定的邮箱";
+"PleaseEnterBoundEmail_zh-Hant" = "請輸入綁定的信箱";
+"PleaseEnterBoundEmail_id"      = "Masukkan alamat email yang digabung";
+"PleaseEnterBoundEmail_th"      = "กรุณากรอกอีเมล์ที่ผูกมัด";
+"PleaseEnterBoundEmail_ko"      = "회원 이메일을 입력하세요";
+"PleaseEnterBoundEmail_ja"      = "連携メールアドレスを入力ください";
+//19 开始找回
+"Retrieve_zh-Hans"          = "开始找回";
+"Retrieve_zh-Hant"          = "開始找回";
+"Retrieve_en"               = "Retrieve";
+"Retrieve_id"               = "Mulai";
+"Retrieve_th"               = "เริ่มกู้คืน";
+"Retrieve_ko"               = "찾기 ";
+"Retrieve_ja"               = "復旧開始";
+//24 获取验证码
+"GetVerificationCode_zh-Hans"   = "获取验证码";
+"GetVerificationCode_zh-Hant"   = "獲取驗證碼";
+"GetVerificationCode_en"        = "GET CODE";
+"GetVerificationCode_id"        = "Dapatkan Kode";
+"GetVerificationCode_th"        = "รับรหัสยืนยัน";
+"GetVerificationCode_ko"        = "인증번호 받기";
+"GetVerificationCode_ja"        = "識別コード";
+//25 请输入验证码
+"enterVerificationCode_zh-Hans" = "请输入验证码";
+"enterVerificationCode_zh-Hant" = "請輸入驗證碼";
+"enterVerificationCode_en"      = "Enter Verification Code";
+"enterVerificationCode_id"      = "Masukkan kode identifikasi";
+"enterVerificationCode_th"      = "โปรดใส่รหัสยืนยัน";
+"enterVerificationCode_ko"      = "인증번호 입력";
+"enterVerificationCode_ja"      = "識別コード入力";
+//26 请输入新密码
+"enterNewPassword_zh-Hans"      = "请输入新密码";
+"enterNewPassword_zh-Hant"      = "請輸入新密碼";
+"enterNewPassword_en"           = "Please enter new password";
+"enterNewPassword_id"           = "Masukkan kata sandi baru";
+"enterNewPassword_th"           = "กรุณากรอกรหัสผ่านอันใหม่";
+"enterNewPassword_ko"           = "새로운 비밀번호 입력";
+"enterNewPassword_ja"           = "新しいパスワードを入力してください";
+//27 确认
+"Confirm_zh-Hans"               = "确认";
+"Confirm_zh-Hant"               = "確認";
+"Confirm_en"                    = "Confirm";
+"Confirm_id"                    = "Betul";
+"Confirm_th"                    = "ยืนยัน";
+"Confirm_ko"                    = "확인";
+"Confirm_ja"                    = "確認";
+//28 试玩帐号找回
+"RetrieveGuestAccount_zh-Hans"  = "试玩帐号找回";
+"RetrieveGuestAccount_zh-Hant"  = "找回試玩帳號";
+"RetrieveGuestAccount_en"       = "Retrieve Guest Account";
+"RetrieveGuestAccount_id"       = "Menemukan akun pengunjung";
+"RetrieveGuestAccount_th"       = "กู้คืนบัญชีเล่นทันที";
+"RetrieveGuestAccount_ko"       = "게스트 아이디 찾기";
+"RetrieveGuestAccount_ja"       = "簡単アカウントを復旧";
+//29 试玩帐号UID
+"GuestAccountUID_zh-Hans"       = "试玩帐号UID";
+"GuestAccountUID_zh-Hant"       = "試玩帳號UID";
+"GuestAccountUID_en"            = "Guest Account UID";
+"GuestAccountUID_id"            = "UID akun pengunjung";
+"GuestAccountUID_th"            = "UIDบัญชีเล่นทันที";
+"GuestAccountUID_ko"            = "게스트 아이디 UID";
+"GuestAccountUID_ja"            = "簡単アカウントUID";
+
+//30 恢复码
+"RecoveryCode_zh-Hans"          = "恢复码";
+"RecoveryCode_zh-Hant"          = "恢復碼";
+"RecoveryCode_en"               = "Recovery Code";
+"RecoveryCode_id"               = "Kode pemulihan";
+"RecoveryCode_th"               = "รหัสกู้คืน";
+"RecoveryCode_ko"               = "복구코드";
+"RecoveryCode_ja"               = "復旧コード";
+//31 下一步
+"Next_zh-Hans"                  = "下一步";
+"Next_zh-Hant"                  = "下一步";
+"Next_en"                       = "Next";
+"Next_id"                       = "selanjutnya";
+"Next_th"                       = "ถัดไป";
+"Next_ko"                       = "다음";
+"Next_ja"                       = "次へ";
+//34 此图用于试玩角色找回，请妥善保存！
+"RecoveryPicture_zh-Hans"       = "此图用于试玩角色找回，请妥善保存！";
+"RecoveryPicture_zh-Hant"       = "此圖用於找回試玩角色，請妥善保存！";
+"RecoveryPicture_en"            = "This picture is used to retrieve guest account, please keep properly. ";
+"RecoveryPicture_id"            = "Silakan menyimpan gambaran ini untuk menemukan akun pengunjung";
+"RecoveryPicture_th"            = "ภาพนี้ใช้สำหรับกู้คืนตัวละครเล่นทันที โปรดเก็บรักษาให้ดีนะจ๊ะ!";
+"RecoveryPicture_ko"            = "해당 이미지는 잃어버린 게스트 아이디의 캐릭터를 되찾을 경우에 꼭 필요한 이미지 입니다. 잘 보관해 주시기 바랍니다.";
+"RecoveryPicture_ja"            = "この写真は簡単アカウントのキャラクター及びデータを復旧する時使う資料です、写真を保存してください";
+//35 客服中心 (登陆界面的)
+"CustomerService_zh-Hans"       = "客服中心";
+"CustomerService_zh-Hant"       = "客服中心";
+"CustomerService_en"            = "CS Center";
+"CustomerService_id"            = "CS Center";
+"CustomerService_th"            = "บริการลูกค้า";
+"CustomerService_ko"            = "고객센터";
+"CustomerService_ja"            = "CS Center";
+//36 客服信箱
+"ServiceEmail_zh-Hans"          = "客服信箱";
+"ServiceEmail_zh-Hant"          = "客服信箱";
+"ServiceEmail_en"               = "Service Email";
+"ServiceEmail_id"               = "E-mail";
+"ServiceEmail_th"               = "อีเมล์ศูนย์บริการ";
+"ServiceEmail_ko"               = "고객센터 메일";
+"ServiceEmail_ja"               = "メール";
+//37 在线客服
+"OnlineService_zh-Hans"         = "在线客服";
+"OnlineService_zh-Hant"         = "線上客服";
+"OnlineService_en"              = "Online Service";
+"OnlineService_id"              = "CS Online";
+"OnlineService_th"              = "ศูนย์บริการออนไลน์";
+"OnlineService_ko"              = "온라인 고객센터";
+"OnlineService_ja"              = "オンラインサービス";
+//38 请选择联系方式
+"chooseWayContactCS_zh-Hans"    = "请选择联系方式";
+"chooseWayContactCS_zh-Hant"    = "請選擇聯繫方式";
+"chooseWayContactCS_en"         = "Please choose a way to contact CS.";
+"chooseWayContactCS_id"         = "Cara Koneksi";
+"chooseWayContactCS_th"         = "กรุณาเลือกช่องทางติดต่อ";
+"chooseWayContactCS_ko"         = "연락 방식을 선택하세요";
+"chooseWayContactCS_ja"         = "方法を選んでください";
+//40 复制
+"Copy_zh-Hans"          = "复制";
+"Copy_zh-Hant"          = "複製";
+"Copy_en"               = "Copy";
+"Copy_id"               = "Buka";
+"Copy_th"               = "ก็อปปี้";
+"Copy_ko"               = "복사";
+"Copy_ja"               = "コピー";
+//42 等待
+"Waiting_zh-Hans" = "等待";
+"Waiting_zh-Hant" = "等待";
+"Waiting_en" = "Waiting";
+"Waiting_id" = "Menunggu";
+"Waiting_th" = "รอ";
+"Waiting_ko" = "대기";
+"Waiting_ja" = "しばしお待ちください";
+//43 已回
+"Replied_zh-Hans" = "已回";
+"Replied_zh-Hant" = "已回覆";
+"Replied_en" = "Replied";
+"Replied_id" = "Terbalas";
+"Replied_th" = "ตอบแล้ว";
+"Replied_ko" = "답변";
+"Replied_ja" = "返信済み";
+//44 完结
+"Completed_zh-Hans" = "完结";
+"Completed_zh-Hant" = "已解決";
+"Completed_en" = "Completed";
+"Completed_id" = "Selesai";
+"Completed_th" = "ปิดเคส";
+"Completed_ko" = "해결";
+"Completed_ja" = "終了";
+//45 最后回应日期
+"LastReply_zh-Hans" = "最后回应日期";
+"LastReply_zh-Hant" = "最後回覆日期";
+"LastReply_en" = "Last reply";
+"LastReply_id" = "Tanggal Jawab Terakhir";
+"LastReply_th" = "วันตอบกลับล่าสุด";
+"LastReply_ko" = "최종 답변 날짜";
+"LastReply_ja" = "ラストリプライ";
+//46 在线客服
+"OnlineService_zh-Hans" = "在线客服";
+"OnlineService_zh-Hant" = "線上客服";
+"OnlineService_en" = "Online Service";
+"OnlineService_id" = "CS Online";
+"OnlineService_th" = "ศูนย์บริการออนไลน์";
+"OnlineService_ko" = "온라인 고객센터";
+"OnlineService_ja" = "オンライン";
+//47 客诉类型
+"ProblemType_zh-Hans" = "客诉类型";
+"ProblemType_zh-Hant" = "客訴類型";
+"ProblemType_en" = "Problem Type";
+"ProblemType_id" = "Jenis keluhan";
+"ProblemType_th" = "ประเภทปัญหา";
+"ProblemType_ko" = "문제 선택";
+"ProblemType_ja" = "お問い合わせ種類";
+//48 标题
+"Title_zh-Hans" = "标题";
+"Title_zh-Hant" = "標題";
+"Title_en" = "Title";
+"Title_id" = "Judul";
+"Title_th" = "หัวข้อ";
+"Title_ko" = "제목";
+"Title_ja" = "タイトル";
+//49 内容
+"Content_zh-Hans" = "内容";
+"Content_zh-Hant" = "內容";
+"Content_en" = "Content";
+"Content_id" = "Isi";
+"Content_th" = "เนื้อหา";
+"Content_ko" = "내용";
+"Content_ja" = "本文";
+//50 图片附件
+"Photos_zh-Hans" = "图片附件";
+"Photos_zh-Hant" = "圖片附件";
+"Photos_en" = "Photos";
+"Photos_id" = "Lampiran";
+"Photos_th" = "แนบรูป";
+"Photos_ko" = "이미지 첨부";
+"Photos_ja" = "画像添付";
+//51 请您对本次服务进行评价！
+"evaluateTheService_zh-Hans" = "请您对本次服务进行评价！";
+"evaluateTheService_zh-Hant" = "請您對本次服務進行評價！";
+"evaluateTheService_en" = "Please evaluate the service!";
+"evaluateTheService_id" = "Menilai pada tingkat pelayanan ini! Makasih!";
+"evaluateTheService_th" = "ช่วยให้คะแนนการบริการหน่อยนะคะ!";
+"evaluateTheService_ko" = "서비스 평가";
+"evaluateTheService_ja" = "今回のサービスを評価お願いします";
+//52 继续提问
+"Continuetoask_zh-Hans" = "继续提问";
+"Continuetoask_zh-Hant" = "繼續提問";
+"Continuetoask_en" = "Continue to ask";
+"Continuetoask_id" = "Bertanya lagi";
+"Continuetoask_th" = "ถามต่อ";
+"Continuetoask_ko" = "계속 질문하기";
+"Continuetoask_ja" = "質問";
+//53 提交
+"Submit_zh-Hans" = "提交";
+"Submit_zh-Hant" = "提交";
+"Submit_en" = "Submit";
+"Submit_id" = "Masuk";
+"Submit_th" = "ยืนยัน";
+"Submit_ko" = "제출";
+"Submit_ja" = "送信";
+//54 回复
+"Reply_zh-Hans" = "回复";
+"Reply_zh-Hant" = "回覆";
+"Reply_en" = "Reply";
+"Reply_id" = "Membalas";
+"Reply_th" = "ส่ง";
+"Reply_ko" = "답변";
+"Reply_ja" = "返信";
+//55 切换帐号
+"SwitchAccount_zh-Hans" = "切换帐号";
+"SwitchAccount_zh-Hant" = "切換帳號";
+"SwitchAccount_en" = "Switch Acct";
+"SwitchAccount_id" = "Ganti ID";
+"SwitchAccount_th" = "เปลี่ยนบัญชี";
+"SwitchAccount_ko" = "아이디 변경";
+"SwitchAccount_ja"     ="アカウント変更";
+//56 全力登入中
+"Logining_zh-Hans" = "全力登入中";
+"Logining_zh-Hant" = "全速登入中";
+"Logining_en" = "Login...";
+"Logining_id" = "Loading";
+"Logining_th" = "กำลังล็อกอิน";
+"Logining_ko" = "로그인 중…";
+"Logining_ja" = "ロード中";
+//57 试
+"Guest_zh-Hans" = "试";
+"Guest_zh-Hant" = "試";
+"Guest_en" = "Guest";
+"Guest_id" = "Percobaan";
+"Guest_th" = "Guest";
+"Guest_ko" = "게스트 아이디";
+"Guest_ja" = "テスト";
+//58 进入游戏
+"Entergame_zh-Hans" = "进入游戏";
+"Entergame_zh-Hant" = "進入遊戲";
+"Entergame_en" = "Enter game";
+"Entergame_id" = "Main";
+"Entergame_th" = "เข้าสู่เกม";
+"Entergame_ko" = "로그인 하기";
+"Entergame_ja" = "ゲーム開始";
+//59 切换登入方式
+"Switchwaytologin_zh-Hans" = "切换登入方式";
+"Switchwaytologin_zh-Hant" = "切換登入方式";
+"Switchwaytologin_en" = "Switch way to login";
+"Switchwaytologin_id" = "Mengganti cara login";
+"Switchwaytologin_th" = "เปลี่ยนช่องทางล็อกอิน";
+"Switchwaytologin_ko" = "로그인 방식 변경";
+"Switchwaytologin_ja" = "ログイン選択";
+//60
+//61
+//62 登入成功，当前为试玩帐号，建议您升级帐号！
+"LoginsuccessfullyAlert_zh-Hans" = "登入成功，当前为试玩帐号，建议您升级帐号！";
+"LoginsuccessfullyAlert_zh-Hant" = "登入成功，當前為試玩帳號，建議您升級帳號！";
+"LoginsuccessfullyAlert_en" = "Login successfully, you are guest account now, we suggest you upgrade your account!";
+"LoginsuccessfullyAlert_id" = "Sukses! Ini akun pengunjung, sebaiknya meningkatkan akun Anda!";
+"LoginsuccessfullyAlert_th" = "ล็อกอินสำเร็จ ปัจจุบันเป็นบัญชีเล่นทันที ขอแนะนำให้อัพเกรดบัญชีจะดีกว่าน๊า!";
+"LoginsuccessfullyAlert_ko" = "현재 게스트 아이디로 로그인 하였습니다. 회원 아이디로 로그인하시는 것을 권해드립니다!";
+"LoginsuccessfullyAlert_ja" = "ログイン完了、現在は簡単アカウントの故、早めに情報を補完し、会員アカウントへの更新を勧めです";
+//63 登入成功
+"Loginsuccessfully_zh-Hans" = "登入成功";
+"Loginsuccessfully_zh-Hant" = "登入成功";
+"Loginsuccessfully_en" = "Login successfully";
+"Loginsuccessfully_id" = "Login sukses";
+"Loginsuccessfully_th" = "ล็อกอินสำเร็จ";
+"Loginsuccessfully_ko" = "로그인 성공";
+"Loginsuccessfully_ja" = "ログイン完了";
+//64 选择服务器
+"Chooseserver_zh-Hans" = "选择服务器";
+"Chooseserver_zh-Hant" = "選擇伺服器";
+"Chooseserver_en" = "Choose server";
+"Chooseserver_id" = "Memilih Server";
+"Chooseserver_th" = "เลือกเซิร์ฟเวอร์";
+"Chooseserver_ko" = "서버 선택";
+"Chooseserver_ja" = "サーバー選択";
+//65 推荐
+"Recommend_zh-Hans" = "推荐";
+"Recommend_zh-Hant" = "推薦";
+"Recommend_en" = "Recommend";
+"Recommend_id" = "Rekomentasi";
+"Recommend_th" = "แนะนำ";
+"Recommend_ko" = "추천";
+"Recommend_ja" = "推奨";
+//66 01-10服
+"server01to10_zh-Hans" = "01-10服";
+"server01to10_zh-Hant" = "01-10服";
+"server01to10_en" = "S01-10";
+"server01to10_id" = "server 01-10";
+"server01to10_th" = "S 01-10";
+"server01to10_ko" = "01-10 서버";
+"server01to10_ja" = "サーバー 01-10";
+//67 历史记录
+"History_zh-Hans" = "历史记录";
+"History_zh-Hant" = "歷史記錄";
+"History_en" = "History";
+"History_id" = "Record";
+"History_th" = "บันทึกล่าสุด";
+"History_ko" = "서버기록";
+"History_ja" = "前回ログイン";
+//68
+//69
+//70
+//71
+//72
+//73
+//74 确认升级
+"ConfirmToUpgrade_zh-Hans" = "确认升级";
+"ConfirmToUpgrade_zh-Hant" = "確認升級";
+"ConfirmToUpgrade_en" = "Confirm to upgrade";
+"ConfirmToUpgrade_id" = "Masuk";
+"ConfirmToUpgrade_th" = "ยืนยัน";
+"ConfirmToUpgrade_ko" = "확인";
+"ConfirmToUpgrade_ja" = "アップグレード確認";
+//75
+//76 输入新密码
+"enterNewpassword_zh-Hans" = "输入新密码";
+"enterNewpassword_zh-Hant" = "輸入新密碼";
+"enterNewpassword_en" = "Please enter new password";
+"enterNewpassword_id" = "Masukkan kata sandi baru";
+"enterNewpassword_th" = "กรุณากรอกรหัสผ่านอันใหม่";
+"enterNewpassword_ko" = "새로운 비밀번호 입력";
+"enterNewpassword_ja" = "新しいパスワードを入力してください";
+
+//77 会员中心
+"MemberCenter_zh-Hans" = "会员中心";
+"MemberCenter_zh-Hant" = "會員中心";
+"MemberCenter_en" = "Member Center";
+"MemberCenter_id" = "Pusat Member";
+"MemberCenter_th" = "ศูนย์สมาชิก";
+"MemberCenter_ko" = "회원센터";
+"MemberCenter_ja" = "ユーザーセンター";
+//78 会员帐号：
+"MemberAccount_zh-Hans" = "会员帐号：";
+"MemberAccount_zh-Hant" = "會員帳號：";
+"MemberAccount_en" = "Member Account: ";
+"MemberAccount_id" = "Akun member";
+"MemberAccount_th" = "บัญชีสมาชิก：";
+"MemberAccount_ko" = "회원아이디 :";
+"MemberAccount_ja" = "会員アカウント :";
+//79 会员类型：
+"MemberType_zh-Hans" = "会员类型：";
+"MemberType_zh-Hant" = "會員類型：";
+"MemberType_en" = "Member Type: ";
+"MemberType_id" = "Jenis member";
+"MemberType_th" = "ประเภทสมาชิก：";
+"MemberType_ko" = "회원유형 :";
+"MemberType_ja" = "会員タイプ :";
+//80 试玩帐号
+"GuestAccount_zh-Hans" = "试玩帐号";
+"GuestAccount_zh-Hant" = "試玩帳號";
+"GuestAccount_en" = "Guest Account";
+"GuestAccount_id" = "Akun pengunjung";
+"GuestAccount_th" = "เล่นทันที";
+"GuestAccount_ko" = "게스트 아이디:";
+"GuestAccount_ja" = "簡単アカウント";
+
+//81 正式账号
+"formalaccount_en"          = "Formal Account";
+"formalaccount_zh-Hans"     = "正式账号";
+"formalaccount_zh-Hant"     = "正式帳號";
+"formalaccount_id"          = "Akun resmi";
+"formalaccount_th"          = "บัญชีทางการ";
+"formalaccount_ko"          = "정식회원 아이디";
+"formalaccount_ja"          = "会員アカウント";
+//82 系统消息
+"systemmessage_en"          = "System Message";
+"systemmessage_zh-Hans"     = "系统消息";
+"systemmessage_zh-Hant"     = "系統消息";
+"systemmessage_id"          = "Info";
+"systemmessage_th"          = "ข่าวสารระบบ";
+"systemmessage_ko"          = "시스템 소식";
+"systemmessage_ja"          = "システムメッセージ";
+
+//83 退出登入
+"logout_en"         = "Log out";
+"logout_zh-Hans"    = "退出登入";
+"logout_zh-Hant"    = "退出登入";
+"logout_id"         = "LOG OUT";
+"logout_th"         = "ล็อกเอาท์";
+"logout_ko"         = "로그아웃";
+"logout_ja"         = "ログアウト";
+
+//84 安全等级
+"safetylevel_en"            = "Safety level";
+"safetylevel_zh-Hans"       = "安全等级";
+"safetylevel_zh-Hant"       = "安全等級";
+"safetylevel_id"            = "Tingkat aman";
+"safetylevel_th"            = "Lvความปลอดภัย";
+"safetylevel_ko"            = "안전레벨";
+"safetylevel_ja"            = "安全レベル";
+
+//84.1 [危险]
+"safetydanger_en"           = "[Unbound]";
+"safetydanger_zh-Hans"      = "[危险]";
+"safetydanger_zh-Hant"      = "[危險]";
+"safetydanger_id"           = "[Dangerous]";
+"safetydanger_th"           = "[เสี่ยง]";
+"safetydanger_ko"           = "[위험]";
+"safetydanger_ja"           = "[危険]";
+
+//85 [安全]
+"safetysafe_en"             = "[Bound]";
+"safetysafe_zh-Hans"        = "[安全]";
+"safetysafe_zh-Hant"        = "[安全]";
+"safetysafe_id"             = "[Safe]";
+"safetysafe_th"             = "[ปลอดภัย]";
+"safetysafe_ko"             = "[안전]";
+"safetysafe_ja"             = "[安全]";
+
+//86 马上升级
+"upgradenow_en"         = "Upgrade now!";
+"upgradenow_zh-Hans"    = "马上升级!";
+"upgradenow_zh-Hant"    = "馬上升級!";
+"upgradenow_id"         = "Upgrade now!";
+"upgradenow_th"         = "รีบอัพเกรดเถอะ!";
+"upgradenow_ko"         = "레벨업!";
+"upgradenow_ja"         = "アップグレード";
+
+//87 游戏礼包
+"gamegift_en"           = "Game Gift";
+"gamegift_zh-Hans"      = "游戏礼包";
+"gamegift_zh-Hant"      = "遊戲禮包";
+"gamegift_id"           = "Hadiah pemainan";
+"gamegift_th"           = "ห่อของขวัญเกม";
+"gamegift_ko"           = "게임 선물";
+"gamegift_ja"           = "ギフト";
+
+//88 其他功能
+"otherfunction_en"          = "Other Function";
+"otherfunction_zh-Hans"     = "其他功能";
+"otherfunction_zh-Hant"     = "其他功能";
+"otherfunction_id"          = "Fungsi lain";
+"otherfunction_th"          = "ฟังก์ชั่นอื่นๆ";
+"otherfunction_ko"          = "기타기능";
+"otherfunction_ja"          = "その他";
+
+//89 活动公告
+"eventnotice_en"        = "Event Notice";
+"eventnotice_zh-Hans"   = "活动公告";
+"eventnotice_zh-Hant"   = "活動公告";
+"eventnotice_id"        = "Event";
+"eventnotice_th"        = "ประกาศ";
+"eventnotice_ko"        = "이벤트 공지";
+"eventnotice_ja"        = "お知らせ";
+
+//90 客服中心
+"customerservice_en"        = "Customer Service";
+"customerservice_zh-Hans"   = "客服中心";
+"customerservice_zh-Hant"   = "客服中心";
+"customerservice_id"        = "CS Center";
+"customerservice_th"        = "บริการลูกค้า";
+"customerservice_ko"        = "고객센터";
+"customerservice_ja"        = "ユーザーセンター";
+
+//91 订单查询
+"orderinquiry_en"           = "Order Inquiry";
+"orderinquiry_zh-Hans"      = "订单查询";
+"orderinquiry_zh-Hant"      = "訂單查詢";
+"orderinquiry_id"           = "Pesanan Saya";
+"orderinquiry_th"           = "ดูใบสั่งซื้อ";
+"orderinquiry_ko"           = "주문조회";
+"orderinquiry_ja"           = "オーダー検索";
+
+//92 官方网站
+"officialwebsite_en"        = "Official Website";
+"officialwebsite_zh-Hans"   = "官方网站";
+"officialwebsite_zh-Hant"   = "官方網站";
+"officialwebsite_id"        = "Situs resmi";
+"officialwebsite_th"        = "เว็บไซต์หลัก";
+"officialwebsite_ko"        = "공식 사이트";
+"officialwebsite_ja"        = "公式サイト";
+
+//93 Gift Center
+"giftcenter_en"         = "Gift Center";
+"giftcenter_zh-Hans"    = "礼包中心";
+"giftcenter_zh-Hant"    = "禮包中心";
+"giftcenter_id"         = "Pusat hadiah";
+"giftcenter_th"         = "ศูนย์ของขวัญ";
+"giftcenter_ko"         = "선물센터";
+"giftcenter_ja"         = "ギフトセンター";
+//94 剩余
+"remains_en"        = "Remains";
+"remains_zh-Hans"   = "剩余";
+"remains_zh-Hant"   = "剩餘";
+"remains_id"        = "Sisa";
+"remains_th"        = "คงเหลือ";
+"remains_ko"        = "나머지";
+"remains_ja"        = "残り";
+
+//95 截止时间
+"deadline_en"           = "Deadline";
+"deadline_zh-Hans"      = "截止时间";
+"deadline_zh-Hant"      = "截止時間";
+"deadline_id"           = "Waktu berakhir";
+"deadline_th"           = "หมดเขต";
+"deadline_ko"           = "종료시간";
+"deadline_ja"           = "終了時間";
+
+//96 领取记录
+"obtainingrecord_en"        = "Obtaining Record";
+"obtainingrecord_zh-Hans"   = "领取记录";
+"obtainingrecord_zh-Hant"   = "領取記錄";
+"obtainingrecord_id"        = "Catatan pengambilan";
+"obtainingrecord_th"        = "บันทึกการรับ";
+"obtainingrecord_ko"        = "수령기록";
+"obtainingrecord_ja"        = "受取記録";
+
+//97 序号
+"code_en"       = "Code";
+"code_zh-Hans"  = "序号";
+"code_zh-Hant"  = "序號";
+"code_id"       = "Nomor";
+"code_th"       = "Item Code";
+"code_ko"       = "코드";
+"code_ja"       = "コード";
+
+//98 领取时间
+"time_en"       = "Time";
+"time_zh-Hans"  = "领取时间";
+"time_zh-Hant"  = "領取時間";
+"time_id"       = "Waktu pengambilan";
+"time_th"       = "เวลารับ";
+"time_ko"       = "수령날짜";
+"time_ja"       = "受取時間";
+
+//99 领取
+"claim_en"          = "Claim";
+"claim_zh-Hans"     = "领取";
+"claim_zh-Hant"     = "領取";
+"claim_id"          = "Ambil";
+"claim_th"          = "รับ";
+"claim_ko"          = "수령";
+"claim_ja"          = "受取";
+
+//100 复制
+"copy_en"       = "Copy";
+"copy_zh-Hans"  = "复制";
+"copy_zh-Hant"  = "複製";
+"copy_id"       = "membuat kopi";
+"copy_th"       = "ก็อปปี้";
+"copy_ko"       = "복사";
+"copy_ja"       = "コピー";
+
+//101 系统信箱
+"systemmailbox_en"          = "System Mailbox";
+"systemmailbox_zh-Hans"     = "系统信箱";
+"systemmailbox_zh-Hant"     = "系統信箱";
+"systemmailbox_id"          = "Kontak Surat Sistem";
+"systemmailbox_th"          = "จดหมายระบบ";
+"systemmailbox_ko"          = "시스템 메일";
+"systemmailbox_ja"          = "システムメールボックス";
+
+//102 未读
+"unread_en"         = "Unread";
+"unread_zh-Hans"    = "未读";
+"unread_zh-Hant"    = "未讀";
+"unread_id"         = "Belum dibaca";
+"unread_th"         = "ยังไม่อ่าน";
+"unread_ko"         = "읽지 않음";
+"unread_ja"         = "未読";
+
+//103 已读
+"read_en"           = "Read";
+"read_zh-Hans"      = "已读";
+"read_zh-Hant"      = "已讀";
+"read_id"           = "Sudah dibaca";
+"read_th"           = "อ่านแล้ว";
+"read_ko"           = "읽음";
+"read_ja"           = "既読";
+
+//104 发送日期
+"dateofforwarding_en"       = "Date of forwarding";
+"dateofforwarding_zh-Hans"  = "发送日期";
+"dateofforwarding_zh-Hant"  = "發送日期";
+"dateofforwarding_id"       = "Tanggal kirim";
+"dateofforwarding_th"       = "วันที่ส่ง";
+"dateofforwarding_ko"       = "발송일자";
+"dateofforwarding_ja"       = "送信時間";
+
+//106 上一篇
+"last_en"       = "Last";
+"last_zh-Hans"  = "上一篇";
+"last_zh-Hant"  = "上一篇";
+"last_id"       = "sebelumnya";
+"last_th"       = "ก่อนหน้า";
+"last_ko"       = "이전";
+"last_ja"       = "前";
+
+//107 下一篇
+"next_en"       = "Next";
+"next_zh-Hant"  = "下一篇";
+"next_zh-Hant"  = "下一篇";
+"next_id"       = "selanjutnya";
+"next_th"       = "ถัดไป";
+"next_ko"       = "다음";
+"next_ja"       = "次";
+
+//109 全部订单
+"allorders_en"          = "All Orders";
+"allorders_zh-Hans"     = "全部订单";
+"allorders_zh-Hant"     = "全部訂單";
+"allorders_id"          = "Semua pesanan";
+"allorders_th"          = "ใบสั่งซื้อทั้งหมด";
+"allorders_ko"          = "모든내역";
+"allorders_ja"          = "全オーダー";
+
+//110 成功订单
+"successfulorders_en"       = "Success";
+"successfulorders_zh-Hans"  = "成功订单";
+"successfulorders_zh-Hant"  = "成功訂單";
+"successfulorders_id"       = "Pesanan Sukses";
+"successfulorders_th"       = "ใบสั่งซื้อ(สำเร็จ)";
+"successfulorders_ko"       = "주문성공";
+"successfulorders_ja"       = "成功";
+
+//111 失败订单
+"failedorders_en"       = "Failure";
+"failedorders_zh-Hans"  = "失败订单";
+"failedorders_zh-Hant"  = "失敗訂單";
+"failedorders_id"       = "Pesanan Gagal";
+"failedorders_th"       = "ใบสั่งซื้อ(ล้มเหลว)";
+"failedorders_ko"       = "주문실패";
+"failedorders_ja"       = "失敗";
+
+//112 订单号
+"ordernumber_en"        = "Order Number";
+"ordernumber_zh-Hans"   = "订单号";
+"ordernumber_zh-Hant"   = "訂單號";
+"ordernumber_id"        = "Nomor pesanan";
+"ordernumber_th"        = "Order ID";
+"ordernumber_ko"        = "주문번호";
+"ordernumber_ja"        = "オーダーナンバー";
+
+//114 初值金额
+"initialamount_en"          = "Initial Amount";
+"initialamount_zh-Hans"     = "初值金额";
+"initialamount_zh-Hant"     = "初值金額";
+"initialamount_id"          = "Jumlah asli";
+"initialamount_th"          = "จำนวนเงินที่เติม";
+"initialamount_ko"          = "주문금액";
+"initialamount_ja"          = "金額";
+
+//115 订单状态：失败
+"statusfailed_en"           = "Status: Failed";
+"statusfailed_zh-Hans"      = "订单状态：失败";
+"statusfailed_zh-Hant"      = "訂單狀態：失敗";
+"statusfailed_id"           = "Status pesanan";
+"statusfailed_th"           = "สถานะใบสั่งซื้อ：ล้มเหลว";
+"statusfailed_ko"           = "주문상태 : 실패";
+"statusfailed_ja"           = "状態：失敗";
+
+//116 全力加载中
+"loading_en"        = "Loading...";
+"loading_zh-Hans"   = "全力加载中…";
+"loading_zh-Hant"   = "全力載入中…";
+"loading_id"        = "Loading";
+"loading_th"        = "กำลังดาวน์โหลด...";
+"loading_ko"        = "로딩 중 입니다.";
+"loading_ja"        = "ロード中";
+
+//117 储值中心
+"topupcenter_en"        = "Top-up Center";
+"topupcenter_zh-Hans"   = "储值中心";
+"topupcenter_zh-Hant"   = "儲值中心";
+"topupcenter_id"        = "Pusat Top-up";
+"topupcenter_th"        = "ศูนย์เติมเงิน";
+"topupcenter_ko"        = "충전센터";
+"topupcenter_ja"        = "チャージセンター";
+
+//118 储值帐号
+"storeaccount_en"           = "Account";
+"storeaccount_zh-Hans"      = "储值帐号";
+"storeaccount_zh-Hant"      = "儲值帳號";
+"storeaccount_id"           = "Akun top-up";
+"storeaccount_th"           = "บัญชีที่เติมเงิน";
+"storeaccount_ko"           = "충전아이디";
+"storeaccount_ja"           = "アカウント";
+
+//119 储值角色
+"storecharacter_en"         = "Character";
+"storecharacter_zh-Hans"    = "储值角色";
+"storecharacter_zh-Hant"    = "儲值角色";
+"storecharacter_id"         = "Nama peran";
+"storecharacter_th"         = "ตัวละครที่เติมเงิน";
+"storecharacter_ko"         = "충전캐릭터";
+"storecharacter_ja"    = "チャージキャラ";
+
+//121 购买道具
+"buyitem_en"        = "Buy item: ";
+"buyitem_zh-Hans"   = "购买道具：";
+"buyitem_zh-Hant"   = "購買道具：";
+"buyitem_id"        = "Membeli perlengkapan";
+"buyitem_th"        = "ซื้อไอเทม：";
+"buyitem_ko"        = "구매 아이템 : ";
+"buyitem_ja"        = " 道具購入";
+
+//122 储值金额
+"amount_en"         = "Amount";
+"amount_zh-Hans"    = "储值金额";
+"amount_zh-Hant"    = "儲值金額";
+"amount_id"         = "Jumlah top-up";
+"amount_th"         = "จำนวนเงินที่เติม";
+"amount_ko"         = "충전금액";
+"amount_ja"         = "金額";
+
+//124 下一步
+"nextstep_en"       = "Next";
+"nextstep_zh-Hans"  = "下一步";
+"nextstep_zh-Hant"  = "下一步";
+"nextstep_id"       = "selanjutnya";
+"nextstep_th"       = "ถัดไป";
+"nextstep_ko"       = "다음";
+"nextstep_ja"       = "次へ";
+
+//125 隐私条例
+"privacypolicy_en"          = "Privacy Policy";
+"privacypolicy_zh-Hans"     = "隐私条例";
+"privacypolicy_zh-Hant"     = "隱私條例";
+"privacypolicy_id"          = "Privacy Policy";
+"privacypolicy_th"          = "นโยบายส่วนตัว";
+"privacypolicy_ko"          = "개인정보보호정책";
+"privacypolicy_ja"          = "プライバシーポリシー";
+
+//126 服务条款
+"serviceterm_en"          = "Service Rules";
+"serviceterm_zh-Hans"     = "服务条款";
+"serviceterm_zh-Hant"     = "服務條款";
+"serviceterm_id"          = "Terms Service";
+"serviceterm_th"          = "เงื่อนไขบริการ";
+"serviceterm_ko"          = "서비스 약관";
+"serviceterm_ja"          = "利用規約";
+
+//管理规章
+"standingrules_en"          = "Regulations";
+"standingrules_zh-Hans"     = "账号管理规章";
+"standingrules_zh-Hant"     = "賬號管理規章";
+"standingrules_id"          = "Arutan";
+"standingrules_th"          = "กฎการจัดการบัญชี";
+"standingrules_ko"          = "계정 관리 규정";
+"standingrules_ja"          = "アカウント規則";
+
+//商业协议
+"agreement_en"              = "CSA: ";
+"agreement_zh-Hans"         = "商业协议：";
+"agreement_zh-Hant"         = "商業協定：";
+"agreement_id"              = "Perjanjian komersial: ";
+"agreement_th"              = "ข้อตกลง：";
+"agreement_ko"              = "상업협의: ";
+"agreement_ja"              = "業務契約：";
+
+//请输入原密码
+"inputoldPassword_en"          = "Please enter old password";
+"inputoldPassword_zh-Hans"     = "请输入原密码";
+"inputoldPassword_zh-Hant"     = "請輸入原密碼";
+"inputoldPassword_id"          = "Kata Sandi Asli";
+"inputoldPassword_th"          = "โปรดใส่รหัสผ่านเดิม";
+"inputoldPassword_ko"          = "비밀번호를 입력해주세요";
+"inputoldPassword_ja"          = "旧パスワードを入力ください";
+
+// 修改密碼
+"changePassword_en"         = "CHANGE PWD";
+"changePassword_zh-Hans"    = "修改密码";
+"changePassword_zh-Hant"    = "修改密碼";
+"changePassword_id"         = "Ganti Kata Sandi";
+"changePassword_th"         = "แก้ไขรหัสผ่าน";
+"changePassword_ko"         = "비밀번호 변경";
+"changePassword_ja"         = "パスワード変更";
+
+// 设置密碼
+"setPassword_en"         = "Password Settings";
+"setPassword_zh-Hans"    = "设置密码";
+"setPassword_zh-Hant"    = "設置密碼";
+"setPassword_id"         = "Set Kata Sandi";
+"setPassword_th"         = "ตั้งค่ารหัสผ่าน";
+"setPassword_ko"         = "비밀번호 설정";
+"setPassword_ja"         = "パスワード設置";
+
+//上个月
+"lastmonth_en"              = "Last month";
+"lastmonth_zh-Hans"         = "上一月";
+"lastmonth_zh-Hant"         = "上一月";
+"lastmonth_id"              = "Bulan Lalu";
+"lastmonth_th"              = "เดือนก่อน";
+"lastmonth_ko"              = "지난달";
+"lastmonth_ja"              = "前月";
+
+//电子信箱绑定
+"bindEmail_en"              = "E-mail Binding";
+"bindEmail_zh-Hans"         = "电子信箱绑定";
+"bindEmail_zh-Hant"         = "電子信箱綁定";
+"bindEmail_id"              = "Mengikat Emai";
+"bindEmail_th"              = "ผูกอีเมล";
+"bindEmail_ko"              = "이메일 귀속";
+"bindEmail_ja"              = "メールアドレス連携";
+
+//绑定手机
+"bindPhone_en"      = "Phone Binding";
+"bindPhone_zh-Hans" = "绑定手机";
+"bindPhone_zh-Hant" = "綁定手機";
+"bindPhone_id"      = "Mengikat HP";
+"bindPhone_th"      = "ผูกกับมือถือ";
+"bindPhone_ko"      = "전화번호 귀속";
+"bindPhone_ja"      = "携帯連携";
+
+//绑定fb
+"bindFacebookTitle_en"      = "Bind to Facebook Account?";
+"bindFacebookTitle_zh-Hans" = "绑定Facebook帐号?";
+"bindFacebookTitle_zh-Hant" = "綁定Facebook帳號?";
+"bindFacebookTitle_id"      = "Bind dengan FB akun?";
+"bindFacebookTitle_th"      = "ผูกมัดบัญชีFacebook ?";
+"bindFacebookTitle_ko"      = "페이스북 계정으로 귀속하시겠습니까?";
+"bindFacebookTitle_ja"      = "Facebookを連携しますか?";
+
+"bindFacebookContent_en"      = "BYou can use Facebook account to login after binding.";
+"bindFacebookContent_zh-Hans" = "绑定后您将可以使用Facebook帐号登录游戏。";
+"bindFacebookContent_zh-Hant" = "綁定後您將可以使用Facebook帳號登入遊戲。";
+"bindFacebookContent_id"      = "Akan login dengan FB akun setelah dibind.";
+"bindFacebookContent_th"      = "เมื่อผูกมัดแล้ว คุณสามารถใช้บัญชีFacebookล็อกอินเข้าเกมได้";
+"bindFacebookContent_ko"      = "귀속 후에는 페이스북 계정을 이용하여 로그인을 하실 수 있습니다";
+"bindFacebookContent_ja"      = "連携すると、Facebookに通じでゲーム可能です.";
+
+//绑定Line
+"bindLineTitle_en"      = "Bind to Line Account?";
+"bindLineTitle_zh-Hans" = "绑定Line帐号?";
+"bindLineTitle_zh-Hant" = "綁定Line帳號?";
+"bindLineTitle_id"      = "Bind dengan Line akun?";
+"bindLineTitle_th"      = "ผูกมัดบัญชีLine ?";
+"bindLineTitle_ko"      = "페이스북 계정으로 귀속하시겠습니까?";
+"bindLineTitle_ja"      = "Lineを連携しますか?";
+
+"bindLineContent_en"      = "BYou can use Line account to login after binding.";
+"bindLineContent_zh-Hans" = "绑定后您将可以使用Line帐号登录游戏。";
+"bindLineContent_zh-Hant" = "綁定後您將可以使用Line帳號登入遊戲。";
+"bindLineContent_id"      = "Akan login dengan Line akun setelah dibind.";
+"bindLineContent_th"      = "เมื่อผูกมัดแล้ว คุณสามารถใช้บัญชีLineล็อกอินเข้าเกมได้";
+"bindLineContent_ko"      = "귀속 후에는 페이스북 계정을 이용하여 로그인을 하실 수 있습니다";
+"bindLineContent_ja"      = "連携すると、Lineに通じでゲーム可能です。";
+
+//绑定谷歌
+"bindGoogleTitle_en" = "Bind to Google Account?";
+"bindGoogleTitle_zh-Hans" = "绑定Google账号？";
+"bindGoogleTitle_zh-Hant" = "綁定Google帳號？";
+"bindGoogleTitle_id" = "Bind dengan Google akun?";
+"bindGoogleTitle_th" = "ผูกมัดบัญชีGoogle ?";
+"bindGoogleTitle_ko" = "구글 계정으로 귀속하시겠습니까?";
+"bindGoogleTitle_ja" = "Googleを連携しますか?";
+
+"bindGoogleContent_en" = "BYou can use Google account to login after binding.";
+"bindGoogleContent_zh-Hans" = "绑定后您将可以使用Google账号登录游戏。";
+"bindGoogleContent_zh-Hant" = "綁定後您將可以使用Google帳號登入遊戲。";
+"bindGoogleContent_id" = "Akan login dengan Google akun setelah dibind.";
+"bindGoogleContent_th" = "เมื่อผูกมัดแล้ว คุณสามารถใช้บัญชีGoogleล็อกอินเข้าเกมได้";
+"bindGoogleContent_ko" = "귀속 후에는 구글 계정을 이용하여 로그인을 하실 수 있습니다";
+"bindGoogleContent_ja" = "連携すると、Googleに通じでゲーム可能です。";
+//绑定苹果
+"bindAppleTitle_en" = "Bind to Apple Account?";
+"bindAppleTitle_zh-Hans" = "绑定Apple账号？";
+"bindAppleTitle_zh-Hant" = "綁定Apple帳號？";
+"bindAppleTitle_id" = "Bind dengan Apple akun?";
+"bindAppleTitle_th" = "ผูกมัดApple ?";
+"bindAppleTitle_ko" = "사과 계정으로 귀속하시겠습니까?";
+"bindAppleTitle_ja" = "Appleを連携しますか?";
+
+"bindAppleContent_en" = "BYou can use Apple account to login after binding.";
+"bindAppleContent_zh-Hans" = "绑定后您将可以使用Apple账号登录游戏。";
+"bindAppleContent_zh-Hant" = "綁定後您將可以使用Apple帳號登入遊戲。";
+"bindAppleContent_id" = "Akan login dengan Apple akun setelah dibind.";
+"bindAppleContent_th" = "เมื่อผูกมัดแล้ว คุณสามารถใช้บัญชีAppleล็อกอินเข้าเกมได้";
+"bindAppleContent_ko" = "사과 후에는 구글 계정을 이용하여 로그인을 하실 수 있습니다";
+"bindAppleContent_ja" = "連携すると、Appleに通じでゲーム可能です。";
+//绑定Twitter
+"bindTwitterTitle_en" = "Bind to Twitter Account?";
+"bindTwitterTitle_zh-Hans" = "绑定Twitter账号？";
+"bindTwitterTitle_zh-Hant" = "綁定Twitter帳號？";
+"bindTwitterTitle_id" = "Bind dengan Twitter akun?";
+"bindTwitterTitle_th" = "ผูกมัดTwitter ?";
+"bindTwitterTitle_ko" = "트위터 계정으로 귀속하시겠습니까?";
+"bindTwitterTitle_ja" = "Twitterを連携しますか?";
+
+"bindTwitterContent_en" = "BYou can use Twitter account to login after binding.";
+"bindTwitterContent_zh-Hans" = "绑定后您将可以使用Twitter账号登录游戏。";
+"bindTwitterContent_zh-Hant" = "綁定後您將可以使用Twitter帳號登入遊戲。";
+"bindTwitterContent_id" = "Akan login dengan Twitter akun setelah dibind.";
+"bindTwitterContent_th" = "เมื่อผูกมัดแล้ว คุณสามารถใช้บัญชีTwitterล็อกอินเข้าเกมได้";
+"bindTwitterContent_ko" = "트위터 후에는 구글 계정을 이용하여 로그인을 하실 수 있습니다";
+"bindTwitterContent_ja" = "連携すると、Twitterに通じでゲーム可能です。";
+
+//TwitterAPI提示语
+"TwitterAPINOData_en" = "No Data";
+"TwitterAPINOData_zh-Hans" = "暂无数据";
+"TwitterAPINOData_zh-Hant" = "暫無數據";
+"TwitterAPINOData_id" = "Tidak ada data";
+"TwitterAPINOData_th" = "ไม่มีข้อมูล";
+"TwitterAPINOData_ko" = "데이터가 없습니다";
+"TwitterAPINOData_ja" = "データなし";
+
+"TwitterAPINetworkError_en" = "Network Error~";
+"TwitterAPINetworkError_zh-Hans" = "网络开小差啦～";
+"TwitterAPINetworkError_zh-Hant" = "網絡開小差啦～";
+"TwitterAPINetworkError_id" = "Galat jaringan~";
+"TwitterAPINetworkError_th" = "ข้อผิดพลาดของเครือข่าย~";
+"TwitterAPINetworkError_ko" = "네트워크 오류～";
+"TwitterAPINetworkError_ja" = "ネットワークエラー～";
+
+"TwitterAPIParameterError_en" = "Parameter Error";
+"TwitterAPIParameterError_zh-Hans" = "基本参数有误";
+"TwitterAPIParameterError_zh-Hant" = "基本參數有誤";
+"TwitterAPIParameterError_id" = "พารามิเตอร์ข้อผิดพลาด";
+"TwitterAPIParameterError_th" = "Parameter Kesalahan";
+"TwitterAPIParameterError_ko" = "인자 오류";
+"TwitterAPIParameterError_ja" = "パラメータエラー";
+
+//确定绑定
+"confirmBind_en"      = "Bind";
+"confirmBind_zh-Hans" = "绑定";
+"confirmBind_zh-Hant" = "綁定";
+"confirmBind_id"      = "Yakin";
+"confirmBind_th"      = "ผูกมัด้";
+"confirmBind_ko"      = "귀속";
+"confirmBind_ja" = "連携確認";
+
+//本月
+"nowmonth_en"              = "This month";
+"nowmonth_zh-Hans"         = "本月";
+"nowmonth_zh-Hant"         = "本月";
+"nowmonth_id"              = "Bulan Ini";
+"nowmonth_th"              = "เดือนนี้";
+"nowmonth_ko"              = "이번달";
+"nowmonth_ja"              = "本月";
+
+//订单状态
+"status_en"           = "Status";
+"status_zh-Hans"      = "订单状态";
+"status_zh-Hant"      = "訂單狀態";
+"status_id"           = "Pesanan Anda";
+"status_th"           = "สถานะสั่งซื้อ";
+"status_ko"           = "주문상태";
+"status_ja"           = "状態";
+
+//订单号码
+"orderid_en"           = "Order ID";
+"orderid_zh-Hans"      = "订单号码";
+"orderid_zh-Hant"      = "訂單號碼";
+"orderid_id"           = "Order ID";
+"orderid_th"           = "เลขสั่งซื้อ";
+"orderid_ko"           = "주문번호";
+"orderid_ja"           = "オーダーID";
+
+//成功
+"success_en"           = "Success";
+"success_zh-Hans"      = "成功";
+"success_zh-Hant"      = "成功";
+"success_id"           = "Berhasil";
+"success_th"           = "สำเร็จ";
+"success_ko"           = "성공";
+"success_ja"           = "成功";
+
+//失败
+"fail_en"           = "Failure";
+"fail_zh-Hans"      = "失败";
+"fail_zh-Hant"      = "失敗";
+"fail_id"           = "Gagal";
+"fail_th"           = "ล้มเหลว";
+"fail_ko"           = "실패";
+"fail_ja"           = "失敗";
+
+//初始化
+"initOrder_en"              = "Initialize";
+"initOrder_zh-Hans"         = "初始化";
+"initOrder_zh-Hant"         = "初始化";
+"initOrder_id"              = "Inisialisasi";
+"initOrder_th"              = "ครั้งแรก";
+"initOrder_ko"              = "초기화";
+"initOrder_ja"              = "初期化";
+
+//是
+"yes_en"        = "Yes";
+"yes_zh-Hans"   = "是";
+"yes_zh-Hant"   = "是";
+"yes_id"        = "Yes";
+"yes_th"        = "ใช่";
+"yes_ko"        = "예";
+"yes_ja"        = "はい";
+
+//否
+"no_en"         = "No";
+"no_zh-Hans"    = "否";
+"no_zh-Hant"    = "否";
+"no_id"         = "No";
+"no_th"         = "ไม่";
+"no_ko"         = "아니요";
+"no_ja"         = "いいえ";
+
+//
+"isQuestionSolve_en"        = "Your problem solved?";
+"isQuestionSolve_zh-Hans"   = "您的问题是否已解决？";
+"isQuestionSolve_zh-Hant"   = "您的問題是否已解決？";
+"isQuestionSolve_id"        = "Apakah masalah anda sudah dipecahkan？";
+"isQuestionSolve_th"        = "ปัญหาของคุณได้แก้ไขหรือไม่";
+"isQuestionSolve_ko"        = "문제가 해결되셨나요?";
+"isQuestionSolve_ja"        = "お力になりましたか？";
+
+//用户信息保存图片提示语句前半部分
+"visitorRecoverHeand_en"        = "This pic is used to retrieve your guest account in OriginMood platform.";
+"visitorRecoverHeand_zh-Hans"   = "此图为OriginMood平台试玩角色恢复资料，用于恢复您在游戏中创建的试玩角色";
+"visitorRecoverHeand_zh-Hant"   = "此圖為OriginMood平台試玩角色恢復資料，用於恢復您在遊戲中創建的試玩角色";
+"visitorRecoverHeand_id"        = "Foto ini adalah akun anda di game yang didukung oleh OriginMood";
+"visitorRecoverHeand_th"        = "นี่คือภาพกู้ข้อมูลตัวละครบัญชีทดลองในแพลตฟอร์มOriginMood ใช้กู้คืน ตัวละครทดลองที่คุณสร้าง";
+"visitorRecoverHeand_ko"        = "게스트계정복구 이미지자료로 유저님이 생성한 게스트계정 복구 시 사용합니다";
+"visitorRecoverHeand_ja"        = "簡単アカウントのキャラクター及びデータを復旧する時使う資料です";
+
+//保存试玩账号图片
+"visitorRecoverSaving_en"         = "Your bound account files were saved in the device album";
+"visitorRecoverSaving_zh-Hans"    = "你的试玩账号角色资料已保存到相册中";
+"visitorRecoverSaving_zh-Hant"    = "您的試玩帳號角色資料已保存到相冊中";
+"visitorRecoverSaving_id"         = "Data akun percobaan anda telah disimpan di album";
+"visitorRecoverSaving_th"         = "เซฟข้อมูลตัวละครบัญชีทดลองของคุณเข้าสู่อัลบั้มแล้ว";
+"visitorRecoverSaving_ko"         = "갤러리에 저장성공";
+"visitorRecoverSaving_ja"         = "簡単アカウント情報は既にアルバムに保存しました";
+
+//试玩账号图片保存失败
+"visitorRecoverSavingFail_en"         = "Your guest account files were saved in the device album.";
+"visitorRecoverSavingFail_zh-Hans"    = "你的试玩账号角色资料保存失败";
+"visitorRecoverSavingFail_zh-Hant"    = "您的試玩帳號角色資料保存失敗";
+"visitorRecoverSavingFail_id"         = "Gagal simpan data akun percobaan Anda.";
+"visitorRecoverSavingFail_th"         = "เซฟข้อมูลตัวละครบัญชีทดลองของคุณล้มเหลว";
+"visitorRecoverSavingFail_ko"         = "게스트계정복구 이미지자료로";
+"visitorRecoverSavingFail_ja"         = "簡単アカウントをアルバムで保存失敗.";
+
+//保存绑定账号图片
+"bindAccountSaving_en"         = "Your guest account files were saved in the device album.";
+"bindAccountSaving_zh-Hans"    = "你绑定的账号资料已保存到相册中";
+"bindAccountSaving_zh-Hant"    = "您綁定的帳號資料已保存到相冊中";
+"bindAccountSaving_id"         = "Data akun yang anda ikat telah disimpan di album";
+"bindAccountSaving_th"         = "เซฟข้อมูลบัญชีที่คุณผูกได้เข้าสู่อัลบั้มแล้ว";
+"bindAccountSaving_ko"         = "갤러리에 저장성공";
+"bindAccountSaving_ja"    = "連携情報既にアルバムに保存しました";
+
+//绑定账号图片保存失败
+"bindAccountSavingFail_en"         = "Failed to save your guest account files.";
+"bindAccountSavingFail_zh-Hans"    = "你绑定的账号资料保存失败.";
+"bindAccountSavingFail_zh-Hant"    = "您綁定的帳號資料保存失敗";
+"bindAccountSavingFail_id"         = "Gagal simpan data akun yang anda ikat";
+"bindAccountSavingFail_th"         = "เซฟข้อมูลบัญชีที่คุณผูกล้มเหลว";
+"bindAccountSavingFail_ko"         = "갤러리에 저장실패";
+"bindAccountSavingFail_ja"    = "連携情報をアルバムで保存失敗.";
+
+//删除切换登录
+"deleteSwitchAccount_en"         = "Sure to delete the login record of this account on this device?";
+"deleteSwitchAccount_zh-Hans"    = "确定要删除此账号在本设备上的登录记录？\n（不会删除账号本身）";
+"deleteSwitchAccount_zh-Hant"    = "確定要刪除此帳號在本設備上的登入記錄？\n（不會刪除帳號本身）";
+"deleteSwitchAccount_id"         = "Apakah menghapus catatan login akun ini di peralatan ini？\n(Tidak akan hapus akun ini)";
+"deleteSwitchAccount_th"         = "ยืนยันจะลบบัญชีนี้ออกจากบันทึกล็อกอินบนอุปกรณ์？\n（ไม่สามารถลบตัวบัญชี）";
+"deleteSwitchAccount_ko"         = "해당 계정을 삭제하겠습니까？\n（본인이 아닐 삭제할 수 없습니다）";
+"deleteSwitchAccount_ja"    = "端末のログイン記録を消去しますか？\n（アカウントを抹消ではありません）";
+
+//切换登录账号为空
+"nullSwitchAccount_en"         = "Please choose an account or other ways to login.";
+"nullSwitchAccount_zh-Hans"    = "请选择一个账号或使用其他登录方式登录游戏。";
+"nullSwitchAccount_zh-Hant"    = "請選擇一個帳號或使用其他登入方式登入遊戲。";
+"nullSwitchAccount_id"         = "Silakan login dengan salah satu akun atau via cara lain.";
+"nullSwitchAccount_th"         = "โปรดเลือกบัญชีหรือวิธีล็อกอินอื่นเพื่อล็อกอินเข้าเกมส์";
+"nullSwitchAccount_ko"         = "올바른 계정을 선택하거나 다른 방법으로 로그인하세요。";
+"nullSwitchAccount_ja"         = "アカウントを選んでログイン開始。";
+
+//取消按钮
+"cancelButton_en"         = "Cancel";
+"cancelButton_zh-Hans"    = "取消";
+"cancelButton_zh-Hant"    = "取消";
+"cancelButton_id"         = "Batalkan";
+"cancelButton_th"         = "ยกเลิก";
+"cancelButton_ko"         = "취소";
+"cancelButton_ja"         = "キャンセル";
+
+//删除按钮
+"deleteButton_en"         = "Delete";
+"deleteButton_zh-Hans"    = "删除";
+"deleteButton_zh-Hant"    = "刪除";
+"deleteButton_id"         = "Delete";
+"deleteButton_th"         = "ลบ";
+"deleteButton_ko"         = "삭제";
+"deleteButton_ja"         = "消去";
+
+//连接服务器失败
+"connectServerFail_en"         = "Server connection failed, please try again later.";
+"connectServerFail_zh-Hans"    = "服务器连接失败，请稍后再尝试。";
+"connectServerFail_zh-Hant"    = "服務器連接失敗，請稍後再嘗試。";
+"connectServerFail_id"         = "Tidak ada koneksi server. Coba lagi";
+"connectServerFail_th"         = "เชื่อมต่อเซิฟเวอร์ล้มเหลว โปรดลองใหม่ภายหลัง";
+"connectServerFail_ko"         = "서버접속실패，다시 시도하세요";
+"connectServerFail_ja"         = "サーバーとのアクセス失敗、";
+
+//服务器异常
+"serverIsUnusual_en"         = "Server error, please try again later.";
+"serverIsUnusual_zh-Hans"    = "服务器异常，请稍后再尝试。";
+"serverIsUnusual_zh-Hant"    = "服務器異常，請稍後再嘗試。";
+"serverIsUnusual_id"         = "Server unusual. Coba lagi.";
+"serverIsUnusual_th"         = "เซิฟเวอร์ผิดปกติ โปรดลองใหม่ภายหลัง";
+"serverIsUnusual_ko"         = "서버오류. 잠시 후 재시도하세요";
+"serverIsUnusual_ja"         = "サーバー異常発生.";
+
+
+//密码不能为空,请重新输入"
+"passwordIsNull_en"         = "Password can not be empty, please re-enter.";
+"passwordIsNull_zh-Hans"    = "密码不能为空,请重新输入。";
+"passwordIsNull_zh-Hant"    = "密碼不能為空，請重新輸入。";
+"passwordIsNull_id"         = "Tidak ada kata sandi. Masukkan lagi";
+"passwordIsNull_th"         = "ห้ามเว้นรหัสผ่าน โปรดใส่อีกครั้ง";
+"passwordIsNull_ko"         = "비밀번호를 입력해주세요";
+"passwordIsNull_ja"    = "パスワード入力お願いします。";
+
+//两次输入的密码不一致,请重新输入"
+"passwordNotSame_en"         = "Passwords are not the same, please re-enter.";
+"passwordNotSame_zh-Hans"    = "两次输入的密码不一致,请重新输入。";
+"passwordNotSame_zh-Hant"    = "兩次輸入的密碼不一致，請重新輸入。";
+"passwordNotSame_id"         = "Dua kata sandi tidak sama. Masukkan lagi";
+"passwordNotSame_th"         = "ใส่รหัสผ่านสองครั้งไม่ตรงกัน โปรดใส่ใหม่";
+"passwordNotSame_ko"         = "비밀번호 불일치. 다시 입력해주세요.";
+"passwordNotSame_ja"    = "パスワードが一致していません、再度入力お願いします。";
+
+//找回密码成功，请牢记登录密码
+"passwordFindSuccess_en"         = "Password retrieved, please keep the password in mind.";
+"passwordFindSuccess_zh-Hans"    = "找回密码成功，请牢记登录密码。";
+"passwordFindSuccess_zh-Hant"    = "找回密碼成功，請牢記登入密碼。";
+"passwordFindSuccess_id"         = "Berhasil mengembalikan kata sandi anda";
+"passwordFindSuccess_th"         = "กู้กลับรหัสผ่านสำเร็จ โปรดเก็บรหัสผ่านล็อกอิน";
+"passwordFindSuccess_ko"         = "비밀번호찾기성공";
+"passwordFindSuccess_ja"         = "パスワード復旧完了、パスワードを適切に保存してください.";
+
+//请出入你试玩账号的UID
+"enterYourUID_en"         = "Please enter Guest Account UID.";
+"enterYourUID_zh-Hans"    = "请输入你试玩账号的UID。";
+"enterYourUID_zh-Hant"    = "請輸入您試玩帳號的UID。";
+"enterYourUID_id"         = "Masukkan UID tentang akun percobaan anda";
+"enterYourUID_th"         = "โปรดใส่UIDบัญชีทดลองของคุณ";
+"enterYourUID_ko"         = "UID를 입력해주세요 ";
+"enterYourUID_ja"         = "UIDを入力してください.";
+
+//请出入正确的试玩账号的UID
+"enterRightUID_en"         = "Please enter the correct guest account.";
+"enterRightUID_zh-Hans"    = "请输入正确的试玩账号。";
+"enterRightUID_zh-Hant"    = "請輸入正確的試玩帳號。";
+"enterRightUID_id"         = "Masukkan akun guest anda.";
+"enterRightUID_th"         = "โปรดใส่บัญชีทดลองที่ถูกต้อง";
+"enterRightUID_ko"         = "정확한 게스트계정을 입력해주세요.";
+"enterRightUID_ja"   = "正しいUIDを入力してください。";
+
+//请出入正确的试玩账号恢复码
+"enterRightRandomPwd_en"         = "Please enter the correct recovery code.";
+"enterRightRandomPwd_zh-Hans"    = "请输入正确的试玩账号恢复码。";
+"enterRightRandomPwd_zh-Hant"    = "請輸入正確的試玩帳號恢復碼。";
+"enterRightRandomPwd_id"         = "Masukkan kode pemulihan. ";
+"enterRightRandomPwd_th"         = "โปรดใส่รหัสกู้คืนบัญชีทดลองให้ถูกต้อง";
+"enterRightRandomPwd_ko"         = "정확한 복구코드를 입력해주세요.";
+"enterRightRandomPwd_ja"         = "正しい復旧コードを入力ください.";
+
+//请出入你试玩账号的恢复码
+"enterYourRandomPwd_en"         = "Please enter Recovery Code";
+"enterYourRandomPwd_zh-Hans"    = "请输入你试玩账号的恢复码。";
+"enterYourRandomPwd_zh-Hant"    = "請輸入您試玩帳號的恢復碼。";
+"enterYourRandomPwd_id"         = "Masukkan kode pemulihan anda.";
+"enterYourRandomPwd_th"         = "โปรดใส่รหัสกู้คืนบัญชีทดลองของคุณ";
+"enterYourRandomPwd_ko"         = "복구코드를 입력해주세요";
+"enterYourRandomPwd_ja"         = "復旧コードを入力ください";
+
+//请输入正确的手机号码
+"enterRightPhoneNumber_en"         = "Please enter a valid phone number.";
+"enterRightPhoneNumber_zh-Hans"    = "请输入正确的手机号码。";
+"enterRightPhoneNumber_zh-Hant"    = "請輸入正確的手機號碼。";
+"enterRightPhoneNumber_id"         = "Masukkan nomor HP anda";
+"enterRightPhoneNumber_th"         = "โปรดใส่เบอร์มือถือที่ถูกต้อง";
+"enterRightPhoneNumber_ko"         = "올바른 전화번호를 입력해주세요";
+"enterRightPhoneNumber_ja"         = "正しい携帯番号を入力ください.";
+
+//请输入正确的邮箱地址
+"enterRightEmail_en"         = "Please enter correct email.";
+"enterRightEmail_zh-Hans"    = "请输入正确的邮箱地址。";
+"enterRightEmail_zh-Hant"    = "請輸入正確的郵箱地址。";
+"enterRightEmail_id"         = "Masukkan alamat email anda";
+"enterRightEmail_th"         = "โปรดใส่ที่อยู่อีเมลที่ถูกต้อง";
+"enterRightEmail_ko"         = "올바른 이메일을 입력해주세요";
+"enterRightEmail_ja"    = "正しいメールアドレスを入力してください。";
+
+//请输入验证码
+"enterVerifyCode_en"         = "Please enter Verification Code.";
+"enterVerifyCode_zh-Hans"    = "请输入验证码。";
+"enterVerifyCode_zh-Hant"    = "請輸入驗證碼";
+"enterVerifyCode_id"         = "Mendapat Kode";
+"enterVerifyCode_th"         = "โปรดใส่รหัสยืนยัน";
+"enterVerifyCode_ko"         = "인증번호를 입력해주세요";
+"enterVerifyCode_ja"         = "識別コードの入力お願いします.";
+
+//获取手机验证码成功，请检查手机短信后输入验证码。
+"checkPhoneVerifyCode_en"         = "Got Verification Code, please check your message in phone and enter the Verification Code.";
+"checkPhoneVerifyCode_zh-Hans"    = "获取手机验证码成功，请检查手机短信后输入验证码。";
+"checkPhoneVerifyCode_zh-Hant"    = "獲取手機驗證碼成功，請檢查手機短信後輸入驗證碼。";
+"checkPhoneVerifyCode_id"         = "Kode verifikasi telah dikirimkan, silakan cek SMS anda";
+"checkPhoneVerifyCode_th"         = "มือถือรับรหัสยืนยันสำเร็จ โปรดตรวจดูข้อความในมือถือแล้วใส่รหัสยืนยัน";
+"checkPhoneVerifyCode_ko"         = "인증번호 발송 성공，확인 후 입력해주세요";
+"checkPhoneVerifyCode_ja"         = "識別コード送信完了、メッセージをチェックください.";
+
+//获取邮箱验证码成功，请检查邮件后输入验证码
+"checkEmailVerifyCode_en"         = "Got Verification Code, please check your mail and enter the Verification Code.";
+"checkEmailVerifyCode_zh-Hans"    = "获取邮箱验证码成功，请检查邮箱信件后输入验证码。";
+"checkEmailVerifyCode_zh-Hant"    = "獲取郵箱驗證碼成功，請檢查郵箱信件後輸入驗證碼。";
+"checkEmailVerifyCode_id"         = "Kode verifikasi telah dikirimkan, silakan cek email anda";
+"checkEmailVerifyCode_th"         = "รับอีเมลรหัสยืนยันสำเร็จ โปรดตรวจดูอีเมลแล้วใส่รหัสยืนยัน";
+"checkEmailVerifyCode_ko"         = "인증번호 발송 성공, 확인 후 입력해주세요";
+"checkEmailVerifyCode_ja"         = "メールアドレス識別コード送信完了、メールをチェックください.";
+
+//输入的账号不符合要求，请重新输入
+"illegalAccount_en"         = "Account does not meet the requirements, please re-enter.";
+"illegalAccount_zh-Hans"    = "输入的账号不符合要求，请重新输入。";
+"illegalAccount_zh-Hant"    = "輸入的帳號不符合要求，請重新輸入。";
+"illegalAccount_id"         = "Akun ilegal. Masukkan lagi.";
+"illegalAccount_th"         = "บัญชีที่ใส่ไม่ตรงกับที่ต้องการ โปรดใส่ใหม่";
+"illegalAccount_ko"         = "계정이 틀렸습니다. 다시 입력해주세요";
+"illegalAccount_ja"    = "アカウントが使用条件未満、再度入力お願いします。";
+
+//登录失败，请尝试使用其他方式登录游戏
+"switchLoginFail_en"         = "Failed to login, please try other ways.";
+"switchLoginFail_zh-Hans"    = "登录失败，请尝试使用其他方式登录游戏。";
+"switchLoginFail_zh-Hant"    = "登入失敗，請嘗試使用其他方式登入遊戲。";
+"switchLoginFail_id"         = "Login gagal, silakan coba cara login yang lain.";
+"switchLoginFail_th"         = "ล็อกอินล้มเหลว โปรดลองใช้วิธีอื่นล็อกอิน";
+"switchLoginFail_ko"         = "로그인 실패. 다른 방법으로 시도해주세요";
+"switchLoginFail_ja"         = "ログイン失敗、他のログイン手段を選んでください.";
+
+//同意会员服务条款
+"agreeMemgerProvision_en"         = "Agree to the Terms of Service of Members";
+"agreeMemgerProvision_zh-Hans"    = "同意会员服务条款";
+"agreeMemgerProvision_zh-Hant"    = "同意會員服務條款";
+"agreeMemgerProvision_id"         = "Setuju dengan perjanjian layanan ini";
+"agreeMemgerProvision_th"         = "ยอมรับข้อตกลงสมาชิกบริการลูกค้า";
+"agreeMemgerProvision_ko"         = "회원이용약관에 동의해주세요";
+"agreeMemgerProvision_ja"         = "利用規約に同意する";
+
+//你已经绑定正式账号，可以使用以下方式登入游戏：
+"alreadyBindToLogin_en"         = "You have bound the offcial acct, please login by this way:";
+"alreadyBindToLogin_zh-Hans"    = "你已经绑定正式账号，可以使用以下方式登入游戏:";
+"alreadyBindToLogin_zh-Hant"    = "你已經綁定正式帳號，可以使用以下方式登入遊戲:";
+"alreadyBindToLogin_id"         = "Pernah bind akun resmi, bisa login dengan cara berikut:";
+"alreadyBindToLogin_th"         = "ผูกบัญชีสำเร็จ สามารถใช้บัญชีนี้ล็อกอินเกมส์";
+"alreadyBindToLogin_ko"         = "이미 귀속된 계정이오니 아래의 방식으로 로그인해주세요.";
+"alreadyBindToLogin_ja"         = "会員アカウントに連携成功、以下の方法でログイン可能です:";
+
+//继续使用试玩账号登录
+"continueVisitorLogin_en"         = "Use guest account to login";
+"continueVisitorLogin_zh-Hans"    = "继续使用试玩账号登入游戏";
+"continueVisitorLogin_zh-Hant"    = "繼續使用試玩帳號登入遊戲";
+"continueVisitorLogin_id"         = "Tetap login dengan akun percobaan";
+"continueVisitorLogin_th"         = "ใช้บัญชีทดลองล็อกอินต่อไป";
+"continueVisitorLogin_ko"         = "계속 게스트계정으로 로그인합니다";
+"continueVisitorLogin_ja"         = "簡単アカウントでゲーム続行";
+
+//你已经绑定电话
+"alreadyBindPhone_en"         = "Your phone is already bound";
+"alreadyBindPhone_zh-Hans"    = "你已经绑定了电话";
+"alreadyBindPhone_zh-Hant"    = "你已經綁定了電話";
+"alreadyBindPhone_id"         = "Telah mengikat HP anda";
+"alreadyBindPhone_th"         = "คุณผูกเบอร์โทรศัพท์แล้ว";
+"alreadyBindPhone_ko"         = "이미 귀속된 전화번호입니다";
+"alreadyBindPhone_ja"         = "既に携帯と連携済み";
+
+//使用电话号码登入
+"loginByPhone_en"         = "you can use this phone number to login:";
+"loginByPhone_zh-Hans"    = "你可以使用此电话号码进行登录：";
+"loginByPhone_zh-Hant"    = "你可以使用此電話號碼進行登入";
+"loginByPhone_id"         = "Bisa login dengan nomor HP ini:";
+"loginByPhone_th"         = "ใช้เบอร์โทรศัพท์ล็อกอิน";
+"loginByPhone_ko"         = "해당 전화번호로 로그인하실 수 있습니다";
+"loginByPhone_ja"         = "携帯番号でログイン可能です：";
+
+//你已经绑定邮箱
+"alreadyBindEmail_en"         = "Your e-mail address is already bound";
+"alreadyBindEmail_zh-Hans"    = "你已经绑定了电子邮箱";
+"alreadyBindEmail_zh-Hant"    = "你已經綁定了電子信箱";
+"alreadyBindEmail_id"         = "Telah mengikat alamat email anda";
+"alreadyBindEmail_th"         = "คุณผูกอีเมลแล้ว";
+"alreadyBindEmail_ko"         = "이미 귀속된 이메일입니다";
+"alreadyBindEmail_ja"         = "既にメールアドレスと連携済み";
+
+//使用电子邮箱登入
+"loginByEmail_en"         = "you can use this email to login:";
+"loginByEmail_zh-Hans"    = "你可以使用此电子邮箱进行登录:";
+"loginByEmail_zh-Hant"    = "你可以使用此電子信箱進行登入:";
+"loginByEmail_id"         = "Bisa login dengan alamat email ini";
+"loginByEmail_th"         = "คุณสามารถใช้อีเมลนี้ล็อกอินเข้าเกมส์";
+"loginByEmail_ko"         = "해당 이메일로 로그인하실 수 있습니다：";
+"loginByEmail_ja"         = "メールアドレスでログイン可能です:";
+//电话登入
+"loginPhoneTittle_en"         = "Phone Login";
+"loginPhoneTittle_zh-Hans"    = "电话登入";
+"loginPhoneTittle_zh-Hant"    = "電話登入";
+"loginPhoneTittle_id"         = "Login via HP";
+"loginPhoneTittle_th"         = "ล็อกอินโทรศัพท์";
+"loginPhoneTittle_ko"         = "전화번호로그인";
+"loginPhoneTittle_ja"         = "携帯番号";
+//邮箱登入
+"loginEmailTittle_en"         = "E-mail Login";
+"loginEmailTittle_zh-Hans"    = "邮箱登入";
+"loginEmailTittle_zh-Hant"    = "信箱登入";
+"loginEmailTittle_id"         = "Login via email";
+"loginEmailTittle_th"         = "ล็อกอินอีเมล";
+"loginEmailTittle_ko"         = "이메일로그인";
+"loginEmailTittle_ja"         = "メールアドレス";
+//邮箱不正确
+"emailFormatWrong_en"         = "Mail format is incorrect, please re-enter.";
+"emailFormatWrong_zh-Hans"    = "你输入的邮箱格式不正确，请重新输入。";
+"emailFormatWrong_zh-Hant"    = "你輸入的信箱格式不正確，請重新輸入。";
+"emailFormatWrong_id"         = "Alamat email ini ilegal. Masukkan lagi.";
+"emailFormatWrong_th"         = "รูปแบบอีเมลที่คุณใส่ไม่ถูกต้อง โปรดใส่ใหม่";
+"emailFormatWrong_ko"         = "입력한 이메일이 올바르지않습니다. 재입력해주세요.";
+"emailFormatWrong_ja"         = "正しいメールアドレスを入力お願いします。";
+//手机号码不正确
+"phoneNumberFormatWrong_en"         = "Phone number format is incorrect, please re-enter.";
+"phoneNumberFormatWrong_zh-Hans"    = "你输入的手机号码格式不正确，请重新输入。";
+"phoneNumberFormatWrong_zh-Hant"    = "你輸入的手機號碼格式不正確，請重新輸入。";
+"phoneNumberFormatWrong_id"         = "Nomor HP ini ilegal. Masukkan lagi.";
+"phoneNumberFormatWrong_th"         = "รูปแบบเบอร์มือถือที่คุณใส่ไม่ถูกต้อง โปรดใส่ใหม่";
+"phoneNumberFormatWrong_ko"         = "입력한 전화번호가 올바르지않습니다. 재입력해주세요";
+"phoneNumberFormatWrong_ja"    = "正しい携帯番号を入力お願いします";
+//手机已经绑定
+"phoneAlreadyBind_en"         = "Your account was bound to phone already.";
+"phoneAlreadyBind_zh-Hans"    = "你的账号已经绑定过手机了。";
+"phoneAlreadyBind_zh-Hant"    = "你的帳號已經綁定過手機了。";
+"phoneAlreadyBind_id"         = "Akun ini telah diikat dengan HP anda.";
+"phoneAlreadyBind_th"         = "บัญชีของคุณเคยผูกกับมือถือแล้ว";
+"phoneAlreadyBind_ko"         = "이미 귀속된 전화번호 계정입니다";
+"phoneAlreadyBind_ja"    = "既に携帯連携済み。";
+//邮箱已经绑定
+"emailAlreadyBind_en"         = "Your account was bound to E-mail already.";
+"emailAlreadyBind_zh-Hans"    = "你的账号已经绑定过电子邮箱了。";
+"emailAlreadyBind_zh-Hant"    = "你的帳號已經綁定過電子信箱了。";
+"emailAlreadyBind_id"         = "Akun ini telah diikat dengan alamat email anda.";
+"emailAlreadyBind_th"         = "บัญชีของคุณเคยผูกกับอีเมลแล้ว";
+"emailAlreadyBind_ko"         = "이미 귀속된 이메일 계정입니다";
+"emailAlreadyBind_ja"         = "既にメールアドレス連携済み。";
+//用户名或密码不合法
+"accountOrPasswordWrong_en"         = "Illegal account or password, please re-enter.";
+"accountOrPasswordWrong_zh-Hans"    = "用户名或密码不合法，请重新输入。";
+"accountOrPasswordWrong_zh-Hant"    = "用戶名或密碼不合法，請重新輸入。";
+"accountOrPasswordWrong_id"         = "Akun dan kata sandi salah, masukkan lagi.";
+"accountOrPasswordWrong_th"         = "ชื่อผู้ใช้หรือรหัสผ่านผิดกฎ โปรดใส่ใหม่";
+"accountOrPasswordWrong_ko"         = "아이디 혹은 비밀번호가 부적절합니다. 재입력해주세요";
+"accountOrPasswordWrong_ja"         = "ユーザーネーム使用不可、変更お願いします。";
+
+//[中级]
+"intermediate_en"                   = "[Medium]";
+"intermediate_zh-Hans"              = "[中级]";
+"intermediate_zh-Hant"              = "[中級]";
+"intermediate_id"                   = "[Normal]";
+"intermediate_th"                   = "[ปกติ]";
+"intermediate_ko"                   = "[보통]";
+"intermediate_ja"                   = "[中級]";
+//系统参数错误
+"parmWrong_en"         = "System error";
+"parmWrong_zh-Hans"    = "系统发生错误。";
+"parmWrong_zh-Hant"    = "系統發生錯誤。";
+"parmWrong_id"         = "System Error";
+"parmWrong_th"         = "ระบบเกิดข้อผิดพลาด";
+"parmWrong_ko"         = "시스템오류 발생";
+"parmWrong_ja"         = "システムエラー発生。";
+//修改两次输入的密码不一致,请重新输入
+"newpasswordNotSame_en"         = "New passwords are not the same, please re-enter.";
+"newpasswordNotSame_zh-Hans"    = "两次输入的新密码不一致,请重新输入。";
+"newpasswordNotSame_zh-Hant"    = "兩次輸入的新密碼不一致，請重新輸入";
+"newpasswordNotSame_id"         = "Kata sandi yang anda masukkan tidak sama, masukkan lagi";
+"newpasswordNotSame_th"         = "รหัสผ่านใหม่ที่ใส่สองครั้งไม่ตรงกัน โปรดใส่ใหม่";
+"newpasswordNotSame_ko"         = "비밀번호 불일치. 재입력해주세요";
+"newpasswordNotSame_ja"         = "パスワードが一致していません、再度入力をお願いします。";
+//修改密码成功
+"passwordChangeSuccess_en"         = "Password changed, please keep your new password in mind.";
+"passwordChangeSuccess_zh-Hans"    = "修改密码成功，请牢记你的新密码。";
+"passwordChangeSuccess_zh-Hant"    = "修改密碼成功，請牢記你的新密碼。";
+"passwordChangeSuccess_id"         = "Berhasil mengubah kata sandi.";
+"passwordChangeSuccess_th"         = "แก้ไขรหัสผ่านสำเร็จ โปรดเก็บรหัสผ่านใหม่ไว้";
+"passwordChangeSuccess_ko"         = "비밀번호변경 성공";
+"passwordChangeSuccess_ja"         = "パスワード変更成功。";
+
+//已经绑定！
+"bindAleardy_en"                    = "Bound!";
+"bindAleardy_zh-Hans"               = "已经绑定!";
+"bindAleardy_zh-Hant"               = "已經綁定";
+"bindAleardy_id"                    = "Telah mengikat";
+"bindAleardy_th"                    = "ผูกแล้ว!";
+"bindAleardy_ko"                    = "귀속완료!";
+"bindAleardy_ja"                    = "連携済み";
+//馬上綁定
+"bindnow_en"                        = "Bind now!";
+"bindnow_zh-Hans"                   = "马上绑定!";
+"bindnow_zh-Hant"                   = "馬上綁定!";
+"bindnow_id"                        = "Mari mengikat";
+"bindnow_th"                        = "ผูกทันที!";
+"bindnow_ko"                        = "즉시 귀속!";
+"bindnow_ja"                        = "アカウント連携";
+//选择一种綁定
+"bindone_en"                        = "Bind now!";
+"bindone_zh-Hans"                   = "选择一种方式綁定";
+"bindone_zh-Hant"                   = "选择一种方式綁定";
+"bindone_id"                        = "Mari mengikat";
+"bindone_th"                        = "ผูกทันที!";
+"bindone_ko"                        = "즉시 귀속!";
+"bindone_ja"                        = "アカウント連携";
+//[已绑]
+"binded_en"                         = "[Bound]";
+"binded_zh-Hans"                    = "[已绑]";
+"binded_zh-Hant"                    = "[已綁]";
+"binded_id"                         = "[Telah Bind]";
+"binded_th"                         = "[ผูก]";
+"binded_ko"                         = "[귀속됨]";
+"binded_ja"                         = "[連携済み]";
+//[未绑]
+"notbinded_en"                      = "[Unbound]";
+"notbinded_zh-Hans"                 = "[未绑]";
+"notbinded_zh-Hant"                 = "[未绑]";
+"notbinded_id"                      = "[Belum Bind]";
+"notbinded_th"                      = "[ยังไม่ผูก]";
+"notbinded_ko"                      = "[귀속되지 않음]";
+"notbinded_ja"                      = "[未連携]";
+//安全等级高
+"safetyHeight_en"                   = "Highest level!";
+"safetyHeight_zh-Hans"              = "最高等级!";
+"safetyHeight_zh-Hant"              = "最高等級!";
+"safetyHeight_id"                   = "Sangat aman!";
+"safetyHeight_th"                   = "สูงสุด";
+"safetyHeight_ko"                   = "최고등급!";
+"safetyHeight_ja"                   = "最高レベル";
+
+//绑定成功
+"bindSuccess_en"                    = "Bound successfully!";
+"bindSuccess_zh-Hans"               = "绑定成功!";
+"bindSuccess_zh-Hant"               = "綁定成功!";
+"bindSuccess_id"                    = "Berhasil mengikat!";
+"bindSuccess_th"                    = "ผูกสำเร็จ!";
+"bindSuccess_ko"                    = "귀속성공!";
+"bindSuccess_ja"                    = "連携済み";
+//复制成功
+"copySuccess_en"                    = "Copied!";
+"copySuccess_zh-Hans"               = "复制成功！";
+"copySuccess_zh-Hant"               = "複製成功！";
+"copySuccess_id"                    = "Copi berhasil!";
+"copySuccess_th"                    = "คัดลอกสำเร็จ!";
+"copySuccess_ko"                    = "복사성공!";
+"copySuccess_ja"                    = "コピー成功！";
+//请找回选择方式
+"recoverType_en"                    = "Please choose a way to retrieve";
+"recoverType_zh-Hans"               = "请选择找回方式";
+"recoverType_zh-Hant"               = "請選擇找回方式";
+"recoverType_id"                    = "Cara pencarian";
+"recoverType_th"                    = "โปรดเลือกรูปแบบกู้กลับ";
+"recoverType_ko"                    = "복구 방법을 선택하세요";
+"recoverType_ja"                    = "復旧手段を選んでください";
+//请找回绑定方式
+"visitorBindType_en"                    = "Please choose a way to bind";
+"visitorBindType_zh-Hans"               = "请选择绑定方式";
+"visitorBindType_zh-Hant"               = "請選擇綁定方式";
+"visitorBindType_id"                    = "Cara untuk mengikat akun";
+"visitorBindType_th"                    = "โปรดเลือกรูปแบบการผูก";
+"visitorBindType_ko"                    = "귀속 방법을 선택하세요";
+"visitorBindType_ja"                    = "連携種類を選んでください";
+//手机
+"Phone_en"                    = "Phone";
+"Phone_zh-Hans"               = "手机";
+"Phone_zh-Hant"               = "手機";
+"Phone_id"                    = "HP";
+"Phone_th"                    = "มือถือ";
+"Phone_ko"                    = "휴대폰";
+"Phone_ja"                    = "携帯";
+//你已经选择了X长图片
+"selectedImageCount_en"                    = "You’ve chosen %lu pics";
+"selectedImageCount_zh-Hans"               = "你已经选择了%lu张照片";
+"selectedImageCount_zh-Hant"               = "你已經選擇了%lu張照片";
+"selectedImageCount_id"                    = "Telah memilih %lu foto";
+"selectedImageCount_th"                    = "คุณได้เลือกภาพ%luใบ";
+"selectedImageCount_ko"                    = "사진 %lu장 선택완료";
+"selectedImageCount_ja"                    = "写真%lu枚を選びました";
+//你一次最多只能選擇3張照片
+"selectedMostCount_en"                    = "You can choose 3 pics at most.";
+"selectedMostCount_zh-Hans"               = "你一次最多只能选择3张照片。";
+"selectedMostCount_zh-Hant"               = "你一次最多只能選擇3張照片";
+"selectedMostCount_id"                    = "Maksimal 3 foto.";
+"selectedMostCount_th"                    = "ใน1ครั้งคุณเลือกภาพได้มากสุด3ใบ";
+"selectedMostCount_ko"                    = "최대 3장까지 선택이 가능합니다";
+"selectedMostCount_ja"                    = "最大3枚を選んでください。";
+//请选择问题类型
+"questionType_en"                    = "Please select the question type";
+"questionType_zh-Hans"               = "请选择问题类型";
+"questionType_zh-Hant"               = "請選擇問題類型";
+"questionType_id"                    = "Jenis pertanyaan";
+"questionType_th"                    = "โปรดเลือกประเภทปัญหา";
+"questionType_ko"                    = "문의유형을 선택하세요";
+"questionType_ja"                    = "お問い合わせ種類は？";
+//游客登录提示
+"visitorLoginAlert_en"                    = "Logged in, you are %@ now, we suggest you upgrade your account!";
+"visitorLoginAlert_zh-Hans"               = "登入成功，当前为%@账号，建议你升级账号！";
+"visitorLoginAlert_zh-Hant"               = "登入成功，當前為%@帳號，建議你升級帳號！";
+"visitorLoginAlert_id"                    = "Berhasil login. Ini akun %@, sarakan upgrade akun ini!";
+"visitorLoginAlert_th"                    = "ล็อกอินสำเร็จ ตอนนี้คือบัญชี%@ แนะนำให้คุณอัพเกรดบัญชี";
+"visitorLoginAlert_ko"                    = "로그인 성공, 현재 계정은 %@입니다. 계정 귀속을 권장드립니다.";
+"visitorLoginAlert_ja"                    = "ログイン成功、アカウントは%@の故、アップグレードを推薦です";
+//游客登录提示
+"visitorFreeLoginSuccess_en"                    = "Logged in";
+"visitorFreeLoginSuccess_zh-Hans"               = "登入成功。";
+"visitorFreeLoginSuccess_zh-Hant"               = "登入成功";
+"visitorFreeLoginSuccess_id"                    = "Berhasil login";
+"visitorFreeLoginSuccess_th"                    = "ล็อกอินสำเร็จ";
+"visitorFreeLoginSuccess_ko"                    = "로그인성공";
+"visitorFreeLoginSuccess_ja"                    = "ログイン成功。";
+
+//请输入标题
+"inputQuestionTitle_en"                 = "Please enter title";
+"inputQuestionTitle_zh-Hans"            = "请输入标题";
+"inputQuestionTitle_zh-Hant"            = "請輸入標題";
+"inputQuestionTitle_id"                 = "Masukkan judul";
+"inputQuestionTitle_th"                 = "โปรดใส่หัวข้อ";
+"inputQuestionTitle_ko"                 = "제목을 입력하세요";
+"inputQuestionTitle_ja"                 = "タイトルを入力お願いします";
+//请输入问题内容
+"inputQuestionContent_en"               = "Please enter content";
+"inputQuestionContent_zh-Hans"          = "请输入问题内容";
+"inputQuestionContent_zh-Hant"          = "請輸入問題內容";
+"inputQuestionContent_id"               = "Masukkan pertanyaan anda";
+"inputQuestionContent_th"               = "โปรดใส่รายละเอียดปัญหา";
+"inputQuestionContent_ko"               = "문의내용을 입력하세요";
+"inputQuestionContent_ja"               = "本文を入力お願いします";
+//免登陆失败
+"freeLoginFail_en"               = "Failed to automatically login, please return to the login page to login again.";
+"freeLoginFail_zh-Hans"          = "自动登录账户失败，请返回登录界面重新登录。";
+"freeLoginFail_zh-Hant"          = "自動登入帳戶失敗，請返回登入介面重新登入";
+"freeLoginFail_id"               = "Gagal login otomatik. Silakan kembali ke halaman Login lagi.";
+"freeLoginFail_th"               = "บัญชีล็อกอินอัตโนมัติล้มเหลว โปรดกลับหน้าล็อกอินแล้วลองใหม่";
+"freeLoginFail_ko"               = "자동로그인실패. 로그인화면으로 되돌아갑니다";
+"freeLoginFail_ja"               = "オートログイン失敗、アカウント入力をお願いします。";
+//服务器出现了异常
+"serverWrong_en"               = "Server error, %@";
+"serverWrong_zh-Hans"          = "服务器出现了异常!\n(error：%@)";
+"serverWrong_zh-Hant"          = "伺服器出現了異常!\n(error：%@)";
+"serverWrong_id"               = "Server error\n(error：%@)";
+"serverWrong_th"               = "เซิฟเวอร์เกิดความผิดปกติ\n(error：%@)";
+"serverWrong_ko"               = "서버오류가 발생하였습니다\n(error：%@)";
+"serverWrong_ja"               = "サーバー異常発生!\n(error：%@)";
+//设备不支持购买
+"deviceNotSupport_en"               = "Your device does not support purchase";
+"deviceNotSupport_zh-Hans"          = "设备不支持购买";
+"deviceNotSupport_zh-Hant"          = "設備不支持購買";
+"deviceNotSupport_id"               = "Alat ini tidak mendukung pembelian";
+"deviceNotSupport_th"               = "อุปกรณ์ไม่สนับสนุนการซื้อ";
+"deviceNotSupport_ko"               = "구입 불가";
+"deviceNotSupport_ja"               = "端末が購入機能を支援していません";
+
+//数据出错，订单为空
+"noOrderId_en"                      = "Data error, the order is empty";
+"noOrderId_zh-Hans"                 = "数据出错，订单为空";
+"noOrderId_zh-Hant"                 = "數據出錯，訂單為空";
+"noOrderId_id"                      = "Tiada Order ID";
+"noOrderId_th"                      = "ข้อมูลผิดพลาด ไม่มีการสั่งซื้อ";
+"noOrderId_ko"                      = "데이터 오류. 결제내역이 없습니다.";
+"noOrderId_ja"                      = "データエラー、オーダーリストロード失敗";
+
+//连接服务器失败
+"serverConnectFail_en"               = "Error occurred when connecting to server: \n(error: %ld)";
+"serverConnectFail_zh-Hans"          = "连接服务器发生错误:\n(error: %ld)";
+"serverConnectFail_zh-Hant"          = "連接伺服器發生錯誤:\n(error: %ld)";
+"serverConnectFail_id"               = "Server Connect Gagal:\n(error: %ld)";
+"serverConnectFail_th"               = "เชื่อมต่อเซิฟเวอร์ผิดพลาด:\n(error: %ld)";
+"serverConnectFail_ko"               = "서버연결오류:\n(error: %ld)";
+"serverConnectFail_ja"               = "アクセスエラー:\n(error: %ld)";
+//数据出错，productID不匹配
+"notMatchProductID_en"                 = "Data error, product ID not matches";
+"notMatchProductID_zh-Hans"            = "数据出错，productID不匹配";
+"notMatchProductID_zh-Hant"            = "數據出錯，productID 不匹配";
+"notMatchProductID_id"                 = "Tidak cocok dengan productID";
+"notMatchProductID_th"                 = "ข้อมูลผิดพลาด productIDไม่เข้ากัน";
+"notMatchProductID_ko"                 = "데이터오류. productID불일치";
+"notMatchProductID_ja"                  = "データエラー、productID一致しません";
+//数据出错，内购品项列表为空
+"noPaymentList_en"                      = "Data error. In-purchase item list empty.";
+"noPaymentList_zh-Hans"                 = "数据出错，内购品项列表为空";
+"noPaymentList_zh-Hant"                 = "數據出錯，內購品項列表為空";
+"noPaymentList_id"                      = "Daftar pembelian kosong";
+"noPaymentList_th"                      = "ข้อมูลผิดพลาด ไม่มีในรายการซื้อ";
+"noPaymentList_ko"                      = "데이터오류. 상품리스트가 없습니다";
+"noPaymentList_ja"                      = "データエラー、プロダクトリストロード失敗";
+//向苹果请求商品信息失败
+"appleProductInfoError_en"              = "Failed to request product information from apple store";
+"appleProductInfoError_zh-Hans"         = "向苹果请求商品信息失败";
+"appleProductInfoError_zh-Hant"         = "向蘋果請求商品訊息失敗";
+"appleProductInfoError_id"              = "Gagal minta info produk dari APPLE";
+"appleProductInfoError_th"              = "ข้อมูลสินค้าที่รีเควสต์กับappleล้มเหลว";
+"appleProductInfoError_ko"              = "Apple상품정보 요청실패";
+"appleProductInfoError_ja"              = "App Storeへのプロダクト情報取得失敗";
+//取消购买
+"cancelPay_en"                          = "Cancel purchase";
+"cancelPay_zh-Hans"                     = "取消购买";
+"cancelPay_zh-Hant"                     = "取消購買";
+"cancelPay_id"                          = "Batalkan pembelian";
+"cancelPay_th"                          = "ยกเลิกการซื้อ";
+"cancelPay_ko"                          = "구매취소";
+"cancelPay_ja"                          = "購入中止";
+//提交成功
+"commitSuccess_en"                      = "Submitted";
+"commitSuccess_zh-Hans"                 = "提交成功";
+"commitSuccess_zh-Hant"                 = "提交成功";
+"commitSuccess_id"                      = "Berhasil";
+"commitSuccess_th"                      = "ส่งสำเร็จ";
+"commitSuccess_ko"                      = "제출성공";
+"commitSuccess_ja"                      = "成功";
+
+//更新成功
+"updateSuccess_en"                      = "Updated";
+"updateSuccess_zh-Hans"                 = "更新成功";
+"updateSuccess_zh-Hant"                 = "更新成功";
+"updateSuccess_id"                      = "Update berhasil";
+"updateSuccess_th"                      = "อัพเดทสำเร็จ";
+"updateSuccess_ko"                      = "업데이트 성공";
+"updateSuccess_ja"                      = "更新成功";
+
+//更新失败
+"updateFail_en"                         = "Failed to update";
+"updateFail_zh-Hans"                    = "更新失败";
+"updateFail_zh-Hant"                    = "更新失敗";
+"updateFail_id"                         = "Update gagal";
+"updateFail_th"                         = "อัพเดทล้มเหลว";
+"updateFail_ko"                         = "업데이트 실패";
+"updateFail_ja"                         = "更新失敗";
+
+//重试
+"tryAgain_en"                           = "Retry";
+"tryAgain_zh-Hans"                      = "重试";
+"tryAgain_zh-Hant"                      = "重試";
+"tryAgain_id"                           = "Coba lagi";
+"tryAgain_th"                           = "ลองอีก";
+"tryAgain_ko"                           = "재시도";
+"tryAgain_ja"                           = "リトライ";
+//下载中
+"downLoading_en"                        = "Downloading...";
+"downLoading_zh-Hans"                   = "下载中...";
+"downLoading_zh-Hant"                   = "下載中...";
+"downLoading_id"                        = "Loading...";
+"downLoading_th"                        = "กำลังดาวโหลด...";
+"downLoading_ko"                        = "다운로드중..";
+"downLoading_ja"                        = "ダウンロード...";
+
+//手机内存空间不足，请清理内存后再更新
+"noMemory_en"                           = "Insufficient phone memory space, please clear up the memory before update";
+"noMemory_zh-Hans"                      = "手机内存空间不足，请清理内存后再更新";
+"noMemory_zh-Hant"                      = "手機內存空間不足，請清理內存後再更新";
+"noMemory_id"                           = "Memory HP anda tidak cukup";
+"noMemory_th"                           = "ความจำในมือถือไม่พอ โปรดลบความจำแล้วอัพเดท";
+"noMemory_ko"                           = "내장메모리 부족. 정리 후 재시도하세요";
+"noMemory_ja"                           = "設備ストレージ不足、クリーンアップ実行してから再度更新をお願いします";
+//升级提示
+"updateWarningtitle_en"                    = "Update Prompt";
+"updateWarningtitle_zh-Hans"               = "升级提示";
+"updateWarningtitle_zh-Hant"               = "升級提示";
+"updateWarningtitle_id"                    = "Upgrade Notice";
+"updateWarningtitle_th"                    = "แจ้งเตือน_อัพเพท";
+"updateWarningtitle_ko"                    = "업그레이드 알림창";
+"updateWarningtitle_ja"                    = "アップグレードプロンプト";
+
+//亲爱的玩家,由于系统升级，您需要更新到最新版本才能继续游戏！
+"updateWarningbody_en"                     = "Dear player, since the system was updated, you need to update to the latest version to play.";
+"updateWarningbody_zh-Hans"                = "亲爱的玩家，由于系统升级，您需要更新到最新版本才能继续游戏！";
+"updateWarningbody_zh-Hant"                = "親愛的玩家，由於系統升級，您需要更新到最新版本才能繼續遊戲！";
+"updateWarningbody_id"                     = "Karena System Upgrade, anda perlu update versi game yang terbaru!";
+"updateWarningbody_th"                     = "ผู้เล่นที่รัก เนื่องจากมีการอัพเกรดระบบ คุณต้องอัพเดทเป็นเวอร์ชั่นล่าสุด จึงจะเล่นเกมส์ต่อได้!";
+"updateWarningbody_ko"                     = "유저님, 최신버전으로 업데이트 후, 게임이용가능합니다";
+"updateWarningbody_ja"                     = "システムアップグレードの故、最新バージョンへの更新完了後、ゲーム可能です";
+
+//更新
+"updateButton_en"                          = "Update";
+"updateButton_zh-Hans"                     = "更新";
+"updateButton_zh-Hant"                     = "更新";
+"updateButton_id"                          = "Update";
+"updateButton_th"                          = "อัพเดท";
+"updateButton_ko"                          = "업데이트";
+"updateButton_ja"                          = "アップグレード";
+//程序发生了一个错误导致崩溃
+"crashHappen_en"                          = "An error occurred and caused the program to crash.\n(error: 8000)";
+"crashHappen_zh-Hans"                     = "程序发生了一个错误导致崩溃!\n(error: 8000)";
+"crashHappen_zh-Hant"                     = "程序發生了一個錯誤導致崩潰!\n(error: 8000)";
+"crashHappen_id"                          = "System error.\n(error: 8000)";
+"crashHappen_th"                          = "โปรแกรมเกิดการผิดพลาดทำให้ระบบล่ม \n(error: 8000)";
+"crashHappen_ko"                          = "프로그램 오류 발생.\n(error: 8000)";
+"crashHappen_ja"                          = "システムエラー.\n(error: 8000)";
+//邮箱凭证
+"emailNotice_en"                          = "The mail you entered is %@. This is used to retrieve password.";
+"emailNotice_zh-Hans"                     = "您输入的邮箱为%@，此邮箱将作为您找回密码的凭证。";
+"emailNotice_zh-Hant"                     = "您輸入的郵箱為%@，此郵箱將作為你找回密碼的憑證。";
+"emailNotice_id"                          = "E-mail anda: %@, E-mail ini adalah sertifikat untuk mengembalikan password";
+"emailNotice_th"                          = "อีเมลที่คุณใส่คือ%@，อีเมลนี้จะใช้เป็นหลักฐานในการกูคืนรหัส ";
+"emailNotice_ko"                          = "입력하신 이메일은%@입니다. 이후 비밀번호 분실 시 인증용으로";
+"emailNotice_ja"                          = "メールアドレス%@はパスワードが復旧する時使います。";
+//取消
+"cancel_en"                          = "Cancel";
+"cancel_zh-Hans"                     = "取消";
+"cancel_zh-Hant"                     = "取消";
+"cancel_id"                          = "Batalkan";
+"cancel_th"                          = "ยกเลิก";
+"cancel_ko"                          = "취소";
+"cancel_ja"                          = "キャンセル";
+//确定
+"confirm_en"                          = "Confirm";
+"confirm_zh-Hans"                     = "确定";
+"confirm_zh-Hant"                     = "確定";
+"confirm_id"                          = "Betul";
+"confirm_th"                          = "ยืนยัน";
+"confirm_ko"                          = "확인";
+"confirm_ja"                          = "確定";
+//联系客服
+"contactService_en"                          = "Customer Care";
+"contactService_zh-Hans"                     = "联系客服";
+"contactService_zh-Hant"                     = "聯繫客服";
+"contactService_id"                          = "Hubungi CS";
+"contactService_th"                          = "ติดต่อบริการลูกค้า";
+"contactService_ko"                          = "고객센터로 문의해주세요.";
+"contactService_ja"                          = "サービスセンターへ連絡ください.";
+
+//失效时间
+"endtime_en"                            = "Expired time";
+"endtime_zh-Hans"                       = "失效时间";
+"endtime_zh-Hant"                       = "失效時間";
+"endtime_id"                            = "Deadline";
+"endtime_th"                            = "วันหมดเขต";
+"endtime_ko"                            = "실효시간";
+"endtime_ja"                            = "無効時間";
+
+//礼包序号
+"GiftNumber_en"                         = "Gift Code";
+"GiftNumber_zh-Hans"                    = "礼包序号";
+"GiftNumber_zh-Hant"                    = "禮包序號";
+"GiftNumber_id"                         = "Kode Hadiah";
+"GiftNumber_th"                         = "โค้ดรางวัล";
+"GiftNumber_ko"                         = "선물코드";
+"GiftNumber_ja"                         = "ギフトコード";
+
+
+//消息
+"message_en"                            = "INFO";
+"message_zh-Hans"                       = "消息";
+"message_zh-Hant"                       = "信息";
+"message_id"                            = "INFO";
+"message_th"                            = "ข้อความ";
+"message_ko"                            = "메세지";
+"message_ja"                            = "メッセージ";
+
+//退出
+"exit_en"                               = "LOG OUT";
+"exit_zh-Hans"                          = "退出";
+"exit_zh-Hant"                          = "退出";
+"exit_id"                               = "LOG OUT";
+"exit_th"                               = "ออก";
+"exit_ko"                               = "나가기";
+"exit_ja"                               = "ログアウト";
+
+//游戏公告
+"announcement_en"                       = "Game Notice";
+"announcement_zh-Hans"                  = "游戏公告";
+"announcement_zh-Hant"                  = "遊戲公告";
+"announcement_id"                       = "Pengumuman";
+"announcement_th"                       = "ประกาศเกมส์";
+"announcement_ko"                       = "공지";
+"announcement_ja"                       = "お知らせ";
+//获取配置信息失败
+"getconfigFail_en"                      = "Failed to get configuration information, please check the network.";
+"getconfigFail_zh-Hans"                 = "获取配置信息失败，请检查网络。";
+"getconfigFail_zh-Hant"                 = "獲取配置信息失敗，請檢查網絡。";
+"getconfigFail_id"                      = "Gagal mencocokkan informasi, silahkan cek koneksi internet.";
+"getconfigFail_th"                      = "รับข้อมูลเครื่องล้มเหลว ，กรุณาตรวจสอบอินเตอร์เน็ต";
+"getconfigFail_ko"                      = "세지 가져오기 실패";
+"getconfigFail_ja"                      = "端末配置情報取得失敗、ネットワークチェックお願いします。";
+//是否需要联系客服
+"isNeedService_en"                      = "Contact Customer Care?";
+"isNeedService_zh-Hans"                 = "是否需要联系客服?";
+"isNeedService_zh-Hant"                 = "是否需要聯繫客服?";
+"isNeedService_id"                      = "Apakah perlu hubungi CS?";
+"isNeedService_th"                      = "จะติดต่อฝ่ายบริการหรือไม่";
+"isNeedService_ko"                      = "객센터로 문의하시겠습니까?";
+"isNeedService_ja"                      = "ユーザーセンターに連絡しますか?";
+//手机账号
+"phoneAccount_en"                      = "Phone acct:\n%@";
+"phoneAccount_zh-Hans"                 = "手机帐号:\n%@";
+"phoneAccount_zh-Hant"                 = "手機帳號:\n%@";
+"phoneAccount_id"                      = "Phone:\n%@";
+"phoneAccount_th"                      = "บัญชีมือถือ:\n%@";
+"phoneAccount_ko"                      = "화번호계정:\n%@";
+"phoneAccount_ja"                      = "携帯アカウント:\n%@";
+//邮箱账号
+"emailAccount_en"                      = "Mail acct: \n%@";
+"emailAccount_zh-Hans"                 = "邮箱帐号:\n%@";
+"emailAccount_zh-Hant"                 = "郵箱帳號:\n%@";
+"emailAccount_id"                      = "E-mail:\n%@";
+"emailAccount_th"                      = "บัญชีอีเมล:\n%@";
+"emailAccount_ko"                      = "이메일계정:\n%@";
+"emailAccount_ja"                      = "メールアドレスアカウント:\n%@";
+
+//储值失败
+"storeError_en"                         = "Top-up failure";
+"storeError_zh-Hans"                    = "储值失败";
+"storeError_zh-Hant"                    = "儲值失敗";
+"storeError_id"                         = "Gagal Top-up";
+"storeError_th"                         = "เติมเงินล้มเหลว";
+"storeError_ko"                         = "충전실패";
+"storeError_ja"                         = "チャージ失敗";
+
+//遊客
+"visitor_en"                         = "Guest";
+"visitor_zh-Hans"                    = "游客";
+"visitor_zh-Hant"                    = "遊客";
+"visitor_id"                         = "Guest";
+"visitor_th"                         = "Guest";
+"visitor_ko"                         = "게스트";
+"visitor_ja"                         = "Guest";
+//非正式会员账号登入
+"NotOfficialAccount_en"                         = "Inofficial Member Account";
+"NotOfficialAccount_zh-Hans"                    = "非正式会员帐号";
+"NotOfficialAccount_zh-Hant"                    = "非正式會員帳號";
+"NotOfficialAccount_id"                         = "Akun Member tidak resmi";
+"NotOfficialAccount_th"                         = "บัญชีชั่วคราว";
+"NotOfficialAccount_ko"                         = "게스트 회원 계정";
+"NotOfficialAccount_ja"                         = "非会員アカウントログイン";
+//伺服器维护当中，请选择别的伺服器！
+"servermaintenance_en"                          = "Server is undergoing maintenance, wait patiently, please.";
+"servermaintenance_zh-Hans"                     = "伺服器维护中，请耐心等待！";
+"servermaintenance_zh-Hant"                     = "伺服器維護中，請耐心等待！";
+"servermaintenance_id"                          = "Server Maintenance, sabar menunggu.";
+"servermaintenance_th"                          = "กำลังปิดปรับปรุงเครื่องเซิร์ฟ กรุณาอดใจรอสักครู่！";
+"servermaintenance_ko"                          = "서버점검 중, 잠시만 기다려주세요!";
+"servermaintenance_ja"                          = "メンテナンス実行中、暫くお待ちください！";
+//伺服器维护当中！
+"maintaining_en"                          = "Maintaining...";
+"maintaining_zh-Hans"                     = "维护中...";
+"maintaining_zh-Hant"                     = "維護中...";
+"maintaining_id"                          = "Maintaining...";
+"maintaining_th"                          = "อยู่ในระหว่างปรับปรุง...";
+"maintaining_ko"                          = "점검중...";
+"maintaining_ja"                          = "メンテナンス実行中...";
+//绑定登入提示
+"logintips_en" = "Tips：1. This way to login only supports bound account, please bind your account in the game.\n\t2. This bound account is not available for other games of OriginMood.";
+"logintips_zh-Hans" = "Tips：1.本登入方式仅支持已绑定帐号进行登入,请在游戏内进行绑定。\n\t 2.本公司(OriginMood)旗下各游戏帐号不能互通使用。";
+"logintips_zh-Hant" = "Tips：1.本登入方式僅支持已綁定賬號進行登入,請在遊戲內進行綁定。\n\t 2.本公司(OriginMood)旗下各遊戲賬號不能互通使用。";
+"logintips_id" = "Akun pengunjung ini hanya bisa login dengan game ini, tak bisa login dengan game lain yang dimilik OriginMood.";
+"logintips_th" = "Tips：1.วิธีการเข้าสู่ระบบเกมส์เฉพาะบัญชีผูกมัดเท่านั้น กรุณาผูกมัดไอดีในเกมส์\n\t2.บริษัท ( OriginMood ) ซึ่งไม่สามารถใช้บัญชีร่วมกันทุกเกมส์";
+"logintips_ko" = "TIPS：본 게임은 게임드리머 귀속 계정으로 로그인이 가능하며 당사의 다른 게임들과 통용 할 수 없습니다. ";
+"logintips_ja" = "Tips：1.当ログインルートは連携済みアカウント使用限定の故、ゲーム内でアカウントを連携してください。\n\t 2.当社(OriginMood)運営するゲームの間で、各アカウントは独立存在します。";
+//游客图片
+"visitorAcountTip_en"         = "This picture is used to retrieve the guest account, please keep properly.";
+"visitorAcountTip_zh-Hans"    = "该图用于试玩角色找回，请妥善保存！";
+"visitorAcountTip_zh-Hant"    = "該圖用於試玩角色找回，請妥善保存！";
+"visitorAcountTip_id"         = "yang didukung oleh game";
+"visitorAcountTip_th"         = "รูปนี้สำหรับเรียกคืนตัวละครทดลองเล่น กรุณาเก็บไว้อย่างดี!";
+"visitorAcountTip_ko"         = "该图用于试玩角色找回，请妥善保存！";
+"visitorAcountTip_ja"         = "簡単アカウントのキャラクター及びデータを復旧する時使う故、写真を保存してください！";
+
+"visitorAcountMessage_en"         = "Bound account successfully, please keep properly. This picture shows the formal account bound with the guest account you used in game. For the account safety, please use this account to log in the game.";
+"visitorAcountMessage_zh-Hans"    = "帐号绑定成功，请妥善保存！此图为游戏试玩角色所绑定的正式帐号，为了帐号安全，以后请使用该帐号登入游戏";
+"visitorAcountMessage_zh-Hant"    = "帳號綁定成功，請妥善保存！此圖為遊戲試玩角色所綁定的正式帳號，為了帳號安全，以後請使用該帳號登入遊戲";
+"visitorAcountMessage_id"         = "Berhasil bind! Akun ini telah didaftar di game. Demikian, anda bisa login dengan nomor/email yang terbind ini.";
+"visitorAcountMessage_th"         = "ผูกมัดสำเร็จ กรุณาเก็บรูปนี้ไว้！รูปนี้เป็นข้อมูลตัวละครทดลองเล่นที่ผูกมัดเป็นไอดีทางการ เพื่อความปลอดภัยของไอดี กรุณาใช้ไอดีนี้ล็อกอินเข้าเกม ";
+"visitorAcountMessage_ko"         = "회원기입 성공됐습니다. 이사진은 계정의 관한 내용을 포함하기 때문에 잘 보관하기 바랍니다. 계정의 안전을 위해 앞으로 이 계정으로 게임을 로그인 해 주세요.";
+"visitorAcountMessage_ja"         = "アカウント連携成功、これからゲームをログインする時、連携アカウントを使ってください";
+
+
+"visitorAcountGame_en"         = "Game";
+"visitorAcountGame_zh-Hans"    = "游戏";
+"visitorAcountGame_zh-Hant"    = "遊戲";
+"visitorAcountGame_id"         = "Game";
+"visitorAcountGame_th"         = "เกมส์";
+"visitorAcountGame_ko"         = "遊戲";
+"visitorAcountGame_ja"         = "ゲーム";
+
+"visitorAcountUID_en"         = "Guest Account UID";
+"visitorAcountUID_zh-Hans"    = "试玩帐号UID";
+"visitorAcountUID_zh-Hant"    = "試玩帳號UID";
+"visitorAcountUID_id"         = "Guest Account UID";
+"visitorAcountUID_th"         = "UIDบัญชีทดลองเล่น";
+"visitorAcountUID_ko"         = "遊戲";
+"visitorAcountUID_ja"         = "簡単アカウントUID";
+
+"visitorAcountRecoveryCode_en"         = "Recovery Code";
+"visitorAcountRecoveryCode_zh-Hans"    = "恢复码";
+"visitorAcountRecoveryCode_zh-Hant"    = "恢復碼";
+"visitorAcountRecoveryCode_id"         = "Recovery Code";
+"visitorAcountRecoveryCode_th"         = "รหัสกู้คืน";
+"visitorAcountRecoveryCode_ko"         = "遊戲";
+"visitorAcountRecoveryCode_ja"         = "復旧コード";
+
+
+"visitorAcountGameAcc_en"         = "OriginMood Account";
+"visitorAcountGameAcc_zh-Hans"    = "OriginMood 帳號";
+"visitorAcountGameAcc_zh-Hant"    = "OriginMood 帳號";
+"visitorAcountGameAcc_id"         = "OriginMood Akun";
+"visitorAcountGameAcc_th"         = "OriginMood บัญชี";
+"visitorAcountGameAcc_ko"         = "OriginMood";
+"visitorAcountGameAcc_ja"         = "OriginMood アカウント";
+
+//試玩玩家標記
+"visitorIcon_en"                          = "G";
+"visitorIcon_zh-Hans"                     = "试";
+"visitorIcon_zh-Hant"                     = "試";
+"visitorIcon_id"                          = "G";
+"visitorIcon_th"                          = "G";
+"visitorIcon_ko"                          = "G";
+"visitorIcon_ja"                          = "G";
+
+
+
+//公司
+"GamedreamerCopyRight_en"  = "© OriginMood Limited";
+"GamedreamerCopyRight_zh-Hans"  = "© OriginMood Limited";
+"GamedreamerCopyRight_zh-Hant"  = "© OriginMood Limited";
+"GamedreamerCopyRight_id"  = "© OriginMood Limited";
+"GamedreamerCopyRight_th"  = "© OriginMood Limited";
+"GamedreamerCopyRight_ko"  = "© OriginMood Limited";
+"GamedreamerCopyRight_ja"  = "© OriginMood Limited";
+
+//马上支付
+"pay_zh-Hans" = "马上支付";
+"pay_zh-Hant" = "马上支付";
+"pay_ja" = "チャージ";
+
+//分享途径
+"sheraPathway_zh-Hans" = "选择分享途径";
+"sheraPathway_zh-Hant" = "选择分享途径";
+"sheraPathway_ja" = "シェア";
+
+"sheraToFriend_zh-Hans" = "分享给好友";
+"sheraToFriend_zh-Hant" = "分享给好友";
+"sheraToFriend_ja" = "シェア";
+
+"sheraToTimeline_zh-Hans" = "分享到朋友圈";
+"sheraToTimeline_zh-Hant" = "分享到朋友圈";
+"sheraToTimeline_ja" = "シェア";
+
+"sheraToQZone_zh-Hans" = "分享到空间";
+"sheraToQZone_zh-Hant" = "分享到空间";
+"sheraToQZone_ja" = "シェア";
+

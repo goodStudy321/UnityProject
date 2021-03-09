@@ -1,0 +1,143 @@
+{
+  "project_info": {
+    "project_number": "934243259246",
+    "firebase_url": "https://api-project-19140260.firebaseio.com",
+    "project_id": "api-project-19140260",
+    "storage_bucket": "api-project-19140260.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:934243259246:android:daf1758387fcf7cf82677f",
+        "android_client_info": {
+          "package_name": "com.monawa.haneul"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "934243259246-at2ceami45g1r2umjqbuf14phlgg2f0a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.monawa.haneul",
+            "certificate_hash": "8a4188b1aa9acdb353e73229f9b8206e47e39d5b"
+          }
+        },
+        {
+          "client_id": "934243259246-244h2u7oabcjs9spr0v8eq2oaqf9u9gd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDedWDtNGq2Fs_WSmNErNNWJCSQSzslGR0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "934243259246-244h2u7oabcjs9spr0v8eq2oaqf9u9gd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "934243259246-12rop66lsqfhs8h9bt7fj2ens0lu99im.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.monawa.haneul"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:934243259246:android:390ca7e03ca0094882677f",
+        "android_client_info": {
+          "package_name": "com.monawa.haneulone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "934243259246-bdsmt6t0vhqim2e4jag0ptnkv8b161e8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.monawa.haneulone",
+            "certificate_hash": "8a4188b1aa9acdb353e73229f9b8206e47e39d5b"
+          }
+        },
+        {
+          "client_id": "934243259246-244h2u7oabcjs9spr0v8eq2oaqf9u9gd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDedWDtNGq2Fs_WSmNErNNWJCSQSzslGR0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "934243259246-244h2u7oabcjs9spr0v8eq2oaqf9u9gd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "934243259246-12rop66lsqfhs8h9bt7fj2ens0lu99im.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.monawa.haneul"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:934243259246:android:5f5d8c8a80a5f38582677f",
+        "android_client_info": {
+          "package_name": "com.monawa.haneulsam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "934243259246-nb7q9lg2uqkuco7e2p2u748in3g064ck.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.monawa.haneulsam",
+            "certificate_hash": "8a4188b1aa9acdb353e73229f9b8206e47e39d5b"
+          }
+        },
+        {
+          "client_id": "934243259246-244h2u7oabcjs9spr0v8eq2oaqf9u9gd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDedWDtNGq2Fs_WSmNErNNWJCSQSzslGR0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "934243259246-244h2u7oabcjs9spr0v8eq2oaqf9u9gd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "934243259246-12rop66lsqfhs8h9bt7fj2ens0lu99im.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.monawa.haneul"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>FireBase</key>
+    <true/>
+    <key>FaceBookAppid</key>
+    <string>335351587095392</string>
+    <key>LineSDKConfig</key>
+    <dict>
+      <key>ChannelID</key>
+      <string>1653886901</string>
+    </dict>
+    <key>BundleId</key>
+    <string>com.originmood.hyxl</string>
+    <key>AppsFlyerDevKey</key>
+    <string>JSkXb7RKqXkxsFxcJiYR59</string>
+    <key>WithoutServer</key>
+    <true/>
+    <key>SDKVersion</key>
+    <string>1</string>
+    <key>GameCode</key>
+    <string>TDWQ</string>
+    <key>AppStoreID</key>
+    <string>1509164168</string>
+    <key>SDKArea</key>
+    <string>OriginMood</string>
+    <key>Comefrom</key>
+    <string>ios</string>
+    <key>Platform</key>
+    <string>Apple</string>
+    <key>Email</key>
+    <array>
+      <dict>
+        <key>area</key>
+        <string>中文</string>
+        <key>address</key>
+        <string>cs@originmood.com</string>
+      </dict>
+    </array>
+    <key>gd_signin_apple_serverce_id</key>
+    <string>com.originmood.applelogin</string>
+    <key>gd_is_play_media</key>
+    <string>0</string>
+  </dict>
+</plist>

@@ -1,0 +1,85 @@
+{
+  "project_info": {
+    "project_number": "999191820889",
+    "firebase_url": "https://tdwq-840cf.firebaseio.com",
+    "project_id": "tdwq-840cf",
+    "storage_bucket": "tdwq-840cf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:999191820889:android:61089f58c0e48ebe788f48",
+        "android_client_info": {
+          "package_name": "com.originmood.hyxl"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "999191820889-5eartn8lc7sanf334q681ao92hc5pvlr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXK3c03h94HjNm-g4n-nL2s_26Yj3RPWw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "999191820889-5eartn8lc7sanf334q681ao92hc5pvlr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "999191820889-8m1cqr539v4vvhtnlea44k1jdssffhuq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.originmood.hyxl",
+                "app_store_id": "1500377488"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:999191820889:android:f65db657fba4b2fc788f48",
+        "android_client_info": {
+          "package_name": "com.originmood.tdwq"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "999191820889-5eartn8lc7sanf334q681ao92hc5pvlr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXK3c03h94HjNm-g4n-nL2s_26Yj3RPWw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "999191820889-5eartn8lc7sanf334q681ao92hc5pvlr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "999191820889-8m1cqr539v4vvhtnlea44k1jdssffhuq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.originmood.hyxl",
+                "app_store_id": "1500377488"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

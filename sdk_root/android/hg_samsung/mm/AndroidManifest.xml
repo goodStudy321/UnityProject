@@ -1,0 +1,92 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="com.samsung.android.iap.permission.BILLING"/>
+
+    <application
+        android:icon="@drawable/app_icon"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:theme="@style/UnityThemeSelector"
+        android:usesCleartextTraffic="true">
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/app_icon"/>
+        <meta-data android:name="iap:api_version"
+            android:value="5"/>
+        <meta-data android:name="iap:view_option"
+            android:value="popup" />
+
+
+
+        <meta-data android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id"/>
+        <activity android:name="com.facebook.FacebookActivity"
+            android:configChanges= "keyboard|keyboardHidden|screenLayout|screenSize|orientation"/>
+<!--            android:label="@string/app_name" />-->
+        <activity android:name="com.facebook.CustomTabActivity"
+                  android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="@string/fb_login_protocol_scheme"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.monawa.haneul.googleFirebaseActivity">
+<!--            android:configChanges="orientation|screenSize|keyboardHidden"-->
+<!--            android:screenOrientation="landscape">-->
+            <meta-data
+                android:name="unityplayer.UnityActivity"
+                android:value="true" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="com.monawa.haneul.MyFirebaseMessagingService"
+            android:exported = "false">
+<!--            android:directBootAware="true">-->
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <!-- IAP 라이브러리 내 Activity 선언 시작-->
+        <activity
+            android:name="com.samsung.android.sdk.iap.lib.activity.DialogActivity"
+            android:theme="@style/Theme.Empty"
+            android:configChanges="orientation|screenSize"/>
+
+        <activity
+            android:name="com.samsung.android.sdk.iap.lib.activity.CheckPackageActivity"
+            android:theme="@style/Theme.Empty"
+            android:configChanges="orientation|screenSize"/>
+
+        <activity
+            android:name="com.samsung.android.sdk.iap.lib.activity.AccountActivity"
+            android:theme="@style/Theme.Transparent"
+            android:configChanges="orientation|screenSize"/>
+
+        <activity
+            android:name="com.samsung.android.sdk.iap.lib.activity.PaymentActivity"
+            android:theme="@style/Theme.Empty"
+            android:configChanges="orientation|screenSize|smallestScreenSize|screenLayout|keyboard|keyboardHidden|locale|uiMode|fontScale|density"/>
+        <!-- IAP 라이브러리 내 Activity 선언 끝-->
+
+    </application>
+
+    <queries>
+        <package android:name="com.sec.android.app.samsungapps" />
+    </queries>
+
+</manifest>
