@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!28 &2800012
+Texture2D:
+  m_ObjectHideFlags: 9
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: referenceTexture
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_Width: 1
+  m_Height: 1
+  m_CompleteImageSize: 4
+  m_TextureFormat: 5
+  m_MipMap: 1
+  m_IsReadable: 1
+  m_ReadAllowed: 1
+  m_AlphaIsTransparency: 0
+  m_ImageCount: 1
+  m_TextureDimension: 2
+  m_TextureSettings:
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapMode: 0
+  m_LightmapFormat: 0
+  m_ColorSpace: 1
+  image data: 4
+  _typelessdata: cdcdcdcd
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f3302eab29861f4d9a917557f941471, type: 3}
+  m_Name: Skin Profile Classic
+  m_EditorClassIdentifier: 
+  gauss6_1: {x: .00100000005, y: .00100000005, z: 1, w: .0299999993}
+  gauss6_2: {x: .00100000005, y: .20608519, z: .235294104, w: .0149999997}
+  gauss6_3: {x: .00100000005, y: .25, z: .00100000005, w: .075000003}
+  gauss6_4: {x: .00100000005, y: .25, z: .00100000005, w: .075000003}
+  gauss6_5: {x: .161764681, y: .11044623, z: .00100000005, w: .189999998}
+  gauss6_6: {x: .264705896, y: .00100000005, z: .00100000005, w: 1.33000004}
+  _PSSProfileHigh_weighths1_var1: {x: .00232303911, y: .00122170034, z: .806910813,
+    w: .0299999993}
+  _PSSProfileHigh_weighths2_var2: {x: .00232303911, y: .251774341, z: .189861357,
+    w: .0149999997}
+  _PSSProfileHigh_weighths3_var3: {x: .00232303911, y: .305425048, z: .000806910859,
+    w: .075000003}
+  _PSSProfileHigh_weighths4_var4: {x: .00232303911, y: .305425048, z: .000806910859,
+    w: .075000003}
+  _PSSProfileHigh_weighths5_var5: {x: .375785679, y: .13493219, z: .000806910859,
+    w: .189999998}
+  _PSSProfileHigh_weighths6_var6: {x: .614922166, y: .00122170034, z: .000806910859,
+    w: 1.33000004}
+  _PSSProfileHigh_sqrtvar1234: {x: .173205078, y: .122474484, z: .273861289, w: .273861289}
+  _PSSProfileHigh_transl123_sqrtvar5: {x: -48.0898361, y: -96.1796722, z: -19.2359333,
+    w: .4358899}
+  _PSSProfileHigh_transl456_sqrtvar6: {x: -19.2359333, y: -7.59313202, z: -1.08473301,
+    w: 1.1532563}
+  _PSSProfileMedium_weighths1_var1: {x: .00464607822, y: .252996027, z: .99677217,
+    w: .0203162599}
+  _PSSProfileMedium_weighths2_var2: {x: .00464607822, y: .610850096, z: .00161382172,
+    w: .075000003}
+  _PSSProfileMedium_weighths3_var3: {x: .990707874, y: .136153892, z: .00161382172,
+    w: .749418378}
+  _PSSProfileMedium_transl123: {x: -71.0118408, y: -19.2359333, z: -1.92508626, w: 0}
+  _PSSProfileMedium_sqrtvar123: {x: .14253512, y: .273861289, z: .865689516, w: 0}
+  _PSSProfileLow_weighths1_var1: {x: .00696911756, y: .558421075, z: .997579098, w: .0425140485}
+  _PSSProfileLow_weighths2_var2: {x: .993030906, y: .441578925, z: .00242073252, w: .53115195}
+  _PSSProfileLow_transl12_sqrtvar12: {x: -33.9345474, y: -2.71616244, z: .206189349,
+    w: .728801727}
+  _PSSProfileUgly_transrgb_avgvar: {x: -1.62155437, y: -18.7633476, z: -50.7941399,
+    w: .314391702}
+  needsRenormalize: 1
+  needsRecalcDerived: 0
+  referenceTexture: {fileID: 2800012}

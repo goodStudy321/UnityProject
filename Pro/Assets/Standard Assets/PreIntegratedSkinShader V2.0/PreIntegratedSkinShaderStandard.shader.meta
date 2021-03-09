@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 1ab69c7fdba26324aadec3b99314095a
+timeCreated: 1439825143
+licenseType: Store
+ShaderImporter:
+  defaultTextures:
+  - _MainTex: {instanceID: 0}
+  - _PSSProfile: {instanceID: 0}
+  - _DepthMap: {instanceID: 0}
+  - _BumpMap: {instanceID: 0}
+  - _SkinMask: {instanceID: 0}
+  - _SpecularMap: {instanceID: 0}
+  - _GlossinessMap: {instanceID: 0}
+  - _TranslucencyMap: {instanceID: 0}
+  - _AmbientOcclusionTex: {instanceID: 0}
+  - _LookupDirect: {fileID: 2800000, guid: ee7a7f61be8cb4f41bd6c6888fd1719f, type: 2}
+  - _LookupDirectSM2: {fileID: 2800000, guid: c82ac15d8e3571f44b48e20691d6fbf2, type: 2}
+  - _LookupSH: {fileID: 2800000, guid: 64d7e30d253aba54794616efab10bb94, type: 2}
+  - _LookupSpecAO: {fileID: 2800000, guid: 0978e19c24154c048a16e819aa87d3f1, type: 2}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

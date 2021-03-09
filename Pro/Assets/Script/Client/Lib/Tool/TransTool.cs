@@ -1,14 +1,47 @@
-﻿using System;
+using System;
 using System.Text;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using Object = UnityEngine.Object;
 
-namespace Hello.Game
+namespace Loong.Game
 {
+    /// <summary>
+    /// AU:Loong
+    /// TM:2013.6.3
+    /// BG:变换组件工具
+    /// </summary>
     public static class TransTool
     {
+        #region 字段
+
+        #endregion
+
+        #region 属性
+
+        #endregion
+
+        #region 构造方法
+
+        #endregion
+
+        #region 私有方法
+
+        #endregion
+
+        #region 保护方法
+
+        #endregion
+
+        #region 公开方法
+
+        /// <summary>
+        /// 查找具有指定名称的变换组件,没有查找到时将创建
+        /// </summary>
+        /// <param name="name">变换组件</param>
+        /// <param name="flags">标识</param>
+        /// <returns></returns>
         public static Transform Find(string name, HideFlags flags = HideFlags.None)
         {
             if (string.IsNullOrEmpty(name)) return null;
@@ -18,18 +51,35 @@ namespace Hello.Game
             return go.transform;
         }
 
+
+        /// <summary>
+        /// 创建根节点Tranform/并且切换场景时不销毁
+        /// </summary>
+        /// <typeparam name="T">根节点名称和类型名称一致</typeparam>
+        /// <returns></returns>
         public static Transform CreateRoot<T>(HideFlags flags = HideFlags.NotEditable) where T : class
         {
             return CreateRoot(typeof(T).Name, flags);
         }
 
-        public static Transform CreateRoot(Type type,HideFlags flags = HideFlags.NotEditable)
+        /// <summary>
+        /// 创建根结点Transform
+        /// </summary>
+        /// <param name="type">根节点名称和类型名称一致</param>
+        /// <param name="flags"></param>
+        /// <returns></returns>
+        public static Transform CreateRoot(Type type, HideFlags flags = HideFlags.NotEditable)
         {
             if (type == null) return null;
             return CreateRoot(type.Name, flags);
         }
 
-        public static Transform CreateRoot(string rootName,HideFlags flags = HideFlags.NotEditable)
+        /// <summary>
+        /// 创建根节点Tranform/并且切换场景时不销毁
+        /// </summary>
+        /// <param name="rootName">根节点名称</param>
+        /// <returns></returns>
+        public static Transform CreateRoot(string rootName, HideFlags flags = HideFlags.NotEditable)
         {
             if (string.IsNullOrEmpty(rootName)) return null;
             string name = string.Format("Root<{0}>", rootName);
@@ -38,30 +88,49 @@ namespace Hello.Game
             return root;
         }
 
-        public static GameObject Find(Transform root,string path,string tip = "")
+        /// <summary>
+        /// 获取子物体
+        /// </summary>
+        /// <param name="root">根变换</param>
+        /// <param name="path">路径</param>
+        /// <param name="tip">提示</param>
+        /// <returns></returns>
+        public static GameObject Find(Transform root, string path, string tip = "")
         {
             if (root == null)
             {
-                iTrace.Error("Hello", string.Format("{0} 根节点为空", tip)); return null;
+                iTrace.Error("Loong", string.Format("{0} 根节点为空", tip)); return null;
             }
             if (string.IsNullOrEmpty(path))
             {
-                iTrace.Error("Hello", string.Format("{0} 路径为空", tip)); return null;
+                iTrace.Error("Loong", string.Format("{0} 路径为空", tip)); return null;
             }
             Transform child = root.Find(path);
             if (child == null)
             {
-                iTrace.Error("Hello", string.Format("{0} 根节点:{1},未发现路径为:{2}的子物体", tip, root.name, path)); return null;
+                iTrace.Error("Loong", string.Format("{0} 根节点:{1},未发现路径为:{2}的子物体", tip, root.name, path)); return null;
             }
             return child.gameObject;
         }
 
-        public static GameObject Find(GameObject root,string path,string tip = "")
+        /// <summary>
+        /// 获取子物体
+        /// </summary>
+        /// <param name="root">根物体</param>
+        /// <param name="path">路径</param>
+        /// <param name="tip">提示</param>
+        /// <returns></returns>
+        public static GameObject Find(GameObject root, string path, string tip = "")
         {
             return Find(root.transform, path, tip);
         }
 
-        public static void AddChild(Transform parent,Transform child)
+        /// <summary>
+        /// 添加子物体/位置归0,缩放归1
+        /// </summary>
+        /// <param name="parent">父变换组件</param>
+        /// <param name="child">字变换组件</param>
+        public static void AddChild(Transform parent, Transform child)
         {
             if (child == null) return;
             if (parent == null) return;
@@ -71,29 +140,61 @@ namespace Hello.Game
             child.localEulerAngles = Vector3.zero;
         }
 
-        public static void ClearChild(Transform parent,string childName)
+        /// <summary>
+        /// 删除子物体
+        /// </summary>
+        /// <param name="parent">父变换组件</param>
+        /// <param name="childName">子物体名称</param>
+        public static void ClearChild(Transform parent, string childName)
         {
             Transform child = parent.Find(childName);
             if (child != null) iTool.Destroy(child.gameObject);
         }
 
+        /// <summary>
+        /// 清除所有的子物体
+        /// </summary>
+        /// <param name="parent">父变换组件</param>
         public static void ClearChildren(Transform parent)
         {
             if (parent == null) return;
-            while(parent.childCount != 0)
+            while (parent.childCount != 0)
             {
                 Transform tran = parent.GetChild(0);
                 Object.DestroyImmediate(tran.gameObject);
             }
         }
 
-        public static void SetChildActive(Transform parent,string path,bool active)
+        /// <summary>
+        /// 设置子物体激活状态
+        /// </summary>
+        /// <param name="parent">父变换组件</param>
+        /// <param name="path">路径</param>
+        /// <param name="active">激活状态</param>
+        public static void SetChildActive(Transform parent, string path, bool active)
         {
             GameObject child = Find(parent, path);
             if (child != null) child.SetActive(active);
         }
 
-        public static void SetChildrenActive(Transform parent,bool active)
+        /// <summary>
+        /// 设置子物体激活状态
+        /// </summary>
+        /// <param name="parent">父物体</param>
+        /// <param name="path">路径</param>
+        /// <param name="active">激活状态</param>
+        public static void SetChildActive(GameObject parent, string path, bool active)
+        {
+            GameObject child = Find(parent, path);
+            if (child != null) child.SetActive(active);
+        }
+
+        /// <summary>
+        /// 设置所有子物体激活状态
+        /// </summary>
+        /// <param name="parent">父变换组件</param>
+        /// <param name="active">激活状态</param>
+        public static void SetChildrenActive(Transform parent, bool active)
         {
             if (parent == null) return;
             int length = parent.childCount;
@@ -104,7 +205,12 @@ namespace Hello.Game
             }
         }
 
-        public static void RenameChildren(Transform parent,string name)
+        /// <summary>
+        /// 重命名所有子物体子物体
+        /// </summary>
+        /// <param name="parent">父变换组件</param>
+        /// <param name="name">命名名称</param>
+        public static void RenameChildren(Transform parent, string name)
         {
             if (parent == null) return;
             int length = parent.childCount;
@@ -115,9 +221,16 @@ namespace Hello.Game
             }
         }
 
+
         private static List<string> names = new List<string>();
 
-        public static string GetPath(Transform tran,int beg = 0)
+        /// <summary>
+        /// 获取变换组件从根节点开始的路径
+        /// </summary>
+        /// <param name="tran"></param>
+        /// <param name="beg">根节点偏移索引</param>
+        /// <returns></returns>
+        public static string GetPath(Transform tran, int beg = 0)
         {
             if (tran == null) return null;
             Transform parent = tran.parent;
@@ -136,7 +249,7 @@ namespace Hello.Game
                 sb = ObjPool.Instance.Get<StringBuilder>();
             }
             names.Add(tran.name);
-            while(parent != null)
+            while (parent != null)
             {
                 names.Add(parent.name);
                 parent = parent.parent;
@@ -144,7 +257,7 @@ namespace Hello.Game
             if (beg < 0) beg = 0;
             int length = names.Count;
             int start = length - 1 - beg;
-            for (int i = start; i > -1 ; --i)
+            for (int i = start; i > -1; --i)
             {
                 string name = names[i];
                 sb.Append(name);
@@ -162,6 +275,10 @@ namespace Hello.Game
             return path;
         }
 
+        /// <summary>
+        /// 判断是否为null或被销毁了
+        /// </summary>
+        /// <returns></returns>
         public static bool IsNull(GameObject go)
         {
             if (go == null) return true;
@@ -169,7 +286,7 @@ namespace Hello.Game
             if (go.Equals(null)) return true;
             return false;
         }
-
+        /// <returns></returns>
         public static bool IsNull(Transform trans)
         {
             if (trans == null) return true;
@@ -177,7 +294,6 @@ namespace Hello.Game
             if (trans.Equals(null)) return true;
             return false;
         }
-
+        #endregion
     }
 }
-

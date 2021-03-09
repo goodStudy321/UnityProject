@@ -1,4 +1,4 @@
-﻿//using UnityEngine;
+//using UnityEngine;
 using System;
 using System.Collections;
 using System.Runtime.InteropServices;
@@ -13,18 +13,18 @@ public struct DeviceReq
 
 public class DebugService
 {
-    public const int MSG_REGISTER = 0x1010;
-    public const int MSG_REMOVE = 0x1011;
-    public const int MSG_SELECT = 0x1012;
-    public const int MSG_LOG = 0x1013;
+    public const int MSG_REGISTER   = 0x1010;
+    public const int MSG_REMOVE     = 0x1011;
+    public const int MSG_SELECT     = 0x1012;
+    public const int MSG_LOG        = 0x1013;
 
-    public const int MSG_FILESTART_REQ = 0x1014;
-    public const int MSG_FILESTART_START = 0x1015;
-    public const int MSG_FILE_END = 0x1016;
-    public const int MSG_GM = 0x1017;
-    public const int MSG_FILE_TRUNK = 0x1018;
+    public const int MSG_FILESTART_REQ      = 0x1014;
+    public const int MSG_FILESTART_START    = 0x1015;
+    public const int MSG_FILE_END           = 0x1016;
+    public const int MSG_GM                 = 0x1017;
+    public const int MSG_FILE_TRUNK         = 0x1018;
 
-    public const int MSG_SEND_MESSAGE = 0x2000;
+    public const int MSG_SEND_MESSAGE       = 0x2000;
 
 #if UNITY_IPHONE && !UNITY_EDITOR
     public const string _DLL = "__Internal";
@@ -33,7 +33,7 @@ public class DebugService
     public const string _DLL = "DebugNetDriver";
 #endif
 
-    [DllImport(_DLL)]
+     [DllImport(_DLL)]
     public static extern void writeRecvData([In]IntPtr netHandle, [In]byte[] pData, UInt32 DataLen);
 
     [DllImport(_DLL)]
@@ -52,7 +52,7 @@ public class DebugService
     public static extern void reset([In]IntPtr netHandle);
 
     [DllImport(_DLL)]
-    public static extern void GetStartFile(IntPtr pBuf, int len, byte[] bytes, ref Int32 reLen);
+    public static extern void GetStartFile(IntPtr pBuf, int len, byte []bytes, ref Int32 reLen);
 
     protected Connection mService = null;
 
@@ -87,7 +87,7 @@ public class DebugService
         }
     }
 
-    public void SendMsg(uint SerId, byte[] buf, uint len)
+    public void SendMsg(uint SerId, byte []buf, uint len)
     {
         uint relen = 0;
         IntPtr writeBuf = IntPtr.Zero;
@@ -95,40 +95,40 @@ public class DebugService
 
         if (GlobalBuf.Length < len)
             GlobalBuf = new byte[len];
-
+        
         Marshal.Copy(writeBuf, GlobalBuf, 0, (int)relen);
         mService.Send(GlobalBuf, (int)relen);
     }
 
     public virtual void OnConnect(object param)
     {
-        //         DeviceReq devReq;
-        //         
-        //         devReq.id = 1001;
-        //         devReq.IsMobile = 1;
-        // 
-        //         IntPtr writeBuf = IntPtr.Zero;
-        //         uint len = 0;
-        // 
-        //         uint Size = (uint)Marshal.SizeOf(devReq);
-        //         byte[] ArrayPtr = new byte[Size];
-        //         IntPtr pnt = Marshal.AllocHGlobal((int)Size);
-        //         Marshal.StructureToPtr(devReq, pnt, false);
-        //         Marshal.Copy(pnt, ArrayPtr, 0, (int)Size);
-        //         Service.writeSendData(m_Buffer, 0x1010, 1, ArrayPtr, Size, ref writeBuf, 1024, ref len);
-        //         if (GlobalBuf.Length < len)
-        //             GlobalBuf = new byte[len];
-        // 
-        //         Marshal.Copy(writeBuf, GlobalBuf, 0, (int)len);
-        //         mService.Send(GlobalBuf, (int)len);
-
+//         DeviceReq devReq;
+//         
+//         devReq.id = 1001;
+//         devReq.IsMobile = 1;
+// 
+//         IntPtr writeBuf = IntPtr.Zero;
+//         uint len = 0;
+// 
+//         uint Size = (uint)Marshal.SizeOf(devReq);
+//         byte[] ArrayPtr = new byte[Size];
+//         IntPtr pnt = Marshal.AllocHGlobal((int)Size);
+//         Marshal.StructureToPtr(devReq, pnt, false);
+//         Marshal.Copy(pnt, ArrayPtr, 0, (int)Size);
+//         Service.writeSendData(m_Buffer, 0x1010, 1, ArrayPtr, Size, ref writeBuf, 1024, ref len);
+//         if (GlobalBuf.Length < len)
+//             GlobalBuf = new byte[len];
+// 
+//         Marshal.Copy(writeBuf, GlobalBuf, 0, (int)len);
+//         mService.Send(GlobalBuf, (int)len);
+        
 
         //Debug.Log("connected");
     }
 
     private void OndisConnect(object param)
     {
-
+        
     }
 
     public virtual void OnMessage(UInt32 SerId, IntPtr buf, int reLen)

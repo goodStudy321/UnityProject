@@ -1,13 +1,25 @@
-﻿using System;
+using System;
 using System.IO;
-using Hello.Game;
+using Loong.Game;
 using UnityEngine;
 using LuaInterface;
 using System.Collections;
 using System.Collections.Generic;
+/*
+ * CO:            
+ * Copyright:   2017-forever
+ * CLR Version: 4.0.30319.42000  
+ * GUID:        a8c49ad0-6913-44c7-80f2-e73c9c844b46
+*/
 
-public static class LuaMgr 
+/// <summary>
+/// AU:Loong
+/// TM:2017/5/10 11:05:49
+/// BG:LuaState管理
+/// </summary>
+public static class LuaMgr
 {
+    #region 字段
     private static LuaState lua = null;
 
     private static bool isError = false;
@@ -15,6 +27,9 @@ public static class LuaMgr
     private static string luaName = "lua.bytes";
 
     private static readonly object locker = new object();
+    #endregion
+
+    #region 属性
 
     public static LuaState Lua
     {
@@ -34,22 +49,42 @@ public static class LuaMgr
         }
     }
 
+    #endregion
+
+    #region 构造方法
+
+    #endregion
+
+    #region 私有方法
+
     private static void Init()
     {
+#if UNITY_EDITOR
+        MonoEvent.onDestroy += OnDestroy;
+#if LOONG_TEST_UPG
+        if (!SetAB()) return;
+#endif
 
+#else
+        if (!SetAB()) return;
+#endif
         lua = new LuaState();
-
-
+        OpenLibs();
+#if LUA_DEBUG
+        OpenLuaSocket();
+#endif
         lua.LuaSetTop(0);
         lua.Start();
         LuaBinder.Bind(lua);
         DelegateFactory.Init();
         LuaCoroutine.Register(Lua, Global.Main);
+
     }
 
 #if UNITY_EDITOR
     private static void OnDestroy()
     {
+        MonoEvent.onDestroy -= OnDestroy;
         if (lua != null)
         {
             lua.Dispose();
@@ -57,6 +92,39 @@ public static class LuaMgr
         GC.Collect();
     }
 #endif
+
+    /// <summary>
+    /// 设置资源包
+    /// </summary>
+    private static bool SetAB()
+    {
+        bool suc = true;
+        string dir = AssetPath.Commen;
+        string plat = AssetPath.Platform;
+        string path = string.Format("{0}{1}/{2}", dir, plat, luaName);
+        if (File.Exists(path))
+        {
+            try
+            {
+                var ab = AssetBundle.LoadFromFile(path);
+                LuaFileUtils.Instance.AB = ab;
+            }
+            catch (Exception e)
+            {
+                suc = false;
+                var err = string.Format("load lua ab err:{0}", e.Message);
+                iTrace.Error("Loong", err);
+            }
+        }
+        else
+        {
+            suc = false;
+            var err = string.Format("lua ab file:{0} not exist!", path);
+            iTrace.Error("Loong", err);
+        }
+
+        return suc;
+    }
 
     /// <summary>
     /// lua入口
@@ -107,6 +175,7 @@ public static class LuaMgr
         lua.OpenLibs(LuaDLL.luaopen_cjson_safe);
         lua.LuaSetField(-2, "cjson.safe");
     }
+    #endregion
 
     #region 保护方法
 
@@ -157,6 +226,7 @@ public static class LuaMgr
     public static void Refresh()
     {
         MainEntry();
+        UIMgr.Refresh();
     }
 
     public static void Dispose()

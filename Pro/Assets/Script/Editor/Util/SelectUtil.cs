@@ -1,5 +1,10 @@
-﻿using System;
-using Hello.Game;
+/*=============================================================================
+ * Copyright (C) 2014, 金七情(Loong) jinqiqing@qq.com
+ * Created by Loong in 2015/6/3 10:19:00
+ ============================================================================*/
+
+using System;
+using Loong.Game;
 using System.IO;
 using UnityEditor;
 using UnityEngine;
@@ -9,32 +14,62 @@ using Object = UnityEngine.Object;
 using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
 
-namespace Hello.Edit
+namespace Loong.Edit
 {
+    /// <summary>
+    /// 选择工具
+    /// </summary>
     public static class SelectUtil
     {
+        #region 字段
+        /// <summary>
+        /// 优先级
+        /// </summary>
         public const int Pri = MenuTool.NormalPri + 25;
 
-        public const string menu = MenuTool.Hello + "选择工具/";
+        /// <summary>
+        /// 菜单
+        /// </summary>
+        public const string menu = MenuTool.Loong + "选择工具/";
 
-        public const string AMenu = MenuTool.AHello + "选择工具/";
+        /// <summary>
+        /// 资源下菜单
+        /// </summary>
+        public const string AMenu = MenuTool.ALoong + "选择工具/";
+        #endregion
 
-        private static int SortByLen(string lhs,string rhs)
+        #region 属性
+
+        #endregion
+
+        #region 构造方法
+
+        #endregion
+
+        #region 私有方法
+        private static int SortByLen(string lhs, string rhs)
         {
-            if(lhs.Length < rhs.Length)
+            if (lhs.Length < rhs.Length)
             {
                 return -1;
             }
-            if(lhs.Length > rhs.Length)
+            if (lhs.Length > rhs.Length)
             {
                 return 1;
             }
             return 0;
         }
+        #endregion
+
+        #region 保护方法
+
+        #endregion
+
+        #region 公开方法
 
         public static T[] Get<T>(SelectionMode mode = SelectionMode.DeepAssets) where T : Object
         {
-            string msg = "请稍后...";
+            string msg = "请稍后···";
             float pro = UnityEngine.Random.Range(0.1f, 0.8f);
             ProgressBarUtil.Show("", msg, pro);
             var objs = Selection.GetFiltered<T>(mode);
@@ -45,7 +80,7 @@ namespace Hello.Edit
         public static bool CheckObjs()
         {
             var objs = Selection.objects;
-            if(objs == null || (objs.Length == 0))
+            if (objs == null || (objs.Length == 0))
             {
                 UIEditTip.Warning("没有选择任何对象");
                 return false;
@@ -56,15 +91,21 @@ namespace Hello.Edit
         public static bool CheckGos()
         {
             var gos = Selection.gameObjects;
-            if(gos == null || (gos.Length == 0))
+            if (gos == null || (gos.Length == 0))
             {
-                UIEditTip.Warning("没有选择任何对象");
+                UIEditTip.Warning("没有选择任何游戏对象");
                 return false;
             }
             return true;
         }
 
-        public static T[] Get<T>(SelectionMode mode,string suffix) where T : Object
+        /// <summary>
+        /// 选择对象
+        /// </summary>
+        /// <typeparam name="T">选择类型</typeparam>
+        /// <param name="mode">选择模式</param>
+        /// <param name="suffix">选择后缀</param>
+        public static T[] Get<T>(SelectionMode mode, string suffix) where T : Object
         {
             T[] selects = Selection.GetFiltered<T>(mode);
             if (selects == null) return null;
@@ -84,7 +125,14 @@ namespace Hello.Edit
             return arr;
         }
 
-        public static List<string> GetPath<T>(SelectionMode mode,string suffix) where T : Object
+        /// <summary>
+        /// 获取选择资源路径列表
+        /// </summary>
+        /// <typeparam name="T">选择类型</typeparam>
+        /// <param name="mode">选择模式</param>
+        /// <param name="suffix">选择后缀</param>
+        /// <returns></returns>
+        public static List<string> GetPath<T>(SelectionMode mode, string suffix) where T : Object
         {
             T[] selects = Selection.GetFiltered<T>(mode);
             if (selects == null) return null;
@@ -103,6 +151,12 @@ namespace Hello.Edit
             return lst;
         }
 
+        /// <summary>
+        /// 获取选择资源的所有依赖资源
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="mode"></param>
+        /// <returns></returns>
         public static string[] GetDepends<T>(SelectionMode mode = SelectionMode.DeepAssets) where T : Object
         {
             var objs = Get<T>();
@@ -123,6 +177,10 @@ namespace Hello.Edit
             return paths;
         }
 
+        /// <summary>
+        /// 获取选择的目录完整路径
+        /// </summary>
+        /// <returns></returns>
         public static string GetDir()
         {
             var objs = Selection.GetFiltered<Object>(SelectionMode.Assets);
@@ -139,6 +197,10 @@ namespace Hello.Edit
             return null;
         }
 
+        /// <summary>
+        /// 获取选择的目录完整路径列表
+        /// </summary>
+        /// <returns></returns>
         public static List<string> GetDirs()
         {
             var objs = Selection.GetFiltered<Object>(SelectionMode.Assets);
@@ -160,7 +222,7 @@ namespace Hello.Edit
             var dirs = new List<string>();
             dirs.Add(rDirs[0]);
             bool contains = false;
-            for (int i = 0; i < length; i++)
+            for (int i = 1; i < length; i++)
             {
                 var dir = rDirs[i];
                 contains = false;
@@ -186,7 +248,6 @@ namespace Hello.Edit
             }
             return dirs;
         }
-
         /// <summary>
         /// 显示选择对象标记
         /// </summary>
@@ -200,7 +261,7 @@ namespace Hello.Edit
             for (int i = 0; i < length; i++)
             {
                 Object obj = objs[i];
-                iTrace.Log("Hello", string.Format("{0}的标记为:{1}", obj.name, obj.hideFlags));
+                iTrace.Log("Loong", string.Format("{0}的标记为:{1}", obj.name, obj.hideFlags));
             }
         }
 
@@ -241,7 +302,7 @@ namespace Hello.Edit
                 {
                     path = "无,这可能是场景中的对象";
                 }
-                iTrace.Log("Hello", string.Format("{0}的路径:{1}", obj.name, path));
+                iTrace.Log("Loong", string.Format("{0}的路径:{1}", obj.name, path));
             }
         }
 
@@ -251,9 +312,9 @@ namespace Hello.Edit
         {
             Transform tran = Selection.activeTransform;
             if (tran == null) return;
-            iTrace.Log("Hello", "父节点:" + ((tran.parent == null) ? "空" : tran.parent.name));
-            iTrace.Log("Hello", "根节点:" + ((tran.root == null) ? "空" : tran.root.name));
-            iTrace.Log("Hello", "完整路径:" + TransTool.GetPath(tran));
+            iTrace.Log("Loong", "父节点:" + ((tran.parent == null) ? "空" : tran.parent.name));
+            iTrace.Log("Loong", "根节点:" + ((tran.root == null) ? "空" : tran.root.name));
+            iTrace.Log("Loong", "完整路径:" + TransTool.GetPath(tran));
 
         }
 
@@ -282,6 +343,8 @@ namespace Hello.Edit
                 UIEditTip.Log("设置{0}完毕", at ? "激活" : "隐藏");
             }
         }
+
+
 
         /// <summary>
         /// 选择文件夹后获取对象列表
@@ -386,6 +449,6 @@ namespace Hello.Edit
         {
             return Get<Object>(AssetType.All);
         }
+        #endregion
     }
 }
-

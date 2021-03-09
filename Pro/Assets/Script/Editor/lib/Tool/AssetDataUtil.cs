@@ -1,18 +1,48 @@
-﻿using Hello.Game;
-using System.Collections;
-using System.Collections.Generic;
+/*=============================================================================
+ * Copyright (C) 2018, 金七情(Loong) jinqiqing@qq.com
+ * Created by Loong on 2014/9/29 14:36:23
+ ============================================================================*/
+
+using System;
 using System.IO;
+using Loong.Game;
 using UnityEditor;
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using Object = UnityEngine.Object;
 
-namespace Hello.Edit
+namespace Loong.Edit
 {
+    /// <summary>
+    /// 编辑器资源数据工具
+    /// </summary>
     public static partial class AssetDataUtil
     {
+        #region 字段
         /// <summary>
         /// 编辑器资源文件存放根目录路径
         /// </summary>
         public const string RootDir = "Assets/Script/Editor/Asset/";
+        #endregion
+
+        #region 属性
+
+        #endregion
+
+        #region 构造方法
+
+        #endregion
+
+        #region 私有方法
+
+        #endregion
+
+        #region 保护方法
+
+        #endregion
+
+        #region 公开方法
 
         /// <summary>
         /// 获取资源路径
@@ -100,6 +130,6 @@ namespace Hello.Edit
             }
             return t;
         }
+        #endregion
     }
 }
-

@@ -1,6 +1,6 @@
 //-------------------------------------------------
 //            NGUI: Next-Gen UI kit
-// Copyright © 2011-2020 Tasharen Entertainment Inc
+// Copyright © 2011-2017 Tasharen Entertainment Inc
 //-------------------------------------------------
 
 using UnityEngine;
@@ -81,11 +81,24 @@ public class UIToggle : UIWidgetContainer
 
 	public bool optionCanBeNone = false;
 
-	/// <summary>
-	/// Callbacks triggered when the toggle's state changes.
-	/// </summary>
+    /// <summary>
+    /// 自定义
+    /// </summary>
+    public bool isCustom = false;
+    /// <summary>
+    /// 时间
+    /// </summary>
+    public float duration = 0;
+    /// <summary>
+    /// 延迟
+    /// </summary>
+    public float startDelay = 0;
 
-	public List<EventDelegate> onChange = new List<EventDelegate>();
+    /// <summary>
+    /// Callbacks triggered when the toggle's state changes.
+    /// </summary>
+
+    public List<EventDelegate> onChange = new List<EventDelegate>();
 
 	public delegate bool Validate (bool choice);
 
@@ -108,20 +121,20 @@ public class UIToggle : UIWidgetContainer
 	bool mIsActive = true;
 	bool mStarted = false;
 
-	/// <summary>
-	/// Whether the toggle is checked.
-	/// </summary>
+    /// <summary>
+    /// Whether the toggle is checked.
+    /// </summary>
 
-	public bool value
+    public bool value
 	{
 		get
 		{
 			return mStarted ? mIsActive : startsActive;
 		}
 		set
-		{
-			if (!mStarted) startsActive = value;
-			else if (group == 0 || value || optionCanBeNone || !mStarted) Set(value);
+        {
+            if (!mStarted) startsActive = value;
+            else if (group == 0 || value || optionCanBeNone || !mStarted) Set(value);
 		}
 	}
 
@@ -133,14 +146,52 @@ public class UIToggle : UIWidgetContainer
 	{
 		get
 		{
-			var c = GetComponent<Collider>();
+			Collider c = GetComponent<Collider>();
 			if (c != null) return c.enabled;
-			var b = GetComponent<Collider2D>();
+			Collider2D b = GetComponent<Collider2D>();
 			return (b != null && b.enabled);
 		}
 	}
 
-	[System.Obsolete("Use 'value' instead")]
+    public string lab
+    {
+        get
+        {
+            Transform trans = transform.Find("UILabel");;
+            if (trans == null) return "";
+            UILabel l = trans.GetComponent<UILabel>();
+            if (l == null) return "";
+            return l.text;
+        }
+        set
+        {
+            Transform trans = transform.Find("Label"); ;
+            if (trans == null) return;
+            UILabel l = trans.GetComponent<UILabel>();
+            if (l == null) return;
+            l.text = value;
+        }
+    }
+
+    public void IsEnabled(bool value, bool isColliderEnabled, Color color)
+    {
+        UIWidget[] widgets = gameObject.GetComponentsInChildren<UIWidget>();
+        if(widgets != null)
+        {
+            foreach(UIWidget widget in widgets)
+            {
+                if (isColliderEnabled == true && widget.name.Contains(activeSprite.name)) continue;
+                if(widget is UILabel)
+                    widget.color = value ? color : Color.gray;
+                else
+                    widget.color = value ? Color.white : new Color(0, 1, 1, 1);
+            }
+        }
+        Collider col = gameObject.GetComponent<Collider>();
+        if (col != null) col.enabled = isColliderEnabled;
+    }
+
+    [System.Obsolete("Use 'value' instead")]
 	public bool isChecked { get { return value; } set { this.value = value; } }
 
 	/// <summary>
@@ -151,7 +202,7 @@ public class UIToggle : UIWidgetContainer
 	{
 		for (int i = 0; i < list.size; ++i)
 		{
-			var toggle = list.buffer[i];
+			UIToggle toggle = list[i];
 			if (toggle != null && toggle.group == group && toggle.mIsActive)
 				return toggle;
 		}
@@ -167,8 +218,8 @@ public class UIToggle : UIWidgetContainer
 
 	public void Start ()
 	{
-		if (mStarted) return;
-
+        if (mStarted) return;
+        
 		if (startsChecked)
 		{
 			startsChecked = false;
@@ -203,14 +254,14 @@ public class UIToggle : UIWidgetContainer
 			}
 		}
 		else
-		{
-			mIsActive = !startsActive;
-			mStarted = true;
-			bool instant = instantTween;
-			instantTween = true;
-			Set(startsActive);
-			instantTween = instant;
-		}
+        {
+            mIsActive = !startsActive;
+            mStarted = true;
+            bool instant = instantTween;
+            instantTween = true;
+            Set(startsActive);
+            instantTween = instant;
+        }
 	}
 
 	/// <summary>
@@ -224,7 +275,17 @@ public class UIToggle : UIWidgetContainer
 	/// If setting the initial value, call Start() first.
 	/// </summary>
 
-	public void Set (bool state, bool notify = true)
+    public void CustomAction(bool value)
+    {
+        mStarted = true;
+        mIsActive = !value;
+        bool instant = instantTween;
+        instantTween = true;
+        Set(value, isCustom: true);
+        instantTween = instant;
+    }
+
+	public void Set (bool state, bool notify = true, bool isCustom = false)
 	{
 		if (validator != null && !validator(state)) return;
 
@@ -233,7 +294,9 @@ public class UIToggle : UIWidgetContainer
 			mIsActive = state;
 			startsActive = state;
 			if (activeSprite != null)
-				activeSprite.alpha = invertSpriteState ? (state ? 0f : 1f) : (state ? 1f : 0f);
+            {
+                activeSprite.alpha = invertSpriteState ? (state ? 0f : 1f) : (state ? 1f : 0f);
+            }
 		}
 		else if (mIsActive != state)
 		{
@@ -242,9 +305,15 @@ public class UIToggle : UIWidgetContainer
 			{
 				for (int i = 0, imax = list.size; i < imax; )
 				{
-					var cb = list.buffer[i];
-					if (cb != this && cb.group == group) cb.Set(false);
-
+					UIToggle cb = list[i];
+                    if (cb != this && cb.group == group)
+                    {
+                        if (isCustom)
+                            cb.CustomAction(false);
+                        else
+                            cb.Set(false);
+                    }
+					
 					if (list.size != imax)
 					{
 						imax = list.size;
@@ -266,13 +335,21 @@ public class UIToggle : UIWidgetContainer
 				}
 				else
 				{
-					TweenAlpha.Begin(activeSprite.gameObject, 0.15f, invertSpriteState ? (mIsActive ? 0f : 1f) : (mIsActive ? 1f : 0f));
+                    if(!isCustom)
+                    {
+					    TweenAlpha.Begin(activeSprite.gameObject, 0.15f, invertSpriteState ? (mIsActive ? 0f : 1f) : (mIsActive ? 1f : 0f));
+                    }
+                    else
+                    {
+                        float delay = mIsActive ? startDelay : 0 ;
+                        TweenAlpha.Begin(activeSprite.gameObject, duration, invertSpriteState ? (mIsActive ? 0f : 1f) : (mIsActive ? 1f : 0f), delay);
+                    }
 				}
 			}
 
 			if (notify && current == null)
 			{
-				var tog = current;
+				UIToggle tog = current;
 				current = this;
 
 				if (EventDelegate.IsValid(onChange))
@@ -290,45 +367,46 @@ public class UIToggle : UIWidgetContainer
 			// Play the checkmark animation
 			if (animator != null)
 			{
-				var aa = ActiveAnimation.Play(animator, null,
+				ActiveAnimation aa = ActiveAnimation.Play(animator, null,
 					state ? Direction.Forward : Direction.Reverse,
 					EnableCondition.IgnoreDisabledState,
 					DisableCondition.DoNotDisable);
 				if (aa != null && (instantTween || !NGUITools.GetActive(this))) aa.Finish();
 			}
-
-			if (activeAnimation != null)
+			else if (activeAnimation != null)
 			{
-				var aa = ActiveAnimation.Play(activeAnimation, null,
+				ActiveAnimation aa = ActiveAnimation.Play(activeAnimation, null,
 					state ? Direction.Forward : Direction.Reverse,
 					EnableCondition.IgnoreDisabledState,
 					DisableCondition.DoNotDisable);
 				if (aa != null && (instantTween || !NGUITools.GetActive(this))) aa.Finish();
 			}
-
-			if (tween != null)
+			else if (tween != null)
 			{
-				var isActive = NGUITools.GetActive(this);
-
-				tween.Play(state);
-				if (instantTween || !isActive) tween.tweenFactor = state ? 1f : 0f;
+				bool isActive = NGUITools.GetActive(this);
 
 				if (tween.tweenGroup != 0)
 				{
-					var tws = gameObject.GetComponentsInChildren<UITweener>(true);
+					UITweener[] tws = tween.GetComponentsInChildren<UITweener>(true);
 
 					for (int i = 0, imax = tws.Length; i < imax; ++i)
 					{
-						var t = tws[i];
+						UITweener t = tws[i];
 
-						if (t != tween && t.tweenGroup == tween.tweenGroup)
+						if (t.tweenGroup == tween.tweenGroup)
 						{
 							t.Play(state);
 							if (instantTween || !isActive) t.tweenFactor = state ? 1f : 0f;
 						}
 					}
 				}
+				else
+				{
+					tween.Play(state);
+					if (instantTween || !isActive) tween.tweenFactor = state ? 1f : 0f;
+				}
 			}
-		}
-	}
+        }
+
+    }
 }

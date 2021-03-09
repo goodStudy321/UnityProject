@@ -1,13 +1,29 @@
-﻿using Hello.Game;
-using System.Collections;
-using System.Collections.Generic;
+/*=============================================================================
+ * Copyright (C) 2018, 金七情(Loong) jinqiqing@qq.com
+ * Created by Loong on 2014/9/29 11:05:33
+ ============================================================================*/
+
+using System;
+using System.IO;
+using Loong.Game;
 using UnityEditor;
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using Object = UnityEngine.Object;
 
-namespace Hello.Edit
+namespace Loong.Edit
 {
+
+    /// <summary>
+    /// 编辑器窗口工具
+    /// </summary>
     public static partial class WinUtil
     {
+        #region 字段
+        /// <summary>
+        /// 最大宽度
+        /// </summary>
         public static int MaxWidth
         {
             get { return Screen.currentResolution.width; }
@@ -20,6 +36,25 @@ namespace Hello.Edit
         {
             get { return Screen.currentResolution.height - 50; }
         }
+        #endregion
+
+        #region 属性
+
+        #endregion
+
+        #region 构造方法
+
+        #endregion
+
+        #region 私有方法
+
+        #endregion
+
+        #region 保护方法
+
+        #endregion
+
+        #region 公开方法
 
         /// <summary>
         /// 检查是否能打开
@@ -166,7 +201,6 @@ namespace Hello.Edit
             float y = anchorPos.y + (anchorPos.height - height);
             return new Vector2(x, y);
         }
-
+        #endregion
     }
-
 }

@@ -1,6 +1,6 @@
 //-------------------------------------------------
 //            NGUI: Next-Gen UI kit
-// Copyright © 2011-2020 Tasharen Entertainment Inc
+// Copyright © 2011-2017 Tasharen Entertainment Inc
 //-------------------------------------------------
 
 using UnityEngine;
@@ -12,64 +12,31 @@ using System.Collections.Generic;
 
 public class TweenLetters : UITweener
 {
-	[DoNotObfuscateNGUI] public enum AnimationLetterOrder { Forward, Reverse, Random }
+	public enum AnimationLetterOrder { Forward, Reverse, Random }
 
-	struct LetterProperties
+	class LetterProperties
 	{
 		public float start;
 		public float duration; // if RandomDurations is set, these will all be different.
-		public Vector3 pos;
-		public Quaternion rot;
-		public Vector3 scale;
+		public Vector2 offset;
 	}
 
 	[System.Serializable]
 	public class AnimationProperties
 	{
-		[Tooltip("If set, overrides the tween's animation duration")]
-		public float duration = 0f;
 		public AnimationLetterOrder animationOrder = AnimationLetterOrder.Random;
 		[Range(0f, 1f)]
 		public float overlap = 0.5f;
 
-		[Tooltip("If set, each letter will animate with a random duration")]
 		public bool randomDurations = false;
+		[MinMaxRange(0f, 1f)]
+		public Vector2 randomness = new Vector2(0.25f, 0.75f);
 
-		[MinMaxRange(0f, 1f)] public Vector2 randomness = new Vector2(0.25f, 0.75f);
-
-		[HideInInspector] public bool upgraded = false;
-
-		// Deprecated
-		[HideInInspector] public Vector2 offsetRange = Vector2.zero;
-		[HideInInspector] public Vector3 pos = Vector3.zero;
-		[HideInInspector] public Vector3 rot = Vector3.zero;
-		[HideInInspector] public Vector3 scale = Vector3.one;
-
-		public Vector3 pos1 = Vector3.zero;
-		public Vector3 pos2 = Vector3.zero;
-
-		public Vector3 rot1 = Vector3.zero;
-		public Vector3 rot2 = Vector3.zero;
-
-		public Vector3 scale1 = Vector3.one;
-		public Vector3 scale2 = Vector3.one;
-
-		[Range(0f, 1f), Tooltip("Starting or finishing alpha")]
-		public float alpha = 0f;
-
-		public void Upgrade ()
-		{
-			upgraded = true;
-
-			pos1 = pos - new Vector3(offsetRange.x, offsetRange.y, 0f);
-			pos2 = pos + new Vector3(offsetRange.x, offsetRange.y, 0f);
-
-			rot1 = rot;
-			rot2 = rot;
-
-			scale1 = scale;
-			scale2 = scale;
-		}
+		public Vector2 offsetRange = Vector2.zero;
+		public Vector3 pos = Vector3.zero;
+		public Vector3 rot = Vector3.zero;
+		public Vector3 scale = Vector3.one;
+		public float alpha = 1f;
 	}
 
 	public AnimationProperties hoverOver;
@@ -81,31 +48,26 @@ public class TweenLetters : UITweener
 	LetterProperties[] mLetter;
 	AnimationProperties mCurrent;
 
-	protected void OnValidate ()
-	{
-		if (hoverOver != null && !hoverOver.upgraded) { hoverOver.Upgrade(); NGUITools.SetDirty(this, "Upgraded TweenLetters"); }
-		if (hoverOut != null && !hoverOut.upgraded) { hoverOut.Upgrade(); NGUITools.SetDirty(this, "Upgraded TweenLetters"); }
-	}
-
 	void OnEnable ()
 	{
 		mVertexCount = -1;
-		mLabel = GetComponent<UILabel>();
 		mLabel.onPostFill += OnPostFill;
-		mCurrent = hoverOver;
 	}
 
-	protected override void OnDisable ()
+	void OnDisable ()
 	{
-		base.OnDisable();
 		mLabel.onPostFill -= OnPostFill;
+	}
+
+	void Awake ()
+	{
+		mLabel = GetComponent<UILabel>();
+		mCurrent = hoverOver;
 	}
 
 	public override void Play (bool forward)
 	{
-		enabled = true;
-		mCurrent = forward ? hoverOver : hoverOut;
-		if (mCurrent.duration != 0f) duration = mCurrent.duration;
+		mCurrent = (forward) ? hoverOver : hoverOut;
 		base.Play(forward);
 	}
 
@@ -116,12 +78,10 @@ public class TweenLetters : UITweener
 		if (verts == null || vertexCount == 0) return;
 		if (mLabel == null) return;
 
-#if !UNITY_EDITOR
-		try {
-#endif
 		var quads = mLabel.quadsPerCharacter;
 		const int quadVerts = 4;
 		var characterCount = vertexCount / quads / quadVerts;
+
 		var pt = mLabel.printedText;
 
 		if (mVertexCount != vertexCount)
@@ -139,9 +99,10 @@ public class TweenLetters : UITweener
 		int firstVert, letter;
 		float letterStart, t; // The individual letters tweenFactor
 		var letterCenter = Vector3.zero;
+		var qRot = Quaternion.Euler(mCurrent.rot);
 		var vert = Vector3.zero;
 		var c = Color.clear;
-		var timeIntoAnimation = tweenFactor * duration;
+		var timeIntoAnimation = base.tweenFactor * base.duration;
 
 		for (int q = 0; q < quads; ++q)
 		{
@@ -157,22 +118,23 @@ public class TweenLetters : UITweener
 #endif
 					continue;
 				}
-
+				
 				letterStart = mLetter[letter].start;
 				t = Mathf.Clamp(timeIntoAnimation - letterStart, 0f, mLetter[letter].duration) / mLetter[letter].duration;
 				t = animationCurve.Evaluate(t);
 
 				letterCenter = GetCenter(verts, firstVert, quadVerts);
 
+				var v = mLetter[letter].offset;
 #if UNITY_4_7
-				lerpPos = LerpUnclamped(mLetter[letter].pos, Vector3.zero, t);
-				lerpRot = Quaternion.Slerp(mLetter[letter].rot, Quaternion.identity, t);
-				lerpScale = LerpUnclamped(mLetter[letter].scale, Vector3.one, t);
+				lerpPos = LerpUnclamped(mCurrent.pos + new Vector3(v.x, v.y, 0f), Vector3.zero, t);
+				lerpRot = Quaternion.Slerp(qRot, Quaternion.identity, t);
+				lerpScale = LerpUnclamped(mCurrent.scale, Vector3.one, t);
 				lerpAlpha = LerpUnclamped(mCurrent.alpha, 1f, t);
 #else
-				lerpPos = Vector3.LerpUnclamped(mLetter[letter].pos, Vector3.zero, t);
-				lerpRot = Quaternion.SlerpUnclamped(mLetter[letter].rot, Quaternion.identity, t);
-				lerpScale = Vector3.LerpUnclamped(mLetter[letter].scale, Vector3.one, t);
+				lerpPos = Vector3.LerpUnclamped(mCurrent.pos + new Vector3(v.x, v.y, 0f), Vector3.zero, t);
+				lerpRot = Quaternion.SlerpUnclamped(qRot, Quaternion.identity, t);
+				lerpScale = Vector3.LerpUnclamped(mCurrent.scale, Vector3.one, t);
 				lerpAlpha = Mathf.LerpUnclamped(mCurrent.alpha, 1f, t);
 #endif
 				mtx.SetTRS(lerpPos, lerpRot, lerpScale);
@@ -186,14 +148,11 @@ public class TweenLetters : UITweener
 					verts[iv] = vert;
 
 					c = cols[iv];
-					c.a *= lerpAlpha;
+					c.a = lerpAlpha;
 					cols[iv] = c;
 				}
 			}
 		}
-#if !UNITY_EDITOR
-		} catch (System.Exception) { enabled = false; }
-#endif
 	}
 
 #if UNITY_4_7
@@ -214,11 +173,7 @@ public class TweenLetters : UITweener
 	
 	protected override void OnUpdate (float factor, bool isFinished)
 	{
-		if (mLabel)
-		{
-			mLabel.enabled = !(isFinished && mCurrent == hoverOut && mCurrent.alpha == 0f);
-			mLabel.MarkAsChanged();
-		}
+		mLabel.MarkAsChanged();
 	}
 
 	/// <summary>
@@ -241,20 +196,9 @@ public class TweenLetters : UITweener
 		{
 			mLetterOrder[i] = (mCurrent.animationOrder == AnimationLetterOrder.Reverse) ? letterCount - 1 - i : i;
 
-			var prop = new LetterProperties();
-			prop.pos = new Vector3(
-				Random.Range(mCurrent.pos1.x, mCurrent.pos2.x),
-				Random.Range(mCurrent.pos1.y, mCurrent.pos2.y),
-				Random.Range(mCurrent.pos1.z, mCurrent.pos2.z));
-			prop.rot = Quaternion.Euler(new Vector3(
-				Random.Range(mCurrent.rot1.x, mCurrent.rot2.x),
-				Random.Range(mCurrent.rot1.y, mCurrent.rot2.y),
-				Random.Range(mCurrent.rot1.z, mCurrent.rot2.z)));
-			prop.scale = new Vector3(
-				Random.Range(mCurrent.scale1.x, mCurrent.scale2.x),
-				Random.Range(mCurrent.scale1.y, mCurrent.scale2.y),
-				Random.Range(mCurrent.scale1.z, mCurrent.scale2.z));
-			mLetter[mLetterOrder[i]] = prop;
+			int current = mLetterOrder[i];
+			mLetter[current] = new LetterProperties();
+			mLetter[current].offset = new Vector2(Random.Range(-mCurrent.offsetRange.x, mCurrent.offsetRange.x), Random.Range(-mCurrent.offsetRange.y, mCurrent.offsetRange.y));
 		}
 
 		if (mCurrent.animationOrder == AnimationLetterOrder.Random)
@@ -283,22 +227,22 @@ public class TweenLetters : UITweener
 		{
 			for (int i = 0; i < mLetter.Length; ++i)
 			{
-				mLetter[i].start = Random.Range(0f, mCurrent.randomness.x * duration);
-				float end = Random.Range(mCurrent.randomness.y * duration, duration);
+				mLetter[i].start = Random.Range(0f, mCurrent.randomness.x * base.duration);
+				float end = Random.Range(mCurrent.randomness.y * base.duration, base.duration);
 				mLetter[i].duration = end - mLetter[i].start;
 			}
 		}
 		else
 		{
 			// Calculate how long each letter will take to fade in.
-			float lengthPerLetter = duration / letterCount;
+			float lengthPerLetter = base.duration / (float)letterCount;
 			float flippedOverlap = 1f - mCurrent.overlap;
 
 			// Figure out how long the animation will be taking into account overlapping letters.
 			float totalDuration = lengthPerLetter * letterCount * flippedOverlap;
 
 			// Scale the smaller total running time back up to the requested animation time.
-			float letterDuration = ScaleRange(lengthPerLetter, totalDuration + lengthPerLetter * mCurrent.overlap, duration);
+			float letterDuration = ScaleRange(lengthPerLetter, totalDuration + lengthPerLetter * mCurrent.overlap, base.duration);
 
 			float offset = 0;
 			for (int i = 0; i < mLetter.Length; ++i)
@@ -315,7 +259,10 @@ public class TweenLetters : UITweener
 	/// Simplified Scale range function that assumes a minimum of 0 for both ranges.
 	/// </summary>
 
-	float ScaleRange (float value, float baseMax, float limitMax) { return (limitMax * value / baseMax); }
+	float ScaleRange (float value, float baseMax, float limitMax)
+	{
+		return (limitMax * value / baseMax);
+	}
 
 	/// <summary>
 	/// Finds the center point of a series of verts.

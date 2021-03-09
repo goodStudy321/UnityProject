@@ -1,0 +1,16 @@
+AFS 5 QUICKSTART
+
+
+Before starting please make sure that your project is set to use the linear color space:
+- Open Edit -> Project Settings -> Player -> Other Settings
+- Set "Color Space" to "Linear"
+
+You also have to assign the Afs deferred lighting shaders – otherwise all foliage will just show up "pretty colorful":
+- Open Edit -> Project Settings -> Graphics
+- Under "Built-in shader settings" change "Deferred" to "Custom shader", then assign the "Afs_Internal-DeferredShading" shader (located in "Shaders" -> "Resources").
+- Also change "Deferred Reflections" to "Custom shader" and assign the "Afs_Internal-DeferredReflections" shader (located in "Shaders" -> "Resources").
+
+As some grass models rely on import scripts which are part of this package they won't be processed correctly when you just import the package.
+This will lead to some grass models floating around. In order to solve this problem simply reimport the folder "Demos", quit Unity and restart it again.
+
+Now you should be fine to explore the demos and use the package.

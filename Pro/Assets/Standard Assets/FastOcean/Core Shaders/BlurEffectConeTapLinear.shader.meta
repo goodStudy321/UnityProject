@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 8f13ad4fc018c68458e7221586750183
+timeCreated: 1487750452
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: blureffectconetaplinear.shader
+  assetBundleVariant: ab

@@ -1,47 +1,89 @@
-﻿using System;
+/*=============================================================================
+ * Copyright (C) 2018, 金七情(Loong) jinqiqing@qq.com
+ * Created by Loong on 2017/2/5 12:06:14
+ ============================================================================*/
+
+using System;
 using System.IO;
-using Hello.Game;
+using Loong.Game;
 using System.Text;
 using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
 using UnityEditor.SceneManagement;
 
-namespace Hello.Edit
+namespace Loong.Edit
 {
+    /// <summary>
+    /// 场景视图
+    /// </summary>
     public class EditSceneView : EditViewBase
     {
+        #region 字段
+
         [SerializeField]
         [HideInInspector]
         private string sceneName;
-
         [SerializeField]
         [HideInInspector]
         private string mainScenePath = "./Assets/Main.unity";
 
+        /// <summary>
+        /// 场景目录
+        /// </summary>
         [NonSerialized]
         public List<string> sceneDirs = new List<string>();
 
+        /// <summary>
+        /// 基础目录
+        /// </summary>
         [NonSerialized]
         public List<FolderInfo> basics = new List<FolderInfo>();
 
+        /// <summary>
+        /// 分类子目录
+        /// </summary>
         [NonSerialized]
         public List<FolderInfo> childs = new List<FolderInfo>();
 
+        /// <summary>
+        /// 场景根目录文件夹名称
+        /// </summary>
         public const string scene = "Scene";
-
+        /// <summary>
+        /// 共享场景资源文件夹名称
+        /// </summary>
         public const string share = "Share";
 
+        /// <summary>
+        /// 不需要分类的资源文件夹
+        /// </summary>
         public const string iNone = "iNone";
 
+        /// <summary>
+        /// 场景根目录前缀
+        /// </summary>
         public const string prefix = "Assets/Scene/";
 
+        /// <summary>
+        ///  不需要分类的资源文件夹前缀
+        /// </summary>
         public const string packPrefix = "Assets/Pkg";
 
+        /// <summary>
+        /// 共享场景目录前缀
+        /// </summary>
         public const string sharePrefix = "Assets/Scene/Share";
 
+        /// <summary>
+        /// 分类目录字典,键为后缀名,值为对应目录
+        /// </summary>
         public static readonly Dictionary<string, FolderInfo> dic = new Dictionary<string, FolderInfo>();
-
+        #endregion
+        #region 属性
+        /// <summary>
+        /// 主场景路径
+        /// </summary>
         public string MainScenePath
         {
             get
@@ -51,16 +93,23 @@ namespace Hello.Edit
                 return path;
             }
         }
-
+        /// <summary>
+        /// 主场景完整路径
+        /// </summary>
         public string MainSceneFullPath
         {
             get { return Path.GetFullPath(mainScenePath); }
         }
+        #endregion
 
+        #region 构造方法
         static EditSceneView()
         {
             SetDic();
         }
+        #endregion
+
+        #region 私有方法
 
         private static void SetDic()
         {
@@ -117,12 +166,18 @@ namespace Hello.Edit
             }
         }
 
+        /// <summary>
+        /// 显示主场景设置
+        /// </summary>
         private void SetMainScene()
         {
             if (!UIEditTool.DrawHeader("基础属性", "SceneBasicProperty", StyleTool.Host)) return;
             UIEditLayout.SetPath("主场景路径:", ref mainScenePath, this, "unity");
         }
 
+        /// <summary>
+        /// 显示基础文件夹的信息
+        /// </summary>
         private void DrawBasicFolderInfo()
         {
             if (!UIEditTool.DrawHeader("基础文件夹信息", "basicFolderInfo", StyleTool.Host)) return;
@@ -133,6 +188,7 @@ namespace Hello.Edit
             for (int i = 0; i < length; i++)
             {
                 FolderInfo info = basics[i];
+                EditorGUILayout.BeginHorizontal(StyleTool.Group);
                 EditorGUILayout.LabelField(info.folder, GUILayout.Width(160));
                 EditorGUILayout.LabelField(info.info, GUILayout.Width(160));
                 if (Directory.Exists(info.fullPath))
@@ -142,9 +198,11 @@ namespace Hello.Edit
                 else
                 {
                     EditorGUILayout.LabelField("未创建", GUILayout.Width(100));
+
                 }
                 EditorGUILayout.EndHorizontal();
             }
+
             EditorGUILayout.EndVertical();
             if (GUILayout.Button("一键创建", GUILayout.Width(100)))
             {
@@ -153,7 +211,9 @@ namespace Hello.Edit
             }
             EditorGUILayout.EndHorizontal();
         }
-
+        /// <summary>
+        /// 创建所有基础文件夹
+        /// </summary>
         private void CreateBasicFolder()
         {
             if (basics == null) return;
@@ -171,6 +231,7 @@ namespace Hello.Edit
             else ShowTip("创建成功");
             AssetDatabase.Refresh();
         }
+
 
         private void DrawSceneFolderInfo()
         {
@@ -282,6 +343,12 @@ namespace Hello.Edit
             basics.Add(new FolderInfo("StreamingAssets", "流文件夹"));
         }
 
+        #endregion
+
+        #region 保护方法
+        /// <summary>
+        /// 绘制
+        /// </summary>
         protected override void OnGUICustom()
         {
             SetMainScene();
@@ -294,7 +361,9 @@ namespace Hello.Edit
             EditorGUILayout.Space();
             DrawSceneFolder();
         }
+        #endregion
 
+        #region 公开方法
         /// <summary>
         /// 初始化
         /// </summary>
@@ -411,6 +480,7 @@ namespace Hello.Edit
             if (assetPath.StartsWith(prefix)) return true;
             return false;
         }
+
+        #endregion
     }
 }
-

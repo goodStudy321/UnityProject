@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
@@ -6,7 +6,7 @@ using System.Net.Sockets;
 using System.Collections.Generic;
 
 using UnityEngine;
-using Hello.Game;
+using Loong.Game;
 
 
 public class TcpConnect : Connection
@@ -32,7 +32,7 @@ public class TcpConnect : Connection
         DisconRecvErr2,
         DisconSendErr1,
         DisconSendErr2,
-        Close,
+		Close,
     }
 
     public TcpConnect(Handle handle)
@@ -72,7 +72,7 @@ public class TcpConnect : Connection
 
     public override bool Connect(string hostname, int port, bool last)
     {
-
+       
         if (m_connect != null)
             return true;
         try
@@ -85,7 +85,7 @@ public class TcpConnect : Connection
             //Utility.PrintLog(string.Format("begin socket connect ip={0}  port = {1}",hostname,port));
 
             m_connect = socket.BeginConnect(hostname, port, new AsyncCallback(OnConnect), socket);
-
+            
             return true;
         }
         catch (Exception exception)
@@ -127,7 +127,7 @@ public class TcpConnect : Connection
 
     public void OnConnect(IAsyncResult ar)
     {
-        //if (m_connected != null)
+		//if (m_connected != null)
         //    m_connected(true);
         bool flag = ar.AsyncWaitHandle.WaitOne(50000, false);
         m_connect.AsyncWaitHandle.Close();
@@ -147,15 +147,15 @@ public class TcpConnect : Connection
             }
 
             OnConnectedFailed();
-            //             if (!last)
-            //             {
-            //                 OnConnectedFailed();
-            //                 //return false;
-            //             }
-            //             else
-            //             {
-            //                 throw (new Exception("Wait failed"));
-            //             }
+//             if (!last)
+//             {
+//                 OnConnectedFailed();
+//                 //return false;
+//             }
+//             else
+//             {
+//                 throw (new Exception("Wait failed"));
+//             }
         }
 
 #if UNITY_EDITOR

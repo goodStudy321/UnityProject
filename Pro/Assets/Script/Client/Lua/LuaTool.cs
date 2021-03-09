@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 using UnityEngine;
 using LuaInterface;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Hello.Game
+namespace Loong.Game
 {
     /*
      * CO:            
@@ -134,7 +134,7 @@ namespace Hello.Game
             if (args == null)
             {
                 func.Call();
-                tabel = func.CheckLuaTable();
+                tabel = func.CheckLuaTable(); 
             }
             else
             {
@@ -148,7 +148,7 @@ namespace Hello.Game
                 tabel = func.CheckLuaTable();
                 func.EndPCall();
             }
-            return tabel;
+            return tabel ;
         }
         #endregion
     }

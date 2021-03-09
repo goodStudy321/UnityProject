@@ -1,11 +1,10 @@
-﻿#define FILE_LOG
+#define FILE_LOG
 
 using UnityEngine;
 using System.Collections;
 using System.IO;
 
-public class FileLogMgr
-{
+public class FileLogMgr  {
 
     public static readonly FileLogMgr instance = new FileLogMgr();
 

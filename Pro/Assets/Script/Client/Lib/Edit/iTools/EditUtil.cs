@@ -1,28 +1,37 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+/*=============================================================================
+ * Copyright (C) 2018, 金七情(Loong) jinqiqing@qq.com
+ * Created by Loong on 2014/4/15 10:51:58
+ ============================================================================*/
+
+#if UNITY_EDITOR
+using System;
 using System.IO;
-using System.Reflection;
+using System.Text;
 using UnityEditor;
 using UnityEngine;
+using System.Reflection;
 using Object = UnityEngine.Object;
 
-namespace Hello.Game
+namespace Loong.Game
 {
     /// <summary>
     /// 编辑器工具
     /// </summary>
     public static class EditUtil
     {
+        #region 字段
         /// <summary>
         /// 菜单
         /// </summary>
-        public const string menu = MenuTool.Hello + "通用工具/";
+        public const string menu = MenuTool.Loong + "通用工具/";
 
         /// <summary>
         /// 资源下菜单
         /// </summary>
-        public const string AMenu = MenuTool.AHello + "通用工具/";
+        public const string AMenu = MenuTool.ALoong + "通用工具/";
+        #endregion
 
+        #region 属性
         /// <summary>
         /// 编辑器文件存放路径
         /// </summary>
@@ -37,6 +46,9 @@ namespace Hello.Game
         {
             get { return "Assets/Script/Editor/Asset/"; }
         }
+        #endregion
+
+        #region 私有方法
 
         [MenuItem(menu + "释放编辑器无用资源", false, MenuTool.NormalPri + 5)]
         [MenuItem(AMenu + "释放编辑器无用资源", false, MenuTool.NormalPri + 5)]
@@ -48,6 +60,9 @@ namespace Hello.Game
             EditorUtility.UnloadUnusedAssetsImmediate();
 #endif
         }
+        #endregion
+
+        #region 公开方法
 
         /// <summary>
         /// 获取选择的制定类型的资源数组
@@ -182,7 +197,7 @@ namespace Hello.Game
         {
             return GetPlatform(EditorUserBuildSettings.activeBuildTarget);
         }
-
+        #endregion
     }
 }
-
+#endif

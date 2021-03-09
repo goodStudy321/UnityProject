@@ -1,35 +1,74 @@
-﻿using System;
+/*=============================================================================
+ * Copyright (C) 2014, 金七情(Loong) jinqiqing@qq.com
+ * Created by Loong in 2018/2/4 14:55:23
+ ============================================================================*/
+
+using System;
 using System.IO;
-using Hello.Game;
+using Loong.Game;
 using UnityEditor;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using Object = UnityEngine.Object;
 
-namespace Hello.Edit
+namespace Loong.Edit
 {
     using NameDic = Dictionary<string, List<string>>;
-
+    /// <summary>
+    /// 资源包名称工具
+    /// </summary>
     public static class ABNameUtil
     {
+        #region 字段
         public const int Pri = ABTool.Pri + 20;
 
+        /// <summary>
+        /// true:所有的shader打成一个ab
+        /// </summary>
         public static bool oneShader = true;
 
+        /// <summary>
+        /// shader AB名称
+        /// </summary>
         public const string shaderName = "shader";
 
+        /// <summary>
+        /// lua AB名称
+        /// </summary>
         public const string luaName = "lua.bytes";
 
+        /// <summary>
+        /// AB 变体后缀名
+        /// </summary>
         public static readonly string variant = Suffix.AB.Replace(".", string.Empty);
+        #endregion
 
+        #region 属性
+
+        #endregion
+
+        #region 委托事件
+
+        #endregion
+
+        #region 构造方法
+
+        #endregion
+
+        #region 私有方法
         private static void RefreshAssets()
         {
             AssetDatabase.RemoveUnusedAssetBundleNames();
             AssetDatabase.Refresh();
         }
 
-        private static void Add(List<string> all,string name)
+        /// <summary>
+        /// 向列表中添加指定ab名称的路径
+        /// </summary>
+        /// <param name="all"></param>
+        /// <param name="name"></param>
+        private static void Add(List<string> all, string name)
         {
             var paths = AssetDatabase.GetAssetPathsFromAssetBundle(name);
             if (paths == null || paths.Length < 1) return;
@@ -40,6 +79,18 @@ namespace Hello.Edit
             }
         }
 
+        #endregion
+
+        #region 保护方法
+
+        #endregion
+
+        #region 公开方法
+
+        /// <summary>
+        /// 显示指定包名的资源路径
+        /// </summary>
+        /// <param name="name"></param>
         public static void Search(string name)
         {
             if (string.IsNullOrEmpty(name))
@@ -49,14 +100,18 @@ namespace Hello.Edit
             }
             name = name.ToLower();
             var paths = AssetDatabase.GetAssetPathsFromAssetBundle(name);
-            if(paths == null || paths.Length < 1)
+            if (paths == null || paths.Length < 1)
             {
-                UIEditTip.Log("无");
-                return;
+                UIEditTip.Log("无"); return;
             }
             ObjsWin.Open(paths);
         }
 
+
+        /// <summary>
+        /// 显示具有指定后缀名的资源包
+        /// </summary>
+        /// <param name="sfx">后缀名</param>
         public static void SearchBySfx(string sfx)
         {
             if (string.IsNullOrEmpty(sfx)) return;
@@ -77,6 +132,10 @@ namespace Hello.Edit
             ObjsWin.Open(all);
         }
 
+        /// <summary>
+        /// 显示包含指定字符串的资源包名称
+        /// </summary>
+        /// <param name="op"></param>
         public static void SearchByStr(string op)
         {
             if (string.IsNullOrEmpty(op)) return;
@@ -96,15 +155,18 @@ namespace Hello.Edit
             ProgressBarUtil.Clear();
         }
 
+        /// <summary>
+        /// 刷新所有资源的的AB名称
+        /// </summary>
         public static void Refresh()
         {
             AssetDatabase.RemoveUnusedAssetBundleNames();
             var names = AssetDatabase.GetAllAssetBundleNames();
-            if(names == null || names.Length < 1)
+            if (names == null || names.Length < 1)
             {
-                iTrace.Log("Hello", " 无 AB");
-                return;
+                iTrace.Log("Loong", "无 AB"); return;
             }
+
             int pathsLen = 0;
             float length = names.Length;
             for (int i = 0; i < length; i++)
@@ -124,6 +186,9 @@ namespace Hello.Edit
             RefreshAssets();
         }
 
+        /// <summary>
+        /// 设置所有shader的名称
+        /// </summary>
         public static void SetShader()
         {
             AssetDatabase.RemoveUnusedAssetBundleNames();
@@ -147,6 +212,10 @@ namespace Hello.Edit
             AssetDatabase.Refresh();
         }
 
+        /// <summary>
+        /// 设置资源包名称
+        /// </summary>
+        /// <param name="path">资源路径</param>
         public static void Set(string path, bool force = true)
         {
             string sfx = Path.GetExtension(path);
@@ -201,6 +270,10 @@ namespace Hello.Edit
             }
         }
 
+        /// <summary>
+        /// 设置指定路径shader的包名
+        /// </summary>
+        /// <param name="path"></param>
         public static void SetShader(string path)
         {
             if (string.IsNullOrEmpty(path)) return;
@@ -210,38 +283,58 @@ namespace Hello.Edit
             Set(import, shaderName);
         }
 
-        public static void Set(string path,string name)
+        /// <summary>
+        /// 设置指定路径资源为指定包名
+        /// </summary>
+        /// <param name="path">资源路径</param>
+        /// <param name="name">包名</param>
+        public static void Set(string path, string name)
         {
             var ai = AssetImporter.GetAtPath(path);
             Set(ai, name);
         }
 
-        public static void Set(AssetImporter ai,string name)
+        /// <summary>
+        /// 设置指定名称
+        /// </summary>
+        /// <param name="ai">资源</param>
+        /// <param name="name">AB名称</param>
+        public static void Set(AssetImporter ai, string name)
         {
             if (ai == null) return;
-            if(ai.assetBundleName != name)
+            if (ai.assetBundleName != name)
             {
                 ai.assetBundleName = name;
             }
-            if(ai.assetBundleVariant != variant)
+            if (ai.assetBundleVariant != variant)
             {
                 ai.assetBundleVariant = variant;
             }
         }
 
-        public static void SetNoABSfx(AssetImporter ai,string name)
+        /// <summary>
+        /// 设置指定名称/无AB后缀
+        /// </summary>
+        /// <param name="ai"></param>
+        /// <param name="name">AB名称</param>
+        public static void SetNoABSfx(AssetImporter ai, string name)
         {
             if (ai == null) return;
-            if(ai.assetBundleName != name)
+            if (ai.assetBundleName != name)
             {
                 ai.assetBundleName = name;
             }
             ai.assetBundleVariant = null;
         }
 
-        public static void SetUnique(AssetImporter ai,string name)
+        /// <summary>
+        /// 设置唯一名称/和文件名一致(包含后缀名)
+        /// </summary>
+        /// <param name="ai"></param>
+        /// <param name="name"></param>
+        public static void SetUnique(AssetImporter ai, string name)
         {
-            if(ai.assetBundleName != name)
+            if (ai.assetBundleName != name)
             {
                 if (CheckUnique(name))
                 {
@@ -249,17 +342,23 @@ namespace Hello.Edit
                 }
                 else
                 {
-                    string tip = string.Format("导入的文件:{0}，和其他文件重名", ai.assetPath);
-                    iTrace.Error("Hello", tip);
+                    string tip = string.Format("导入的文件:{0},和其它文件重名", ai.assetPath);
+                    iTrace.Error("Loong", tip);
                 }
             }
-            if(ai.assetBundleVariant != variant)
+            if (ai.assetBundleVariant != variant)
             {
                 ai.assetBundleVariant = variant;
             }
         }
 
-        public static void SetSelect(string name,SelectionMode mode = SelectionMode.Assets)
+
+
+        /// <summary>
+        /// 设置所有选择对象的包名
+        /// </summary>
+        /// <param name="name">包名</param>
+        public static void SetSelect(string name, SelectionMode mode = SelectionMode.Assets)
         {
             var objs = SelectUtil.Get<Object>(mode);
             if (objs == null) return;
@@ -278,6 +377,11 @@ namespace Hello.Edit
             RefreshAssets();
         }
 
+        /// <summary>
+        /// 设置指定资源列表为同一包名
+        /// </summary>
+        /// <param name="paths">资源路径列表</param>
+        /// <param name="name">包名</param>
         public static void Set(List<string> paths, string name)
         {
             if (paths == null) return;
@@ -295,6 +399,10 @@ namespace Hello.Edit
             RefreshAssets();
         }
 
+        /// <summary>
+        /// 检查是否唯一名称
+        /// </summary>
+        /// <param name="name">资源包名称</param>
         public static bool CheckUnique(string name)
         {
             string[] paths = AssetDatabase.GetAssetPathsFromAssetBundle(name);
@@ -302,6 +410,11 @@ namespace Hello.Edit
             return false;
         }
 
+        /// <summary>
+        /// 获取无AB名的资源路径列表
+        /// </summary>
+        /// <param name="dirs"></param>
+        /// <returns></returns>
         public static List<string> GetPathsNone(List<string> dirs)
         {
             if (dirs == null || dirs.Count < 1) return null;
@@ -347,6 +460,11 @@ namespace Hello.Edit
             return lst;
         }
 
+
+        /// <summary>
+        /// 获取字典,k:ab名称,v:资源名称(小写)列表
+        /// </summary>
+        /// <returns></returns>
         public static NameDic GetDic()
         {
             AssetDatabase.RemoveUnusedAssetBundleNames();
@@ -382,6 +500,8 @@ namespace Hello.Edit
             ProgressBarUtil.Clear();
             return dic;
         }
+
+
 
         public static void SearchNotSame(AssetType type)
         {
@@ -528,7 +648,6 @@ namespace Hello.Edit
             DialogUtil.Show("", "搜索未设置AB资源?", SearchNo);
         }
 
+        #endregion
     }
 }
-
-

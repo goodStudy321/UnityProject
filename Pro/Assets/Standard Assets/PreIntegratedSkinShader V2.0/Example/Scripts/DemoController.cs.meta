@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 9be5c1256999e0f419ab683d1e81e395
+timeCreated: 1441482254
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - sun: {instanceID: 0}
+  - reflectionProbe: {instanceID: 0}
+  - skyboxSphereShader: {fileID: 4800000, guid: 45ef62ce6c91f42b99c61d1208fb18a6,
+      type: 3}
+  - profileSphereShader: {fileID: 4800000, guid: 3133404bfe0c24111af5cb0e131072cf,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

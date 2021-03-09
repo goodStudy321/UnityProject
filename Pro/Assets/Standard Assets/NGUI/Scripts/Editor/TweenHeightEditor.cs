@@ -1,6 +1,6 @@
 //-------------------------------------------------
 //            NGUI: Next-Gen UI kit
-// Copyright © 2011-2020 Tasharen Entertainment Inc
+// Copyright © 2011-2017 Tasharen Entertainment Inc
 //-------------------------------------------------
 
 using UnityEngine;
@@ -17,21 +17,9 @@ public class TweenHeightEditor : UITweenerEditor
 		TweenHeight tw = target as TweenHeight;
 		GUI.changed = false;
 
-		EditorGUILayout.BeginHorizontal();
-		EditorGUI.BeginDisabledGroup(tw.fromTarget != null);
-		var from = EditorGUILayout.IntField("From", tw.from);
-		EditorGUI.EndDisabledGroup();
-		var fc = (UIWidget)EditorGUILayout.ObjectField(tw.fromTarget, typeof(UIWidget), true, GUILayout.Width(110f));
-		EditorGUILayout.EndHorizontal();
-
-		EditorGUILayout.BeginHorizontal();
-		EditorGUI.BeginDisabledGroup(tw.toTarget != null);
-		var to = EditorGUILayout.IntField("To", tw.to);
-		EditorGUI.EndDisabledGroup();
-		var tc = (UIWidget)EditorGUILayout.ObjectField(tw.toTarget, typeof(UIWidget), true, GUILayout.Width(110f));
-		EditorGUILayout.EndHorizontal();
-
-		var table = EditorGUILayout.Toggle("Update Table", tw.updateTable);
+		int from = EditorGUILayout.IntField("From", tw.from);
+		int to = EditorGUILayout.IntField("To", tw.to);
+		bool table = EditorGUILayout.Toggle("Update Table", tw.updateTable);
 
 		if (from < 0) from = 0;
 		if (to < 0) to = 0;
@@ -41,8 +29,6 @@ public class TweenHeightEditor : UITweenerEditor
 			NGUIEditorTools.RegisterUndo("Tween Change", tw);
 			tw.from = from;
 			tw.to = to;
-			tw.fromTarget = fc;
-			tw.toTarget = tc;
 			tw.updateTable = table;
 			NGUITools.SetDirty(tw);
 		}

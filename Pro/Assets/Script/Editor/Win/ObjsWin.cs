@@ -1,13 +1,18 @@
-﻿using System;
+﻿/*=============================================================================
+ * Copyright (C) 2018, 金七情(Loong) jinqiqing@qq.com
+ * Created by Loong on 2018/8/3 15:55:51
+ ============================================================================*/
+
+using System;
 using System.IO;
-using Hello.Game;
+using Loong.Game;
 using UnityEditor;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using Object = UnityEngine.Object;
 
-namespace Hello.Edit
+namespace Loong.Edit
 {
     /// <summary>
     /// ObjsWin

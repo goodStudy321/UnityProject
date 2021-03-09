@@ -1,9 +1,10 @@
 //-------------------------------------------------
 //            NGUI: Next-Gen UI kit
-// Copyright © 2011-2020 Tasharen Entertainment Inc
+// Copyright © 2011-2017 Tasharen Entertainment Inc
 //-------------------------------------------------
 
 using UnityEngine;
+using System.Collections.Generic;
 
 /// <summary>
 /// Symbols are a sequence of characters such as ":)" that get replaced with a sprite, such as the smiley face.
@@ -12,28 +13,26 @@ using UnityEngine;
 [System.Serializable]
 public class BMSymbol
 {
-	public string sequence;		// Character sequence, such as ":)"
-	public string spriteName;	// Name of the sprite in the atlas
-	public bool colored;		// Whether the label's color should apply to the symbol
+	public string sequence;
+	public string spriteName;
 
-	[System.NonSerialized] UISpriteData mSprite = null;
-	[System.NonSerialized] bool mIsValid = false;
-	[System.NonSerialized] int mLength = 0;
-	[System.NonSerialized] int mOffsetX = 0;	// (outer - inner) in pixels
-	[System.NonSerialized] int mOffsetY = 0;	// (outer - inner) in pixels
-	[System.NonSerialized] int mWidth = 0;		// Symbol's width in pixels (sprite.outer.width)
-	[System.NonSerialized] int mHeight = 0;		// Symbol's height in pixels (sprite.outer.height)
-	[System.NonSerialized] int mAdvance = 0;	// Symbol's inner width in pixels (sprite.inner.width)
-	[System.NonSerialized] Rect mUV;
+	UISpriteData mSprite = null;
+	bool mIsValid = false;
+	int mLength = 0;
+	int mOffsetX = 0;		// (outer - inner) in pixels
+	int mOffsetY = 0;		// (outer - inner) in pixels
+	int mWidth = 0;			// Symbol's width in pixels (sprite.outer.width)
+	int mHeight = 0;		// Symbol's height in pixels (sprite.outer.height)
+	int mAdvance = 0;		// Symbol's inner width in pixels (sprite.inner.width)
+	Rect mUV;
 
-	public int length { get { if (mLength == 0) mLength = sequence.Length; return mLength; } }
-	public int offsetX { get { return mOffsetX; } }
-	public int offsetY { get { return mOffsetY; } }
-	public int width { get { return mWidth; } }
-	public int height { get { return mHeight; } }
-	public int paddedHeight { get { return mSprite != null ? mSprite.paddingTop + mSprite.paddingBottom + mSprite.height : mHeight; } }
-	public int advance { get { return mAdvance; } }
-	public Rect uvRect { get { return mUV; } }
+	public int length	{ get { if (mLength == 0) mLength = sequence.Length; return mLength; } }
+	public int offsetX	{ get { return mOffsetX; } }
+	public int offsetY	{ get { return mOffsetY; } }
+	public int width	{ get { return mWidth; } }
+	public int height	{ get { return mHeight; } }
+	public int advance	{ get { return mAdvance; } }
+	public Rect uvRect	{ get { return mUV; } }
 
 	/// <summary>
 	/// Mark this symbol as dirty, clearing the sprite reference.
@@ -45,7 +44,7 @@ public class BMSymbol
 	/// Validate this symbol, given the specified atlas.
 	/// </summary>
 
-	public bool Validate (INGUIAtlas atlas)
+	public bool Validate (UIAtlas atlas)
 	{
 		if (atlas == null) return false;
 
@@ -57,12 +56,11 @@ public class BMSymbol
 		{
 			if (string.IsNullOrEmpty(spriteName)) return false;
 
-			Texture tex = null;
-			mSprite = atlas.GetSprite(spriteName);
+			mSprite = (atlas != null) ? atlas.GetSprite(spriteName) : null;
 
 			if (mSprite != null)
 			{
-				tex = atlas.texture;
+				Texture tex = atlas.texture;
 
 				if (tex == null)
 				{

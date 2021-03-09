@@ -1,6 +1,6 @@
 //-------------------------------------------------
 //            NGUI: Next-Gen UI kit
-// Copyright © 2011-2020 Tasharen Entertainment Inc
+// Copyright © 2011-2017 Tasharen Entertainment Inc
 //-------------------------------------------------
 
 using UnityEditor;
@@ -26,8 +26,6 @@ public class ComponentSelector : ScriptableWizard
 
 	static string GetName (System.Type t)
 	{
-		if (t == typeof(INGUIAtlas)) return "Atlas";
-		if (t == typeof(INGUIFont)) return "Font";
 		string s = t.ToString();
 		s = s.Replace("UnityEngine.", "");
 		if (s.StartsWith("UI")) s = s.Substring(2);
@@ -59,58 +57,30 @@ public class ComponentSelector : ScriptableWizard
 		else cb(o);
 	}
 
-	static public void Draw (string buttonName, INGUIAtlas atlas, OnSelectionCallback cb, bool editButton, params GUILayoutOption[] options)
-	{
-		if (atlas is UIAtlas) Draw(buttonName, atlas as UIAtlas, cb, editButton, options);
-		else Draw(buttonName, atlas as NGUIAtlas, cb, editButton, options);
-	}
-
 	/// <summary>
 	/// Draw a button + object selection combo filtering specified types.
 	/// </summary>
 
 	static public void Draw<T> (T obj, OnSelectionCallback cb, bool editButton, params GUILayoutOption[] options) where T : Object
 	{
-		Draw<T>(NGUITools.GetTypeName<T>().Replace("NGUI", "").Replace("UI", ""), obj, cb, editButton, options);
-	}
-
-	static public void Draw (INGUIAtlas atlas, OnSelectionCallback cb, bool editButton, params GUILayoutOption[] options)
-	{
-		if (atlas is UIAtlas) Draw(atlas as UIAtlas, cb, editButton, options);
-		else Draw(atlas as NGUIAtlas, cb, editButton, options);
-	}
-
-	static public void Draw (INGUIFont font, OnSelectionCallback cb, bool editButton, params GUILayoutOption[] options)
-	{
-		if (font is UIFont) Draw(font as UIFont, cb, editButton, options);
-		else Draw(font as NGUIFont, cb, editButton, options);
+		Draw<T>(NGUITools.GetTypeName<T>(), obj, cb, editButton, options);
 	}
 
 	/// <summary>
 	/// Show the selection wizard.
 	/// </summary>
 
-	static public void Show (INGUIAtlas atlas, OnSelectionCallback cb)
-	{
-		if (atlas is UIAtlas) Show<UIAtlas>(cb, new string[] { ".prefab" });
-		else Show<NGUIAtlas>(cb, new string[] { ".asset" });
-	}
+	static public void Show<T> (OnSelectionCallback cb) where T : Object { Show<T>(cb, new string[] {".prefab"}); }
 
 	/// <summary>
 	/// Show the selection wizard.
 	/// </summary>
 
-	static public void Show<T> (OnSelectionCallback cb) { Show<T>(cb, new string[] {".prefab"}); }
-
-	/// <summary>
-	/// Show the selection wizard.
-	/// </summary>
-
-	static public void Show<T> (OnSelectionCallback cb, string[] extensions)
+	static public void Show<T> (OnSelectionCallback cb, string[] extensions) where T : Object
 	{
-		var type = typeof(T);
-		string title = GetName(type) + " Selection";
-		var comp = ScriptableWizard.DisplayWizard<ComponentSelector>(title);
+		System.Type type = typeof(T);
+		string title = (type == typeof(UIAtlas) ? "Select an " : "Select a ") + GetName(type);
+		ComponentSelector comp = ScriptableWizard.DisplayWizard<ComponentSelector>(title);
 		comp.mTitle = title;
 		comp.mType = type;
 		comp.mCallback = cb;
@@ -124,11 +94,11 @@ public class ComponentSelector : ScriptableWizard
 		else
 		{
 			// Remove invalid fonts (Lucida Grande etc)
-			if (type == typeof(Font))
+			if (typeof(T) == typeof(Font))
 			{
 				for (int i = 0; i < comp.mObjects.Length; ++i)
 				{
-					var obj = comp.mObjects[i];
+					Object obj = comp.mObjects[i];
 					if (obj.name == "Arial") continue;
 					string path = AssetDatabase.GetAssetPath(obj);
 					if (string.IsNullOrEmpty(path)) comp.mObjects[i] = null;
@@ -155,9 +125,9 @@ public class ComponentSelector : ScriptableWizard
 
 		if (mExtensions != null)
 		{
-			var paths = AssetDatabase.GetAllAssetPaths();
-			var isComponent = mType.IsSubclassOf(typeof(Component));
-			var list = new List<Object>();
+			string[] paths = AssetDatabase.GetAllAssetPaths();
+			bool isComponent = mType.IsSubclassOf(typeof(Component));
+			List<Object> list = new List<Object>();
 
 			for (int i = 0; i < mObjects.Length; ++i)
 				if (mObjects[i] != null)
@@ -165,8 +135,9 @@ public class ComponentSelector : ScriptableWizard
 
 			for (int i = 0; i < paths.Length; ++i)
 			{
-				var path = paths[i];
-				var valid = false;
+				string path = paths[i];
+
+				bool valid = false;
 
 				for (int b = 0; b < mExtensions.Length; ++b)
 				{
@@ -180,17 +151,19 @@ public class ComponentSelector : ScriptableWizard
 				if (!valid) continue;
 
 				EditorUtility.DisplayProgressBar("Loading", "Searching assets, please wait...", (float)i / paths.Length);
-				var obj = AssetDatabase.LoadMainAssetAtPath(path);
+				Object obj = AssetDatabase.LoadMainAssetAtPath(path);
 				if (obj == null || list.Contains(obj)) continue;
 
 				if (!isComponent)
 				{
-					var t = obj.GetType();
-					if (t == mType || t.IsSubclassOf(mType) && !list.Contains(obj)) list.Add(obj);
+					System.Type t = obj.GetType();
+					if (t == mType || t.IsSubclassOf(mType) && !list.Contains(obj))
+						list.Add(obj);
 				}
-				else if (NGUIEditorTools.IsPrefab(obj as GameObject))
-				{
-					var t = (obj as GameObject).GetComponent(mType);
+                //else if (PrefabUtility.GetPrefabType(obj) == PrefabType.Prefab)
+                else if (PrefabUtility.GetPrefabAssetType(obj) == PrefabAssetType.Regular)
+                {
+					Object t = (obj as GameObject).GetComponent(mType);
 					if (t != null && !list.Contains(t)) list.Add(t);
 				}
 			}
@@ -249,7 +222,7 @@ public class ComponentSelector : ScriptableWizard
 			foreach (Object o in mObjects)
 				if (DrawObject(o))
 					sel = o;
-
+			
 			GUILayout.EndScrollView();
 
 			if (sel != null)
@@ -290,11 +263,11 @@ public class ComponentSelector : ScriptableWizard
 				path = "[Embedded]";
 				GUI.contentColor = new Color(0.7f, 0.7f, 0.7f);
 			}
-			else if (comp && comp.gameObject && EditorUtility.IsPersistent(comp.gameObject))
+			else if (comp != null && EditorUtility.IsPersistent(comp.gameObject))
 				GUI.contentColor = new Color(0.6f, 0.8f, 1f);
 
-			retVal |= GUILayout.Button(obj.name, NGUIEditorTools.textArea, GUILayout.Width(160f), GUILayout.Height(20f));
-			retVal |= GUILayout.Button(path.Replace("Assets/", ""), NGUIEditorTools.textArea, GUILayout.Height(20f));
+			retVal |= GUILayout.Button(obj.name, "TextArea", GUILayout.Width(160f), GUILayout.Height(20f));
+			retVal |= GUILayout.Button(path.Replace("Assets/", ""), "TextArea", GUILayout.Height(20f));
 			GUI.contentColor = Color.white;
 
 			retVal |= GUILayout.Button("Select", "ButtonLeft", GUILayout.Width(60f), GUILayout.Height(16f));

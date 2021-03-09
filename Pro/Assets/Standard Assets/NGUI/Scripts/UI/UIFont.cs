@@ -1,56 +1,46 @@
 //-------------------------------------------------
 //            NGUI: Next-Gen UI kit
-// Copyright © 2011-2020 Tasharen Entertainment Inc
+// Copyright © 2011-2017 Tasharen Entertainment Inc
 //-------------------------------------------------
 
 // Dynamic font support contributed by the NGUI community members:
 // Unisip, zh4ox, Mudwiz, Nicki, DarkMagicCK.
 
+#if !UNITY_3_5
+#define DYNAMIC_FONT
+#endif
+
 using UnityEngine;
 using System.Collections.Generic;
+using System.Text;
 
 /// <summary>
-/// UIFont contains everything needed to be able to print text. This is the legacy component that stores its data in a prefab.
-/// It's best to use NGUIFont now as it saves its data in Scriptable Objects, which plays better with Unity 2018+.
+/// UIFont contains everything needed to be able to print text.
 /// </summary>
 
 [ExecuteInEditMode]
-//[AddComponentMenu("NGUI/UI/NGUI Font")] // Replaced by NGUIFont, a Scriptable Object
-public class UIFont : MonoBehaviour, INGUIFont
+[AddComponentMenu("NGUI/UI/NGUI Font")]
+public class UIFont : MonoBehaviour
 {
-	[HideInInspector] [SerializeField] Material mMat;
-	[HideInInspector] [SerializeField] Rect mUVRect = new Rect(0f, 0f, 1f, 1f);
-	[HideInInspector] [SerializeField] BMFont mFont = new BMFont();
-	[HideInInspector] [SerializeField] Object mAtlas;
-	[HideInInspector] [SerializeField] Object mReplacement;
+	[HideInInspector][SerializeField] Material mMat;
+	[HideInInspector][SerializeField] Rect mUVRect = new Rect(0f, 0f, 1f, 1f);
+	[HideInInspector][SerializeField] BMFont mFont = new BMFont();
+	[HideInInspector][SerializeField] UIAtlas mAtlas;
+	[HideInInspector][SerializeField] UIFont mReplacement;
 
 	// List of symbols, such as emoticons like ":)", ":(", etc
-	[HideInInspector] [SerializeField] List<BMSymbol> mSymbols = new List<BMSymbol>();
+	[HideInInspector][SerializeField] List<BMSymbol> mSymbols = new List<BMSymbol>();
 
 	// Used for dynamic fonts
-	[HideInInspector] [SerializeField] Font mDynamicFont;
-	[HideInInspector] [SerializeField] int mDynamicFontSize = 16;
-	[HideInInspector] [SerializeField] FontStyle mDynamicFontStyle = FontStyle.Normal;
+	[HideInInspector][SerializeField] Font mDynamicFont;
+	[HideInInspector][SerializeField] int mDynamicFontSize = 16;
+	[HideInInspector][SerializeField] FontStyle mDynamicFontStyle = FontStyle.Normal;
 
 	// Cached value
-	[System.NonSerialized] UISpriteData mSprite = null;
-	[System.NonSerialized] int mPMA = -1;
-	[System.NonSerialized] int mPacked = -1;
-
-	/// <summary>
-	/// Explicitly specified font type. Legacy behaviour would always determine this automatically in the past.
-	/// </summary>
-
-	public NGUIFontType type
-	{
-		get
-		{
-			if (replacement != null) return NGUIFontType.Reference;
-			if (dynamicFont != null) return NGUIFontType.Dynamic;
-			return NGUIFontType.Bitmap;
-		}
-		set { }
-	}
+	[System.NonSerialized]
+	UISpriteData mSprite = null;
+	int mPMA = -1;
+	int mPacked = -1;
 
 	/// <summary>
 	/// Access to the BMFont class directly.
@@ -60,13 +50,11 @@ public class UIFont : MonoBehaviour, INGUIFont
 	{
 		get
 		{
-			var rep = replacement;
-			return (rep != null) ? rep.bmFont : mFont;
+			return (mReplacement != null) ? mReplacement.bmFont : mFont;
 		}
 		set
 		{
-			var rep = replacement;
-			if (rep != null) rep.bmFont = value;
+			if (mReplacement != null) mReplacement.bmFont = value;
 			else mFont = value;
 		}
 	}
@@ -79,13 +67,11 @@ public class UIFont : MonoBehaviour, INGUIFont
 	{
 		get
 		{
-			var rep = replacement;
-			return (rep != null) ? rep.texWidth : ((mFont != null) ? mFont.texWidth : 1);
+			return (mReplacement != null) ? mReplacement.texWidth : ((mFont != null) ? mFont.texWidth : 1);
 		}
 		set
 		{
-			var rep = replacement;
-			if (rep != null) rep.texWidth = value;
+			if (mReplacement != null) mReplacement.texWidth = value;
 			else if (mFont != null) mFont.texWidth = value;
 		}
 	}
@@ -98,13 +84,11 @@ public class UIFont : MonoBehaviour, INGUIFont
 	{
 		get
 		{
-			var rep = replacement;
-			return (rep != null) ? rep.texHeight : ((mFont != null) ? mFont.texHeight : 1);
+			return (mReplacement != null) ? mReplacement.texHeight : ((mFont != null) ? mFont.texHeight : 1);
 		}
 		set
 		{
-			var rep = replacement;
-			if (rep != null) rep.texHeight = value;
+			if (mReplacement != null) mReplacement.texHeight = value;
 			else if (mFont != null) mFont.texHeight = value;
 		}
 	}
@@ -113,86 +97,43 @@ public class UIFont : MonoBehaviour, INGUIFont
 	/// Whether the font has any symbols defined.
 	/// </summary>
 
-	public bool hasSymbols
-	{
-		get
-		{
-			var rep = replacement;
-			return (rep != null) ? rep.hasSymbols : (mSymbols != null && mSymbols.Count != 0);
-		}
-	}
+	public bool hasSymbols { get { return (mReplacement != null) ? mReplacement.hasSymbols : (mSymbols != null && mSymbols.Count != 0); } }
 
 	/// <summary>
 	/// List of symbols within the font.
 	/// </summary>
 
-	public List<BMSymbol> symbols
-	{
-		get
-		{
-			var rep = replacement;
-			return (rep != null) ? rep.symbols : mSymbols;
-		}
-		set
-		{
-			var rep = replacement;
-			if (rep != null) rep.symbols = value;
-			else mSymbols = value;
-		}
-	}
+	public List<BMSymbol> symbols { get { return (mReplacement != null) ? mReplacement.symbols : mSymbols; } }
 
 	/// <summary>
 	/// Atlas used by the font, if any.
 	/// </summary>
 
-	public INGUIAtlas atlas
+	public UIAtlas atlas
 	{
 		get
 		{
-			var rep = replacement;
-			if (rep != null) return rep.atlas;
-			return mAtlas as INGUIAtlas;
+			return (mReplacement != null) ? mReplacement.atlas : mAtlas;
 		}
 		set
 		{
-			var rep = replacement;
-
-			if (rep != null)
+			if (mReplacement != null)
 			{
-				rep.atlas = value;
+				mReplacement.atlas = value;
 			}
-			else if (mAtlas as INGUIAtlas != value)
+			else if (mAtlas != value)
 			{
 				mPMA = -1;
-				mAtlas = value as UnityEngine.Object;
+				mAtlas = value;
 
-				if (value != null)
+				if (mAtlas != null)
 				{
-					mMat = value.spriteMaterial;
+					mMat = mAtlas.spriteMaterial;
 					if (sprite != null) mUVRect = uvRect;
 				}
-				else
-				{
-					mAtlas = null;
-					mMat = null;
-				}
-
 				MarkAsChanged();
 			}
 		}
-	}
-
-	public INGUIAtlas symbolAtlas { get { return atlas; } }
-
-	/// <summary>
-	/// Convenience method that returns the chosen sprite inside the atlas.
-	/// </summary>
-
-	public UISpriteData GetSprite (string spriteName)
-	{
-		var ia = atlas;
-		if (ia != null) return ia.GetSprite(spriteName);
-		return null;
 	}
 
 	/// <summary>
@@ -203,11 +144,9 @@ public class UIFont : MonoBehaviour, INGUIFont
 	{
 		get
 		{
-			var rep = replacement;
-			if (rep != null) return rep.material;
+			if (mReplacement != null) return mReplacement.material;
 
-			var ia = mAtlas as INGUIAtlas;
-			if (ia != null) return ia.spriteMaterial;
+			if (mAtlas != null) return mAtlas.spriteMaterial;
 
 			if (mMat != null)
 			{
@@ -226,11 +165,9 @@ public class UIFont : MonoBehaviour, INGUIFont
 		}
 		set
 		{
-			var rep = replacement;
-
-			if (rep != null)
+			if (mReplacement != null)
 			{
-				rep.material = value;
+				mReplacement.material = value;
 			}
 			else if (mMat != value)
 			{
@@ -245,7 +182,7 @@ public class UIFont : MonoBehaviour, INGUIFont
 	/// Whether the font is using a premultiplied alpha material.
 	/// </summary>
 
-	[System.Obsolete("Use premultipliedAlphaShader instead")]
+	[System.Obsolete("Use UIFont.premultipliedAlphaShader instead")]
 	public bool premultipliedAlpha { get { return premultipliedAlphaShader; } }
 
 	/// <summary>
@@ -256,11 +193,9 @@ public class UIFont : MonoBehaviour, INGUIFont
 	{
 		get
 		{
-			var rep = replacement;
-			if (rep != null) return rep.premultipliedAlphaShader;
+			if (mReplacement != null) return mReplacement.premultipliedAlphaShader;
 
-			var ia = mAtlas as INGUIAtlas;
-			if (ia != null) return ia.premultipliedAlpha;
+			if (mAtlas != null) return mAtlas.premultipliedAlpha;
 
 			if (mPMA == -1)
 			{
@@ -279,8 +214,7 @@ public class UIFont : MonoBehaviour, INGUIFont
 	{
 		get
 		{
-			var rep = replacement;
-			if (rep != null) return rep.packedFontShader;
+			if (mReplacement != null) return mReplacement.packedFontShader;
 			if (mAtlas != null) return false;
 
 			if (mPacked == -1)
@@ -300,8 +234,7 @@ public class UIFont : MonoBehaviour, INGUIFont
 	{
 		get
 		{
-			var rep = replacement;
-			if (rep != null) return rep.texture;
+			if (mReplacement != null) return mReplacement.texture;
 			Material mat = material;
 			return (mat != null) ? mat.mainTexture as Texture2D : null;
 		}
@@ -315,17 +248,14 @@ public class UIFont : MonoBehaviour, INGUIFont
 	{
 		get
 		{
-			var rep = replacement;
-			if (rep != null) return rep.uvRect;
+			if (mReplacement != null) return mReplacement.uvRect;
 			return (mAtlas != null && sprite != null) ? mUVRect : new Rect(0f, 0f, 1f, 1f);
 		}
 		set
 		{
-			var rep = replacement;
-
-			if (rep != null)
+			if (mReplacement != null)
 			{
-				rep.uvRect = value;
+				mReplacement.uvRect = value;
 			}
 			else if (sprite == null && mUVRect != value)
 			{
@@ -343,16 +273,13 @@ public class UIFont : MonoBehaviour, INGUIFont
 	{
 		get
 		{
-			var rep = replacement;
-			return (rep != null) ? rep.spriteName : mFont.spriteName;
+			return (mReplacement != null) ? mReplacement.spriteName : mFont.spriteName;
 		}
 		set
 		{
-			var rep = replacement;
-
-			if (rep != null)
+			if (mReplacement != null)
 			{
-				rep.spriteName = value;
+				mReplacement.spriteName = value;
 			}
 			else if (mFont.spriteName != value)
 			{
@@ -366,9 +293,13 @@ public class UIFont : MonoBehaviour, INGUIFont
 	/// Whether this is a valid font.
 	/// </summary>
 
+#if DYNAMIC_FONT
 	public bool isValid { get { return mDynamicFont != null || mFont.isValid; } }
+#else
+	public bool isValid { get { return mFont.isValid; } }
+#endif
 
-	[System.Obsolete("Use defaultSize instead")]
+	[System.Obsolete("Use UIFont.defaultSize instead")]
 	public int size
 	{
 		get { return defaultSize; }
@@ -383,35 +314,14 @@ public class UIFont : MonoBehaviour, INGUIFont
 	{
 		get
 		{
-			var rep = replacement;
-			if (rep != null) return rep.defaultSize;
+			if (mReplacement != null) return mReplacement.defaultSize;
 			if (isDynamic || mFont == null) return mDynamicFontSize;
 			return mFont.charSize;
 		}
 		set
 		{
-			var rep = replacement;
-			if (rep != null) rep.defaultSize = value;
+			if (mReplacement != null) mReplacement.defaultSize = value;
 			else mDynamicFontSize = value;
-		}
-	}
-
-	/// <summary>
-	/// This feature was added after deprecating this class, so it's not actually used here.
-	/// </summary>
-
-	public int spaceWidth
-	{
-		get
-		{
-			var rep = replacement;
-			if (rep != null) return rep.spaceWidth;
-			return 0;
-		}
-		set
-		{
-			var rep = replacement;
-			if (rep != null) rep.spaceWidth = value;
 		}
 	}
 
@@ -423,20 +333,18 @@ public class UIFont : MonoBehaviour, INGUIFont
 	{
 		get
 		{
-			var rep = replacement;
-			if (rep != null) return rep.sprite;
+			if (mReplacement != null) return mReplacement.sprite;
 
-			var ia = mAtlas as INGUIAtlas;
-
-			if (mSprite == null && ia != null && mFont != null && !string.IsNullOrEmpty(mFont.spriteName))
+			if (mSprite == null && mAtlas != null && !string.IsNullOrEmpty(mFont.spriteName))
 			{
-				mSprite = ia.GetSprite(mFont.spriteName);
-				if (mSprite == null) mSprite = ia.GetSprite(name);
+				mSprite = mAtlas.GetSprite(mFont.spriteName);
+
+				if (mSprite == null) mSprite = mAtlas.GetSprite(name);
 				if (mSprite == null) mFont.spriteName = null;
 				else UpdateUVRect();
 
-				var sym = symbols;
-				for (int i = 0, imax = sym.Count; i < imax; ++i) sym[i].MarkAsChanged();
+				for (int i = 0, imax = mSymbols.Count; i < imax; ++i)
+					symbols[i].MarkAsChanged();
 			}
 			return mSprite;
 		}
@@ -448,23 +356,22 @@ public class UIFont : MonoBehaviour, INGUIFont
 	/// another one (for example an eastern language one) is then a simple matter of setting this field on your dummy font.
 	/// </summary>
 
-	public INGUIFont replacement
+	public UIFont replacement
 	{
 		get
 		{
-			if (mReplacement == null) return null;
-			return mReplacement as INGUIFont;
+			return mReplacement;
 		}
 		set
 		{
-			INGUIFont rep = value;
-			if (rep == this as INGUIFont) rep = null;
+			UIFont rep = value;
+			if (rep == this) rep = null;
 
-			if (mReplacement as INGUIFont != rep)
+			if (mReplacement != rep)
 			{
-				if (rep != null && rep.replacement == this as INGUIFont) rep.replacement = null;
+				if (rep != null && rep.replacement == this) rep.replacement = null;
 				if (mReplacement != null) MarkAsChanged();
-				mReplacement = rep as UnityEngine.Object;
+				mReplacement = rep;
 
 				if (rep != null)
 				{
@@ -479,36 +386,10 @@ public class UIFont : MonoBehaviour, INGUIFont
 	}
 
 	/// <summary>
-	/// Checks the replacement references, returning the deepest-most font.
-	/// </summary>
-
-	public INGUIFont finalFont
-	{
-		get
-		{
-			INGUIFont fnt = this;
-
-			for (int i = 0; i < 10; ++i)
-			{
-				var rep = fnt.replacement;
-				if (rep != null) fnt = rep;
-			}
-			return fnt;
-		}
-	}
-
-	/// <summary>
 	/// Whether the font is dynamic.
 	/// </summary>
 
-	public bool isDynamic
-	{
-		get
-		{
-			var rep = replacement;
-			return (rep != null) ? rep.isDynamic : (mDynamicFont != null);
-		}
-	}
+	public bool isDynamic { get { return (mReplacement != null) ? mReplacement.isDynamic : (mDynamicFont != null); } }
 
 	/// <summary>
 	/// Get or set the dynamic font source.
@@ -518,16 +399,13 @@ public class UIFont : MonoBehaviour, INGUIFont
 	{
 		get
 		{
-			var rep = replacement;
-			return (rep != null) ? rep.dynamicFont : mDynamicFont;
+			return (mReplacement != null) ? mReplacement.dynamicFont : mDynamicFont;
 		}
 		set
 		{
-			var rep = replacement;
-
-			if (rep != null)
+			if (mReplacement != null)
 			{
-				rep.dynamicFont = value;
+				mReplacement.dynamicFont = value;
 			}
 			else if (mDynamicFont != value)
 			{
@@ -546,16 +424,13 @@ public class UIFont : MonoBehaviour, INGUIFont
 	{
 		get
 		{
-			var rep = replacement;
-			return (rep != null) ? rep.dynamicFontStyle : mDynamicFontStyle;
+			return (mReplacement != null) ? mReplacement.dynamicFontStyle : mDynamicFontStyle;
 		}
 		set
 		{
-			var rep = replacement;
-
-			if (rep != null)
+			if (mReplacement != null)
 			{
-				rep.dynamicFontStyle = value;
+				mReplacement.dynamicFontStyle = value;
 			}
 			else if (mDynamicFontStyle != value)
 			{
@@ -571,9 +446,7 @@ public class UIFont : MonoBehaviour, INGUIFont
 
 	void Trim ()
 	{
-		Texture tex = null;
-		var ia = mAtlas as INGUIAtlas;
-		if (ia != null) tex = ia.texture;
+		Texture tex = mAtlas.texture;
 
 		if (tex != null && mSprite != null)
 		{
@@ -593,12 +466,34 @@ public class UIFont : MonoBehaviour, INGUIFont
 	/// Helper function that determines whether the font uses the specified one, taking replacements into account.
 	/// </summary>
 
-	public bool References (INGUIFont font)
+	bool References (UIFont font)
 	{
 		if (font == null) return false;
-		if (font == this as INGUIFont) return true;
-		var rep = replacement;
-		return (rep != null) ? rep.References(font) : false;
+		if (font == this) return true;
+		return (mReplacement != null) ? mReplacement.References(font) : false;
+	}
+
+	/// <summary>
+	/// Helper function that determines whether the two atlases are related.
+	/// </summary>
+
+	static public bool CheckIfRelated (UIFont a, UIFont b)
+	{
+		if (a == null || b == null) return false;
+#if DYNAMIC_FONT && !UNITY_FLASH
+		if (a.isDynamic && b.isDynamic && a.dynamicFont.fontNames[0] == b.dynamicFont.fontNames[0]) return true;
+#endif
+		return a == b || a.References(b) || b.References(a);
+	}
+
+	Texture dynamicTexture
+	{
+		get
+		{
+			if (mReplacement) return mReplacement.dynamicTexture;
+			if (isDynamic) return mDynamicFont.material.mainTexture;
+			return null;
+		}
 	}
 
 	/// <summary>
@@ -608,29 +503,28 @@ public class UIFont : MonoBehaviour, INGUIFont
 	public void MarkAsChanged ()
 	{
 #if UNITY_EDITOR
-		NGUITools.SetDirty(this);
+		NGUITools.SetDirty(gameObject);
 #endif
-		var rep = replacement;
-		if (rep != null) rep.MarkAsChanged();
+		if (mReplacement != null) mReplacement.MarkAsChanged();
 
 		mSprite = null;
-		var labels = NGUITools.FindActive<UILabel>();
+		UILabel[] labels = NGUITools.FindActive<UILabel>();
 
 		for (int i = 0, imax = labels.Length; i < imax; ++i)
 		{
-			var lbl = labels[i];
+			UILabel lbl = labels[i];
 
-			if (lbl.enabled && NGUITools.GetActive(lbl.gameObject) && NGUITools.CheckIfRelated(this, lbl.font as INGUIFont))
+			if (lbl.enabled && NGUITools.GetActive(lbl.gameObject) && CheckIfRelated(this, lbl.bitmapFont))
 			{
-				var fnt = lbl.font;
-				lbl.font = null;
-				lbl.font = fnt;
+				UIFont fnt = lbl.bitmapFont;
+				lbl.bitmapFont = null;
+				lbl.bitmapFont = fnt;
 			}
 		}
 
 		// Clear all symbols
-		var sym = symbols;
-		for (int i = 0, imax = sym.Count; i < imax; ++i) sym[i].MarkAsChanged();
+		for (int i = 0, imax = symbols.Count; i < imax; ++i)
+			symbols[i].MarkAsChanged();
 	}
 
 	/// <summary>
@@ -640,10 +534,7 @@ public class UIFont : MonoBehaviour, INGUIFont
 	public void UpdateUVRect ()
 	{
 		if (mAtlas == null) return;
-
-		Texture tex = null;
-		var ia = mAtlas as INGUIAtlas;
-		if (ia != null) tex = ia.texture;
+		Texture tex = mAtlas.texture;
 
 		if (tex != null)
 		{
@@ -701,7 +592,7 @@ public class UIFont : MonoBehaviour, INGUIFont
 	/// Retrieve the symbol at the beginning of the specified sequence, if a match is found.
 	/// </summary>
 
-	public BMSymbol MatchSymbol (ref string text, int offset, int textLength)
+	public BMSymbol MatchSymbol (string text, int offset, int textLength)
 	{
 		// No symbols present
 		int count = mSymbols.Count;
@@ -739,12 +630,11 @@ public class UIFont : MonoBehaviour, INGUIFont
 	/// Add a new symbol to the font.
 	/// </summary>
 
-	public BMSymbol AddSymbol (string sequence, string spriteName)
+	public void AddSymbol (string sequence, string spriteName)
 	{
-		var symbol = GetSymbol(sequence, true);
+		BMSymbol symbol = GetSymbol(sequence, true);
 		symbol.spriteName = spriteName;
 		MarkAsChanged();
-		return symbol;
 	}
 
 	/// <summary>
@@ -753,7 +643,7 @@ public class UIFont : MonoBehaviour, INGUIFont
 
 	public void RemoveSymbol (string sequence)
 	{
-		var symbol = GetSymbol(sequence, false);
+		BMSymbol symbol = GetSymbol(sequence, false);
 		if (symbol != null) symbols.Remove(symbol);
 		MarkAsChanged();
 	}
@@ -764,7 +654,7 @@ public class UIFont : MonoBehaviour, INGUIFont
 
 	public void RenameSymbol (string before, string after)
 	{
-		var symbol = GetSymbol(before, false);
+		BMSymbol symbol = GetSymbol(before, false);
 		if (symbol != null) symbol.sequence = after;
 		MarkAsChanged();
 	}

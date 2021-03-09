@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 1d7c41b395dd9474386269627ca38330
+timeCreated: 1484624388
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: spectrumfragment.shader
+  assetBundleVariant: ab

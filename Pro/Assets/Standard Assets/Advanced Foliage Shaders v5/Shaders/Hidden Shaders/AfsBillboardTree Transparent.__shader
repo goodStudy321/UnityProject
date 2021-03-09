@@ -1,0 +1,155 @@
+Shader "Hidden/TerrainEngine/BillboardTree" {
+	Properties {
+		_MainTex ("Base (RGB) Alpha (A)", 2D) = "white" {}
+	}
+	
+	SubShader {
+		Tags { "Queue" = "Transparent-100" "IgnoreProjector"="True" "RenderType"="TreeBillboard" }
+	//	Tags { "Queue" = "AlphaTest" "IgnoreProjector"="True" "RenderType"="TreeBillboard" }
+		Pass {
+			ColorMask rgb
+			Blend SrcAlpha OneMinusSrcAlpha
+			ZWrite Off 
+			Cull Off
+			
+			CGPROGRAM
+			#pragma vertex vert
+			#pragma fragment frag
+			#pragma multi_compile_fog
+			#include "UnityCG.cginc"
+			#include "TerrainEngine.cginc"
+			#include "../Includes/AfsBillboardShadow.cginc"
+
+			struct v2f {
+				float4 pos : SV_POSITION;
+				fixed3 color : COLOR0;
+				float2 uv : TEXCOORD0;
+				UNITY_FOG_COORDS(1)
+			};
+
+			// AFS Billboard Shadow Color
+			fixed4 _AfsAmbientBillboardLight;
+			// AFS Tree Color
+			fixed4 _AfsTreeColor;
+
+			half _AfsBillboardBorder;
+
+			v2f vert (appdata_tree_billboard v) {
+				v2f o;
+				AfsTerrainBillboardTree(v.vertex, v.texcoord1.xy, v.texcoord.y);
+				#if UNITY_VERSION >= 540
+					o.pos = UnityObjectToClipPos(v.vertex);
+				#else
+					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+				#endif
+				o.uv.x = v.texcoord.x;
+				o.uv.y = v.texcoord.y > 0;
+
+
+			//	Apply tree color
+				o.color.rgb = lerp(_AfsTreeColor.rgb, 1.0, v.color.g);
+
+				UNITY_TRANSFER_FOG(o,o.pos);
+				return o;
+			}
+
+			sampler2D _MainTex;
+
+			fixed4 frag(v2f input) : SV_Target
+			{
+				fixed4 col = tex2D( _MainTex, input.uv);
+
+			//	fix border
+				col.rgb = lerp(col.rgb * col.a * col.a, col.rgb, _AfsBillboardBorder); //saturate( afs_SHC.b * 1000));
+		
+				col.rgb = col.rgb * input.color.rgb;
+				// shaded billboards
+				// col.rgb *= lerp( ( _AfsAmbientBillboardLight.rgb ), fixed3(1,1,1), input.color.a );
+				clip(col.a - 0.01);
+				UNITY_APPLY_FOG(input.fogCoord, col);
+				return col;
+			}
+			ENDCG			
+		}
+
+
+		// ///////////
+		
+
+/*		Pass {
+		
+			Name "ShadowCaster"
+			Tags { "LightMode" = "ShadowCaster" }
+		
+			Fog {Mode Off}
+			ColorMask rgb
+			ZWrite On ZTest LEqual Cull Off
+			Offset 1, 1
+			
+			CGPROGRAM
+			#pragma vertex vert_surf
+			#pragma fragment frag_surf
+			#pragma exclude_renderers noshadows
+			#pragma glsl_no_auto_normalization
+			#pragma fragmentoption ARB_precision_hint_fastest
+			#pragma multi_compile_shadowcaster
+			#pragma multi_compile BILLBOARDSHADOW_EDGEFADE BILLBOARDSHADOW_NO_EDGEFADE
+			
+			#include "HLSLSupport.cginc"
+			#include "UnityCG.cginc"
+			#include "Lighting.cginc"
+	
+			#define INTERNAL_DATA
+			#define WorldReflectionVector(data,normal) data.worldRefl
+	
+			#include "TerrainEngine.cginc"
+			#include "../Includes/AfsBillboardShadow.cginc"
+	
+			sampler2D _MainTex;
+			float4 _CameraForwardVec;
+			
+			float4 _AfsTerrainTrees;
+	
+			struct Input {
+				float2 uv_MainTex;
+			}   ;
+
+			struct v2f_surf {
+				V2F_SHADOW_CASTER;
+				float2 hip_pack0 : TEXCOORD2;
+				#ifdef BILLBOARDSHADOW_EDGEFADE
+				float fade : TEXCOORD3;
+				#endif
+			}   ;
+			
+			float4 _MainTex_ST;
+			v2f_surf vert_surf (appdata_full v) {
+				v2f_surf o;
+				AfsTerrainBillboardTreeShadow(v.vertex, v.texcoord1.xy, v.texcoord.y);
+		//AfsTerrainBillboardTree(v.vertex, v.texcoord1.xy, v.texcoord.y);
+				//#ifdef BILLBOARDSHADOW_EDGEFADE
+				o.fade = dot (normalize (_WorldSpaceCameraPos.xyz - mul(unity_ObjectToWorld, v.vertex).xyz) * -1, _CameraForwardVec.xyz );
+				o.fade = saturate( o.fade - _CameraForwardVec.w ) ; //* .005;
+				//#endif
+				o.hip_pack0.x = v.texcoord.x;
+				o.hip_pack0.y = v.texcoord.y > 0;
+				TRANSFER_SHADOW_CASTER(o)
+				return o;
+			}
+			
+			float4 frag_surf (v2f_surf IN) : COLOR {
+				half4 alpha = tex2D(_MainTex, IN.hip_pack0.xy).rgba;
+			//	#ifdef BILLBOARDSHADOW_EDGEFADE
+				// fade out shadows towards screen edges
+				alpha.a = lerp(0.0, alpha.a, IN.fade * (1 - alpha.g) * (1 - alpha.g) );
+			//	#endif
+				clip (alpha.a - 0.01);
+				SHADOW_CASTER_FRAGMENT(IN)
+			}
+			ENDCG
+		}
+		// ///////////
+*/
+	}
+	Fallback Off
+}

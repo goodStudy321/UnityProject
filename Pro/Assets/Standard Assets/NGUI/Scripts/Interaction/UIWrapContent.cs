@@ -1,6 +1,6 @@
 //-------------------------------------------------
 //            NGUI: Next-Gen UI kit
-// Copyright © 2011-2020 Tasharen Entertainment Inc
+// Copyright © 2011-2017 Tasharen Entertainment Inc
 //-------------------------------------------------
 
 using UnityEngine;
@@ -133,11 +133,20 @@ public class UIWrapContent : MonoBehaviour
 		ResetChildPositions();
 	}
 
-	/// <summary>
-	/// Cache the scroll view and return 'false' if the scroll view is not found.
-	/// </summary>
+    public virtual void Reset()
+    {
+        for (int i = 0, imax = mChildren.Count; i < imax; ++i)
+        {
+            Transform t = mChildren[i];
+            UpdateItem(t, i);
+        }
+    }
 
-	protected bool CacheScrollView ()
+    /// <summary>
+    /// Cache the scroll view and return 'false' if the scroll view is not found.
+    /// </summary>
+
+    protected bool CacheScrollView ()
 	{
 		mTrans = transform;
 		mPanel = NGUITools.FindInParents<UIPanel>(gameObject);

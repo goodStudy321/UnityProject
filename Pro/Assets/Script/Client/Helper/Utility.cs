@@ -154,14 +154,14 @@ public static class Utility
     /// <summary>
     /// 三维坐标拷贝
     /// </summary>
-    //public static void Vector3_Copy(ProtoBuf.Vector3Data v1, ref Vector3 v2, float scale = 1)
-    //{
-    //    v2.x = v1.Vector3Data_X;
-    //    v2.y = v1.Vector3Data_Y;
-    //    v2.z = v1.Vector3Data_Z;
+    public static void Vector3_Copy(ProtoBuf.Vector3Data v1, ref Vector3 v2, float scale = 1)
+    {
+        v2.x = v1.Vector3Data_X;
+        v2.y = v1.Vector3Data_Y;
+        v2.z = v1.Vector3Data_Z;
 
-    //    v2 *= scale;
-    //}
+        v2 *= scale;
+    }
 
     /// <summary>
     /// 旋转
@@ -335,16 +335,16 @@ public static class Utility
             return false;
 
 #if UNITY_EDITOR
-        //if (mTempGo != null)
-        //    GameObject.DestroyImmediate(mTempGo);
-        //mTempGo = new GameObject("FanAttackFrame");
-        //JMLEllipsoidCurve jml = mTempGo.AddComponent<JMLEllipsoidCurve>();
-        //jml.Radius = new Vector2(HitRadius * 2, HitRadius * 2);
-        //jml.EllipsoidAmplitude = HitStartAngle * Mathf.Deg2Rad;
-        //jml.Offset = HitDefOrientation - (Mathf.PI / 2.0f) - (HitStartAngle * Mathf.Deg2Rad / 2.0f);
-        //jml.Offset = jml.Offset > Mathf.PI * 2 ? jml.Offset - Mathf.PI : jml.Offset;
-        //mTempGo.transform.position = HitDefPos;
-        //mTempGo.transform.rotation = Quaternion.Euler(new Vector3(-90f, 0f, 0f));
+        if (mTempGo != null)
+            GameObject.DestroyImmediate(mTempGo);
+        mTempGo = new GameObject("FanAttackFrame");
+        JMLEllipsoidCurve jml = mTempGo.AddComponent<JMLEllipsoidCurve>();
+        jml.Radius = new Vector2(HitRadius * 2, HitRadius * 2);
+        jml.EllipsoidAmplitude = HitStartAngle * Mathf.Deg2Rad;
+        jml.Offset = HitDefOrientation - (Mathf.PI / 2.0f) - (HitStartAngle * Mathf.Deg2Rad / 2.0f);
+        jml.Offset = jml.Offset > Mathf.PI * 2 ? jml.Offset - Mathf.PI : jml.Offset;
+        mTempGo.transform.position = HitDefPos;
+        mTempGo.transform.rotation = Quaternion.Euler(new Vector3(-90f, 0f, 0f));
 #endif
 
         return true;
@@ -529,7 +529,7 @@ public static class Utility
 
     public static Vector2 CalculateSinglePos(UILabel lab, string text, string indexStr)
     {
-        while (verts.Count > 0)
+        while(verts.Count>0)
         {
             verts.RemoveAt(verts.Count - 1);
         }

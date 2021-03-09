@@ -1,19 +1,52 @@
-﻿using Hello.Game;
-using System.Collections;
-using System.Collections.Generic;
-using System.Text;
+﻿/*=============================================================================
+ * Copyright (C) 2018, 金七情(Loong) jinqiqing@qq.com
+ * Created by Loong on 2014/2/15 15:52:52
+ ============================================================================*/
+
+using System;
+using Loong.Game;
 using UnityEditor;
 using UnityEngine;
+using System.Text;
+using System.Collections;
+using System.Collections.Generic;
 
-namespace Hello.Edit
+namespace Loong.Edit
 {
+    /// <summary>
+    /// 预处理指令工具
+    /// </summary>
     public static class PreprocessCmdUtil
     {
+        #region 字段
+
         /// <summary>
         /// 预处理指令列表
         /// </summary>
         private static List<string> symbols = null;
+        #endregion
 
+        #region 属性
+
+        #endregion
+
+        #region 委托事件
+
+        #endregion
+
+        #region 构造方法
+
+        #endregion
+
+        #region 私有方法
+
+        #endregion
+
+        #region 保护方法
+
+        #endregion
+
+        #region 公开方法
         /// <summary>
         /// 获取当前平台的预处理指令
         /// </summary>
@@ -23,6 +56,7 @@ namespace Hello.Edit
             var group = BuildSettingsUtil.GetGroup();
             return GetSymbols(group);
         }
+
 
         /// <summary>
         /// 获取指定平台的预处理指令列表
@@ -250,8 +284,6 @@ namespace Hello.Edit
             PlayerSettings.SetScriptingDefineSymbolsForGroup(group, sb.ToString());
             UIEditTip.Warning("应用成功!");
         }
-
-
     }
+    #endregion
 }
-

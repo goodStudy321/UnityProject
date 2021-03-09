@@ -1,6 +1,6 @@
 //-------------------------------------------------
 //            NGUI: Next-Gen UI kit
-// Copyright © 2011-2020 Tasharen Entertainment Inc
+// Copyright © 2011-2017 Tasharen Entertainment Inc
 //-------------------------------------------------
 
 using UnityEngine;
@@ -72,6 +72,7 @@ public class UICameraEditor : Editor
 
 			GUILayout.BeginHorizontal();
 			EditorGUILayout.PropertyField(serializedObject.FindProperty("commandClick"), GUILayout.Width(140f));
+			GUILayout.Label("= Right-Click on OSX", GUILayout.MinWidth(30f));
 			GUILayout.EndHorizontal();
 
 			EditorGUI.BeginDisabledGroup(!mouse.boolValue && !touch.boolValue);

@@ -1,62 +1,114 @@
-﻿using System;
+/*=============================================================================
+ * Copyright (C) 2018, 金七情(Loong) jinqiqing@qq.com
+ * Created by Loong on 2018/5/30 23:17:46
+ ============================================================================*/
+
+using System;
 using System.IO;
-using Hello.Game;
+using Loong.Game;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Profiling;
 using System.Collections;
 using System.Collections.Generic;
 
-
-namespace Hello.Edit
+namespace Loong.Edit
 {
     using AT = AssetType;
     using ST = AssetSortType;
     using Object = UnityEngine.Object;
     using StDic = Dictionary<string, AssetType>;
 
+    /// <summary>
+    /// 资源类型
+    /// </summary>
     public enum AssetType
     {
+        /// <summary>
+        /// 贴图
+        /// </summary>
         Tex,
 
+        /// <summary>
+        /// 材质球
+        /// </summary>
         Mat,
 
+        /// <summary>
+        /// Shader
+        /// </summary>
         Shader,
 
+        /// <summary>
+        /// 音效
+        /// </summary>
         Audio,
 
+        /// <summary>
+        /// 动画
+        /// </summary>
         Anim,
 
+        /// <summary>
+        /// 动画控制球
+        /// </summary>
         Animator,
 
+        /// <summary>
+        /// 模型
+        /// </summary>
         Model,
 
+        /// <summary>
+        /// 预设
+        /// </summary>
         Prefab,
 
+        /// <summary>
+        /// 场景
+        /// </summary>
         Scene,
 
+        /// <summary>
+        /// 所有资源类型
+        /// </summary>
         All,
     }
 
+    /// <summary>
+    /// 资源排序类型
+    /// </summary>
     public enum AssetSortType
     {
+        /// <summary>
+        /// 内存占用
+        /// </summary>
         Mem,
 
+        /// <summary>
+        /// 磁盘占用
+        /// </summary>
         Disk,
 
-        Name,
+        /// <summary>
+        /// 名称
+        /// </summary>
+        Name
     }
 
+    /// <summary>
+    /// 资源查询工具
+    /// </summary>
     public static class AssetQueryUtil
     {
+        #region 字段
         public const int Pri = AssetUtil.Pri + 70;
 
         public const string Menu = AssetUtil.menu + "查询工具/";
 
         public const string AMenu = AssetUtil.AMenu + "查询工具/";
 
-        public static readonly string[] typeNames =
-        {
+        public static readonly string[] typeNames = {
             "贴图",
             "材质",
             "着色器",
@@ -69,8 +121,21 @@ namespace Hello.Edit
             "所有"
         };
 
+        /// <summary>
+        /// k:后缀名,v:资源类型
+        /// </summary>
         private static StDic sfxDic = new StDic();
+        #endregion
 
+        #region 属性
+
+        #endregion
+
+        #region 委托事件
+
+        #endregion
+
+        #region 构造方法
         static AssetQueryUtil()
         {
             sfxDic.Add(Suffix.Jpg, AT.Tex);
@@ -90,8 +155,11 @@ namespace Hello.Edit
             sfxDic.Add(Suffix.Animator, AT.Animator);
             sfxDic.Add(Suffix.Scene, AT.Scene);
         }
+        #endregion
 
-        private static void Add(List<AssetDetailInfo> infos,string path)
+        #region 私有方法
+
+        private static void Add(List<AssetDetailInfo> infos, string path)
         {
             Object obj = AssetDatabase.LoadAssetAtPath<Object>(path);
             var info = Add(infos, obj, path);
@@ -99,8 +167,13 @@ namespace Hello.Edit
             info.Sfx = Path.GetExtension(path);
             info.Path = path;
         }
-
-        private static AssetDetailInfo Add(List<AssetDetailInfo> infos,Object obj,string path)
+        /// <summary>
+        /// 添加资源对象到资源详细列表中
+        /// </summary>
+        /// <param name="infos">详细列表</param>
+        /// <param name="obj">资源对象</param>
+        /// <param name="path">资源路径</param>
+        private static AssetDetailInfo Add(List<AssetDetailInfo> infos, Object obj, string path)
         {
             if (obj == null) return null;
             if (infos == null) return null;
@@ -119,12 +192,19 @@ namespace Hello.Edit
             return ai;
         }
 
-        private static void Add(List<string> lst,string path,AT type)
+        /// <summary>
+        /// 添加指定资源类型到路径列表中
+        /// </summary>
+        /// <param name="lst">路径列表</param>
+        /// <param name="path">路径</param>
+        /// <param name="type">类型</param>
+        private static void Add(List<string> lst, string path, AT type)
         {
             if (lst == null) return;
             string sfx = Path.GetExtension(path);
             if (sfx != null) sfx = sfx.ToLower();
-            if(type == AssetType.All)
+
+            if (type == AssetType.All)
             {
                 if (sfx == Suffix.CS) return;
                 if (sfx == Suffix.Js) return;
@@ -140,8 +220,20 @@ namespace Hello.Edit
                 }
             }
         }
+        #endregion
 
-        public static List<T> GetComponents<T>(string dir,bool includeChild) where T : Component
+        #region 保护方法
+
+        #endregion
+
+        #region 公开方法
+        /// <summary>
+        /// 搜索指定目录指定类型组件的列表
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="dir"></param>
+        /// <returns></returns>
+        public static List<T> GetComponents<T>(string dir, bool includeChild) where T : Component
         {
             if (!Directory.Exists(dir)) return null;
             var type = (AssetType)(1 << (int)AssetType.Prefab);
@@ -171,6 +263,13 @@ namespace Hello.Edit
             return lst;
         }
 
+        /// <summary>
+        /// 搜索指定目录内的指定类型的资源
+        /// </summary>
+        /// <param name="dir">目录</param>
+        /// <param name="type">资源类型</param>
+        /// <param name="inPro">工程内资源,默认true</param>
+        /// <returns></returns>
         public static List<string> Search(string dir, AT type, List<string> res = null, bool inPro = true)
         {
             if (string.IsNullOrEmpty(dir)) return null;
@@ -192,6 +291,13 @@ namespace Hello.Edit
             return lst;
         }
 
+        /// <summary>
+        /// 搜索指定目录列表内的指定类型的资源
+        /// </summary>
+        /// <param name="dirs"></param>
+        /// <param name="type"></param>
+        /// <param name="inPro">工程内资源,默认true</param>
+        /// <returns></returns>
         public static List<string> Search(List<string> dirs, AT type, bool inPro = true)
         {
             if (dirs == null) return null;
@@ -205,6 +311,10 @@ namespace Hello.Edit
             return res;
         }
 
+        /// <summary>
+        /// 搜索指定类型资源的资源路径列表
+        /// </summary>
+        /// <param name="type">资源类型</param>
         public static List<string> Search(AT type, SelectionMode mode = SelectionMode.DeepAssets)
         {
             if (!SelectUtil.CheckObjs()) return null;
@@ -240,6 +350,15 @@ namespace Hello.Edit
             return lst;
         }
 
+
+
+
+        /// <summary>
+        /// 搜索指定类型的资源详细信息
+        /// </summary>
+        /// <param name="type">资源类型</param>
+        /// <param name="sortType">排序类型</param>
+        /// <returns></returns>
         public static List<AssetDetailInfo> SearchDetail(AT type, ST sortType, SelectionMode mode = SelectionMode.DeepAssets)
         {
             List<string> paths = Search(type, mode);
@@ -267,12 +386,25 @@ namespace Hello.Edit
             return details;
         }
 
+        /// <summary>
+        /// 判断type是否包含target
+        /// </summary>
+        /// <param name="type">类型</param>
+        /// <param name="target">被包含类型</param>
+        /// <returns></returns>
         public static bool Contains(AT type, AT target)
         {
             var res = ((int)type & (1 << (int)target));
             return (res != 0);
         }
 
+
+        /// <summary>
+        /// 判断制定后缀名资源是否属于类型type
+        /// </summary>
+        /// <param name="type">类型</param>
+        /// <param name="sfx">后缀名</param>
+        /// <returns></returns>
         public static bool Contains(AT type, string sfx)
         {
             if (Contains(type, AT.All))
@@ -287,6 +419,7 @@ namespace Hello.Edit
             }
             return false;
         }
+
+        #endregion
     }
 }
-

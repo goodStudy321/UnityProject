@@ -1,4 +1,9 @@
-﻿#if UNITY_EDITOR
+/*=============================================================================
+ * Copyright (C) 2018, 金七情(Loong) jinqiqing@qq.com
+ * Created by Loong on 2014/3/8 00:00:00
+ ============================================================================*/
+
+#if UNITY_EDITOR
 using System;
 using System.IO;
 using UnityEngine;
@@ -7,12 +12,22 @@ using System.Diagnostics;
 using System.Collections;
 using System.Collections.Generic;
 using Object = UnityEngine.Object;
-using Hello.Game;
 
-namespace Hello.Game
+namespace Loong.Game
 {
+    /// <summary>
+    /// 编辑器自动排版工具
+    /// </summary>
     public static class UIEditLayout
     {
+        /// <summary>
+        /// 绘制颜色
+        /// </summary>
+        /// <param name="label">标签</param>
+        /// <param name="value">值</param>
+        /// <param name="obj">所在对象</param>
+        /// <param name="changed">改变事件</param>
+        /// <param name="options">选项</param>
         public static void ColorField(string label, ref Color value, Object obj, Action changed = null, params GUILayoutOption[] options)
         {
             EditorGUI.BeginChangeCheck();
@@ -23,7 +38,15 @@ namespace Hello.Game
             if (changed != null) changed();
         }
 
-        public static void CurveField(string label,ref AnimationCurve value,Object obj,Action changed = null,params GUILayoutOption[] options)
+        /// <summary>
+        /// 绘制动画曲线
+        /// </summary>
+        /// <param name="label">标签</param>
+        /// <param name="value">值</param>
+        /// <param name="obj">所在对象</param>
+        /// <param name="changed">改变事件</param>
+        /// <param name="options">选项</param>
+        public static void CurveField(string label, ref AnimationCurve value, Object obj, Action changed = null, params GUILayoutOption[] options)
         {
             EditorGUI.BeginChangeCheck();
             AnimationCurve newValue = EditorGUILayout.CurveField(label, value, options);
@@ -33,7 +56,15 @@ namespace Hello.Game
             if (changed != null) changed();
         }
 
-        public static void Foldout(string label,ref bool value,Object obj,Action changed = null,string style = "foldout")
+        /// <summary>
+        /// 绘制折页
+        /// </summary>
+        /// <param name="label">标签</param>
+        /// <param name="value">值</param>
+        /// <param name="obj">所在对象</param>
+        /// <param name="changed">改变事件</param>
+        /// <param name="style">样式</param>
+        public static void Foldout(string label, ref bool value, Object obj, Action changed = null, string style = "foldout")
         {
             EditorGUI.BeginChangeCheck();
             bool newValue = EditorGUILayout.Foldout(value, label, style);
@@ -43,7 +74,15 @@ namespace Hello.Game
             if (changed != null) changed();
         }
 
-        public static void InspectorTitleBar(ref bool value,Object obj,Object target,bool expandable = false,Action changed = null)
+        /// <summary>
+        /// 绘制监视面板标题
+        /// </summary>
+        /// <param name="value">值</param>
+        /// <param name="obj">所在对象</param>
+        /// <param name="obj">标题对象</param>
+        /// <param name="expandable">true:可扩展</param>
+        /// <param name="changed">改变事件</param>
+        public static void InspectorTitleBar(ref bool value, Object obj, Object target, bool expandable = false, Action changed = null)
         {
             EditorGUI.BeginChangeCheck();
             bool newValue = EditorGUILayout.InspectorTitlebar(value, target, expandable);
@@ -53,7 +92,15 @@ namespace Hello.Game
             if (changed != null) changed();
         }
 
-        public static void IntField(string label,ref int value,Object obj,Action changed = null,params GUILayoutOption[] options)
+        /// <summary>
+        /// 绘制整数
+        /// </summary>
+        /// <param name="label">标签</param>
+        /// <param name="value">值</param>
+        /// <param name="obj">所在对象</param>
+        /// <param name="changed">改变事件</param>
+        /// <param name="options">选项</param>
+        public static void IntField(string label, ref int value, Object obj, Action changed = null, params GUILayoutOption[] options)
         {
             EditorGUI.BeginChangeCheck();
             int newValue = EditorGUILayout.IntField(label, value, options);
@@ -63,7 +110,17 @@ namespace Hello.Game
             if (changed != null) changed();
         }
 
-        public static void IntField(string label,ref int value,int min,int max,Object obj,Action changed = null,params GUILayoutOption[] options)
+        /// <summary>
+        /// 在区间内绘制整数
+        /// </summary>
+        /// <param name="label">标签</param>
+        /// <param name="value">值</param>
+        /// <param name="min">最小值</param>
+        /// <param name="max">最大值</param>
+        /// <param name="obj">所在对象</param>
+        /// <param name="changed">改变事件</param>
+        /// <param name="options">选项</param>
+        public static void IntField(string label, ref int value, int min, int max, Object obj, Action changed = null, params GUILayoutOption[] options)
         {
             EditorGUI.BeginChangeCheck();
             int newValue = EditorGUILayout.IntField(label, value, options);
@@ -74,7 +131,15 @@ namespace Hello.Game
             if (changed != null) changed();
         }
 
-        public static void UIntField(string label,ref int value,Object obj,Action changed = null,params GUILayoutOption[] options)
+        /// <summary>
+        /// 绘制正整数
+        /// </summary>
+        /// <param name="label">标签</param>
+        /// <param name="value">值</param>
+        /// <param name="obj">所在对象</param>
+        /// <param name="changed">改变事件</param>
+        /// <param name="options">选项</param>
+        public static void UIntField(string label, ref int value, Object obj, Action changed = null, params GUILayoutOption[] options)
         {
             EditorGUI.BeginChangeCheck();
             int newValue = EditorGUILayout.IntField(label, value, options);
@@ -84,7 +149,15 @@ namespace Hello.Game
             if (changed != null) changed();
         }
 
-        public static void LongField(string label,ref long value,Object obj,Action changed = null,params GUILayoutOption[] options)
+        /// <summary>
+        /// 绘制长整数
+        /// </summary>
+        /// <param name="label">标签</param>
+        /// <param name="value">值</param>
+        /// <param name="obj">所在对象</param>
+        /// <param name="changed">改变事件</param>
+        /// <param name="options">选项</param>
+        public static void LongField(string label, ref long value, Object obj, Action changed = null, params GUILayoutOption[] options)
         {
             EditorGUI.BeginChangeCheck();
             long newValue = EditorGUILayout.LongField(label, value, options);
@@ -94,7 +167,15 @@ namespace Hello.Game
             if (changed != null) changed();
         }
 
-        public static void UlongField(string label,ref long value,Object obj,Action changed = null,params GUILayoutOption[] options)
+        /// <summary>
+        /// 绘制正长整数
+        /// </summary>
+        /// <param name="label">标签</param>
+        /// <param name="value">值</param>
+        /// <param name="obj">所在对象</param>
+        /// <param name="changed">改变事件</param>
+        /// <param name="options">选项</param>
+        public static void UlongField(string label, ref long value, Object obj, Action changed = null, params GUILayoutOption[] options)
         {
             EditorGUI.BeginChangeCheck();
             long newValue = EditorGUILayout.LongField(label, value, options);
@@ -104,6 +185,14 @@ namespace Hello.Game
             if (changed != null) changed();
         }
 
+        /// <summary>
+        /// 绘制枚举遮罩
+        /// </summary>
+        /// <param name="label">标签</param>
+        /// <param name="value">值</param>
+        /// <param name="obj">所在对象</param>
+        /// <param name="changed">改变事件</param>
+        /// <param name="options">选项</param>
         public static void EnumMaskField(string label, ref Enum value, Object obj, Action changed = null, params GUILayoutOption[] options)
         {
             EditorGUI.BeginChangeCheck();
@@ -115,6 +204,14 @@ namespace Hello.Game
             if (changed != null) changed();
         }
 
+        /// <summary>
+        /// 绘制枚举选项列表
+        /// </summary>
+        /// <param name="label">标签</param>
+        /// <param name="value">值</param>
+        /// <param name="obj">所在对象</param>
+        /// <param name="changed">改变事件</param>
+        /// <param name="options">选项</param>
         public static void EnumPopup(string label, ref Enum value, Object obj, Action changed = null, params GUILayoutOption[] options)
         {
             EditorGUI.BeginChangeCheck();
@@ -125,6 +222,14 @@ namespace Hello.Game
             if (changed != null) changed();
         }
 
+        /// <summary>
+        /// 绘制浮点数
+        /// </summary>
+        /// <param name="label">标签</param>
+        /// <param name="value">值</param>
+        /// <param name="obj">所在对象</param>
+        /// <param name="changed">改变事件</param>
+        /// <param name="options">选项</param>
         public static void FloatField(string label, ref float value, Object obj, Action changed = null, params GUILayoutOption[] options)
         {
             EditorGUI.BeginChangeCheck();
@@ -135,6 +240,16 @@ namespace Hello.Game
             if (changed != null) changed();
         }
 
+        /// <summary>
+        /// 绘制整数选项数组
+        /// </summary>
+        /// <param name="label">标签</param>
+        /// <param name="value">值</param>
+        /// <param name="displayOptions">显示选项</param>
+        /// <param name="optionValues">整数数组</param>
+        /// <param name="obj">所在对象</param>
+        /// <param name="changed">改变事件</param>
+        /// <param name="options">选项</param>
         public static void IntPopup(string label, ref int value, string[] displayOptions, int[] optionValues, Object obj, Action changed = null, params GUILayoutOption[] options)
         {
             EditorGUI.BeginChangeCheck();
@@ -145,6 +260,16 @@ namespace Hello.Game
             if (changed != null) changed();
         }
 
+        /// <summary>
+        /// 绘制整数滑动条
+        /// </summary>
+        /// <param name="label">标签</param>
+        /// <param name="value">值</param>
+        /// <param name="lefValue">左值</param>
+        /// <param name="rigValue">右值</param>
+        /// <param name="obj">所在对象</param>
+        /// <param name="changed">改变事件</param>
+        /// <param name="options">选项</param>
         public static void IntSlider(string label, ref int value, int lefValue, int rigValue, Object obj, Action changed = null, params GUILayoutOption[] options)
         {
             EditorGUI.BeginChangeCheck();
@@ -155,6 +280,15 @@ namespace Hello.Game
             if (changed != null) changed();
         }
 
+        /// <summary>
+        /// 绘制遮罩
+        /// </summary>
+        /// <param name="label">标签</param>
+        /// <param name="value">值</param>
+        /// <param name="displayOptions">显示选项数组</param>
+        /// <param name="obj">所在对象</param>
+        /// <param name="changed">改变事件</param>
+        /// <param name="options">选项</param>
         public static void MaskField(string label, ref int value, string[] displayOptions, Object obj, Action changed = null, params GUILayoutOption[] options)
         {
             EditorGUI.BeginChangeCheck();
@@ -165,6 +299,14 @@ namespace Hello.Game
             if (changed != null) changed();
         }
 
+        /// <summary>
+        /// 绘制对象
+        /// </summary>
+        /// <param name="label">标签</param>
+        /// <param name="value">值</param>
+        /// <param name="obj">所在对象</param>
+        /// <param name="changed">改变事件</param>
+        /// <param name="options">选项</param>
         public static void ObjectField<T>(string label, ref T value, Object obj, Action changed = null, params GUILayoutOption[] options) where T : Object
         {
             EditorGUI.BeginChangeCheck();
@@ -569,16 +711,6 @@ namespace Hello.Game
             }
             EditorGUILayout.EndHorizontal();
         }
-
-        /// <summary>
-        /// 定位按钮
-        /// </summary>
-        /// <returns></returns>
-        public static bool PingBtn()
-        {
-            return GUILayout.Button("", StyleTool.Ping, UIOptUtil.plusWd);
-        }
     }
 }
-
 #endif

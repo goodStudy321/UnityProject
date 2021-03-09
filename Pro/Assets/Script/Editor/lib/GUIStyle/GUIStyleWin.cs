@@ -1,16 +1,34 @@
-﻿using System;
-using Hello.Game;
+using System;
+using Loong.Game;
 using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
 
-namespace Hello.Edit
+namespace Loong.Edit
 {
+    /// <summary>
+    /// AU:Loong
+    /// TM:2013.5.12
+    /// BG:内置皮肤查看器
+    /// </summary>
     public class GUIStyleWin : EditorWindow
     {
+        #region 字段
         private Vector2 scroll = Vector2.zero;
 
         private List<GUIStyleInfo> skins = new List<GUIStyleInfo>();
+        #endregion
+
+        #region 属性
+
+        #endregion
+
+        #region 构造方法
+
+        #endregion
+
+        #region 私有方法
+
 
         private void OnEnable()
         {
@@ -43,15 +61,24 @@ namespace Hello.Edit
             EditorGUILayout.EndVertical();
         }
 
-        [MenuItem(MenuTool.AHello + "内置皮肤预览窗口", false, MenuTool.NormalPri + 2)]
-        [MenuItem(MenuTool.Hello + "内置皮肤预览窗口", false, MenuTool.NormalPri + 2)]
+        #endregion
+
+        #region 保护方法
+
+        #endregion
+
+        #region 公开方法
+        /// <summary>
+        /// 显示窗口
+        /// </summary>
+        [MenuItem(MenuTool.ALoong + "内置皮肤预览窗口", false, MenuTool.NormalPri + 2)]
+        [MenuItem(MenuTool.Loong + "内置皮肤预览窗口", false, MenuTool.NormalPri + 2)]
         public static void Open()
         {
             GUIStyleWin win = EditorWindow.GetWindow<GUIStyleWin>();
             win.SetSize(600, Screen.currentResolution.height);
             win.autoRepaintOnSceneChange = true;
         }
+        #endregion
     }
-
 }
-

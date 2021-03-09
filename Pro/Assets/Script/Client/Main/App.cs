@@ -1,12 +1,12 @@
-﻿using System;
+using System;
 using System.IO;
-using Hello.Game;
+using Loong.Game;
 using UnityEngine;
 using LuaInterface;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Hello.Game
+namespace Loong.Game
 {
     /*
      * CO:            
@@ -34,7 +34,7 @@ namespace Hello.Game
         private static bool isEditor = false;
         private static bool isAndroid = false;
         private static bool isIOS = false;
-        //private static AppInfo info = null;
+        private static AppInfo info = null;
         #endregion
 
         #region 属性
@@ -56,10 +56,10 @@ namespace Hello.Game
             }
         }
 
-        //public static AppInfo Info
-        //{
-        //    get { return info; }
-        //}
+        public static AppInfo Info
+        {
+            get { return info; }
+        }
 
 
         public static bool IsDebug
@@ -72,7 +72,7 @@ namespace Hello.Game
         /// </summary>
         public static bool IsReleaseDebug
         {
-            get { return false; }
+            get { return info.IsReleaseDebug; }
         }
 
         public static bool IsEditor
@@ -134,7 +134,7 @@ namespace Hello.Game
         /// </summary>
         public static int VerCode
         {
-            get { return 0; }
+            get { return info.VerCode; }
         }
 
         /// <summary>
@@ -206,13 +206,12 @@ namespace Hello.Game
         {
             get
             {
-                //return User.instance.ChannelID;
-                return "";
+                return User.instance.ChannelID;
             }
-            //set
-            //{
-            //    User.instance.ChannelID = value;
-            //}
+            set
+            {
+                User.instance.ChannelID = value;
+            }
         }
 
         /// <summary>
@@ -223,13 +222,12 @@ namespace Hello.Game
         {
             get
             {
-                //return User.instance.GameChannelId;
-                return "";
+                return User.instance.GameChannelId;
             }
-            //set
-            //{
-            //    User.instance.GameChannelId = value;
-            //}
+            set
+            {
+                User.instance.GameChannelId = value;
+            }
         }
 
         [NoToLua]
@@ -247,7 +245,7 @@ namespace Hello.Game
 
         public static int Pkg
         {
-            get { return (int)(0); }
+            get { return (int)(info.Pkg); }
         }
 
         #endregion
@@ -264,15 +262,15 @@ namespace Hello.Game
 
         private static void SetInfo()
         {
-//            var path = AssetPath.WwwStreaming + "AppInfo.xml";
-//            info = XmlTool.DeserializerByWWWLoad<AppInfo>(path);
-//            ChannelID = info.CID;
-//            GameChannelID = info.GCID;
-//#if UNITY_EDITOR
-//            Fps.Create();
-//#else
-//            if (info.EnableFps) Fps.Create();
-//#endif
+            var path = AssetPath.WwwStreaming + "AppInfo.xml";
+            info = XmlTool.DeserializerByWWWLoad<AppInfo>(path);
+            ChannelID = info.CID;
+            GameChannelID = info.GCID;
+#if UNITY_EDITOR
+            Fps.Create();
+#else
+            if (info.EnableFps) Fps.Create();
+#endif
         }
 
         #endregion
@@ -293,71 +291,71 @@ namespace Hello.Game
             var plat = Application.platform;
             isAndroid = (plat == RuntimePlatform.Android);
             isIOS = (plat == RuntimePlatform.IPhonePlayer);
-            //MemUtil.Snap();
-            //AppEvent.Init();
-            //ScreenUtil.Init();
-            //ThreadUtil.Init();
+            MemUtil.Snap();
+            AppEvent.Init();
+            ScreenUtil.Init();
+            ThreadUtil.Init();
             SetBSUrl();
         }
 
         [NoToLua]
         public static void SetBSUrl()
         {
-            //var domainCfg = DomainCfgManager.instance;
-            //var path = Application.persistentDataPath + "/table/" + domainCfg.source;
-            //bool hasCfg = false;
-            //if (File.Exists(path))
-            //{
-            //    try
-            //    {
-            //        domainCfg.Load("table");
-            //        ushort k = 1;
-            //        var cfg = domainCfg.Find(k);
-            //        if (cfg != null)
-            //        {
-            //            hasCfg = true;
-            //            if (IsEditor)
-            //            {
-            //                bsUrl = cfg.inter;
-            //            }
-            //            else if (IsReleaseDebug)
-            //            {
-            //                bsUrl = cfg.exter.Trim();
-            //            }
-            //            else if (IsDebug)
-            //            {
-            //                bsUrl = cfg.exterTest.Trim();
-            //            }
-            //            else
-            //            {
-            //                bsUrl = cfg.exter.Trim();
-            //            }
-            //        }
-            //    }
-            //    catch (Exception e)
-            //    {
-            //        Debug.LogErrorFormat("Loong,Load DomainCfg err:{0}", e.Message);
-            //    }
-            //}
-            //if (!hasCfg)
-            //{
-            //    if (IsEditor)
-            //    {
-            //        bsUrl = "http://192.168.2.250:82/";
-            //    }
-            //    else if (IsReleaseDebug)
-            //    {
-            //        bsUrl = "http://api-tdwq.originmood.com/";
-            //    }
-            //    else if (IsDebug)
-            //    {
-            //        bsUrl = "http://api-tdwq-test.originmood.com/";
-            //    }
-            //    else
-            //    {
-            //        bsUrl = "http://api-tdwq.originmood.com/";
-            //    }
-            //}
+            var domainCfg = DomainCfgManager.instance;
+            var path = Application.persistentDataPath + "/table/" + domainCfg.source;
+            bool hasCfg = false;
+            if (File.Exists(path))
+            {
+                try
+                {
+                    domainCfg.Load("table");
+                    ushort k = 1;
+                    var cfg = domainCfg.Find(k);
+                    if (cfg != null)
+                    {
+                        hasCfg = true;
+                        if (IsEditor)
+                        {
+                            bsUrl = cfg.inter;
+                        }
+                        else if (IsReleaseDebug)
+                        {
+                            bsUrl = cfg.exter.Trim();
+                        }
+                        else if (IsDebug)
+                        {
+                            bsUrl = cfg.exterTest.Trim();
+                        }
+                        else
+                        {
+                            bsUrl = cfg.exter.Trim();
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    Debug.LogErrorFormat("Loong,Load DomainCfg err:{0}", e.Message);
+                }
+            }
+            if (!hasCfg)
+            {
+                if (IsEditor)
+                {
+                    bsUrl = "http://192.168.2.250:82/";
+                }
+                else if (IsReleaseDebug)
+                {
+                    bsUrl = "http://api-tdwq.originmood.com/";
+                }
+                else if (IsDebug)
+                {
+                    bsUrl = "http://api-tdwq-test.originmood.com/";
+                }
+                else
+                {
+                    bsUrl = "http://api-tdwq.originmood.com/";
+                }
+            }
             if (IsDebug)
             {
                 Debug.LogFormat("Loong, cs bsUrl:{0}", BSUrl);

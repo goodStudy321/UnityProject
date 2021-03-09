@@ -5,7 +5,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Hello.Game
+namespace Loong.Game
 {
     /// <summary>
     /// AU:Loong

@@ -1,6 +1,6 @@
 //-------------------------------------------------
-//			  NGUI: Next-Gen UI kit
-// Copyright © 2011-2020 Tasharen Entertainment Inc
+//            NGUI: Next-Gen UI kit
+// Copyright © 2011-2017 Tasharen Entertainment Inc
 //-------------------------------------------------
 
 using UnityEngine;
@@ -154,7 +154,7 @@ public abstract class UIRect : MonoBehaviour
 
 	public AnchorPoint topAnchor = new AnchorPoint(1f);
 
-	[DoNotObfuscateNGUI] public enum AnchorUpdate
+	public enum AnchorUpdate
 	{
 		OnEnable,
 		OnUpdate,
@@ -165,7 +165,7 @@ public abstract class UIRect : MonoBehaviour
 	/// Whether anchors will be recalculated on every update.
 	/// </summary>
 
-	public AnchorUpdate updateAnchors = AnchorUpdate.OnUpdate;
+	public AnchorUpdate updateAnchors = AnchorUpdate.OnStart;
 
 	[System.NonSerialized] protected GameObject mGo;
 	[System.NonSerialized] protected Transform mTrans;
@@ -205,7 +205,7 @@ public abstract class UIRect : MonoBehaviour
 	/// Camera used by anchors.
 	/// </summary>
 
-	public Camera anchorCamera { get { if (!mCam || !mAnchorsCached) ResetAnchors(); return mCam; } }
+	public Camera anchorCamera { get { if (!mAnchorsCached) ResetAnchors(); return mCam; } }
 
 	/// <summary>
 	/// Whether the rectangle is currently anchored fully on all sides.
@@ -406,7 +406,6 @@ public abstract class UIRect : MonoBehaviour
 			mAnchorsCached = false;
 			mUpdateAnchors = true;
 		}
-
 		if (mStarted) OnInit();
 		mUpdateFrame = -1;
 	}
@@ -446,10 +445,6 @@ public abstract class UIRect : MonoBehaviour
 
 	protected virtual void Awake ()
 	{
-#if UNITY_2018_3_OR_NEWER
-		NGUITools.CheckForPrefabStage (gameObject); 
-#endif
-
 		mStarted = false;
 		mGo = gameObject;
 		mTrans = transform;
@@ -459,14 +454,11 @@ public abstract class UIRect : MonoBehaviour
 	/// Set anchor rect references on start.
 	/// </summary>
 
-	public void Start ()
+	protected void Start ()
 	{
-		if (!mStarted)
-		{
-			mStarted = true;
-			OnInit();
-			OnStart();
-		}
+		mStarted = true;
+		OnInit();
+		OnStart();
 	}
 
 	/// <summary>
@@ -476,12 +468,7 @@ public abstract class UIRect : MonoBehaviour
 
 	public void Update ()
 	{
-		if (!mCam)
-		{
-			ResetAndUpdateAnchors();
-			mUpdateFrame = -1;
-		}
-		else if (!mAnchorsCached) ResetAnchors();
+		if (!mAnchorsCached) ResetAnchors();
 
 		int frame = Time.frameCount;
 
@@ -496,7 +483,7 @@ public abstract class UIRect : MonoBehaviour
 #else
 			if (updateAnchors == AnchorUpdate.OnUpdate || mUpdateAnchors)
 #endif
-			UpdateAnchorsInternal(frame);
+				UpdateAnchorsInternal(frame);
 
 			// Continue with the update
 			OnUpdate();

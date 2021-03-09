@@ -30,7 +30,7 @@ using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 using System.Text;
 using UnityEngine;
-using Hello.Game;
+using Loong.Game;
 
 namespace LuaInterface
 {
@@ -183,7 +183,6 @@ namespace LuaInterface
 
             if (!LuaFileUtils.Instance.beZip)
             {
-
 /*
 #if UNITY_EDITOR
                 if (!Directory.Exists(LuaConst.luaDir))
@@ -663,6 +662,9 @@ namespace LuaInterface
             {                
                 string err = LuaToString(-1);
                 LuaSetTop(top);
+#if UNITY_EDITOR
+                err = "参阅文档【文档/程序/客户端/客户端常见错误.docx 中错误:LuaWrap文件和对应类型不匹配】:"+err;
+#endif
                 throw new LuaException(err, LuaException.GetLastError());
             }
 
@@ -702,15 +704,16 @@ namespace LuaInterface
                 }
             }
 
-#if UNITY_EDITOR
+#if UNITY_EDITOR && !LOONG_TEST_UPG
+
             bool use = EditPrefsTool.GetBool(null, "UseLuaEncode");
             string luaDir = use ? "LuaJitCode" : "LuaCode";
             string localPath = Path.GetDirectoryName(AssetPath.Output);
             localPath = localPath + "/" + luaDir;
             localPath = Path.GetFullPath(localPath);
             AddSearchPath(localPath);
-            //AddSearchPath(Application.dataPath + "/Lua");
 #endif
+
             LuaPushString("");            
             LuaSetField(-3, "path");
             LuaPop(2);

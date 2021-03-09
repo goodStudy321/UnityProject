@@ -1,12 +1,17 @@
-﻿using System.IO;
-using Hello.Game;
+/*=============================================================================
+ * Copyright (C) 2018, 金七情(Loong) jinqiqing@qq.com
+ * Created by Loong on 2013/8/17 12:05:18
+ ============================================================================*/
+
+using System.IO;
+using Loong.Game;
 using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEditor.SceneManagement;
 
-namespace Hello.Edit
+namespace Loong.Edit
 {
     /// <summary>
     /// 编辑器场景管理
@@ -24,12 +29,12 @@ namespace Hello.Edit
         /// <summary>
         /// 菜单
         /// </summary>
-        public const string menu = MenuTool.Hello + "场景工具/";
+        public const string menu = MenuTool.Loong + "场景工具/";
 
         /// <summary>
         /// 资源下菜单
         /// </summary>
-        public const string AMenu = MenuTool.AHello + "场景工具/";
+        public const string AMenu = MenuTool.ALoong + "场景工具/";
         #endregion
 
         #region 属性

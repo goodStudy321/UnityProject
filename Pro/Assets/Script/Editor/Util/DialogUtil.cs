@@ -1,11 +1,16 @@
-﻿using System;
-using Hello.Game;
+/*=============================================================================
+ * Copyright (C) 2018, 金七情(Loong) jinqiqing@qq.com
+ * Created by Loong on 2018/8/2 21:03:32
+ ============================================================================*/
+
+using System;
+using Loong.Game;
 using UnityEditor;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Hello.Edit
+namespace Loong.Edit
 {
     /// <summary>
     /// 对话框工具

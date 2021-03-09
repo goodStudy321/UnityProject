@@ -100,12 +100,12 @@ public static class ToLuaMenu
     };
 
     private static bool beAutoGen = false;
-    private static bool beCheck = true;        
+    //private static bool beCheck = true;
     static List<BindType> allTypes = new List<BindType>();
 
     static ToLuaMenu()
     {
-        string dir = CustomSettings.saveDir;
+        /*string dir = CustomSettings.saveDir;
         string[] files = Directory.GetFiles(dir, "*.cs", SearchOption.TopDirectoryOnly);
 
         if (files.Length < 3 && beCheck)
@@ -121,7 +121,7 @@ public static class ToLuaMenu
             }
 
             beCheck = false;
-        }
+        }*/
     }
 
     static string RemoveNameSpace(string name, string space)
@@ -895,7 +895,18 @@ public static class ToLuaMenu
         beAutoGen = false;   
     }
 
-    [MenuItem("Lua/Generate All", false, 5)]
+    /// <summary>
+    /// 删除并重新生成LuaWrap文件
+    /// </summary>
+    [MenuItem("Lua/删除并重新生成LuaWrap文件", false, 7)]
+    public static void DeleteAndGenerate()
+    {
+        ClearLuaWraps();
+        GenLuaAllWithoutDialog();
+    }
+
+
+    [MenuItem("Lua/生成所有文件", false, 5)]
     static void GenLuaAll()
     {
         if (EditorApplication.isCompiling)
@@ -904,6 +915,10 @@ public static class ToLuaMenu
             return;
         }
 
+        GenLuaAllWithoutDialog();
+    }
+    public static void GenLuaAllWithoutDialog()
+    {
         beAutoGen = true;
         GenLuaDelegates();
         AssetDatabase.Refresh();
@@ -912,8 +927,8 @@ public static class ToLuaMenu
         beAutoGen = false;
     }
 
-    [MenuItem("Lua/Clear wrap files", false, 6)]
-    static void ClearLuaWraps()
+    [MenuItem("Lua/清除Wrap文件", false, 6)]
+    public static void ClearLuaWraps()
     {
         string[] files = Directory.GetFiles(CustomSettings.saveDir, "*.cs", SearchOption.TopDirectoryOnly);
 
@@ -987,6 +1002,17 @@ public static class ToLuaMenu
         CopyLuaBytesFiles(LuaConst.toluaDir, destDir);
         AssetDatabase.Refresh();
         Debug.Log("Copy lua files over");
+    }
+
+    [MenuItem("Lua/Process Example Lua Files For Test On Mobile", false, 51)]
+    public static void CopyExampleLuaFilesToRes()
+    {
+        CopyLuaFilesToRes();
+        string destDir = Application.dataPath + "/Resources";
+        string srcDir = Application.dataPath + "/Tolua/Examples/Resources";
+        CopyDirectory(srcDir, destDir, "*.bytes");
+        AssetDatabase.Refresh();
+        Debug.Log("Copy example lua files over");
     }
 
     [MenuItem("Lua/Copy Lua  files to Persistent", false, 52)]

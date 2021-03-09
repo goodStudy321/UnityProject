@@ -1,6 +1,6 @@
 //-------------------------------------------------
 //            NGUI: Next-Gen UI kit
-// Copyright © 2011-2020 Tasharen Entertainment Inc
+// Copyright © 2011-2017 Tasharen Entertainment Inc
 //-------------------------------------------------
 
 using UnityEngine;
@@ -19,7 +19,7 @@ public abstract class UITweener : MonoBehaviour
 
 	static public UITweener current;
 
-	[DoNotObfuscateNGUI] public enum Method
+	public enum Method
 	{
 		Linear,
 		EaseIn,
@@ -29,7 +29,7 @@ public abstract class UITweener : MonoBehaviour
 		BounceOut,
 	}
 
-	[DoNotObfuscateNGUI] public enum Style
+	public enum Style
 	{
 		Once,
 		Loop,
@@ -71,16 +71,6 @@ public abstract class UITweener : MonoBehaviour
 	[HideInInspector]
 	public float delay = 0f;
 
-	public enum DelayAffects
-	{
-		Forward,
-		Reverse,
-		Both,
-	}
-
-	[HideInInspector]
-	public DelayAffects delayAffects = DelayAffects.Both;
-
 	/// <summary>
 	/// How long is the duration of the tween?
 	/// </summary>
@@ -115,12 +105,6 @@ public abstract class UITweener : MonoBehaviour
 	// Deprecated functionality, kept for backwards compatibility
 	[HideInInspector] public GameObject eventReceiver;
 	[HideInInspector] public string callWhenFinished;
-
-	/// <summary>
-	/// Custom time scale for this tween, if desired. Can be used to slow down or speed up the animation.
-	/// </summary>
-
-	[System.NonSerialized] public float timeScale = 1f;
 
 	bool mStarted = false;
 	float mStartTime = 0f;
@@ -158,12 +142,13 @@ public abstract class UITweener : MonoBehaviour
 	/// </summary>
 
 	public AnimationOrTween.Direction direction { get { return amountPerDelta < 0f ? AnimationOrTween.Direction.Reverse : AnimationOrTween.Direction.Forward; } }
+    public bool IsForward { get { return amountPerDelta < 0f ? false : true; } }
 
-	/// <summary>
-	/// This function is called by Unity when you add a component. Automatically set the starting values for convenience.
-	/// </summary>
+    /// <summary>
+    /// This function is called by Unity when you add a component. Automatically set the starting values for convenience.
+    /// </summary>
 
-	void Reset ()
+    void Reset ()
 	{
 		if (!mStarted)
 		{
@@ -193,15 +178,13 @@ public abstract class UITweener : MonoBehaviour
 		{
 			delta = 0;
 			mStarted = true;
-			mStartTime = time;
-			if (mAmountPerDelta > 0f && (delayAffects == DelayAffects.Both || delayAffects == DelayAffects.Forward)) mStartTime += delay;
-			else if (mAmountPerDelta < 0f && (delayAffects == DelayAffects.Both || delayAffects == DelayAffects.Reverse)) mStartTime += delay;
+			mStartTime = time + delay;
 		}
 
 		if (time < mStartTime) return;
 
 		// Advance the sampling factor
-		mFactor += (duration == 0f) ? 1f : amountPerDelta * delta * timeScale;
+		mFactor += (duration == 0f) ? 1f : amountPerDelta * delta;
 
 		// Loop style simply resets the play factor after it exceeds 1.
 		if (style == Style.Loop)
@@ -306,20 +289,7 @@ public abstract class UITweener : MonoBehaviour
 	/// Mark as not started when finished to enable delay on next play.
 	/// </summary>
 
-	protected virtual void OnDisable () { mStarted = false; }
-
-	/// <summary>
-	/// Immediately finish the tween animation, if it's active.
-	/// </summary>
-
-	public void Finish ()
-	{
-		if (enabled)
-		{
-			Sample(mAmountPerDelta > 0f ? 1f : 0f, true);
-			enabled = false;
-		}
-	}
+	void OnDisable () { mStarted = false; }
 
 	/// <summary>
 	/// Sample the tween at the specified factor.

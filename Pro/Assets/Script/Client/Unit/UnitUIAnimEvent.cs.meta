@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+<<<<<<< .mine
+guid: 7771e0bc1d29a764ca88f6c67275f0b8
+timeCreated: 1525483082
+||||||| .r19746
+guid: 109ba0bb232567c4a82d6af6c29bbfe8
+timeCreated: 1525433649
+=======
+guid: 04dd5fdf3f4badf4baf6a124e5d267ca
+timeCreated: 1525440995
+>>>>>>> .r20176
+licenseType: Pro
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

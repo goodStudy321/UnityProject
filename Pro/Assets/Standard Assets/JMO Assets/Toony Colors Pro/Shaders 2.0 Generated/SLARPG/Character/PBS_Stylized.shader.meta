@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: aebeac52cf7028e40b51d4b35898b819
+timeCreated: 1500277989
+licenseType: Free
+ShaderImporter:
+  defaultTextures: []
+  userData: USER,FSKETCH_ANIM,FSPECULAR_STYLIZED,FFRESNEL_STYLIZED,FCULL_OFF,KSPEC_SHIN_MASK_CHANNEL:.a,KHSV_MASK_CHANNEL:.a,KSHADER_TARGET:3.0,chC61916A6,cSM:30,cCT:pbs,cCF:TCP2_ShaderTemplate_PBS
+  assetBundleName: pbs_stylized.shader
+  assetBundleVariant: ab

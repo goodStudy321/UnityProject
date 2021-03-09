@@ -1,4 +1,4 @@
-﻿//=============================================================================
+//=============================================================================
 // Copyright (C) 2018, 金七情(Loong) jinqiqing@qq.com
 // Created by Loong on 2014/05/10 16:10:37
 // e开头方法,仅在编辑器下有效,建议使用App.IsEditor或UNITY_EDITOR包裹
@@ -13,7 +13,7 @@ using System.Diagnostics;
 using System.Collections.Generic;
 using Debug = UnityEngine.Debug;
 
-namespace Hello.Game
+namespace Loong.Game
 {
 
     public static class iTrace

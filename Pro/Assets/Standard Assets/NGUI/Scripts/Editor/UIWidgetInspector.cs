@@ -1,6 +1,6 @@
 //-------------------------------------------------
 //            NGUI: Next-Gen UI kit
-// Copyright © 2011-2020 Tasharen Entertainment Inc
+// Copyright © 2011-2017 Tasharen Entertainment Inc
 //-------------------------------------------------
 
 using UnityEngine;
@@ -17,7 +17,7 @@ public class UIWidgetInspector : UIRectEditor
 {
 	static public new UIWidgetInspector instance;
 
-	[DoNotObfuscateNGUI] public enum Action
+	public enum Action
 	{
 		None,
 		Move,
@@ -173,7 +173,7 @@ public class UIWidgetInspector : UIRectEditor
 		for (int i = 0; i < worldPoints.Length; ++i)
 		{
 			float distance = GetScreenDistance(worldPoints[i], mousePos);
-
+			
 			if (distance < min)
 			{
 				index = i;
@@ -386,7 +386,7 @@ public class UIWidgetInspector : UIRectEditor
 			Vector3 v1 = HandleUtility.WorldToGUIPoint(theirPos);
 
 			Handles.BeginGUI();
-
+				
 			mYellowDot.Draw(rect, GUIContent.none, id);
 
 			Vector3 diff = v1 - v0;
@@ -437,7 +437,6 @@ public class UIWidgetInspector : UIRectEditor
 		if (!UIWidget.showHandles) return;
 
 		mWidget = target as UIWidget;
-		if (!mWidget.isSelectable) return;
 
 		Transform t = mWidget.cachedTransform;
 
@@ -447,7 +446,7 @@ public class UIWidgetInspector : UIRectEditor
 
 		Action actionUnderMouse = mAction;
 		Vector3[] handles = GetHandles(mWidget.worldCorners);
-
+		
 		NGUIHandles.DrawShadowedLine(handles, handles[0], handles[1], handlesColor);
 		NGUIHandles.DrawShadowedLine(handles, handles[1], handles[2], handlesColor);
 		NGUIHandles.DrawShadowedLine(handles, handles[2], handles[3], handlesColor);
@@ -480,7 +479,7 @@ public class UIWidgetInspector : UIRectEditor
 		resizable[7] = canResize;	// bottom
 
 		UILabel lbl = mWidget as UILabel;
-
+		
 		if (lbl != null)
 		{
 			if (lbl.overflowMethod == UILabel.Overflow.ResizeFreely)
@@ -512,16 +511,16 @@ public class UIWidgetInspector : UIRectEditor
 		resizable[1] = resizable[5] && resizable[4]; // top-left
 		resizable[2] = resizable[5] && resizable[6]; // top-right
 		resizable[3] = resizable[7] && resizable[6]; // bottom-right
-
-		var pivotUnderMouse = GetPivotUnderMouse(handles, e, resizable, true, ref actionUnderMouse);
-
+		
+		UIWidget.Pivot pivotUnderMouse = GetPivotUnderMouse(handles, e, resizable, true, ref actionUnderMouse);
+		
 		switch (type)
 		{
 			case EventType.Repaint:
 			{
 				Vector3 v0 = HandleUtility.WorldToGUIPoint(handles[0]);
 				Vector3 v2 = HandleUtility.WorldToGUIPoint(handles[2]);
-
+				
 				if ((v2 - v0).magnitude > 60f)
 				{
 					Vector3 v1 = HandleUtility.WorldToGUIPoint(handles[1]);
@@ -885,18 +884,11 @@ public class UIWidgetInspector : UIRectEditor
 		}
 	}
 
-	protected virtual void DrawWidgetSection (SerializedObject so, UIWidget w, bool isPrefab)
-	{
-		DrawPivot(so, w);
-		DrawDepth(so, w, isPrefab);
-		DrawDimensions(so, w, isPrefab);
-	}
-
 	/// <summary>
 	/// Draw common widget properties.
 	/// </summary>
 
-	protected virtual void DrawInspectorProperties (SerializedObject so, UIWidget w, bool drawColor)
+	static public void DrawInspectorProperties (SerializedObject so, UIWidget w, bool drawColor)
 	{
 		if (drawColor)
 		{
@@ -904,19 +896,23 @@ public class UIWidgetInspector : UIRectEditor
 			GUILayout.Space(3f);
 		}
 
-		var isPrefab = NGUIEditorTools.IsPrefab(w.gameObject) && !NGUIEditorTools.IsPrefabInstance(w.gameObject);
+        //PrefabType type = PrefabUtility.GetPrefabType(w.gameObject);
+        PrefabAssetType type = PrefabUtility.GetPrefabAssetType(w.gameObject);
 
-		if (NGUIEditorTools.DrawHeader("Widget"))
+        if (NGUIEditorTools.DrawHeader("Widget"))
 		{
 			NGUIEditorTools.BeginContents();
 			if (NGUISettings.minimalisticLook) NGUIEditorTools.SetLabelWidth(70f);
 
-			DrawWidgetSection(so, w, isPrefab);
+			DrawPivot(so, w);
+            //DrawDepth(so, w, type == PrefabType.Prefab);
+            //DrawDimensions(so, w, type == PrefabType.Prefab);
+            DrawDepth(so, w, type == PrefabAssetType.Regular);
+            DrawDimensions(so, w, type == PrefabAssetType.Regular);
+            if (NGUISettings.minimalisticLook) NGUIEditorTools.SetLabelWidth(70f);
 
-			if (NGUISettings.minimalisticLook) NGUIEditorTools.SetLabelWidth(70f);
-
-			var ratio = so.FindProperty("aspectRatio");
-			var aspect = so.FindProperty("keepAspectRatio");
+			SerializedProperty ratio = so.FindProperty("aspectRatio");
+			SerializedProperty aspect = so.FindProperty("keepAspectRatio");
 
 			GUILayout.BeginHorizontal();
 			{
@@ -949,12 +945,13 @@ public class UIWidgetInspector : UIRectEditor
 	/// Draw widget's dimensions.
 	/// </summary>
 
-	protected void DrawDimensions (SerializedObject so, UIWidget w, bool isPrefab)
+	static void DrawDimensions (SerializedObject so, UIWidget w, bool isPrefab)
 	{
 		GUILayout.BeginHorizontal();
 		{
-			var freezeSize = so.isEditingMultipleObjects;
-			var lbl = w as UILabel;
+			bool freezeSize = so.isEditingMultipleObjects;
+
+			UILabel lbl = w as UILabel;
 
 			if (!freezeSize && lbl) freezeSize = (lbl.overflowMethod == UILabel.Overflow.ResizeFreely);
 
@@ -978,7 +975,7 @@ public class UIWidgetInspector : UIRectEditor
 
 			if (!freezeSize && lbl)
 			{
-				var ov = lbl.overflowMethod;
+				UILabel.Overflow ov = lbl.overflowMethod;
 				freezeSize = (ov == UILabel.Overflow.ResizeFreely || ov == UILabel.Overflow.ResizeHeight);
 			}
 
@@ -1036,8 +1033,10 @@ public class UIWidgetInspector : UIRectEditor
 	/// Draw widget's depth.
 	/// </summary>
 
-	protected void DrawDepth (SerializedObject so, UIWidget w, bool isPrefab, bool warnIfShared = false)
+	static void DrawDepth (SerializedObject so, UIWidget w, bool isPrefab)
 	{
+		if (isPrefab) return;
+
 		GUILayout.Space(2f);
 		GUILayout.BeginHorizontal();
 		{
@@ -1065,26 +1064,23 @@ public class UIWidgetInspector : UIRectEditor
 		}
 		GUILayout.EndHorizontal();
 
-		if (warnIfShared)
+		int matchingDepths = 1;
+
+		UIPanel p = w.panel;
+
+		if (p != null)
 		{
-			int matchingDepths = 1;
-
-			var p = w.panel;
-
-			if (p != null)
+			for (int i = 0, imax = p.widgets.Count; i < imax; ++i)
 			{
-				for (int i = 0, imax = p.widgets.Count; i < imax; ++i)
-				{
-					var pw = p.widgets[i];
-					if (pw != w && pw.depth == w.depth)
-						++matchingDepths;
-				}
+				UIWidget pw = p.widgets[i];
+				if (pw != w && pw.depth == w.depth)
+					++matchingDepths;
 			}
+		}
 
-			if (matchingDepths > 1)
-			{
-				EditorGUILayout.HelpBox(matchingDepths + " widgets are sharing the depth value of " + w.depth, MessageType.Info);
-			}
+		if (matchingDepths > 1)
+		{
+			EditorGUILayout.HelpBox(matchingDepths + " widgets are sharing the depth value of " + w.depth, MessageType.Info);
 		}
 	}
 
@@ -1092,7 +1088,7 @@ public class UIWidgetInspector : UIRectEditor
 	/// Draw the widget's pivot.
 	/// </summary>
 
-	protected void DrawPivot (SerializedObject so, UIWidget w)
+	static void DrawPivot (SerializedObject so, UIWidget w)
 	{
 		SerializedProperty pv = so.FindProperty("mPivot");
 

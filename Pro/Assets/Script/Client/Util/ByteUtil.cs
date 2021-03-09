@@ -1,56 +1,84 @@
-﻿using System.Text;
+/*=============================================================================
+ * Copyright (C) 2014, 金七情(Loong) jinqiqing@qq.com
+ * Created by Loong in 2014.6.3 20:09:25
+ ============================================================================*/
 
+using System.Text;
 
-namespace Hello.Game
+namespace Loong.Game
 {
-    public enum ByteUnit
-    {
-        /// <summary>
-        /// 字节
-        /// </summary>
-        B,
-
-        /// <summary>
-        /// 1024字节
-        /// </summary>
-        KB,
-
-        /// <summary>
-        /// 1024*1024字节
-        /// </summary>
-        MB,
-
-        /// <summary>
-        /// 1024*1024*1024字节
-        /// </summary>
-        TB,
-    }
-
+    /// <summary>
+    /// 字节工具
+    /// </summary>
     public static class ByteUtil
     {
+        #region 字段
+        /// <summary>
+        /// 1除以1024的值
+        /// </summary>
         public const float kbfactor = 1 / 1024f;
 
+        /// <summary>
+        /// 1除以(1024*1024)的值
+        /// </summary>
         public const float mbfactor = 1 / (1024f * 1024f);
 
+        /// <summary>
+        /// 1除以(1024*1024*1024)的值
+        /// </summary>
         public const float tbfactor = 1 / (1024f * 1024f * 1024f);
 
+        /// <summary>
+        /// KB的字节临界值大小
+        /// </summary>
         public const int thresholdKB = 1024;
 
+        /// <summary>
+        /// MB的字节临界值大小
+        /// </summary>
         public const int thresholdMB = 1024 * 1024;
 
+        /// <summary>
+        /// TB的字节临界值大小
+        /// </summary>
         public const int thresholdTB = 1024 * 1024 * 1024;
 
+        #endregion
+
+        #region 属性
+
+        #endregion
+
+        #region 构造方法
+
+        #endregion
+
+        #region 私有方法
+
+        #endregion
+
+        #region 保护方法
+
+        #endregion
+
+        #region 公开方法
+
+        /// <summary>
+        /// 获取单位
+        /// </summary>
+        /// <param name="size"></param>
+        /// <returns></returns>
         public static ByteUnit GetUnit(long size)
         {
             if (size < thresholdKB)
             {
                 return ByteUnit.B;
             }
-            else if(size < thresholdMB)
+            else if (size < thresholdMB)
             {
                 return ByteUnit.KB;
             }
-            else if(size < thresholdTB)
+            else if (size < thresholdTB)
             {
                 return ByteUnit.MB;
             }
@@ -60,17 +88,26 @@ namespace Hello.Game
             }
         }
 
+        /// <summary>
+        /// 将字节数转换为合适单位的浮点数
+        /// 如果字节数小于1024,则转换为B
+        /// 如果字节数小于1024*1024则转换为KB
+        /// 如果字节数小于1024*1024*1024则转换为MB
+        /// 反之转换为TB
+        /// </summary>
+        /// <param name="size"></param>
+        /// <returns></returns>
         public static float Get(long size)
         {
-            if(size < thresholdKB)
+            if (size < thresholdKB)
             {
                 return size;
             }
-            else if(size < thresholdMB)
+            else if (size < thresholdMB)
             {
                 return GetKB(size);
             }
-            else if(size < thresholdTB)
+            else if (size < thresholdTB)
             {
                 return GetMB(size);
             }
@@ -80,6 +117,12 @@ namespace Hello.Game
             }
         }
 
+        /// <summary>
+        /// 将字节数根据转换为指定单位的数字
+        /// </summary>
+        /// <param name="size"></param>
+        /// <param name="unit"></param>
+        /// <returns></returns>
         public static float Get(long size, ByteUnit unit)
         {
             switch (unit)
@@ -95,6 +138,11 @@ namespace Hello.Game
             }
         }
 
+        /// <summary>
+        /// 将大小转换为指定字符串
+        /// </summary>
+        /// <param name="size">字节大小</param>
+        /// <returns></returns>
         public static string GetSizeStr(long size)
         {
             string str = null;
@@ -105,14 +153,24 @@ namespace Hello.Game
             return str;
         }
 
+        /// <summary>
+        /// 将大小转换为指定字符串,并包含原始大小信息
+        /// </summary>
+        /// <param name="size"></param>
+        /// <returns></returns>
         public static string GetSizeDetail(long size)
         {
             var str = GetSizeStr(size);
             return string.Format("{0}({1})", str, size);
         }
 
-
-        public static float Get(long size,int decimals = 100)
+        /// <summary>
+        /// 将字节数转换为合适单位的浮点数
+        /// </summary>
+        /// <param name="size"></param>
+        /// <param name="decimals">小数位</param>
+        /// <returns></returns>
+        public static float Get(long size, int decimals = 100)
         {
             decimals = (decimals < 1) ? 1 : decimals;
             float temp = Get(size);
@@ -121,31 +179,58 @@ namespace Hello.Game
             return temp;
         }
 
+        /// <summary>
+        /// 将字节数转换为TB
+        /// </summary>
+        /// <param name="size"></param>
+        /// <returns></returns>
         public static float GetTB(long size)
         {
             float temp = size * tbfactor;
             return temp;
         }
 
+        /// <summary>
+        /// 将字节数转换为MB
+        /// </summary>
+        /// <param name="size"></param>
+        /// <returns></returns>
         public static float GetMB(long size)
         {
             float temp = size * mbfactor;
             return temp;
         }
 
+        /// <summary>
+        /// 将字节数转换为KB
+        /// </summary>
+        /// <param name="size"></param>
+        /// <returns></returns>
         public static float GetKB(long size)
         {
             float temp = size * kbfactor;
             return temp;
         }
 
-        public static double FmtByRound(long size,int decimals)
+        /// <summary>
+        /// 将字节数转换为MB后,通过数学方法将小数位保留指定数目
+        /// </summary>
+        /// <param name="size">字节数</param>
+        /// <param name="decimals">小数位</param>
+        /// <returns></returns>
+        public static double FmtByRound(long size, int decimals)
         {
             double temp = size * mbfactor;
             temp = System.Math.Round(temp, decimals);
             return temp;
         }
 
+        /// <summary>
+        /// 将字节数转换为MB后,通过字符格式化将小数位保留指定位数
+        /// </summary>
+        /// <param name="size">字节数</param>
+        /// <param name="format">格式</param>
+        /// <returns></returns>
         public static float FmtByStrFmt(long size, string format = "{0:N2}")
         {
             float temp = size * mbfactor;
@@ -154,6 +239,12 @@ namespace Hello.Game
             return temp;
         }
 
+        /// <summary>
+        /// 将字节数转换为MB后,通过字符格式化将小数位保留指定位数
+        /// </summary>
+        /// <param name="size">字节数</param>
+        /// <param name="format">格式</param>
+        /// <returns></returns>
         public static float FmtByToStr(long size, string format = "0.00")
         {
             float temp = size * mbfactor;
@@ -162,6 +253,12 @@ namespace Hello.Game
             return temp;
         }
 
+        /// <summary>
+        /// 将字节数转换为MB后,通过计算将小数位保留指定位数
+        /// </summary>
+        /// <param name="size"></param>
+        /// <param name="decimals">小数位数</param>
+        /// <returns></returns>
         public static float FmtByCalc(long size, int decimals)
         {
             decimals = (decimals < 10) ? 10 : decimals;
@@ -171,6 +268,12 @@ namespace Hello.Game
             return temp;
         }
 
+        /// <summary>
+        /// 交换字节数组的两个索引的值
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <param name="left"></param>
+        /// <param name="right"></param>
         public static void Swap(byte[] arr, int left, int right)
         {
             if (arr == null) return;
@@ -183,6 +286,11 @@ namespace Hello.Game
             }
         }
 
+        /// <summary>
+        /// 获取字节数组字符串
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <returns></returns>
         public static string GetStr(byte[] arr)
         {
             if (arr == null || arr.Length == 0) return null;
@@ -198,7 +306,6 @@ namespace Hello.Game
             sb.Append(">");
             return sb.ToString();
         }
-
+        #endregion
     }
 }
-

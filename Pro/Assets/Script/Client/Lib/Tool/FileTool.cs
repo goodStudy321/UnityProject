@@ -8,10 +8,36 @@ using System.Collections.Generic;
 using UnityEditor;
 #endif
 
-namespace Hello.Game
+namespace Loong.Game
 {
+    /// <summary>
+    /// AU:Loong
+    /// TM:2014.6.5
+    /// BG:文件工具
+    /// </summary>
     public static class FileTool
     {
+        #region 字段
+
+        #endregion
+
+        #region 属性
+
+        #endregion
+
+        #region 构造方法
+
+        #endregion
+
+        #region 私有方法
+
+        #endregion
+
+        #region 保护方法
+
+        #endregion
+
+        #region 公开方法
         /// <summary>
         ///  读取文件的内容/并返回字符串
         /// </summary>
@@ -331,8 +357,8 @@ namespace Hello.Game
             }
             return fs;
         }
-
-        public static string GetFullPath(string path)
+		
+		public static string GetFullPath(string path)
         {
             if (string.IsNullOrEmpty(path)) return "";
             var full = Path.GetFullPath(path);
@@ -362,6 +388,6 @@ namespace Hello.Game
             if (last_c == '\\') return true;
             return false;
         }
+        #endregion
     }
 }
-

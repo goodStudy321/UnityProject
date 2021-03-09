@@ -1,6 +1,6 @@
 //-------------------------------------------------
 //            NGUI: Next-Gen UI kit
-// Copyright © 2011-2020 Tasharen Entertainment Inc
+// Copyright © 2011-2017 Tasharen Entertainment Inc
 //-------------------------------------------------
 
 using UnityEngine;
@@ -33,12 +33,12 @@ public class UIButtonEditor : UIButtonColorEditor
 		DrawTransition();
 		DrawColors();
 
-		var btn = target as UIButton;
+		UIButton btn = target as UIButton;
 
 		if (btn.tweenTarget != null)
 		{
-			var sprite = btn.tweenTarget.GetComponent<UISprite>();
-			var s2d = btn.tweenTarget.GetComponent<UI2DSprite>();
+			UISprite sprite = btn.tweenTarget.GetComponent<UISprite>();
+			UI2DSprite s2d = btn.tweenTarget.GetComponent<UI2DSprite>();
 
 			if (sprite != null)
 			{
@@ -87,8 +87,7 @@ public class UIButtonEditor : UIButtonColorEditor
 			}
 		}
 
-		var button = target as UIButton;
+		UIButton button = target as UIButton;
 		NGUIEditorTools.DrawEvents("On Click", button, button.onClick, false);
-		//NGUIEditorTools.DrawProperty(serializedObject, "onClick");
 	}
 }

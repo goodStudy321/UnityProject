@@ -1,12 +1,23 @@
-﻿#if UNITY_EDITOR
+/*=============================================================================
+ * Copyright (C) 2018, 金七情(Loong) jinqiqing@qq.com
+ * Created by Loong on 2014/5/14 17:46:56
+ ============================================================================*/
+
+#if UNITY_EDITOR
+using System;
+using UnityEditor;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-namespace Hello.Game
+namespace Loong.Game
 {
+    /// <summary>
+    /// 编辑器UI选项工具
+    /// </summary>
     public static class UIOptUtil
     {
+        #region 字段
         /// <summary>
         /// 加号选项
         /// </summary>
@@ -26,6 +37,7 @@ namespace Hello.Game
         /// 屏幕宽高选项
         /// </summary>
         public static readonly GUILayoutOption[] screen = new GUILayoutOption[] { GUILayout.Width(Screen.height), GUILayout.Height(Screen.width) };
+
 
         /// <summary>
         /// 普通按钮宽度选项
@@ -53,12 +65,34 @@ namespace Hello.Game
         /// </summary>
         public static readonly GUILayoutOption[] toolBarBtn = new GUILayoutOption[] { GUILayout.Width(80) };
 
+
         /// <summary>
         /// 普通按钮宽度选项
         /// </summary>
         public static readonly GUILayoutOption[] btn = new GUILayoutOption[] { GUILayout.Width(80) };
 
+
+        #endregion
+
+        #region 属性
+
+        #endregion
+
+        #region 构造方法
+
+        #endregion
+
+        #region 私有方法
+
+        #endregion
+
+        #region 保护方法
+
+        #endregion
+
+        #region 公开方法
+
+        #endregion
     }
 }
 #endif
-

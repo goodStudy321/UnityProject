@@ -9,14 +9,11 @@ using System.Collections.Generic;
 
 static public class NGUIContextMenu
 {
-	[MenuItem("Help/NGUI Documentation (v.2020.1.4)")]
+	[MenuItem("Help/NGUI Documentation (v.3.11.0)")]
 	static void ShowHelp0 (MenuCommand command) { NGUIHelp.Show(); }
 
-	[MenuItem("Help/NGUI Support Archive (read-only)")]
+	[MenuItem("Help/NGUI Support Forum")]
 	static void ShowHelp01 (MenuCommand command) { Application.OpenURL("http://www.tasharen.com/forum/index.php?board=1.0"); }
-
-	[MenuItem("Help/NGUI Support Discord")]
-	static void ShowHelp02 (MenuCommand command) { Application.OpenURL("https://discord.gg/tasharen"); }
 
 	[MenuItem("CONTEXT/UIWidget/Copy Widget")]
 	static void CopyStyle (MenuCommand command) { NGUISettings.CopyWidget(command.context as UIWidget); }
@@ -119,7 +116,7 @@ static public class NGUIContextMenu
 
 	[MenuItem("CONTEXT/UIKeyNavigation/Help")]
 	static void ShowHelp30 (MenuCommand command) { NGUIHelp.Show(typeof(UIKeyNavigation)); }
-
+	
 	[MenuItem("CONTEXT/PropertyBinding/Help")]
 	static void ShowHelp31 (MenuCommand command) { NGUIHelp.Show(typeof(PropertyBinding)); }
 
@@ -304,12 +301,10 @@ static public class NGUIContextMenu
 				AddSiblingWidget("Create/Invisible Widget/Sibling", false, NGUISettings.AddWidget);
 				AddSiblingWidget("Create/Simple Texture/Sibling", false, NGUISettings.AddTexture);
 				AddSiblingWidget("Create/Unity 2D Sprite/Sibling", false, NGUISettings.Add2DSprite);
-				AddChildWidget("Create/Sprite Collection", false, NGUISettings.AddSpriteCollection);
 			}
 			else
 			{
 				AddChildWidget("Create/Sprite", false, NGUISettings.AddSprite);
-				AddChildWidget("Create/Sprite Collection", false, NGUISettings.AddSpriteCollection);
 				AddChildWidget("Create/Label", false, NGUISettings.AddLabel);
 				AddChildWidget("Create/Invisible Widget", false, NGUISettings.AddWidget);
 				AddChildWidget("Create/Simple Texture", false, NGUISettings.AddTexture);
@@ -385,7 +380,7 @@ static public class NGUIContextMenu
 				AddItem("Attach/Popup List Script", false, Attach, typeof(UIPopupList));
 				AddItem("Attach/Input Field Script", false, Attach, typeof(UIInput));
 				NGUIContextMenu.AddSeparator("Attach/");
-
+				
 				if (target.GetComponent<UIDragResize>() == null)
 					AddItem("Attach/Drag Resize Script", false, Attach, typeof(UIDragResize));
 
@@ -547,7 +542,7 @@ static public class NGUIContextMenu
 		{
 			System.Type type = comps[i].GetType();
 			string url = NGUIHelp.GetHelpURL(type);
-
+			
 			if (url != null)
 			{
 				if (addSeparator)

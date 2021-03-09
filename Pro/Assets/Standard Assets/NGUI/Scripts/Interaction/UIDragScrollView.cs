@@ -1,6 +1,6 @@
 //-------------------------------------------------
 //            NGUI: Next-Gen UI kit
-// Copyright © 2011-2020 Tasharen Entertainment Inc
+// Copyright © 2011-2017 Tasharen Entertainment Inc
 //-------------------------------------------------
 
 using UnityEngine;
@@ -107,7 +107,7 @@ public class UIDragScrollView : MonoBehaviour
 			mAutoFind = false;
 		}
 
-		if (scrollView && enabled && NGUITools.GetActive(gameObject))
+		if (scrollView && enabled && NGUITools.GetActive(gameObject) && scrollView.isDrag)
 		{
 			scrollView.Press(pressed);
 			
@@ -125,7 +125,7 @@ public class UIDragScrollView : MonoBehaviour
 
 	void OnDrag (Vector2 delta)
 	{
-		if (scrollView && NGUITools.GetActive(this))
+		if (scrollView && NGUITools.GetActive(this) && scrollView.isDrag)
 			scrollView.Drag();
 	}
 
@@ -135,7 +135,7 @@ public class UIDragScrollView : MonoBehaviour
 
 	void OnScroll (float delta)
 	{
-		if (scrollView && NGUITools.GetActive(this))
+		if (scrollView && NGUITools.GetActive(this) && scrollView.isDrag)
 			scrollView.Scroll(delta);
 	}
 

@@ -1,6 +1,6 @@
 //-------------------------------------------------
 //            NGUI: Next-Gen UI kit
-// Copyright © 2011-2020 Tasharen Entertainment Inc
+// Copyright © 2011-2017 Tasharen Entertainment Inc
 //-------------------------------------------------
 
 using System;
@@ -122,7 +122,7 @@ static public class FreeType
 	public const int FT_LOAD_SBITS_ONLY = 16384;
 	public const int FT_LOAD_VERTICAL_LAYOUT = 16;
 
-	[DoNotObfuscateNGUI] public enum FT_Glyph_Format
+	public enum FT_Glyph_Format
 	{
 		FT_GLYPH_FORMAT_NONE,
 		FT_GLYPH_FORMAT_COMPOSITE = 1668246896,
@@ -131,7 +131,7 @@ static public class FreeType
 		FT_GLYPH_FORMAT_PLOTTER = 1886154612
 	}
 
-	[DoNotObfuscateNGUI] public enum FT_Render_Mode
+	public enum FT_Render_Mode
 	{
 		FT_RENDER_MODE_NORMAL,
 		FT_RENDER_MODE_LIGHT,
@@ -466,7 +466,6 @@ static public class FreeType
 
 	static public bool CreateFont (Font ttf, int size, int faceIndex, bool kerning, string characters, int padding, out BMFont font, out Texture2D tex)
 	{
-		padding = Mathf.Clamp(padding, 0, 16);
 		font = null;
 		tex = null;
 
@@ -551,23 +550,20 @@ static public class FreeType
 				FT_GlyphSlotRec glyph = (FT_GlyphSlotRec)Marshal.PtrToStructure(faceRec.glyph, typeof(FT_GlyphSlotRec));
 				FT_Render_Glyph(ref glyph, FT_Render_Mode.FT_RENDER_MODE_NORMAL);
 
-				var w = glyph.bitmap.width;
-				var h = glyph.bitmap.rows;
-
-				if (w > 0 && h > 0)
+				if (glyph.bitmap.width > 0 && glyph.bitmap.rows > 0)
 				{
-					var buffer = new byte[w * h];
+					byte[] buffer = new byte[glyph.bitmap.width * glyph.bitmap.rows];
 					Marshal.Copy(glyph.bitmap.buffer, buffer, 0, buffer.Length);
 
-					var texture = new Texture2D(w,  h, UnityEngine.TextureFormat.ARGB32, false);
-					var colors = new Color32[w * h];
+					Texture2D texture = new Texture2D(glyph.bitmap.width, glyph.bitmap.rows, UnityEngine.TextureFormat.ARGB32, false);
+					Color32[] colors = new Color32[buffer.Length];
 
-					for (int i = 0, y = 0; y < h; ++y)
+					for (int i = 0, y = 0; y < glyph.bitmap.rows; ++y)
 					{
-						for (int x = 0; x < w; ++x)
+						for (int x = 0; x < glyph.bitmap.width; ++x)
 						{
 							white.a = buffer[i++];
-							colors[x + w * (h - y - 1)] = white;
+							colors[x + glyph.bitmap.width * (glyph.bitmap.rows - y - 1)] = white;
 						}
 					}
 
@@ -578,7 +574,7 @@ static public class FreeType
 					entries.Add(ch);
 
 					// Record the metrics
-					var bmg = font.GetGlyph(ch, true);
+					BMGlyph bmg = font.GetGlyph(ch, true);
 					bmg.offsetX = (glyph.metrics.horiBearingX >> 6);
 					bmg.offsetY = -(glyph.metrics.horiBearingY >> 6);
 					bmg.advance = (glyph.metrics.horiAdvance >> 6);
@@ -604,20 +600,18 @@ static public class FreeType
 
 			// Create a packed texture with all the characters
 			tex = new Texture2D(32, 32, TextureFormat.ARGB32, false);
-			var rects = tex.PackTextures(textures.ToArray(), 1 + padding);
+			Rect[] rects = tex.PackTextures(textures.ToArray(), padding);
 
 			// Make the RGB channel pure white
-			var cols = tex.GetPixels32();
-
+			Color32[] cols = tex.GetPixels32();
 			for (int i = 0, imax = cols.Length; i < imax; ++i)
 			{
-				var c = cols[i];
+				Color32 c = cols[i];
 				c.r = 255;
 				c.g = 255;
 				c.b = 255;
 				cols[i] = c;
 			}
-
 			tex.SetPixels32(cols);
 			tex.Apply();
 
@@ -633,10 +627,10 @@ static public class FreeType
 				// Destroy the texture now that it's a part of an atlas
 				UnityEngine.Object.DestroyImmediate(textures[i]);
 				textures[i] = null;
-				var rect = rects[i];
+				Rect rect = rects[i];
 
 				// Set the texture coordinates
-				var glyph = font.GetGlyph(entries[i], true);
+				BMGlyph glyph = font.GetGlyph(entries[i], true);
 				glyph.x = Mathf.RoundToInt(rect.x * font.texWidth);
 				glyph.y = Mathf.RoundToInt(rect.y * font.texHeight);
 				glyph.width = Mathf.RoundToInt(rect.width * font.texWidth);
@@ -651,17 +645,12 @@ static public class FreeType
 
 			int baseline = size + min;
 			baseline += ((max - min - size) >> 1);
-			var p2 = padding * 2;
 
 			// Offset all glyphs so that they are not using the baseline
 			for (int i = 0, imax = entries.Count; i < imax; ++i)
 			{
-				var glyph = font.GetGlyph(entries[i], true);
-				glyph.offsetY += baseline - padding;
-				glyph.offsetX -= padding;
-				glyph.y -= p2;
-				glyph.width += p2;
-				glyph.height += p2;
+				BMGlyph glyph = font.GetGlyph(entries[i], true);
+				glyph.offsetY += baseline;
 			}
 		}
 		

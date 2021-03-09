@@ -1,6 +1,6 @@
 //-------------------------------------------------
 //            NGUI: Next-Gen UI kit
-// Copyright © 2011-2020 Tasharen Entertainment Inc
+// Copyright © 2011-2017 Tasharen Entertainment Inc
 //-------------------------------------------------
 
 #if !UNITY_EDITOR && (UNITY_IPHONE || UNITY_ANDROID || UNITY_WP8 || UNITY_WP_8_1 || UNITY_BLACKBERRY || UNITY_WINRT || UNITY_METRO)
@@ -18,14 +18,14 @@ using System.Text;
 [AddComponentMenu("NGUI/UI/Input Field")]
 public class UIInput : MonoBehaviour
 {
-	[DoNotObfuscateNGUI] public enum InputType
+	public enum InputType
 	{
 		Standard,
 		AutoCorrect,
 		Password,
 	}
 
-	[DoNotObfuscateNGUI] public enum Validation
+	public enum Validation
 	{
 		None,
 		Integer,
@@ -34,10 +34,11 @@ public class UIInput : MonoBehaviour
 		Username,
 		Name,
 		Filename,
-	}
+        Chinese
+    }
 
 #if UNITY_EDITOR
-	[DoNotObfuscateNGUI] public enum KeyboardType
+	public enum KeyboardType
 	{
 		Default = (int)TouchScreenKeyboardType.Default,
 		ASCIICapable = (int)TouchScreenKeyboardType.ASCIICapable,
@@ -49,7 +50,7 @@ public class UIInput : MonoBehaviour
 		EmailAddress = (int)TouchScreenKeyboardType.EmailAddress,
 	}
 #else
-	[DoNotObfuscateNGUI] public enum KeyboardType
+	public enum KeyboardType
 	{
 		Default = 0,
 		ASCIICapable = 1,
@@ -62,7 +63,7 @@ public class UIInput : MonoBehaviour
 	}
 #endif
 
-	[DoNotObfuscateNGUI] public enum OnReturnKey
+	public enum OnReturnKey
 	{
 		Default,
 		Submit,
@@ -119,12 +120,6 @@ public class UIInput : MonoBehaviour
 
 	[System.NonSerialized]
 	public bool selectAllTextOnFocus = true;
-
-	/// <summary>
-	/// Whether the input text will be submitted when the input field gets unselected. By default this is off, and submit event will only be called when Enter is used.
-	/// </summary>
-
-	public bool submitOnUnselect = false;
 
 	/// <summary>
 	/// What kind of validation to use with the input field's data.
@@ -582,12 +577,13 @@ public class UIInput : MonoBehaviour
 			label.overflowEllipsis = false;
 		}
 
-		// Unity has issues bringing up the keyboard properly if it's in "hideInput" mode and you happen
-		// to select one input in the same Update as de-selecting another.
-		if (label != null && NGUITools.GetActive(this)) mSelectMe = Time.frameCount;
+        // Unity has issues bringing up the keyboard properly if it's in "hideInput" mode and you happen
+        // to select one input in the same Update as de-selecting another.
+        
+        if (label != null && NGUITools.GetActive(this)) mSelectMe = Time.frameCount;
 	}
 
-	[System.NonSerialized] bool mEllipsis = false;
+    [System.NonSerialized] bool mEllipsis = false;
 
 	/// <summary>
 	/// Notification of the input field losing selection.
@@ -621,16 +617,18 @@ public class UIInput : MonoBehaviour
 			label.alignment = mAlignment;
 		}
 
-		selection = null;
-		UpdateLabel();
+        /// LY add begin ///
+        manualShowCaret = false;
+        /// LY add end ///
 
-		if (submitOnUnselect) Submit();
+        selection = null;
+        UpdateLabel();
 	}
 
 	/// <summary>
 	/// Update the text based on input.
 	/// </summary>
-
+	
 	protected virtual void Update ()
 	{
 #if UNITY_EDITOR
@@ -651,24 +649,40 @@ public class UIInput : MonoBehaviour
 		// to select one input in the same Update as de-selecting another.
 		if (mSelectMe != -1 && mSelectMe != Time.frameCount)
 		{
-			mSelectMe = -1;
-			mSelectionEnd = string.IsNullOrEmpty(mValue) ? 0 : mValue.Length;
-			mDrawStart = 0;
-			mSelectionStart = selectAllTextOnFocus ? 0 : mSelectionEnd;
-			label.color = activeTextColor;
+            /// original begin ///
+            //mSelectMe = -1;
+            //mSelectionEnd = string.IsNullOrEmpty(mValue) ? 0 : mValue.Length;
+            //mDrawStart = 0;
+            //mSelectionStart = selectAllTextOnFocus ? 0 : mSelectionEnd;
+            //label.color = activeTextColor;
+            /// original end ///
+
+            /// LY add begin ///
+            mSelectMe = -1;
+            if (manualShowCaret == false)
+            {
+                mSelectionEnd = string.IsNullOrEmpty(mValue) ? 0 : mValue.Length;
+            }
+            mDrawStart = 0;
+            if (manualShowCaret == false)
+            {
+                mSelectionStart = selectAllTextOnFocus ? 0 : mSelectionEnd;
+            }
+            label.color = activeTextColor;
+
+            manualShowCaret = false;
+            /// LY add end ///
 #if MOBILE
 			RuntimePlatform pf = Application.platform;
 			if (pf == RuntimePlatform.IPhonePlayer
 				|| pf == RuntimePlatform.Android
-				|| pf == RuntimePlatform.WP8Player
- #if UNITY_4_3
+#if UNITY_4_3
 				|| pf == RuntimePlatform.BB10Player
- #else
-				|| pf == RuntimePlatform.BlackBerryPlayer
-				|| pf == RuntimePlatform.MetroPlayerARM
-				|| pf == RuntimePlatform.MetroPlayerX64
-				|| pf == RuntimePlatform.MetroPlayerX86
- #endif
+#else
+				|| pf == RuntimePlatform.WSAPlayerARM
+				|| pf == RuntimePlatform.WSAPlayerX64
+				|| pf == RuntimePlatform.WSAPlayerX86
+#endif
 			)
 			{
 				string val;
@@ -706,8 +720,8 @@ public class UIInput : MonoBehaviour
 			}
 			else
 #endif // MOBILE
-			{
-				Vector2 pos = (UICamera.current != null && UICamera.current.cachedCamera != null) ?
+            {
+                Vector2 pos = (UICamera.current != null && UICamera.current.cachedCamera != null) ?
 					UICamera.current.cachedCamera.WorldToScreenPoint(label.worldCorners[0]) :
 					label.worldCorners[0];
 				pos.y = Screen.height - pos.y;
@@ -722,7 +736,7 @@ public class UIInput : MonoBehaviour
 		if (mKeyboard != null)
 		{
 			string text = (mKeyboard.done || !mKeyboard.active) ? mCached : mKeyboard.text;
-
+ 
 			if (inputShouldBeHidden)
 			{
 				if (text != "|")
@@ -860,7 +874,7 @@ public class UIInput : MonoBehaviour
 		int frame = Time.frameCount;
 
 		if (mIgnoreKey == frame) return;
-
+		
 		if (mCam != null && (key == mCam.cancelKey0 || key == mCam.cancelKey1))
 		{
 			mIgnoreKey = frame;
@@ -1040,11 +1054,7 @@ public class UIInput : MonoBehaviour
 			{
 				ev.Use();
 
-				if (onUpArrow != null)
-				{
-					onUpArrow();
-				}
-				else if (!string.IsNullOrEmpty(mValue))
+				if (!string.IsNullOrEmpty(mValue))
 				{
 					mSelectionEnd = label.GetCharacterIndex(mSelectionEnd, KeyCode.UpArrow);
 					if (mSelectionEnd != 0) mSelectionEnd += mDrawStart;
@@ -1058,11 +1068,7 @@ public class UIInput : MonoBehaviour
 			{
 				ev.Use();
 
-				if (onDownArrow != null)
-				{
-					onDownArrow();
-				}
-				else if (!string.IsNullOrEmpty(mValue))
+				if (!string.IsNullOrEmpty(mValue))
 				{
 					mSelectionEnd = label.GetCharacterIndex(mSelectionEnd, KeyCode.DownArrow);
 					if (mSelectionEnd != label.processedText.Length) mSelectionEnd += mDrawStart;
@@ -1123,9 +1129,6 @@ public class UIInput : MonoBehaviour
 		return false;
 	}
 #endif
-
-	[System.NonSerialized] public System.Action onUpArrow;
-	[System.NonSerialized] public System.Action onDownArrow;
 
 	/// <summary>
 	/// Insert the specified text string into the current input value, respecting selection and validation.
@@ -1331,9 +1334,12 @@ public class UIInput : MonoBehaviour
 				if (inputType == InputType.Password)
 				{
 					processed = "";
+
 					string asterisk = "*";
-					var fnt = label.font as INGUIFont;
-					if (fnt != null && fnt.bmFont != null && fnt.bmFont.GetGlyph('*') == null) asterisk = "x";
+
+					if (label.bitmapFont != null && label.bitmapFont.bmFont != null &&
+						label.bitmapFont.bmFont.GetGlyph('*') == null) asterisk = "x";
+
 					for (int i = 0, imax = fullText.Length; i < imax; ++i) processed += asterisk;
 				}
 				else processed = fullText;
@@ -1469,16 +1475,19 @@ public class UIInput : MonoBehaviour
 		}
 	}
 
-	/// <summary>
-	/// Validate the specified input.
-	/// </summary>
+    /// <summary>
+    /// Validate the specified input.
+    /// </summary>
 
-	protected char Validate (string text, int pos, char ch)
-	{
-		// Validation is disabled
-		if (validation == Validation.None || !enabled) return ch;
-
-		if (validation == Validation.Integer)
+    protected char Validate(string text, int pos, char ch)
+    {
+        // Validation is disabled
+        if (validation == Validation.None || !enabled) return ch;
+        if (validation == Validation.Chinese)
+        {
+            if (ch >= 0x4e00 && ch <= 0x9fa5) return ch;
+        } 
+        else if (validation == Validation.Integer)
 		{
 			// Integer number validation
 			if (ch >= '0' && ch <= '9') return ch;
@@ -1592,4 +1601,26 @@ public class UIInput : MonoBehaviour
 			value = PlayerPrefs.HasKey(savedAs) ? PlayerPrefs.GetString(savedAs) : val;
 		}
 	}
+
+
+    /// LY add begin ///
+
+    private bool manualShowCaret = false;
+
+    public void ShowCaret(string add,string text,int pos)
+    {
+        string s1 = text.Insert(pos, add);
+        value = s1;
+        ShowCaret(pos+add.Length);
+    }
+
+    public void ShowCaret(int pos)
+    {
+        manualShowCaret = true;
+        isSelected = true;
+        cursorPosition = pos;
+        selectionStart = pos;
+    }
+
+    /// LY add end ///
 }

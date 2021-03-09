@@ -1,6 +1,6 @@
 //-------------------------------------------------
 //            NGUI: Next-Gen UI kit
-// Copyright © 2011-2020 Tasharen Entertainment Inc
+// Copyright © 2011-2017 Tasharen Entertainment Inc
 //-------------------------------------------------
 
 using UnityEditor;
@@ -36,16 +36,15 @@ public class SpriteSelector : ScriptableWizard
 	{
 		NGUIEditorTools.SetLabelWidth(80f);
 
-		var atlas = NGUISettings.atlas;
-
-		if (atlas == null)
+		if (NGUISettings.atlas == null)
 		{
 			GUILayout.Label("No Atlas selected.", "LODLevelNotifyText");
 		}
 		else
 		{
+			UIAtlas atlas = NGUISettings.atlas;
 			bool close = false;
-			GUILayout.Label((atlas as Object).name + " Sprites", "LODLevelNotifyText");
+			GUILayout.Label(atlas.name + " Sprites", "LODLevelNotifyText");
 			NGUIEditorTools.DrawSeparator();
 
 			GUILayout.BeginHorizontal();
@@ -63,7 +62,7 @@ public class SpriteSelector : ScriptableWizard
 			GUILayout.Space(84f);
 			GUILayout.EndHorizontal();
 
-			var tex = atlas.texture as Texture2D;
+			Texture2D tex = atlas.texture as Texture2D;
 
 			if (tex == null)
 			{
@@ -71,14 +70,8 @@ public class SpriteSelector : ScriptableWizard
 				return;
 			}
 
-			var sprites = atlas.GetListOfSprites(NGUISettings.partialSprite);
-
-			if (sprites == null)
-			{
-				GUILayout.Label("No sprites found");
-				return;
-			}
-
+			BetterList<string> sprites = atlas.GetListOfSprites(NGUISettings.partialSprite);
+			
 			float size = 80f;
 			float padded = size + 10f;
 #if UNITY_4_7
@@ -105,7 +98,7 @@ public class SpriteSelector : ScriptableWizard
 
 					for (; offset < sprites.size; ++offset)
 					{
-						var sprite = atlas.GetSprite(sprites.buffer[offset]);
+						UISpriteData sprite = atlas.GetSprite(sprites[offset]);
 						if (sprite == null) continue;
 
 						// Button comes first
@@ -122,7 +115,7 @@ public class SpriteSelector : ScriptableWizard
 									{
 										NGUIEditorTools.RegisterUndo("Atlas Selection", mSprite);
 										mSprite.MakePixelPerfect();
-										NGUITools.SetDirty(mSprite.gameObject);
+										EditorUtility.SetDirty(mSprite.gameObject);
 									}
 
 									NGUISettings.selectedSprite = sprite.name;
@@ -145,15 +138,15 @@ public class SpriteSelector : ScriptableWizard
 							NGUIEditorTools.DrawTiledTexture(rect, NGUIEditorTools.backdropTexture);
 							Rect uv = new Rect(sprite.x, sprite.y, sprite.width, sprite.height);
 							uv = NGUIMath.ConvertToTexCoords(uv, tex.width, tex.height);
-
+	
 							// Calculate the texture's scale that's needed to display the sprite in the clipped area
 							float scaleX = rect.width / uv.width;
 							float scaleY = rect.height / uv.height;
-
+	
 							// Stretch the sprite so that it will appear proper
 							float aspect = (scaleY / scaleX) / ((float)tex.height / tex.width);
 							Rect clipRect = rect;
-
+	
 							if (aspect != 1f)
 							{
 								if (aspect < 1f)
@@ -171,9 +164,9 @@ public class SpriteSelector : ScriptableWizard
 									clipRect.yMax -= padding;
 								}
 							}
-
+	
 							GUI.DrawTextureWithTexCoords(clipRect, tex, uv);
-
+	
 							// Draw the selection
 							if (NGUISettings.selectedSprite == sprite.name)
 							{
@@ -271,7 +264,7 @@ public class SpriteSelector : ScriptableWizard
 	/// Show the sprite selection wizard.
 	/// </summary>
 
-	static public void Show (SerializedObject ob, SerializedProperty pro, INGUIAtlas atlas)
+	static public void Show (SerializedObject ob, SerializedProperty pro, UIAtlas atlas)
 	{
 		if (instance != null)
 		{

@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 69671000ad675cf41b829a10771253c8
+timeCreated: 1480912912
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: standard-dissolve.shader
+  assetBundleVariant: ab

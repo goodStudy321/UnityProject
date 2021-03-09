@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System;
 using System.IO;
 using System.Collections;
@@ -92,7 +92,7 @@ public class PlayDebugService : DebugService
         else if (SerId == DebugService.MSG_FILE_TRUNK)
         {
             Marshal.Copy(buf, m_reviceByte, mFileReviceIndex, reLen);
-
+            
             mFileReviceIndex += reLen;
             mFileReviceSize -= reLen;
 
@@ -111,13 +111,13 @@ public class PlayDebugService : DebugService
             string cmd = Marshal.PtrToStringAnsi(buf, reLen); //System.Text.Encoding.Default.GetString(str, 0, reLen);
             GMString.Add(cmd);
         }
-
+        
         if (SerId >= DebugService.MSG_SEND_MESSAGE)
         {
             //unsafe
             //{
             //    byte* memBytePtr = (byte*)buf.ToPointer();
-
+                
             //    uint iEnumData = SerId - DebugService.MSG_SEND_MESSAGE;
             //    Type dataType = null;
             //    foreach (EventEnum item in Enum.GetValues(typeof(EventEnum)))
@@ -179,9 +179,9 @@ public class PlayDebugService : DebugService
         {
             string path = Application.persistentDataPath + "/" + mReviceFileName.ToLower();
             File.WriteAllBytes(path, m_ReviceFileBuffer);
-
+            
             m_reviceByte = null;
-
+            
             Debug.Log(string.Format("save file to:{0}", path));
 
             string filename = Path.GetFileNameWithoutExtension(path);

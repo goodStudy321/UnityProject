@@ -1,4 +1,9 @@
-﻿using System.IO;
+/*=============================================================================
+ * Copyright (C) 2014, 金七情(Loong) jinqiqing@qq.com
+ * Created by Loong in 2015.3.20 20:09:22
+ ============================================================================*/
+
+using System.IO;
 using System.Text;
 using UnityEngine;
 
@@ -6,10 +11,14 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-namespace Hello.Game
+namespace Loong.Game
 {
+    /// <summary>
+    /// 路径相关类
+    /// </summary>
     public static class AssetPath
     {
+        #region 字段
         private static string data = null;
         private static string cache = null;
         private static string commen = null;
@@ -23,6 +32,12 @@ namespace Hello.Game
         private static string wwwAssetBundle = null;
         private static bool existInPersistent = false;
         private static StringBuilder uri = new StringBuilder();
+
+        #endregion
+
+        #region 属性
+
+
 
         /// <summary>
         /// 数据路径
@@ -99,7 +114,9 @@ namespace Hello.Game
             }
         }
 #endif
+        #endregion
 
+        #region 构造方法
         static AssetPath()
         {
             platform = GetPlatformFolder(Application.platform);
@@ -111,7 +128,9 @@ namespace Hello.Game
             wwwPersistent = GetPersitentWwwPath();
             Refresh();
         }
+        #endregion
 
+        #region 私有方法
 #if CS_HOTFIX_ENABLE
         private static string GetStreamingWwwPath()
         {
@@ -183,6 +202,13 @@ namespace Hello.Game
             string verPath = Persistent + "/AssetVer.txt";
             existInPersistent = (File.Exists(verPath)) ? true : false;
         }
+        #endregion
+
+        #region 保护方法
+
+        #endregion
+
+        #region 公开方法
 
         /// <summary>
         /// 获取通用资源路径
@@ -226,7 +252,7 @@ namespace Hello.Game
 
             if (App.IsDebug)
             {
-                Debug.LogFormat("Hello", "Persist:{0}, Streaming:{1}", Persistent, Streaming);
+                iTrace.Log("Loong", "Persist:{0}, Streaming:{1}", Persistent, Streaming);
             }
         }
 
@@ -254,7 +280,7 @@ namespace Hello.Game
             }
 #endif
         }
-
+        #region 编辑器函数
 #if UNITY_EDITOR
         public static string GetPlatformFolder(BuildTarget buildTarget)
         {
@@ -276,7 +302,7 @@ namespace Hello.Game
             }
         }
 #endif
+        #endregion
+        #endregion
     }
 }
-
-

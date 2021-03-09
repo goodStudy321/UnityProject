@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 9d343bed4e98ff347b163bf0474d8310
+timeCreated: 1479883464
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: shadowdepthwriter.shader
+  assetBundleVariant: ab

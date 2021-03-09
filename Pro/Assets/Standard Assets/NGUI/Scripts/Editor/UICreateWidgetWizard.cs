@@ -1,6 +1,6 @@
 //-------------------------------------------------
 //            NGUI: Next-Gen UI kit
-// Copyright © 2011-2020 Tasharen Entertainment Inc
+// Copyright © 2011-2017 Tasharen Entertainment Inc
 //-------------------------------------------------
 
 #if !UNITY_3_5 && !UNITY_FLASH
@@ -17,7 +17,7 @@ using System.Collections.Generic;
 
 public class UICreateWidgetWizard : EditorWindow
 {
-	[DoNotObfuscateNGUI] public enum WidgetType
+	public enum WidgetType
 	{
 		Label,
 		Sprite,
@@ -145,12 +145,9 @@ public class UICreateWidgetWizard : EditorWindow
 
 	void OnSelectAtlas (Object obj)
 	{
-		// Legacy atlas support
-		if (obj != null && obj is GameObject) obj = (obj as GameObject).GetComponent<UIAtlas>();
-
-		if (NGUISettings.atlas != obj as INGUIAtlas)
+		if (NGUISettings.atlas != obj)
 		{
-			NGUISettings.atlas = obj as INGUIAtlas;
+			NGUISettings.atlas = obj as UIAtlas;
 			Repaint();
 		}
 	}
@@ -161,12 +158,11 @@ public class UICreateWidgetWizard : EditorWindow
 
 	void OnSelectFont (Object obj)
 	{
-		// Legacy font support
-		if (obj != null && obj is GameObject) obj = (obj as GameObject).GetComponent<UIFont>();
+		Object fnt = obj as UIFont;
 
-		if (NGUISettings.ambigiousFont != obj)
+		if (NGUISettings.ambigiousFont != fnt)
 		{
-			NGUISettings.ambigiousFont = obj;
+			NGUISettings.ambigiousFont = fnt;
 			Repaint();
 		}
 	}
@@ -334,7 +330,7 @@ public class UICreateWidgetWizard : EditorWindow
 			go = NGUITools.AddChild(go);
 			go.name = "Image Button";
 
-			UISpriteData sp = NGUISettings.GetSprite(mImage0);
+			UISpriteData sp = NGUISettings.atlas.GetSprite(mImage0);
 			UISprite sprite = NGUITools.AddWidget<UISprite>(go);
 			sprite.type = sp.hasBorder ? UISprite.Type.Sliced : UISprite.Type.Simple;
 			sprite.name = "Background";
@@ -528,8 +524,8 @@ public class UICreateWidgetWizard : EditorWindow
 			go.name = slider ? "Slider" : "Progress Bar";
 
 			// Background sprite
-			var bgs = NGUISettings.GetSprite(mSliderBG);
-			var back = NGUITools.AddWidget<UISprite>(go);
+			UISpriteData bgs = NGUISettings.atlas.GetSprite(mSliderBG);
+			UISprite back = (UISprite)NGUITools.AddWidget<UISprite>(go);
 
 			back.type = bgs.hasBorder ? UISprite.Type.Sliced : UISprite.Type.Simple;
 			back.name = "Background";
@@ -543,7 +539,7 @@ public class UICreateWidgetWizard : EditorWindow
 			back.MakePixelPerfect();
 
 			// Foreground sprite
-			UISpriteData fgs = NGUISettings.GetSprite(mSliderFG);
+			UISpriteData fgs = NGUISettings.atlas.GetSprite(mSliderFG);
 			UISprite front = NGUITools.AddWidget<UISprite>(go);
 			front.type = fgs.hasBorder ? UISprite.Type.Sliced : UISprite.Type.Simple;
 			front.name = "Foreground";
@@ -565,7 +561,7 @@ public class UICreateWidgetWizard : EditorWindow
 			// Thumb sprite
 			if (slider)
 			{
-				UISpriteData tbs = NGUISettings.GetSprite(mSliderTB);
+				UISpriteData tbs = NGUISettings.atlas.GetSprite(mSliderTB);
 				UISprite thb = NGUITools.AddWidget<UISprite>(go);
 
 				thb.type = tbs.hasBorder ? UISprite.Type.Sliced : UISprite.Type.Simple;
@@ -667,14 +663,14 @@ public class UICreateWidgetWizard : EditorWindow
 			go = NGUITools.AddChild(go);
 			go.name = isDropDown ? "Popup List" : "Popup Menu";
 
-			UISpriteData sphl = NGUISettings.GetSprite(mListHL);
-			UISpriteData spfg = NGUISettings.GetSprite(mListFG);
+			UISpriteData sphl = NGUISettings.atlas.GetSprite(mListHL);
+			UISpriteData spfg = NGUISettings.atlas.GetSprite(mListFG);
 
 			Vector2 hlPadding = new Vector2(Mathf.Max(4f, sphl.paddingLeft), Mathf.Max(4f, sphl.paddingTop));
 			Vector2 fgPadding = new Vector2(Mathf.Max(4f, spfg.paddingLeft), Mathf.Max(4f, spfg.paddingTop));
 
 			// Background sprite
-			UISprite sprite = NGUITools.AddSprite(go, NGUISettings.atlas as INGUIAtlas, mListFG);
+			UISprite sprite = NGUITools.AddSprite(go, NGUISettings.atlas, mListFG);
 			sprite.depth = depth;
 			sprite.atlas = NGUISettings.atlas;
 			sprite.pivot = UIWidget.Pivot.Left;
@@ -698,7 +694,7 @@ public class UICreateWidgetWizard : EditorWindow
 
 			// Add the popup list
 			UIPopupList list = go.AddComponent<UIPopupList>();
-			list.atlas = NGUISettings.atlas as Object;
+			list.atlas = NGUISettings.atlas;
 			list.ambigiousFont = NGUISettings.ambigiousFont;
 			list.fontSize = NGUISettings.fontSize;
 			list.fontStyle = NGUISettings.fontStyle;
@@ -759,7 +755,7 @@ public class UICreateWidgetWizard : EditorWindow
 		if (go == null)
 		{
 			GUILayout.Label("You must create a UI first.");
-
+			
 			if (GUILayout.Button("Open the New UI Wizard"))
 			{
 				EditorWindow.GetWindow<UICreateNewUIWizard>(false, "New UI", true);
@@ -770,7 +766,7 @@ public class UICreateWidgetWizard : EditorWindow
 			GUILayout.Space(4f);
 
 			GUILayout.BeginHorizontal();
-			ComponentSelector.Draw(NGUISettings.atlas, OnSelectAtlas, false, GUILayout.Width(140f));
+			ComponentSelector.Draw<UIAtlas>(NGUISettings.atlas, OnSelectAtlas, false, GUILayout.Width(140f));
 			GUILayout.Label("Texture atlas used by widgets", GUILayout.Width(10000f));
 			GUILayout.EndHorizontal();
 

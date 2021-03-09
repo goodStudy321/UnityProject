@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: dc9cb4c9f6bb81249971a2880b50a6d2
+timeCreated: 1484624388
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: fourier.shader
+  assetBundleVariant: ab

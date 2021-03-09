@@ -1,6 +1,6 @@
 //-------------------------------------------------
 //            NGUI: Next-Gen UI kit
-// Copyright © 2011-2020 Tasharen Entertainment Inc
+// Copyright © 2011-2017 Tasharen Entertainment Inc
 //-------------------------------------------------
 
 using UnityEngine;
@@ -18,7 +18,7 @@ public class UIKeyNavigation : MonoBehaviour
 
 	static public BetterList<UIKeyNavigation> list = new BetterList<UIKeyNavigation>();
 
-	[DoNotObfuscateNGUI] public enum Constraint
+	public enum Constraint
 	{
 		None,
 		Vertical,
@@ -114,7 +114,7 @@ public class UIKeyNavigation : MonoBehaviour
 	protected virtual void OnEnable ()
 	{
 		list.Add(this);
-		if (mStarted) Invoke("Start", 0.001f);
+		if (mStarted) Start();
 	}
 
 	void Start ()
@@ -124,7 +124,7 @@ public class UIKeyNavigation : MonoBehaviour
 #endif
 		mStarted = true;
 		if (startsSelected && isColliderEnabled)
-			UICamera.selectedObject = gameObject;
+			UICamera.hoveredObject = gameObject;
 	}
 
 	protected virtual void OnDisable () { list.Remove(this); }
@@ -179,15 +179,15 @@ public class UIKeyNavigation : MonoBehaviour
 
 		for (int i = 0; i < list.size; ++i)
 		{
-			var nav = list.buffer[i];
+			UIKeyNavigation nav = list[i];
 			if (nav == this || nav.constraint == Constraint.Explicit || !nav.isColliderEnabled) continue;
 
 			// Ignore invisible widgets
-			var widget = nav.GetComponent<UIWidget>();
+			UIWidget widget = nav.GetComponent<UIWidget>();
 			if (widget != null && widget.alpha == 0f) continue;
 
 			// Reject objects that are not within a 45 degree angle of the desired direction
-			var dir = GetCenter(nav.gameObject) - myCenter;
+			Vector3 dir = GetCenter(nav.gameObject) - myCenter;
 			float dot = Vector3.Dot(myDir, dir.normalized);
 			if (dot < 0.707f) continue;
 
@@ -197,7 +197,7 @@ public class UIKeyNavigation : MonoBehaviour
 			dir.y *= y;
 
 			// Compare the distance
-			var mag = dir.sqrMagnitude;
+			float mag = dir.sqrMagnitude;
 			if (mag > min) continue;
 			go = nav.gameObject;
 			min = mag;
@@ -207,16 +207,16 @@ public class UIKeyNavigation : MonoBehaviour
 
 	static protected Vector3 GetCenter (GameObject go)
 	{
-		var w = go.GetComponent<UIWidget>();
-		var cam = UICamera.FindCameraForLayer(go.layer);
+		UIWidget w = go.GetComponent<UIWidget>();
+		UICamera cam = UICamera.FindCameraForLayer(go.layer);
 
 		if (cam != null)
 		{
-			var center = go.transform.position;
+			Vector3 center = go.transform.position;
 
 			if (w != null)
 			{
-				var corners = w.worldCorners;
+				Vector3[] corners = w.worldCorners;
 				center = (corners[0] + corners[2]) * 0.5f;
 			}
 
@@ -226,7 +226,7 @@ public class UIKeyNavigation : MonoBehaviour
 		}
 		else if (w != null)
 		{
-			var corners = w.worldCorners;
+			Vector3[] corners = w.worldCorners;
 			return (corners[0] + corners[2]) * 0.5f;
 		}
 		return go.transform.position;
@@ -269,7 +269,7 @@ public class UIKeyNavigation : MonoBehaviour
 
 		if (key == KeyCode.Tab)
 		{
-			var go = onTab;
+			GameObject go = onTab;
 
 			if (go == null)
 			{

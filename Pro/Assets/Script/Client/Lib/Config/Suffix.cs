@@ -1,9 +1,15 @@
-﻿using System.IO;
+using System.IO;
 
-namespace Hello.Game
+namespace Loong.Game
 {
+    /// <summary>
+    /// AU:Loong
+    /// TM:2015.3.20
+    /// BG:后缀名类/全小写
+    /// </summary>
     public static class Suffix
     {
+        #region 字段
         /// <summary>
         /// 无
         /// </summary>
@@ -158,7 +164,30 @@ namespace Hello.Game
         /// 二进制资源
         /// </summary>
         public const string Bytes = ".bytes";
+        #endregion
 
+        #region 属性
+
+        #endregion
+
+        #region 构造方法
+
+        #endregion
+
+        #region 私有方法
+
+        #endregion
+
+        #region 保护方法
+
+        #endregion
+
+        #region 公开方法
+        /// <summary>
+        /// 获取纯小写的后缀名
+        /// </summary>
+        /// <param name="filePath">文件路径</param>
+        /// <returns></returns>
         public static string Get(string filePath)
         {
             if (string.IsNullOrEmpty(filePath)) return null;
@@ -166,6 +195,6 @@ namespace Hello.Game
             sfx = sfx.ToLower();
             return sfx;
         }
+        #endregion
     }
 }
-

@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UWAWrapper_Android</name>
+    </assembly>
+    <members>
+        <member name="M:UWALocal.Utils.isVRMode">
+            <summary>
+            if it is a VR App
+            </summary>
+        </member>
+        <member name="T:UWAEngine">
+            <summary>
+            Helper function to record custom API and value
+            </summary>
+        </member>
+        <member name="M:UWAEngine.StaticInit">
+            <summary>
+            This api can be used to initialize the UWA SDK, instead of draging the UWA_Android.prefab into your scene.
+            </summary>
+            
+        </member>
+        <member name="M:UWAEngine.Start(UWAEngine.Mode)">
+            <summary>
+            [Local Only] This api can be used to start the test with the given mode, instead of pressing the button in GUI panel.
+            Test can be started only once.
+            </summary>
+            <param name="mode"> the profiling mode to be started</param>
+        </member>
+        <member name="M:UWAEngine.Stop">
+            <summary>
+            [Local Only] This api can be used to stop the test, instead of pressing the button in GUI panel.
+            Test can be stopped only once.
+            </summary>
+        </member>
+        <member name="M:UWAEngine.PushSample(System.String)">
+            <summary>
+            Add a sample into the function lists in the UWAEngine, so the performance 
+            between a Push and a Pop will be recorded with the given name.
+            It is supported to call the PushSample and PopSample recursively, and they must be called in pairs.
+            </summary>
+            <param name="sampleName"></param>
+        </member>
+        <member name="M:UWAEngine.PopSample">
+            <summary>
+            Add a sample into the function lists in the UWAEngine, so the performance
+            between a Push and a Pop will be recorded with the given name.
+            It is supported to call the PushSample and PopSample recursively, and they must be called in pairs.
+            </summary>
+        </member>
+        <member name="M:UWAEngine.Register(System.Object,System.String,System.String,System.Single)">
+            <summary>
+            [Online Only] Register an instance field with its name and the intance, UWAEngine will
+            update and log the value at the given time interval
+            </summary>
+            <param name="classObj">the intance which the field belongs to</param>
+            <param name="instanceName">the name of the instance</param>
+            <param name="fieldName">the name of the field</param>
+            <param name="updateInterval">the time interval</param>
+        </member>
+        <member name="M:UWAEngine.Register(System.Type,System.String,System.Single)">
+            <summary>
+            [Online Only] Register a static field with its name and the class type, UWAEngine will
+            update and log the value at the given time interval
+            </summary>
+            <param name="classType">the class which the field belongs to</param>
+            <param name="fieldName">the name of the field</param>
+            <param name="updateInterval">the time interval</param>
+        </member>
+        <member name="T:UWAEngine.Mode">
+            <summary>
+            The profiling mode 
+            </summary>
+        </member>
+    </members>
+</doc>

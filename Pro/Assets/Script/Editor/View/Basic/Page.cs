@@ -1,6 +1,11 @@
-﻿using System;
+﻿/*=============================================================================
+ * Copyright (C) 2018, 金七情(Loong) jinqiqing@qq.com
+ * Created by Loong on 2018/8/3 21:41:06
+ ============================================================================*/
+
+using System;
 using System.IO;
-using Hello.Game;
+using Loong.Game;
 using UnityEditor;
 using UnityEngine;
 using System.Collections;
@@ -8,7 +13,7 @@ using System.Xml.Serialization;
 using System.Collections.Generic;
 using Object = UnityEngine.Object;
 
-namespace Hello.Edit
+namespace Loong.Edit
 {
     /// <summary>
     /// 翻页

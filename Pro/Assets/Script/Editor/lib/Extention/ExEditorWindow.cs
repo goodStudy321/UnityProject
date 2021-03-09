@@ -1,13 +1,37 @@
-﻿
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
+using UnityEditor;
 
-namespace Hello.Edit
+namespace Loong.Edit
 {
+    /// <summary>
+    /// AU:Loong
+    /// TM:2014.4.12
+    /// BG:编辑器窗口扩展
+    /// </summary>
     public static class ExEditorWindow
     {
+        #region 字段
+
+        #endregion
+
+        #region 属性
+
+        #endregion
+
+        #region 构造方法
+
+        #endregion
+
+        #region 私有方法
+
+        #endregion
+
+        #region 保护方法
+
+        #endregion
+
+        #region 公开方法
+
         /// <summary>
         /// 在窗口上显示一个信息
         /// </summary>
@@ -105,6 +129,8 @@ namespace Hello.Edit
             win.minSize = size;
             win.maxSize = size;
         }
+
+        #endregion
+
     }
 }
-

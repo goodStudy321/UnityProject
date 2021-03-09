@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: b5c4bb1530c951049a8571cc50f24b69
+timeCreated: 1500465200
+licenseType: Free
+ShaderImporter:
+  defaultTextures: []
+  userData: USER,FALPHA_NO_MAINTEX,FDISSOLVE,FDSLV_R,FDISSOLVE_GRADIENT,FEMISSION_COLOR_HDR,FCUTOUT,FDISSOLVE_UV,fnoforwardadd,ffullforwardshadows,faddshadow,fnofog,KSHADER_TARGET:3.0,KEMISSION_MASK_CHANNEL:.a,KDISSOLVE_GRAD_CONTRAST:5.0,ch4C455959,cSM:30,cCF:TCP2_ShaderTemplate_Default
+  assetBundleName: font.shader
+  assetBundleVariant: ab

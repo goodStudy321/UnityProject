@@ -1,17 +1,41 @@
-﻿#if UNITY_EDITOR
+﻿/*=============================================================================
+ * Copyright (C) 2018, 金七情(Loong) jinqiqing@qq.com
+ * Created by Loong on 2018/11/3 16:16:04
+ ============================================================================*/
+
+#if UNITY_EDITOR
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
-namespace Hello.Game
+namespace Loong.Game
 {
     using MT = MessageType;
-    public static class UIEditTip 
+    /// <summary>
+    /// 编辑器提示工具
+    /// </summary>
+    public static class UIEditTip
     {
+        #region 字段
         private static GUIContent cont = new GUIContent();
 
+        #endregion
+
+        #region 属性
+
+        #endregion
+
+        #region 委托事件
+
+        #endregion
+
+        #region 构造方法
+
+        #endregion
+
+        #region 私有方法
         private static GUIStyle GetStyle(string name)
         {
             GUIStyle style = null;
@@ -21,7 +45,6 @@ namespace Hello.Game
             }
             catch (Exception)
             {
-
             }
             return style;
         }
@@ -66,11 +89,20 @@ namespace Hello.Game
             }
         }
 
+
         private static void Show(MT type, string fmt, params object[] args)
         {
             var msg = string.Format(fmt, args);
             Tip(type, msg);
         }
+        #endregion
+
+        #region 保护方法
+
+        #endregion
+
+        #region 公开方法
+
 
         /// <summary>
         /// 一般提示
@@ -116,8 +148,7 @@ namespace Hello.Game
             fmt += sfx;
             Show(type, fmt, args);
         }
+        #endregion
     }
 }
-
 #endif
-

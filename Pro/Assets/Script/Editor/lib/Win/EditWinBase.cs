@@ -1,27 +1,45 @@
-﻿using System;
+/*=============================================================================
+ * Copyright (C) 2018, 金七情(Loong) jinqiqing@qq.com
+ * Created by Loong on 2014/9/28 11:35:16
+ ============================================================================*/
+
+using System;
+using System.Text;
+using UnityEngine;
+using UnityEditor;
 using System.Collections;
 using System.Collections.Generic;
-using System.Text;
-using UnityEditor;
-using UnityEngine;
 
-namespace Hello.Edit
+namespace Loong.Edit
 {
     /// <summary>
     /// 窗口基类
     /// </summary>
     public class EditWinBase : EditorWindow
     {
+        #region 字段
         private bool compile = false;
 
+        /// <summary>
+        /// 视图键值
+        /// </summary>
         [SerializeField]
         private List<string> keys = new List<string>();
 
+        /// <summary>
+        /// 视图列表
+        /// </summary>
         [SerializeField]
         private List<EditViewBase> views = new List<EditViewBase>();
 
+        /// <summary>
+        /// 视图字典
+        /// </summary>
         private Dictionary<string, EditViewBase> dic = new Dictionary<string, EditViewBase>();
 
+        #endregion
+
+        #region 属性
         /// <summary>
         /// true:编译中
         /// </summary>
@@ -30,7 +48,12 @@ namespace Hello.Edit
             get { return compile; }
             private set { compile = value; }
         }
+        #endregion
 
+        #region 私有方法
+        /// <summary>
+        /// 设置字典
+        /// </summary>
         private void SetDic()
         {
             dic.Clear();
@@ -43,6 +66,9 @@ namespace Hello.Edit
             }
         }
 
+        /// <summary>
+        /// 检查编译中
+        /// </summary>
         private void CheckCompile()
         {
             if (EditorApplication.isCompiling)
@@ -62,6 +88,9 @@ namespace Hello.Edit
             }
         }
 
+        /// <summary>
+        /// 编译结束
+        /// </summary>
         private void Compiled()
         {
             int length = views.Count;
@@ -74,7 +103,9 @@ namespace Hello.Edit
             OnCompiled();
         }
 
-
+        /// <summary>
+        /// 播放模式改变处理器
+        /// </summary>
         private void PlaymodeChanged()
         {
             if (EditorApplication.isPlayingOrWillChangePlaymode)
@@ -93,7 +124,10 @@ namespace Hello.Edit
             }
         }
 
-
+        /// <summary>
+        /// 播放模式改变
+        /// </summary>
+        /// <param name="playing">true:运行中</param>
         private void PlaymodeChanged(bool playing)
         {
             int length = views.Count;
@@ -104,7 +138,14 @@ namespace Hello.Edit
             }
             OnPlaymodeChanged(playing);
         }
+        #endregion
 
+        #region 保护方法
+
+
+        /// <summary>
+        /// 显示UI 只对当前激活的UI有效
+        /// </summary>
         protected virtual void OnGUI()
         {
             CheckCompile();
@@ -117,6 +158,10 @@ namespace Hello.Edit
             GUI.enabled = true;
         }
 
+
+        /// <summary>
+        /// 更新
+        /// </summary>
         protected virtual void Update()
         {
             int length = views.Count;
@@ -127,6 +172,9 @@ namespace Hello.Edit
             }
         }
 
+        /// <summary>
+        /// 激活
+        /// </summary>
         protected virtual void OnEnable()
         {
             SetDic();
@@ -142,6 +190,9 @@ namespace Hello.Edit
             }
         }
 
+        /// <summary>
+        /// 睡眠
+        /// </summary>
         protected virtual void OnDisable()
         {
             int length = views.Count;
@@ -152,6 +203,9 @@ namespace Hello.Edit
             }
         }
 
+        /// <summary>
+        /// 销毁时行为
+        /// </summary>
         protected virtual void OnDestroy()
         {
             UnityEditor.SceneView.duringSceneGui -= OnSceneGUI;
@@ -166,6 +220,9 @@ namespace Hello.Edit
             }
         }
 
+        /// <summary>
+        /// 层级面板发生改变时行为
+        /// </summary>
         protected virtual void OnHierarchyChange()
         {
             int length = views.Count;
@@ -193,6 +250,10 @@ namespace Hello.Edit
 
         }
 
+        /// <summary>
+        /// 场景GUI行为
+        /// </summary>
+        /// <param name="sceneView"></param>
         protected virtual void OnSceneGUI(UnityEditor.SceneView sceneView)
         {
             int length = views.Count;
@@ -203,11 +264,23 @@ namespace Hello.Edit
             }
         }
 
+
+        #endregion
+
+        #region 公开方法
+        /// <summary>
+        /// 初始化操作
+        /// </summary>
         public virtual void Init()
         {
 
         }
 
+        /// <summary>
+        /// 根据类型获取视图
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         public T Get<T>() where T : EditViewBase
         {
             var view = Get(typeof(T));
@@ -216,12 +289,22 @@ namespace Hello.Edit
             return t;
         }
 
+        /// <summary>
+        /// 根据类型获取视图
+        /// </summary>
+        /// <param name="type">类型</param>
+        /// <returns></returns>
         public EditViewBase Get(Type type)
         {
             if (type == null) return null;
             return Get(type.Name);
         }
 
+        /// <summary>
+        /// 根据名称获取视图
+        /// </summary>
+        /// <param name="name">视图名称</param>
+        /// <returns></returns>
         public EditViewBase Get(string name)
         {
             if (string.IsNullOrEmpty(name)) return null;
@@ -229,17 +312,29 @@ namespace Hello.Edit
             return null;
         }
 
+        /// <summary>
+        /// 根据视图类型名称打开视图
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
         public void Open<T>() where T : EditViewBase
         {
             Open(typeof(T));
         }
 
+        /// <summary>
+        /// 根据视图类型名称打开视图
+        /// </summary>
+        /// <param name="type">视图类型</param>
         public void Open(Type type)
         {
             if (type == null) return;
             Open(type.Name);
         }
 
+        /// <summary>
+        /// 打开视图
+        /// </summary>
+        /// <param name="name">视图名称</param>
         public void Open(string name)
         {
             if (string.IsNullOrEmpty(name)) return;
@@ -249,6 +344,11 @@ namespace Hello.Edit
             }
         }
 
+
+        /// <summary>
+        /// 根据视图类型关闭视图
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
         public void Close<T>() where T : EditViewBase
         {
             Close(typeof(T));
@@ -474,9 +574,6 @@ namespace Hello.Edit
             sb.Append("}");
             return sb.ToString();
         }
-
+        #endregion
     }
-
-    
 }
-

@@ -1,44 +1,88 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+/*=============================================================================
+ * Copyright (C) 2018, 金七情(Loong) jinqiqing@qq.com
+ * Created by Loong on 2013/7/5 00:00:00
+ ============================================================================*/
 
-namespace Hello.Game
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace Loong.Game
 {
+
     public class PoolInfo<T> where T : class, new()
     {
         private bool persist;
-        
+
         public bool Persist
         {
             get { return persist; }
             set { persist = value; }
         }
 
+
         public Queue<T> queue = new Queue<T>();
     }
 
+    /// <summary>
+    /// 对象池基类
+    /// </summary>
     public abstract class PoolBase<T> where T : class, new()
     {
+        #region 字段
         private Dictionary<string, PoolInfo<T>> dic = new Dictionary<string, PoolInfo<T>>();
+        #endregion
 
+        #region 属性
 
+        #endregion
+
+        #region 委托事件
+
+        #endregion
+
+        #region 构造方法
+
+        #endregion
+
+        #region 私有方法
+
+        #endregion
+
+        #region 保护方法
+        /// <summary>
+        /// 创建类型实例
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         protected virtual T Create(string name)
         {
             return new T();
         }
 
+        /// <summary>
+        /// 实例被释放
+        /// </summary>
+        /// <param name="t"></param>
         protected virtual void Dispose(T t)
         {
 
         }
+        #endregion
 
+        #region 公开方法
+        /// <summary>
+        /// 获取
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         public virtual T Get(string name)
         {
             T t = null;
             if (dic.ContainsKey(name))
             {
                 var info = dic[name];
-                if(info.queue.Count > 0)
+                if (info.queue.Count > 0)
                 {
                     t = info.queue.Dequeue();
                 }
@@ -50,7 +94,12 @@ namespace Hello.Game
             return t;
         }
 
-        public virtual void Add(string name,T t)
+        /// <summary>
+        /// 添加
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="t"></param>
+        public virtual void Add(string name, T t)
         {
             if (t == null) return;
             PoolInfo<T> info = null;
@@ -66,7 +115,12 @@ namespace Hello.Game
             info.queue.Enqueue(t);
         }
 
-        public void SetPersist(string name,bool val)
+        /// <summary>
+        /// 设置持久化
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="val"></param>
+        public void SetPersist(string name, bool val)
         {
             if (dic.ContainsKey(name))
             {
@@ -75,6 +129,11 @@ namespace Hello.Game
             }
         }
 
+        /// <summary>
+        /// 判断释放持久化
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         public bool IsPersist(string name)
         {
             if (dic.ContainsKey(name))
@@ -85,6 +144,11 @@ namespace Hello.Game
             return false;
         }
 
+        /// <summary>
+        /// 判断是否包含
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         public virtual bool Exist(string name)
         {
             if (dic.ContainsKey(name))
@@ -94,6 +158,9 @@ namespace Hello.Game
             return false;
         }
 
+        /// <summary>
+        /// 释放
+        /// </summary>
         public virtual void Dispose()
         {
             var dem = dic.GetEnumerator();
@@ -111,8 +178,6 @@ namespace Hello.Game
                 queue.Clear();
             }
         }
+        #endregion
     }
-    
 }
-
-

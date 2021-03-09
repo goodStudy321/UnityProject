@@ -1,6 +1,6 @@
 //-------------------------------------------------
-//			  NGUI: Next-Gen UI kit
-// Copyright © 2011-2020 Tasharen Entertainment Inc
+//            NGUI: Next-Gen UI kit
+// Copyright © 2011-2017 Tasharen Entertainment Inc
 //-------------------------------------------------
 
 //#define SHOW_HIDDEN_OBJECTS
@@ -34,7 +34,7 @@ public class UIDrawCall : MonoBehaviour
 
 	static public BetterList<UIDrawCall> inactiveList { get { return mInactiveList; } }
 
-	[DoNotObfuscateNGUI] public enum Clipping : int
+	public enum Clipping : int
 	{
 		None = 0,
 		TextureMask = 1,			// Clipped using a texture rather than math
@@ -103,7 +103,7 @@ public class UIDrawCall : MonoBehaviour
 	/// Callback that will be triggered when a new draw call gets created.
 	/// </summary>
 
-	public OnCreateDrawCall onCreateDrawCall;
+	public OnCreateDrawCall onCreateDrawCall; 
 	public delegate void OnCreateDrawCall (UIDrawCall dc, MeshFilter filter, MeshRenderer ren);
 
 	/// <summary>
@@ -266,7 +266,7 @@ public class UIDrawCall : MonoBehaviour
 		{
 			mTexture = value;
 			if (mBlock == null) mBlock = new MaterialPropertyBlock();
-			mBlock.SetTexture("_MainTex", value != null ? value : Texture2D.whiteTexture);
+			mBlock.SetTexture("_MainTex", value ?? Texture2D.whiteTexture);
 		}
 	}
 
@@ -291,7 +291,7 @@ public class UIDrawCall : MonoBehaviour
 	}
 
 #if !UNITY_4_7
-	[DoNotObfuscateNGUI] public enum ShadowMode
+	public enum ShadowMode
 	{
 		None,
 		Receive,
@@ -480,7 +480,7 @@ public class UIDrawCall : MonoBehaviour
 	/// Set the draw call's geometry.
 	/// </summary>
 
-	public void UpdateGeometry (int widgetCount, bool needsBounds)
+	public void UpdateGeometry (int widgetCount)
 	{
 		this.widgetCount = widgetCount;
 		int vertexCount = verts.Count;
@@ -594,11 +594,7 @@ public class UIDrawCall : MonoBehaviour
 				if (setIndices)
 				{
 					mIndices = GenerateCachedIndexBuffer(vertexCount, indexCount);
-#if UNITY_5_4 || UNITY_5_5_OR_NEWER
-					mMesh.SetTriangles(mIndices, 0, needsBounds);
-#else
 					mMesh.triangles = mIndices;
-#endif
 				}
 
 #if !UNITY_FLASH
@@ -717,7 +713,7 @@ public class UIDrawCall : MonoBehaviour
 		UpdateMaterials();
 
 		if (mBlock != null) mRenderer.SetPropertyBlock(mBlock);
-		if (onRender != null) onRender(mDynamicMat != null ? mDynamicMat : mMaterial);
+		if (onRender != null) onRender(mDynamicMat ?? mMaterial);
 		if (mDynamicMat == null || mClipCount == 0) return;
 
 		if (mTextureClip)
@@ -735,7 +731,6 @@ public class UIDrawCall : MonoBehaviour
 		else if (!mLegacyShader)
 		{
 			UIPanel currentPanel = panel;
-			var rootScale = panel.cachedTransform.localScale;
 
 			for (int i = 0; currentPanel != null; )
 			{
@@ -748,21 +743,8 @@ public class UIDrawCall : MonoBehaviour
 					if (currentPanel != panel)
 					{
 						Vector3 pos = currentPanel.cachedTransform.InverseTransformPoint(panel.cachedTransform.position);
-						
 						cr.x -= pos.x;
 						cr.y -= pos.y;
-
-						if (rootScale.x != 0f && rootScale.x != 1f)
-						{
-							cr.x /= rootScale.x;
-							cr.z /= rootScale.x;
-						}
-
-						if (rootScale.y != 0f && rootScale.y != 1f)
-						{
-							cr.y /= rootScale.y;
-							cr.w /= rootScale.y;
-						}
 
 						Vector3 v0 = panel.cachedTransform.rotation.eulerAngles;
 						Vector3 v1 = currentPanel.cachedTransform.rotation.eulerAngles;
@@ -781,7 +763,6 @@ public class UIDrawCall : MonoBehaviour
 					// Pass the clipping parameters to the shader
 					SetClipping(i++, cr, currentPanel.clipSoftness, angle);
 				}
-
 				currentPanel = currentPanel.parentPanel;
 			}
 		}
@@ -935,19 +916,6 @@ public class UIDrawCall : MonoBehaviour
 		dc.renderQueue = pan.startingRenderQueue;
 		dc.sortingOrder = pan.sortingOrder;
 		dc.manager = pan;
-
-#if UNITY_EDITOR && UNITY_2018_3_OR_NEWER
-		// We need to perform this check here and not in Create (string) to get to manager reference
-		var prefabStage = UnityEditor.Experimental.SceneManagement.PrefabStageUtility.GetCurrentPrefabStage ();
-		if (prefabStage != null && dc.manager != null)
-		{
-			// If prefab stage exists and new daw call
-			var stage = UnityEditor.SceneManagement.StageUtility.GetStageHandle (dc.manager.gameObject);
-			if (stage == prefabStage.stageHandle)
-				UnityEngine.SceneManagement.SceneManager.MoveGameObjectToScene (dc.gameObject, prefabStage.scene);
-		}
-#endif
-
 		return dc;
 	}
 
@@ -1002,7 +970,7 @@ public class UIDrawCall : MonoBehaviour
 
 		for (int i = mActiveList.size; i > 0; )
 		{
-			var dc = mActiveList.buffer[--i];
+			UIDrawCall dc = mActiveList[--i];
 
 			if (dc)
 			{
@@ -1035,7 +1003,7 @@ public class UIDrawCall : MonoBehaviour
 	{
 		for (int i = mInactiveList.size; i > 0; )
 		{
-			var dc = mInactiveList.buffer[--i];
+			UIDrawCall dc = mInactiveList[--i];
 
 			if (dc)
 			{
@@ -1057,7 +1025,7 @@ public class UIDrawCall : MonoBehaviour
 	{
 		int count = 0;
 		for (int i = 0; i < mActiveList.size; ++i)
-			if (mActiveList.buffer[i].manager == panel) ++count;
+			if (mActiveList[i].manager == panel) ++count;
 		return count;
 	}
 

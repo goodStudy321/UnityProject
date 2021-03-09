@@ -1,11 +1,22 @@
-﻿using Hello.Game;
-using System.Collections;
-using System.Collections.Generic;
+﻿/*=============================================================================
+ * Copyright (C) 2014, 金七情(Loong) jinqiqing@qq.com
+ * Created by Loong in 2014/2/15 00:00:00
+ ============================================================================*/
+
+using System;
+using Loong.Game;
+using System.Text;
 using UnityEditor;
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
-namespace Hello.Edit
+namespace Loong.Edit
 {
+
+    /// <summary>
+    /// 预处理指令视图
+    /// </summary>
     public class PreprocessCmdView : EditViewBase
     {
         [SerializeField]
@@ -20,18 +31,16 @@ namespace Hello.Edit
         {
             "GAME_GUIDE",
             "GAME_DEBUG",
-            "HELLO_AB_LSNR",
-            "HELLO_USE_ZIP",
-            "HELLO_TEST_UPG",
-            "HELLO_SCRIPT_KEY",
-            "HELLO_LOG_DISABLE",
-            "HELLO_UITIP_DISABLE"
+            "LOONG_AB_LSNR",
+            "LOONG_USE_ZIP",
+            "LOONG_TEST_UPG",
+            "LOONG_SCRIPT_KEY",
+            "LOONG_LOG_DISABLE",
+            "LOONG_UITIP_DISABLE"
         };
-
         [SerializeField]
         [HideInInspector]
         private string inputUseSymbol = string.Empty;
-
         [SerializeField]
         [HideInInspector]
         private string inputComSymbol = string.Empty;
@@ -61,8 +70,8 @@ namespace Hello.Edit
             EditorGUILayout.Space();
 
             EditorGUILayout.EndHorizontal();
-        }
 
+        }
 
         private void SetProperty()
         {
@@ -228,4 +237,3 @@ namespace Hello.Edit
         }
     }
 }
-

@@ -1,6 +1,6 @@
 //-------------------------------------------------
 //            NGUI: Next-Gen UI kit
-// Copyright © 2011-2020 Tasharen Entertainment Inc
+// Copyright © 2011-2017 Tasharen Entertainment Inc
 //-------------------------------------------------
 
 using UnityEngine;
@@ -354,8 +354,6 @@ static public class NGUIMath
 		return offset;
 	}
 
-	[System.NonSerialized] static System.Collections.Generic.List<UIWidget> s_widgets = new List<UIWidget>();
-
 	/// <summary>
 	/// Calculate the combined bounds of all widgets attached to the specified game object or its children (in world space).
 	/// </summary>
@@ -364,30 +362,19 @@ static public class NGUIMath
 	{
 		if (trans != null)
 		{
-			s_widgets.Clear();
-			trans.GetComponentsInChildren(s_widgets);
-
-			for (int i = 0, imax = s_widgets.Count; i < imax; ++i)
-			{
-				var w = s_widgets[i];
-
-				if (!w.isSelectable || !w.enabled)
-				{
-					s_widgets.RemoveAt(i--);
-					--imax;
-				}
-			}
-
-			if (s_widgets.Count == 0) return new Bounds(trans.position, Vector3.zero);
+			UIWidget[] widgets = trans.GetComponentsInChildren<UIWidget>() as UIWidget[];
+			if (widgets.Length == 0) return new Bounds(trans.position, Vector3.zero);
 
 			Vector3 vMin = new Vector3(float.MaxValue, float.MaxValue, float.MaxValue);
 			Vector3 vMax = new Vector3(float.MinValue, float.MinValue, float.MinValue);
 			Vector3 v;
 
-			for (int i = 0, imax = s_widgets.Count; i < imax; ++i)
+			for (int i = 0, imax = widgets.Length; i < imax; ++i)
 			{
-				var w = s_widgets[i];
-				var corners = w.worldCorners;
+				UIWidget w = widgets[i];
+				if (!w.enabled) continue;
+
+				Vector3[] corners = w.worldCorners;
 
 				for (int j = 0; j < 4; ++j)
 				{
@@ -445,15 +432,15 @@ static public class NGUIMath
 	{
 		if (content != null && relativeTo != null)
 		{
-			var isSet = false;
-			var toLocal = relativeTo.worldToLocalMatrix;
-			var min = new Vector3(float.MaxValue, float.MaxValue, float.MaxValue);
-			var max = new Vector3(float.MinValue, float.MinValue, float.MinValue);
+			bool isSet = false;
+			Matrix4x4 toLocal = relativeTo.worldToLocalMatrix;
+			Vector3 min = new Vector3(float.MaxValue, float.MaxValue, float.MaxValue);
+			Vector3 max = new Vector3(float.MinValue, float.MinValue, float.MinValue);
 			CalculateRelativeWidgetBounds(content, considerInactive, true, ref toLocal, ref min, ref max, ref isSet, considerChildren);
 
 			if (isSet)
 			{
-				var b = new Bounds(min, Vector3.zero);
+				Bounds b = new Bounds(min, Vector3.zero);
 				b.Encapsulate(max);
 				return b;
 			}
@@ -474,7 +461,7 @@ static public class NGUIMath
 		if (!considerInactive && !NGUITools.GetActive(content.gameObject)) return;
 
 		// If this isn't a root node, check to see if there is a panel present
-		var p = isRoot ? null : content.GetComponent<UIPanel>();
+		UIPanel p = isRoot ? null : content.GetComponent<UIPanel>();
 
 		// Ignore disabled panels as a disabled panel means invisible children
 		if (p != null && !p.enabled) return;
@@ -482,7 +469,7 @@ static public class NGUIMath
 		// If there is a clipped panel present simply include its dimensions
 		if (p != null && p.clipping != UIDrawCall.Clipping.None)
 		{
-			var corners = p.worldCorners;
+			Vector3[] corners = p.worldCorners;
 
 			for (int j = 0; j < 4; ++j)
 			{
@@ -501,35 +488,73 @@ static public class NGUIMath
 		}
 		else // No panel present
 		{
-			// If there is a widget present, include its bounds
-			var w = content.GetComponent<UIWidget>();
+            /// Original code begin ///
 
-			if (w != null && w.enabled && w.isSelectable)
-			{
-				var corners = w.worldCorners;
+            //// If there is a widget present, include its bounds
+            //UIWidget w = content.GetComponent<UIWidget>();
 
-				for (int j = 0; j < 4; ++j)
-				{
-					var v = toLocal.MultiplyPoint3x4(corners[j]);
+            //if (w != null && w.enabled)
+            //{
+            //	Vector3[] corners = w.worldCorners;
 
-					if (v.x > vMax.x) vMax.x = v.x;
-					if (v.y > vMax.y) vMax.y = v.y;
-					if (v.z > vMax.z) vMax.z = v.z;
+            //	for (int j = 0; j < 4; ++j)
+            //	{
+            //		Vector3 v = toLocal.MultiplyPoint3x4(corners[j]);
 
-					if (v.x < vMin.x) vMin.x = v.x;
-					if (v.y < vMin.y) vMin.y = v.y;
-					if (v.z < vMin.z) vMin.z = v.z;
+            //		if (v.x > vMax.x) vMax.x = v.x;
+            //		if (v.y > vMax.y) vMax.y = v.y;
+            //		if (v.z > vMax.z) vMax.z = v.z;
 
-					isSet = true;
-				}
+            //		if (v.x < vMin.x) vMin.x = v.x;
+            //		if (v.y < vMin.y) vMin.y = v.y;
+            //		if (v.z < vMin.z) vMin.z = v.z;
 
-				if (!considerChildren) return;
-			}
-			
-			for (int i = 0, imax = content.childCount; i < imax; ++i)
-				CalculateRelativeWidgetBounds(content.GetChild(i), considerInactive, false, ref toLocal, ref vMin, ref vMax, ref isSet, true);
-		}
-	}
+            //		isSet = true;
+            //	}
+
+            //	if (!considerChildren) return;
+            //}
+
+            //for (int i = 0, imax = content.childCount; i < imax; ++i)
+            //	CalculateRelativeWidgetBounds(content.GetChild(i), considerInactive, false, ref toLocal, ref vMin, ref vMax, ref isSet, true);
+
+            /// Original code end ///
+
+
+            /// LY add begin ///
+
+            // If there is a widget present, include its bounds
+            UIWidget w = content.GetComponent<UIWidget>();
+            UICalInSV csv = content.GetComponent<UICalInSV>();
+
+            if (w != null && w.enabled && (csv == null || csv.calInScrollView == true))
+            {
+                Vector3[] corners = w.worldCorners;
+
+                for (int j = 0; j < 4; ++j)
+                {
+                    Vector3 v = toLocal.MultiplyPoint3x4(corners[j]);
+
+                    if (v.x > vMax.x) vMax.x = v.x;
+                    if (v.y > vMax.y) vMax.y = v.y;
+                    if (v.z > vMax.z) vMax.z = v.z;
+
+                    if (v.x < vMin.x) vMin.x = v.x;
+                    if (v.y < vMin.y) vMin.y = v.y;
+                    if (v.z < vMin.z) vMin.z = v.z;
+
+                    isSet = true;
+                }
+
+                if (!considerChildren) return;
+            }
+
+            for (int i = 0, imax = content.childCount; i < imax; ++i)
+                CalculateRelativeWidgetBounds(content.GetChild(i), considerInactive, false, ref toLocal, ref vMin, ref vMax, ref isSet, true);
+
+            /// LY add end ///
+        }
+    }
 
 	/// <summary>
 	/// This code is not framerate-independent:

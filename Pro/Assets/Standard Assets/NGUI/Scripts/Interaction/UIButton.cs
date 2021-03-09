@@ -1,6 +1,6 @@
 //-------------------------------------------------
 //            NGUI: Next-Gen UI kit
-// Copyright © 2011-2020 Tasharen Entertainment Inc
+// Copyright © 2011-2017 Tasharen Entertainment Inc
 //-------------------------------------------------
 
 using UnityEngine;
@@ -79,6 +79,49 @@ public class UIButton : UIButtonColor
 	[System.NonSerialized] string mNormalSprite;
 	[System.NonSerialized] UnityEngine.Sprite mNormalSprite2D;
 
+    private Color[] labColor;
+    /// <summary>
+    /// 设置按钮激活/非激活状态下点击效果和按钮下文本颜色
+    /// </summary>
+    public bool Enabled
+    {
+        get
+        {
+            return enabled;
+        }
+        set
+        {
+            if (enabled == value) return;
+            isEnabled = value;
+            enabled = value;
+            UILabel[] label = gameObject.GetComponentsInChildren<UILabel>();
+            int len = label.Length;
+            if (labColor == null)
+            {
+                labColor = new Color[len];
+                for (int i = 0; i < len; i++)
+                {
+                    labColor[i] = label[i].color;
+                }
+            }
+            for (int i = 0; i < len; i ++)
+            {
+                label[i].color = value ? labColor[i] : Color.white;
+            }
+            UISprite[] bg = gameObject.GetComponentsInChildren<UISprite>();
+            len = bg.Length;
+            for(int i = 0; i < len; i ++)
+            {
+                bg[i].color = value ? Color.white : Color.gray;
+            }
+            if (tweenTarget != null)
+            {
+                UISprite b = tweenTarget.GetComponent<UISprite>();
+                if (b != null) b.color = value ? Color.white : new Color(0, 1, 1, 1);
+            }
+        }
+    }
+
 	/// <summary>
 	/// Whether the button should be enabled.
 	/// </summary>
@@ -89,12 +132,12 @@ public class UIButton : UIButtonColor
 		{
 			if (!enabled) return false;
 #if UNITY_4_3 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7
-			var col = collider;
+			Collider col = collider;
 #else
-			var col = gameObject.GetComponent<Collider>();
+			Collider col = gameObject.GetComponent<Collider>();
 #endif
 			if (col && col.enabled) return true;
-			var c2d = GetComponent<Collider2D>();
+			Collider2D c2d = GetComponent<Collider2D>();
 			return (c2d && c2d.enabled);
 		}
 		set
@@ -102,28 +145,30 @@ public class UIButton : UIButtonColor
 			if (isEnabled != value)
 			{
 #if UNITY_4_3 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7
-				var col = collider;
+				Collider col = collider;
 #else
-				var col = gameObject.GetComponent<Collider>();
+				Collider col = gameObject.GetComponent<Collider>();
 #endif
 				if (col != null)
 				{
 					col.enabled = value;
-					var buttons = GetComponents<UIButton>();
+					UIButton[] buttons = GetComponents<UIButton>();
 					foreach (UIButton btn in buttons) btn.SetState(value ? State.Normal : State.Disabled, false);
 				}
 				else
 				{
-					var c2d = GetComponent<Collider2D>();
+					Collider2D c2d = GetComponent<Collider2D>();
 
 					if (c2d != null)
 					{
 						c2d.enabled = value;
-						var buttons = GetComponents<UIButton>();
+						UIButton[] buttons = GetComponents<UIButton>();
 						foreach (UIButton btn in buttons) btn.SetState(value ? State.Normal : State.Disabled, false);
 					}
 					else enabled = value;
 				}
+                UIPlaySound ps = gameObject.GetComponent<UIPlaySound>();
+                if (ps != null) ps.enabled = value;
 			}
 		}
 	}

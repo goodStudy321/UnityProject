@@ -1,0 +1,233 @@
+fileFormatVersion: 2
+guid: e5ba907e5e0a6654b87c9c29bd3ff08c
+timeCreated: 1546250153
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: A_bone00
+    100002: A_bone01
+    100004: A_bone02
+    100006: A_bone03
+    100008: A_bone04
+    100010: A_bone05
+    100012: A_bone06
+    100014: A_bone07
+    100016: A_bone08
+    100018: A_bone09
+    100020: A_bone10
+    100022: A_Point001
+    100024: A_Point002
+    100026: A_Point003
+    100028: A_Point004
+    100030: A_Point005
+    100032: A_Point006
+    100034: A_Point007
+    100036: A_Point008
+    100038: A_Point009
+    100040: A_Point010
+    100042: A_Point011
+    100044: B_bone00
+    100046: B_bone01
+    100048: B_bone02
+    100050: B_bone03
+    100052: B_bone04
+    100054: B_bone05
+    100056: B_bone06
+    100058: B_bone07
+    100060: B_bone08
+    100062: B_bone09
+    100064: B_bone10
+    100066: B_bone11
+    100068: B_piont000
+    100070: B_piont001
+    100072: B_piont002
+    100074: B_piont003
+    100076: B_piont004
+    100078: B_piont005
+    100080: B_piont006
+    100082: B_piont007
+    100084: B_piont008
+    100086: B_piont009
+    100088: B_piont010
+    100090: B_piont011
+    100092: C_bone00
+    100094: C_bone01
+    100096: C_bone02
+    100098: C_bone03
+    100100: C_bone04
+    100102: C_bone05
+    100104: C_bone06
+    100106: C_bone07
+    100108: C_bone08
+    100110: C_bone09
+    100112: C_bone10
+    100114: C_bone11
+    100116: C_Point001
+    100118: C_Point002
+    100120: C_Point003
+    100122: C_Point004
+    100124: C_Point005
+    100126: C_Point006
+    100128: C_Point007
+    100130: C_Point008
+    100132: C_Point009
+    100134: C_Point010
+    100136: C_Point011
+    100138: C_Point012
+    100140: polySurface206
+    100142: polySurface213
+    100144: polySurface216
+    100146: //RootNode
+    400000: A_bone00
+    400002: A_bone01
+    400004: A_bone02
+    400006: A_bone03
+    400008: A_bone04
+    400010: A_bone05
+    400012: A_bone06
+    400014: A_bone07
+    400016: A_bone08
+    400018: A_bone09
+    400020: A_bone10
+    400022: A_Point001
+    400024: A_Point002
+    400026: A_Point003
+    400028: A_Point004
+    400030: A_Point005
+    400032: A_Point006
+    400034: A_Point007
+    400036: A_Point008
+    400038: A_Point009
+    400040: A_Point010
+    400042: A_Point011
+    400044: B_bone00
+    400046: B_bone01
+    400048: B_bone02
+    400050: B_bone03
+    400052: B_bone04
+    400054: B_bone05
+    400056: B_bone06
+    400058: B_bone07
+    400060: B_bone08
+    400062: B_bone09
+    400064: B_bone10
+    400066: B_bone11
+    400068: B_piont000
+    400070: B_piont001
+    400072: B_piont002
+    400074: B_piont003
+    400076: B_piont004
+    400078: B_piont005
+    400080: B_piont006
+    400082: B_piont007
+    400084: B_piont008
+    400086: B_piont009
+    400088: B_piont010
+    400090: B_piont011
+    400092: C_bone00
+    400094: C_bone01
+    400096: C_bone02
+    400098: C_bone03
+    400100: C_bone04
+    400102: C_bone05
+    400104: C_bone06
+    400106: C_bone07
+    400108: C_bone08
+    400110: C_bone09
+    400112: C_bone10
+    400114: C_bone11
+    400116: C_Point001
+    400118: C_Point002
+    400120: C_Point003
+    400122: C_Point004
+    400124: C_Point005
+    400126: C_Point006
+    400128: C_Point007
+    400130: C_Point008
+    400132: C_Point009
+    400134: C_Point010
+    400136: C_Point011
+    400138: C_Point012
+    400140: polySurface206
+    400142: polySurface213
+    400144: polySurface216
+    400146: //RootNode
+    4300000: polySurface213
+    4300002: polySurface216
+    4300004: polySurface206
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: polySurface206
+    13700002: polySurface213
+    13700004: polySurface216
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

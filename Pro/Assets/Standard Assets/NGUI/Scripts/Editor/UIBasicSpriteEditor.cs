@@ -1,13 +1,13 @@
 //-------------------------------------------------
 //            NGUI: Next-Gen UI kit
-// Copyright © 2011-2020 Tasharen Entertainment Inc
+// Copyright © 2011-2017 Tasharen Entertainment Inc
 //-------------------------------------------------
 
 using UnityEditor;
 using UnityEngine;
 
 /// <summary>
-/// Inspector class used to edit UI sprites and textures.
+/// Inspector class used to edit UITextures.
 /// </summary>
 
 [CanEditMultipleObjects]
@@ -61,6 +61,10 @@ public class UIBasicSpriteEditor : UIWidgetInspector
 			NGUIEditorTools.DrawProperty("Fill Amount", serializedObject, "mFillAmount", GUILayout.MinWidth(20f));
 			GUILayout.Space(4f);
 			GUILayout.EndHorizontal();
+            /// LY add begin ///
+            NGUIEditorTools.DrawProperty("像素偏移（上）", serializedObject, "mUpOffsetPixiv", GUILayout.MinWidth(20f));
+            NGUIEditorTools.DrawProperty("像素偏移（下）", serializedObject, "mDownOffsetPixiv", GUILayout.MinWidth(20f));
+            /// LY add end ///
 			NGUIEditorTools.DrawProperty("Invert Fill", serializedObject, "mInvert", GUILayout.MinWidth(20f));
 		}
 		else if (type == UISprite.Type.Advanced)

@@ -1,10 +1,15 @@
-﻿using System;
+/*=============================================================================
+ * Copyright (C) 2018, 金七情(Loong) jinqiqing@qq.com
+ * Created by Loong on 2018/8/1 13:58:15
+ ============================================================================*/
+
+using System;
 using System.IO;
-using Hello.Game;
+using Loong.Game;
 using UnityEngine;
 using UnityEditor;
 
-namespace Hello.Edit
+namespace Loong.Edit
 {
     /// <summary>
     /// SceneWin

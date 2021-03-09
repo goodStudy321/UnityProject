@@ -1,6 +1,6 @@
 //-------------------------------------------------
 //            NGUI: Next-Gen UI kit
-// Copyright © 2011-2020 Tasharen Entertainment Inc
+// Copyright © 2011-2017 Tasharen Entertainment Inc
 //-------------------------------------------------
 
 using UnityEngine;
@@ -40,26 +40,37 @@ public class UIToggleInspector : UIWidgetContainerEditor
 
 		if (NGUIEditorTools.DrawMinimalisticHeader("State Transition"))
 		{
-			NGUIEditorTools.BeginContents();
+			NGUIEditorTools.BeginContents(true);
 
-			var sprite = serializedObject.FindProperty("activeSprite");
-			var animator = serializedObject.FindProperty("animator");
-			var animation = serializedObject.FindProperty("activeAnimation");
-			var tween = serializedObject.FindProperty("tween");
+			SerializedProperty sprite = serializedObject.FindProperty("activeSprite");
+			SerializedProperty animator = serializedObject.FindProperty("animator");
+			SerializedProperty animation = serializedObject.FindProperty("activeAnimation");
+			SerializedProperty tween = serializedObject.FindProperty("tween");
 
 			if (sprite.objectReferenceValue != null)
 			{
 				NGUIEditorTools.DrawProperty("Sprite", sprite, false);
-				serializedObject.DrawProperty("invertSpriteState", "Invert State");
+				serializedObject.DrawProperty("invertSpriteState");
+			}
+			else if (animator.objectReferenceValue != null)
+			{
+				NGUIEditorTools.DrawProperty("Animator", animator, false);
+			}
+			else if (animation.objectReferenceValue != null)
+			{
+				NGUIEditorTools.DrawProperty("Animation", animation, false);
+			}
+			else if (tween.objectReferenceValue != null)
+			{
+				NGUIEditorTools.DrawProperty("Tween", tween, false);
 			}
 			else
 			{
 				NGUIEditorTools.DrawProperty("Sprite", serializedObject, "activeSprite");
+				NGUIEditorTools.DrawProperty("Animator", animator, false);
+				NGUIEditorTools.DrawProperty("Animation", animation, false);
+				NGUIEditorTools.DrawProperty("Tween", tween, false);
 			}
-			
-			NGUIEditorTools.DrawProperty("Animator", animator, false);
-			NGUIEditorTools.DrawProperty("Animation", animation, false);
-			NGUIEditorTools.DrawProperty("Tween", tween, false);
 
 			if (serializedObject.isEditingMultipleObjects)
 			{
@@ -84,7 +95,30 @@ public class UIToggleInspector : UIWidgetContainerEditor
 			NGUIEditorTools.EndContents();
 		}
 
-		NGUIEditorTools.DrawEvents("On Value Change", toggle, toggle.onChange);
+        NGUIEditorTools.DrawProperty("Custom", serializedObject, "isCustom");
+        SerializedProperty property = serializedObject.FindProperty("isCustom");
+        if (property != null)
+        {
+            if(property.boolValue)
+            {
+                NGUIEditorTools.BeginContents(false);
+                GUILayout.BeginHorizontal();
+                NGUIEditorTools.DrawProperty("  Duration", serializedObject, "duration", GUILayout.Width(120f));
+                GUILayout.Label(" - seconds");
+                GUILayout.EndHorizontal();
+                GUILayout.BeginHorizontal();
+                NGUIEditorTools.DrawProperty("  StartDelay", serializedObject, "startDelay", GUILayout.Width(120f));
+                GUILayout.Label(" - seconds");
+                GUILayout.EndHorizontal();
+                NGUIEditorTools.EndContents();
+            }
+        }
+        else
+        {
+            EditorGUILayout.HelpBox("UIToggle里没有找到isCustom属性。", MessageType.Warning);
+        }
+
+        NGUIEditorTools.DrawEvents("On Value Change", toggle, toggle.onChange);
 		serializedObject.ApplyModifiedProperties();
 	}
 }

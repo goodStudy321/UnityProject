@@ -1,6 +1,11 @@
-﻿using System;
+/*=============================================================================
+ * Copyright (C) 2018, 金七情(Loong) jinqiqing@qq.com
+ * Created by Loong on 2015/4/9 14:36:23
+ ============================================================================*/
+
+using System;
 using System.IO;
-using Hello.Game;
+using Loong.Game;
 using UnityEngine;
 using UnityEditor;
 using System.Text;
@@ -8,15 +13,41 @@ using System.Collections;
 using System.Collections.Generic;
 using Object = UnityEngine.Object;
 
-namespace Hello.Edit
+
+namespace Loong.Edit
 {
+    /// <summary>
+    /// 资源工具
+    /// </summary>
     public static partial class AssetUtil
     {
+        #region 字段
+        /// <summary>
+        /// 菜单优先级
+        /// </summary>
         public const int Pri = MenuTool.AssetPri + 30;
 
-        public const string menu = MenuTool.Hello + "资源工具/";
+        /// <summary>
+        /// 菜单
+        /// </summary>
+        public const string menu = MenuTool.Loong + "资源工具/";
 
-        public const string AMenu = MenuTool.AHello + "资源工具/";
+        /// <summary>
+        /// 资源下菜单
+        /// </summary>
+        public const string AMenu = MenuTool.ALoong + "资源工具/";
+
+        #endregion
+
+        #region 属性
+
+        #endregion
+
+        #region 构造方法
+
+        #endregion
+
+        #region 私有方法
 
         private static void SetValidName(bool delete)
         {
@@ -28,10 +59,10 @@ namespace Hello.Edit
             for (int i = 0; i < len; i++)
             {
                 string path = AssetDatabase.GetAssetPath(objs[i]);
-                ProgressBarUtil.Show("", "正在玩命检查中...", i / len);
+                ProgressBarUtil.Show("", "正在玩命检查中···", i / len);
                 if (objs[i] == null)
                 {
-                    iTrace.Log("检查名称有效性: ", string.Format("这是一个无效资源: {0}", path));
+                    iTrace.Log("检查名称有效性:", string.Format("这是一个无效资源:{0}", path));
                     continue;
                 }
                 string suffix = Suffix.Get(path);
@@ -49,7 +80,7 @@ namespace Hello.Edit
                     if (File.Exists(newFullPath))
                     {
                         AssetDatabase.DeleteAsset(path);
-                        iTrace.Log("检查资源名称有效性", string.Format("资源:{0},合法化后资源:{1},已经存在，删除原始资源:{2}", fileName, newName, path));
+                        iTrace.Log("检查资源名称有效性", string.Format("资源:{0},合法化后资源:{1},已经存在,删除原始资源:{2}", fileName, newName, path));
                     }
                 }
                 else
@@ -58,19 +89,23 @@ namespace Hello.Edit
                     iTrace.Log("检查资源名称有效性", string.Format("路径为:{0}的资源名称中包含无效字符 '空格!@#$%^&—' ,已自动命名为:{1}", path, newName));
                 }
             }
-            if (hasInvalid)
-            {
-                UIEditTip.Warning("检查完成,可以通过白色输出查看详细内容");
-            }
-            else
-            {
-                UIEditTip.Log("检查完成,资源名称全部是有效的");
-            }
+            if (hasInvalid) UIEditTip.Warning("检查完成,可以通过白色输出查看详细内容");
+            else UIEditTip.Log("检查完成,资源名称全部是有效的");
             EditorUtility.UnloadUnusedAssetsImmediate();
             ProgressBarUtil.Clear();
             AssetDatabase.Refresh();
         }
 
+
+        #endregion
+
+        #region 公开方法
+
+        /// <summary>
+        /// 通过检查后缀判断是否有效资源
+        /// </summary>
+        /// <param name="sfx"></param>
+        /// <returns></returns>
         public static bool IsValidSfx(string sfx)
         {
             if (string.IsNullOrEmpty(sfx)) return false;
@@ -87,6 +122,11 @@ namespace Hello.Edit
             return true;
         }
 
+        /// <summary>
+        /// 获取有效名称,去除无效字符,如空格!@#$%^等
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         public static string GetValidName(string name)
         {
             string newName = name.Replace(" ", "");
@@ -101,6 +141,11 @@ namespace Hello.Edit
             return newName;
         }
 
+        /// <summary>
+        /// 检查名称有效性(不包含后缀)
+        /// </summary>
+        /// <param name="name">名称</param>
+        /// <returns></returns>
         public static bool IsValidNameNoEx(string name)
         {
             int length = name.Length;
@@ -119,6 +164,7 @@ namespace Hello.Edit
             return true;
         }
 
+
         public static void IsValidName(string[] paths)
         {
             if (paths == null) return;
@@ -126,14 +172,14 @@ namespace Hello.Edit
             for (int i = 0; i < length; i++)
             {
                 var path = paths[i];
-                if((!path.StartsWith(EditSceneView.prefix))&& (!path.StartsWith(EditSceneView.packPrefix)))
+                if ((!path.StartsWith(EditSceneView.prefix)) && (!path.StartsWith(EditSceneView.packPrefix)))
                 {
                     continue;
                 }
                 var sfx = Path.GetExtension(path);
                 var name = Path.GetFileNameWithoutExtension(path);
                 string err = null;
-                if(sfx == Suffix.Psd)
+                if (sfx == Suffix.Psd)
                 {
                     err = string.Format("非法后缀:{0}", path);
                 }
@@ -142,11 +188,16 @@ namespace Hello.Edit
                     err = string.Format("非法字符:{0}", path);
                 }
                 if (err == null) continue;
-                iTrace.Error("Hello", err);
+                iTrace.Error("Loong", err);
                 DialogUtil.Show("", err);
             }
         }
 
+
+        /// <summary>
+        /// 获取资源
+        /// </summary>
+        /// <returns></returns>
         public static Object[] GetFiltered()
         {
             float pro = UnityEngine.Random.Range(0.1f, 0.8f);
@@ -161,6 +212,10 @@ namespace Hello.Edit
             return objs;
         }
 
+        /// <summary>
+        /// 获取选择资源的所有依赖资源
+        /// </summary>
+        /// <returns></returns>
         public static string[] GetSelectDepends()
         {
             Object[] objs = Selection.GetFiltered<Object>(SelectionMode.DeepAssets);
@@ -171,6 +226,11 @@ namespace Hello.Edit
             return GetDepends(objs);
         }
 
+        /// <summary>
+        /// 获取所有依赖的资源
+        /// </summary>
+        /// <param name="objs">资源列表</param>
+        /// <returns></returns>
         public static string[] GetDepends(Object[] objs)
         {
             if (objs == null) return null;
@@ -192,6 +252,10 @@ namespace Hello.Edit
             return depends;
         }
 
+        /// <summary>
+        /// 删除列表中的所有资源
+        /// </summary>
+        /// <param name="paths"></param>
         public static void Delete(List<string> paths)
         {
             if (paths == null || paths.Count < 1)
@@ -225,6 +289,7 @@ namespace Hello.Edit
             }
         }
 
+
         public static void Delete(List<Object> objs)
         {
             if (objs == null) return;
@@ -236,6 +301,12 @@ namespace Hello.Edit
             objs.Clear();
         }
 
+        /// <summary>
+        /// 在指定目录搜索具有配置文件中所有名称的资源的路径
+        /// </summary>
+        /// <param name="dir">目录</param>
+        /// <param name="filePath">配置文件</param>
+        /// <returns></returns>
         public static List<String> Search(string dir, string filePath)
         {
             if (!File.Exists(filePath)) return null;
@@ -278,6 +349,11 @@ namespace Hello.Edit
             return lst;
         }
 
+        /// <summary>
+        /// 在指定目录搜索具有非法字符的名称
+        /// </summary>
+        /// <param name="dir">目录</param>
+        /// <returns></returns>
         public static List<string> GetInvalidName(string dir, List<string> res = null)
         {
             if (!Directory.Exists(dir)) return null;
@@ -304,6 +380,11 @@ namespace Hello.Edit
             return lst;
         }
 
+        /// <summary>
+        /// 在指定目录列表中搜索具有非法字符的名称
+        /// </summary>
+        /// <param name="dirs"></param>
+        /// <returns></returns>
         public static List<string> GetInvalidName(List<string> dirs)
         {
             if (dirs == null) return null;
@@ -319,6 +400,9 @@ namespace Hello.Edit
             return lst;
         }
 
+        /// <summary>
+        /// 检查非法字符
+        /// </summary>
         [MenuItem(menu + "检查非法字符", false, Pri + 7)]
         [MenuItem(AMenu + "检查非法字符", false, Pri + 7)]
         public static void ChkValidName()
@@ -339,6 +423,9 @@ namespace Hello.Edit
             }
         }
 
+        /// <summary>
+        /// 检查资源重名,直接合法命名
+        /// </summary>
         [MenuItem(menu + "检查名称有效性/直接合法命名", false, Pri + 8)]
         [MenuItem(AMenu + "检查名称有效性/直接合法命名", false, Pri + 8)]
         public static void DirectSetValidName()
@@ -346,6 +433,9 @@ namespace Hello.Edit
             SetValidName(false);
         }
 
+        /// <summary>
+        /// 检查资源重名,将要命名的名称如果已经存在,删除当前资源
+        /// </summary>
         [MenuItem(menu + "检查名称有效性/将要命名的名称如果已经存在,删除当前资源", false, Pri + 9)]
         [MenuItem(AMenu + "检查名称有效性/将要命名的名称如果已经存在,删除当前资源", false, Pri + 9)]
         public static void SetUniqueValidName()
@@ -353,6 +443,6 @@ namespace Hello.Edit
             SetValidName(true);
         }
 
+        #endregion
     }
 }
-

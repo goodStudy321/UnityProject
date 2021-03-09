@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 86d57e83c34fec74ea6efaa15e26c2fd
+timeCreated: 1481767218
+licenseType: Pro
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: npc_reflect_alpha.shader
+  assetBundleVariant: ab

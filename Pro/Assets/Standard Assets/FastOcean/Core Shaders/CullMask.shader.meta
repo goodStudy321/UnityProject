@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 36f70713ede1b924db0034f2e4859d7f
+timeCreated: 1477999223
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: cullmask.shader
+  assetBundleVariant: ab

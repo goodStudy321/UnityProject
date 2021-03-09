@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine.Networking;
 
-using Hello.Game;
+using Loong.Game;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -63,7 +63,7 @@ public class FileLoader
 
             string path = Application.dataPath;
 
-            while (!Utility.ContainsFolder(path, "Project"))
+            while (!Utility.ContainsFolder(path, "Pro"))
             {
                 path = Path.GetDirectoryName(path);
             }

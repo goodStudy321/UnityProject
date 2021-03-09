@@ -30,6 +30,9 @@ namespace LuaInterface
 {
     public class LuaFileUtils
     {
+        private AssetBundle ab = null;
+
+        private StringBuilder sb = new StringBuilder();
         public static LuaFileUtils Instance
         {
             get
@@ -49,11 +52,28 @@ namespace LuaInterface
         }
 
         //beZip = false 在search path 中查找读取lua文件。否则从外部设置过来bundel文件中读取lua文件
+#if UNITY_EDITOR
+#if LOONG_TEST_UPG
+        public bool beZip = true;
+#else
         public bool beZip = false;
+#endif
+#else
+        public bool beZip = true;
+#endif
         protected List<string> searchPaths = new List<string>();
         protected Dictionary<string, AssetBundle> zipMap = new Dictionary<string, AssetBundle>();
 
         protected static LuaFileUtils instance = null;
+
+
+
+        public AssetBundle AB
+        {
+            get { return ab; }
+            set { ab = value; }
+        }
+
 
         public LuaFileUtils()
         {
@@ -173,7 +193,8 @@ namespace LuaInterface
             }
             else
             {
-                return ReadZipFile(fileName);
+                //return ReadZipFile(fileName);
+                return ReadFromAB(fileName);
             }
         }
 
@@ -219,6 +240,28 @@ namespace LuaInterface
 
                 return sb.ToString();
             }
+        }
+
+        byte[] ReadFromAB(string name)
+        {
+            sb.Remove(0, sb.Length);
+            name = name.ToLower();
+            sb.Append("assets/lua/").Append(name);
+            if (!name.EndsWith(".lua"))
+            {
+                sb.Append(".lua");
+            }
+            sb.Append(".bytes");
+            var path = sb.ToString();
+            var code = ab.LoadAsset<TextAsset>(path);
+            if (code == null)
+            {
+                Loong.Game.iTrace.Error("Loong", "no lua file:" + path);
+                return null;
+            }
+            var buf = code.bytes;
+            Resources.UnloadAsset(code);
+            return buf;
         }
 
         byte[] ReadZipFile(string fileName)

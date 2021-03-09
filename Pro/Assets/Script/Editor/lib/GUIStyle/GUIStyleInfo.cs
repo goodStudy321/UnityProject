@@ -1,19 +1,36 @@
-﻿using Hello.Game;
-using System.Collections;
-using System.Collections.Generic;
+using System;
+using Loong.Game;
 using UnityEditor;
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
-namespace Hello.Edit
+namespace Loong.Edit
 {
+
+    /// <summary>
+    /// AU:Loong
+    /// TM:2013.5.12
+    /// BG:内置皮肤信息
+    /// </summary>
     public class GUIStyleInfo
     {
+        #region 字段
         private int index = 0;
 
+        /// <summary>
+        /// 页总数量
+        /// </summary>
         private int totalPage = 0;
 
+        /// <summary>
+        /// 每页数量
+        /// </summary>
         private int pageCount = 20;
 
+        /// <summary>
+        /// 页索引
+        /// </summary>
         private int pageIndex = 0;
 
         private GUISkin skin = null;
@@ -22,22 +39,34 @@ namespace Hello.Edit
 
         private Vector2 scroll = Vector2.zero;
 
+        #endregion
+
+        #region 属性
+
+        /// <summary>
+        /// 内置皮肤
+        /// </summary>
         public GUISkin Skin
         {
             get { return skin; }
             set { skin = value; }
         }
 
+        #endregion
+
+        #region 构造方法
+
+        #endregion
+
+        #region 私有方法
         private void FirstPage()
         {
-            pageIndex = 0;
-            indexStr = string.Format("{0}/{1}", pageIndex, totalPage);
+            pageIndex = 0; indexStr = string.Format("{0}/{1}", pageIndex, totalPage);
         }
 
         private void LastPage()
         {
-            pageIndex = totalPage;
-            indexStr = string.Format("{0}/{1}", pageIndex, totalPage);
+            pageIndex = totalPage; indexStr = string.Format("{0}/{1}", pageIndex, totalPage);
         }
 
         private void PrevPage()
@@ -53,15 +82,23 @@ namespace Hello.Edit
             pageIndex = Mathf.Clamp(pageIndex, 0, totalPage);
             indexStr = string.Format("{0}/{1}", pageIndex, totalPage);
         }
+        #endregion
 
+        #region 保护方法
+
+        #endregion
+
+        #region 公开方法
+
+        /// <summary>
+        /// 绘制UI
+        /// </summary>
         public void OnGUI()
         {
             if (Skin == null) return;
-            if (totalPage == 0)
-            {
-                totalPage = Mathf.FloorToInt(skin.customStyles.Length / pageCount);
-            }
+            if (totalPage == 0) totalPage = Mathf.FloorToInt(skin.customStyles.Length / pageCount);
             if (totalPage == 0) return;
+
             if (!UIEditTool.DrawHeader(Skin.name, Skin.name, StyleTool.Host)) return;
             scroll = EditorGUILayout.BeginScrollView(scroll);
             GUIStyle[] styles = skin.customStyles;
@@ -108,8 +145,6 @@ namespace Hello.Edit
             }
             EditorGUILayout.EndHorizontal();
         }
-
+        #endregion
     }
-
 }
-

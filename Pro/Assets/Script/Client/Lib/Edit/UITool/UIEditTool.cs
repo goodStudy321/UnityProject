@@ -1,16 +1,28 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
+#if UNITY_EDITOR
+using System;
 using UnityEngine;
+using UnityEditor;
+using System.Collections.Generic;
+using Object = UnityEngine.Object;
 
-namespace Hello.Game
+namespace Loong.Game
 {
+    /// <summary>
+    /// AU:Loong
+    /// TM:2014.4.22
+    /// BG:编辑器UI工具
+    /// </summary>
     public static partial class UIEditTool
     {
+        #region 字段
+
         private static Texture2D backdropTex;
         private static Texture2D contrastTex;
         private static Texture2D gradientTex;
         private static Texture2D antiAliasTex;
+        #endregion
+
+        #region 属性
 
         /// <summary>
         /// 1x1的白色空白图
@@ -87,6 +99,10 @@ namespace Hello.Game
                 return antiAliasTex;
             }
         }
+        #endregion
+
+
+        #region 私有方法
 
         /// <summary>
         /// 创建具有对比效果的图片
@@ -134,6 +150,14 @@ namespace Hello.Game
             return tex;
         }
 
+
+        #endregion
+
+        #region 保护方法
+
+        #endregion
+
+        #region 公开方法
         /// <summary>
         /// 绘制一个平铺的图片
         /// </summary>
@@ -503,6 +527,7 @@ namespace Hello.Game
             Vector2 endTangent = new Vector2(end.x, (beg.y + end.y) * 0.5f);
             return HandleUtility.DistancePointBezier(point, beg, end, begTangent, endTangent) < width;
         }
+        #endregion
     }
 }
-
+#endif

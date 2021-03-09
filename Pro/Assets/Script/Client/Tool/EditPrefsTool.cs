@@ -1,14 +1,47 @@
-﻿#if UNITY_EDITOR
+#if UNITY_EDITOR
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
-namespace Hello.Game
+
+
+namespace Loong.Game
 {
+    /*
+     * 通过类型和属性名称组合成新名称
+     * 将新名称作为偏好设置键值/属性
+     */
+
+    /// <summary>
+    /// AU:Loong
+    /// TM:2013.12.5
+    /// BG:编辑器偏好属性设置工具
+    /// </summary>
     public static class EditPrefsTool
     {
+        #region 字段
+
+        #endregion
+
+        #region 属性
+
+        #endregion
+
+        #region 构造方法
+
+        #endregion
+
+        #region 私有方法
+
+        #endregion
+
+        #region 保护方法
+
+        #endregion
+
+        #region 公开方法
         /// <summary>
         /// 获取类型的编辑器属性值
         /// </summary>
@@ -34,7 +67,7 @@ namespace Hello.Game
             return fullKey;
         }
 
-
+        #region 获取bool型属性值
         /// <summary>
         /// 获取对象类型的编辑器bool属性值
         /// </summary>
@@ -80,8 +113,9 @@ namespace Hello.Game
                 return defaultValue;
             }
         }
+        #endregion
 
-
+        #region 获取浮点型属性值
         /// <summary>
         /// 获取对象类型的编辑器float属性值
         /// </summary>
@@ -127,7 +161,9 @@ namespace Hello.Game
                 return defaultValue;
             }
         }
+        #endregion
 
+        #region 获取整型属性值
         /// <summary>
         /// 获取对象类型的编辑器int属性值
         /// </summary>
@@ -173,7 +209,9 @@ namespace Hello.Game
                 return defaultValue;
             }
         }
+        #endregion
 
+        #region 获取字符串型属性值
         /// <summary>
         /// 获取对象类型的编辑器string属性值
         /// </summary>
@@ -219,6 +257,9 @@ namespace Hello.Game
                 return defaultValue;
             }
         }
+        #endregion
+
+        #region 设置bool型属性值
 
         /// <summary>
         /// 设置对象类型的编辑器bool属性值
@@ -254,7 +295,9 @@ namespace Hello.Game
             string fullKey = GetKey(type, key);
             EditorPrefs.SetBool(fullKey, value);
         }
+        #endregion
 
+        #region 设置浮点型属性值
         /// <summary>
         /// 设置对象类型的编辑器float属性值
         /// </summary>
@@ -289,7 +332,9 @@ namespace Hello.Game
             string fullKey = GetKey(type, key);
             EditorPrefs.SetFloat(fullKey, value);
         }
+        #endregion
 
+        #region 设置整型属性值
         /// <summary>
         /// 设置对象类型的编辑器int属性值
         /// </summary>
@@ -324,7 +369,9 @@ namespace Hello.Game
             string fullKey = GetKey(type, key);
             EditorPrefs.SetInt(fullKey, value);
         }
+        #endregion
 
+        #region 设置字符串型属性值
         /// <summary>
         /// 设置对象类型的编辑器string属性值
         /// </summary>
@@ -359,7 +406,7 @@ namespace Hello.Game
             string fullKey = GetKey(type, key);
             EditorPrefs.SetString(fullKey, value);
         }
-
+        #endregion
         /// <summary>
         /// 删除对象类型的属性值
         /// </summary>
@@ -391,8 +438,7 @@ namespace Hello.Game
             string fullKey = GetKey(type, key);
             EditorPrefs.DeleteKey(fullKey);
         }
-
+        #endregion
     }
 }
 #endif
-

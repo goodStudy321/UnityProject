@@ -1,6 +1,6 @@
 //-------------------------------------------------
 //            NGUI: Next-Gen UI kit
-// Copyright © 2011-2020 Tasharen Entertainment Inc
+// Copyright © 2011-2017 Tasharen Entertainment Inc
 //-------------------------------------------------
 
 using UnityEngine;
@@ -82,7 +82,7 @@ public class UICenterOnChild : MonoBehaviour
 				if (mScrollView)
 				{
 					mScrollView.centerOnChild = this;
-					//mScrollView.onDragFinished += OnDragFinished;
+					mScrollView.onDragFinished += OnDragFinished;
 				}
 
 				if (mScrollView.horizontalScrollBar != null)
@@ -261,11 +261,8 @@ public class UICenterOnChild : MonoBehaviour
 			else
 #endif
 			{
-				var pos = panelTrans.localPosition - localOffset;
-				pos.x = Mathf.Round(pos.x);
-				pos.y = Mathf.Round(pos.y);
-				pos.z = Mathf.Round(pos.z);
-				SpringPanel.Begin(mScrollView.panel.cachedGameObject, pos, springStrength).onFinished = onFinished;
+				SpringPanel.Begin(mScrollView.panel.cachedGameObject,
+					panelTrans.localPosition - localOffset, springStrength).onFinished = onFinished;
 			}
 		}
 		else mCenteredObject = null;
@@ -280,7 +277,7 @@ public class UICenterOnChild : MonoBehaviour
 
 	public void CenterOn (Transform target)
 	{
-		if (mScrollView != null && mScrollView.panel != null)
+		if (mScrollView != null && mScrollView.panel != null && mScrollView.isDrag)
 		{
 			Vector3[] corners = mScrollView.panel.worldCorners;
 			Vector3 panelCenter = (corners[2] + corners[0]) * 0.5f;

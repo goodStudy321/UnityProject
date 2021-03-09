@@ -24,7 +24,7 @@ public class UITooltip : MonoBehaviour
 	protected Vector3 mPos;
 	protected Vector3 mSize = Vector3.zero;
 
-	protected System.Collections.Generic.List<UIWidget> mWidgets = new List<UIWidget>();
+	protected UIWidget[] mWidgets;
 
 	/// <summary>
 	/// Whether the tooltip is currently visible.
@@ -42,21 +42,7 @@ public class UITooltip : MonoBehaviour
 	protected virtual void Start ()
 	{
 		mTrans = transform;
-
-		mWidgets.Clear();
-		GetComponentsInChildren(mWidgets);
-
-		for (int i = 0, imax = mWidgets.Count; i < imax; ++i)
-		{
-			var sw = mWidgets[i];
-
-			if (!sw.isSelectable || !sw.enabled)
-			{
-				mWidgets.RemoveAt(i--);
-				--imax;
-			}
-		}
-
+		mWidgets = GetComponentsInChildren<UIWidget>();
 		mPos = mTrans.localPosition;
 		if (uiCamera == null) uiCamera = NGUITools.FindCameraForLayer(gameObject.layer);
 		SetAlpha(0f);
@@ -100,10 +86,10 @@ public class UITooltip : MonoBehaviour
 
 	protected virtual void SetAlpha (float val)
 	{
-		for (int i = 0, imax = mWidgets.Count; i < imax; ++i)
+		for (int i = 0, imax = mWidgets.Length; i < imax; ++i)
 		{
-			var w = mWidgets[i];
-			var c = w.color;
+			UIWidget w = mWidgets[i];
+			Color c = w.color;
 			c.a = val;
 			w.color = c;
 		}
@@ -205,7 +191,7 @@ public class UITooltip : MonoBehaviour
 	/// </summary>
 
 	static public void Show (string text) { if (mInstance != null) mInstance.SetText(text); }
-
+	
 	/// <summary>
 	/// Hide the tooltip.
 	/// </summary>

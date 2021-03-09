@@ -1,6 +1,6 @@
 //-------------------------------------------------
 //            NGUI: Next-Gen UI kit
-// Copyright © 2011-2020 Tasharen Entertainment Inc
+// Copyright © 2011-2017 Tasharen Entertainment Inc
 //-------------------------------------------------
 
 using UnityEngine;
@@ -14,18 +14,14 @@ using UnityEngine;
 public class LanguageSelection : MonoBehaviour
 {
 	UIPopupList mList;
-	bool mStarted = false;
 
-	void Awake () { mList = GetComponent<UIPopupList>(); }
-
-	void Start ()
+	void Awake ()
 	{
-		mStarted = true;
+		mList = GetComponent<UIPopupList>();
 		Refresh();
-		EventDelegate.Add(mList.onChange, delegate() { Localization.language = UIPopupList.current.value; });
 	}
 
-	void OnEnable () { if (mStarted) Refresh(); }
+	void Start () { EventDelegate.Add(mList.onChange, delegate() { Localization.language = UIPopupList.current.value; }); }
 
 	/// <summary>
 	/// Immediately refresh the list of known languages.
@@ -43,6 +39,4 @@ public class LanguageSelection : MonoBehaviour
 			mList.value = Localization.language;
 		}
 	}
-
-	void OnLocalize () { Refresh(); } 
 }

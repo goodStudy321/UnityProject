@@ -1,6 +1,6 @@
 //-------------------------------------------------
 //            NGUI: Next-Gen UI kit
-// Copyright © 2011-2020 Tasharen Entertainment Inc
+// Copyright © 2011-2017 Tasharen Entertainment Inc
 //-------------------------------------------------
 
 using UnityEngine;
@@ -53,12 +53,6 @@ public class UIPlayTween : MonoBehaviour
 
 	public bool resetIfDisabled = false;
 
-	[Tooltip("If true, Play Tween will reset all associated tweens to their starting state at the very start, before activation triggers")]
-	public bool setState = false;
-
-	[Tooltip("Starting factor to assume, 0 being the start and 1 being the end"), Range(0f, 1f)]
-	public float startState = 0f;
-
 	/// <summary>
 	/// What to do if the tweenTarget game object is currently disabled.
 	/// </summary>
@@ -76,6 +70,8 @@ public class UIPlayTween : MonoBehaviour
 	/// </summary>
 
 	public bool includeChildren = false;
+
+    public bool isPlayStatus = false;
 
 	/// <summary>
 	/// Event delegates called when the animation finishes.
@@ -115,37 +111,6 @@ public class UIPlayTween : MonoBehaviour
 #if UNITY_EDITOR
 			NGUITools.SetDirty(this);
 #endif
-		}
-
-		if (setState && Application.isPlaying)
-		{
-			var go = (tweenTarget == null) ? gameObject : tweenTarget;
-			mTweens = includeChildren ? go.GetComponentsInChildren<UITweener>() : go.GetComponents<UITweener>();
-
-			if (mTweens.Length == 0)
-			{
-				// No tweeners found -- should we disable the object?
-				if (disableWhenFinished != DisableCondition.DoNotDisable)
-					NGUITools.SetActive(tweenTarget, false);
-			}
-			else
-			{
-				var forward = true;
-				if (playDirection == Direction.Reverse) forward = !forward;
-
-				for (int i = 0, imax = mTweens.Length; i < imax; ++i)
-				{
-					var tw = mTweens[i];
-
-					if (tw.tweenGroup == tweenGroup)
-					{
-						//tw.enabled = true;
-						tw.Play(forward ? startState == 1f : startState != 1f);
-						tw.Sample(forward ? startState : 1f - startState, true);
-						tw.enabled = false;
-					}
-				}
-			}
 		}
 	}
 
@@ -291,12 +256,12 @@ public class UIPlayTween : MonoBehaviour
 #endif
 		if (disableWhenFinished != DisableCondition.DoNotDisable && mTweens != null)
 		{
-			var isFinished = true;
-			var properDirection = true;
+			bool isFinished = true;
+			bool properDirection = true;
 
 			for (int i = 0, imax = mTweens.Length; i < imax; ++i)
 			{
-				var tw = mTweens[i];
+				UITweener tw = mTweens[i];
 				if (tw.tweenGroup != tweenGroup) continue;
 
 				if (tw.enabled)
@@ -322,16 +287,10 @@ public class UIPlayTween : MonoBehaviour
 	/// Activate the tweeners.
 	/// </summary>
 
-	[ContextMenu("Play")]
-	public void Play () { Play(true); }
-
-	/// <summary>
-	/// Activate the tweeners.
-	/// </summary>
-
 	public void Play (bool forward)
 	{
-		mActive = 0;
+        isPlayStatus = forward;
+        mActive = 0;
 		GameObject go = (tweenTarget == null) ? gameObject : tweenTarget;
 
 		if (!NGUITools.GetActive(go))
@@ -344,7 +303,7 @@ public class UIPlayTween : MonoBehaviour
 		}
 
 		// Gather the tweening components
-		mTweens = includeChildren ? go.GetComponentsInChildren<UITweener>() : go.GetComponents<UITweener>();
+		mTweens = includeChildren ? go.GetComponentsInChildren<UITweener>(true) : go.GetComponents<UITweener>();
 
 		if (mTweens.Length == 0)
 		{

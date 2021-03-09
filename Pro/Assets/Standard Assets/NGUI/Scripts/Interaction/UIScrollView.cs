@@ -1,6 +1,6 @@
 //-------------------------------------------------
 //            NGUI: Next-Gen UI kit
-// Copyright © 2011-2020 Tasharen Entertainment Inc
+// Copyright © 2011-2017 Tasharen Entertainment Inc
 //-------------------------------------------------
 
 using UnityEngine;
@@ -17,7 +17,7 @@ public class UIScrollView : MonoBehaviour
 {
 	static public BetterList<UIScrollView> list = new BetterList<UIScrollView>();
 
-	[DoNotObfuscateNGUI] public enum Movement
+	public enum Movement
 	{
 		Horizontal,
 		Vertical,
@@ -25,14 +25,14 @@ public class UIScrollView : MonoBehaviour
 		Custom,
 	}
 
-	[DoNotObfuscateNGUI] public enum DragEffect
+	public enum DragEffect
 	{
 		None,
 		Momentum,
 		MomentumAndSpring,
 	}
 
-	[DoNotObfuscateNGUI] public enum ShowCondition
+	public enum ShowCondition
 	{
 		Always,
 		OnlyIfNeeded,
@@ -53,11 +53,17 @@ public class UIScrollView : MonoBehaviour
 
 	public DragEffect dragEffect = DragEffect.MomentumAndSpring;
 
-	/// <summary>
-	/// Whether the dragging will be restricted to be within the scroll view's bounds.
-	/// </summary>
+    /// <summary>
+    /// 是否允许拖动
+    /// </summary>
 
-	public bool restrictWithinPanel = true;
+    public bool isDrag = true;
+
+    /// <summary>
+    /// Whether the dragging will be restricted to be within the scroll view's bounds.
+    /// </summary>
+
+    public bool restrictWithinPanel = true;
 
 	/// <summary>
 	/// Whether the scroll view will execute its constrain within bounds logic on every drag operation.
@@ -282,14 +288,14 @@ public class UIScrollView : MonoBehaviour
 
 			if (canMoveHorizontally)
 			{
-				if (b.min.x + 0.001f < clip.x - hx) return true;
-				if (b.max.x - 0.001f > clip.x + hx) return true;
+				if (b.min.x < clip.x - hx) return true;
+				if (b.max.x > clip.x + hx) return true;
 			}
 
 			if (canMoveVertically)
 			{
-				if (b.min.y + 0.001f < clip.y - hy) return true;
-				if (b.max.y - 0.001f > clip.y + hy) return true;
+				if (b.min.y < clip.y - hy) return true;
+				if (b.max.y > clip.y + hy) return true;
 			}
 			return false;
 		}
@@ -727,7 +733,7 @@ public class UIScrollView : MonoBehaviour
 
 	public void Press (bool pressed)
 	{
-		if (mPressed == pressed || UICamera.currentScheme == UICamera.ControlScheme.Controller) return;
+		if (UICamera.currentScheme == UICamera.ControlScheme.Controller) return;
 
 		if (smoothDragStart && pressed)
 		{

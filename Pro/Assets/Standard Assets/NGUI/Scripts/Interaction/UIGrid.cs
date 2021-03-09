@@ -1,6 +1,6 @@
 //-------------------------------------------------
 //            NGUI: Next-Gen UI kit
-// Copyright © 2011-2020 Tasharen Entertainment Inc
+// Copyright © 2011-2017 Tasharen Entertainment Inc
 //-------------------------------------------------
 
 using UnityEngine;
@@ -16,14 +16,14 @@ public class UIGrid : UIWidgetContainer
 {
 	public delegate void OnReposition ();
 
-	[DoNotObfuscateNGUI] public enum Arrangement
+	public enum Arrangement
 	{
 		Horizontal,
 		Vertical,
 		CellSnap,
 	}
 
-	[DoNotObfuscateNGUI] public enum Sorting
+	public enum Sorting
 	{
 		None,
 		Alphabetic,
@@ -31,12 +31,13 @@ public class UIGrid : UIWidgetContainer
 		Vertical,
 		Custom,
 	}
+    private List<Transform> list = new List<Transform>();
 
-	/// <summary>
-	/// Type of arrangement -- vertical, horizontal or cell snap.
-	/// </summary>
+    /// <summary>
+    /// Type of arrangement -- vertical, horizontal or cell snap.
+    /// </summary>
 
-	public Arrangement arrangement = Arrangement.Horizontal;
+    public Arrangement arrangement = Arrangement.Horizontal;
 
 	/// <summary>
 	/// How to sort the grid's elements.
@@ -70,17 +71,17 @@ public class UIGrid : UIWidgetContainer
 
 	public float cellHeight = 200f;
 
-	[Tooltip("Whether the grid will smoothly animate its children into the correct place.")]
-	public bool animateSmoothly = false;
+	/// <summary>
+	/// Whether the grid will smoothly animate its children into the correct place.
+	/// </summary>
 
-	[Tooltip("If 'true' and Animate Smoothly is also 'true', will check to see if elements have a TweenAlpha on them. If so, elements will appear in their target position instead of animating from the current position.")]
-	public bool animateFadeIn = false;
+	public bool animateSmoothly = false;
 
 	/// <summary>
 	/// Whether to ignore the disabled children or to treat them as being present.
 	/// </summary>
 
-	public bool hideInactive = false;
+	public bool hideInactive = true;
 
 	/// <summary>
 	/// Whether the parent container will be notified of the grid's changes.
@@ -120,16 +121,13 @@ public class UIGrid : UIWidgetContainer
 	public List<Transform> GetChildList ()
 	{
 		Transform myTrans = transform;
-		List<Transform> list = new List<Transform>();
+        list.Clear();
 
 		for (int i = 0; i < myTrans.childCount; ++i)
 		{
 			Transform t = myTrans.GetChild(i);
-
 			if (!hideInactive || (t && t.gameObject.activeSelf))
-			{
-				if (!UIDragDropItem.IsDragged(t.gameObject)) list.Add(t);
-			}
+				list.Add(t);
 		}
 
 		// Sort the list using the desired sorting logic
@@ -315,7 +313,7 @@ public class UIGrid : UIWidgetContainer
 		}
 
 		// Get the list of children in their current order
-		var list = GetChildList();
+		List<Transform> list = GetChildList();
 
 		// Reset the position and order of all objects in the list
 		ResetPosition(list);
@@ -346,7 +344,7 @@ public class UIGrid : UIWidgetContainer
 	/// Reset the position of all child objects based on the order of items in the list.
 	/// </summary>
 
-	protected virtual void ResetPosition (List<Transform> list)
+	public virtual void ResetPosition (List<Transform> list)
 	{
 		mReposition = false;
 
@@ -359,7 +357,7 @@ public class UIGrid : UIWidgetContainer
 		int y = 0;
 		int maxX = 0;
 		int maxY = 0;
-		//Transform myTrans = transform;
+		Transform myTrans = transform;
 
 		// Re-add the children in the same order we have them in and position them accordingly
 		for (int i = 0, imax = list.Count; i < imax; ++i)
@@ -380,18 +378,9 @@ public class UIGrid : UIWidgetContainer
 				new Vector3(cellWidth * x, -cellHeight * y, depth) :
 				new Vector3(cellWidth * y, -cellHeight * x, depth);
 
-			var smoothAnim = animateSmoothly && Application.isPlaying;
-
-			// Special case: if the element is currently invisible and is fading in, we want to position it in the right place right away
-			if (smoothAnim && animateFadeIn)
+			if (animateSmoothly && Application.isPlaying && Vector3.SqrMagnitude(t.localPosition - pos) >= 0.0001f)
 			{
-				var tw = t.GetComponent<TweenAlpha>();
-				if (tw != null && tw.enabled && tw.value == 0f && tw.to == 1f) smoothAnim = false;
-			}
-
-			if (smoothAnim && (pivot != UIWidget.Pivot.TopLeft || Vector3.SqrMagnitude(t.localPosition - pos) >= 0.0001f))
-			{
-				var sp = SpringPosition.Begin(t.gameObject, pos, 15f);
+				SpringPosition sp = SpringPosition.Begin(t.gameObject, pos, 15f);
 				sp.updateScrollView = true;
 				sp.ignoreTimeScale = true;
 			}
@@ -410,7 +399,7 @@ public class UIGrid : UIWidgetContainer
 		// Apply the origin offset
 		if (pivot != UIWidget.Pivot.TopLeft)
 		{
-			var po = NGUIMath.GetPivotOffset(pivot);
+			Vector2 po = NGUIMath.GetPivotOffset(pivot);
 
 			float fx, fy;
 
@@ -425,9 +414,10 @@ public class UIGrid : UIWidgetContainer
 				fy = Mathf.Lerp(-maxX * cellHeight, 0f, po.y);
 			}
 
-			foreach (var t in list)
+			for (int i = 0; i < myTrans.childCount; ++i)
 			{
-				var sp = t.GetComponent<SpringPosition>();
+				Transform t = myTrans.GetChild(i);
+				SpringPosition sp = t.GetComponent<SpringPosition>();
 
 				if (sp != null)
 				{

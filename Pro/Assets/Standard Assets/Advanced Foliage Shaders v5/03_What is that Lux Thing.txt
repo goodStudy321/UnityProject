@@ -1,0 +1,15 @@
+Lux is an open source shader framework and part of the package as the "Foliage Shader Overview Demo rainy" uses Lux's dynamic water and snow features and is driven by the Lux dynamic weather script (terrain).
+
+The advanced foliage shaders themselves however do not rely on Lux.
+
+Lux allows you to easily write custom surface shaders which make use of features such as dynamic water and snow accumulation, but also mixmapping and parallax occlusion mapping – just to name a few.
+
+Learn more about Lux here:
+https://docs.google.com/document/d/19LM0qbnUSrdgR_Eb5eWTBLbPfiEAoM2jijPV_-7GZKg/edit#heading=h.6zvjnfuiskj1
+
+Get if from GitHub:
+https://github.com/larsbertram69/Lux-2.01
+
+Get it from the asset store:
+https://www.assetstore.unity3d.com/en/#!/content/16000
+

@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: c773c2fb9a2578a4e9dab0180f500edc
+timeCreated: 1484624388
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: initialspectrum.shader
+  assetBundleVariant: ab
