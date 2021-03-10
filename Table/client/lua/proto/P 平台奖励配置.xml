@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PlatRewardCfg" Key="id" ExportType="Arr" Src="P 平台奖励配置.xlsx" Sheet="Sheet1">
+  <P Name="id" Type="number" ColName= "ID" />
+  <P Name="des" Type="string" ColName="描述" />
+  <P Name="openLv" Type="number" ColName="开启等级" />
+  <P Name="rewardTab" Type="K_V" IsList="true" Lsp=";" ColName= "奖励" />
+  <P Name="rewardPlat" Type="number" IsList="true" Lsp="," ColName="可以领取奖励的渠道" />
+</Proto>

@@ -1,0 +1,6 @@
+message LocalCfg [key=id, source="B_本地化.xls", sheet="CS"]
+{	
+	uint32 id					[option = "ID"];
+	string lDes				[option = "中文简体"];
+	string des				   	[option = "韩文"];
+};

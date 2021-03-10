@@ -1,0 +1,6 @@
+message InitDesCfg [key=id, source="C 初始加载游戏文本.xls", sheet="Sheet1"]
+{
+	uint16 id						    [option = "ID"];
+	string title						[option = "标题"];
+	string des							[option = "文本"];
+};

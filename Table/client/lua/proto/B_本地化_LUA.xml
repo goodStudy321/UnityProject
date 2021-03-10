@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="LocalCfg" Key="id" Src="B_本地化.xls" Sheet="LUA">
+  <P Name="id" Type="number" ColName= "ID" />
+  <!--P Name="lDes" Type="string" ColName= "中文简体" /-->
+  <P Name="des" Type="string" ColName="韩文" />
+</Proto>

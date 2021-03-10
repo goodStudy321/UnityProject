@@ -3,6 +3,7 @@
   <P Name="id" Type="number" ColName= "商品ID" />
   <P Name="gmChnlIds" Type="number" IsList="true" Lsp="," ColName="渠道ID" />
   <P Name="gold" Type="number" ColName="充值金额" />
+  <P Name="thirdType" Type="number" ColName="是否第三方" />
   <P Name="giftType" Type="number" ColName="礼包类型" />
   <P Name="getGold" Type="number" ColName="获得元宝数" />
   <P Name="bidGold1" Type="number" ColName="首充赠送绑定元宝" />
@@ -13,6 +14,5 @@
   <P Name="des" Type="string" ColName="商品描述" />
   <P Name="icon" Type="string" ColName="图标名称" />
   <P Name="effectName" Type="string" ColName="特效名" />
-  <P Name="appleProID" Type="string" ColName="君海产品ID" />
-  <P Name="aqyID" Type="string" ColName="爱奇艺产品ID" />
+  <P Name="appleProID" Type="string" ColName="产品ID" />
 </Proto>
