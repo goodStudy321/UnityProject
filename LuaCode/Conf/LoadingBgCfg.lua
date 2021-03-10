@@ -17,3 +17,4 @@ We[9]={id=9, name="loading_12.jpg", wt=100}
 We[10]={id=10, name="loading_13.jpg", wt=100}
 We[11]={id=11, name="loading_14.jpg", wt=100}
 We[12]={id=12, name="loading_15.jpg", wt=100}
+We[13]={id=13, name="loading_16.jpg", wt=100}

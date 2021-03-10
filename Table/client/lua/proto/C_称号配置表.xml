@@ -8,6 +8,6 @@
   <P Name="arm" Type="number" ColName="破甲" />
   <P Name="def" Type="number" ColName="防御" />
   <P Name="otherAttr" Type="K_V" Opt="true" ColName="特殊属性" />
-  <P Name="des" Type="string" ColName="称号来源-韩国" />
+  <P Name="des" Type="string" ColName="称号来源" />
   <P Name="prefab1" Type="string" ColName="称号资源1" />
 </Proto>

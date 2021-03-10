@@ -29,7 +29,7 @@ We["21"]={id=21, Value1={}, Value2={200198, -899, 906, 90}, Value4={}}
 We["22"]={id=22, Value1={{id=200101, value=71001}, {id=200102, value=71501}, {id=200107, value=33503}, {id=200103, value=72501}, {id=200108, value=70003}, {id=200109, value=70004}, {id=200104, value=70501}, {id=200110, value=33003}, {id=200105, value=72001}, {id=200115, value=71503}, {id=200120, value=72503}, {id=200121, value=70503}, {id=200122, value=70504}, {id=200123, value=71504}, {id=200106, value=72003}, {id=200124, value=71003}, {id=200125, value=72504}, {id=200126, value=71004}}, Value2={}, Value4={}}
 We["23"]={id=23, Value1={{id=0, value=270001}, {id=40, value=270002}, {id=80, value=270003}}, Value2={}, Value4={}}
 We["24"]={id=24, Value1={{id=210301, value=50}, {id=1, value=20}, {id=32001, value=8}}, Value2={2, -2889, 0}, Value3=0.05, Value4={}}
-We["25"]={id=25, Value1={{id=10, value=0}, {id=10, value=0}, {id=300, value=0}}, Value2={1000, 500, 66, 50}, Value4={}}
+We["25"]={id=25, Value1={}, Value2={1000, 500, 66, 50}, Value4={}}
 We["26"]={id=26, Value1={}, Value2={20, 360}, Value4={}}
 We["27"]={id=27, Value1={}, Value2={1, 5, 2}, Value4={}}
 We["28"]={id=28, Value1={{id=5, value=12000}, {id=3, value=11000}, {id=1, value=10000}, {id=0, value=0}}, Value2={2000, 1800}, Value4={}}
@@ -205,4 +205,3 @@ We["200"]={id=200, Value1={{id=2, value=0}, {id=2, value=12}}, Value2={}, Value4
 We["201"]={id=201, Value1={}, Value2={200, 2000}, Value3=26, Value4={}}
 We["202"]={id=202, Value1={}, Value2={30019, 90021, 90022, 90023, 90024, 90025, 90026}, Value4={}}
 We["203"]={id=203, Value1={}, Value2={}, Value3=5, Value4={}}
-We["204"]={id=204, Value1={{id=200, value=0}}, Value2={}, Value4={}}

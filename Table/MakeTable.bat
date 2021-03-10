@@ -35,10 +35,10 @@ rem copy .\client\css\*.cs ..\Pro\Assets\Script\Client\Table
 echo.
 
 REM set protoDir=%curDir%client\
-set confDir=..\Assets\table
-set scriptDir=..\Pro\Assets\Script\Client\Table
-set allPath=%confDir%*%scriptDir%
-.\make_svn_commit "??" %allPath%
+::set confDir=..\Assets\table
+::set scriptDir=..\Pro\Assets\Script\Client\Table
+::set allPath=%confDir%*%scriptDir%
+::.\make_svn_commit "??" %allPath%
 
 
 

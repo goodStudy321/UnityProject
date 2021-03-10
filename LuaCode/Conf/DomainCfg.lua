@@ -5,4 +5,4 @@
 --******************************************************************************
 DomainCfg={}
 local We=DomainCfg
-We[1]={id=1, inter="http://192.168.2.250:82/", exter="http://api.xj.phantom-u3d001.com/", exterTest="http://test.api.phantom-u3d001.com/"}
+We[1]={id=1, inter="http://192.168.2.250:82/", exter="http://api.zc.phantom-u3d001.com/", exterTest="http://zc.api-test.phantom-u3d001.com/"}

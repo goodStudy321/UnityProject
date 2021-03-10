@@ -87,27 +87,23 @@ We["90001"]={id=90001, PropId="31003", name="玫瑰花999朵", bind=0, storeTp=9
 We["90002"]={id=90002, PropId="31004", name="玫瑰花99朵", bind=0, storeTp=9, priceTp=3, curPrice=99, lv=1, lvAstrict=0, cate=0}
 We["90003"]={id=90003, PropId="31039", name="心心相印", bind=0, storeTp=9, priceTp=3, curPrice=10, lv=1, lvAstrict=0, cate=0}
 We["90004"]={id=90004, PropId="31040", name="花好月圆", bind=0, storeTp=9, priceTp=2, curPrice=20, lv=1, lvAstrict=0, cate=0}
-We["100001"]={id=100001, PropId="35006", name="伙伴进阶礼包", bind=1, storeTp=11, priceTp=3, curPrice=80, discount=4, canPNum=10, lv=1, lvAstrict=0, cate=0}
-We["100002"]={id=100002, PropId="35005", name="坐骑进阶礼包", bind=1, storeTp=11, priceTp=3, curPrice=80, discount=4, canPNum=10, lv=1, lvAstrict=0, cate=0}
-We["100003"]={id=100003, PropId="35960", name="宝藏钥匙*50", bind=1, storeTp=11, priceTp=2, curPrice=810, discount=6, canPNum=1, lv=1, lvAstrict=0, cate=0}
-We["100004"]={id=100004, PropId="35961", name="符文令*10", bind=1, storeTp=11, priceTp=2, curPrice=900, discount=6, canPNum=1, lv=1, lvAstrict=0, cate=0}
-We["100005"]={id=100005, PropId="35962", name="雷霆结晶*50", bind=1, storeTp=11, priceTp=2, curPrice=1050, discount=6, canPNum=1, lv=1, vipLv=4, lvAstrict=0, cate=0}
-We["100006"]={id=100006, PropId="35963", name="阳炎火星*10", bind=1, storeTp=11, priceTp=2, curPrice=2100, discount=6, canPNum=1, lv=1, vipLv=4, lvAstrict=0, cate=0}
-We["100007"]={id=100007, PropId="30336", name="七曜翎羽", bind=1, storeTp=11, priceTp=2, curPrice=400, discount=5, canPNum=1, lv=1, vipLv=4, lvAstrict=0, cate=0}
-We["100008"]={id=100008, PropId="30326", name="阴阳魂石", bind=1, storeTp=11, priceTp=2, curPrice=400, discount=5, canPNum=1, lv=1, vipLv=4, lvAstrict=0, cate=0}
-We["100009"]={id=100009, PropId="30346", name="麒麟器魂", bind=1, storeTp=11, priceTp=2, curPrice=400, discount=5, canPNum=1, lv=1, vipLv=4, lvAstrict=0, cate=0}
-We["100010"]={id=100010, PropId="30006", name="6级攻击宝石", bind=1, storeTp=11, priceTp=2, curPrice=1620, discount=6, canPNum=1, lv=1, vipLv=9, lvAstrict=0, cate=0}
-We["100011"]={id=100011, PropId="30016", name="6级生命宝石", bind=1, storeTp=11, priceTp=2, curPrice=1620, discount=6, canPNum=1, lv=1, vipLv=9, lvAstrict=0, cate=0}
-We["100012"]={id=100012, PropId="35364", name="高级技能选择礼包", bind=1, storeTp=11, priceTp=2, curPrice=3000, discount=5, canPNum=1, lv=1, vipLv=9, lvAstrict=0, cate=0}
-We["110001"]={id=110001, PropId="35001", name="银两礼包", bind=1, storeTp=10, priceTp=2, curPrice=20, discount=1, canPNum=1, lv=1, lvAstrict=0, cate=0}
-We["110002"]={id=110002, PropId="35006", name="伙伴进阶礼包", bind=1, storeTp=10, priceTp=2, curPrice=80, discount=4, canPNum=1, lv=1, vipLv=1, lvAstrict=0, cate=0}
-We["110003"]={id=110003, PropId="35005", name="坐骑进阶礼包", bind=1, storeTp=10, priceTp=2, curPrice=80, discount=4, canPNum=1, lv=1, vipLv=2, lvAstrict=0, cate=0}
-We["110004"]={id=110004, PropId="35101", name="紫色符文精华箱", bind=1, storeTp=10, priceTp=2, curPrice=48, discount=2, canPNum=1, lv=1, vipLv=3, lvAstrict=0, cate=0}
-We["110005"]={id=110005, PropId="31001", name="2倍经验药", bind=1, storeTp=10, priceTp=2, curPrice=48, discount=8, canPNum=1, lv=1, vipLv=4, lvAstrict=0, cate=0}
-We["110006"]={id=110006, PropId="35601", name="超值仙魂宝箱", bind=1, storeTp=10, priceTp=2, curPrice=75, discount=4, canPNum=1, lv=300, vipLv=4, lvAstrict=0, cate=0}
-We["110007"]={id=110007, PropId="30333", name="高级灵羽精华", bind=1, storeTp=10, priceTp=2, curPrice=120, discount=4, canPNum=1, lv=1, vipLv=5, lvAstrict=0, cate=0}
-We["110008"]={id=110008, PropId="30323", name="高级法宝晶石", bind=1, storeTp=10, priceTp=2, curPrice=120, discount=4, canPNum=1, lv=1, vipLv=6, lvAstrict=0, cate=0}
-We["110009"]={id=110009, PropId="30343", name="高级玄晶", bind=1, storeTp=10, priceTp=2, curPrice=120, discount=4, canPNum=1, lv=1, vipLv=7, lvAstrict=0, cate=0}
+We["100001"]={id=100001, PropId="3060500", name="狼妖魂", bind=1, storeTp=10, priceTp=2, curPrice=588, discount=5, canPNum=1, lv=1, lvAstrict=0, cate=0}
+We["100002"]={id=100002, PropId="3065100", name="神渊龙吟", bind=1, storeTp=10, priceTp=2, curPrice=888, discount=8, canPNum=1, lv=1, lvAstrict=0, cate=0}
+We["100003"]={id=100003, PropId="35001", name="银两礼包", bind=1, storeTp=10, priceTp=2, curPrice=40, discount=8, canPNum=2, lv=1, lvAstrict=0, cate=0}
+We["100004"]={id=100004, PropId="35001", name="银两礼包", bind=1, storeTp=10, priceTp=2, curPrice=30, discount=6, canPNum=5, lv=1, vipLv=4, lvAstrict=0, cate=0}
+We["100005"]={id=100005, PropId="35005", name="坐骑进阶礼包", bind=1, storeTp=10, priceTp=2, curPrice=160, discount=8, canPNum=1, lv=1, lvAstrict=0, cate=0}
+We["100006"]={id=100006, PropId="35005", name="坐骑进阶礼包", bind=1, storeTp=10, priceTp=2, curPrice=100, discount=5, canPNum=5, lv=1, vipLv=4, lvAstrict=0, cate=0}
+We["100007"]={id=100007, PropId="35006", name="伙伴进阶礼包", bind=1, storeTp=10, priceTp=2, curPrice=160, discount=8, canPNum=1, lv=1, lvAstrict=0, cate=0}
+We["100008"]={id=100008, PropId="35006", name="伙伴进阶礼包", bind=1, storeTp=10, priceTp=2, curPrice=100, discount=5, canPNum=5, lv=1, vipLv=4, lvAstrict=0, cate=0}
+We["110001"]={id=110001, PropId="35001", name="银两礼包", bind=1, storeTp=11, priceTp=2, curPrice=20, discount=1, canPNum=1, lv=1, lvAstrict=0, cate=0}
+We["110002"]={id=110002, PropId="35006", name="伙伴进阶礼包", bind=1, storeTp=11, priceTp=2, curPrice=80, discount=4, canPNum=1, lv=1, vipLv=1, lvAstrict=0, cate=0}
+We["110003"]={id=110003, PropId="35005", name="坐骑进阶礼包", bind=1, storeTp=11, priceTp=2, curPrice=80, discount=4, canPNum=1, lv=1, vipLv=2, lvAstrict=0, cate=0}
+We["110004"]={id=110004, PropId="35101", name="紫色符文精华箱", bind=1, storeTp=11, priceTp=2, curPrice=48, discount=2, canPNum=1, lv=1, vipLv=3, lvAstrict=0, cate=0}
+We["110005"]={id=110005, PropId="31001", name="2倍经验药", bind=1, storeTp=11, priceTp=2, curPrice=48, discount=8, canPNum=1, lv=1, vipLv=4, lvAstrict=0, cate=0}
+We["110006"]={id=110006, PropId="35601", name="超值仙魂宝箱", bind=1, storeTp=11, priceTp=2, curPrice=75, discount=4, canPNum=1, lv=300, vipLv=4, lvAstrict=0, cate=0}
+We["110007"]={id=110007, PropId="30333", name="高级灵羽精华", bind=1, storeTp=11, priceTp=2, curPrice=120, discount=4, canPNum=1, lv=1, vipLv=5, lvAstrict=0, cate=0}
+We["110008"]={id=110008, PropId="30323", name="高级法宝晶石", bind=1, storeTp=11, priceTp=2, curPrice=120, discount=4, canPNum=1, lv=1, vipLv=6, lvAstrict=0, cate=0}
+We["110009"]={id=110009, PropId="30343", name="高级玄晶", bind=1, storeTp=11, priceTp=2, curPrice=120, discount=4, canPNum=1, lv=1, vipLv=7, lvAstrict=0, cate=0}
 We["130001"]={id=130001, PropId="30324", name="坎水魂石", bind=1, storeTp=13, priceTp=2, curPrice=1000, discount=4, canPNum=2, lv=1, lvAstrict=0, cate=0}
 We["130002"]={id=130002, PropId="30325", name="离火魂石", bind=1, storeTp=13, priceTp=2, curPrice=1000, discount=4, canPNum=2, lv=1, lvAstrict=0, cate=0}
 We["130003"]={id=130003, PropId="30366", name="伙伴飞升丹", bind=1, storeTp=13, priceTp=2, curPrice=60, canPNum=20, lv=1, lvAstrict=0, cate=0}

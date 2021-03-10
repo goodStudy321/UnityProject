@@ -21,11 +21,11 @@
   <P Name="autoTalk" Type="number" ColName= "完成自动弹出对话" />
   <P Name="npcReceive" Type="number" Opt="true" ColName= "接任务NpcID" />
   <P Name="npcSubmit" Type="number" Opt="true" ColName= "完成任务NpcID" />
-  <P Name="talkReceive" Type="K_SS" Opt="true" IsList="true" Lsp="|"  ColName= "任务接取对话" />
+  <P Name="talkReceive" Type="K_S" Opt="true" IsList="true" Lsp="|"  ColName= "任务接取对话" />
   <P Name="takeMAudio" Type="string" Opt="true" IsList="true" Lsp="|" ColName= "接取对话音频" />
-  <P Name="talk" Type="K_SS" Opt="true" IsList="true" Lsp="|"  ColName= "任务对话" />
+  <P Name="talk" Type="K_S" Opt="true" IsList="true" Lsp="|"  ColName= "任务对话" />
   <P Name="inMAudio" Type="string" Opt="true" IsList="true" Lsp="|" ColName= "任务对话音频" />
-  <P Name="talkSubmit" Type="K_SS" Opt="true" IsList="true" Lsp="|"  ColName= "任务完成对话" />
+  <P Name="talkSubmit" Type="K_S" Opt="true" IsList="true" Lsp="|"  ColName= "任务完成对话" />
   <P Name="finMAudio" Type="string" Opt="true" IsList="true" Lsp="|" ColName= "完成对话音频" />
   <P Name="hideMonster" Type="string" Opt="true" ColName= "完成任务屏蔽的怪物" />
   <P Name="tarType" Type="number" ColName="任务类型" />

@@ -63,8 +63,8 @@ cd /d %curDir%
 set protoDir=%curDir%client\lua\proto
 set confDir=..\LuaCode\Conf
 
-set allPath=%confDir%*%protoDir%
-make_svn_commit "??" %allPath%
+::set allPath=%confDir%*%protoDir%
+::make_svn_commit "??" %allPath%
 
 echo.
 
