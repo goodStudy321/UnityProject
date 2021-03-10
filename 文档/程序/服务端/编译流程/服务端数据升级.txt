@@ -1,0 +1,11 @@
+入口在src/update/
+update_common.erl在启动时检测到有版本更新时会调用 在server_app.erl里的update_db方法。
+注意点：
+1. 不同节点的数据库更新方法不同，注意调用时的区别。
+2. 保证每个新加的方法，一定是可以重复调用并且无副作用（自己先反复论证，然后本地反复调用，调用方法）。
+3. 本地环境，当脚本有变动需要再次执行时，可以在发布/重启前调用 world_data:set_db_version(0). 
+4. update_xxx 后面的版本号X，与我们项目中的server_version.txt中的版本号有关，详细的看代码
+
+调试数据升级脚本方法:
+停机后调用sh mgectl lite
+启动完毕后sh mgectl debug进入节点执行对应方法

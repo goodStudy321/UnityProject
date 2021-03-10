@@ -1,0 +1,7 @@
+JH_APPID：100000385
+JH_APPKEY：0ef5712c419e1ba02bba0d62432e4f49
+JH_GAME_CHANNEL_ID：104287
+JH_NODE：https://agent1.ijunhai.com
+app_secret：8bd6c2c4f139e42a2d520ea41b630d70
+game_id：175
+pay_sign：32f59ae5b8016a388a89ecba5d3cb0cd

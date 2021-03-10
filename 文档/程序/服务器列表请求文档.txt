@@ -1,0 +1,6 @@
+http://118.89.165.224:15555/?c=GetServer&m=getClientServer&agent_id=0
+
+agent_id=定义：
+0或者空：获取所有的服务器（包括正式服）
+1：内网测试服&&外网测试服
+2：版署服务器

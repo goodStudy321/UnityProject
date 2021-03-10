@@ -1,0 +1,10 @@
+> **author  &emsp;:Loong**  
+> **date    &emsp;&emsp;&ensp;:2018-04-27 14:47:23**  
+> **descrition 	:工作日志**
+
+# LUA_JIT编码注意事项
+
+1. 目前不能在原生代码文件中使用print,只能使用iIrace
+2. 提交代码时,需提交./LuaCode和./LuaJitCode 两个文件夹内的代码
+3. 运行时,可以先选择使用LuaCode内的原生代码,等确认无误后,通过菜单[Developer/Loong/Lua工具/UseEncode] 勾选即可切换到字节码
+4. 在使用字节码之前,需要生成,生成的快捷键是 ALT+E

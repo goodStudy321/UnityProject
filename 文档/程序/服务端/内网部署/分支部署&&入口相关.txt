@@ -1,0 +1,25 @@
+分支部署：
+1. 迁出分支后修改setting/common.config的唯一key(这个涉及到编译以及启动），提交。
+2. 通过后台或者操作数据库，去配置这个key对应的common配置（manager mg_game_server 与 last_admin last_data_server）
+3. trunk/sh/daily_public.sh根据参数值设定自动发布路径
+4. 创建好数据库后尝试自动发布，检查流程是否跑通
+
+服务器入口相关：
+1. 根据唯一的key去获取common配置。
+2. 通过http获取对应配置，顺序是：正式服接口 > 外网测试服 > 内网测试服 > start_config.json。
+3. http请求时的数据库，是manager里的mg_game_server
+
+ps:
+内部server_id规则：
+51-59 	内网安卓
+61-69	内网ios
+151-159	外网安卓
+161-169 外网ios
+id不够时可复用原有的id
+
+前端入口相关：
+注意参数：game_channel_id,version_name
+1. 首先我们会通过game_channel_id在last_channel_game里获取到router_id。
+2. 根据router_id，去last_admin的last_data_server里找到相对应的服务器列表
+3. last_data_server里的server_id，映射至last_game_server里的id
+4. is_first_version=1,表示前端的version_name与last_channel_game里配置的版本号相同时才会显示该服务器

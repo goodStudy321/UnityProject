@@ -1,0 +1,83 @@
+> **author  &emsp;:Loong**  
+> **date    &emsp;&emsp;&ensp;:2017-11-13 20:13:59**  
+> **descrition 	:工作日志**
+
+> **此文档可通过VSC打开, 并使用快捷键【Ctrl+Shift+V】格式化**
+
+# 安装VSC编辑器
+
+## 安装方式
+
+* 1,通过SVN[:http://192.168.2.145/svn/Phantom/软件/VSCodeSetup-x64-1.18.0]安装
+
+* 2,去VSC[**官网**](https://code.visualstudio.com/)下载
+
+* 3,安装完成后,**关闭自动扩展更新**,因为将要安装的调试插件是低版本的不收钱,高版本收钱
+	* 通过菜单：文件/首选项/设置，打开用户设置
+	* 选择扩展
+	* 在setting.json中编辑
+	* 写入内容："extensions.autoUpdate": false
+
+
+# 安装插件
+
+## 安装方式
+
+* 1,插件名称为LuaIde,不要使用插件库扩展下载,除非不差钱或者已购买
+* 2,通过SVN[:http://192.168.2.145/svn/Phantom/软件/kangping.luaide-0.3.7.zip]获取
+* 3,将其解压到 C盘用户名目录 **../.vscode/extensions**
+
+
+# 配置工作区
+* 1,通过菜单【文件/打开文件夹】，选择**自己的lua根目录路径**
+* 2,通过菜单【文件/将工作区另存为】 【.code-workspace】文件,以方便以后加载此工作区
+
+## 安装后配置
+
+* 1,通过菜单【**文件/首选项/设置**】  
+	或者快捷键【**Ctrl+,**】打开用户设置
+
+* 2,在【工作区设置】的setting.json添加
+
+```
+"settings": {"luaide.scriptRoots": ["F:/branches/ol_android_v10/LuaCode"]},
+
+```
+* 3,将中括号内的目录换成**自己的lua根目录路径**
+
+## 插件[官方](https://marketplace.visualstudio.com/items?itemName=kangping.luaide)中有更详细的说明
+
+
+# Unity预处理指令
+
+* 1,默认状态下Lua的调试是关闭的
+* 2,必须添加预处理指令(宏):**LUA_DEBUG**
+* 3,预处理指令可通过Unity内的菜单**【Developer/Loong/预处理指令工具】**添加
+* 4,添加的预处理指令会保存在工程设置中,不要提交
+
+
+# 调试器选择
+
+* 1,打开VSC 通过命令菜单【**Ctrl+Shift+P**】 ,呼出命令输入框
+* 2,在命令输入框中输入** "debug " **，不要忘记debug后的空格
+* 3,在调试器列表中选择名称为  【**Unity-ulua**】的调试器
+* 4,也可通过【**状态栏左侧的调试器**】配置直接选择
+* 5,也可用过【**调试窗口选择**】,快捷键【**Ctrl+Shift+D**】
+
+# 开始调试
+
+* 1,首先在VSC中按下**F5** 启动调试
+* 2,再启动Unity
+
+# 调试说明
+
+* 1,全世界的调试几乎都一样  
+	**F10:单步跳过**  
+	**F11:单步执行**
+* 2,窗口也是几乎一样:  
+	**A,局部变量窗口**  
+	**B,监视窗口**  
+	**C,调用堆栈窗口**  
+	**D,断点列表**
+* 3,VSC中也可查看C#类型
+	

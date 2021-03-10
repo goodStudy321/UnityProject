@@ -1,0 +1,38 @@
+﻿> **author  &emsp;:Loong**  
+> **date    &emsp;&emsp;&ensp;:2018-01-18 21:16:09**  
+> **descrition 	:工作日志**
+
+# 互斥选项按钮组值设置
+
+|               说明               |    (Group)组值    |
+|----------------------------------|-------------------|
+| UIAdv 养成系统切换               | 1                 |
+| UIRole 符文系统切换              | 6                 |
+| UIEquip 装备                     | 17,45, |
+| UIBackpack 背包                  | 11,12             |
+| UICopy 副本，世界Boss，鼓舞      | 12,5,6，24        |
+| UIRole 角色面板                  | 99,100            |
+| UIArena 竞技面板                 | 96,97,98          |
+| UIUniverseBattle 三界战场        | 25                |
+| UIRank 排行榜                    | 15                |
+| UIMainMenuLeft 主界面任务/组队   | 19                |
+| UIInteractPanel交互界面好友/邮件 | 2                 |
+| UICreatePanel交互界面好友/邮件   | 3                 |
+| UISetting                        | 4                 |
+| UISurverPanel问卷调查            | 7，56             |
+| UILvAward冲级豪礼                | 21                |
+| UISign签到                       | 22                |
+| UITreasure寻宝                   | 40,41             |
+| UIFamilyActiv仙盟活动            | 23                |
+| UIFestivalActivities  节日活动   | 36                |
+| UIFamilyBossIt  仙盟Boss入口     | 57                |
+|----------------------------------|-------------------|
+| UISetting                        |                   |
+|----------------------------------|-------------------|
+| 画质互斥选项                     | 30                |
+|----------------------------------|-------------------|
+| 攻击模式UIFightStatus            | 8		           |
+|                                  |   9               |
+|UISuit 套装                       |   33               |
+|UIMission任务面板                  |   10	           |
+|UISkMysterySeal天机印                  |   13|

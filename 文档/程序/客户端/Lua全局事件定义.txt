@@ -1,0 +1,10 @@
+> **author  &emsp;:Loong**  
+> **date    &emsp;&emsp;&ensp;:2018-02-05 21:29:50**  
+> **descrition 	:工作日志**
+
+## 事件说明
+
+|   事件   |    说明    |  参数  |  文件  |
+|----------|------------|--------|--------|
+| euiopen  | ui打开事件 | 1:名称 | UIBase |
+| euiclose | ui关闭事件 | 1:名称 | UIbase |
